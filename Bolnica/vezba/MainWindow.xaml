@@ -1,0 +1,17 @@
+﻿<Window x:Class="vezba.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vezba"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Prijavi se" HorizontalAlignment="Left" Margin="57,204,0,0" VerticalAlignment="Top" Width="85" Height="29" Click="Button_Click" Background="#FFB3EDC4" BorderBrush="#FF485F47"/>
+        <Label Content="Korisničko ime:" HorizontalAlignment="Left" Height="27" Margin="26,49,0,0" VerticalAlignment="Top" Width="104"/>
+        <Label Content="Lozinka:" HorizontalAlignment="Left" Height="27" Margin="26,119,0,0" VerticalAlignment="Top" Width="104"/>
+        <TextBox Name ="Username" Height="23" Margin="26,76,609.6,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox Name ="Password" HorizontalAlignment="Left" Height="23" Margin="26,146,0,0" VerticalAlignment="Top" Width="158"/>
+
+    </Grid>
+</Window>
