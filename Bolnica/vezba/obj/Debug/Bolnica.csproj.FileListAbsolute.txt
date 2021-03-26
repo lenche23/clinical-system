@@ -67,3 +67,9 @@ E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\Bo
 E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
 E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.exe
 E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.pdb
+E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\NewPatient.g.cs
+E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\NewPatient.baml
+E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\ViewPatient.g.cs
+E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\ViewPatient.baml
+E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\EditPatient.g.cs
+E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\EditPatient.baml
