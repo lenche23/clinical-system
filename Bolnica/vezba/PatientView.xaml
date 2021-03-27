@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="Patient" Height="450" Width="800">
     <Grid>
-        <Label Content="Pacijent" HorizontalAlignment="Left" Margin="270,222,0,0" VerticalAlignment="Top" Height="36" Width="151"/>
-
+        <Label Content="Petar Petrović" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="36" Width="151" FontSize="15"/>
+        <Button Content="Zakaži pregled" Height="29" Margin="55,83,631,307" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click"/>
+        <Button Content="Otkaži pregled" Height="29" Margin="55,147,631,243" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_1"/>
+        <Button Content="Istorija pregleda" Height="29" Margin="55,211,631,179" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_2"/>
     </Grid>
 </Window>

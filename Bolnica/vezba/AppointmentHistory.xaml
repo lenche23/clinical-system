@@ -1,0 +1,26 @@
+﻿<Window x:Class="vezba.AppointmentHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vezba"
+        mc:Ignorable="d"
+        Title="AppointmentHistory" Height="450" Width="800">
+    <Grid>
+        <Label Content="My appointment history" Margin="10,10,603,369" FontSize="15"/>
+        <ListView Margin="10,50,10,10" Name="lvUsers">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="25" DisplayMemberBinding="{Binding AppointentId}" />
+                    <GridViewColumn Header="Time" Width="150" DisplayMemberBinding="{Binding StartTime}" />
+                    <GridViewColumn Header="Duration" Width="60" DisplayMemberBinding="{Binding DurationInMunutes}" />
+                    <GridViewColumn Header="Doctor" Width="150" DisplayMemberBinding="{Binding Doctor}" />
+                    <GridViewColumn Header="Description" Width="160" DisplayMemberBinding="{Binding ApointmentDescription}" />
+                    <GridViewColumn Header="Room" Width="85" DisplayMemberBinding="{Binding Room}" />
+                    <GridViewColumn Header="Patient" Width="130" DisplayMemberBinding="{Binding Patient}" />
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
