@@ -7,21 +7,21 @@
         mc:Ignorable="d"
         Title="ViewPatient" Height="590" Width="400">
     <Grid>
-        <Label Content="PACIJENT" HorizontalAlignment="Left" Height="29" Margin="74,10,0,0" VerticalAlignment="Top" Width="173"/>
+        <Label Name="Patient" Content="PACIJENT" HorizontalAlignment="Left" Height="29" Margin="74,10,0,0" VerticalAlignment="Top" Width="173"/>
         <Label Name="NameSurname"  Content="Ime i Prezime" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="74,39,0,0" Width="221"/>
-        <Label Name="Jmbg"  Content="JMBG:" HorizontalAlignment="Left" Margin="23,83,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="DateOfBirth" Content="Datum rođenja:" HorizontalAlignment="Left" Margin="23,113,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="Sex" Content="Pol:" HorizontalAlignment="Left" Margin="23,143,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="PhoneNumber" Content="Broj telefona:" HorizontalAlignment="Left" Margin="23,173,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="Adress" Content="Adresa:" HorizontalAlignment="Left" Margin="23,203,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="Email" Content="Email:" HorizontalAlignment="Left" Margin="23,233,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="EmergencyContact" Content="Kontakt za hitne slučajeve:" HorizontalAlignment="Left" Margin="23,293,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="IdNumber" Content="Broj lične karte:" HorizontalAlignment="Left" Margin="23,263,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="MedicalIdNumber" Content="Broj zdravstvene knjižice:" HorizontalAlignment="Left" Margin="23,340,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="Allergens" Content="Alergeni:" HorizontalAlignment="Left" Margin="23,400,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="HealthEnsuranceNumber" Content="Broj zdravstvenog osigurnja:" HorizontalAlignment="Left" Margin="23,370,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="Username" Content="Korisničko ime:" HorizontalAlignment="Left" Margin="23,448,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
-        <Label Name="Password" Content="Lozinka:" HorizontalAlignment="Left" Margin="23,478,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="Jmbg"  Content="JMBG:   " HorizontalAlignment="Left" Margin="23,83,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="DateOfBirth" Content="Datum rođenja:   " HorizontalAlignment="Left" Margin="23,113,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="Sex" Content="Pol:   " HorizontalAlignment="Left" Margin="23,143,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="PhoneNumber" Content="Broj telefona:   " HorizontalAlignment="Left" Margin="23,173,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="Adress" Content="Adresa:   " HorizontalAlignment="Left" Margin="23,203,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="Email" Content="Email:   " HorizontalAlignment="Left" Margin="23,233,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="EmergencyContact" Content="Kontakt za hitne slučajeve:   " HorizontalAlignment="Left" Margin="23,293,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="IdNumber" Content="Broj lične karte:   " HorizontalAlignment="Left" Margin="23,263,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="MedicalIdNumber" Content="Broj zdravstvene knjižice:   " HorizontalAlignment="Left" Margin="23,340,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="Allergens" Content="Alergeni:   " HorizontalAlignment="Left" Margin="23,400,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="HealthEnsuranceNumber" Content="Broj zdravstvenog osigurnja:   " HorizontalAlignment="Left" Margin="23,370,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="Username" Content="Korisničko ime:   " HorizontalAlignment="Left" Margin="23,448,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
+        <Label Name="Password" Content="Lozinka:   " HorizontalAlignment="Left" Margin="23,478,0,0" VerticalAlignment="Top" Height="25" Width="346"/>
         
     </Grid>
 </Window>

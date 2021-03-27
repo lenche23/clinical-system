@@ -6,5 +6,8 @@ namespace Model
     {
         public String Name { get; set; }
 
+        public Allergen(string name) {
+            this.Name = name;
+        }
     }
 }
