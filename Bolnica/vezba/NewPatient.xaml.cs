@@ -16,9 +16,6 @@ using vezba;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for NewPatient.xaml
-    /// </summary>
     public partial class NewPatient : Window
     {
         public NewPatient()
@@ -84,16 +81,6 @@ namespace Bolnica
             this.Close();
 
             return;
-            //MessageBox.Show(date.ToString("dd.MM.yyyy."));
-            /*if (sex == Sex.male)
-            {
-                MessageBox.Show("jeste");
-            }
-            else
-            {
-                MessageBox.Show("nije");
-            }*/
-
         }
     }
 }

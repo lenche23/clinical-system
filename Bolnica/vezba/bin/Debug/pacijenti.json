@@ -1,0 +1,94 @@
+[
+  {
+    "appointment": null,
+    "IsGuest": false,
+    "EmergencyContact": "06699592141",
+    "MedicalRecord": {
+      "allergen": [
+        {
+          "Name": "Ambrozija"
+        },
+        {
+          "Name": "BI-278"
+        }
+      ],
+      "HealthInsuranceNumber": "07167166",
+      "MedicalIdNumber": "620178060616",
+      "Allergen": [
+        {
+          "Name": "Ambrozija"
+        },
+        {
+          "Name": "BI-278"
+        }
+      ]
+    },
+    "Appointment": [],
+    "Username": "miki17",
+    "Password": "Tin3",
+    "Name": "Mira",
+    "Surname": "Torbica",
+    "Jmbg": "1701994261473",
+    "DateOfBirth": "1994-01-01T00:00:00",
+    "Sex": 1,
+    "PhoneNumber": "0627844326",
+    "Adress": "Hajduk Veljkova 42, Novi Sad",
+    "Email": "mira94@gmail.com",
+    "IdCard": "008755974",
+    "Type": 3,
+    "IsDeleted": false
+  },
+  {
+    "appointment": null,
+    "IsGuest": false,
+    "EmergencyContact": "0638756221",
+    "MedicalRecord": null,
+    "Appointment": [],
+    "Username": "pera85",
+    "Password": "p123",
+    "Name": "Petar",
+    "Surname": "Ilic",
+    "Jmbg": "1008985563244",
+    "DateOfBirth": "1985-08-10T00:00:00",
+    "Sex": 0,
+    "PhoneNumber": "0625564197",
+    "Adress": "Ulica Lipa 76, Beograd",
+    "Email": "pilic@gmail.com",
+    "IdCard": "007265981",
+    "Type": 3,
+    "IsDeleted": false
+  },
+  {
+    "appointment": null,
+    "IsGuest": true,
+    "EmergencyContact": "",
+    "MedicalRecord": {
+      "allergen": [
+        {
+          "Name": ""
+        }
+      ],
+      "HealthInsuranceNumber": "",
+      "MedicalIdNumber": "",
+      "Allergen": [
+        {
+          "Name": ""
+        }
+      ]
+    },
+    "Appointment": [],
+    "Username": "",
+    "Password": "",
+    "Name": "Milena",
+    "Surname": "Jovanovic",
+    "Jmbg": "5406504526555",
+    "DateOfBirth": "1900-01-01T00:00:00",
+    "Sex": 1,
+    "PhoneNumber": "",
+    "Adress": "",
+    "Email": "",
+    "IdCard": "",
+    "Type": 3,
+    "IsDeleted": false
+  }
+]

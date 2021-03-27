@@ -14,11 +14,9 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
-            //Patients = new ObservableCollection<Patient>();
             PatientStorage ps = new PatientStorage();
             List<Patient> temp = ps.GetAll();
             Patients = new ObservableCollection<Patient>(temp);
-            MessageBox.Show(Convert.ToString(Patients[0].Name + " " + Patients[1].Name));
 
         }
 
@@ -32,6 +30,9 @@ namespace vezba
         {
             if (patientsTable.SelectedCells.Count > 0)
             {
+                /*PatientStorage ps = new PatientStorage();
+                List<Patient> temp = ps.GetAll();
+                Patients = new ObservableCollection<Patient>(temp);*/
                 Patient p = (Patient)patientsTable.SelectedItem;
                 var s = new ViewPatient(p);
                 s.Show();
@@ -47,6 +48,9 @@ namespace vezba
         {
             if(patientsTable.SelectedCells.Count > 0)
             {
+                /*PatientStorage ps = new PatientStorage();
+                List<Patient> temp = ps.GetAll();
+                Patients = new ObservableCollection<Patient>(temp);*/
                 Patient p = (Patient) patientsTable.SelectedItem;
                 var s = new EditPatient(p);
                 s.Show();
@@ -62,7 +66,6 @@ namespace vezba
         {
             if (patientsTable.SelectedCells.Count > 0)
             {
-                //izbaci ga
                 Patient p = (Patient)patientsTable.SelectedItem;
                 PatientStorage ps = new PatientStorage();
                 ps.Delete(p.Jmbg);
@@ -73,7 +76,7 @@ namespace vezba
             {
                 MessageBox.Show("Niste selektovali pacijenta!");
             }
-            //DialogResult res = MessageBox.Show("Da li ste sigurni da zelite da izbrisete pacijenta?", "Brisanje pacijenta");
+            
         }
     }
 }
