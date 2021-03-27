@@ -26,8 +26,8 @@ namespace Model
 
         public void Save(Appointment appointment)
         {
-            //apps.Add(appointment);
-            throw new NotImplementedException();
+            apps.Add(appointment);
+            //throw new NotImplementedException();
         }
 
         public Boolean Update(Appointment appointment)

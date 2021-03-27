@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="OrderAppointmentView" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Schedule an appointment" HorizontalAlignment="Left" Height="33" Margin="10,10,0,0" VerticalAlignment="Top" Width="189" FontSize="15"/>
+        <DatePicker Name="datePicker" HorizontalAlignment="Left" Height="29" Margin="360,67,0,0" VerticalAlignment="Top" Width="115"/>
+        <Label Margin="10,43,693,352">Pick a doctor</Label>
+        <ListView Margin="10,67,455,10" Name="lvUsers">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="70" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Surname" Width="100" DisplayMemberBinding="{Binding Surname}" />
+                    <!--<GridViewColumn Header="JMBG" Width="150" DisplayMemberBinding="{Binding Jmbg}" />-->
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Margin="360,43,129,347" Content="Please select date and write time for your appointment"/>
+        <TextBox Name ="time" Margin="480,67,197,323"></TextBox>
+        <Button Margin="360,126,288,258" Content="Schedule" FontSize="15" Background="LightGreen" Click="Button_Click"/>
     </Grid>
 </Window>
