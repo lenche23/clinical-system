@@ -67,35 +67,3 @@ E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\Bo
 E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
 E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.exe
 E:\Users\graho\Documents\SIMS bolnica\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.pdb
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\bin\Debug\Bolnica.exe.config
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\bin\Debug\Bolnica.exe
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\bin\Debug\Bolnica.pdb
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.csprojAssemblyReference.cache
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\DoctorView.g.cs
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\MainWindow.g.cs
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\ManagerView.g.cs
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\PatientView.g.cs
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\SecretaryView.g.cs
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\App.g.cs
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\Bolnica_MarkupCompile.cache
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\Bolnica_MarkupCompile.lref
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\DoctorView.baml
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\MainWindow.baml
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\ManagerView.baml
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\PatientView.baml
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\SecretaryView.baml
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.g.resources
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.csproj.GenerateResource.cache
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.csproj.CoreCompileInputs.cache
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.exe
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.pdb
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\OrderAppointmentView.g.cs
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\OrderAppointmentView.baml
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\vezba.Properties.Resources.resources
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\AppointmentHistory.g.cs
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\CancelAppointmentView.g.cs
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\AppointmentHistory.baml
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\CancelAppointmentView.baml
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\bin\Debug\Newtonsoft.Json.dll
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\bin\Debug\Newtonsoft.Json.xml
-D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.csproj.CopyComplete
