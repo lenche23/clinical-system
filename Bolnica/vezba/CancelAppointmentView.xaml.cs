@@ -33,8 +33,10 @@ namespace vezba
             {
                 Appointment a = (Appointment)lvUsers2.SelectedItem;
                 AppointmentStorage storage = new AppointmentStorage();
-                storage.Delete(a.AppointentId);
+                Boolean bla =  storage.Delete(a.AppointentId);
                 PatientView.Apps.Remove(a);
+                MessageBox.Show("Your appopintment has been canceled.");
+                this.Close();
             }
             else 
             {

@@ -37,13 +37,15 @@ namespace vezba
                 String selectedTime = time.Text;
                 DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
                 DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
+                String exam = "pregled kod lekara opste prakse";
 
-                Appointment a = new Appointment { Doctor = selectedDoctor, StartTime = dateTimeFinal };
+                Appointment a = new Appointment { Doctor = selectedDoctor, StartTime = dateTimeFinal, ApointmentDescription = exam };
                 AppointmentStorage storage = new AppointmentStorage();
-                storage.Update(a);
+                storage.Save(a);
                 PatientView.Apps.Add(a);
 
                 MessageBox.Show("Your order for appointment has been received. You will be notified about confirmation.");
+                this.Close();
             }
             else
             {

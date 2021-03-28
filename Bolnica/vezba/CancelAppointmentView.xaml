@@ -9,13 +9,14 @@
     <Grid>
         <Label Content="Cancel an appointment" Margin="10,10,603,369" FontSize="15" Background="BlanchedAlmond"/>
         <Button Margin="10,364,657,10" Content="Cancel" Height="35" FontSize="15" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click" RenderTransformOrigin="0.5,0.5"/>
-        <ListView Margin="10,50,65,60" Name="lvUsers2">
+        <ListView Margin="10,50,10,60" Name="lvUsers2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width="25" DisplayMemberBinding="{Binding AppointentId}" />
-                    <GridViewColumn Header="Time" Width="150" DisplayMemberBinding="{Binding StartTime}" />
+                    <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding AppointentId}" />
+                    <GridViewColumn Header="Time" Width="140" DisplayMemberBinding="{Binding StartTime}" />
                     <GridViewColumn Header="Duration" Width="60" DisplayMemberBinding="{Binding DurationInMunutes}" />
-                    <GridViewColumn Header="Doctor" Width="180" DisplayMemberBinding="{Binding Doctor}" />
+                    <GridViewColumn Header="Doctor's Name" Width="120" DisplayMemberBinding="{Binding Doctor.Name }" />
+                    <GridViewColumn Header="Doctor's Surname" Width="120" DisplayMemberBinding="{Binding Doctor.Surname }" />
                     <GridViewColumn Header="Description" Width="200" DisplayMemberBinding="{Binding ApointmentDescription}" />
                     <GridViewColumn Header="Room" Width="85" DisplayMemberBinding="{Binding Room}" />
                 </GridView>

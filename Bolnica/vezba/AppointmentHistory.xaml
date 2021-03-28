@@ -8,13 +8,14 @@
         Title="AppointmentHistory" Height="450" Width="800">
     <Grid>
         <Label Content="My appointment history" Margin="10,10,603,369" FontSize="15" Background="BlanchedAlmond"/>
-        <ListView Margin="10,50,65,10" Name="lvUsers">
+        <ListView Margin="10,50,10,10" Name="lvUsers">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width="25" DisplayMemberBinding="{Binding AppointentId}" />
                     <GridViewColumn Header="Time" Width="150" DisplayMemberBinding="{Binding StartTime}" />
                     <GridViewColumn Header="Duration" Width="60" DisplayMemberBinding="{Binding DurationInMunutes}" />
-                    <GridViewColumn Header="Doctor" Width="180" DisplayMemberBinding="{Binding Doctor}" />
+                    <GridViewColumn Header="Doctor's Name" Width="120" DisplayMemberBinding="{Binding Doctor.Name }" />
+                    <GridViewColumn Header="Doctor's Surname" Width="120" DisplayMemberBinding="{Binding Doctor.Surname }" />
                     <GridViewColumn Header="Description" Width="200" DisplayMemberBinding="{Binding ApointmentDescription}" />
                     <GridViewColumn Header="Room" Width="85" DisplayMemberBinding="{Binding Room}" />
                 </GridView>

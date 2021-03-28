@@ -81,6 +81,7 @@ namespace Model
                     catch (Exception e)
                     { 
                     }
+                    return true;
                 }
             }
             return false;
@@ -107,8 +108,7 @@ namespace Model
                 if (list[i].AppointentId == appointment)
                 {
                     list[i].IsDeleted = true;
-                    return true;
-
+                
                     try
                     {
                         var jsonToFile = JsonConvert.SerializeObject(list, Formatting.Indented);
@@ -120,6 +120,7 @@ namespace Model
                     catch (Exception e)
                     {
                     }
+                    return true;
                 }
             }
             return false;
