@@ -35,12 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mapster, Version=7.1.5.0, Culture=neutral, PublicKeyToken=2f39883af23c29a8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mapster.7.1.5\lib\net45\Mapster.dll</HintPath>
-    </Reference>
-    <Reference Include="Mapster.Core, Version=1.1.5.0, Culture=neutral, PublicKeyToken=e64997d676a9c1d3, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mapster.Core.1.1.5\lib\net45\Mapster.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -69,18 +63,12 @@
     </Compile>
     <Compile Include="CancelAppointmentView.xaml.cs">
       <DependentUpon>CancelAppointmentView.xaml</DependentUpon>
-	</Compile>
-    <Compile Include="AppointmentView.xaml.cs">
-      <DependentUpon>AppointmentView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CreateAppointmentView.xaml.cs">
-      <DependentUpon>CreateAppointmentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditAppointmentView.xaml.cs">
-      <DependentUpon>EditAppointmentView.xaml</DependentUpon>
+    <Compile Include="EditPatient.xaml.cs">
+      <DependentUpon>EditPatient.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerView.xaml.cs">
       <DependentUpon>ManagerView.xaml</DependentUpon>
@@ -133,14 +121,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CancelAppointmentView.xaml">
-		<SubType>Designer</SubType>
-		<Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AppointmentView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CreateAppointmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,7 +128,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditAppointmentView.xaml">
+    <Page Include="EditPatient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

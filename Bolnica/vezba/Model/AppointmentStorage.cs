@@ -2,22 +2,20 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Windows;
 
 namespace Model
 {
     public class AppointmentStorage
     {
-
         public String FileName { get; set; }
 
-        public AppointmentStorage()
+        public AppointmentStorage() 
         {
-            this.FileName = "termini.json";
+            this.FileName = "appointments.json";
         }
 
         public List<Appointment> GetAll()
-        {
+        {          
             List<Appointment> appointments = new List<Appointment>();
             try
             {
@@ -34,7 +32,7 @@ namespace Model
                 return appointments;
             }
             catch (Exception e)
-            {
+            { 
             }
             return appointments;
         }
@@ -49,7 +47,7 @@ namespace Model
                 using (StreamWriter writer = new StreamWriter(this.FileName))
                 {
                     writer.Write(jsonToFile);
-                }
+                }               
             }
             catch (Exception e)
             {
@@ -81,7 +79,7 @@ namespace Model
                         }
                     }
                     catch (Exception e)
-                    {
+                    { 
                     }
                     return true;
                 }
@@ -102,17 +100,18 @@ namespace Model
             return null;
         }
 
-        public Boolean Delete(int id)
+        public Boolean Delete(int appointment)
         {
-            List<Appointment> appointments = GetAll();
-            for (int i = 0; i < appointments.Count; i++)
+            List<Appointment> list = GetAll();
+            for (int i = 0; i < list.Count; i++) 
             {
-                if (appointments[i].AppointentId == id)
+                if (list[i].AppointentId == appointment)
                 {
-                    appointments[i].IsDeleted = true;
+                    list[i].IsDeleted = true;
+                
                     try
                     {
-                        var jsonToFile = JsonConvert.SerializeObject(appointments, Formatting.Indented);
+                        var jsonToFile = JsonConvert.SerializeObject(list, Formatting.Indented);
                         using (StreamWriter writer = new StreamWriter(this.FileName))
                         {
                             writer.Write(jsonToFile);
@@ -120,11 +119,12 @@ namespace Model
                     }
                     catch (Exception e)
                     {
-
                     }
+                    return true;
                 }
             }
             return false;
         }
+
     }
 }
