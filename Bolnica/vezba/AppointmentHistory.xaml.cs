@@ -19,10 +19,13 @@ namespace vezba
     {
         public AppointmentHistory()
         {
-            InitializeComponent();
-            AppointmentStorage storage = new AppointmentStorage();
-            List<Appointment> apps = storage.GetAll();
-            lvUsers.ItemsSource = apps;
+            InitializeComponent();           
+            lvUsers.ItemsSource = PatientView.Apps;
+
+            //for (int i = 0; i < PatientView.Apps.Count; i++)
+            //{ 
+            //    if (PatientView.Apps[i].Patient.Jmbg.Equals())
+            //}
         }
     }
 }

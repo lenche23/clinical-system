@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,22 @@ namespace vezba
         public CancelAppointmentView()
         {
             InitializeComponent();
+            lvUsers2.ItemsSource = PatientView.Apps;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvUsers2.SelectedItems.Count > 0)
+            {
+                Appointment a = (Appointment)lvUsers2.SelectedItem;
+                AppointmentStorage storage = new AppointmentStorage();
+                storage.Delete(a.AppointentId);
+                PatientView.Apps.Remove(a);
+            }
+            else 
+            {
+                MessageBox.Show("You did not pick an appointment!");
+            }
         }
     }
 }

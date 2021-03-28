@@ -32,12 +32,23 @@ namespace Model
 
         public Boolean Update(Appointment appointment)
         {
-            //for (int i = 0; i < apps.Count; i++) {
-            //    if (apps[i].AppointentId == appointment.AppointentId) {
-            //        apps[i] = appointment;
-            //    }
-            //}
-            throw new NotImplementedException();
+            List<Appointment> list = GetAll();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].AppointentId.Equals(appointment.AppointentId))
+                {
+                    list[i].ApointmentDescription = appointment.ApointmentDescription;
+                    list[i].AppointentId = appointment.AppointentId;
+                    list[i].Doctor = appointment.Doctor;
+                    list[i].DurationInMunutes = appointment.DurationInMunutes;
+                    list[i].IsDeleted = appointment.IsDeleted;
+                    list[i].Patient = appointment.Patient;
+                    list[i].Room = appointment.Room;
+                    list[i].StartTime = appointment.StartTime;
+                    return true;
+                }
+            }
+            return false;
         }
 
         public Appointment GetOne(int id)
@@ -48,6 +59,20 @@ namespace Model
             //}
              
             throw new NotImplementedException();
+        }
+
+        public Boolean Delete(int appointment)
+        {
+            List<Appointment> list = GetAll();
+            for (int i = 0; i < list.Count; i++) 
+            {
+                if (list[i].AppointentId == appointment)
+                {
+                    list[i].IsDeleted = true;
+                    return true;
+                }
+            }
+            return false;
         }
 
     }

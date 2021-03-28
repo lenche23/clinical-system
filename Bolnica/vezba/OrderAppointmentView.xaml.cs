@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -28,16 +29,26 @@ namespace vezba
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Doctor selectedDoctor = (Doctor)lvUsers.SelectedItems[0];
-            DateTime selectedDate = datePicker.SelectedDate.Value.Date;
-            String selectedTime = time.Text;
-            DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
-            DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
+            if (lvUsers.SelectedItems.Count > 0 && datePicker.SelectedDate != null && (time.Text != null && !time.Text.Equals("")))
+            {
+                Doctor selectedDoctor = (Doctor)lvUsers.SelectedItem;
+                DateTime selectedDate = datePicker.SelectedDate.Value.Date;
+                selectedDate.ToString("MM/dd/yyyy");
+                String selectedTime = time.Text;
+                DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
+                DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
 
-            Appointment order = new Appointment { Doctor = selectedDoctor, StartTime = dateTimeFinal};
-            AppointmentStorage storage = new AppointmentStorage();
-            storage.Save(order);
-            
+                Appointment a = new Appointment { Doctor = selectedDoctor, StartTime = dateTimeFinal };
+                AppointmentStorage storage = new AppointmentStorage();
+                storage.Update(a);
+                PatientView.Apps.Add(a);
+
+                MessageBox.Show("Your order for appointment has been received. You will be notified about confirmation.");
+            }
+            else
+            {
+                MessageBox.Show("Please input all data required!");
+            }
         }
     }
 }

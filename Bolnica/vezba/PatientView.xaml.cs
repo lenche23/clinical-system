@@ -1,12 +1,20 @@
-﻿using System.Windows;
+﻿using Model;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace vezba
 {
     public partial class PatientView : Window
     {
+        public static ObservableCollection<Appointment> Apps { get; set; }
         public PatientView()
         {
             InitializeComponent();
+            this.DataContext = this;
+            AppointmentStorage storage = new AppointmentStorage();
+            List<Appointment> apps = storage.GetAll();
+            Apps = new ObservableCollection<Appointment>(apps);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

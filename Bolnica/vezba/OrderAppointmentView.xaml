@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="OrderAppointmentView" Height="450" Width="800">
     <Grid>
-        <Label Content="Schedule an appointment" HorizontalAlignment="Left" Height="33" Margin="10,10,0,0" VerticalAlignment="Top" Width="189" FontSize="15"/>
-        <DatePicker Name="datePicker" HorizontalAlignment="Left" Height="29" Margin="360,67,0,0" VerticalAlignment="Top" Width="115"/>
-        <Label Margin="10,43,693,352">Pick a doctor</Label>
-        <ListView Margin="10,67,455,10" Name="lvUsers">
+        <Label Content="Schedule an appointment" HorizontalAlignment="Left" Height="33" Margin="10,10,0,0" VerticalAlignment="Top" Width="189" FontSize="15" Background="BlanchedAlmond"/>
+        <DatePicker Name="datePicker" HorizontalAlignment="Left" Height="29" Margin="224,87,0,0" VerticalAlignment="Top" Width="146"/>
+        <Label Margin="10,48,693,332">Pick a doctor</Label>
+        <ListView Margin="10,87,593,10" Name="lvUsers">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" Width="70" DisplayMemberBinding="{Binding Name}" />
@@ -19,8 +19,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Margin="360,43,129,347" Content="Please select date and write time for your appointment"/>
-        <TextBox Name ="time" Margin="480,67,197,323"></TextBox>
-        <Button Margin="360,126,288,258" Content="Schedule" FontSize="15" Background="LightGreen" Click="Button_Click"/>
+        <Label Margin="224,48,252,332" Content="Please select date and write time for your appointment"/>
+        <TextBox Name ="time" Margin="375,87,275,303" Height="33"/>
+        <Button Margin="224,162,454,221" Content="Schedule" FontSize="15" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click"/>
     </Grid>
 </Window>
