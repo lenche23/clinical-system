@@ -9,6 +9,12 @@ namespace Model
 
         public System.Collections.Generic.List<Allergen> allergen;
 
+        public MedicalRecord(string hid, string mid)
+        {
+            this.HealthInsuranceNumber = hid;
+            this.MedicalIdNumber = mid;
+        }
+
         public System.Collections.Generic.List<Allergen> Allergen
         {
             get
@@ -33,7 +39,7 @@ namespace Model
             if (newAllergen == null)
                 return;
             if (this.allergen == null)
-                this.allergen = new System.Collections.Generic.List<Allergen>();
+                allergen = new System.Collections.Generic.List<Allergen>();
             if (!this.allergen.Contains(newAllergen))
                 this.allergen.Add(newAllergen);
         }
