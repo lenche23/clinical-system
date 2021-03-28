@@ -10,7 +10,7 @@ namespace Model
     {
         public RoomStorage()
         {
-            this.FileName = "sobe.json";
+            this.FileName = "../../sobe.json";
         }
 
         public List<Room> GetAll()

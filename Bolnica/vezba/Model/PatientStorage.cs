@@ -12,7 +12,7 @@ namespace Model
 
         public PatientStorage()
         {
-            this.FileName = "pacijenti.json";
+            this.FileName = "../../pacijenti.json";
         }
         public List<Patient> GetAll()
         {
@@ -117,8 +117,6 @@ namespace Model
                 if (patients[i].Jmbg.Equals(jmbg))
                 {
                     patients[i].IsDeleted = true;
-                    
-                    return true;
 
                     try
                     {
@@ -132,6 +130,7 @@ namespace Model
                     {
 
                     }
+                    return true;
                 }
             }
             return false;

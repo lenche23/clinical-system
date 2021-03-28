@@ -1,0 +1,14 @@
+[
+  {
+    "RoomType": 0,
+    "RoomNumber": 44,
+    "RoomFloor": 0,
+    "IsDeleted": false
+  },
+  {
+    "RoomType": 0,
+    "RoomNumber": 45,
+    "RoomFloor": 2,
+    "IsDeleted": false
+  }
+]

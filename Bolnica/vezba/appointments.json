@@ -1,0 +1,276 @@
+[
+  {
+    "patient": {
+      "appointment": [],
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "StartTime": "2021-10-10T10:00:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "papanikolau",
+    "AppointentId": 0,
+    "IsDeleted": false,
+    "Doctor": null,
+    "Room": {
+      "RoomType": 0,
+      "RoomNumber": 45,
+      "RoomFloor": 2,
+      "IsDeleted": false
+    },
+    "Patient": {
+      "appointment": [],
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    }
+  },
+  {
+    "patient": {
+      "appointment": [],
+      "IsGuest": false,
+      "EmergencyContact": "06699592141",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          },
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          },
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "HealthInsuranceNumber": "07167166",
+        "MedicalIdNumber": "620178060616",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          },
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          },
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ]
+      },
+      "Appointment": [],
+      "Username": "miki17",
+      "Password": "Tin3",
+      "Name": "Mira",
+      "Surname": "Torbica",
+      "Jmbg": "1701994261473",
+      "DateOfBirth": "1994-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0627844326",
+      "Adress": "Hajduk Veljkova 42, Novi Sad",
+      "Email": "mira94@gmail.com",
+      "IdCard": "008755974",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "StartTime": "2021-10-10T10:30:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "kolonoskopija",
+    "AppointentId": 1,
+    "IsDeleted": false,
+    "Doctor": null,
+    "Room": {
+      "RoomType": 0,
+      "RoomNumber": 44,
+      "RoomFloor": 0,
+      "IsDeleted": false
+    },
+    "Patient": {
+      "appointment": [],
+      "IsGuest": false,
+      "EmergencyContact": "06699592141",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          },
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          },
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "HealthInsuranceNumber": "07167166",
+        "MedicalIdNumber": "620178060616",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          },
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          },
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ]
+      },
+      "Appointment": [],
+      "Username": "miki17",
+      "Password": "Tin3",
+      "Name": "Mira",
+      "Surname": "Torbica",
+      "Jmbg": "1701994261473",
+      "DateOfBirth": "1994-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0627844326",
+      "Adress": "Hajduk Veljkova 42, Novi Sad",
+      "Email": "mira94@gmail.com",
+      "IdCard": "008755974",
+      "Type": 3,
+      "IsDeleted": false
+    }
+  },
+  {
+    "patient": {
+      "appointment": null,
+      "IsGuest": true,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": ""
+          }
+        ],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": ""
+          }
+        ]
+      },
+      "Appointment": [],
+      "Username": "",
+      "Password": "",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "",
+      "Adress": "",
+      "Email": "",
+      "IdCard": "",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "StartTime": "2021-10-10T11:00:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "pregled prostate",
+    "AppointentId": 2,
+    "IsDeleted": false,
+    "Doctor": null,
+    "Room": {
+      "RoomType": 0,
+      "RoomNumber": 45,
+      "RoomFloor": 2,
+      "IsDeleted": false
+    },
+    "Patient": {
+      "appointment": [],
+      "IsGuest": true,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": ""
+          }
+        ],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": ""
+          }
+        ]
+      },
+      "Appointment": [],
+      "Username": "",
+      "Password": "",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "",
+      "Adress": "",
+      "Email": "",
+      "IdCard": "",
+      "Type": 3,
+      "IsDeleted": false
+    }
+  }
+]

@@ -61,11 +61,20 @@
     <Compile Include="AppointmentHistory.xaml.cs">
       <DependentUpon>AppointmentHistory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentView.xaml.cs">
+      <DependentUpon>AppointmentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CancelAppointmentView.xaml.cs">
       <DependentUpon>CancelAppointmentView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateAppointmentView.xaml.cs">
+      <DependentUpon>CreateAppointmentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditAppointmentView.xaml.cs">
+      <DependentUpon>EditAppointmentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditPatient.xaml.cs">
       <DependentUpon>EditPatient.xaml</DependentUpon>
@@ -120,11 +129,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AppointmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CancelAppointmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CreateAppointmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DoctorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditAppointmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,8 +185,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPatient.xaml"> 
-	 <SubType>Designer</SubType>
+    <Page Include="ViewPatient.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowNewRoom.xaml">

@@ -6,8 +6,37 @@
         xmlns:local="clr-namespace:vezba"
         mc:Ignorable="d"
         Title="DoctorView" Height="450" Width="800">
-    <Grid>
-        <Label Content="Doktor&#xD;&#xA;" HorizontalAlignment="Left" Margin="226,194,0,0" VerticalAlignment="Top" Height="44" Width="211"/>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Button Margin="5" Padding="5" Click="AddClick">Add</Button>
+            <Button Margin="5" Padding="5" Click="EditClick">Edit</Button>
+            <Button Margin="5" Padding="5" Click="DeleteClick">Delete</Button>
+            <Button Margin="5" Padding="5" Click="ViewClick">View</Button>
+        </StackPanel>
+        <ListView Margin="10" Name="listViewAppointments" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Start Time" Width="150" DisplayMemberBinding="{Binding StartTime, StringFormat=MM/dd/yyyy HH:mm}" />
+                    <GridViewColumn Header="Duration" Width="150" DisplayMemberBinding="{Binding DurationInMunutes}" />
+                    <GridViewColumn Header="Description" Width="150" DisplayMemberBinding="{Binding ApointmentDescription}" />
+                    <GridViewColumn Header="Patient" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1}">
+                                            <Binding Path="Patient.Name" />
+                                            <Binding Path="Patient.Surname" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Room" Width ="150" DisplayMemberBinding="{Binding Room.RoomNumber}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
 
-    </Grid>
 </Window>
