@@ -97,6 +97,15 @@
     </Compile>
     <Compile Include="ViewPatient.xaml.cs">
       <DependentUpon>ViewPatient.xaml</DependentUpon>
+	</Compile>
+    <Compile Include="WindowNewRoom.xaml.cs">
+      <DependentUpon>WindowNewRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowUpdateRoom.xaml.cs">
+      <DependentUpon>WindowUpdateRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowViewRoom.xaml.cs">
+      <DependentUpon>WindowViewRoom.xaml</DependentUpon>
     </Compile>
     <Page Include="DoctorView.xaml">
       <SubType>Designer</SubType>
@@ -134,7 +143,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewPatient.xaml">
+    <Page Include="ViewPatient.xaml"> 
+	 <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowNewRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowUpdateRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowViewRoom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,6 +178,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
