@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EBA1FA7D-DED0-404D-BDEA-F681C3A6757B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>vezba</RootNamespace>
+    <RootNamespace>Bolnica</RootNamespace>
     <AssemblyName>Bolnica</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mapster, Version=7.1.5.0, Culture=neutral, PublicKeyToken=2f39883af23c29a8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mapster.7.1.5\lib\net45\Mapster.dll</HintPath>
+    </Reference>
+    <Reference Include="Mapster.Core, Version=1.1.5.0, Culture=neutral, PublicKeyToken=e64997d676a9c1d3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mapster.Core.1.1.5\lib\net45\Mapster.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -58,17 +64,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AppointmentHistory.xaml.cs">
-      <DependentUpon>AppointmentHistory.xaml</DependentUpon>
+    <Compile Include="AppointmentView.xaml.cs">
+      <DependentUpon>AppointmentView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CancelAppointmentView.xaml.cs">
-      <DependentUpon>CancelAppointmentView.xaml</DependentUpon>
+    <Compile Include="CreateAppointmentView.xaml.cs">
+      <DependentUpon>CreateAppointmentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditPatient.xaml.cs">
-      <DependentUpon>EditPatient.xaml</DependentUpon>
+    <Compile Include="EditAppointmentView.xaml.cs">
+      <DependentUpon>EditAppointmentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerView.xaml.cs">
       <DependentUpon>ManagerView.xaml</DependentUpon>
@@ -92,35 +98,17 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserStorage.cs" />
     <Compile Include="Model\UserType.cs" />
-    <Compile Include="NewPatient.xaml.cs">
-      <DependentUpon>NewPatient.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="OrderAppointmentView.xaml.cs">
-      <DependentUpon>OrderAppointmentView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryView.xaml.cs">
       <DependentUpon>SecretaryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewPatient.xaml.cs">
-      <DependentUpon>ViewPatient.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowNewRoom.xaml.cs">
-      <DependentUpon>WindowNewRoom.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowUpdateRoom.xaml.cs">
-      <DependentUpon>WindowUpdateRoom.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowViewRoom.xaml.cs">
-      <DependentUpon>WindowViewRoom.xaml</DependentUpon>
-    </Compile>
-    <Page Include="AppointmentHistory.xaml">
+    <Page Include="AppointmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CancelAppointmentView.xaml">
+    <Page Include="CreateAppointmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,7 +116,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditPatient.xaml">
+    <Page Include="EditAppointmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,35 +136,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NewPatient.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="OrderAppointmentView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PatientView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SecretaryView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewPatient.xaml"> 
-	 <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowNewRoom.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowUpdateRoom.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowViewRoom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,9 +163,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
