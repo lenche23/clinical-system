@@ -5,30 +5,8 @@ namespace Model
 {
     public class Patient : User
     {
-        public Patient(Boolean isGuest, string name, string surname, string jmbg , DateTime date, Sex sex, string phoneNumber, string adress, string email, string idNum, string emContact, MedicalRecord med, string username, string password)
-        {
-
-            this.IsDeleted = false;
-            this.IsGuest = isGuest;
-            this.Name = name;
-            this.Surname = surname;
-            this.Jmbg = jmbg;
-            this.DateOfBirth = date;
-            this.Sex = sex;
-            this.PhoneNumber = phoneNumber;
-            this.Adress = adress;
-            this.Email = email;
-            this.IdCard = idNum;
-            this.EmergencyContact = emContact;
-            this.MedicalRecord = med;
-            this.Username = username;
-            this.Password = password;
-            this.appointment = null;
-            this.Type = UserType.patient;
-
-        }
         public Boolean IsGuest { get; set; }
-        public String EmergencyContact { get; set; }
+        public String EmergencyContant { get; set; }
 
         public MedicalRecord MedicalRecord { get; set; }
         public List<Appointment> appointment;
