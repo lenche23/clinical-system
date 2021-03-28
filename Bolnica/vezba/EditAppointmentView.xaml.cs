@@ -29,8 +29,8 @@ namespace Bolnica
         {
             InitializeComponent();
             this.selected = selected;
-            this.dw = dw;
             this.DataContext = selected;
+            this.dw = dw;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -41,7 +41,9 @@ namespace Bolnica
             var StartTime = DateTime.ParseExact(startTB.Text, format, provider);
             var DurationInMinutes = int.Parse(DurationTB.Text);
             var ApointmentDescription = DescriptionTB.Text;
-            selected.AppointentId = AppointmentID;
+            var appointment = new Appointment {AppointentId = AppointmentID, StartTime = StartTime, DurationInMunutes = DurationInMinutes, ApointmentDescription = ApointmentDescription};
+            AppointmentStorage aps = new AppointmentStorage();
+            aps.Update(appointment);
             selected.StartTime = StartTime;
             selected.DurationInMunutes = DurationInMinutes;
             selected.ApointmentDescription = ApointmentDescription;

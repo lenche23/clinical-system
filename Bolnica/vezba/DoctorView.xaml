@@ -11,6 +11,7 @@
             <Button Margin="5" Padding="5" Click="AddClick">Add</Button>
             <Button Margin="5" Padding="5" Click="EditClick">Edit</Button>
             <Button Margin="5" Padding="5" Click="DeleteClick">Delete</Button>
+            <Button Margin="5" Padding="5" Click="ViewClick">View</Button>
         </StackPanel>
         <ListView Margin="10" Name="listViewAppointments" >
             <ListView.View>

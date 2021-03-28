@@ -25,10 +25,9 @@ namespace Bolnica
     {
         private DoctorView dw;
 
-        public CreateAppointmentView(DoctorView dw)
+        public CreateAppointmentView()
         {
             InitializeComponent();
-            this.dw = dw;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -40,8 +39,9 @@ namespace Bolnica
             var DurationInMinutes = int.Parse(DurationTB.Text);
             var ApointmentDescription = DescriptionTB.Text;
             var appointment1 = new Appointment {AppointentId = AppointmentID, StartTime = StartTime, DurationInMunutes = DurationInMinutes, ApointmentDescription = ApointmentDescription, IsDeleted=false };
-            AppointmentStorage.Instance.Save(appointment1);
-            dw.listViewAppointments.Items.Refresh();
+            AppointmentStorage aps = new AppointmentStorage();
+            aps.Save(appointment1);
+            DoctorView.Appointments.Add(appointment1);
             this.Close();
         }
 
