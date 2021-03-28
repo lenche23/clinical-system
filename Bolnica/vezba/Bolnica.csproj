@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EBA1FA7D-DED0-404D-BDEA-F681C3A6757B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Bolnica</RootNamespace>
+    <RootNamespace>vezba</RootNamespace>
     <AssemblyName>Bolnica</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -58,6 +58,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppointmentHistory.xaml.cs">
+      <DependentUpon>AppointmentHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CancelAppointmentView.xaml.cs">
+      <DependentUpon>CancelAppointmentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="NewPatient.xaml.cs">
       <DependentUpon>NewPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderAppointmentView.xaml.cs">
+      <DependentUpon>OrderAppointmentView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
@@ -97,7 +106,7 @@
     </Compile>
     <Compile Include="ViewPatient.xaml.cs">
       <DependentUpon>ViewPatient.xaml</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="WindowNewRoom.xaml.cs">
       <DependentUpon>WindowNewRoom.xaml</DependentUpon>
     </Compile>
@@ -107,6 +116,14 @@
     <Compile Include="WindowViewRoom.xaml.cs">
       <DependentUpon>WindowViewRoom.xaml</DependentUpon>
     </Compile>
+    <Page Include="AppointmentHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CancelAppointmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DoctorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NewPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderAppointmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

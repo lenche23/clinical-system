@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bolnica.Properties {
+namespace vezba.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
