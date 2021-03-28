@@ -1,33 +1,57 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Model
 {
     public class AppointmentStorage
     {
         public String FileName { get; set; }
-        public List<Appointment> apps;      //OTVARAS FAJL,SA GETALL ISCITRAVAS JEDNU LINIJU ISPROCESUIRAS CEO APPOINTMENT 
 
         public AppointmentStorage() 
         {
-            apps = new List<Appointment>();
-            Appointment app1 = new Appointment { StartTime = DateTime.Now, DurationInMunutes = 45, AppointentId = 1, ApointmentDescription = "eye examination", Doctor = null, IsDeleted = false, patient = null };
-            Appointment app2 = new Appointment { StartTime = new DateTime(DateTime.Now.Year, 1, 1), DurationInMunutes = 15, AppointentId = 2, ApointmentDescription = "ear examination", Doctor = null, IsDeleted = false, patient = null };
-            apps.Add(app1);
-            apps.Add(app2);
+            this.FileName = "appointments.json";
         }
 
         public List<Appointment> GetAll()
-        {
-            //ovde file ili directory za proveru da li postoji fajl koji smo prosledili i sacuivali u fajl location i prolazimo kroz listu iz fajla i transformisali je u apps objekat
-            return apps;
-            //throw new NotImplementedException();
+        {          
+            List<Appointment> appointments = new List<Appointment>();
+            try
+            {
+                String jsonFromFile = File.ReadAllText(this.FileName);
+                List<Appointment> appointments1 = JsonConvert.DeserializeObject<List<Appointment>>(jsonFromFile);
+
+                for (int i = 0; i < appointments1.Count; i++)
+                {
+                    if (appointments1[i].IsDeleted == false)
+                    {
+                        appointments.Add(appointments1[i]);
+                    }
+                }
+                return appointments;
+            }
+            catch (Exception e)
+            { 
+            }
+            return appointments;
         }
 
         public void Save(Appointment appointment)
         {
-            apps.Add(appointment);
-            //throw new NotImplementedException();
+            List<Appointment> appointments = GetAll();
+            appointments.Add(appointment);
+            try
+            {
+                var jsonToFile = JsonConvert.SerializeObject(appointments, Formatting.Indented);
+                using (StreamWriter writer = new StreamWriter(this.FileName))
+                {
+                    writer.Write(jsonToFile);
+                }               
+            }
+            catch (Exception e)
+            {
+            }
         }
 
         public Boolean Update(Appointment appointment)
@@ -45,7 +69,18 @@ namespace Model
                     list[i].Patient = appointment.Patient;
                     list[i].Room = appointment.Room;
                     list[i].StartTime = appointment.StartTime;
-                    return true;
+
+                    try
+                    {
+                        var jsonToFile = JsonConvert.SerializeObject(list, Formatting.Indented);
+                        using (StreamWriter writer = new StreamWriter(this.FileName))
+                        {
+                            writer.Write(jsonToFile);
+                        }
+                    }
+                    catch (Exception e)
+                    { 
+                    }
                 }
             }
             return false;
@@ -53,12 +88,15 @@ namespace Model
 
         public Appointment GetOne(int id)
         {
-            //for (int i = 0; i < apps.Count; i++) {
-            //    if (apps[i].AppointentId == id)
-            //        return apps[i];
-            //}
-             
-            throw new NotImplementedException();
+            List<Appointment> appointments = GetAll();
+            for (int i = 0; i < appointments.Count; i++)
+            {
+                if (appointments[i].AppointentId == id)
+                {
+                    return appointments[i];
+                }
+            }
+            return null;
         }
 
         public Boolean Delete(int appointment)
@@ -70,6 +108,18 @@ namespace Model
                 {
                     list[i].IsDeleted = true;
                     return true;
+
+                    try
+                    {
+                        var jsonToFile = JsonConvert.SerializeObject(list, Formatting.Indented);
+                        using (StreamWriter writer = new StreamWriter(this.FileName))
+                        {
+                            writer.Write(jsonToFile);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                    }
                 }
             }
             return false;

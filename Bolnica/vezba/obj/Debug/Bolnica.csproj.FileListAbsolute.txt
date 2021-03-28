@@ -96,3 +96,6 @@ D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debu
 D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\CancelAppointmentView.g.cs
 D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\AppointmentHistory.baml
 D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\CancelAppointmentView.baml
+D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\bin\Debug\Newtonsoft.Json.dll
+D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\bin\Debug\Newtonsoft.Json.xml
+D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\obj\Debug\Bolnica.csproj.CopyComplete
