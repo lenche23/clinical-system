@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Users\graho\Desktop\Bolnica\vezba\obj\Debug\
+C:\Users\bogdana\Desktop\OISISI Projekat\clinical-system\Bolnica\vezba\obj\Debug\
 Bolnica
 none
 false
 DEBUG;TRACE
-E:\Users\graho\Desktop\Bolnica\vezba\App.xaml
-51157963367
+C:\Users\bogdana\Desktop\OISISI Projekat\clinical-system\Bolnica\vezba\App.xaml
+8273446580
 
-291210462763
-13-1505183044
-DoctorView.xaml;MainWindow.xaml;ManagerView.xaml;PatientView.xaml;SecretaryView.xaml;
+3282902591
+14-2134631357
+DoctorView.xaml;MainWindow.xaml;ManagerView.xaml;PatientView.xaml;SecretaryView.xaml;WindowNewRoom.xaml;WindowUpdateRoom.xaml;WindowViewRoom.xaml;
 
 True
 
