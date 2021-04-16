@@ -125,9 +125,18 @@ namespace Bolnica
             Patient pat = new Patient(isGuest, name, surname, jmbg, date, sex, phoneNumber, adress, email, idNum, emContact, medRecord, username, password);
             PatientStorage ps = new PatientStorage();
             ps.Update(pat);
-            List<Patient> pl = ps.GetAll();
-            ObservableCollection<Patient> t = new ObservableCollection<Patient>(ps.GetAll());
-            SecretaryView.Patients = t;
+
+            var pa = SecretaryView.Patients.FirstOrDefault(p => p.Jmbg.Equals(jmbg));
+            if(pa != null)
+            {
+                SecretaryView.Patients[SecretaryView.Patients.IndexOf(pa)] = pat;
+            }
+
+
+
+            //List<Patient> pl = ps.GetAll();
+            //ObservableCollection<Patient> t = new ObservableCollection<Patient>(ps.GetAll());
+            //SecretaryView.Patients = t;
             //MessageBox.Show(SecretaryView.Patients[0].EmergencyContact);
 
             this.Close();

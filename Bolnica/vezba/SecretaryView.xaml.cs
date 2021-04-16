@@ -78,5 +78,11 @@ namespace vezba
             }
             
         }
+
+        private void Announcements_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new Announcements();
+            s.Show();
+        }
     }
 }

@@ -1,0 +1,138 @@
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows;
+
+namespace Model
+{
+   public class AnnouncementStorage
+   {
+      public AnnouncementStorage()
+      {
+          this.FileName = "../../obavestenja.json";
+      }
+        public List<Announcement> GetAll()
+        {
+            List<Announcement> ans = this.Load();
+            return ans;
+        }
+
+      public Boolean Save(Announcement a)
+      {
+            List<Announcement> announcements = Load();
+
+            for (int i = 0; i < announcements.Count; i++)
+            {
+                if (announcements[i].Id == a.Id)
+                {
+                    return false;
+                }
+            }
+            announcements.Add(a);
+            try
+            {
+                var jsonToFile = JsonConvert.SerializeObject(announcements, Formatting.Indented);
+                using (StreamWriter writer = new StreamWriter(this.FileName))
+                {
+                    writer.Write(jsonToFile);
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            return true;
+        }
+      
+      public Boolean Update(Announcement a)
+      {
+            List<Announcement> announcements = Load();
+            for (int i = 0; i < announcements.Count; i++)
+            {
+                if (announcements[i].Id == a.Id)
+                {
+                    announcements[i].Edited = a.Edited;
+                    announcements[i].Title = a.Title;
+                    announcements[i].Content = a.Content;
+                    announcements[i].Visibility = a.Visibility;
+
+                    try
+                    {
+                        var jsonToFile = JsonConvert.SerializeObject(announcements, Formatting.Indented);
+                        using (StreamWriter writer = new StreamWriter(this.FileName))
+                        {
+                            writer.Write(jsonToFile);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                }
+            }
+            return false;
+        }
+      
+      public Announcement GetOne(int id)
+      {
+            List<Announcement> announcements = GetAll();
+            for (int i = 0; i < announcements.Count; i++)
+            {
+                if (announcements[i].Id == id)
+                {
+                    return announcements[i];
+                }
+            }
+            return null;
+        }
+      
+      public Boolean Delete(int id)
+      {
+            List<Announcement> announcements = Load();
+            for (int i = 0; i < announcements.Count; i++)
+            {
+                if (announcements[i].Id == id)
+                {
+                    announcements.RemoveAt(i);
+
+                    try
+                    {
+                        var jsonToFile = JsonConvert.SerializeObject(announcements, Formatting.Indented);
+                        using (StreamWriter writer = new StreamWriter(this.FileName))
+                        {
+                            writer.Write(jsonToFile);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+      
+      public List<Announcement> Load()
+      {
+            List<Announcement> ans = new List<Announcement>();
+            try
+            {
+                String jsonFromFile = File.ReadAllText(this.FileName);
+                List<Announcement> announcements = JsonConvert.DeserializeObject<List<Announcement>>(jsonFromFile);
+
+                return announcements;
+            }
+            catch
+            {
+
+            }
+            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
+            return ans;
+        }
+      
+      public String FileName { get; set; }
+   
+   }
+}

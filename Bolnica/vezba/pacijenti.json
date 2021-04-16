@@ -60,35 +60,80 @@
   },
   {
     "appointment": null,
-    "IsGuest": true,
+    "IsGuest": false,
     "EmergencyContact": "541356361",
     "MedicalRecord": {
       "allergen": [
         {
-          "Name": ""
+          "Name": "a"
+        },
+        {
+          "Name": "b"
+        }
+      ],
+      "HealthInsuranceNumber": "1651",
+      "MedicalIdNumber": "546356354",
+      "Allergen": [
+        {
+          "Name": "a"
+        },
+        {
+          "Name": "b"
+        }
+      ]
+    },
+    "Appointment": [],
+    "Username": "fgjcj",
+    "Password": "dfgh",
+    "Name": "Milena",
+    "Surname": "Jovanovic",
+    "Jmbg": "5406504526555",
+    "DateOfBirth": "1900-01-01T00:00:00",
+    "Sex": 1,
+    "PhoneNumber": "654216",
+    "Adress": "hgyhv hvjg",
+    "Email": "ghcd@wdfgh",
+    "IdCard": "154261",
+    "Type": 3,
+    "IsDeleted": false
+  },
+  {
+    "appointment": null,
+    "IsGuest": true,
+    "EmergencyContact": "",
+    "MedicalRecord": {
+      "allergen": [
+        {
+          "Name": "fdhjk"
+        },
+        {
+          "Name": "ghjk"
         }
       ],
       "HealthInsuranceNumber": "",
       "MedicalIdNumber": "",
       "Allergen": [
         {
-          "Name": ""
+          "Name": "fdhjk"
+        },
+        {
+          "Name": "ghjk"
         }
       ]
     },
     "Appointment": [],
     "Username": "",
     "Password": "",
-    "Name": "Milena",
-    "Surname": "Jovanovic",
-    "Jmbg": "5406504526555",
+    "Name": "Ajn",
+    "Surname": "Ibjhsvda",
+    "Jmbg": "5612564",
     "DateOfBirth": "1900-01-01T00:00:00",
-    "Sex": 1,
+    "Sex": 0,
     "PhoneNumber": "",
     "Adress": "",
     "Email": "",
     "IdCard": "",
     "Type": 3,
-    "IsDeleted": false
+    "IsDeleted": true
   }
 ]

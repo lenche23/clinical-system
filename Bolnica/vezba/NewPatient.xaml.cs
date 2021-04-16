@@ -40,10 +40,15 @@ namespace Bolnica
             string mid = MedicalIdNumber.Text;
             string hin = HealthEnsuranceNumber.Text;
             MedicalRecord medRecord = new MedicalRecord(hin, mid);
-            string[] alls = Allergens.Text.Split(',');
-            for (int i = 0; i < alls.Length; i++) {
-                Allergen a = new Allergen(alls[i].Trim()); //?
-                medRecord.AddAllergen(a);
+            string text = Allergens.Text.Trim();
+            if (!text.Equals(""))
+            {
+                string[] alls = text.Split(',');
+                for (int i = 0; i < alls.Length; i++) {
+                    Allergen a = new Allergen(alls[i].Trim()); //?
+                    medRecord.AddAllergen(a);
+                    MessageBox.Show(Convert.ToString(i));
+                }
             }
 
             string name = Name.Text;

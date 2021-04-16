@@ -1,0 +1,18 @@
+[
+  {
+    "Id": 0,
+    "Posted": "2021-04-16T00:00:00+02:00",
+    "Edited": "2021-04-16T00:00:00+02:00",
+    "Title": "Neradni dani",
+    "Content": "Prvi i drugi maj ce biti neradni.",
+    "Visibility": 0
+  },
+  {
+    "Id": 1,
+    "Posted": "2021-04-16T00:00:00+02:00",
+    "Edited": "2021-04-16T00:00:00+02:00",
+    "Title": "Nestanak struje",
+    "Content": "Najavljen nestanak struje za sutra, subotu 17.04. ",
+    "Visibility": 1
+  }
+]

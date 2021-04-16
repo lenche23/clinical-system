@@ -8,7 +8,7 @@ namespace Model
 {
     public class PatientStorage
     {
-        //private List<Patient> patient = new List<Patient>();
+        public String FileName { get; set; }
 
         public PatientStorage()
         {
@@ -39,11 +39,35 @@ namespace Model
             return ps;
         }
 
-        public void Save(Patient p)
+        public List<Patient> Load()
         {
-            List<Patient> patients = GetAll();
-            patients.Add(p);
+            List<Patient> ps = new List<Patient>();
+            try
+            {
+                String jsonFromFile = File.ReadAllText(this.FileName);
+                List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonFromFile);
+                return patients;
+            }
+            catch
+            {
 
+            }
+            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
+            return ps;
+        }
+
+        public Boolean Save(Patient p)
+        {
+            List<Patient> patients = Load();
+            
+            for (int i = 0; i < patients.Count; i++)
+            {
+                if (patients[i].Jmbg.Equals(p.Jmbg) && patients[i].IsDeleted == false)
+                {
+                    return false;
+                }
+            }
+            patients.Add(p);
             try
             {
                 var jsonToFile = JsonConvert.SerializeObject(patients, Formatting.Indented);
@@ -56,11 +80,12 @@ namespace Model
             {
 
             }
+            return true;
         }
 
         public Boolean Update(Patient p)
         {
-            List<Patient> patients = GetAll();
+            List<Patient> patients = Load();
             for (int i = 0; i < patients.Count; i++)
             {
                 if (patients[i].Jmbg.Equals(p.Jmbg))
@@ -111,7 +136,7 @@ namespace Model
 
         public Boolean Delete(string jmbg)
         {
-            List<Patient> patients = GetAll();
+            List<Patient> patients = Load();
             for (int i = 0; i < patients.Count; i++)
             {
                 if (patients[i].Jmbg.Equals(jmbg))
@@ -136,7 +161,6 @@ namespace Model
             return false;
         }
 
-        public String FileName { get; set; }
 
     }
 }

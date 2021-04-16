@@ -58,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Announcements.xaml.cs">
+      <DependentUpon>Announcements.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AppointmentHistory.xaml.cs">
       <DependentUpon>AppointmentHistory.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,9 @@
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditAnnouncement.xaml.cs">
+      <DependentUpon>EditAnnouncement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditAppointmentView.xaml.cs">
       <DependentUpon>EditAppointmentView.xaml</DependentUpon>
     </Compile>
@@ -83,6 +89,8 @@
       <DependentUpon>ManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Allergen.cs" />
+    <Compile Include="Model\Announcement.cs" />
+    <Compile Include="Model\AnnouncementStorage.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\AppointmentStorage.cs" />
     <Compile Include="Model\Doctor.cs" />
@@ -101,6 +109,10 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserStorage.cs" />
     <Compile Include="Model\UserType.cs" />
+    <Compile Include="Model\Visibility.cs" />
+    <Compile Include="NewAnnouncement.xaml.cs">
+      <DependentUpon>NewAnnouncement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewPatient.xaml.cs">
       <DependentUpon>NewPatient.xaml</DependentUpon>
     </Compile>
@@ -112,6 +124,9 @@
     </Compile>
     <Compile Include="SecretaryView.xaml.cs">
       <DependentUpon>SecretaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAnnouncement.xaml.cs">
+      <DependentUpon>ViewAnnouncement.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewPatient.xaml.cs">
       <DependentUpon>ViewPatient.xaml</DependentUpon>
@@ -125,6 +140,10 @@
     <Compile Include="WindowViewRoom.xaml.cs">
       <DependentUpon>WindowViewRoom.xaml</DependentUpon>
     </Compile>
+    <Page Include="Announcements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AppointmentHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +161,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DoctorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditAnnouncement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,6 +192,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NewAnnouncement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewPatient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -182,6 +209,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SecretaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewAnnouncement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
