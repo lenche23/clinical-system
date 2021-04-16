@@ -8,12 +8,14 @@ namespace Model
         public List<User> users = new List<User>();
         public UserStorage()
         {
-            Doctor doctor = new Doctor { Name = "Djura", Surname = "Djuric", Jmbg = "1410999855161"};
-            users.Add(doctor);
+            
         }
 
         public List<User> GetAll()
         {
+            List<User> users = new List<User>();
+            Doctor doctor = new Doctor("Milica", "Milicevic", "2205972659017", DateTime.Now, Sex.female, "06364789110", "neka ulica 98, Novi Sad", "milica@gmail.com", "008100252", 100000, null, "milica", "mica");
+            users.Add(doctor);
             return users; 
            //throw new NotImplementedException();
         }

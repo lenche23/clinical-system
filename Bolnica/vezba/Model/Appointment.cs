@@ -39,5 +39,37 @@ namespace Model
             }
         }
 
+        public String PatientName
+        {
+            get
+            {
+                if (Patient != null)
+                    return (Patient.Name + " " + Patient.Surname);
+                else
+                    return "";
+            }
+        }
+        public String RoomName
+        {
+            get
+            {
+                if (Room != null)
+                    return Convert.ToString(Room.RoomNumber);
+                else
+                    return "";
+            }
+        }
+        public String DoctorName
+        {
+            get
+            {
+                if (Doctor != null)
+                    return (Doctor.Name + " " + Doctor.Surname);
+                else 
+                    return "";
+                
+                
+            }
+        }
     }
 }
