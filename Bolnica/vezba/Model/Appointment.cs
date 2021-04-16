@@ -39,5 +39,18 @@ namespace Model
             }
         }
 
+        public Appointment(Doctor doctor, DateTime startTime) {
+            this.DurationInMunutes = 15;
+            this.ApointmentDescription = "Pregled kod lekara opšte prakse.";
+            this.IsDeleted = false;
+            this.Doctor = doctor;
+            this.StartTime = startTime;
+            //this.AppointentId = ;
+            //this.Room = ;
+            //this.Patient = ;
+        }
+
+        public Appointment() {   }
+
     }
 }

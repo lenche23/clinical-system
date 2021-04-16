@@ -19,37 +19,40 @@ namespace vezba
 {
     public partial class OrderAppointmentView : Window
     {
+
+        public static ObservableCollection<Doctor> Doctors { get; set; }
         public OrderAppointmentView()
         {
             InitializeComponent();
-            UserStorage storage = new UserStorage();
-            lvUsers.ItemsSource = storage.GetAll();
+            this.DataContext = this;
+            DoctorStorage ps = new DoctorStorage();
+            List<Doctor> temp = ps.GetAll();
+            Doctors = new ObservableCollection<Doctor>(temp);
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (lvUsers.SelectedItems.Count > 0 && datePicker.SelectedDate != null && (time.Text != null && !time.Text.Equals("")))
+            if (doctorsTable.SelectedItems.Count > 0 && datePicker.SelectedDate != null && (time.Text != null && !time.Text.Equals("")))
             {
-                Doctor selectedDoctor = (Doctor)lvUsers.SelectedItem;
+                Doctor selectedDoctor = (Doctor)doctorsTable.SelectedItem;
                 DateTime selectedDate = datePicker.SelectedDate.Value.Date;
                 selectedDate.ToString("MM/dd/yyyy");
                 String selectedTime = time.Text;
                 DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
                 DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
-                String exam = "pregled kod lekara opste prakse";
 
-                Appointment a = new Appointment { Doctor = selectedDoctor, StartTime = dateTimeFinal, ApointmentDescription = exam };
+                Appointment a = new Appointment(selectedDoctor, dateTimeFinal);
                 AppointmentStorage storage = new AppointmentStorage();
                 storage.Save(a);
                 PatientView.Apps.Add(a);
 
-                MessageBox.Show("Your order for appointment has been received. You will be notified about confirmation.");
+                MessageBox.Show("Uspešno ste zakazali pregled.");
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Please input all data required!");
+                MessageBox.Show("Molimo Vas popunite sva potrebna polja!");
             }
         }
     }
