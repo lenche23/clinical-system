@@ -12,6 +12,8 @@
           "Name": "BI-278"
         }
       ],
+      "anamnesis": null,
+      "prescription": null,
       "HealthInsuranceNumber": "07167166",
       "MedicalIdNumber": "620178060616",
       "Allergen": [
@@ -21,7 +23,9 @@
         {
           "Name": "BI-278"
         }
-      ]
+      ],
+      "Anamnesis": [],
+      "Prescription": []
     },
     "Appointment": [],
     "Username": "miki17",
@@ -71,6 +75,8 @@
           "Name": "b"
         }
       ],
+      "anamnesis": null,
+      "prescription": null,
       "HealthInsuranceNumber": "1651",
       "MedicalIdNumber": "546356354",
       "Allergen": [
@@ -80,7 +86,9 @@
         {
           "Name": "b"
         }
-      ]
+      ],
+      "Anamnesis": [],
+      "Prescription": []
     },
     "Appointment": [],
     "Username": "fgjcj",
@@ -110,6 +118,8 @@
           "Name": "ghjk"
         }
       ],
+      "anamnesis": null,
+      "prescription": null,
       "HealthInsuranceNumber": "",
       "MedicalIdNumber": "",
       "Allergen": [
@@ -119,7 +129,9 @@
         {
           "Name": "ghjk"
         }
-      ]
+      ],
+      "Anamnesis": [],
+      "Prescription": []
     },
     "Appointment": [],
     "Username": "",
@@ -133,6 +145,55 @@
     "Adress": "",
     "Email": "",
     "IdCard": "",
+    "Type": 3,
+    "IsDeleted": true
+  },
+  {
+    "appointment": null,
+    "IsGuest": false,
+    "EmergencyContact": "541341",
+    "MedicalRecord": {
+      "allergen": [
+        {
+          "Name": "ghf"
+        },
+        {
+          "Name": "hkhj"
+        },
+        {
+          "Name": "hjgjh"
+        }
+      ],
+      "anamnesis": null,
+      "prescription": null,
+      "HealthInsuranceNumber": "465168",
+      "MedicalIdNumber": "531534",
+      "Allergen": [
+        {
+          "Name": "ghf"
+        },
+        {
+          "Name": "hkhj"
+        },
+        {
+          "Name": "hjgjh"
+        }
+      ],
+      "Anamnesis": [],
+      "Prescription": []
+    },
+    "Appointment": [],
+    "Username": "gjhfh",
+    "Password": "ghjy",
+    "Name": "afd",
+    "Surname": "fd",
+    "Jmbg": "fadf",
+    "DateOfBirth": "2000-02-01T00:00:00",
+    "Sex": 1,
+    "PhoneNumber": "544",
+    "Adress": "fgdgdf",
+    "Email": "fgd@fhjg",
+    "IdCard": "453413",
     "Type": 3,
     "IsDeleted": true
   }
