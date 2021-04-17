@@ -18,7 +18,7 @@ namespace vezba
 {
     public partial class EditAppointment : Window
     {
-        public Appointment app { get; set; }
+        public Appointment App { get; set; }
         public EditAppointment(Appointment p)
         {
             InitializeComponent();
@@ -29,19 +29,23 @@ namespace vezba
             Vreme.Text = p.StartTime.ToString("HH:mm");
             Trajanje.Text = p.DurationInMunutes.ToString();
             Lekar.Text = p.Doctor.ToString();
-            //Soba.Text = p.Room.RoomNumber.ToString();
-            app = p;
+            if (p.Room == null)
+            {
+                Soba.Text = "35";
+            }
+            else {
+                Soba.Text = p.Room.RoomNumber.ToString();
+            }
+            App = p;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            int id = Int32.Parse(ID.Text);
+            int id = App.AppointentId; //Int32.Parse(ID.Text);
             DateTime datum = Datum.SelectedDate.Value.Date;
             datum.ToString("MM/dd/yyyy");
-
-            //Doctor doc = (Doctor)Lekar.Text;
-            Doctor doc = app.Doctor;//= new Doctor();
+            Doctor doc = App.Doctor;
             String selectedTime = Vreme.Text;
             DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
 
@@ -52,6 +56,7 @@ namespace vezba
             Patient patient = pps.GetOne("1008985563244");
 
             Appointment pat = new Appointment(doc, dateTimeFinal, patient);
+            pat.AppointentId = id;
             AppointmentStorage ps = new AppointmentStorage();
             ps.Update(pat);
 

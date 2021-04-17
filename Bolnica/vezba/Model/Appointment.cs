@@ -55,7 +55,6 @@ namespace Model
             this.IsDeleted = false;
             this.Doctor = doctor;
             this.StartTime = startTime;
-            this.AppointentId = rnd.Next(50, 1000);
             this.Room = room;
             this.patient = patient;
         }

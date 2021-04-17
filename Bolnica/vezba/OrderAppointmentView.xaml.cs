@@ -44,8 +44,10 @@ namespace vezba
                 PatientStorage pps = new PatientStorage();
                 Patient patient = pps.GetOne("1008985563244");
 
-                Appointment a = new Appointment(selectedDoctor, dateTimeFinal, patient);
                 AppointmentStorage storage = new AppointmentStorage();
+                int id = storage.generateNextId();
+                Appointment a = new Appointment(selectedDoctor, dateTimeFinal, patient);
+                a.AppointentId = id;
                 storage.Save(a);
                 PatientView.Apps.Add(a);
 
