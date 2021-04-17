@@ -34,5 +34,11 @@ namespace vezba
             var istorijaPregleda = new AppointmentHistory();
             istorijaPregleda.Show();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var izmeniPregled = new ChangeAppointmentView();
+            izmeniPregled.Show();
+        }
     }
 }

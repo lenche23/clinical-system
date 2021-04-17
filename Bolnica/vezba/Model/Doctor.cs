@@ -27,5 +27,7 @@ namespace Model
 
         }
 
+        public Doctor() { }
+
     }
 }

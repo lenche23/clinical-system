@@ -20,5 +20,6 @@
         <Button Content="Schedule an appointment" Margin="385,49,235,330" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click"/>
         <Button Content="Cancel an appointment" Margin="385,111,235,268" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_1"/>
         <Button Content="My appointment history" Margin="385,175,235,204" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_2"/>
+        <Button Content="Change and appointment" Margin="385,235,235,144" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_3"/>
     </Grid>
 </Window>
