@@ -45,7 +45,7 @@ namespace Model
             this.IsDeleted = false;
             this.Doctor = doctor;
             this.StartTime = startTime;
-            //this.AppointentId = ;
+            this.AppointentId = DateTime.Now.Second;
             //this.Room = ;
             //this.Patient = ;
         }
