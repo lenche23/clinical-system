@@ -41,8 +41,10 @@ namespace vezba
                 String selectedTime = time.Text;
                 DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
                 DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
+                PatientStorage pps = new PatientStorage();
+                Patient patient = pps.GetOne("1008985563244");
 
-                Appointment a = new Appointment(selectedDoctor, dateTimeFinal);
+                Appointment a = new Appointment(selectedDoctor, dateTimeFinal, patient);
                 AppointmentStorage storage = new AppointmentStorage();
                 storage.Save(a);
                 PatientView.Apps.Add(a);

@@ -18,17 +18,19 @@ namespace vezba
 {
     public partial class EditAppointment : Window
     {
+        public Appointment app { get; set; }
         public EditAppointment(Appointment p)
         {
             InitializeComponent();
-            
+
             ID.Text = p.AppointentId.ToString();
             Datum.Text = p.StartTime.ToString("dd.MM.yyyy.");
             Opis.Text = p.ApointmentDescription;
             Vreme.Text = p.StartTime.ToString("HH:mm");
             Trajanje.Text = p.DurationInMunutes.ToString();
+            Lekar.Text = p.Doctor.ToString();
             //Soba.Text = p.Room.RoomNumber.ToString();
-           
+            app = p;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,16 +41,17 @@ namespace vezba
             datum.ToString("MM/dd/yyyy");
 
             //Doctor doc = (Doctor)Lekar.Text;
-            Doctor doc = new Doctor();
-            doc.Name = "dr BLABLABALBA";
+            Doctor doc = app.Doctor;//= new Doctor();
             String selectedTime = Vreme.Text;
             DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
 
 
             DateTime dateTimeFinal = datum.Date.Add(dateTime.TimeOfDay);
 
+            PatientStorage pps = new PatientStorage();
+            Patient patient = pps.GetOne("1008985563244");
 
-            Appointment pat = new Appointment(doc, dateTimeFinal);
+            Appointment pat = new Appointment(doc, dateTimeFinal, patient);
             AppointmentStorage ps = new AppointmentStorage();
             ps.Update(pat);
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Model
 {
@@ -39,15 +40,24 @@ namespace Model
             }
         }
 
-        public Appointment(Doctor doctor, DateTime startTime) {
+        public Appointment(Doctor doctor, DateTime startTime, Patient patient) {
+            Random rnd = new Random();
+            RoomStorage rs = new RoomStorage();
+            List<Room> rooms = rs.GetAll();
+            Room room = rooms[0];
+            if (rooms.Count == 0)
+            {
+                room = null;
+            }
+
             this.DurationInMunutes = 15;
             this.ApointmentDescription = "Pregled kod lekara opšte prakse.";
             this.IsDeleted = false;
             this.Doctor = doctor;
             this.StartTime = startTime;
-            this.AppointentId = DateTime.Now.Second;
-            //this.Room = ;
-            //this.Patient = ;
+            this.AppointentId = rnd.Next(50, 1000);
+            this.Room = room;
+            this.patient = patient;
         }
 
         public Appointment() {   }

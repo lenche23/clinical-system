@@ -16,7 +16,7 @@
         <Label Content="Email:                  petarpetrovic@gmail.com" Height="30" Margin="10,200,507,189" FontSize="13"/>
         <Label Content="Phone number:   060/123-4567" Height="30" Margin="10,230,531,159" FontSize="13"/>
         <Label Content="Adress:                Boulevar of Broken Dreams 3" Height="30" Margin="10,260,496,129" FontSize="13"/>
-        <Label Content="ID card:               123456789" Height="30" Margin="10,290,626,99" FontSize="13"/>
+        <Label Content="ID card:               123456789" Height="30" Margin="10,290,507,99" FontSize="13"/>
         <Button Content="Schedule an appointment" Margin="385,49,235,330" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click"/>
         <Button Content="Cancel an appointment" Margin="385,111,235,268" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_1"/>
         <Button Content="My appointment history" Margin="385,175,235,204" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_2"/>
