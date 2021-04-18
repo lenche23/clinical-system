@@ -2,7 +2,12 @@ namespace Model
 {
     public class Speciality
     {
-        public int Name { get; set; }
+        public Speciality(string n)
+        {
+            this.Name = n;
+        }
+
+        public string Name { get; set; }
 
     }
 }

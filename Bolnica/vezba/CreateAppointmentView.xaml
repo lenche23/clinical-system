@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="CreateAppointmentView" Height="325" Width="250">
+        Title="CreateAppointmentView" Height="350" Width="250">
     <Grid Margin="10">
         <Grid.Resources>
             <Style TargetType="{x:Type TextBox}">
@@ -13,6 +13,7 @@
             </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
+            <RowDefinition />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
@@ -31,7 +32,8 @@
         <TextBlock Grid.Column="0" Grid.Row="3" Padding="10">Pregled:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="4" Padding="10">Pacijent:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="5" Padding="10">Soba:</TextBlock>
-        <DockPanel Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+        <TextBlock Grid.Column="0" Grid.Row="6" Padding="10">Lekar:</TextBlock>
+        <DockPanel Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2">
             <Button DockPanel.Dock="Left" Padding="5" Margin="5" Click="OkButtonClick">Potvrdi</Button>
             <Button DockPanel.Dock="Right" Padding="5" Margin="5" Click="CancelButtonClick">Odustani</Button>
             <Separator DockPanel.Dock="Bottom" Visibility="Hidden"></Separator>
@@ -56,5 +58,19 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <ComboBox Grid.Column="1" Grid.Row="5" Name="cmbRooms" ItemsSource="{Binding Path=Rooms}" DisplayMemberPath="RoomNumber" Margin="0,8"/>
+        <ComboBox Grid.Column="1" Grid.Row="6" Name="cmbDoctors" ItemsSource="{Binding Doctors}" Margin="0, 8">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="Name" />
+                                <Binding Path="Surname" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
     </Grid>
 </Window>

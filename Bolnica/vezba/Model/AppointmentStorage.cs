@@ -78,6 +78,7 @@ namespace Model
                     appointments[i].ApointmentDescription = appointment.ApointmentDescription;
                     appointments[i].patient = appointment.Patient;
                     appointments[i].Room = appointment.Room;
+                    appointments[i].Doctor = appointment.Doctor;
                     try
                     {
                         var jsonToFile = JsonConvert.SerializeObject(appointments, Formatting.Indented);

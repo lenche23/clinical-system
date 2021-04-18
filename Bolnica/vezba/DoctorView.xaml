@@ -16,10 +16,10 @@
         <ListView Margin="10" Name="listViewAppointments" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Početak" Width="150" DisplayMemberBinding="{Binding StartTime, StringFormat=dd/MM/yyyy HH:mm}" />
-                    <GridViewColumn Header="Trajanje" Width="150" DisplayMemberBinding="{Binding DurationInMunutes}" />
-                    <GridViewColumn Header="Pregled" Width="150" DisplayMemberBinding="{Binding ApointmentDescription}" />
-                    <GridViewColumn Header="Pacijent" Width="150">
+                    <GridViewColumn Header="Početak" Width="130" DisplayMemberBinding="{Binding StartTime, StringFormat=dd/MM/yyyy HH:mm}" />
+                    <GridViewColumn Header="Trajanje" Width="130" DisplayMemberBinding="{Binding DurationInMunutes}" />
+                    <GridViewColumn Header="Pregled" Width="130" DisplayMemberBinding="{Binding ApointmentDescription}" />
+                    <GridViewColumn Header="Pacijent" Width="130">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock>
@@ -33,7 +33,21 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Soba" Width ="150" DisplayMemberBinding="{Binding Room.RoomNumber}" />
+                    <GridViewColumn Header="Soba" Width ="130" DisplayMemberBinding="{Binding Room.RoomNumber}" />
+                    <GridViewColumn Header="Lekar" Width="130">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1}">
+                                            <Binding Path="Doctor.Name" />
+                                            <Binding Path="Doctor.Surname" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -159,6 +159,12 @@
           "Comment": "pacijentu istegnuta glava",
           "Patient": "Milena Jovanovic",
           "Doctor": "Imenko Prezimenić"
+        },
+        {
+          "Time": "2021-04-18T16:05:10.7826089+02:00",
+          "Comment": "srce joj je kamen",
+          "Patient": "Milena Jovanovic",
+          "Doctor": "Dana Dimitrijevic"
         }
       ],
       "prescription": [
@@ -170,7 +176,7 @@
           "Id": 1,
           "isActive": false,
           "Medicine": {
-            "allergen": null,
+            "allergen": [],
             "Name": "panklav",
             "Allergen": []
           }
@@ -192,6 +198,12 @@
           "Comment": "pacijentu istegnuta glava",
           "Patient": "Milena Jovanovic",
           "Doctor": "Imenko Prezimenić"
+        },
+        {
+          "Time": "2021-04-18T16:05:10.7826089+02:00",
+          "Comment": "srce joj je kamen",
+          "Patient": "Milena Jovanovic",
+          "Doctor": "Dana Dimitrijevic"
         }
       ],
       "Prescription": [

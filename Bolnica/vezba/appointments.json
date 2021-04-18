@@ -126,7 +126,25 @@
     "ApointmentDescription": "papanikolau",
     "AppointentId": 0,
     "IsDeleted": false,
-    "Doctor": null,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Stomatolog"
+      },
+      "SalaryInRsd": 100000,
+      "Username": "milica",
+      "Password": "mica",
+      "Name": "Milica",
+      "Surname": "Milicevic",
+      "Jmbg": "2205972659017",
+      "DateOfBirth": "2021-04-18T15:56:19.443366+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06364789110",
+      "Adress": "neka ulica 98, Novi Sad",
+      "Email": "milica@gmail.com",
+      "IdCard": "008100252",
+      "Type": 2,
+      "IsDeleted": false
+    },
     "Room": {
       "Capacity": 0,
       "equipment": [],
@@ -385,7 +403,25 @@
     "ApointmentDescription": "kolonoskopija",
     "AppointentId": 1,
     "IsDeleted": false,
-    "Doctor": null,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-04-18T15:56:13.5734345+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    },
     "Room": {
       "Capacity": 0,
       "equipment": [],
@@ -644,7 +680,23 @@
     "ApointmentDescription": "pregled prostate",
     "AppointentId": 2,
     "IsDeleted": false,
-    "Doctor": null,
+    "Doctor": {
+      "Speciality": null,
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-18T15:56:04.5487901+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
     "Room": {
       "Capacity": 0,
       "equipment": [],
@@ -778,7 +830,7 @@
   },
   {
     "patient": {
-      "appointment": null,
+      "appointment": [],
       "IsGuest": false,
       "EmergencyContact": "0638756221",
       "MedicalRecord": null,
@@ -802,10 +854,28 @@
     "ApointmentDescription": "test",
     "AppointentId": 55,
     "IsDeleted": false,
-    "Doctor": null,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Stomatolog"
+      },
+      "SalaryInRsd": 100000,
+      "Username": "milica",
+      "Password": "mica",
+      "Name": "Milica",
+      "Surname": "Milicevic",
+      "Jmbg": "2205972659017",
+      "DateOfBirth": "2021-04-18T15:55:55.5968718+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06364789110",
+      "Adress": "neka ulica 98, Novi Sad",
+      "Email": "milica@gmail.com",
+      "IdCard": "008100252",
+      "Type": 2,
+      "IsDeleted": false
+    },
     "Room": {
       "Capacity": 0,
-      "equipment": null,
+      "equipment": [],
       "RoomType": 0,
       "RoomNumber": 44,
       "RoomFloor": 0,
@@ -853,6 +923,12 @@
             "Comment": "pacijentu istegnuta glava",
             "Patient": "Milena Jovanovic",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
           }
         ],
         "prescription": [
@@ -886,6 +962,12 @@
             "Comment": "pacijentu istegnuta glava",
             "Patient": "Milena Jovanovic",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
           }
         ],
         "Prescription": [
@@ -924,7 +1006,25 @@
     "ApointmentDescription": "pregled srca",
     "AppointentId": 123,
     "IsDeleted": false,
-    "Doctor": null,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-04-18T15:55:48.9890054+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    },
     "Room": {
       "Capacity": 0,
       "equipment": [],
@@ -953,6 +1053,12 @@
             "Comment": "pacijentu istegnuta glava",
             "Patient": "Milena Jovanovic",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
           }
         ],
         "prescription": [
@@ -986,6 +1092,12 @@
             "Comment": "pacijentu istegnuta glava",
             "Patient": "Milena Jovanovic",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
           }
         ],
         "Prescription": [
@@ -1040,6 +1152,12 @@
             "Comment": "pacijentu istegnuta glava",
             "Patient": "Milena Jovanovic",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
           }
         ],
         "prescription": [
@@ -1073,6 +1191,12 @@
             "Comment": "pacijentu istegnuta glava",
             "Patient": "Milena Jovanovic",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
           }
         ],
         "Prescription": [
@@ -1111,7 +1235,25 @@
     "ApointmentDescription": "istezanje glave",
     "AppointentId": 1234,
     "IsDeleted": false,
-    "Doctor": null,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Stomatolog"
+      },
+      "SalaryInRsd": 100000,
+      "Username": "milica",
+      "Password": "mica",
+      "Name": "Milica",
+      "Surname": "Milicevic",
+      "Jmbg": "2205972659017",
+      "DateOfBirth": "2021-04-18T15:55:40.2660262+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06364789110",
+      "Adress": "neka ulica 98, Novi Sad",
+      "Email": "milica@gmail.com",
+      "IdCard": "008100252",
+      "Type": 2,
+      "IsDeleted": false
+    },
     "Room": {
       "Capacity": 0,
       "equipment": [],
@@ -1140,6 +1282,12 @@
             "Comment": "pacijentu istegnuta glava",
             "Patient": "Milena Jovanovic",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
           }
         ],
         "prescription": [
@@ -1173,6 +1321,239 @@
             "Comment": "pacijentu istegnuta glava",
             "Patient": "Milena Jovanovic",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "allergen": [],
+              "Name": "panklav",
+              "Allergen": []
+            }
+          }
+        ]
+      },
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    }
+  },
+  {
+    "patient": {
+      "appointment": [],
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "allergen": [],
+              "Name": "panklav",
+              "Allergen": []
+            }
+          }
+        ],
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "allergen": [],
+              "Name": "panklav",
+              "Allergen": []
+            }
+          }
+        ]
+      },
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "StartTime": "2020-05-10T17:00:00",
+    "DurationInMunutes": 45,
+    "ApointmentDescription": "vadjenje krajnika",
+    "AppointentId": 4123412,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-18T15:47:07.63347+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [],
+      "RoomType": 0,
+      "RoomNumber": 45,
+      "RoomFloor": 2,
+      "IsDeleted": false,
+      "Equipment": []
+    },
+    "Patient": {
+      "appointment": [],
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "allergen": [],
+              "Name": "panklav",
+              "Allergen": []
+            }
+          }
+        ],
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
           }
         ],
         "Prescription": [

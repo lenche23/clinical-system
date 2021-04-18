@@ -71,7 +71,7 @@
                         <ListView Margin="10,10,10,400" Name="listViewAlergens" Width="120" >
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn Header="Allergens" Width="120" DisplayMemberBinding="{Binding Name}" />
+                                    <GridViewColumn Header="Alergen" Width="120" DisplayMemberBinding="{Binding Name}" />
                                 </GridView>
                             </ListView.View>
                         </ListView>

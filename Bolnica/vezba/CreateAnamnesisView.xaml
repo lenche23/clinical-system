@@ -52,7 +52,14 @@
                 </MultiBinding>
             </TextBlock.Text>
         </TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="5" Padding="10" HorizontalAlignment="Left" Name="DoctorNameSurname">Imenko Prezimenić</TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="5" Padding="10" HorizontalAlignment="Left" Name="DoctorNameSurname">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0} {1}">
+                    <Binding Path="Doctor.Name" />
+                    <Binding Path="Doctor.Surname" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="6" Padding="10" HorizontalAlignment="Left" Text="{Binding Room.RoomNumber}"/>
     </Grid>
 </Window>
