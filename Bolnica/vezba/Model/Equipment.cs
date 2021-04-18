@@ -9,6 +9,15 @@ namespace Model
 {
    public class Equipment
    {
+
+        public Equipment(int id, String name, int quantity, EquipmentType equipmentType)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Quantity = quantity;
+            this.Type = equipmentType;
+            this.IsDeleted = false;
+        }
         public int Id { get; set; }
         public String Name { get; set; }
         public int Quantity { get; set; }

@@ -140,6 +140,15 @@
     <Compile Include="ViewPatient.xaml.cs">
       <DependentUpon>ViewPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowAddRoomEquipment.xaml.cs">
+      <DependentUpon>WindowAddRoomEquipment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowChangeItemQuantity.xaml.cs">
+      <DependentUpon>WindowChangeItemQuantity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowExchangeEquipment.xaml.cs">
+      <DependentUpon>WindowExchangeEquipment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowNewRoom.xaml.cs">
       <DependentUpon>WindowNewRoom.xaml</DependentUpon>
     </Compile>
@@ -226,6 +235,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowAddRoomEquipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowChangeItemQuantity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowExchangeEquipment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

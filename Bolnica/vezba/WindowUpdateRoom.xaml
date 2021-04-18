@@ -5,23 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="WindowNewRoom" Height="350" Width="400" Background="#FFFFF0F0">
-    <Grid>
-        <Label Content="Izmena prostorije" Margin="21,18,131,253" FontSize="18" FontFamily="Myriad Pro Cond"/>
-        <Label Content="Broj prostorije:" Width="100" Margin="15,66,277,205"/>
-        <Label Content="Sprat:" Width="100" Margin="15,171,277,99"/>
-        <Label Content="Tip prostorije:" Width="100" Margin="15,119,277,153"/>
-        <TextBox Name="BrojSobe" Text="{Binding RoomNumber, Mode=OneWay}" Margin="120,66,217,226"/>
-        <Button Width ="100" Height="30" Margin="60,247,232,42" Click="Potvrda_Button_Click">Potvrdi</Button>
-        <Button Width ="100" Height="30" Margin="232,247,60,42" Click="Odustanak_Button_Click">Odustani</Button>
+        Title="WindowUpdateRoom" Height="459.114" Width="746.331" Background="#FFFFF0F0">
+    <Grid Margin="0,0,10,-10">
+        <Label Content="Izmena prostorije" Margin="21,18,505,371" FontSize="18" FontFamily="Myriad Pro Cond"/>
+        <Label Content="Broj prostorije:" Margin="10,68,601,325"/>
+        <Label Content="Sprat:" Margin="10,152,606,228"/>
+        <Label Content="Tip prostorije:" Width="100" Margin="10,109,618,279"/>
+        <TextBox Name="BrojSobe" Text="{Binding RoomNumber, Mode=OneWay}" Margin="110,68,485,340"/>
+        <Button Width ="100" Height="30" Margin="262,389,366,19" Click="Potvrda_Button_Click">Potvrdi</Button>
+        <Button Width ="100" Height="30" Margin="386,389,242,19" Click="Odustanak_Button_Click">Odustani</Button>
 
-        <RadioButton Name ="Prvi" GroupName="Sprat" Content="Prvi" Margin="120,177,203,117"> </RadioButton>
-        <RadioButton Name ="Drugi" GroupName="Sprat" Content="Drugi" Margin="194,177,129,117"></RadioButton>
-        <RadioButton Name ="Treci" GroupName="Sprat" Content="Treci" Margin="278,177,31,117"></RadioButton>
+        <RadioButton Name ="Prvi" GroupName="Sprat" Content="Prvi" Margin="110,159,529,234"></RadioButton>
+        <RadioButton Name ="Drugi" GroupName="Sprat" Content="Drugi" Margin="194,159,442,229"></RadioButton>
+        <RadioButton Name ="Treci" GroupName="Sprat" Content="Treci" Margin="278,159,352,234"></RadioButton>
 
-        <RadioButton Name ="Pregled" GroupName="TipProstorije" Content="Pregled" Margin="120,125,207,160"></RadioButton>
-        <RadioButton Name ="Operacija" GroupName="TipProstorije" Content="Operacija" Margin="194,125,127,172"></RadioButton>
-        <RadioButton Name ="Odmor" GroupName="TipProstorije" Content="Odmor" Margin="278,125,48,172"></RadioButton>
+        <RadioButton Name ="Pregled" GroupName="TipProstorije" Content="Pregled" Margin="110,116,492,279"></RadioButton>
+        <RadioButton Name ="Operacija" GroupName="TipProstorije" Content="Operacija" Margin="278,116,332,282"></RadioButton>
+        <RadioButton Name ="Odmor" GroupName="TipProstorije" Content="Odmor" Margin="194,116,420,279"></RadioButton>
+        <RadioButton Name ="Magacin" GroupName="TipProstorije" Content="Magacin" Margin="374,116,217,288"></RadioButton>
 
+        <Button Click="Dodaj_Button_Click" Margin="55,204,575,199" BorderThickness="2" Background="#FFD9ECC9">Dodaj proizvod</Button>
+        <Button Click="Izmeni_Količinu_Button_Click" Margin="55,252,575,151" BorderThickness="2" Background="#FFD9ECC9">Izmeni količinu</Button>
+        <Button Click="Izbriši_Button_Click" Margin="55,352,577,51" BorderThickness="2" Background="#FFC5C5C5">Izbriši</Button>
+        <Button Click="Razmena_Button_Click" Margin="55,303,575,100" BorderThickness="2" Background="#FFD9ECC9">Razmena</Button>
+
+        <ListView Margin="199,204,125,81" Name="EquipmentBinding">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Naziv proizvoda" Width="100" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Količina" Width="100" DisplayMemberBinding="{Binding Quantity}" />
+                    <GridViewColumn Header="Tip" Width="100" DisplayMemberBinding="{Binding Type}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
+
+
 </Window>

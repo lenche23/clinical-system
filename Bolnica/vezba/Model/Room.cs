@@ -4,10 +4,20 @@ namespace Model
 {
     public class Room
     {
+        public Room() { }
         public RoomType RoomType { get; set; }
         public int RoomNumber { get; set; }
         public Floor RoomFloor { get; set; }
         public Boolean IsDeleted { get; set; }
+
+        public Room(RoomType roomType, int roomNumber, Floor roomFloor, int Capacity)
+        {
+            this.RoomType = roomType;
+            this.RoomNumber = roomNumber;
+            this.RoomFloor = roomFloor;
+            this.Capacity = Capacity;
+            this.IsDeleted = false;
+        }
 
         public int Capacity;
 

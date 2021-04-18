@@ -4,6 +4,7 @@ namespace Model
     {
         examinationRoom,
         operatingRoom,
-        recoveryRoom
+        recoveryRoom,
+        storageRoom
     }
 }

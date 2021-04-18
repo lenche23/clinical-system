@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-     Title="WindowNewRoom" Height="350" Width="400">
-    <Grid>
+     Title="WindowNewRoom" Height="450.636" Width="714.376">
+    <Grid Margin="0,0,-8,-12">
         <Label Content="Podaci o prostoriji" Margin="21,18,131,253" FontSize="18" FontFamily="Myriad Pro Cond"/>
         <Label Name ="BrProstorijeLabel" Content="Broj prostorije:" Margin="15,66,21,205"/>
         <Label Name ="SpratLabel" Content="Sprat:" Margin="15,171,21,99"/>

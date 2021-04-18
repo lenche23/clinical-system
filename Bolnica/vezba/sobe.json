@@ -1,14 +1,122 @@
 [
   {
+    "Capacity": 0,
+    "equipment": [
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 1,
+        "Type": 0,
+        "IsDeleted": false
+      },
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 1,
+        "Type": 0,
+        "IsDeleted": false
+      },
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 1,
+        "Type": 0,
+        "IsDeleted": false
+      },
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 1,
+        "Type": 0,
+        "IsDeleted": false
+      },
+      {
+        "Id": 2,
+        "Name": "2",
+        "Quantity": 2,
+        "Type": 0,
+        "IsDeleted": false
+      }
+    ],
     "RoomType": 0,
-    "RoomNumber": 44,
+    "RoomNumber": 1,
     "RoomFloor": 0,
-    "IsDeleted": false
+    "IsDeleted": false,
+    "Equipment": [
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 1,
+        "Type": 0,
+        "IsDeleted": false
+      },
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 1,
+        "Type": 0,
+        "IsDeleted": false
+      },
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 1,
+        "Type": 0,
+        "IsDeleted": false
+      },
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 1,
+        "Type": 0,
+        "IsDeleted": false
+      },
+      {
+        "Id": 2,
+        "Name": "2",
+        "Quantity": 2,
+        "Type": 0,
+        "IsDeleted": false
+      }
+    ]
   },
   {
+    "Capacity": 0,
+    "equipment": [
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 2,
+        "Type": 0,
+        "IsDeleted": false
+      },
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 2,
+        "Type": 0,
+        "IsDeleted": false
+      }
+    ],
     "RoomType": 0,
-    "RoomNumber": 45,
-    "RoomFloor": 2,
-    "IsDeleted": false
+    "RoomNumber": 2,
+    "RoomFloor": 0,
+    "IsDeleted": false,
+    "Equipment": [
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 2,
+        "Type": 0,
+        "IsDeleted": false
+      },
+      {
+        "Id": 1,
+        "Name": "1",
+        "Quantity": 2,
+        "Type": 0,
+        "IsDeleted": false
+      }
+    ]
   }
 ]
