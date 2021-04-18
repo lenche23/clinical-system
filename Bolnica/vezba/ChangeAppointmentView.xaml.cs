@@ -35,7 +35,7 @@ namespace vezba
         {
             if (appointmentsTable.SelectedItems.Count > 0) {
                 Appointment selectedAppointment = (Appointment)appointmentsTable.SelectedItem;
-                var s = new EditAppointment(selectedAppointment);
+                var s = new PatientEditAppointment(selectedAppointment);
                 s.Show();
             }
             else

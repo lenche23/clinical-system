@@ -82,9 +82,6 @@
     <Compile Include="EditAnnouncement.xaml.cs">
       <DependentUpon>EditAnnouncement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditAppointment.xaml.cs">
-      <DependentUpon>EditAppointment.xaml</DependentUpon>
-    </Compile>
     <Compile Include="EditAppointmentView.xaml.cs">
       <DependentUpon>EditAppointmentView.xaml</DependentUpon>
     </Compile>
@@ -136,6 +133,9 @@
     </Compile>
     <Compile Include="OrderAppointmentView.xaml.cs">
       <DependentUpon>OrderAppointmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientEditAppointment.xaml.cs">
+      <DependentUpon>PatientEditAppointment.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
@@ -190,10 +190,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditAppointment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="EditAppointmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -231,6 +227,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="OrderAppointmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientEditAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

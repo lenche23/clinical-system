@@ -16,13 +16,12 @@ using System.Windows.Shapes;
 
 namespace vezba
 {
-    public partial class EditAppointment : Window
+    public partial class PatientEditAppointment : Window
     {
         public Appointment App { get; set; }
-        public EditAppointment(Appointment p)
+        public PatientEditAppointment(Appointment p)
         {
             InitializeComponent();
-
             ID.Text = p.AppointentId.ToString();
             Datum.Text = p.StartTime.ToString("dd.MM.yyyy.");
             Opis.Text = p.ApointmentDescription;
@@ -33,7 +32,8 @@ namespace vezba
             {
                 Soba.Text = "01";
             }
-            else {
+            else
+            {
                 Soba.Text = p.Room.RoomNumber.ToString();
             }
             App = p;
@@ -47,7 +47,7 @@ namespace vezba
             if (diff > 2)
             {
                 MessageBox.Show("Pregled mozete pomeriti maksimalno za dva dana.");
-            }       
+            }
 
             int id = App.AppointentId;
             DateTime datum = Datum.SelectedDate.Value.Date;
