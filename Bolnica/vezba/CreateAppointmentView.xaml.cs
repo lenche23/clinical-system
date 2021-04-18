@@ -38,7 +38,7 @@ namespace Bolnica
             var ApointmentDescription = DescriptionTB.Text;
             var Patient = cmbPatients.SelectedItem;
             var Room = cmbRooms.SelectedItem;
-            var appointment1 = new Appointment { AppointentId = AppointmentID, StartTime = StartTime, DurationInMunutes = DurationInMinutes, ApointmentDescription = ApointmentDescription, IsDeleted = false, patient = (Patient)Patient, Room = (Room)Room };
+            var appointment1 = new Appointment { AppointentId = AppointmentID, StartTime = StartTime, DurationInMunutes = DurationInMinutes, ApointmentDescription = ApointmentDescription, IsDeleted = false, Patient = (Patient)Patient, Room = (Room)Room };
             AppointmentStorage aps = new AppointmentStorage();
             aps.Save(appointment1);
             DoctorView.Appointments.Add(appointment1);

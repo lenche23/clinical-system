@@ -78,6 +78,9 @@ namespace Model
                     appointments[i].ApointmentDescription = appointment.ApointmentDescription;
                     appointments[i].Patient = appointment.Patient;
                     appointments[i].Room = appointment.Room;
+                    appointments[i].IsDeleted = appointment.IsDeleted;
+                    appointments[i].Doctor = appointment.Doctor;
+                    appointments[i].AppointentId = appointment.AppointentId;
                     try
                     {
                         var jsonToFile = JsonConvert.SerializeObject(appointments, Formatting.Indented);
@@ -86,7 +89,7 @@ namespace Model
                             writer.Write(jsonToFile);
                         }
                     }
-                    catch (Exception e) { }
+                    catch (Exception e) { MessageBox.Show("aloooooooooooooooooooooooooooo"); }
                 }
             }
             return false;

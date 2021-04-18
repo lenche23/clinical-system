@@ -1,6 +1,5 @@
 [
   {
-    "patient": null,
     "StartTime": "2021-04-30T13:55:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opšte prakse.",
@@ -11,7 +10,6 @@
     "Patient": null
   },
   {
-    "patient": null,
     "StartTime": "2021-04-29T13:13:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opšte prakse.",
@@ -38,26 +36,6 @@
     "Patient": null
   },
   {
-    "patient": {
-      "appointment": [],
-      "IsGuest": false,
-      "EmergencyContact": "0638756221",
-      "MedicalRecord": null,
-      "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
-      "Type": 3,
-      "IsDeleted": false
-    },
     "StartTime": "2021-04-29T13:13:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opšte prakse.",
@@ -113,26 +91,6 @@
     }
   },
   {
-    "patient": {
-      "appointment": [],
-      "IsGuest": false,
-      "EmergencyContact": "0638756221",
-      "MedicalRecord": null,
-      "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
-      "Type": 3,
-      "IsDeleted": false
-    },
     "StartTime": "2021-04-26T12:00:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opšte prakse.",
@@ -188,26 +146,6 @@
     }
   },
   {
-    "patient": {
-      "appointment": [],
-      "IsGuest": false,
-      "EmergencyContact": "0638756221",
-      "MedicalRecord": null,
-      "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
-      "Type": 3,
-      "IsDeleted": false
-    },
     "StartTime": "2021-04-27T10:35:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opšte prakse.",
@@ -263,26 +201,6 @@
     }
   },
   {
-    "patient": {
-      "appointment": [],
-      "IsGuest": false,
-      "EmergencyContact": "0638756221",
-      "MedicalRecord": null,
-      "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
-      "Type": 3,
-      "IsDeleted": false
-    },
     "StartTime": "2021-04-30T08:45:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opšte prakse.",
@@ -336,26 +254,6 @@
     }
   },
   {
-    "patient": {
-      "appointment": [],
-      "IsGuest": false,
-      "EmergencyContact": "0638756221",
-      "MedicalRecord": null,
-      "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
-      "Type": 3,
-      "IsDeleted": false
-    },
     "StartTime": "2021-04-14T16:16:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opšte prakse.",
@@ -411,26 +309,6 @@
     }
   },
   {
-    "patient": {
-      "appointment": [],
-      "IsGuest": false,
-      "EmergencyContact": "0638756221",
-      "MedicalRecord": null,
-      "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
-      "Type": 3,
-      "IsDeleted": false
-    },
     "StartTime": "2021-04-21T21:21:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opšte prakse.",
@@ -486,27 +364,7 @@
     }
   },
   {
-    "patient": {
-      "appointment": null,
-      "IsGuest": false,
-      "EmergencyContact": "0638756221",
-      "MedicalRecord": null,
-      "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
-      "Type": 3,
-      "IsDeleted": false
-    },
-    "StartTime": "2021-04-27T18:18:00",
+    "StartTime": "2021-04-30T23:23:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opšte prakse.",
     "AppointentId": 8,
@@ -538,7 +396,62 @@
       "Equipment": []
     },
     "Patient": {
-      "appointment": [],
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    }
+  },
+  {
+    "StartTime": "2021-05-09T09:09:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opšte prakse.",
+    "AppointentId": 9,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Stomatolog"
+      },
+      "SalaryInRsd": 100000,
+      "Username": "milica",
+      "Password": "mica",
+      "Name": "Milica",
+      "Surname": "Milicevic",
+      "Jmbg": "2205972659017",
+      "DateOfBirth": "2021-04-18T02:19:15.3982394+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06364789110",
+      "Adress": "neka ulica 98, Novi Sad",
+      "Email": "milica@gmail.com",
+      "IdCard": "008100252",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [],
+      "RoomType": 0,
+      "RoomNumber": 44,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": []
+    },
+    "Patient": {
+      "appointment": null,
       "IsGuest": false,
       "EmergencyContact": "0638756221",
       "MedicalRecord": null,

@@ -13,32 +13,8 @@ namespace Model
 
         public Doctor Doctor { get; set; }
         public Room Room { get; set; }
-        public Patient patient;
 
-        public Patient Patient
-        {
-            get
-            {
-                return patient;
-            }
-            set
-            {
-                if (this.patient == null || !this.patient.Equals(value))
-                {
-                    if (this.patient != null)
-                    {
-                        Patient oldPatient = this.patient;
-                        this.patient = null;
-                        oldPatient.RemoveAppointment(this);
-                    }
-                    if (value != null)
-                    {
-                        this.patient = value;
-                        this.patient.AddAppointment(this);
-                    }
-                }
-            }
-        }
+        public Patient Patient { get; set; }
 
         public Appointment(Doctor doctor, DateTime startTime, Patient patient) {
             Random rnd = new Random();
@@ -56,7 +32,7 @@ namespace Model
             this.Doctor = doctor;
             this.StartTime = startTime;
             this.Room = room;
-            this.patient = patient;
+            this.Patient = patient;
         }
 
         public Appointment() {   }

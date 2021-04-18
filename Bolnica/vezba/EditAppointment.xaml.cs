@@ -42,7 +42,7 @@ namespace vezba
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            int id = App.AppointentId; //Int32.Parse(ID.Text);
+            int id = App.AppointentId;
             DateTime datum = Datum.SelectedDate.Value.Date;
             datum.ToString("MM/dd/yyyy");
             Doctor doc = App.Doctor;
