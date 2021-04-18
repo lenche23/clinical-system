@@ -40,7 +40,7 @@ namespace Model
             return rs;
         }
 
-        public void Save(Room room)
+        public Boolean Save(Room room)
         {
             List<Room> rooms = GetAll();
             rooms.Add(room);
@@ -57,6 +57,8 @@ namespace Model
             {
 
             }
+
+            return true;
         }
 
         public Boolean Update(Room room)
@@ -68,7 +70,7 @@ namespace Model
                 {
                     rooms[i].RoomFloor = room.RoomFloor;
                     rooms[i].RoomType = room.RoomType;
-
+                    rooms[i].equipment = room.equipment;
 
                     try
                     {
@@ -130,7 +132,25 @@ namespace Model
         }
 
 
+
         public String FileName { get; set; }
+
+        public List<Room> Load()
+        {
+            List<Room> r = new List<Room>();
+            try
+            {
+                String jsonFromFile = File.ReadAllText(this.FileName);
+                List<Room> rooms = JsonConvert.DeserializeObject<List<Room>>(jsonFromFile);
+                return rooms;
+            }
+            catch
+            {
+
+            }
+            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
+            return r;
+        }
 
     }
 }
