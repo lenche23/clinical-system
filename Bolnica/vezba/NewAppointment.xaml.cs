@@ -59,12 +59,21 @@ namespace vezba
 
             Appointment appointment = new Appointment(id, patient, doctor, room, startTime, duration, apDesc);
 
-            Boolean b = aps.Save(appointment);
-            if (b)
+            if (GetOverlapingAppoinments(appointment).Count == 0)
             {
-                SecretaryAppointments.Appointments.Add(appointment);
+                Boolean b = aps.Save(appointment);
+                if (b)
+                {
+                    SecretaryAppointments.Appointments.Add(appointment);
+                }
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.");
+            }
+
+            
 
         }
         
@@ -103,14 +112,6 @@ namespace vezba
             return true;
         }
 
-        private Boolean ValidateTime()
-        {
-            if (DateTime.Compare(GetTime(), DateTime.Now) < 0)
-                return false;
-            else
-                return true;
-        }
-
         private DateTime GetTime()
         {
             DateTime selectedDate = new DateTime(1900, 1, 1);
@@ -133,6 +134,44 @@ namespace vezba
             return startTime;
         }
 
-        
+        private List<Appointment> GetOverlapingAppoinments(Appointment appointment)
+        {
+            AppointmentStorage aps = new AppointmentStorage();
+            List<Appointment> appointments = aps.GetAll();
+            List<Appointment> overlaping = new List<Appointment>();
+            for (int i = 0; i < appointments.Count; i++)
+            {
+                if(this.DoShareResources(appointment, appointments[i]))
+                {
+                    overlaping.Add(appointments[i]);
+                }
+            }
+            return overlaping;
+        }
+
+        private Boolean DoShareResources(Appointment a1, Appointment a2)
+        {
+            if (a1.Doctor.Jmbg.Equals(a2.Doctor.Jmbg) || a1.Patient.Jmbg.Equals(a2.Patient.Jmbg) || a1.Room.RoomNumber == a2.Room.RoomNumber)
+            {
+                DateTime beginning1 = a1.StartTime;
+                DateTime end1 = a1.StartTime.AddMinutes(a1.DurationInMunutes);
+                DateTime beginning2 = a2.StartTime;
+                DateTime end2 = a2.StartTime.AddMinutes(a2.DurationInMunutes);
+                if (DateTime.Compare(end2, beginning1) <= 0) //drugi zavrsava pre pocetka prvog
+                {
+                    return false;
+                }
+                else if (DateTime.Compare(end1, beginning2) <= 0) //prvi zavrsava pre pocetka drugog
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return false;
+            
+        }
     }
 }

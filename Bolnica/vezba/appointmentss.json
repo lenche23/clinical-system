@@ -224,5 +224,171 @@
     "PatientName": "Petar Ilic",
     "RoomName": "44",
     "DoctorName": "Pera Peric"
+  },
+  {
+    "StartTime": "2021-04-28T11:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "",
+    "AppointentId": 3,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Stomatolog"
+      },
+      "NameAndSurname": "Milica Milicevic",
+      "SalaryInRsd": 100000,
+      "Username": "milica",
+      "Password": "mica",
+      "Name": "Milica",
+      "Surname": "Milicevic",
+      "Jmbg": "2205972659017",
+      "DateOfBirth": "2021-04-18T03:05:03.6768501+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06364789110",
+      "Adress": "neka ulica 98, Novi Sad",
+      "Email": "milica@gmail.com",
+      "IdCard": "008100252",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [],
+      "RoomType": 0,
+      "RoomNumber": 45,
+      "RoomFloor": 2,
+      "IsDeleted": false,
+      "Equipment": []
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "06699592141",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "anamnesis": null,
+        "prescription": null,
+        "HealthInsuranceNumber": "07167166",
+        "MedicalIdNumber": "620178060616",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": []
+      },
+      "NameAndSurname": "Mira Torbica",
+      "Appointment": [],
+      "Username": "miki17",
+      "Password": "Tin3",
+      "Name": "Mira",
+      "Surname": "Torbica",
+      "Jmbg": "1701994261473",
+      "DateOfBirth": "1994-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0627844326",
+      "Adress": "Hajduk Veljkova 42, Novi Sad",
+      "Email": "mira94@gmail.com",
+      "IdCard": "008755974",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Mira Torbica",
+    "RoomName": "45",
+    "DoctorName": "Milica Milicevic"
+  },
+  {
+    "StartTime": "2021-04-28T08:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "",
+    "AppointentId": 4,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Oftalmolog"
+      },
+      "NameAndSurname": "Pera Peric",
+      "SalaryInRsd": 90000,
+      "Username": "pera",
+      "Password": "perica",
+      "Name": "Pera",
+      "Surname": "Peric",
+      "Jmbg": "1541546542644",
+      "DateOfBirth": "2021-04-18T03:34:21.8681549+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0621846712",
+      "Adress": "neka ulica 45, Novi Sad",
+      "Email": "pera@gmail.com",
+      "IdCard": "007123352",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [],
+      "RoomType": 0,
+      "RoomNumber": 45,
+      "RoomFloor": 2,
+      "IsDeleted": false,
+      "Equipment": []
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": null,
+        "prescription": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "45",
+    "DoctorName": "Pera Peric"
   }
 ]

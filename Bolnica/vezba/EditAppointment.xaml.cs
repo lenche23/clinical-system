@@ -49,17 +49,30 @@ namespace vezba
 
             DateTime startTime = GetTime();
             this.appointment.StartTime = startTime;
+            if(ValidateTime() == false)
+            {
+                MessageBox.Show("Izabrani datum je vec prosao!");
+                return;
+            }
 
             AppointmentStorage aps = new AppointmentStorage();
-            aps.Update(this.appointment);
             Appointment appo = new Appointment(appointment.AppointentId, appointment.Patient, appointment.Doctor, appointment.Room, startTime, appointment.DurationInMunutes, appointment.ApointmentDescription);
             
-            var ap = SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(this.appointment.AppointentId));
-            if (ap != null)
+
+            if (GetOverlapingAppoinments(appointment).Count == 0)
             {
-                SecretaryAppointments.Appointments[SecretaryAppointments.Appointments.IndexOf(ap)] = appo;
+                aps.Update(this.appointment);
+                var ap = SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(this.appointment.AppointentId));
+                if (ap != null)
+                {
+                    SecretaryAppointments.Appointments[SecretaryAppointments.Appointments.IndexOf(ap)] = appo;
+                }
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.");
+            }
 
         }
 
@@ -90,6 +103,46 @@ namespace vezba
             DateTime.TryParseExact(selectedTime, "HH:mm", null, System.Globalization.DateTimeStyles.None, out time);
             DateTime startTime = selectedDate.Date.Add(time.TimeOfDay);
             return startTime;
+        }
+
+        private List<Appointment> GetOverlapingAppoinments(Appointment appointment)
+        {
+            AppointmentStorage aps = new AppointmentStorage();
+            List<Appointment> appointments = aps.GetAll();
+            List<Appointment> overlaping = new List<Appointment>();
+            for (int i = 0; i < appointments.Count; i++)
+            {
+                if (this.DoShareResources(appointment, appointments[i]))
+                {
+                    overlaping.Add(appointments[i]);
+                }
+            }
+            return overlaping;
+        }
+
+        private Boolean DoShareResources(Appointment a1, Appointment a2)
+        {
+            if (a1.Doctor.Jmbg.Equals(a2.Doctor.Jmbg) || a1.Patient.Jmbg.Equals(a2.Patient.Jmbg) || a1.Room.RoomNumber == a2.Room.RoomNumber)
+            {
+                DateTime beginning1 = a1.StartTime;
+                DateTime end1 = a1.StartTime.AddMinutes(a1.DurationInMunutes);
+                DateTime beginning2 = a2.StartTime;
+                DateTime end2 = a2.StartTime.AddMinutes(a2.DurationInMunutes);
+                if (DateTime.Compare(end2, beginning1) <= 0) //drugi zavrsava pre pocetka prvog
+                {
+                    return false;
+                }
+                else if (DateTime.Compare(end1, beginning2) <= 0) //prvi zavrsava pre pocetka drugog
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            return false;
+
         }
     }
 }
