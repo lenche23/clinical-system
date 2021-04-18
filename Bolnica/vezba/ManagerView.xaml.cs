@@ -77,5 +77,11 @@ namespace vezba
                 MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
+
+        private void Announcements_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new ViewMyAnnouncements(UserType.menager);
+            s.Show();
+        }
     }
 }

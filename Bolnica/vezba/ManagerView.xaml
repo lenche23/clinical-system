@@ -25,7 +25,7 @@
         <Button Width="120" Height="40" Margin="45,133,627,53" Background="#FFFFD6C2" Click="Edit_Room_Button_Click">Izmeni prostoriju</Button>
         <Button Width="120" Height="40" Margin="45,201,627,184" Background="#FFFFD6C2" Click="Delete_Room_Button_Click" Grid.RowSpan="2">Ukloni prostoriju</Button>
         <Button Width="120" Height="40" Margin="45,39,627,120" Background="#FFFFD6C2" Click="View_Room_Button_Click" Grid.Row="1">Prikaži prostoriju</Button>
-
+        <Button Width="120" Height="40" Margin="45,106,627,53" Background="#FFFFD6C2" Click="Announcements_Button_Click" Grid.Row="1">Obaveštenja</Button>
 
 
     </Grid>
