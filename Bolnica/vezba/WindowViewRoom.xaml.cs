@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Bolnica
     {
         private Room selected;
         private ManagerView mv;
+        public static ObservableCollection<Equipment> EquipmentList { get; set; }
         public WindowViewRoom(Room selected, ManagerView mv)
         {
             InitializeComponent();
@@ -57,6 +59,10 @@ namespace Bolnica
             {
                 TipLabel.Content = TipLabel.Content + " Prostorija za odmor";
             }
+
+            List<Equipment> equipmentList = selected.equipment;
+            EquipmentList = new ObservableCollection<Equipment>(equipmentList);
+            EquipmentBinding.ItemsSource = EquipmentList;
         }
     }
 }

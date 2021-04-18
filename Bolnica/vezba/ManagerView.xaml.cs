@@ -10,7 +10,7 @@ namespace vezba
     public partial class ManagerView : Window
     {
         public static ObservableCollection<Room> Rooms { get; set; }
-
+        public static List<Room> rooms;
         private RoomStorage storage;
 
         public ManagerView()
@@ -18,7 +18,7 @@ namespace vezba
             InitializeComponent();
             this.DataContext = this;
             storage = new RoomStorage();
-            List<Room> rooms = storage.GetAll();
+            rooms = storage.GetAll();
             Rooms = new ObservableCollection<Room>(rooms);
             lvDataBinding.ItemsSource = Rooms;
         }

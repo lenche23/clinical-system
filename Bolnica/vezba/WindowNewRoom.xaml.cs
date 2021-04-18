@@ -65,7 +65,8 @@ namespace Bolnica
                 type = RoomType.recoveryRoom;
             }
 
-            var newRoom = new Room() { RoomNumber = int.Parse(BrojSobe.Text), RoomFloor = floor, RoomType = type };
+            var newRoom = new Room(int.Parse(BrojSobe.Text), floor, type) {};
+
             RoomStorage storage = new RoomStorage();
             storage.Save(newRoom);
             ManagerView.Rooms.Add(newRoom);

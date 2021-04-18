@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +20,14 @@ namespace Bolnica
     /// <summary>
     /// Interaction logic for WindowUpdateRoom.xaml
     /// </summary>
+    /// 
     public partial class WindowUpdateRoom : Window
     {
         private Room selected;
         private ManagerView mv;
+
+        public static ObservableCollection<Equipment> EquipmentList { get; set; }
+        private EquipmentStorage eq_storage;
 
         public WindowUpdateRoom(Room selected, ManagerView mv)
         {
@@ -56,8 +61,9 @@ namespace Bolnica
             {
                 Odmor.IsChecked = true;
             }
-
-
+            List<Equipment> equipmentList = selected.equipment;
+            EquipmentList = new ObservableCollection<Equipment>(equipmentList);
+            EquipmentBinding.ItemsSource = EquipmentList;
         }
 
         private void Potvrda_Button_Click(object sender, RoutedEventArgs e)
@@ -97,7 +103,6 @@ namespace Bolnica
             {
                 selected.RoomType = RoomType.recoveryRoom;
             }
-
             mv.lvDataBinding.Items.Refresh();
             this.Close();
         }
@@ -105,6 +110,61 @@ namespace Bolnica
         private void Odustanak_Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Dodaj_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new WindowAddRoomEquipment(this.selected);
+            s.Show();
+        }
+
+        private void Izbriši_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (EquipmentBinding.SelectedIndex > -1)
+            {
+                Equipment eq = (Equipment)EquipmentBinding.SelectedItem;
+                 this.selected.equipment.Remove(eq);
+                 EquipmentList.Remove(eq);
+                RoomStorage rs = new RoomStorage();
+                 rs.Update(this.selected);
+            }
+
+            else
+            {
+                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+            }
+
+        }
+
+        private void Izmeni_Količinu_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (EquipmentBinding.SelectedIndex > -1)
+            {
+                Equipment selected_e = (Equipment)EquipmentBinding.SelectedItems[0];
+                var s = new WindowChangeItemQuantity(selected_e, this, this.selected);
+                s.Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Ni jedan proizvod nije selektovan!");
+            }
+        }
+
+        private void Razmena_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (EquipmentBinding.SelectedIndex > -1)
+            {
+                Equipment eq_selected = (Equipment)EquipmentBinding.SelectedItems[0];
+            var s = new WindowExchangeEquipment(eq_selected, this, this.selected, this.mv);
+            s.Show();
+
+            }
+
+            else
+            {
+                MessageBox.Show("Ni jedan proizvod nije selektovan!");
+            }
         }
     }
 }

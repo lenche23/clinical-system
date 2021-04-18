@@ -40,7 +40,7 @@ namespace Model
             return rs;
         }
 
-        public void Save(Room room)
+        public Boolean Save(Room room)
         {
             List<Room> rooms = GetAll();
             rooms.Add(room);
@@ -57,6 +57,8 @@ namespace Model
             {
 
             }
+
+            return true;
         }
 
         public Boolean Update(Room room)
@@ -68,7 +70,7 @@ namespace Model
                 {
                     rooms[i].RoomFloor = room.RoomFloor;
                     rooms[i].RoomType = room.RoomType;
-
+                    rooms[i].equipment = room.equipment;
 
                     try
                     {
