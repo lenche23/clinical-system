@@ -14,5 +14,13 @@
     "Title": "Nestanak struje",
     "Content": "Najavljen nestanak struje za sutra, subotu 17.04. ",
     "Visibility": 1
+  },
+  {
+    "Id": 2,
+    "Posted": "2021-04-17T00:00:00+02:00",
+    "Edited": "2021-04-18T00:00:00+02:00",
+    "Title": "Lep naslov",
+    "Content": "hjfvmn",
+    "Visibility": 0
   }
 ]

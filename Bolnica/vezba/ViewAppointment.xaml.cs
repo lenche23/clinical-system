@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,22 @@ namespace vezba
     /// </summary>
     public partial class ViewAppointment : Window
     {
-        public ViewAppointment()
+        public ViewAppointment(Appointment appointment)
         {
             InitializeComponent();
+            Patient.Content = appointment.PatientName;
+            Doctor.Content = appointment.DoctorName;
+            Room.Content = appointment.RoomName;
+            Date.Content = appointment.StartTime.ToString("dd.MM.yyyy.");
+            Time.Content = appointment.StartTime.ToString("HH:mm");
+            Duration.Content = appointment.DurationInMunutes;
+            Duration.Content += " minuta";
+            Description.Text = appointment.ApointmentDescription;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

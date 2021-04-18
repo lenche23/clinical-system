@@ -12,9 +12,25 @@ namespace Model
 
         public Doctor Doctor { get; set; }
         public Room Room { get; set; }
-        public Patient patient;
+        // public Patient patient;
 
-        public Patient Patient
+        public Patient Patient { get; set; }
+
+
+        public Appointment(int id, Patient patient, Doctor doctor, Room room, DateTime startTime, int duration, string apDesc)
+        {
+            AppointentId = id;
+            //this.patient = patient;
+            Patient = patient;
+            Doctor = doctor;
+            Room = room;
+            StartTime = startTime;
+            DurationInMunutes = duration;
+            ApointmentDescription = apDesc;
+            IsDeleted = false;
+        }
+
+        /*public Patient Patient
         {
             get
             {
@@ -37,7 +53,7 @@ namespace Model
                     }
                 }
             }
-        }
+        }*/
 
         public String PatientName
         {

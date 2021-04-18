@@ -25,5 +25,20 @@ namespace Model
         public String Title { get; set; }
         public String Content { get; set; }
         public Visibility Visibility { get; set; }
+
+        public string FormatedDatePosted
+        {
+            get
+            {
+                return Posted.ToString("dd.MM.yyyy.");
+            }
+        }
+        public string FormatedDateEdited
+        {
+            get
+            {
+                return Edited.ToString("dd.MM.yyyy.");
+            }
+        }
     }
 }

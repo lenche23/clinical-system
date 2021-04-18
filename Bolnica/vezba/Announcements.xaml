@@ -12,7 +12,7 @@
             <DataGrid x:Name="announcementTable" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding Ans}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="180" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Obaveštenje" Binding="{Binding Title}"  Width="*"/>
-                    <DataGridTextColumn Header="Datum" Binding="{Binding Posted}" Width="100"/>
+                    <DataGridTextColumn Header="Datum" Binding="{Binding FormatedDatePosted}" Width="100"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Button Content="Novo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Margin="434,0,-117,0" Height="29" Click="New_Button_Click"/>

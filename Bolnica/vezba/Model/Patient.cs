@@ -31,6 +31,15 @@ namespace Model
         public String EmergencyContact { get; set; }
 
         public MedicalRecord MedicalRecord { get; set; }
+
+        public string NameAndSurname
+        {
+            get
+            {
+                return Name + " " + Surname;
+            }
+        }
+
         public List<Appointment> appointment;
 
 

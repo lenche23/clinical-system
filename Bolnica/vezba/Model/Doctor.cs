@@ -27,5 +27,12 @@ namespace Model
 
         }
 
+        public string NameAndSurname
+        {
+            get
+            {
+                return Name + " " + Surname;
+            }
+        }
     }
 }

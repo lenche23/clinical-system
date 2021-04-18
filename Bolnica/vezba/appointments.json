@@ -5,6 +5,7 @@
       "IsGuest": false,
       "EmergencyContact": "0638756221",
       "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
       "Appointment": [],
       "Username": "pera85",
       "Password": "p123",
@@ -27,16 +28,20 @@
     "IsDeleted": false,
     "Doctor": null,
     "Room": {
+      "Capacity": 0,
+      "equipment": null,
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
-      "IsDeleted": false
+      "IsDeleted": false,
+      "Equipment": []
     },
     "Patient": {
       "appointment": [],
       "IsGuest": false,
       "EmergencyContact": "0638756221",
       "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
       "Appointment": [],
       "Username": "pera85",
       "Password": "p123",
@@ -51,7 +56,10 @@
       "IdCard": "007265981",
       "Type": 3,
       "IsDeleted": false
-    }
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "45",
+    "DoctorName": ""
   },
   {
     "patient": {
@@ -79,6 +87,8 @@
             "Name": "BI-278"
           }
         ],
+        "anamnesis": null,
+        "prescription": null,
         "HealthInsuranceNumber": "07167166",
         "MedicalIdNumber": "620178060616",
         "Allergen": [
@@ -100,8 +110,11 @@
           {
             "Name": "BI-278"
           }
-        ]
+        ],
+        "Anamnesis": [],
+        "Prescription": []
       },
+      "NameAndSurname": "Mira Torbica",
       "Appointment": [],
       "Username": "miki17",
       "Password": "Tin3",
@@ -124,10 +137,13 @@
     "IsDeleted": false,
     "Doctor": null,
     "Room": {
+      "Capacity": 0,
+      "equipment": null,
       "RoomType": 0,
       "RoomNumber": 44,
       "RoomFloor": 0,
-      "IsDeleted": false
+      "IsDeleted": false,
+      "Equipment": []
     },
     "Patient": {
       "appointment": [],
@@ -154,6 +170,8 @@
             "Name": "BI-278"
           }
         ],
+        "anamnesis": [],
+        "prescription": [],
         "HealthInsuranceNumber": "07167166",
         "MedicalIdNumber": "620178060616",
         "Allergen": [
@@ -175,8 +193,11 @@
           {
             "Name": "BI-278"
           }
-        ]
+        ],
+        "Anamnesis": [],
+        "Prescription": []
       },
+      "NameAndSurname": "Mira Torbica",
       "Appointment": [],
       "Username": "miki17",
       "Password": "Tin3",
@@ -191,11 +212,14 @@
       "IdCard": "008755974",
       "Type": 3,
       "IsDeleted": false
-    }
+    },
+    "PatientName": "Mira Torbica",
+    "RoomName": "44",
+    "DoctorName": ""
   },
   {
     "patient": {
-      "appointment": null,
+      "appointment": [],
       "IsGuest": true,
       "EmergencyContact": "541356361",
       "MedicalRecord": {
@@ -204,14 +228,19 @@
             "Name": ""
           }
         ],
+        "anamnesis": null,
+        "prescription": null,
         "HealthInsuranceNumber": "",
         "MedicalIdNumber": "",
         "Allergen": [
           {
             "Name": ""
           }
-        ]
+        ],
+        "Anamnesis": [],
+        "Prescription": []
       },
+      "NameAndSurname": "Milena Jovanovic",
       "Appointment": [],
       "Username": "",
       "Password": "",
@@ -234,10 +263,13 @@
     "IsDeleted": false,
     "Doctor": null,
     "Room": {
+      "Capacity": 0,
+      "equipment": null,
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
-      "IsDeleted": false
+      "IsDeleted": false,
+      "Equipment": []
     },
     "Patient": {
       "appointment": [],
@@ -249,14 +281,19 @@
             "Name": ""
           }
         ],
+        "anamnesis": [],
+        "prescription": [],
         "HealthInsuranceNumber": "",
         "MedicalIdNumber": "",
         "Allergen": [
           {
             "Name": ""
           }
-        ]
+        ],
+        "Anamnesis": [],
+        "Prescription": []
       },
+      "NameAndSurname": "Milena Jovanovic",
       "Appointment": [],
       "Username": "",
       "Password": "",
@@ -271,6 +308,136 @@
       "IdCard": "",
       "Type": 3,
       "IsDeleted": false
-    }
+    },
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "45",
+    "DoctorName": ""
+  },
+  {
+    "patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "06699592141",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "anamnesis": null,
+        "prescription": null,
+        "HealthInsuranceNumber": "07167166",
+        "MedicalIdNumber": "620178060616",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": []
+      },
+      "NameAndSurname": "Mira Torbica",
+      "Appointment": [],
+      "Username": "miki17",
+      "Password": "Tin3",
+      "Name": "Mira",
+      "Surname": "Torbica",
+      "Jmbg": "1701994261473",
+      "DateOfBirth": "1994-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0627844326",
+      "Adress": "Hajduk Veljkova 42, Novi Sad",
+      "Email": "mira94@gmail.com",
+      "IdCard": "008755974",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "StartTime": "2021-04-24T10:30:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "",
+    "AppointentId": 3,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Dana Dimitrijevic",
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-04-18T00:12:23.9290074+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": null,
+      "RoomType": 0,
+      "RoomNumber": 44,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": []
+    },
+    "Patient": {
+      "appointment": [],
+      "IsGuest": false,
+      "EmergencyContact": "06699592141",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "anamnesis": [],
+        "prescription": [],
+        "HealthInsuranceNumber": "07167166",
+        "MedicalIdNumber": "620178060616",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": []
+      },
+      "NameAndSurname": "Mira Torbica",
+      "Appointment": [],
+      "Username": "miki17",
+      "Password": "Tin3",
+      "Name": "Mira",
+      "Surname": "Torbica",
+      "Jmbg": "1701994261473",
+      "DateOfBirth": "1994-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0627844326",
+      "Adress": "Hajduk Veljkova 42, Novi Sad",
+      "Email": "mira94@gmail.com",
+      "IdCard": "008755974",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Mira Torbica",
+    "RoomName": "44",
+    "DoctorName": "Dana Dimitrijevic"
   }
 ]

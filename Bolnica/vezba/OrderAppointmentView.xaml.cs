@@ -39,7 +39,8 @@ namespace vezba
                 DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
                 String exam = "pregled kod lekara opste prakse";
 
-                Appointment a = new Appointment { Doctor = selectedDoctor, StartTime = dateTimeFinal, ApointmentDescription = exam };
+                //Appointment a = new Appointment { Doctor = selectedDoctor, StartTime = dateTimeFinal, ApointmentDescription = exam };
+                Appointment a = new Appointment(10, null, selectedDoctor, null, dateTimeFinal,15, exam);
                 AppointmentStorage storage = new AppointmentStorage();
                 storage.Save(a);
                 PatientView.Apps.Add(a);

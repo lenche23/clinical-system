@@ -35,17 +35,45 @@ namespace vezba
         }
         private void View_Button_Click(object sender, RoutedEventArgs e)
         {
-            var s = new ViewAppointment();
-            s.Show();
+
+            if (appointmentsTable.SelectedCells.Count > 0)
+            {
+                Appointment a = (Appointment)appointmentsTable.SelectedItem;
+                var s = new ViewAppointment(a);
+                s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Niste selektovali termin!");
+            }
+            
         }
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
-            var s = new EditAppointment();
-            s.Show();
+            if (appointmentsTable.SelectedCells.Count > 0)
+            {
+                Appointment a = (Appointment)appointmentsTable.SelectedItem;
+                var s = new EditAppointment(a);
+                s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Niste selektovali termin!");
+            }
         }
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (appointmentsTable.SelectedCells.Count > 0)
+            {
+                Appointment a = (Appointment) appointmentsTable.SelectedItem;
+                AppointmentStorage aps = new AppointmentStorage();
+                aps.Delete(a.AppointentId);
+                Appointments.Remove(a);
+            }
+            else
+            {
+                MessageBox.Show("Niste selektovali termin!");
+            }
         }
     }
 }
