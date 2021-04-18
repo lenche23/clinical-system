@@ -25,8 +25,17 @@ namespace vezba
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var zakaziPregled = new OrderAppointmentView();
-            zakaziPregled.Show();
+            if (MessageBox.Show("Da li Vam je najbitnije da zakazete pregled kod svog lekara?", "Zakazi pregled", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                var zakaziPregledLekar = new OrderAppointmentView();
+                zakaziPregledLekar.Show();
+            }
+            else
+            {
+                var zakaziPregledVreme = new OrderAppointmentTimeView();
+                zakaziPregledVreme.Show();
+            }
+            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -45,6 +54,12 @@ namespace vezba
         {
             var izmeniPregled = new ChangeAppointmentView();
             izmeniPregled.Show();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            /*var s = new ViewMyAnnouncements(UserType.patient);
+            s.Show();*/
         }
     }
 }

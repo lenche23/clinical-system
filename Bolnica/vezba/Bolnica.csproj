@@ -131,6 +131,9 @@
     <Compile Include="NewPatient.xaml.cs">
       <DependentUpon>NewPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OrderAppointmentTimeView.xaml.cs">
+      <DependentUpon>OrderAppointmentTimeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderAppointmentView.xaml.cs">
       <DependentUpon>OrderAppointmentView.xaml</DependentUpon>
     </Compile>
@@ -220,6 +223,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NewPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderAppointmentTimeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
