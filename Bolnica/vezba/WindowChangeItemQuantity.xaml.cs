@@ -23,11 +23,13 @@ namespace vezba
     {
         private Equipment selected;
         private WindowUpdateRoom wur;
-        public WindowChangeItemQuantity(Equipment selected, WindowUpdateRoom wur)
+        private Room r_selected;
+        public WindowChangeItemQuantity(Equipment selected, WindowUpdateRoom wur, Room r_selected)
         {
             InitializeComponent();
             this.selected = selected;
             this.wur = wur;
+            this.r_selected = r_selected;
             NazivOpreme.Content = NazivOpreme.Content + "    " + selected.Name;
             Id.Content = Id.Content + "    " + selected.Id;
 
@@ -45,6 +47,8 @@ namespace vezba
         {
             var Quantity = int.Parse(Količina.Text);
             selected.Quantity = Quantity;
+            RoomStorage rs = new RoomStorage();
+            rs.Update(this.r_selected);
             wur.EquipmentBinding.Items.Refresh();
             this.Close();
 

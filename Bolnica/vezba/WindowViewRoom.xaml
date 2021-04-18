@@ -12,6 +12,15 @@
         <Label Name ="SpratLabel" Content="Sprat:" Margin="15,171,21,99"/>
         <Label Name ="TipLabel" Content="Tip prostorije:" Margin="15,119,21,153"/>
 
-
+        <ListView Margin="155,248,154,44" Name="EquipmentBinding">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Naziv proizvoda" Width="100" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Količina" Width="100" DisplayMemberBinding="{Binding Quantity}" />
+                    <GridViewColumn Header="Tip" Width="100" DisplayMemberBinding="{Binding Type}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

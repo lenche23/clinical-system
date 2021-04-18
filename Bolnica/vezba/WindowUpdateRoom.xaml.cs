@@ -123,10 +123,10 @@ namespace Bolnica
             if (EquipmentBinding.SelectedIndex > -1)
             {
                 Equipment eq = (Equipment)EquipmentBinding.SelectedItem;
-                EquipmentStorage es = new EquipmentStorage();
-                es.Update(eq);
-                this.selected.RemoveEquipment(eq);
-                EquipmentList.Remove(eq);
+                 this.selected.equipment.Remove(eq);
+                 EquipmentList.Remove(eq);
+                RoomStorage rs = new RoomStorage();
+                 rs.Update(this.selected);
             }
 
             else
@@ -140,8 +140,8 @@ namespace Bolnica
         {
             if (EquipmentBinding.SelectedIndex > -1)
             {
-                Equipment selected = (Equipment)EquipmentBinding.SelectedItems[0];
-                var s = new WindowChangeItemQuantity(selected, this);
+                Equipment selected_e = (Equipment)EquipmentBinding.SelectedItems[0];
+                var s = new WindowChangeItemQuantity(selected_e, this, this.selected);
                 s.Show();
             }
 
@@ -155,8 +155,8 @@ namespace Bolnica
         {
             if (EquipmentBinding.SelectedIndex > -1)
             {
-                Equipment selected = (Equipment)EquipmentBinding.SelectedItems[0];
-            var s = new WindowExchangeEquipment(selected, this);
+                Equipment eq_selected = (Equipment)EquipmentBinding.SelectedItems[0];
+            var s = new WindowExchangeEquipment(eq_selected, this, this.selected, this.mv);
             s.Show();
 
             }

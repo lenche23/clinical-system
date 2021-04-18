@@ -4,18 +4,17 @@ namespace Model
 {
     public class Room
     {
-        public Room() { }
         public RoomType RoomType { get; set; }
         public int RoomNumber { get; set; }
         public Floor RoomFloor { get; set; }
         public Boolean IsDeleted { get; set; }
 
-        public Room(RoomType roomType, int roomNumber, Floor roomFloor, int Capacity)
+        public Room(int roomNumber, Floor roomFloor, RoomType roomType)
         {
             this.RoomType = roomType;
             this.RoomNumber = roomNumber;
             this.RoomFloor = roomFloor;
-            this.Capacity = Capacity;
+            this.Capacity = 0;
             this.IsDeleted = false;
         }
 
@@ -50,6 +49,35 @@ namespace Model
                 this.equipment = new System.Collections.Generic.List<Equipment>();
             if (!this.equipment.Contains(newEquipment))
                 this.equipment.Add(newEquipment);
+        }
+
+        public void QuantityEquipment(Equipment changedEquipment, int quantity)
+        {
+            int id = changedEquipment.Id;
+            if (changedEquipment == null)
+                return;
+            if (this.equipment == null)
+                this.equipment = new System.Collections.Generic.List<Equipment>();
+
+            Boolean exist = false;
+
+            for (int i = 0; i < this.equipment.Count; i++)
+                {
+                    if (this.equipment[i].Id == id)
+                    {                      
+                        this.equipment[i].Quantity = this.equipment[i].Quantity + quantity;
+                        exist = true;
+                    }
+                }
+          
+            if (exist == false) 
+            {
+                if (quantity>0)
+                {
+                    Equipment e = new Equipment(changedEquipment.Id, changedEquipment.Name, quantity, changedEquipment.Type);
+                       this.AddEquipment(e);
+                }
+            }
         }
 
         public void RemoveEquipment(Equipment oldEquipment)

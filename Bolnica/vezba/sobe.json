@@ -4,36 +4,8 @@
     "equipment": [
       {
         "Id": 1,
-        "Name": "1",
-        "Quantity": 1,
-        "Type": 0,
-        "IsDeleted": false
-      },
-      {
-        "Id": 1,
-        "Name": "1",
-        "Quantity": 1,
-        "Type": 0,
-        "IsDeleted": false
-      },
-      {
-        "Id": 1,
-        "Name": "1",
-        "Quantity": 1,
-        "Type": 0,
-        "IsDeleted": false
-      },
-      {
-        "Id": 1,
-        "Name": "1",
-        "Quantity": 1,
-        "Type": 0,
-        "IsDeleted": false
-      },
-      {
-        "Id": 2,
-        "Name": "2",
-        "Quantity": 2,
+        "Name": "Hanzaplast",
+        "Quantity": 122,
         "Type": 0,
         "IsDeleted": false
       }
@@ -45,36 +17,8 @@
     "Equipment": [
       {
         "Id": 1,
-        "Name": "1",
-        "Quantity": 1,
-        "Type": 0,
-        "IsDeleted": false
-      },
-      {
-        "Id": 1,
-        "Name": "1",
-        "Quantity": 1,
-        "Type": 0,
-        "IsDeleted": false
-      },
-      {
-        "Id": 1,
-        "Name": "1",
-        "Quantity": 1,
-        "Type": 0,
-        "IsDeleted": false
-      },
-      {
-        "Id": 1,
-        "Name": "1",
-        "Quantity": 1,
-        "Type": 0,
-        "IsDeleted": false
-      },
-      {
-        "Id": 2,
-        "Name": "2",
-        "Quantity": 2,
+        "Name": "Hanzaplast",
+        "Quantity": 122,
         "Type": 0,
         "IsDeleted": false
       }
@@ -85,35 +29,21 @@
     "equipment": [
       {
         "Id": 1,
-        "Name": "1",
-        "Quantity": 2,
-        "Type": 0,
-        "IsDeleted": false
-      },
-      {
-        "Id": 1,
-        "Name": "1",
-        "Quantity": 2,
+        "Name": "Hanzaplast",
+        "Quantity": 79,
         "Type": 0,
         "IsDeleted": false
       }
     ],
-    "RoomType": 0,
+    "RoomType": 2,
     "RoomNumber": 2,
     "RoomFloor": 0,
     "IsDeleted": false,
     "Equipment": [
       {
         "Id": 1,
-        "Name": "1",
-        "Quantity": 2,
-        "Type": 0,
-        "IsDeleted": false
-      },
-      {
-        "Id": 1,
-        "Name": "1",
-        "Quantity": 2,
+        "Name": "Hanzaplast",
+        "Quantity": 79,
         "Type": 0,
         "IsDeleted": false
       }
