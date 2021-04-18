@@ -17,7 +17,6 @@ namespace Model
         public Patient Patient { get; set; }
 
         public Appointment(Doctor doctor, DateTime startTime, Patient patient) {
-            Random rnd = new Random();
             RoomStorage rs = new RoomStorage();
             List<Room> rooms = rs.GetAll();
             Room room = rooms[0];

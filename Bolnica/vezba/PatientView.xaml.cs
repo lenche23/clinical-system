@@ -8,6 +8,8 @@ namespace vezba
     public partial class PatientView : Window
     {
         public static ObservableCollection<Appointment> Apps { get; set; }
+
+        //public Patient Patient { get; set; }
         public PatientView()
         {
             InitializeComponent();
@@ -15,6 +17,10 @@ namespace vezba
             AppointmentStorage storage = new AppointmentStorage();
             List<Appointment> apps = storage.GetAll();
             Apps = new ObservableCollection<Appointment>(apps);
+
+            /*PatientStorage pps = new PatientStorage();
+            Patient patient = pps.GetOne("1008985563244");  //ja
+            Patient = patient;*/
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
