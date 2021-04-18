@@ -130,6 +130,34 @@ namespace Model
             }
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
             return ans;
+      }
+
+       public List<Announcement> GetByUser(UserType ut)
+        {
+
+            List<Announcement> temp = GetAll();
+            List<Announcement> announcements = new List<Announcement>();
+            if (ut == UserType.secretary || ut == UserType.menager || ut == UserType.doctor)
+            {
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    if (temp[i].Visibility == Model.Visibility.staff || temp[i].Visibility == Model.Visibility.all)
+                    {
+                        announcements.Add(temp[i]);
+                    }
+                }
+            }
+            else if (ut == UserType.patient)
+            {
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    if (temp[i].Visibility == Model.Visibility.patients || temp[i].Visibility == Model.Visibility.all)
+                    {
+                        announcements.Add(temp[i]);
+                    }
+                }
+            }
+            return announcements;
         }
       
       public String FileName { get; set; }
