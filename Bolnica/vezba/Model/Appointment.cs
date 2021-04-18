@@ -53,25 +53,13 @@ namespace Model
                 room = null;
             }
             this.DurationInMunutes = 15;
-            this.ApointmentDescription = "Pregled kod lekara op�te prakse.";
+            this.ApointmentDescription = "Pregled kod lekara opste prakse.";
             this.IsDeleted = false;
             this.Doctor = doctor;
             this.StartTime = startTime;
             this.Room = room;
             this.Patient = patient;
         }
-
-        public Appointment() {   }
-
-        /*public Patient Patient
-        {
-            get
-            {
-                return patient;
-            }
-            set
-
-        }*/
 
         public String PatientName
         {

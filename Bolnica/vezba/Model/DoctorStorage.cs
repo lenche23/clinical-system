@@ -22,8 +22,16 @@ namespace Model
       
       public Doctor GetOne(String jmbg)
       {
-         throw new NotImplementedException();
-      }
+            List<Doctor> doctors = GetAll();
+            for (int i = 0; i < doctors.Count; i++)
+            {
+                if (doctors[i].Jmbg.Equals(jmbg))
+                {
+                    return doctors[i];
+                }
+            }
+            return null;
+        }
       
       public Boolean Delete(String jmbg)
       {

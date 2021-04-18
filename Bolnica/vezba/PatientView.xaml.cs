@@ -58,8 +58,8 @@ namespace vezba
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            /*var s = new ViewMyAnnouncements(UserType.patient);
-            s.Show();*/
+            var s = new ViewMyAnnouncements(UserType.patient);
+            s.Show();
         }
     }
 }
