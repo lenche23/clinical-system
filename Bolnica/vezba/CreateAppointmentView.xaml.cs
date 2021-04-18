@@ -31,14 +31,14 @@ namespace Bolnica
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             var AppointmentID = int.Parse(idTB.Text);
-            var format = "MM/dd/yyyy HH:mm";
+            var format = "dd/MM/yyyy HH:mm";
             CultureInfo provider = CultureInfo.InvariantCulture;
             var StartTime = DateTime.ParseExact(startTB.Text, format, provider);
             var DurationInMinutes = int.Parse(DurationTB.Text);
             var ApointmentDescription = DescriptionTB.Text;
             var Patient = cmbPatients.SelectedItem;
             var Room = cmbRooms.SelectedItem;
-            var appointment1 = new Appointment { AppointentId = AppointmentID, StartTime = StartTime, DurationInMunutes = DurationInMinutes, ApointmentDescription = ApointmentDescription, IsDeleted = false, patient = (Patient)Patient, Room = (Room)Room };
+            var appointment1 = new Appointment(StartTime, DurationInMinutes, ApointmentDescription, AppointmentID, null, (Room)Room, (Patient)Patient);
             AppointmentStorage aps = new AppointmentStorage();
             aps.Save(appointment1);
             DoctorView.Appointments.Add(appointment1);

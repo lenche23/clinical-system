@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="EditAppointmentView" Height="325" Width="250">
+        Title="CreateAppointmentView" Height="325" Width="250">
     <Grid Margin="10">
         <Grid.Resources>
             <Style TargetType="{x:Type TextBox}">
@@ -26,14 +26,14 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" Padding="10">ID:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="1" Padding="10">Start:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="2" Padding="10">Duration:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="3" Padding="10">Description:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="4" Padding="10">Patient:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="5" Padding="10">Room:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="1" Padding="10">Početak:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2" Padding="10">Trajanje:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3" Padding="10">Pregled:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4" Padding="10">Pacijent:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="5" Padding="10">Soba:</TextBlock>
         <DockPanel Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
-            <Button DockPanel.Dock="Left" Padding="5" Margin="5" Click="OkButtonClick">Ok</Button>
-            <Button DockPanel.Dock="Right" Padding="5" Margin="5" Click="CancelButtonClick">Cancel</Button>
+            <Button DockPanel.Dock="Left" Padding="5" Margin="5" Click="OkButtonClick">Potvrdi</Button>
+            <Button DockPanel.Dock="Right" Padding="5" Margin="5" Click="CancelButtonClick">Odustani</Button>
             <Separator DockPanel.Dock="Bottom" Visibility="Hidden"></Separator>
         </DockPanel>
 

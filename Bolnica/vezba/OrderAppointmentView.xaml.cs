@@ -39,10 +39,11 @@ namespace vezba
                 DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
                 String exam = "pregled kod lekara opste prakse";
 
-                Appointment a = new Appointment { Doctor = selectedDoctor, StartTime = dateTimeFinal, ApointmentDescription = exam };
-                AppointmentStorage storage = new AppointmentStorage();
-                storage.Save(a);
-                PatientView.Apps.Add(a);
+                //Ovo nije moje treba ispraviti
+                //Appointment a = new Appointment { Doctor = selectedDoctor, StartTime = dateTimeFinal, ApointmentDescription = exam };
+                //AppointmentStorage storage = new AppointmentStorage();
+                //storage.Save(a);
+                //PatientView.Apps.Add(a);
 
                 MessageBox.Show("Your order for appointment has been received. You will be notified about confirmation.");
                 this.Close();
