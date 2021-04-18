@@ -95,5 +95,10 @@ namespace Model
                 equipment.Clear();
         }
 
+        public override string ToString()
+        {
+            return this.RoomNumber.ToString();
+        }
+
     }
 }

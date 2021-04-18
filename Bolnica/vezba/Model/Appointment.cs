@@ -93,5 +93,7 @@ namespace Model
 
             }
         }
+
+        public Appointment() { }
     }
 }
