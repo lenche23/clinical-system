@@ -11,11 +11,6 @@ namespace vezba
         {
             InitializeComponent();
 
-            
-            var s = new SecretaryView();
-            s.Show();
-
-            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
