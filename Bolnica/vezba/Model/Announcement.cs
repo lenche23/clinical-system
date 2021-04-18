@@ -17,6 +17,7 @@ namespace Model
             Title = tit;
             Content = con;
             Visibility = vis;
+            IsDeleted = false;
         }
 
         public int Id { get; set; }
@@ -24,6 +25,7 @@ namespace Model
         public DateTime Edited { get; set; }
         public String Title { get; set; }
         public String Content { get; set; }
+        public Boolean IsDeleted { get; set; }
         public Visibility Visibility { get; set; }
 
         public string FormatedDatePosted

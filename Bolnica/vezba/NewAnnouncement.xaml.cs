@@ -32,7 +32,7 @@ namespace vezba
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AnnouncementStorage ast = new AnnouncementStorage();
-            int id = ast.Load().Count();
+            int id = ast.generateNextId();
             DateTime po = DateTime.Today;
             DateTime ed = DateTime.Today;
             String con = Content.Text;

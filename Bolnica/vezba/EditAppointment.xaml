@@ -25,7 +25,6 @@
         <Label Name="Duration" Content="min" HorizontalAlignment="Left" VerticalAlignment="Top" Width="163" Margin="136,205,0,0"/>
         <TextBlock Name="Description" HorizontalAlignment="Left" Height="53" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166" Margin="139,234,0,0"/>
         <Button Name="SaveButton" Content="Sačuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Margin="123,309,0,0" Height="30" Click="SaveButton_Click"/>
-        <CheckBox Name="IsEmergency" Content="Hitan pregled" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="208,21,0,0"/>
 
-        </Grid>
+    </Grid>
 </Window>

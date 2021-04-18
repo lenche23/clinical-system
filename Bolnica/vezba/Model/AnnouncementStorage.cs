@@ -15,7 +15,15 @@ namespace Model
         public List<Announcement> GetAll()
         {
             List<Announcement> ans = this.Load();
-            return ans;
+            List<Announcement> announcements = new List<Announcement>();
+            for (int i = 0; i < ans.Count; i++)
+            {
+                if (ans[i].IsDeleted == false)
+                {
+                    announcements.Add(ans[i]);
+                }
+            }
+            return announcements;
         }
 
       public Boolean Save(Announcement a)
@@ -50,7 +58,7 @@ namespace Model
             List<Announcement> announcements = Load();
             for (int i = 0; i < announcements.Count; i++)
             {
-                if (announcements[i].Id == a.Id)
+                if (announcements[i].Id == a.Id && announcements[i].IsDeleted == false)
                 {
                     announcements[i].Edited = a.Edited;
                     announcements[i].Title = a.Title;
@@ -79,7 +87,7 @@ namespace Model
             List<Announcement> announcements = GetAll();
             for (int i = 0; i < announcements.Count; i++)
             {
-                if (announcements[i].Id == id)
+                if (announcements[i].Id == id && announcements[i].IsDeleted == false)
                 {
                     return announcements[i];
                 }
@@ -92,9 +100,9 @@ namespace Model
             List<Announcement> announcements = Load();
             for (int i = 0; i < announcements.Count; i++)
             {
-                if (announcements[i].Id == id)
+                if (announcements[i].Id == id && announcements[i].IsDeleted == false)
                 {
-                    announcements.RemoveAt(i);
+                    announcements[i].IsDeleted = true;
 
                     try
                     {
@@ -109,6 +117,7 @@ namespace Model
 
                     }
                     return true;
+
                 }
             }
             return false;
@@ -159,8 +168,13 @@ namespace Model
             }
             return announcements;
         }
-      
-      public String FileName { get; set; }
+        public int generateNextId()
+        {
+            List<Announcement> list = Load();
+            return list.Count;
+        }
+
+        public String FileName { get; set; }
    
    }
 }
