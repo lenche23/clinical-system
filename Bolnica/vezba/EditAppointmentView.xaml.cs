@@ -62,7 +62,7 @@ namespace Bolnica
 
             var Patient = (Patient)cmbPatients.SelectedItem;
             var Room = (Room)cmbRooms.SelectedItem;
-			var Doctor = (Doctor)cmbDoctors.SelectedItem;
+			      var Doctor = (Doctor)cmbDoctors.SelectedItem;
             var appointment1 = new Appointment(AppointmentID, Patient, Doctor, Room, StartTime, DurationInMinutes, ApointmentDescription);
 
             //var appointment1 = new Appointment(StartTime, DurationInMinutes, ApointmentDescription, AppointmentID, (Doctor) Doctor, (Room)Room, (Patient)Patient);

@@ -1,0 +1,29 @@
+﻿<Window x:Class="vezba.PatientEditAppointment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vezba"
+        mc:Ignorable="d"
+        Title="PatientEditAppointment" Height="450" Width="800">
+    <Grid>
+        <Label Content="ID pregleda:" HorizontalAlignment="Left" Margin="21,61,0,0" VerticalAlignment="Top" Height="25" Width="164"/>
+        <Label Content="Datum:" HorizontalAlignment="Left" Margin="21,91,0,0" VerticalAlignment="Top" Height="25" Width="164"/>
+        <Label Content="Opis:" HorizontalAlignment="Left" Margin="21,121,0,0" VerticalAlignment="Top" Height="25" Width="164"/>
+        <Label Content="Lekar:" HorizontalAlignment="Left" Margin="21,151,0,0" VerticalAlignment="Top" Height="25" Width="164"/>
+        <Label Content="Vreme:" HorizontalAlignment="Left" Margin="21,181,0,0" VerticalAlignment="Top" Height="25" Width="164"/>
+        <Label Content="Trajanje" HorizontalAlignment="Left" Margin="21,211,0,0" VerticalAlignment="Top" Height="25" Width="164"/>
+        <Label Content="Soba:" HorizontalAlignment="Left" Margin="21,241,0,0" VerticalAlignment="Top" Height="25" Width="164"/>
+
+        <TextBox Name ="ID" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Margin="110,61,0,0" IsEnabled="False"/>
+        <TextBox Name ="Opis" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Margin="110,121,0,0" IsEnabled="False"/>
+        <TextBox Name ="Lekar" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Margin="110,151,0,0" IsEnabled="False"/>
+        <TextBox Name ="Vreme" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Margin="110,181,0,0"/>
+        <TextBox Name ="Soba" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Margin="110,241,0,0" IsEnabled="False"/>
+        <TextBox x:Name ="Trajanje" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Margin="110,211,0,0" IsEnabled="False"/>
+
+        <Button Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" Width="110" Height="26"  Background="CadetBlue" Click="Button_Click"/>
+        <Label Content="Izmeni pregled" HorizontalAlignment="Left" Height="33" Margin="10,10,0,0" VerticalAlignment="Top" Width="189" FontSize="15" Background="BlanchedAlmond"/>
+        <DatePicker x:Name="Datum" HorizontalAlignment="Left" Height="25" Margin="110,91,0,0" VerticalAlignment="Top" Width="164"/>
+    </Grid>
+</Window>

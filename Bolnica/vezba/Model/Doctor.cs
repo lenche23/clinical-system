@@ -26,13 +26,20 @@ namespace Model
             this.Speciality = speciality;
 
         }
-		
+
         public string NameAndSurname
         {
             get
             {
                 return Name + " " + Surname;
             }
+        }
+
+        public Doctor() { }
+
+        public override string ToString()
+        {
+            return this.Name + " " + this.Surname;
         }
     }
 }

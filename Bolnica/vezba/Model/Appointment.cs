@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Model
 {
@@ -43,6 +44,25 @@ namespace Model
             IsDeleted = false;
         }
 
+        public Appointment(Doctor doctor, DateTime startTime, Patient patient) {
+            RoomStorage rs = new RoomStorage();
+            List<Room> rooms = rs.GetAll();
+            Room room = rooms[0];
+            if (rooms.Count == 0)
+            {
+                room = null;
+            }
+            this.DurationInMunutes = 15;
+            this.ApointmentDescription = "Pregled kod lekara op�te prakse.";
+            this.IsDeleted = false;
+            this.Doctor = doctor;
+            this.StartTime = startTime;
+            this.Room = room;
+            this.Patient = patient;
+        }
+
+        public Appointment() {   }
+
         /*public Patient Patient
         {
             get
@@ -50,22 +70,7 @@ namespace Model
                 return patient;
             }
             set
-            {
-                if (this.patient == null || !this.patient.Equals(value))
-                {
-                    if (this.patient != null)
-                    {
-                        Patient oldPatient = this.patient;
-                        this.patient = null;
-                        oldPatient.RemoveAppointment(this);
-                    }
-                    if (value != null)
-                    {
-                        this.patient = value;
-                        this.patient.AddAppointment(this);
-                    }
-                }
-            }
+
         }*/
 
         public String PatientName
@@ -94,10 +99,10 @@ namespace Model
             {
                 if (Doctor != null)
                     return (Doctor.Name + " " + Doctor.Surname);
-                else 
+                else
                     return "";
-                
-                
+
+
             }
         }
     }
