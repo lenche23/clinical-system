@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="AppointmentView" Height="325" Width="250">
+        Title="AppointmentView" Height="350" Width="500">
     <Grid Margin="10">
         <Grid.Resources>
             <Style TargetType="{x:Type TextBox}">
@@ -19,29 +19,45 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0" Padding="10">ID:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="1" Padding="10">Start:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="2" Padding="10">Duration:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="3" Padding="10">Description:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="4" Padding="10">Patient:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="5" Padding="10">Room:</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="0" Padding="10" Text="{Binding AppointentId, Mode=OneWay}"></TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="1" Padding="10" Name="startTB" Text ="{Binding StartTime, StringFormat=MM/dd/yyyy HH:mm, Mode=OneWay}"></TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="2" Padding="10" Name="DurationTB" Text="{Binding DurationInMunutes, Mode=OneWay}"></TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="3" Padding="10" Name="DescriptionTB" Text="{Binding ApointmentDescription, Mode=OneWay}"></TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="4" Padding="10" Name="PatientTB">
+        <StackPanel HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Click="ZdravstveniKartonClick">Zdravstveni karton</Button>
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Click="NovaAnamnezaClick">+ Nova anamneza</Button>
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Click="NovReceptClick">+ Nov recept</Button>            
+        </StackPanel>
+        <TextBlock Grid.Column="0" Grid.Row="1" Padding="10">ID:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2" Padding="10">Početak:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3" Padding="10">Trajanje:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4" Padding="10">Pregled:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="5" Padding="10">Pacijent:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="7" Padding="10">Lekar:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="6" Padding="10">Soba:</TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="1" Padding="10" Text="{Binding AppointentId, Mode=OneWay}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="2" Padding="10" Name="startTB" Text ="{Binding StartTime, StringFormat=dd/MM/yyyy HH:mm, Mode=OneWay}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="3" Padding="10" Name="DurationTB" Text="{Binding DurationInMunutes, Mode=OneWay}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4" Padding="10" Name="DescriptionTB" Text="{Binding ApointmentDescription, Mode=OneWay}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="5" Padding="10" Name="PatientTB">
             <TextBlock.Text>
-                            <MultiBinding StringFormat="{}{0} {1}">
-                                <Binding Path="Patient.Name" />
-                                <Binding Path="Patient.Surname" />
-                            </MultiBinding>
-                        </TextBlock.Text>
+                <MultiBinding StringFormat="{}{0} {1}">
+                    <Binding Path="Patient.Name" />
+                    <Binding Path="Patient.Surname" />
+                </MultiBinding>
+            </TextBlock.Text>
         </TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="5" Padding="10" Name="RoomTB" Text="{Binding Room.RoomNumber, Mode=OneWay}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="6" Padding="10" Name="RoomTB" Text="{Binding Room.RoomNumber, Mode=OneWay}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="7" Padding="10" Name="DoctorTB">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0} {1}">
+                    <Binding Path="Doctor.Name" />
+                    <Binding Path="Doctor.Surname" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
     </Grid>
 </Window>

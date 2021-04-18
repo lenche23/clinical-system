@@ -1,0 +1,65 @@
+﻿<Window x:Class="vezba.CreateAnamnesisView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vezba"
+        mc:Ignorable="d"
+        Title="CreateAnamnesisView" Height="450" Width="500">
+    <Grid Margin="10">
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="0, 10"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Width="70" Click="OkButtonClick">Potvrdi</Button>
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Width="70" Click="CancelButtonClick">Odustani</Button>
+        </StackPanel>
+        <TextBlock Grid.Column="0" Grid.Row="1" Padding="10" HorizontalAlignment="Right">Pregled:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2" Padding="10" HorizontalAlignment="Right">Vreme pregleda:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3" Padding="10" HorizontalAlignment="Right">Trajanje pregleda:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4" Padding="10" HorizontalAlignment="Right">Pacijent:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="5" Padding="10" HorizontalAlignment="Right">Doktor:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="6" Padding="10" HorizontalAlignment="Right">Prostorija:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="7" Padding="10" HorizontalAlignment="Right" >Izveštaj:</TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="7" Grid.RowSpan="3" Name="TbComment" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+        
+        <TextBlock Grid.Column="1" Grid.Row="1" Padding="10" HorizontalAlignment="Left" Text="{ Binding ApointmentDescription, Mode=OneWay}"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" Padding="10" HorizontalAlignment="Left" Text="{ Binding StartTime, StringFormat=dd/MM/yyyy HH:mm, Mode=OneWay}"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" Padding="10" HorizontalAlignment="Left" Text="{Binding DurationInMunutes}"/>
+        <TextBlock Grid.Column="1" Grid.Row="4" Padding="10" HorizontalAlignment="Left" Name="PatientNameSurname">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0} {1}">
+                    <Binding Path="Patient.Name" />
+                    <Binding Path="Patient.Surname" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="5" Padding="10" HorizontalAlignment="Left" Name="DoctorNameSurname">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0} {1}">
+                    <Binding Path="Doctor.Name" />
+                    <Binding Path="Doctor.Surname" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="6" Padding="10" HorizontalAlignment="Left" Text="{Binding Room.RoomNumber}"/>
+    </Grid>
+</Window>

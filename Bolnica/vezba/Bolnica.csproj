@@ -70,8 +70,14 @@
     <Compile Include="CancelAppointmentView.xaml.cs">
       <DependentUpon>CancelAppointmentView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateAnamnesisView.xaml.cs">
+      <DependentUpon>CreateAnamnesisView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreateAppointmentView.xaml.cs">
       <DependentUpon>CreateAppointmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePrescriptionView.xaml.cs">
+      <DependentUpon>CreatePrescriptionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="ManagerView.xaml.cs">
       <DependentUpon>ManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalRecordView.xaml.cs">
+      <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Allergen.cs" />
     <Compile Include="Model\Anamnesis.cs" />
@@ -180,7 +189,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CreateAnamnesisView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateAppointmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreatePrescriptionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,6 +234,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MedicalRecordView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

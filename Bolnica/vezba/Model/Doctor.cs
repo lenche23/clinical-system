@@ -26,7 +26,7 @@ namespace Model
             this.Speciality = speciality;
 
         }
-
+		
         public string NameAndSurname
         {
             get

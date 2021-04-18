@@ -12,8 +12,47 @@
           "Name": "BI-278"
         }
       ],
-      "anamnesis": null,
-      "prescription": null,
+      "anamnesis": [
+        {
+          "Time": "2021-04-18T12:42:00.2750169+02:00",
+          "Comment": "test",
+          "Patient": "Mira Torbica",
+          "Doctor": "Imenko Prezimenić"
+        },
+        {
+          "Time": "2021-04-18T12:42:40.7710091+02:00",
+          "Comment": "test2",
+          "Patient": "Mira Torbica",
+          "Doctor": "Imenko Prezimenić"
+        },
+        {
+          "Time": "2021-04-18T13:42:36.9534669+02:00",
+          "Comment": "test 3",
+          "Patient": "Mira Torbica",
+          "Doctor": "Imenko Prezimenić"
+        },
+        {
+          "Time": "2021-04-18T13:53:04.7925427+02:00",
+          "Comment": "test4",
+          "Patient": "Mira Torbica",
+          "Doctor": "Imenko Prezimenić"
+        }
+      ],
+      "prescription": [
+        {
+          "StartDate": "2021-04-22T00:00:00",
+          "DurationInDays": 7,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": false,
+          "Medicine": {
+            "allergen": [],
+            "Name": "ibuprofen",
+            "Allergen": []
+          }
+        }
+      ],
       "HealthInsuranceNumber": "07167166",
       "MedicalIdNumber": "620178060616",
       "Allergen": [
@@ -24,8 +63,47 @@
           "Name": "BI-278"
         }
       ],
-      "Anamnesis": [],
-      "Prescription": []
+      "Anamnesis": [
+        {
+          "Time": "2021-04-18T12:42:00.2750169+02:00",
+          "Comment": "test",
+          "Patient": "Mira Torbica",
+          "Doctor": "Imenko Prezimenić"
+        },
+        {
+          "Time": "2021-04-18T12:42:40.7710091+02:00",
+          "Comment": "test2",
+          "Patient": "Mira Torbica",
+          "Doctor": "Imenko Prezimenić"
+        },
+        {
+          "Time": "2021-04-18T13:42:36.9534669+02:00",
+          "Comment": "test 3",
+          "Patient": "Mira Torbica",
+          "Doctor": "Imenko Prezimenić"
+        },
+        {
+          "Time": "2021-04-18T13:53:04.7925427+02:00",
+          "Comment": "test4",
+          "Patient": "Mira Torbica",
+          "Doctor": "Imenko Prezimenić"
+        }
+      ],
+      "Prescription": [
+        {
+          "StartDate": "2021-04-22T00:00:00",
+          "DurationInDays": 7,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": false,
+          "Medicine": {
+            "allergen": [],
+            "Name": "ibuprofen",
+            "Allergen": []
+          }
+        }
+      ]
     },
     "Appointment": [],
     "Username": "miki17",
@@ -75,8 +153,35 @@
           "Name": "b"
         }
       ],
-      "anamnesis": null,
-      "prescription": null,
+      "anamnesis": [
+        {
+          "Time": "2021-04-18T14:23:04.1519302+02:00",
+          "Comment": "pacijentu istegnuta glava",
+          "Patient": "Milena Jovanovic",
+          "Doctor": "Imenko Prezimenić"
+        },
+        {
+          "Time": "2021-04-18T16:05:10.7826089+02:00",
+          "Comment": "srce joj je kamen",
+          "Patient": "Milena Jovanovic",
+          "Doctor": "Dana Dimitrijevic"
+        }
+      ],
+      "prescription": [
+        {
+          "StartDate": "2021-04-22T00:00:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 2,
+          "Id": 1,
+          "isActive": false,
+          "Medicine": {
+            "allergen": [],
+            "Name": "panklav",
+            "Allergen": []
+          }
+        }
+      ],
       "HealthInsuranceNumber": "1651",
       "MedicalIdNumber": "546356354",
       "Allergen": [
@@ -87,8 +192,35 @@
           "Name": "b"
         }
       ],
-      "Anamnesis": [],
-      "Prescription": []
+      "Anamnesis": [
+        {
+          "Time": "2021-04-18T14:23:04.1519302+02:00",
+          "Comment": "pacijentu istegnuta glava",
+          "Patient": "Milena Jovanovic",
+          "Doctor": "Imenko Prezimenić"
+        },
+        {
+          "Time": "2021-04-18T16:05:10.7826089+02:00",
+          "Comment": "srce joj je kamen",
+          "Patient": "Milena Jovanovic",
+          "Doctor": "Dana Dimitrijevic"
+        }
+      ],
+      "Prescription": [
+        {
+          "StartDate": "2021-04-22T00:00:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 2,
+          "Id": 1,
+          "isActive": false,
+          "Medicine": {
+            "allergen": [],
+            "Name": "panklav",
+            "Allergen": []
+          }
+        }
+      ]
     },
     "Appointment": [],
     "Username": "fgjcj",

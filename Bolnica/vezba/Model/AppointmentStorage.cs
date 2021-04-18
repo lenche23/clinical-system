@@ -10,7 +10,7 @@ namespace Model
     {
         public String FileName { get; set; }
 
-        public AppointmentStorage() 
+        public AppointmentStorage()
         {
             this.FileName = "../../appointments.json";
         }
@@ -63,6 +63,7 @@ namespace Model
                 }
             }
             catch (Exception e) {}
+
             return true;
         }
 
@@ -77,7 +78,9 @@ namespace Model
                     appointments[i].DurationInMunutes = appointment.DurationInMunutes;
                     appointments[i].ApointmentDescription = appointment.ApointmentDescription;
                     appointments[i].Patient = appointment.Patient;
+                    //appointments[i].patient = appointment.Patient;
                     appointments[i].Room = appointment.Room;
+                    appointments[i].Doctor = appointment.Doctor;
                     try
                     {
                         var jsonToFile = JsonConvert.SerializeObject(appointments, Formatting.Indented);
@@ -113,15 +116,15 @@ namespace Model
                 if (list[i].AppointentId == id && list[i].IsDeleted == false)
                 {
                     list[i].IsDeleted = true;
-                
+
                     try
                     {
                         var jsonToFile = JsonConvert.SerializeObject(list, Formatting.Indented);
                         using (StreamWriter writer = new StreamWriter(this.FileName))
-                            writer.Write(jsonToFile);
-                        
+                            writer.Write(jsonToFile);                  
                     }
                     catch (Exception e) {}
+
                     return true;
                 }
             }
