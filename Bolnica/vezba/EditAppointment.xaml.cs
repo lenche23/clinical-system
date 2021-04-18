@@ -41,6 +41,13 @@ namespace vezba
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            DateTime initDate = App.StartTime.Date;
+            DateTime endDate = Datum.SelectedDate.Value.Date;
+            int diff = (endDate - initDate).Days;
+            if (diff > 2)
+            {
+                MessageBox.Show("Pregled mozete pomeriti maksimalno za dva dana.");
+            }       
 
             int id = App.AppointentId;
             DateTime datum = Datum.SelectedDate.Value.Date;
@@ -48,8 +55,6 @@ namespace vezba
             Doctor doc = App.Doctor;
             String selectedTime = Vreme.Text;
             DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
-
-
             DateTime dateTimeFinal = datum.Date.Add(dateTime.TimeOfDay);
 
             PatientStorage pps = new PatientStorage();
