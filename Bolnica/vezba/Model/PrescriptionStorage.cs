@@ -12,8 +12,8 @@ namespace Model
    {
       public List<Prescription> GetAll()
       {
-         throw new NotImplementedException();
-      }
+            return Load();
+        }
       
       public Boolean Save(Prescription p)
       {
@@ -37,7 +37,17 @@ namespace Model
       
       public List<Prescription> Load()
       {
-         throw new NotImplementedException();
+            List<Prescription> prescriptions = new List<Prescription>();
+            Medicine medicine = new Medicine();
+            medicine.Name = "Vitamin C";
+            Prescription p1 = new Prescription(DateTime.Now, 21, Period.daily, 1,0, true, medicine);
+            prescriptions.Add(p1);
+            Medicine medicine2 = new Medicine();
+            medicine2.Name = "Brufen";
+            Prescription p2 = new Prescription(DateTime.Now, 21, Period.daily, 2, 1, true, medicine2);
+            prescriptions.Add(p2);
+
+            return prescriptions;
       }
       
       public String FileName { get; set; }
