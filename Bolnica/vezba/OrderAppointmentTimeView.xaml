@@ -39,8 +39,8 @@
         </ComboBox>
         <DataGrid x:Name="doctorsTable" ItemsSource="{Binding Doctors}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" Height="172" Margin="200,144,0,0" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Width="70" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding Surname}" />
+                <DataGridTextColumn Header="Ime" Width="75" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Prezime" Width="*" Binding="{Binding Surname}" />
             </DataGrid.Columns>
         </DataGrid>
         <Label Margin="10,144,584,236" Content="Slobodni lekari za izabran termin:"/>

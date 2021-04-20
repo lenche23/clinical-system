@@ -30,7 +30,7 @@ namespace vezba
             Lekar.Text = p.Doctor.ToString();
             if (p.Room == null)
             {
-                Soba.Text = "01";
+                Soba.Text = "100";
             }
             else
             {

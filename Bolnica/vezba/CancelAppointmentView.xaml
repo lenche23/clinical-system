@@ -9,17 +9,15 @@
     <Grid>
         <Label Content="Cancel an appointment" Margin="10,10,603,369" FontSize="15" Background="BlanchedAlmond"/>
         <Button Margin="10,364,657,10" Content="Cancel" Height="35" FontSize="15" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click" RenderTransformOrigin="0.5,0.5"/>
-        <ListView Margin="10,50,10,60" Name="lvUsers2">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding AppointentId}" />
-                    <GridViewColumn Header="Time" Width="160" DisplayMemberBinding="{Binding StartTime}" />
-                    <GridViewColumn Header="Duration" Width="80" DisplayMemberBinding="{Binding DurationInMunutes}" />
-                    <GridViewColumn Header="Doctor" Width="100" DisplayMemberBinding="{Binding Doctor }" />
-                    <GridViewColumn Header="Description" Width="250" DisplayMemberBinding="{Binding ApointmentDescription}" />
-                    <GridViewColumn Header="Room" Width="85" DisplayMemberBinding="{Binding Room}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid x:Name="cancelTable" ItemsSource="{Binding Appointments}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="772" Height="317" Margin="10,55,0,0" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding AppointmentId}" />
+                <DataGridTextColumn Header="Vreme" Width="160" Binding="{Binding StartTime}" />
+                <DataGridTextColumn Header="Trajanje" Width="80" Binding="{Binding DurationInMunutes}" />
+                <DataGridTextColumn Header="Lekar" Width="100" Binding="{Binding Doctor}" />
+                <DataGridTextColumn Header="Opis" Width="250" Binding="{Binding ApointmentDescription}" />
+                <DataGridTextColumn Header="Soba" Width="*" Binding="{Binding Room}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
