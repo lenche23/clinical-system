@@ -1,8 +1,3 @@
-// File:    Medicine.cs
-// Author:  graho
-// Created: 16 April 2021 17:26:55
-// Purpose: Definition of Class Medicine
-
 using System;
 
 namespace Model
@@ -10,6 +5,17 @@ namespace Model
    public class Medicine
    {
         public String Name { get; set; }
+
+        //******** Dodati deo - ako nesto ne radi
+        public String Manufacturer { get; set; }
+        public String Packaging { get; set; }
+        public int MedicineID { get; set; }
+        public MedicineStatus Status { get; set; }
+        public MedicineCondition Condition { get; set; }
+
+        public Medicine ReplacementMedicine { get; set; }
+        //********
+
 
         public System.Collections.Generic.List<Ingridient> ingridient;
 

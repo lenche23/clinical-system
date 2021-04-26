@@ -103,6 +103,12 @@
     <Compile Include="MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\DoctorEvaluation.cs" />
+    <Compile Include="Model\DoctorEvaluationStorage.cs" />
+    <Compile Include="Model\EventsLog.cs" />
+    <Compile Include="Model\EventsLogStorage.cs" />
+    <Compile Include="Model\HospitalEvaluation.cs" />
+    <Compile Include="Model\HospitalEvaluationStorage.cs" />
     <Compile Include="Model\Ingridient.cs" />
     <Compile Include="Model\Anamnesis.cs" />
     <Compile Include="Model\Announcement.cs" />
@@ -118,13 +124,20 @@
     <Compile Include="Model\Floor.cs" />
     <Compile Include="Model\MedicalRecord.cs" />
     <Compile Include="Model\Medicine.cs" />
+    <Compile Include="Model\MedicineCondition.cs" />
+    <Compile Include="Model\MedicineStatus.cs" />
+    <Compile Include="Model\MedicineStorage.cs" />
     <Compile Include="Model\Menager.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\PatientStorage.cs" />
     <Compile Include="Model\Period.cs" />
     <Compile Include="Model\Prescription.cs" />
     <Compile Include="Model\PrescriptionStorage.cs" />
+    <Compile Include="Model\ReferralLetter.cs" />
+    <Compile Include="Model\Renovation.cs" />
     <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\RoomInventory.cs" />
+    <Compile Include="Model\RoomInventoryStorage.cs" />
     <Compile Include="Model\RoomStorage.cs" />
     <Compile Include="Model\RoomType.cs" />
     <Compile Include="Model\Secretary.cs" />

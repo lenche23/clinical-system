@@ -150,5 +150,51 @@ namespace Model
                 prescription.Clear();
         }
 
+        public System.Collections.Generic.List<ReferralLetter> referralLetter;
+
+        public System.Collections.Generic.List<ReferralLetter> ReferralLetter
+        {
+            get
+            {
+                if (referralLetter == null)
+                    referralLetter = new System.Collections.Generic.List<ReferralLetter>();
+                return referralLetter;
+            }
+            set
+            {
+                RemoveAllReferralLetter();
+                if (value != null)
+                {
+                    foreach (ReferralLetter oReferralLetter in value)
+                        AddReferralLetter(oReferralLetter);
+                }
+            }
+        }
+
+        public void AddReferralLetter(ReferralLetter newReferralLetter)
+        {
+            if (newReferralLetter == null)
+                return;
+            if (this.referralLetter == null)
+                this.referralLetter = new System.Collections.Generic.List<ReferralLetter>();
+            if (!this.referralLetter.Contains(newReferralLetter))
+                this.referralLetter.Add(newReferralLetter);
+        }
+
+        public void RemoveReferralLetter(ReferralLetter oldReferralLetter)
+        {
+            if (oldReferralLetter == null)
+                return;
+            if (this.referralLetter != null)
+                if (this.referralLetter.Contains(oldReferralLetter))
+                    this.referralLetter.Remove(oldReferralLetter);
+        }
+
+        public void RemoveAllReferralLetter()
+        {
+            if (referralLetter != null)
+                referralLetter.Clear();
+        }
+
     }
 }

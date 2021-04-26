@@ -1,8 +1,3 @@
-// File:    Announcement.cs
-// Author:  graho
-// Created: 15 April 2021 20:26:10
-// Purpose: Definition of Class Announcement
-
 using System;
 
 namespace Model
