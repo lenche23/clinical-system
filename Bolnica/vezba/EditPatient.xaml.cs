@@ -91,7 +91,7 @@ namespace Bolnica
             string[] alls = Allergens.Text.Split(',');
             for (int i = 0; i < alls.Length; i++)
             {
-                Allergen a = new Allergen(alls[i].Trim()); //?
+                Ingridient a = new Ingridient(alls[i].Trim()); //?
                 medRecord.AddAllergen(a);
             }
 

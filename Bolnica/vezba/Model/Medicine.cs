@@ -11,50 +11,50 @@ namespace Model
    {
         public String Name { get; set; }
 
-        public System.Collections.Generic.List<Allergen> allergen;
+        public System.Collections.Generic.List<Ingridient> ingridient;
 
-        public System.Collections.Generic.List<Allergen> Allergen
+        public System.Collections.Generic.List<Ingridient> Ingridient
         {
             get
             {
-                if (allergen == null)
-                    allergen = new System.Collections.Generic.List<Allergen>();
-                return allergen;
+                if (ingridient == null)
+                    ingridient = new System.Collections.Generic.List<Ingridient>();
+                return ingridient;
             }
             set
             {
-                RemoveAllAllergen();
+                RemoveAllIngridient();
                 if (value != null)
                 {
-                    foreach (Allergen oAllergen in value)
-                        AddAllergen(oAllergen);
+                    foreach (Ingridient oIngridient in value)
+                        AddIngridient(oIngridient);
                 }
             }
         }
 
-        public void AddAllergen(Allergen newAllergen)
+        public void AddIngridient(Ingridient newIngridient)
         {
-            if (newAllergen == null)
+            if (newIngridient == null)
                 return;
-            if (this.allergen == null)
-                allergen = new System.Collections.Generic.List<Allergen>();
-            if (!this.allergen.Contains(newAllergen))
-                this.allergen.Add(newAllergen);
+            if (this.ingridient == null)
+                ingridient = new System.Collections.Generic.List<Ingridient>();
+            if (!this.ingridient.Contains(newIngridient))
+                this.ingridient.Add(newIngridient);
         }
 
-        public void RemoveAllergen(Allergen oldAllergen)
+        public void RemoveIngridient(Ingridient oldIngridient)
         {
-            if (oldAllergen == null)
+            if (oldIngridient == null)
                 return;
-            if (this.allergen != null)
-                if (this.allergen.Contains(oldAllergen))
-                    this.allergen.Remove(oldAllergen);
+            if (this.ingridient != null)
+                if (this.ingridient.Contains(oldIngridient))
+                    this.ingridient.Remove(oldIngridient);
         }
 
-        public void RemoveAllAllergen()
+        public void RemoveAllIngridient()
         {
-            if (allergen != null)
-                allergen.Clear();
+            if (ingridient != null)
+                ingridient.Clear();
         }
 
     }

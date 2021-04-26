@@ -103,7 +103,7 @@
     <Compile Include="MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Allergen.cs" />
+    <Compile Include="Model\Ingridient.cs" />
     <Compile Include="Model\Anamnesis.cs" />
     <Compile Include="Model\Announcement.cs" />
     <Compile Include="Model\AnnouncementStorage.cs" />
