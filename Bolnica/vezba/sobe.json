@@ -48,5 +48,23 @@
         "IsDeleted": false
       }
     ]
+  },
+  {
+    "Capacity": 0,
+    "equipment": null,
+    "RoomType": 0,
+    "RoomNumber": 44,
+    "RoomFloor": 1,
+    "IsDeleted": false,
+    "Equipment": []
+  },
+  {
+    "Capacity": 0,
+    "equipment": null,
+    "RoomType": 0,
+    "RoomNumber": 45,
+    "RoomFloor": 1,
+    "IsDeleted": false,
+    "Equipment": []
   }
 ]
