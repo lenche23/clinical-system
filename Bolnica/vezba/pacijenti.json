@@ -105,6 +105,7 @@
         }
       ]
     },
+    "NameAndSurname": "Mira Torbica",
     "Appointment": [],
     "Username": "miki17",
     "Password": "Tin3",
@@ -125,6 +126,7 @@
     "IsGuest": false,
     "EmergencyContact": "0638756221",
     "MedicalRecord": null,
+    "NameAndSurname": "Petar Ilic",
     "Appointment": [],
     "Username": "pera85",
     "Password": "p123",
@@ -165,6 +167,12 @@
           "Comment": "srce joj je kamen",
           "Patient": "Milena Jovanovic",
           "Doctor": "Dana Dimitrijevic"
+        },
+        {
+          "Time": "2021-04-20T10:03:04.6063076+02:00",
+          "Comment": "izvestaj123",
+          "Patient": "Milena Jovanovic",
+          "Doctor": "Dana Dimitrijevic"
         }
       ],
       "prescription": [
@@ -178,6 +186,19 @@
           "Medicine": {
             "allergen": [],
             "Name": "panklav",
+            "Allergen": []
+          }
+        },
+        {
+          "StartDate": "2021-04-22T00:00:00",
+          "DurationInDays": 7,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 1234565,
+          "isActive": false,
+          "Medicine": {
+            "allergen": null,
+            "Name": "analgin",
             "Allergen": []
           }
         }
@@ -204,6 +225,12 @@
           "Comment": "srce joj je kamen",
           "Patient": "Milena Jovanovic",
           "Doctor": "Dana Dimitrijevic"
+        },
+        {
+          "Time": "2021-04-20T10:03:04.6063076+02:00",
+          "Comment": "izvestaj123",
+          "Patient": "Milena Jovanovic",
+          "Doctor": "Dana Dimitrijevic"
         }
       ],
       "Prescription": [
@@ -219,9 +246,23 @@
             "Name": "panklav",
             "Allergen": []
           }
+        },
+        {
+          "StartDate": "2021-04-22T00:00:00",
+          "DurationInDays": 7,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 1234565,
+          "isActive": false,
+          "Medicine": {
+            "allergen": [],
+            "Name": "analgin",
+            "Allergen": []
+          }
         }
       ]
     },
+    "NameAndSurname": "Milena Jovanovic",
     "Appointment": [],
     "Username": "fgjcj",
     "Password": "dfgh",
@@ -265,6 +306,7 @@
       "Anamnesis": [],
       "Prescription": []
     },
+    "NameAndSurname": "Ajn Ibjhsvda",
     "Appointment": [],
     "Username": "",
     "Password": "",
@@ -314,6 +356,7 @@
       "Anamnesis": [],
       "Prescription": []
     },
+    "NameAndSurname": "afd fd",
     "Appointment": [],
     "Username": "gjhfh",
     "Password": "ghjy",

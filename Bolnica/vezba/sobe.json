@@ -6,9 +6,46 @@
     "IsDeleted": false
   },
   {
+    "Capacity": 0,
+    "equipment": [
+      {
+        "Id": 1,
+        "Name": "Hanzaplast",
+        "Quantity": 79,
+        "Type": 0,
+        "IsDeleted": false
+      }
+    ],
+    "RoomType": 2,
+    "RoomNumber": 2,
+    "RoomFloor": 0,
+    "IsDeleted": false,
+    "Equipment": [
+      {
+        "Id": 1,
+        "Name": "Hanzaplast",
+        "Quantity": 79,
+        "Type": 0,
+        "IsDeleted": false
+      }
+    ]
+  },
+  {
+    "Capacity": 0,
+    "equipment": null,
+    "RoomType": 0,
+    "RoomNumber": 44,
+    "RoomFloor": 1,
+    "IsDeleted": false,
+    "Equipment": []
+  },
+  {
+    "Capacity": 0,
+    "equipment": null,
     "RoomType": 0,
     "RoomNumber": 45,
-    "RoomFloor": 2,
-    "IsDeleted": false
+    "RoomFloor": 1,
+    "IsDeleted": false,
+    "Equipment": []
   }
 ]
