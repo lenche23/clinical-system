@@ -59,16 +59,22 @@ namespace Bolnica
             var StartTime = DateTime.ParseExact(startTB.Text, format, provider);
             var DurationInMinutes = int.Parse(DurationTB.Text);
             var ApointmentDescription = DescriptionTB.Text;
-            var Patient = cmbPatients.SelectedItem;
-            var Room = cmbRooms.SelectedItem;
-            var Doctor = cmbDoctors.SelectedItem;
-            var appointment1 = new Appointment(StartTime, DurationInMinutes, ApointmentDescription, AppointmentID, (Doctor) Doctor, (Room)Room, (Patient)Patient);
+
+            var Patient = (Patient)cmbPatients.SelectedItem;
+            var Room = (Room)cmbRooms.SelectedItem;
+			      var Doctor = (Doctor)cmbDoctors.SelectedItem;
+            var appointment1 = new Appointment(AppointmentID, Patient, Doctor, Room, StartTime, DurationInMinutes, ApointmentDescription);
+
+            //var appointment1 = new Appointment(StartTime, DurationInMinutes, ApointmentDescription, AppointmentID, (Doctor) Doctor, (Room)Room, (Patient)Patient);
+
             AppointmentStorage aps = new AppointmentStorage();
             aps.Update(appointment1);
             Selected.StartTime = StartTime;
             Selected.DurationInMunutes = DurationInMinutes;
             Selected.ApointmentDescription = ApointmentDescription;
-            Selected.patient = (Patient)Patient;
+
+            Selected.Patient = (Patient)Patient;
+            //Selected.patient = (Patient)Patient;
             Selected.Doctor = (Doctor)Doctor;
             Selected.Room = (Room)Room;
             dw.listViewAppointments.Items.Refresh();

@@ -15,7 +15,15 @@ namespace Model
         public List<Announcement> GetAll()
         {
             List<Announcement> ans = this.Load();
-            return ans;
+            List<Announcement> announcements = new List<Announcement>();
+            for (int i = 0; i < ans.Count; i++)
+            {
+                if (ans[i].IsDeleted == false)
+                {
+                    announcements.Add(ans[i]);
+                }
+            }
+            return announcements;
         }
 
       public Boolean Save(Announcement a)
@@ -50,7 +58,7 @@ namespace Model
             List<Announcement> announcements = Load();
             for (int i = 0; i < announcements.Count; i++)
             {
-                if (announcements[i].Id == a.Id)
+                if (announcements[i].Id == a.Id && announcements[i].IsDeleted == false)
                 {
                     announcements[i].Edited = a.Edited;
                     announcements[i].Title = a.Title;
@@ -79,7 +87,7 @@ namespace Model
             List<Announcement> announcements = GetAll();
             for (int i = 0; i < announcements.Count; i++)
             {
-                if (announcements[i].Id == id)
+                if (announcements[i].Id == id && announcements[i].IsDeleted == false)
                 {
                     return announcements[i];
                 }
@@ -92,9 +100,9 @@ namespace Model
             List<Announcement> announcements = Load();
             for (int i = 0; i < announcements.Count; i++)
             {
-                if (announcements[i].Id == id)
+                if (announcements[i].Id == id && announcements[i].IsDeleted == false)
                 {
-                    announcements.RemoveAt(i);
+                    announcements[i].IsDeleted = true;
 
                     try
                     {
@@ -109,6 +117,7 @@ namespace Model
 
                     }
                     return true;
+
                 }
             }
             return false;
@@ -130,9 +139,42 @@ namespace Model
             }
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
             return ans;
+      }
+
+       public List<Announcement> GetByUser(UserType ut)
+        {
+
+            List<Announcement> temp = GetAll();
+            List<Announcement> announcements = new List<Announcement>();
+            if (ut == UserType.secretary || ut == UserType.menager || ut == UserType.doctor)
+            {
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    if (temp[i].Visibility == Model.Visibility.staff || temp[i].Visibility == Model.Visibility.all)
+                    {
+                        announcements.Add(temp[i]);
+                    }
+                }
+            }
+            else if (ut == UserType.patient)
+            {
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    if (temp[i].Visibility == Model.Visibility.patients || temp[i].Visibility == Model.Visibility.all)
+                    {
+                        announcements.Add(temp[i]);
+                    }
+                }
+            }
+            return announcements;
         }
-      
-      public String FileName { get; set; }
+        public int generateNextId()
+        {
+            List<Announcement> list = Load();
+            return list.Count;
+        }
+
+        public String FileName { get; set; }
    
    }
 }

@@ -5,7 +5,10 @@
     "Edited": "2021-04-16T00:00:00+02:00",
     "Title": "Neradni dani",
     "Content": "Prvi i drugi maj ce biti neradni.",
-    "Visibility": 0
+    "IsDeleted": false,
+    "Visibility": 0,
+    "FormatedDatePosted": "16.04.2021.",
+    "FormatedDateEdited": "16.04.2021."
   },
   {
     "Id": 1,
@@ -13,6 +16,42 @@
     "Edited": "2021-04-16T00:00:00+02:00",
     "Title": "Nestanak struje",
     "Content": "Najavljen nestanak struje za sutra, subotu 17.04. ",
-    "Visibility": 1
+    "IsDeleted": false,
+    "Visibility": 1,
+    "FormatedDatePosted": "16.04.2021.",
+    "FormatedDateEdited": "16.04.2021."
+  },
+  {
+    "Id": 2,
+    "Posted": "2021-04-17T00:00:00+02:00",
+    "Edited": "2021-04-18T00:00:00+02:00",
+    "Title": "Lep naslov",
+    "Content": "hjfvmn",
+    "IsDeleted": false,
+    "Visibility": 0,
+    "FormatedDatePosted": "17.04.2021.",
+    "FormatedDateEdited": "18.04.2021."
+  },
+  {
+    "Id": 3,
+    "Posted": "2021-04-18T00:00:00+02:00",
+    "Edited": "2021-04-18T00:00:00+02:00",
+    "Title": "Gbgfhj",
+    "Content": "fgghjk",
+    "IsDeleted": true,
+    "Visibility": 2,
+    "FormatedDatePosted": "18.04.2021.",
+    "FormatedDateEdited": "18.04.2021."
+  },
+  {
+    "Id": 4,
+    "Posted": "2021-04-18T00:00:00+02:00",
+    "Edited": "2021-04-18T00:00:00+02:00",
+    "Title": "Popust 10% na sve preglede ",
+    "Content": "U periodu od 12. do 25. aprila svi nasi registrovani pacijenti ce uzivati pravo na popust od 10% na sve nase usluge.",
+    "IsDeleted": false,
+    "Visibility": 2,
+    "FormatedDatePosted": "18.04.2021.",
+    "FormatedDateEdited": "18.04.2021."
   }
 ]

@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace vezba
 {
-    /// <summary>
-    /// Interaction logic for CancelAppointmentView.xaml
-    /// </summary>
     public partial class CancelAppointmentView : Window
     {
         public CancelAppointmentView()

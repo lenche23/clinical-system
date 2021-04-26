@@ -11,6 +11,7 @@ namespace Model
    {
       all,
       staff,
-      patients
+      patients, 
+      individual
    }
 }

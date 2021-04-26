@@ -2,11 +2,11 @@ using System;
 
 namespace Model
 {
-    public class Allergen
+    public class Ingridient
     {
         public String Name { get; set; }
 
-        public Allergen(string name) {
+        public Ingridient(string name) {
             this.Name = name;
         }
     }

@@ -21,8 +21,8 @@ namespace vezba
         public ViewAnnouncement(Announcement a)
         {
             InitializeComponent();
-            Posted.Content = a.Posted.ToString("dd.MM.yyyy.");
-            Edited.Content = a.Edited.ToString("dd.MM.yyyy.");
+            Posted.Content += a.FormatedDatePosted;
+            Edited.Content += a.FormatedDateEdited;
             if (Posted.Content.Equals(Edited.Content)) {
                 Edited.Visibility = System.Windows.Visibility.Collapsed;
             }

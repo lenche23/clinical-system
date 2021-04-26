@@ -68,5 +68,11 @@ namespace vezba
                 s.Show();
             }
         }
+
+        private void AnnouncmentsClick(object sender, RoutedEventArgs e)
+        {
+            var s = new ViewMyAnnouncements(UserType.doctor);
+            s.Show();
+        }
     }
 }

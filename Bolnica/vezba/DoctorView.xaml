@@ -12,6 +12,7 @@
             <Button Margin="5" Padding="5" Click="EditClick">Izmeni termin</Button>
             <Button Margin="5" Padding="5" Click="DeleteClick">- Obriši termin</Button>
             <Button Margin="5" Padding="5" Click="ViewClick">Informacije o terminu</Button>
+            <Button Margin="5" Padding="5" Click="AnnouncmentsClick">Obaveštenja</Button>
         </StackPanel>
         <ListView Margin="10" Name="listViewAppointments" >
             <ListView.View>

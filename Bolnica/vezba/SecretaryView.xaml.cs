@@ -84,5 +84,17 @@ namespace vezba
             var s = new Announcements();
             s.Show();
         }
+
+        private void Appointments_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new SecretaryAppointments();
+            s.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new ViewMyAnnouncements(UserType.secretary);
+            s.Show();
+        }
     }
 }

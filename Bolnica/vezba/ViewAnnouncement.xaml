@@ -8,8 +8,8 @@
         Title="ViewAnnouncement" Height="450" Width="400">
     <Grid>
         <TextBlock Name="Content" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sadrzaj" VerticalAlignment="Top" Margin="43,133,0,0" Height="260" Width="304" FontSize="14"/>
-        <TextBlock Name="Title" HorizontalAlignment="Left" Margin="60,66,0,0" TextWrapping="Wrap" Text="Naslov" VerticalAlignment="Top" Width="266" Height="50" FontSize="18"/>
-        <Label Name="Posted" Content="Datum" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="249,10,0,0" Width="114"/>
-        <Label Name="Edited" Content="Izmenjeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="249,35,0,0" Width="114"/>
+        <TextBlock Name="Title" HorizontalAlignment="Left" Margin="60,76,0,0" TextWrapping="Wrap" Text="Naslov" VerticalAlignment="Top" Width="266" Height="50" FontSize="18"/>
+        <Label Name="Posted" Content="Postavljeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="225,10,0,0" Width="153"/>
+        <Label Name="Edited" Content="Izmenjeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="231,35,0,0" Width="153"/>
     </Grid>
 </Window>

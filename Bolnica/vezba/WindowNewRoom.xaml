@@ -5,25 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="WindowNewRoom" Height="350" Width="400" Background="#FFFFF0F0">
-    <Grid>
-        <Label Content="Kreiranje nove prostorije" Margin="21,18,131,253" FontSize="18" FontFamily="Myriad Pro Cond"/>
-        <Label Content="Broj prostorije:" Width="100" Margin="15,66,277,205"/>
-        <Label Content="Sprat:" Width="100" Margin="15,171,277,99"/>
-        <Label Content="Tip prostorije:" Width="100" Margin="15,119,277,153"/>
-        <TextBox Name="BrojSobe" Margin="120,66,217,226"/>
-        <Button Margin="60,247,228,30" Click="Potvrdi_Button_Click">Potvrdi</Button>
-        <Button Margin="223,247,60,30" Click="Odustani_Button_Click">Odustani</Button>
+        Title="WindowNewRoom" Height="300.504" Width="404.723" Background="#FFFFF0F0">
+    <Grid Margin="0,0,7,6">
+        <Label Content="Kreiranje nove prostorije"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="0,0,183,223"/>
+        <Label Content="Broj prostorije:" Margin="3,28,285,197"/>
+        <Label Content="Sprat:" Margin="3,110,299,121" />
+        <Label Content="Tip prostorije:" Margin="3,73,299,158"/>
+        <TextBox Name="BrojSobe" Margin="101,30,191,210" />
+        <Button Click="Potvrdi_Button_Click" Margin="80,211,205,17">Potvrdi</Button>
+        <Button Click="Odustani_Button_Click" Margin="197,211,87,17">Odustani</Button>
 
-        <RadioButton Name ="Prvi" GroupName="Sprat" Content="Prvi" Margin="120,177,203,117"></RadioButton>
-        <RadioButton Name ="Drugi" GroupName="Sprat" Content="Drugi" Margin="194,177,129,117"></RadioButton>
-        <RadioButton Name ="Treci" GroupName="Sprat" Content="Treci" Margin="278,177,31,117"></RadioButton>
+        <RadioButton Name ="Prvi" GroupName="Sprat" Content="Prvi" Margin="101,116,235,114"></RadioButton>
+        <RadioButton Name ="Drugi" GroupName="Sprat" Content="Drugi" Margin="163,116,157,114"></RadioButton>
+        <RadioButton Name ="Treci" GroupName="Sprat" Content="Treci" Margin="234,116,87,114"></RadioButton>
 
-        <RadioButton Name ="Pregled" GroupName="TipProstorije" Content="Pregled" Margin="120,125,207,160"></RadioButton>
-        <RadioButton Name ="Operacija" GroupName="TipProstorije" Content="Operacija" Margin="194,125,127,172"></RadioButton>
-        <RadioButton Name ="Odmor" GroupName="TipProstorije" Content="Odmor" Margin="278,125,48,172"></RadioButton>
-
-
-
+        <RadioButton Name ="Pregled" GroupName="TipProstorije" Content="Pregled" Margin="92,79,224,163"></RadioButton>
+        <RadioButton Name ="Operacija" GroupName="TipProstorije" Content="Operacija" Margin="238,79,76,163"></RadioButton>
+        <RadioButton Name ="Odmor" GroupName="TipProstorije" Content="Odmor" Margin="167,79,153,162"></RadioButton>
+        <RadioButton Name ="Magacin" GroupName="TipProstorije" Content="Magacin" Margin="315,79,0,163"></RadioButton>
     </Grid>
 </Window>

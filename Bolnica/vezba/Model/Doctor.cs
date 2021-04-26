@@ -27,5 +27,17 @@ namespace Model
 
         }
 
+        public string NameAndSurname
+        {
+            get
+            {
+                return Name + " " + Surname;
+            }
+        }
+
+        public override string ToString()
+        {
+            return this.Name + " " + this.Surname;
+        }
     }
 }

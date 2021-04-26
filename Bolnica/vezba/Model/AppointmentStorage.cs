@@ -24,12 +24,12 @@ namespace Model
                 List<Appointment> appointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonFromFile);
                 return appointments;
             }
-            catch { }
+            catch {}
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
             return ps;
         }
         public List<Appointment> GetAll()
-        {
+        {          
             List<Appointment> appointments = new List<Appointment>();
             List<Appointment> appointments1 = Load();
             for (int i = 0; i < appointments1.Count; i++)
@@ -62,7 +62,8 @@ namespace Model
                     writer.Write(jsonToFile);
                 }
             }
-            catch (Exception e) { }
+            catch (Exception e) {}
+
             return true;
         }
 
@@ -76,7 +77,8 @@ namespace Model
                     appointments[i].StartTime = appointment.StartTime;
                     appointments[i].DurationInMunutes = appointment.DurationInMunutes;
                     appointments[i].ApointmentDescription = appointment.ApointmentDescription;
-                    appointments[i].patient = appointment.Patient;
+                    appointments[i].Patient = appointment.Patient;
+                    //appointments[i].patient = appointment.Patient;
                     appointments[i].Room = appointment.Room;
                     appointments[i].Doctor = appointment.Doctor;
                     try
@@ -87,7 +89,7 @@ namespace Model
                             writer.Write(jsonToFile);
                         }
                     }
-                    catch (Exception e) { }
+                    catch (Exception e) {}
                 }
             }
             return false;
@@ -109,7 +111,7 @@ namespace Model
         public Boolean Delete(int id)
         {
             List<Appointment> list = Load();
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++) 
             {
                 if (list[i].AppointentId == id && list[i].IsDeleted == false)
                 {
@@ -119,10 +121,10 @@ namespace Model
                     {
                         var jsonToFile = JsonConvert.SerializeObject(list, Formatting.Indented);
                         using (StreamWriter writer = new StreamWriter(this.FileName))
-                            writer.Write(jsonToFile);
-
+                            writer.Write(jsonToFile);                  
                     }
-                    catch (Exception e) { }
+                    catch (Exception e) {}
+
                     return true;
                 }
             }

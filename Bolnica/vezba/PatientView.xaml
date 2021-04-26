@@ -7,18 +7,20 @@
         mc:Ignorable="d"
         Title="Patient" Height="450" Width="800">
     <Grid>
-        <Label Content="My information" Margin="10,20,531,354" FontSize="15" Background="BlanchedAlmond"/>
-        <Label Content="Name:                 Petar" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Height="36" Width="151" FontSize="13"/>
-        <Label Content="JMBG:                 1234567891234" Height="30" Margin="10,111,531,278" FontSize="13"/>
-        <Label Content="Surname:             Petrovic" Height="30" Margin="10,84,545,305" FontSize="13"/>
-        <Label Content="Date of birth:      01/02/1999" Height="30" Margin="10,140,567,249" FontSize="13"/>
-        <Label Content="Sex:                     male" Height="30" Margin="10,170,567,219" FontSize="13"/>
-        <Label Content="Email:                  petarpetrovic@gmail.com" Height="30" Margin="10,200,507,189" FontSize="13"/>
-        <Label Content="Phone number:   060/123-4567" Height="30" Margin="10,230,531,159" FontSize="13"/>
-        <Label Content="Adress:                Boulevar of Broken Dreams 3" Height="30" Margin="10,260,496,129" FontSize="13"/>
-        <Label Content="ID card:               123456789" Height="30" Margin="10,290,626,99" FontSize="13"/>
-        <Button Content="Schedule an appointment" Margin="385,49,235,330" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click"/>
-        <Button Content="Cancel an appointment" Margin="385,111,235,268" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_1"/>
-        <Button Content="My appointment history" Margin="385,175,235,204" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_2"/>
+        <Label Content="Moj profil" Margin="10,20,552,364" FontSize="15" Background="BlanchedAlmond"/>
+        <Label Content="Ime:                     Petar" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Height="36" Width="151" FontSize="13"/>
+        <Label Content="JMBG:                  1008985563244" Height="30" Margin="10,111,531,278" FontSize="13"/>
+        <Label Content="Prezime:               Ilic" Height="30" Margin="10,84,545,305" FontSize="13"/>
+        <Label Content="Datum rodjenja:  10/08/1985" Height="30" Margin="10,140,567,249" FontSize="13"/>
+        <Label Content="Pol:                       muski" Height="30" Margin="10,170,567,219" FontSize="13"/>
+        <Label Content="Email:                   pilic@gmail.com" Height="30" Margin="10,200,507,189" FontSize="13"/>
+        <Label Content="Broj telefona:       0625564197" Height="30" Margin="10,230,531,159" FontSize="13"/>
+        <Label Content="Adresa:                Ulica Lipa 76, Beograd" Height="30" Margin="10,260,496,129" FontSize="13"/>
+        <Label Content="Broj licne karte:    007265981" Height="30" Margin="10,290,507,99" FontSize="13"/>
+        <Button Content="Zakazi pregled" Margin="385,49,235,330" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click"/>
+        <Button Content="Otkazi pregled" Margin="385,111,235,268" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_1"/>
+        <Button Content="Moja istorija pregleda" Margin="385,175,235,204" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_2"/>
+        <Button Content="Izmeni pregled" Margin="385,235,235,144" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_3"/>
+        <Button Content="Obavestenja" Margin="385,295,235,84" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click_4"/>
     </Grid>
 </Window>

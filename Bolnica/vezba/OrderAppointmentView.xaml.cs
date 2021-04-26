@@ -19,38 +19,54 @@ namespace vezba
 {
     public partial class OrderAppointmentView : Window
     {
+
+        public static ObservableCollection<Doctor> Doctors { get; set; }
         public OrderAppointmentView()
         {
             InitializeComponent();
-            UserStorage storage = new UserStorage();
-            lvUsers.ItemsSource = storage.GetAll();
+            this.DataContext = this;
+            DoctorStorage ps = new DoctorStorage();
+            List<Doctor> temp = ps.GetAll();
+            Doctors = new ObservableCollection<Doctor>(temp);
 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (lvUsers.SelectedItems.Count > 0 && datePicker.SelectedDate != null && (time.Text != null && !time.Text.Equals("")))
+            if (datePicker.SelectedDate != null && (comboBox.Text != null && !comboBox.Text.Equals("")))
             {
-                Doctor selectedDoctor = (Doctor)lvUsers.SelectedItem;
+                DoctorStorage ds = new DoctorStorage();
+                Doctor doctor = ds.GetOne("1708962324890");
                 DateTime selectedDate = datePicker.SelectedDate.Value.Date;
                 selectedDate.ToString("MM/dd/yyyy");
-                String selectedTime = time.Text;
+                String selectedTime = comboBox.Text;
                 DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
                 DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
-                String exam = "pregled kod lekara opste prakse";
+                PatientStorage pps = new PatientStorage();
+                Patient patient = pps.GetOne("1008985563244");
 
-                //Ovo nije moje treba ispraviti
-                //Appointment a = new Appointment { Doctor = selectedDoctor, StartTime = dateTimeFinal, ApointmentDescription = exam };
-                //AppointmentStorage storage = new AppointmentStorage();
-                //storage.Save(a);
-                //PatientView.Apps.Add(a);
+                AppointmentStorage storage = new AppointmentStorage();
+                int id = storage.generateNextId();
+                Appointment a = new Appointment(doctor, dateTimeFinal, patient);
+                a.AppointentId = id;
+                storage.Save(a);
+                PatientView.Apps.Add(a);
 
-                MessageBox.Show("Your order for appointment has been received. You will be notified about confirmation.");
-                this.Close();
+                int diff = (selectedDate - DateTime.Now.Date).Days;
+                if (diff <= 0)
+                {
+                    MessageBox.Show("Unet datum nije validan!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Uspešno ste zakazali pregled.");
+                    this.Close();
+                };
             }
             else
             {
-                MessageBox.Show("Please input all data required!");
+                MessageBox.Show("Molimo Vas popunite sva potrebna polja!");
             }
         }
     }
