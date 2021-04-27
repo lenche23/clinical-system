@@ -70,7 +70,8 @@ namespace vezba
             }
             else
             {
-                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.");
+                DateTime recommendedTime = FindNextFreeAppointment(appointment);
+                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " + recommendedTime.ToString("dd.MM.yyyy. HH:mm"));
             }
 
             
@@ -126,7 +127,6 @@ namespace vezba
             }
             string hours = (string) Hours.SelectedItem;
             string minutes = (string) Minutes.SelectedItem;
-            //MessageBox.Show(hours);
             String selectedTime = (Convert.ToString(hours) + ":" + Convert.ToString(minutes)).Trim();
             DateTime time;
             DateTime.TryParseExact(selectedTime, "HH:mm", null, System.Globalization.DateTimeStyles.None, out time);
@@ -158,20 +158,55 @@ namespace vezba
                 DateTime beginning2 = a2.StartTime;
                 DateTime end2 = a2.StartTime.AddMinutes(a2.DurationInMunutes);
                 if (DateTime.Compare(end2, beginning1) <= 0) //drugi zavrsava pre pocetka prvog
-                {
                     return false;
-                }
                 else if (DateTime.Compare(end1, beginning2) <= 0) //prvi zavrsava pre pocetka drugog
-                {
                     return false;
-                }
                 else
-                {
                     return true;
-                }
             }
             return false;
             
+        }
+
+        private DateTime FindNextFreeAppointment(Appointment appointment)
+        {
+            AppointmentStorage aps = new AppointmentStorage();
+            List<Appointment> appointments = aps.GetAll();
+            Boolean newTimeFound = false;
+            while (!newTimeFound)
+            {
+                newTimeFound = true;
+                foreach (Appointment a in appointments)
+                {
+                    if(DoShareResources(a, appointment))
+                    {
+                        appointment.StartTime = generateNewStartTime(a.StartTime.AddMinutes(a.DurationInMunutes)); // dodati metodu get end time u klasu appointment
+                        newTimeFound = false;
+                        break;
+                    }
+                }
+            }
+            return appointment.StartTime;
+        }
+
+        private DateTime generateNewStartTime(DateTime overlapingAppointmentEndTime)
+        {
+            DateTime newStartTime = overlapingAppointmentEndTime;
+            if (isAfterHours(newStartTime))
+            {
+                newStartTime = new DateTime(newStartTime.Year, newStartTime.Month, newStartTime.Day, 8, 0, 0);
+                newStartTime = newStartTime.AddDays(1);
+            }
+            return newStartTime;
+        }
+
+        private Boolean isAfterHours(DateTime time)
+        {
+            DateTime endOfDay = new DateTime(time.Year, time.Month, time.Day, 19, 45, 0);
+            if (time >= endOfDay)
+                return true;
+
+            return false;
         }
     }
 }

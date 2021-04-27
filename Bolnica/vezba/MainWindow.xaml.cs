@@ -10,6 +10,10 @@ namespace vezba
         public MainWindow()
         {
             InitializeComponent();
+            var s = new SecretaryView();
+            s.Show();
+
+            this.Close();
 
         }
 
