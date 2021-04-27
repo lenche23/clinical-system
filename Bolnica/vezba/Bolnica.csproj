@@ -97,12 +97,16 @@
     <Compile Include="EditPatient.xaml.cs">
       <DependentUpon>EditPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EmergencyAppointment.xaml.cs">
+      <DependentUpon>EmergencyAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerView.xaml.cs">
       <DependentUpon>ManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AppointmentForReschedulingDTO.cs" />
     <Compile Include="Model\DoctorEvaluation.cs" />
     <Compile Include="Model\DoctorEvaluationStorage.cs" />
     <Compile Include="Model\EventsLog.cs" />
@@ -162,11 +166,17 @@
     <Compile Include="OrderAppointmentView.xaml.cs">
       <DependentUpon>OrderAppointmentView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OverlapingAppointments.xaml.cs">
+      <DependentUpon>OverlapingAppointments.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PatientEditAppointment.xaml.cs">
       <DependentUpon>PatientEditAppointment.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleEmergencyAppointment.xaml.cs">
+      <DependentUpon>ScheduleEmergencyAppointment.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryAppointments.xaml.cs">
       <DependentUpon>SecretaryAppointments.xaml</DependentUpon>
@@ -256,6 +266,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EmergencyAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -296,11 +310,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OverlapingAppointments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientEditAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PatientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScheduleEmergencyAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

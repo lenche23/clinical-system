@@ -80,6 +80,7 @@
       "Type": 3,
       "IsDeleted": false
     },
+    "EndTime": "2021-04-24T09:00:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "44",
     "DoctorName": "Dana Dimitrijevic"
@@ -165,6 +166,7 @@
       "Type": 3,
       "IsDeleted": false
     },
+    "EndTime": "2021-04-24T09:00:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "44",
     "DoctorName": "Dana Dimitrijevic"
@@ -225,6 +227,7 @@
       "Type": 3,
       "IsDeleted": false
     },
+    "EndTime": "2021-04-28T11:45:00",
     "PatientName": "Petar Ilic",
     "RoomName": "44",
     "DoctorName": "Pera Peric"
@@ -310,6 +313,7 @@
       "Type": 3,
       "IsDeleted": false
     },
+    "EndTime": "2021-04-28T11:45:00",
     "PatientName": "Mira Torbica",
     "RoomName": "45",
     "DoctorName": "Milica Milicevic"
@@ -395,6 +399,7 @@
       "Type": 3,
       "IsDeleted": false
     },
+    "EndTime": "2021-04-28T08:45:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "45",
     "DoctorName": "Pera Peric"
@@ -471,6 +476,7 @@
       "Type": 3,
       "IsDeleted": false
     },
+    "EndTime": "2021-04-28T12:15:00",
     "PatientName": "Petar Ilic",
     "RoomName": "1",
     "DoctorName": "Milica Milicevic"
@@ -662,6 +668,7 @@
       "Type": 3,
       "IsDeleted": false
     },
+    "EndTime": "2021-04-28T11:30:00",
     "PatientName": "Mira Torbica",
     "RoomName": "2",
     "DoctorName": "Milica Milicevic"
@@ -712,6 +719,390 @@
           "Id": 1,
           "Name": "Hanzaplast",
           "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "06699592141",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T12:42:00.2750169+02:00",
+            "Comment": "test",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T12:42:40.7710091+02:00",
+            "Comment": "test2",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:42:36.9534669+02:00",
+            "Comment": "test 3",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:53:04.7925427+02:00",
+            "Comment": "test4",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 0,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "ibuprofen",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "07167166",
+        "MedicalIdNumber": "620178060616",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T12:42:00.2750169+02:00",
+            "Comment": "test",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T12:42:40.7710091+02:00",
+            "Comment": "test2",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:42:36.9534669+02:00",
+            "Comment": "test 3",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:53:04.7925427+02:00",
+            "Comment": "test4",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 0,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "ibuprofen",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Mira Torbica",
+      "Appointment": [],
+      "Username": "miki17",
+      "Password": "Tin3",
+      "Name": "Mira",
+      "Surname": "Torbica",
+      "Jmbg": "1701994261473",
+      "DateOfBirth": "1994-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0627844326",
+      "Adress": "Hajduk Veljkova 42, Novi Sad",
+      "Email": "mira94@gmail.com",
+      "IdCard": "008755974",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "EndTime": "2021-04-28T19:45:00",
+    "PatientName": "Mira Torbica",
+    "RoomName": "1",
+    "DoctorName": "Milica Milicevic"
+  },
+  {
+    "StartTime": "2021-04-27T22:53:32.3392018+02:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "",
+    "AppointentId": 8,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Dana Dimitrijevic",
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-04-27T22:53:32.3312229+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "06699592141",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T12:42:00.2750169+02:00",
+            "Comment": "test",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T12:42:40.7710091+02:00",
+            "Comment": "test2",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:42:36.9534669+02:00",
+            "Comment": "test 3",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:53:04.7925427+02:00",
+            "Comment": "test4",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 0,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "ibuprofen",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "07167166",
+        "MedicalIdNumber": "620178060616",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T12:42:00.2750169+02:00",
+            "Comment": "test",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T12:42:40.7710091+02:00",
+            "Comment": "test2",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:42:36.9534669+02:00",
+            "Comment": "test 3",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:53:04.7925427+02:00",
+            "Comment": "test4",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 0,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "ibuprofen",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Mira Torbica",
+      "Appointment": [],
+      "Username": "miki17",
+      "Password": "Tin3",
+      "Name": "Mira",
+      "Surname": "Torbica",
+      "Jmbg": "1701994261473",
+      "DateOfBirth": "1994-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0627844326",
+      "Adress": "Hajduk Veljkova 42, Novi Sad",
+      "Email": "mira94@gmail.com",
+      "IdCard": "008755974",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "EndTime": "2021-04-27T23:08:32.3392018+02:00",
+    "PatientName": "Mira Torbica",
+    "RoomName": "1",
+    "DoctorName": "Dana Dimitrijevic"
+  },
+  {
+    "StartTime": "2021-04-28T08:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "",
+    "AppointentId": 9,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Stomatolog"
+      },
+      "NameAndSurname": "Milica Milicevic",
+      "SalaryInRsd": 100000,
+      "Username": "milica",
+      "Password": "mica",
+      "Name": "Milica",
+      "Surname": "Milicevic",
+      "Jmbg": "2205972659017",
+      "DateOfBirth": "2021-04-27T23:00:58.2912164+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06364789110",
+      "Adress": "neka ulica 98, Novi Sad",
+      "Email": "milica@gmail.com",
+      "IdCard": "008100252",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 79,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 2,
+      "RoomNumber": 2,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 79,
           "Type": 0,
           "IsDeleted": false
         }
@@ -853,8 +1244,9 @@
       "Type": 3,
       "IsDeleted": false
     },
+    "EndTime": "2021-04-28T08:15:00",
     "PatientName": "Mira Torbica",
-    "RoomName": "1",
+    "RoomName": "2",
     "DoctorName": "Milica Milicevic"
   }
 ]

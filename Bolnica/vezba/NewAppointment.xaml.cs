@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace vezba
 {
-    /// <summary>
-    /// Interaction logic for NewAppointment.xaml
-    /// </summary>
     public partial class NewAppointment : Window
     {
         public NewAppointment()
@@ -153,13 +150,9 @@ namespace vezba
         {
             if (a1.Doctor.Jmbg.Equals(a2.Doctor.Jmbg) || a1.Patient.Jmbg.Equals(a2.Patient.Jmbg) || a1.Room.RoomNumber == a2.Room.RoomNumber)
             {
-                DateTime beginning1 = a1.StartTime;
-                DateTime end1 = a1.StartTime.AddMinutes(a1.DurationInMunutes);
-                DateTime beginning2 = a2.StartTime;
-                DateTime end2 = a2.StartTime.AddMinutes(a2.DurationInMunutes);
-                if (DateTime.Compare(end2, beginning1) <= 0) //drugi zavrsava pre pocetka prvog
+                if (DateTime.Compare(a2.EndTime, a1.StartTime) <= 0) //drugi zavrsava pre pocetka prvog
                     return false;
-                else if (DateTime.Compare(end1, beginning2) <= 0) //prvi zavrsava pre pocetka drugog
+                else if (DateTime.Compare(a1.EndTime, a2.StartTime) <= 0) //prvi zavrsava pre pocetka drugog
                     return false;
                 else
                     return true;
@@ -180,7 +173,7 @@ namespace vezba
                 {
                     if(DoShareResources(a, appointment))
                     {
-                        appointment.StartTime = generateNewStartTime(a.StartTime.AddMinutes(a.DurationInMunutes)); // dodati metodu get end time u klasu appointment
+                        appointment.StartTime = generateNewStartTime(a.EndTime);//.StartTime.AddMinutes(a.DurationInMunutes)); // dodati metodu get end time u klasu appointment
                         newTimeFound = false;
                         break;
                     }

@@ -11,6 +11,7 @@ namespace vezba
         {
             InitializeComponent();
             var s = new SecretaryView();
+            //var s = new EmergencyAppointment();
             s.Show();
 
             this.Close();
