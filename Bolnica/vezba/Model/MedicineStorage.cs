@@ -32,10 +32,44 @@ namespace Model
       
       public List<Medicine> Load()
       {
-         throw new NotImplementedException();
+            List<Medicine> medicine = new List<Medicine>();
+            Medicine m1 = new Medicine("Ibuprofen", "Union-medic d.o.o. Novi Sad", "30x400mg", 0, MedicineStatus.awaiting, MedicineCondition.pill);
+            medicine.Add(m1);
+            Ingridient i1 = new Ingridient("Neki alergen");
+            Medicine m2 = new Medicine("Panklav", "Union-medic d.o.o. Novi Sad", "30x400mg", 0, MedicineStatus.approved, MedicineCondition.pill);
+            m2.AddIngridient(i1);
+            medicine.Add(m2);
+            return medicine;
       }
-      
-      public String FileName { get; set; }
 
+      public List<Medicine> GetAwaiting()
+      {
+            List<Medicine> medicine = new List<Medicine>();
+            List<Medicine> medicine1 = Load();
+            for (int i = 0; i < medicine1.Count; i++) 
+            {
+                if(medicine1[i].Status.Equals(MedicineStatus.awaiting))
+                {
+                    medicine.Add(medicine1[i]);
+                }
+            }
+            return medicine;
+      }
+
+        public List<Medicine> GetApproved()
+        {
+            List<Medicine> medicine = new List<Medicine>();
+            List<Medicine> medicine1 = Load();
+            for (int i = 0; i < medicine1.Count; i++)
+            {
+                if (medicine1[i].Status.Equals(MedicineStatus.approved))
+                {
+                    medicine.Add(medicine1[i]);
+                }
+            }
+            return medicine;
+        }
+
+        public String FileName { get; set; }
     }
 }

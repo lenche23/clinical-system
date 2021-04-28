@@ -55,5 +55,11 @@ namespace Bolnica
             var s = new CreatePrescriptionView(appointment.Patient);
             s.Show();
         }
+
+        private void IzdavanjeUputaClick(object sender, RoutedEventArgs e)
+        {
+            var s = new CreateReferralLetterView(appointment.Patient);
+            s.Show();
+        }
     }
 }

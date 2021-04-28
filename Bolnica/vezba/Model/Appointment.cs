@@ -30,8 +30,9 @@ namespace Model
 
         public Patient Patient { get; set; }
 
+        public Boolean IsEmergency { get; set; }
 
-        public Appointment(int id, Patient patient, Doctor doctor, Room room, DateTime startTime, int duration, string apDesc)
+        public Appointment(int id, Patient patient, Doctor doctor, Room room, DateTime startTime, int duration, string apDesc, Boolean IsEmergency = false)
         {
             AppointentId = id;
             //this.patient = patient;
@@ -42,6 +43,7 @@ namespace Model
             DurationInMunutes = duration;
             ApointmentDescription = apDesc;
             IsDeleted = false;
+            this.IsEmergency = IsEmergency;
         }
 
         public Appointment(Doctor doctor, DateTime startTime, Patient patient) {

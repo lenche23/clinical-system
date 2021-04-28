@@ -19,6 +19,8 @@ namespace vezba
 
         private AppointmentStorage storage;
 
+        private Doctor DoctorUser;
+
         public DoctorView()
         {
             InitializeComponent();
@@ -27,6 +29,8 @@ namespace vezba
             List<Appointment> appointments = storage.GetAll();
             Appointments = new ObservableCollection<Appointment>(appointments);
             listViewAppointments.ItemsSource = Appointments;
+            DoctorStorage ds = new DoctorStorage();
+            DoctorUser = ds.GetOne("1708962324890");
         }
 
         private void AddClick(object sender, RoutedEventArgs e)
@@ -72,6 +76,12 @@ namespace vezba
         private void AnnouncmentsClick(object sender, RoutedEventArgs e)
         {
             var s = new ViewMyAnnouncements(UserType.doctor);
+            s.Show();
+        }
+
+        private void MedicineClick(object sender, RoutedEventArgs e)
+        {
+            var s = new MedicineRevisionView();
             s.Show();
         }
     }

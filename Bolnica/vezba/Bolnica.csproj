@@ -82,6 +82,9 @@
     <Compile Include="CreatePrescriptionView.xaml.cs">
       <DependentUpon>CreatePrescriptionView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateReferralLetterView.xaml.cs">
+      <DependentUpon>CreateReferralLetterView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,12 @@
     </Compile>
     <Compile Include="MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedicineRevisionView.xaml.cs">
+      <DependentUpon>MedicineRevisionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedicineView.xaml.cs">
+      <DependentUpon>MedicineView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DoctorEvaluation.cs" />
     <Compile Include="Model\DoctorEvaluationStorage.cs" />
@@ -236,6 +245,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CreateReferralLetterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DoctorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -273,6 +286,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MedicalRecordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MedicineRevisionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MedicineView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

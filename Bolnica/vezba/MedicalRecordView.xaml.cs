@@ -28,6 +28,7 @@ namespace vezba
                 listViewAlergens.ItemsSource = Patient.MedicalRecord.Allergen;
                 listViewAnamnesis.ItemsSource = Patient.MedicalRecord.Anamnesis;
                 listViewPrescriptions.ItemsSource = Patient.MedicalRecord.Prescription;
+                listViewReferralLetters.ItemsSource = Patient.MedicalRecord.ReferralLetter;
             }
         }
 

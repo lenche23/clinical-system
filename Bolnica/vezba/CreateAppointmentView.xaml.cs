@@ -35,7 +35,9 @@ namespace Bolnica
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            var AppointmentID = int.Parse(idTB.Text);
+            //var AppointmentID = int.Parse(idTB.Text);
+            AppointmentStorage aps = new AppointmentStorage();
+            var AppointmentID = aps.generateNextId();
             var format = "dd/MM/yyyy HH:mm";
             CultureInfo provider = CultureInfo.InvariantCulture;
             var StartTime = DateTime.ParseExact(startTB.Text, format, provider);
@@ -43,13 +45,12 @@ namespace Bolnica
             var ApointmentDescription = DescriptionTB.Text;
             var Patient = cmbPatients.SelectedItem;
             var Room = cmbRooms.SelectedItem;
-
             var Doctor = cmbDoctors.SelectedItem;
-            Appointment appointment1 = new Appointment(AppointmentID, (Patient)Patient, (Doctor)Doctor, (Room)Room, StartTime, DurationInMinutes, ApointmentDescription);
+            var IsEmergency = IsEmergencyCB.IsChecked;
+            Appointment appointment1 = new Appointment(AppointmentID, (Patient)Patient, (Doctor)Doctor, (Room)Room, StartTime, DurationInMinutes, ApointmentDescription, (Boolean)IsEmergency);
 
             //var appointment1 = new Appointment(StartTime, DurationInMinutes, ApointmentDescription, AppointmentID, (Doctor)Doctor, (Room)Room, (Patient)Patient);
 
-            AppointmentStorage aps = new AppointmentStorage();
             aps.Save(appointment1);
             DoctorView.Appointments.Add(appointment1);
             this.Close();

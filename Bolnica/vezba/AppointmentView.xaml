@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bolnica"
         mc:Ignorable="d"
-        Title="AppointmentView" Height="350" Width="500">
+        Title="AppointmentView" Height="350" Width="600">
     <Grid Margin="10">
         <Grid.Resources>
             <Style TargetType="{x:Type TextBox}">
@@ -29,7 +29,8 @@
         <StackPanel HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Click="ZdravstveniKartonClick">Zdravstveni karton</Button>
             <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Click="NovaAnamnezaClick">+ Nova anamneza</Button>
-            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Click="NovReceptClick">+ Nov recept</Button>            
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Click="NovReceptClick">+ Nov recept</Button>
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Click="IzdavanjeUputaClick">+ Izdavanje uputa</Button>
         </StackPanel>
         <TextBlock Grid.Column="0" Grid.Row="1" Padding="10">ID:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="2" Padding="10">Početak:</TextBlock>

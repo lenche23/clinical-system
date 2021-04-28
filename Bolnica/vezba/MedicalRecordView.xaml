@@ -114,6 +114,17 @@
                     </ListView.View>
                 </ListView>
             </TabItem>
+            <TabItem Header="Uputi">
+                <ListView Margin="30" Name="listViewReferralLetters" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Početak važenja uputa" Width="175" DisplayMemberBinding="{Binding StartDate, StringFormat=dd/MM/yyyy, Mode=OneWay}" />
+                            <GridViewColumn Header="Trajanje uputa" Width="175" DisplayMemberBinding="{Binding DurationPeriodInDays, Mode=OneWay}"/>
+                            <GridViewColumn Header="Lekar" Width="175" DisplayMemberBinding="{Binding Doctor.NameAndSurname, Mode=OneWay}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

@@ -47,9 +47,39 @@
           "Id": 0,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": null,
             "Name": "ibuprofen",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "ReplacementMedicine": null,
+            "Ingridient": []
+          }
+        }
+      ],
+      "referralLetter": [
+        {
+          "StartDate": "2021-04-30T00:00:00",
+          "DurationPeriodInDays": 5,
+          "Doctor": {
+            "Speciality": null,
+            "NameAndSurname": "Darko Torbica",
+            "SalaryInRsd": 70000,
+            "Username": "darko",
+            "Password": "dare",
+            "Name": "Darko",
+            "Surname": "Torbica",
+            "Jmbg": "1708962324890",
+            "DateOfBirth": "2021-04-27T13:34:18.6995324+02:00",
+            "Sex": 0,
+            "PhoneNumber": "0665813272",
+            "Adress": "neka ulica 38, Novi Sad",
+            "Email": "darko@gmail.com",
+            "IdCard": "007155721",
+            "Type": 2,
+            "IsDeleted": false
           }
         }
       ],
@@ -98,9 +128,39 @@
           "Id": 0,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": [],
             "Name": "ibuprofen",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "ReplacementMedicine": null,
+            "Ingridient": []
+          }
+        }
+      ],
+      "ReferralLetter": [
+        {
+          "StartDate": "2021-04-30T00:00:00",
+          "DurationPeriodInDays": 5,
+          "Doctor": {
+            "Speciality": null,
+            "NameAndSurname": "Darko Torbica",
+            "SalaryInRsd": 70000,
+            "Username": "darko",
+            "Password": "dare",
+            "Name": "Darko",
+            "Surname": "Torbica",
+            "Jmbg": "1708962324890",
+            "DateOfBirth": "2021-04-27T13:34:18.6995324+02:00",
+            "Sex": 0,
+            "PhoneNumber": "0665813272",
+            "Adress": "neka ulica 38, Novi Sad",
+            "Email": "darko@gmail.com",
+            "IdCard": "007155721",
+            "Type": 2,
+            "IsDeleted": false
           }
         }
       ]
@@ -184,9 +244,15 @@
           "Id": 1,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": null,
             "Name": "panklav",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         },
         {
@@ -197,12 +263,19 @@
           "Id": 1234565,
           "isActive": false,
           "Medicine": {
-            "allergen": null,
+            "ingridient": null,
             "Name": "analgin",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         }
       ],
+      "referralLetter": null,
       "HealthInsuranceNumber": "1651",
       "MedicalIdNumber": "546356354",
       "Allergen": [
@@ -242,9 +315,15 @@
           "Id": 1,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": [],
             "Name": "panklav",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         },
         {
@@ -255,12 +334,19 @@
           "Id": 1234565,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": [],
             "Name": "analgin",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         }
-      ]
+      ],
+      "ReferralLetter": []
     },
     "NameAndSurname": "Milena Jovanovic",
     "Appointment": [],
@@ -293,6 +379,7 @@
       ],
       "anamnesis": null,
       "prescription": null,
+      "referralLetter": null,
       "HealthInsuranceNumber": "",
       "MedicalIdNumber": "",
       "Allergen": [
@@ -304,7 +391,8 @@
         }
       ],
       "Anamnesis": [],
-      "Prescription": []
+      "Prescription": [],
+      "ReferralLetter": []
     },
     "NameAndSurname": "Ajn Ibjhsvda",
     "Appointment": [],
@@ -340,6 +428,7 @@
       ],
       "anamnesis": null,
       "prescription": null,
+      "referralLetter": null,
       "HealthInsuranceNumber": "465168",
       "MedicalIdNumber": "531534",
       "Allergen": [
@@ -354,7 +443,8 @@
         }
       ],
       "Anamnesis": [],
-      "Prescription": []
+      "Prescription": [],
+      "ReferralLetter": []
     },
     "NameAndSurname": "afd fd",
     "Appointment": [],

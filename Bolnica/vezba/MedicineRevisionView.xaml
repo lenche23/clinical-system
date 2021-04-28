@@ -1,0 +1,42 @@
+﻿<Window x:Class="vezba.MedicineRevisionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vezba"
+        mc:Ignorable="d"
+        Title="MedicineRevisionView" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Revizija Lekova">
+                <ListView Margin="30" Name="listViewMedicineRevision" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Naziv leka" Width="180" DisplayMemberBinding="{Binding Name, Mode=OneWay}" />
+                            <GridViewColumn Header="Pakovanje" Width="180" DisplayMemberBinding="{Binding Packaging, Mode=OneWay}"/>
+                            <GridViewColumn Header="Proizvođač" Width="180" DisplayMemberBinding="{Binding Manufacturer, Mode=OneWay}"/>
+                            <GridViewColumn Header="Oblik" Width="180" DisplayMemberBinding="{Binding Condition, Mode=OneWay}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Odobreni Lekovi">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                        <Button Margin="5" Padding="5" Click="ViewClick" Width="100">Prikaz</Button>
+                    </StackPanel>
+                    <ListView Margin="10" Name="listViewMedicine" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Naziv leka" Width="180" DisplayMemberBinding="{Binding Name, Mode=OneWay}" />
+                                <GridViewColumn Header="Pakovanje" Width="180" DisplayMemberBinding="{Binding Packaging, Mode=OneWay}"/>
+                                <GridViewColumn Header="Proizvođač" Width="180" DisplayMemberBinding="{Binding Manufacturer, Mode=OneWay}"/>
+                                <GridViewColumn Header="Oblik" Width="180" DisplayMemberBinding="{Binding Condition, Mode=OneWay}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

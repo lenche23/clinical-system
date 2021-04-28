@@ -4,6 +4,17 @@ namespace Model
 {
    public class Medicine
    {
+
+        public Medicine(String Name, String Manufacturer, String Packaging, int MedicineID, MedicineStatus Status, MedicineCondition Condition)
+        {
+            this.Name = Name;
+            this.Manufacturer = Manufacturer;
+            this.Packaging = Packaging;
+            this.MedicineID = MedicineID;
+            this.Status = Status;
+            this.Condition = Condition;
+        }
+
         public String Name { get; set; }
 
         //******** Dodati deo - ako nesto ne radi
