@@ -58,7 +58,7 @@ namespace vezba
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            var s = new ViewMyAnnouncements(UserType.patient);
+            var s = new ViewMyAnnouncements(UserType.patient, "1008985563244");
             s.Show();
         }
     }

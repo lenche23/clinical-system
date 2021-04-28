@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Bolnica;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,7 @@ namespace vezba
             Duration.ItemsSource = durations;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Schedule_Button_Click(object sender, RoutedEventArgs e)
         {
             Patient patient = (Patient)Patient.SelectedItem;
             Speciality speciality = (Speciality)Speciality.SelectedItem;
@@ -62,8 +63,6 @@ namespace vezba
                         MessageBox.Show("Zakazan je hitan termin za " + emergencyAppointment.StartTime.ToString("dd.MM.yyyy. HH:mm") + " kod lekara " + emergencyAppointment.DoctorName);
                     }
                     this.Close();
-
-                    
                 }
                 else
                 {
@@ -165,5 +164,10 @@ namespace vezba
             return false;
         }
 
+        private void Register_Patient_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new NewPatient();
+            s.Show();
+        }
     }
 }

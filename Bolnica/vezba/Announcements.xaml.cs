@@ -30,7 +30,7 @@ namespace vezba
 
         private void New_Button_Click(object sender, RoutedEventArgs e)
         {
-            var w = new NewAnnouncement();
+            var w = new ChooseAnouncementType();
             w.Show();
         }
 

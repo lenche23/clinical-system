@@ -158,9 +158,9 @@ namespace vezba
                 MessageBox.Show("Niste selektovali termin!");
         }
 
-        private void Button_Click()
+        private void Close_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

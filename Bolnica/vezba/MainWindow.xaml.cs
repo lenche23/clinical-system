@@ -10,8 +10,8 @@ namespace vezba
         public MainWindow()
         {
             InitializeComponent();
-            var s = new SecretaryView();
-            //var s = new EmergencyAppointment();
+            //var s = new SecretaryView();
+            var s = new PatientView();
             s.Show();
 
             this.Close();

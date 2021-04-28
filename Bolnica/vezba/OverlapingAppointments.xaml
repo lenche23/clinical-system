@@ -18,7 +18,8 @@
                 <DataGridTextColumn Header="Novo vreme" Binding="{Binding SuggestedTime, StringFormat=dd.MM.yyyy HH:mm}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Odlozi" HorizontalAlignment="Left" Height="32" Margin="90,334,0,0" VerticalAlignment="Top" Width="123" Click="Postpone_Button_Click"/>
+        <Button Content="Odlozi" HorizontalAlignment="Left" Height="32" Margin="195,334,0,0" VerticalAlignment="Top" Width="123" Click="Postpone_Button_Click"/>
+        <Button Content="Zatvori" HorizontalAlignment="Left" Height="32" Margin="426,334,0,0" VerticalAlignment="Top" Width="120" Click="Close_Button_Click"/>
 
     </Grid>
 </Window>

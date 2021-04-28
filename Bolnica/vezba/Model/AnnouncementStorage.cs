@@ -6,12 +6,12 @@ using System.Windows;
 
 namespace Model
 {
-   public class AnnouncementStorage
-   {
-      public AnnouncementStorage()
-      {
-          this.FileName = "../../obavestenja.json";
-      }
+    public class AnnouncementStorage
+    {
+        public AnnouncementStorage()
+        {
+            this.FileName = "../../obavestenja.json";
+        }
         public List<Announcement> GetAll()
         {
             List<Announcement> ans = this.Load();
@@ -26,8 +26,8 @@ namespace Model
             return announcements;
         }
 
-      public Boolean Save(Announcement a)
-      {
+        public Boolean Save(Announcement a)
+        {
             List<Announcement> announcements = Load();
 
             for (int i = 0; i < announcements.Count; i++)
@@ -52,9 +52,9 @@ namespace Model
             }
             return true;
         }
-      
-      public Boolean Update(Announcement a)
-      {
+
+        public Boolean Update(Announcement a)
+        {
             List<Announcement> announcements = Load();
             for (int i = 0; i < announcements.Count; i++)
             {
@@ -81,9 +81,9 @@ namespace Model
             }
             return false;
         }
-      
-      public Announcement GetOne(int id)
-      {
+
+        public Announcement GetOne(int id)
+        {
             List<Announcement> announcements = GetAll();
             for (int i = 0; i < announcements.Count; i++)
             {
@@ -94,9 +94,9 @@ namespace Model
             }
             return null;
         }
-      
-      public Boolean Delete(int id)
-      {
+
+        public Boolean Delete(int id)
+        {
             List<Announcement> announcements = Load();
             for (int i = 0; i < announcements.Count; i++)
             {
@@ -122,9 +122,9 @@ namespace Model
             }
             return false;
         }
-      
-      public List<Announcement> Load()
-      {
+
+        public List<Announcement> Load()
+        {
             List<Announcement> ans = new List<Announcement>();
             try
             {
@@ -139,34 +139,52 @@ namespace Model
             }
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
             return ans;
-      }
+        }
 
-       public List<Announcement> GetByUser(UserType ut)
+        public List<Announcement> GetByUser(UserType ut)
         {
+            List<Announcement> allAnouncements = GetAll();
+            List<Announcement> announcementsForUserType = new List<Announcement>();
+            
+            foreach(Announcement a in allAnouncements)
+            {
+                if (DoesUserTypeSeeAnnouncement(ut, a.Visibility))
+                    announcementsForUserType.Add(a);
+            }
+            return announcementsForUserType;
+        }
 
-            List<Announcement> temp = GetAll();
-            List<Announcement> announcements = new List<Announcement>();
-            if (ut == UserType.secretary || ut == UserType.menager || ut == UserType.doctor)
+        public List<Announcement> getIndividualAnnouncements(String userId)
+        {
+            List<Announcement> allAnouncements = GetAll();
+            List<Announcement> individualAnnouncements = new List<Announcement>();
+            foreach(Announcement a in allAnouncements)
             {
-                for (int i = 0; i < temp.Count; i++)
+                if(a.Visibility == Visibility.individual)
                 {
-                    if (temp[i].Visibility == Model.Visibility.staff || temp[i].Visibility == Model.Visibility.all)
+                    foreach(String recipient in a.Recipients)
                     {
-                        announcements.Add(temp[i]);
+                        if (recipient.Equals(userId))
+                            individualAnnouncements.Add(a);
                     }
                 }
             }
-            else if (ut == UserType.patient)
-            {
-                for (int i = 0; i < temp.Count; i++)
-                {
-                    if (temp[i].Visibility == Model.Visibility.patients || temp[i].Visibility == Model.Visibility.all)
-                    {
-                        announcements.Add(temp[i]);
-                    }
-                }
-            }
-            return announcements;
+
+            return individualAnnouncements;
+        }
+        
+        private Boolean DoesUserTypeSeeAnnouncement(UserType userType, Model.Visibility visibility)
+        {
+            if (userType == UserType.menager && (visibility == Model.Visibility.all || visibility == Model.Visibility.staff || visibility == Model.Visibility.menagers))
+                return true;
+            else if (userType == UserType.secretary && (visibility == Model.Visibility.all || visibility == Model.Visibility.staff || visibility == Model.Visibility.secretaries))
+                return true;
+            else if (userType == UserType.doctor && (visibility == Model.Visibility.all || visibility == Model.Visibility.staff || visibility == Model.Visibility.doctors))
+                return true;
+            else if (userType == UserType.patient && (visibility == Model.Visibility.all || visibility == Model.Visibility.patients))
+                return true;
+            else 
+                return false;
         }
         public int generateNextId()
         {

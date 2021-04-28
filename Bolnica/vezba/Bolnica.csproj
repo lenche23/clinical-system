@@ -70,6 +70,9 @@
     <Compile Include="CancelAppointmentView.xaml.cs">
       <DependentUpon>CancelAppointmentView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChooseAnouncementType.xaml.cs">
+      <DependentUpon>ChooseAnouncementType.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreateAnamnesisView.xaml.cs">
       <DependentUpon>CreateAnamnesisView.xaml</DependentUpon>
     </Compile>
@@ -157,6 +160,9 @@
     <Compile Include="NewAppointment.xaml.cs">
       <DependentUpon>NewAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewIndividualAnouncement.xaml.cs">
+      <DependentUpon>NewIndividualAnouncement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewPatient.xaml.cs">
       <DependentUpon>NewPatient.xaml</DependentUpon>
     </Compile>
@@ -230,6 +236,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ChooseAnouncementType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateAnamnesisView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -295,6 +305,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NewAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewIndividualAnouncement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

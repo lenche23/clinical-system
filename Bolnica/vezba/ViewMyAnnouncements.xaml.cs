@@ -28,6 +28,19 @@ namespace vezba
             Ans = new ObservableCollection<Announcement>(announcements);
         }
 
+        public ViewMyAnnouncements(UserType ut, String jmbg)
+        {
+            InitializeComponent();
+            this.DataContext = this;
+            AnnouncementStorage s = new AnnouncementStorage();
+            /*List<Announcement> announcementsForUserType = s.GetByUser(ut);
+            List<Announcement> individualAnnouncements = s.getIndividualAnnouncements(jmbg);*/
+            List<Announcement> announcements = s.GetByUser(ut);
+            announcements.AddRange(s.getIndividualAnnouncements(jmbg));
+
+            Ans = new ObservableCollection<Announcement>(announcements);
+        }
+
         private void View_Button_Click(object sender, RoutedEventArgs e)
         {
             if (announcementTable.SelectedCells.Count > 0)

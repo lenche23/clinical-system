@@ -47,12 +47,19 @@
           "Id": 0,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": null,
             "Name": "ibuprofen",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         }
       ],
+      "referralLetter": null,
       "HealthInsuranceNumber": "07167166",
       "MedicalIdNumber": "620178060616",
       "Allergen": [
@@ -98,13 +105,21 @@
           "Id": 0,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": [],
             "Name": "ibuprofen",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         }
-      ]
+      ],
+      "ReferralLetter": []
     },
+    "NameAndSurname": "Mira Torbica",
     "Appointment": [],
     "Username": "miki17",
     "Password": "Tin3",
@@ -125,6 +140,7 @@
     "IsGuest": false,
     "EmergencyContact": "0638756221",
     "MedicalRecord": null,
+    "NameAndSurname": "Petar Ilic",
     "Appointment": [],
     "Username": "pera85",
     "Password": "p123",
@@ -176,12 +192,19 @@
           "Id": 1,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": null,
             "Name": "panklav",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         }
       ],
+      "referralLetter": null,
       "HealthInsuranceNumber": "1651",
       "MedicalIdNumber": "546356354",
       "Allergen": [
@@ -215,13 +238,21 @@
           "Id": 1,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": [],
             "Name": "panklav",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         }
-      ]
+      ],
+      "ReferralLetter": []
     },
+    "NameAndSurname": "Milena Jovanovic",
     "Appointment": [],
     "Username": "fgjcj",
     "Password": "dfgh",
@@ -252,6 +283,7 @@
       ],
       "anamnesis": null,
       "prescription": null,
+      "referralLetter": null,
       "HealthInsuranceNumber": "",
       "MedicalIdNumber": "",
       "Allergen": [
@@ -263,8 +295,10 @@
         }
       ],
       "Anamnesis": [],
-      "Prescription": []
+      "Prescription": [],
+      "ReferralLetter": []
     },
+    "NameAndSurname": "Ajn Ibjhsvda",
     "Appointment": [],
     "Username": "",
     "Password": "",
@@ -298,6 +332,7 @@
       ],
       "anamnesis": null,
       "prescription": null,
+      "referralLetter": null,
       "HealthInsuranceNumber": "465168",
       "MedicalIdNumber": "531534",
       "Allergen": [
@@ -312,8 +347,10 @@
         }
       ],
       "Anamnesis": [],
-      "Prescription": []
+      "Prescription": [],
+      "ReferralLetter": []
     },
+    "NameAndSurname": "afd fd",
     "Appointment": [],
     "Username": "gjhfh",
     "Password": "ghjy",
@@ -328,5 +365,37 @@
     "IdCard": "453413",
     "Type": 3,
     "IsDeleted": true
+  },
+  {
+    "appointment": null,
+    "IsGuest": true,
+    "EmergencyContact": "",
+    "MedicalRecord": {
+      "allergen": null,
+      "anamnesis": null,
+      "prescription": null,
+      "referralLetter": null,
+      "HealthInsuranceNumber": "",
+      "MedicalIdNumber": "",
+      "Allergen": [],
+      "Anamnesis": [],
+      "Prescription": [],
+      "ReferralLetter": []
+    },
+    "NameAndSurname": "Aff Fhfhdf",
+    "Appointment": [],
+    "Username": "",
+    "Password": "",
+    "Name": "Aff",
+    "Surname": "Fhfhdf",
+    "Jmbg": "35422523",
+    "DateOfBirth": "1900-01-01T00:00:00",
+    "Sex": 1,
+    "PhoneNumber": "",
+    "Adress": "",
+    "Email": "",
+    "IdCard": "",
+    "Type": 3,
+    "IsDeleted": false
   }
 ]
