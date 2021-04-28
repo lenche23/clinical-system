@@ -7,16 +7,18 @@
         mc:Ignorable="d"
         Title="OverlapingAppointments" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="appointmentsTable" ItemsSource="{Binding Appointments}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="700" Height="180" Margin="32,167,0,0" >
+        <DataGrid x:Name="overlapingAppointmentsTable" ItemsSource="{Binding Appointments}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="700" Height="180" Margin="39,109,0,0" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Vreme" Binding="{Binding StartTime, StringFormat=dd.MM.yyyy HH:mm}" Width="100" />
                 <DataGridTextColumn Header="Trajanje (min)" Binding="{Binding DurationInMunutes}" Width="80"/>
-                <DataGridTextColumn Header="Prostorija" Binding="{Binding RoomNumber}" Width="80"/>
-                <DataGridTextColumn Header="Pacijent" Binding="{Binding PatientName}" Width="140"/>
-                <DataGridTextColumn Header="Lekar" Binding="{Binding DoctorName}" Width="140"/>
+                <DataGridTextColumn Header="Prostorija" Binding="{Binding RoomNumber}" Width="60"/>
+                <DataGridTextColumn Header="Pacijent" Binding="{Binding PatientName}" Width="120"/>
+                <DataGridTextColumn Header="Lekar" Binding="{Binding DoctorName}" Width="120"/>
                 <DataGridTextColumn Header="Opis" Binding="{Binding AppointmentDescription}" Width="*"/>
+                <DataGridTextColumn Header="Novo vreme" Binding="{Binding SuggestedTime, StringFormat=dd.MM.yyyy HH:mm}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Odlozi" HorizontalAlignment="Left" Height="32" Margin="90,334,0,0" VerticalAlignment="Top" Width="123" Click="Postpone_Button_Click"/>
 
     </Grid>
 </Window>

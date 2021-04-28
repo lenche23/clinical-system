@@ -32,7 +32,9 @@ namespace vezba
 
         private void Show_Appointments_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new OverlapingAppointments(EmergencyAppointment);
+            s.Show();
+            this.Close();
         }
 
         private void Schedule_Appointment_Click(object sender, RoutedEventArgs e)
@@ -44,6 +46,9 @@ namespace vezba
                 SecretaryAppointments.Appointments.Add(EmergencyAppointment);
                 MessageBox.Show("Zakazan je hitan termin za " + EmergencyAppointment.StartTime.ToString("dd.MM.yyyy. HH:mm") + " kod lekara " + EmergencyAppointment.DoctorName);
             }
+            else
+                MessageBox.Show("Neuspesno zakazivanje");
+            this.Close();
         }
     }
 }

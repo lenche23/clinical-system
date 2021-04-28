@@ -14,7 +14,6 @@ namespace Model
         public String RoomNumber { get; set; }
         public String PatientName { get; set; }
         public DateTime SuggestedTime { get; set; }
-        public int NumberOfAppointmentsForRescheduling { get; set; }
 
 
         public AppointmentForReschedulingDTO(Appointment a)
@@ -27,7 +26,6 @@ namespace Model
             DurationInMunutes = a.DurationInMunutes;
             AppointmentDescription = a.ApointmentDescription;
             SuggestedTime = a.StartTime;
-            NumberOfAppointmentsForRescheduling = 0;
         }
 
         //public AppointmentForReschedulingDTO() { }

@@ -52,7 +52,7 @@ namespace vezba
             if (emergencyAppointment != null)
             {
                 DateTime timeLimit = DateTime.Now.AddMinutes(15);
-                /*if(emergencyAppointment.StartTime <= timeLimit)
+                if(emergencyAppointment.StartTime <= timeLimit)
                 {
                     AppointmentStorage aps = new AppointmentStorage();
                     Boolean b = aps.Save(emergencyAppointment);
@@ -61,14 +61,18 @@ namespace vezba
                         SecretaryAppointments.Appointments.Add(emergencyAppointment);
                         MessageBox.Show("Zakazan je hitan termin za " + emergencyAppointment.StartTime.ToString("dd.MM.yyyy. HH:mm") + " kod lekara " + emergencyAppointment.DoctorName);
                     }
+                    this.Close();
+
                     
                 }
                 else
-                {*/
+                {
                     var s = new ScheduleEmergencyAppointment(emergencyAppointment);
                     s.Show();
-                //}
-               
+                }
+
+                
+
             }
             return;
         }
