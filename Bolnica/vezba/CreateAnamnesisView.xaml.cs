@@ -41,7 +41,7 @@ namespace vezba
             PatientStorage ps = new PatientStorage();
             ps.Update(appointment.Patient);
             AppointmentStorage aps = new AppointmentStorage();
-            ObservableCollection<Appointment> appointments = DoctorView.Appointments;
+            ObservableCollection<Appointment> appointments = CalendarView.Appointments;
             foreach (Appointment appointment1 in appointments) { 
                 if(appointment1.Patient.Jmbg.Equals(appointment.Patient.Jmbg))
                 {

@@ -23,7 +23,7 @@ namespace Bolnica
     public partial class EditAppointmentView : Window
     {
         public Appointment Selected { get; set; }
-        private DoctorView dw;
+        private CalendarView cw;
         public PatientStorage storage;
         public DoctorStorage docstorage;
         public RoomStorage rs;
@@ -31,7 +31,7 @@ namespace Bolnica
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
 
-        public EditAppointmentView(Appointment selected, DoctorView dw)
+        public EditAppointmentView(Appointment selected, CalendarView cw)
         {
             InitializeComponent();
             storage = new PatientStorage();
@@ -42,7 +42,7 @@ namespace Bolnica
             Rooms = rs.GetAll();
             this.Selected = selected;
             this.DataContext = this;
-            this.dw = dw;
+            this.cw = cw;
             if(Selected.Patient != null && Selected.Patient.Jmbg != null)
                 cmbPatients.SelectedValue = Selected.Patient.Jmbg;
             if (Selected.Room != null)
@@ -77,7 +77,7 @@ namespace Bolnica
             //Selected.patient = (Patient)Patient;
             Selected.Doctor = (Doctor)Doctor;
             Selected.Room = (Room)Room;
-            dw.listViewAppointments.Items.Refresh();
+            cw.listViewAppointments.Items.Refresh();
             this.Close();
         }
 

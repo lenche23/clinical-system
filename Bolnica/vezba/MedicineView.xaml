@@ -7,9 +7,6 @@
         mc:Ignorable="d"
         Title="MedicineView" Height="300" Width="500">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Width="70" Click="EditClick">Izmeni</Button>
-        </StackPanel>
         <Grid Margin="10" DockPanel.Dock="Left">
             <Grid.Resources>
                 <Style TargetType="{x:Type TextBox}">

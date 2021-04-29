@@ -32,15 +32,15 @@ namespace vezba
         private void ApproveClick(object sender, RoutedEventArgs e)
         {
             medicine.Status = MedicineStatus.approved;
-            MedicineRevisionView.MedicineToApprove.Remove(medicine);
-            MedicineRevisionView.ApprovedMedicine.Add(medicine);
+            MedicinePageView.MedicineToApprove.Remove(medicine);
+            MedicinePageView.ApprovedMedicine.Add(medicine);
             this.Close();
         }
 
         private void Decline(object sender, RoutedEventArgs e)
         {
             medicine.Status = MedicineStatus.declined;
-            MedicineRevisionView.MedicineToApprove.Remove(medicine);
+            MedicinePageView.MedicineToApprove.Remove(medicine);
             this.Close();
         }
     }

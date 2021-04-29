@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -11,22 +12,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Model;
 
 namespace vezba
 {
     /// <summary>
-    /// Interaction logic for MedicineRevisionView.xaml
+    /// Interaction logic for MedicinePageView.xaml
     /// </summary>
-    /// NOT WORKING ATM - DELETE
-    public partial class MedicineRevisionView : Window
+    public partial class MedicinePageView : Page
     {
         public static ObservableCollection<Medicine> MedicineToApprove { get; set; }
 
         public static ObservableCollection<Medicine> ApprovedMedicine { get; set; }
 
-        public MedicineRevisionView()
+        public MedicinePageView()
         {
             InitializeComponent();
             MedicineStorage ms = new MedicineStorage();
@@ -37,14 +37,14 @@ namespace vezba
             List<Medicine> approvedMedicine = ms.GetApproved();
             ApprovedMedicine = new ObservableCollection<Medicine>(approvedMedicine);
             listViewMedicine.ItemsSource = ApprovedMedicine;
-
         }
 
         private void ViewClick(object sender, RoutedEventArgs e)
         {
-            if(listViewMedicine.SelectedItems.Count > 0)
+            if (listViewMedicine.SelectedItems.Count > 0)
             {
                 Medicine medicine = (Medicine)listViewMedicine.SelectedItem;
+                //CHANGE
                 //var s = new MedicineView(medicine, this);
                 //s.Show();
             }
@@ -52,7 +52,7 @@ namespace vezba
 
         private void RevisionClick(object sender, RoutedEventArgs e)
         {
-            if(listViewMedicineRevision.SelectedItems.Count > 0)
+            if (listViewMedicineRevision.SelectedItems.Count > 0)
             {
                 Medicine medicine = (Medicine)listViewMedicineRevision.SelectedItem;
                 var s = new RevisionView(medicine);

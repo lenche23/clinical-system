@@ -23,22 +23,12 @@ namespace vezba
 
         public Medicine medicine;
 
-        public DoctorView view;
-
-        public MedicineView(Medicine medicine, DoctorView view)
+        public MedicineView(Medicine medicine)
         {
             InitializeComponent();
             this.DataContext = medicine;
             listViewAlergens.ItemsSource = medicine.Ingridient;
             this.medicine = medicine;
-            this.view = view;
-        }
-
-        private void EditClick(object sender, RoutedEventArgs e)
-        {
-            var s = new EditMedicineView(medicine, view);
-            this.Close();
-            s.Show();
         }
     }
 }

@@ -73,7 +73,8 @@ namespace vezba
             medicine.Packaging = Packaging;
             medicine.Condition = Condition;
             medicine.Ingridient = new List<Ingridient>(Ingredients);
-            view.listViewMedicine.Items.Refresh();
+            //CHANGE!!!
+            //view.listViewMedicine.Items.Refresh();
             this.Close();
         }
 

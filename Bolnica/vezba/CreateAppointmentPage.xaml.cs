@@ -1,16 +1,26 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
-using Model;
-using vezba;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace Bolnica
+namespace vezba
 {
     /// <summary>
-    /// Interaction logic for CreateAppointmentView.xaml
+    /// Interaction logic for CreateAppointmentPage.xaml
     /// </summary>
-    public partial class CreateAppointmentView : Window
+    public partial class CreateAppointmentPage : Page
     {
         public List<Patient> Patients { get; set; }
         public List<Doctor> Doctors { get; set; }
@@ -18,7 +28,9 @@ namespace Bolnica
         public PatientStorage storage;
         public DoctorStorage docstorage;
         public RoomStorage rs;
-        public CreateAppointmentView()
+
+        private DoctorView dw;
+        public CreateAppointmentPage(DoctorView dw)
         {
             InitializeComponent();
             storage = new PatientStorage();
@@ -31,6 +43,7 @@ namespace Bolnica
             cmbPatients.SelectedIndex = 0;
             cmbRooms.SelectedIndex = 0;
             cmbDoctors.SelectedIndex = 0;
+            this.dw = dw;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -48,21 +61,13 @@ namespace Bolnica
             var Doctor = cmbDoctors.SelectedItem;
             var IsEmergency = IsEmergencyCB.IsChecked;
             Appointment appointment1 = new Appointment(AppointmentID, (Patient)Patient, (Doctor)Doctor, (Room)Room, StartTime, DurationInMinutes, ApointmentDescription, (Boolean)IsEmergency);
-
-            //var appointment1 = new Appointment(StartTime, DurationInMinutes, ApointmentDescription, AppointmentID, (Doctor)Doctor, (Room)Room, (Patient)Patient);
-
             aps.Save(appointment1);
-            CalendarView.Appointments.Add(appointment1);
-            this.Close();
-            var s = new DoctorView();
-            s.Show();
+            dw.Main.Content = new CalendarView(dw);
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            var s = new DoctorView();
-            this.Close();
-            s.Show();
+            dw.Main.Content = new CalendarView(dw);
         }
     }
 }
