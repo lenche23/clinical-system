@@ -9,16 +9,21 @@
     <Grid>
         <TabControl>
             <TabItem Header="Revizija Lekova">
-                <ListView Margin="30" Name="listViewMedicineRevision" >
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Naziv leka" Width="180" DisplayMemberBinding="{Binding Name, Mode=OneWay}" />
-                            <GridViewColumn Header="Pakovanje" Width="180" DisplayMemberBinding="{Binding Packaging, Mode=OneWay}"/>
-                            <GridViewColumn Header="Proizvođač" Width="180" DisplayMemberBinding="{Binding Manufacturer, Mode=OneWay}"/>
-                            <GridViewColumn Header="Oblik" Width="180" DisplayMemberBinding="{Binding Condition, Mode=OneWay}"/>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                        <Button Margin="5" Padding="5" Click="RevisionClick" Width="100">Revizija</Button>
+                    </StackPanel>
+                    <ListView Margin="10" Name="listViewMedicineRevision" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Naziv leka" Width="180" DisplayMemberBinding="{Binding Name, Mode=OneWay}" />
+                                <GridViewColumn Header="Pakovanje" Width="180" DisplayMemberBinding="{Binding Packaging, Mode=OneWay}"/>
+                                <GridViewColumn Header="Proizvođač" Width="180" DisplayMemberBinding="{Binding Manufacturer, Mode=OneWay}"/>
+                                <GridViewColumn Header="Oblik" Width="180" DisplayMemberBinding="{Binding Condition, Mode=OneWay}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </DockPanel>
             </TabItem>
             <TabItem Header="Odobreni Lekovi">
                 <DockPanel>

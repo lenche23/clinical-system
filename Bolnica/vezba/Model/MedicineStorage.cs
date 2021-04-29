@@ -17,8 +17,23 @@ namespace Model
       
       public Boolean Update(Medicine medicine)
       {
-         throw new NotImplementedException();
-      }
+            List<Medicine> medicineList = Load();
+            for(int i=0; i<medicineList.Count; i++)
+            {
+                if(medicineList[i].MedicineID == medicine.MedicineID)
+                {
+                    medicineList[i].Name = medicine.Name;
+                    medicineList[i].Manufacturer = medicine.Manufacturer;
+                    medicineList[i].Packaging = medicine.Packaging;
+                    medicineList[i].Status = medicine.Status;
+                    medicineList[i].Condition = medicine.Condition;
+                    medicineList[i].ReplacementMedicine = medicine.ReplacementMedicine;
+                    medicineList[i].Ingridient = medicine.Ingridient;
+                    return true;
+                }
+            }
+            return false;
+        }
       
       public Medicine GetOne(int id)
       {

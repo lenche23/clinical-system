@@ -13,57 +13,108 @@
                     <Setter Property="Height" Value="50"/>
                 </Style>
             </StackPanel.Resources>
-            <Button Background="#FF538CBD">Kalendar
-            </Button>
+            <Button Click="CalendarClick">Kalendar</Button>
             <Button Click="MedicineClick">Lekovi</Button>
-            <Button>Obaveštenja</Button>
+            <Button Click="AnnouncementsClick">Obaveštenja</Button>
         </StackPanel>
-        <DockPanel>
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
-                <Button Margin="5" Padding="5" Click="AddClick">+ Nov termin</Button>
-                <Button Margin="5" Padding="5" Click="EditClick">Izmeni termin</Button>
-                <Button Margin="5" Padding="5" Click="DeleteClick">- Obriši termin</Button>
-                <Button Margin="5" Padding="5" Click="ViewClick">Informacije o terminu</Button>
-                <Button Margin="5" Padding="5" Click="AnnouncmentsClick">Obaveštenja</Button>
-            </StackPanel>
-            <ListView Margin="10" Name="listViewAppointments" >
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Početak" Width="130" DisplayMemberBinding="{Binding StartTime, StringFormat=dd/MM/yyyy HH:mm}" />
-                        <GridViewColumn Header="Trajanje" Width="130" DisplayMemberBinding="{Binding DurationInMunutes}" />
-                        <GridViewColumn Header="Pregled" Width="130" DisplayMemberBinding="{Binding ApointmentDescription}" />
-                        <GridViewColumn Header="Pacijent" Width="130">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock>
-                                        <TextBlock.Text>
-                                            <MultiBinding StringFormat="{}{0} {1}">
-                                                <Binding Path="Patient.Name" />
-                                                <Binding Path="Patient.Surname" />
-                                            </MultiBinding>
-                                        </TextBlock.Text>
-                                    </TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header="Soba" Width ="130" DisplayMemberBinding="{Binding Room.RoomNumber}" />
-                        <GridViewColumn Header="Lekar" Width="130">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock>
-                                        <TextBlock.Text>
-                                            <MultiBinding StringFormat="{}{0} {1}">
-                                                <Binding Path="Doctor.Name" />
-                                                <Binding Path="Doctor.Surname" />
-                                            </MultiBinding>
-                                        </TextBlock.Text>
-                                    </TextBlock>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </DockPanel>
+        <Grid Name="CalendarView" Visibility="Visible">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                    <Button Margin="5" Padding="5" Click="AddClick">+ Nov termin</Button>
+                    <Button Margin="5" Padding="5" Click="EditClick">Izmeni termin</Button>
+                    <Button Margin="5" Padding="5" Click="DeleteClick">- Obriši termin</Button>
+                    <Button Margin="5" Padding="5" Click="ViewClick">Informacije o terminu</Button>
+                </StackPanel>
+                <ListView Margin="10" Name="listViewAppointments" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Početak" Width="120" DisplayMemberBinding="{Binding StartTime, StringFormat=dd/MM/yyyy HH:mm}" />
+                            <GridViewColumn Header="Trajanje" Width="120" DisplayMemberBinding="{Binding DurationInMunutes}" />
+                            <GridViewColumn Header="Pregled" Width="120" DisplayMemberBinding="{Binding ApointmentDescription}" />
+                            <GridViewColumn Header="Pacijent" Width="120">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0} {1}">
+                                                    <Binding Path="Patient.Name" />
+                                                    <Binding Path="Patient.Surname" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Soba" Width ="120" DisplayMemberBinding="{Binding Room.RoomNumber}" />
+                            <GridViewColumn Header="Lekar" Width="120">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0} {1}">
+                                                    <Binding Path="Doctor.Name" />
+                                                    <Binding Path="Doctor.Surname" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </DockPanel>
+        </Grid>
+        <Grid Name ="AnnouncementsView" Visibility="Collapsed">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Click="View_Button_Click" Margin="10" Height="20" Width="100">Prikaži</Button>
+                </StackPanel>
+                <DataGrid x:Name="announcementTable" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding Ans}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Obaveštenje" Binding="{Binding Title}"  Width="*"/>
+                        <DataGridTextColumn Header="Datum" Binding="{Binding FormatedDatePosted}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </Grid>
+        <Grid Name="MedicineView" Visibility="Collapsed">
+            <TabControl>
+                <TabItem Header="Revizija Lekova">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                            <Button Margin="5" Padding="5" Click="RevisionClick" Width="100">Revizija</Button>
+                        </StackPanel>
+                        <ListView Margin="10" Name="listViewMedicineRevision" >
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Naziv leka" Width="180" DisplayMemberBinding="{Binding Name, Mode=OneWay}" />
+                                    <GridViewColumn Header="Pakovanje" Width="180" DisplayMemberBinding="{Binding Packaging, Mode=OneWay}"/>
+                                    <GridViewColumn Header="Proizvođač" Width="180" DisplayMemberBinding="{Binding Manufacturer, Mode=OneWay}"/>
+                                    <GridViewColumn Header="Oblik" Width="180" DisplayMemberBinding="{Binding Condition, Mode=OneWay}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </DockPanel>
+                </TabItem>
+                <TabItem Header="Odobreni Lekovi">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                            <Button Margin="5" Padding="5" Click="ViewMedicineClick" Width="100">Prikaz</Button>
+                        </StackPanel>
+                        <ListView Margin="10" Name="listViewMedicine" >
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Naziv leka" Width="180" DisplayMemberBinding="{Binding Name, Mode=OneWay}" />
+                                    <GridViewColumn Header="Pakovanje" Width="180" DisplayMemberBinding="{Binding Packaging, Mode=OneWay}"/>
+                                    <GridViewColumn Header="Proizvođač" Width="180" DisplayMemberBinding="{Binding Manufacturer, Mode=OneWay}"/>
+                                    <GridViewColumn Header="Oblik" Width="180" DisplayMemberBinding="{Binding Condition, Mode=OneWay}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </DockPanel>
+                </TabItem>
+            </TabControl>
+        </Grid>
     </DockPanel>
 </Window>

@@ -54,11 +54,21 @@ namespace Bolnica
             aps.Save(appointment1);
             DoctorView.Appointments.Add(appointment1);
             this.Close();
+            var s = new DoctorView();
+            s.Show();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
+            var s = new DoctorView();
             this.Close();
+            s.Show();
+        }
+
+        private void MedicineClick(object sender, RoutedEventArgs e)
+        {
+            var s = new MedicineRevisionView();
+            s.Show();
         }
     }
 }

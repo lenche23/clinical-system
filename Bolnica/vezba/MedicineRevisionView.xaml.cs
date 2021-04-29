@@ -19,6 +19,7 @@ namespace vezba
     /// <summary>
     /// Interaction logic for MedicineRevisionView.xaml
     /// </summary>
+    /// NOT WORKING ATM - DELETE
     public partial class MedicineRevisionView : Window
     {
         public static ObservableCollection<Medicine> MedicineToApprove { get; set; }
@@ -44,7 +45,17 @@ namespace vezba
             if(listViewMedicine.SelectedItems.Count > 0)
             {
                 Medicine medicine = (Medicine)listViewMedicine.SelectedItem;
-                var s = new MedicineView(medicine);
+                //var s = new MedicineView(medicine, this);
+                //s.Show();
+            }
+        }
+
+        private void RevisionClick(object sender, RoutedEventArgs e)
+        {
+            if(listViewMedicineRevision.SelectedItems.Count > 0)
+            {
+                Medicine medicine = (Medicine)listViewMedicineRevision.SelectedItem;
+                var s = new RevisionView(medicine);
                 s.Show();
             }
         }

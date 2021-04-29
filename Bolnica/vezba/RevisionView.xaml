@@ -1,14 +1,15 @@
-﻿<Window x:Class="vezba.MedicineView"
+﻿<Window x:Class="vezba.RevisionView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vezba"
         mc:Ignorable="d"
-        Title="MedicineView" Height="300" Width="500">
+        Title="RevisionView" Height="300" Width="500">
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Width="70" Click="EditClick">Izmeni</Button>
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Width="70" Click="ApproveClick">Odobri</Button>
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Width="70" Click="Decline">Odbij</Button>
         </StackPanel>
         <Grid Margin="10" DockPanel.Dock="Left">
             <Grid.Resources>

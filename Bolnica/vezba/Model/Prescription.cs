@@ -9,6 +9,16 @@ namespace Model
 {
    public class Prescription
    {
+        public Prescription(int Id, DateTime StartDate, int DurationInDays, Period ReferencePeriod, int Number, Medicine Medicine)
+        {
+            this.Id = Id;
+            this.StartDate = StartDate;
+            this.DurationInDays = DurationInDays;
+            this.ReferencePeriod = ReferencePeriod;
+            this.Number = Number;
+            this.Medicine = Medicine;
+        }
+
       public DateTime StartDate { get; set; }
         public int DurationInDays { get; set; }
         public Period ReferencePeriod { get; set; }
