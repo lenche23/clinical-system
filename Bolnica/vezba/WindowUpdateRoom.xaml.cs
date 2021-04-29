@@ -61,9 +61,12 @@ namespace Bolnica
             {
                 Odmor.IsChecked = true;
             }
+
+
             List<Equipment> equipmentList = selected.equipment;
             EquipmentList = new ObservableCollection<Equipment>(equipmentList);
             EquipmentBinding.ItemsSource = EquipmentList;
+
         }
 
         private void Potvrda_Button_Click(object sender, RoutedEventArgs e)

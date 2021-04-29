@@ -1,0 +1,25 @@
+﻿<Window x:Class="vezba.WindowRenovations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vezba"
+        mc:Ignorable="d"
+        Title="WindowRenovations" Height="450" Width="600">
+    <Grid>
+        <Label Margin="250,52,233,312" FontSize="18">Renovacije</Label>
+        <ListView Margin="119,112,111,83" Name="RenovationsBinding" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding RenovationID}" />
+                    <GridViewColumn Header="Početak" Width="160" DisplayMemberBinding="{Binding StartTime, StringFormat=dd/MM/yyyy HH:mm}" />
+                    <GridViewColumn Header="Trajanje" Width="100" DisplayMemberBinding="{Binding DurationInDays}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Width="120" Height="40" Margin="149,354,323,25" Background="#FFFFD6C2" Click="Renovation_Button_Click">Zakaži renoviranje</Button>
+        <Button Width="120" Height="40" Margin="323,354,149,25" Background="#FFFFD6C2" Click="Discard_Button_Click">Otkaži renoviranje</Button>
+        
+    </Grid>
+</Window>

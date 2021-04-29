@@ -31,6 +31,7 @@ namespace Bolnica
             this.selected = selected;
             this.mv = mv;
 
+
             BrProstorijeLabel.Content = BrProstorijeLabel.Content + " " + selected.RoomNumber;
 
             if (selected.RoomFloor == Floor.first)
