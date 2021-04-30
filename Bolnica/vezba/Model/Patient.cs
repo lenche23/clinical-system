@@ -104,5 +104,10 @@ namespace Model
             }
         }
 
+        public override string ToString()
+        {
+            return this.Name + " " + this.Surname;
+        }
+
     }
 }

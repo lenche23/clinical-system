@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Navigation;
+using vezba.PatientPages;
 
 namespace vezba
 {
     public partial class PatientView : Window
     {
         public static ObservableCollection<Appointment> Apps { get; set; }
-
-        //public Patient Patient { get; set; }
+        public Patient Patient { get; set; }
         public PatientView()
         {
             InitializeComponent();
@@ -18,48 +19,59 @@ namespace vezba
             List<Appointment> apps = storage.GetAll();
             Apps = new ObservableCollection<Appointment>(apps);
 
-            /*PatientStorage pps = new PatientStorage();
+            PatientStorage pps = new PatientStorage();
             Patient patient = pps.GetOne("1008985563244");  //ja
-            Patient = patient;*/
+            Patient = patient;
+            PatientMainPage.NavigationUIVisibility = NavigationUIVisibility.Hidden;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /*private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Da li Vam je najbitnije da zakazete pregled kod svog lekara?", "Zakazi pregled", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-            {
-                var zakaziPregledLekar = new OrderAppointmentView();
-                zakaziPregledLekar.Show();
-            }
-            else
-            {
-                var zakaziPregledVreme = new OrderAppointmentTimeView();
-                zakaziPregledVreme.Show();
-            }
-            
+            //ButtonCloseMenu.Visibility = Visibility.Visible;
+            //ButtonOpenMenu.Visibility = Visibility.Collapsed;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
         {
-            var otkaziPregled = new CancelAppointmentView();
-            otkaziPregled.Show();
+            //ButtonOpenMenu.Visibility = Visibility.Visible;
+            //ButtonCloseMenu.Visibility = Visibility.Collapsed;
+        }*/
+
+        private void ButtonProfile_Click(object sender, RoutedEventArgs e)
+        {
+            PatientMainPage.Content = new MainPage();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void ButtonPopUpLogout_Click(object sender, RoutedEventArgs e)
         {
-            var istorijaPregleda = new AppointmentHistory();
-            istorijaPregleda.Show();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            var izmeniPregled = new ChangeAppointmentView();
-            izmeniPregled.Show();
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            var s = new ViewMyAnnouncements(UserType.patient);
+            var s = new LogoutPopup();
             s.Show();
+
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            PatientMainPage.NavigationService.GoBack();
+        }
+
+        private void Appointments_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            PatientMainPage.Navigate(new AppointmentsPage());
+        }
+
+        private void Therapies_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            PatientMainPage.Navigate(new TherapiesPage());
+        }
+
+        private void Events_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            PatientMainPage.Navigate(new CalendarPage());
+        }
+
+        private void Notifications_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            PatientMainPage.Navigate(new NotificationsPage(UserType.patient));
         }
     }
 }
