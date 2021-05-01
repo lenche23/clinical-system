@@ -113,7 +113,7 @@ namespace vezba
 
         private void ButtonPopUpLogout_Click(object sender, RoutedEventArgs e)
         {
-            var s = new LogoutPopup();
+            var s = new LogoutPopup(this);
             s.Show();
 
         }
@@ -141,6 +141,11 @@ namespace vezba
         private void Notifications_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             PatientMainPage.Navigate(new NotificationsPage(UserType.patient));
+        }
+
+        private void ButtonMore_Click(object sender, RoutedEventArgs e)
+        {
+            PatientMainPage.Navigate(new MorePage());
         }
     }
 }

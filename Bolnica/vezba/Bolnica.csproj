@@ -175,6 +175,9 @@
     <Compile Include="PatientPages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PatientPages\MorePage.xaml.cs">
+      <DependentUpon>MorePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PatientPages\NotificationsPage.xaml.cs">
       <DependentUpon>NotificationsPage.xaml</DependentUpon>
     </Compile>
@@ -339,6 +342,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PatientPages\MorePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientPages\NotificationsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -453,6 +460,29 @@
     <Resource Include="PatientImages\bell %281%29.png" />
     <Resource Include="PatientImages\calendar %281%29.png" />
     <Resource Include="PatientImages\capsules %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\technical-support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\growth %281%29.png" />
+    <Resource Include="PatientImages\growth %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\star %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\doctor %281%29.png" />
+    <Resource Include="PatientImages\doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\credit-card %281%29.png" />
+    <Resource Include="PatientImages\credit-card %282%29.png" />
+    <Resource Include="PatientImages\medical-report %281%29.png" />
+    <Resource Include="PatientImages\medical-report.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

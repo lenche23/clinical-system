@@ -140,7 +140,7 @@
             <StackPanel  VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
                 <materialDesign:PopupBox Margin="15" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Foreground="#FF2E421A">
                     <StackPanel Width="150">
-                        <Button Content="Više"/>
+                        <Button x:Name="ButtonMore" Content="Više" Click="ButtonMore_Click"/>
                         <Button x:Name="ButtonProfile" Content="Moj profil" Click="ButtonProfile_Click"/>
                         <Button Content="Pomoć"/>
                         <Separator/>

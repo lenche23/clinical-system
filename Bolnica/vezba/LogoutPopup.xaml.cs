@@ -16,13 +16,17 @@ namespace vezba
 {
     public partial class LogoutPopup : Window
     {
-        public LogoutPopup()
+        private PatientView Parent;
+        public LogoutPopup(PatientView parent)
         {
             InitializeComponent();
+            Parent = parent;
+
         }
 
         private void btnDa_Click(object sender, RoutedEventArgs e)
-        {
+        {          
+            Parent.Close();
             var s = new MainWindow();
             s.Show();
             this.Close();
