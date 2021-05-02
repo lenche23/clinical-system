@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,6 +45,29 @@ namespace vezba
 
             var newEquipment = new Equipment(int.Parse(ID.Text), NazivOpreme.Text, int.Parse(Količina.Text), type) { };
 
+            int id = int.Parse(ID.Text);
+
+            ObservableCollection<Equipment> EquipmentList = Inventary.EquipmentList;
+            EquipmentStorage es = new EquipmentStorage();
+
+            if (EquipmentList == null)
+            {
+                es.Save(newEquipment);
+            }
+            else
+            {
+                foreach (Equipment equipment in EquipmentList)
+                {
+                    if (equipment.Id != id)
+                    {
+                        es.Save(newEquipment);
+                    }
+                    else
+                    {
+                        es.Update(newEquipment);
+                    }
+                }
+            }
             this.selected.AddEquipment(newEquipment);
             RoomStorage rs = new RoomStorage();
             rs.Update(this.selected);

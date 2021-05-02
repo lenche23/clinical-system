@@ -16,6 +16,9 @@ namespace Model
             this.RoomFloor = roomFloor;
             this.Capacity = 0; //********
             this.IsDeleted = false;
+            this.equipment = new System.Collections.Generic.List<Equipment>();
+            this.renovation = new System.Collections.Generic.List<Renovation>();
+
         }
 
         //******************* IZBACITI CAPACITY ODAVDE - ON JE U ROOM INVENTORY
@@ -100,9 +103,6 @@ namespace Model
 
         //####################
 
-         /*
-         // OVO JE DEO KOJI TREBA DA OSTANE
-
          public System.Collections.Generic.List<Renovation> renovation;
       
           public System.Collections.Generic.List<Renovation> Renovation
@@ -148,9 +148,6 @@ namespace Model
              if (renovation != null)
                 renovation.Clear();
           }
-         
-         
-         */
 
         public override string ToString()
         {

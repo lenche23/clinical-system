@@ -73,6 +73,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddMedicineWindow.xaml.cs">
+      <DependentUpon>AddMedicineWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Announcements.xaml.cs">
       <DependentUpon>Announcements.xaml</DependentUpon>
     </Compile>
@@ -123,6 +126,12 @@
     </Compile>
     <Compile Include="EditPatient.xaml.cs">
       <DependentUpon>EditPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inventary.xaml.cs">
+      <DependentUpon>Inventary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerMainView.xaml.cs">
+      <DependentUpon>ManagerMainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerView.xaml.cs">
       <DependentUpon>ManagerView.xaml</DependentUpon>
@@ -187,6 +196,9 @@
     <Compile Include="NewAppointment.xaml.cs">
       <DependentUpon>NewAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewMedicine.xaml.cs">
+      <DependentUpon>NewMedicine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewPatient.xaml.cs">
       <DependentUpon>NewPatient.xaml</DependentUpon>
     </Compile>
@@ -235,8 +247,17 @@
     <Compile Include="WindowExchangeEquipment.xaml.cs">
       <DependentUpon>WindowExchangeEquipment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowMedicineDetail.xaml.cs">
+      <DependentUpon>WindowMedicineDetail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowNewRoom.xaml.cs">
       <DependentUpon>WindowNewRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowRenovation.xaml.cs">
+      <DependentUpon>WindowRenovation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowRenovations.xaml.cs">
+      <DependentUpon>WindowRenovations.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowUpdateRoom.xaml.cs">
       <DependentUpon>WindowUpdateRoom.xaml</DependentUpon>
@@ -244,6 +265,10 @@
     <Compile Include="WindowViewRoom.xaml.cs">
       <DependentUpon>WindowViewRoom.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddMedicineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Announcements.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -312,6 +337,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Inventary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -324,6 +353,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManagerMainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -345,6 +378,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NewAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewMedicine.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -412,7 +449,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WindowMedicineDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowNewRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowRenovation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowRenovations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

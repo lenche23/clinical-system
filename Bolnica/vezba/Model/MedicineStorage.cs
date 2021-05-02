@@ -1,35 +1,94 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Windows;
 
 namespace Model
 {
    public class MedicineStorage
    {
-      public List<Medicine> GetAll()
+
+        public MedicineStorage()
+        {
+            this.FileName = "../../lekovi.json";
+        }
+
+        public List<Medicine> GetAll()
       {
-         throw new NotImplementedException();
-      }
+            List<Medicine> ms = new List<Medicine>();
+
+            try
+            {
+                String jsonFromFile = File.ReadAllText(this.FileName);
+                List<Medicine> medicineList = JsonConvert.DeserializeObject<List<Medicine>>(jsonFromFile);
+
+                for (int i = 0; i < medicineList.Count; i++)
+                {
+                    if (medicineList[i].IsDeleted == false)
+                    {
+                        ms.Add(medicineList[i]);
+                    }
+                }
+                return ms;
+            }
+            catch
+            {
+
+            }
+
+            MessageBox.Show("Neuspesno ucitavanje iz fajla" + this.FileName + "!");
+            return ms;
+        }
       
       public Boolean Save(Medicine medicine)
       {
-         throw new NotImplementedException();
-      }
+            List<Medicine> medicineList = GetAll();
+            medicineList.Add(medicine);
+
+            try
+            {
+                var jsonToFile = JsonConvert.SerializeObject(medicineList, Formatting.Indented);
+                using (StreamWriter writer = new StreamWriter(this.FileName))
+                {
+                    writer.Write(jsonToFile);
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return true;
+        }
       
       public Boolean Update(Medicine medicine)
       {
-            List<Medicine> medicineList = Load();
-            for(int i=0; i<medicineList.Count; i++)
+            List<Medicine> medicineList = GetAll();
+            for (int i = 0; i < medicineList.Count; i++)
             {
-                if(medicineList[i].MedicineID == medicine.MedicineID)
+                if (medicineList[i].MedicineID.Equals(medicine.MedicineID))
                 {
-                    medicineList[i].Name = medicine.Name;
                     medicineList[i].Manufacturer = medicine.Manufacturer;
+                    medicineList[i].Name = medicine.Name;
                     medicineList[i].Packaging = medicine.Packaging;
                     medicineList[i].Status = medicine.Status;
+                    medicineList[i].ingridient = medicine.ingridient;
                     medicineList[i].Condition = medicine.Condition;
                     medicineList[i].ReplacementMedicine = medicine.ReplacementMedicine;
-                    medicineList[i].Ingridient = medicine.Ingridient;
-                    return true;
+                    try
+                    {
+                        var jsonToFile = JsonConvert.SerializeObject(medicineList, Formatting.Indented);
+                        using (StreamWriter writer = new StreamWriter(this.FileName))
+                        {
+                            writer.Write(jsonToFile);
+                        }
+                    }
+
+                    catch (Exception e)
+                    {
+
+                    }
                 }
             }
             return false;
@@ -37,30 +96,69 @@ namespace Model
       
       public Medicine GetOne(int id)
       {
-         throw new NotImplementedException();
-      }
+            List<Medicine> medicineList = GetAll();
+            for (int i = 0; i < medicineList.Count; i++)
+            {
+                if (medicineList[i].MedicineID.Equals(id))
+                {
+                    return medicineList[i];
+                }
+            }
+            return null;
+        }
       
       public Boolean Delete(int id)
       {
-         throw new NotImplementedException();
-      }
+            List<Medicine> medicineList = GetAll();
+            for (int i = 0; i < medicineList.Count; i++)
+            {
+                if (medicineList[i].MedicineID.Equals(id))
+                {
+                    medicineList[i].IsDeleted = true;
+
+
+                    try
+                    {
+                        var jsonToFile = JsonConvert.SerializeObject(medicineList, Formatting.Indented);
+                        using (StreamWriter writer = new StreamWriter(this.FileName))
+                        {
+                            writer.Write(jsonToFile);
+                        }
+                    }
+
+                    catch (Exception e)
+                    {
+
+                    }
+                }
+            }
+            return false;
+        }
       
       public List<Medicine> Load()
       {
-            List<Medicine> medicine = new List<Medicine>();
-            Medicine m1 = new Medicine("Ibuprofen", "Union-medic d.o.o. Novi Sad", "30x400mg", 0, MedicineStatus.awaiting, MedicineCondition.pill);
-            medicine.Add(m1);
-            Ingridient i1 = new Ingridient("Neki alergen");
-            Medicine m2 = new Medicine("Panklav", "Union-medic d.o.o. Novi Sad", "30x400mg", 1, MedicineStatus.approved, MedicineCondition.pill);
-            m2.AddIngridient(i1);
-            medicine.Add(m2);
-            Ingridient i2 = new Ingridient("Neki drugi alergen");
-            Medicine m3 = new Medicine("Enterofuryl", "Union-medic d.o.o. Novi Sad", "30x400mg", 2, MedicineStatus.approved, MedicineCondition.pill);
-            m3.AddIngridient(i2);
-            m3.ReplacementMedicine = m2;
-            medicine.Add(m3);
-            return medicine;
-      }
+            List<Medicine> m = new List<Medicine>();
+            try
+            {
+                String jsonFromFile = File.ReadAllText(this.FileName);
+                List<Medicine> medicineList = JsonConvert.DeserializeObject<List<Medicine>>(jsonFromFile);
+                return medicineList;
+            }
+            catch
+            {
+
+            }
+            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
+            return m;
+        }
+
+        public int generateNextId()
+        {
+            List<Medicine> list = Load();
+            return list.Count;
+        }
+
+        public String FileName { get; set; }
 
       public List<Medicine> GetAwaiting()
       {

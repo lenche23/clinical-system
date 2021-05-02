@@ -4,10 +4,31 @@
     "equipment": [
       {
         "Id": 1,
-        "Name": "Hanzaplast",
-        "Quantity": 122,
+        "Name": "Krevet",
+        "Quantity": 5,
         "Type": 0,
         "IsDeleted": false
+      },
+      {
+        "Id": 2,
+        "Name": "Stolica",
+        "Quantity": 3,
+        "Type": 1,
+        "IsDeleted": false
+      },
+      {
+        "Id": 3,
+        "Name": "Selotejp",
+        "Quantity": 4,
+        "Type": 1,
+        "IsDeleted": false
+      }
+    ],
+    "renovation": [
+      {
+        "StartTime": "2021-10-10T10:00:00",
+        "DurationInDays": 10,
+        "RenovationID": 1
       }
     ],
     "RoomType": 0,
@@ -17,88 +38,32 @@
     "Equipment": [
       {
         "Id": 1,
-        "Name": "Hanzaplast",
-        "Quantity": 122,
+        "Name": "Krevet",
+        "Quantity": 5,
         "Type": 0,
         "IsDeleted": false
-      }
-    ]
-  },
-  {
-    "Capacity": 0,
-    "equipment": [
+      },
       {
-        "Id": 1,
-        "Name": "Hanzaplast",
-        "Quantity": 79,
-        "Type": 0,
+        "Id": 2,
+        "Name": "Stolica",
+        "Quantity": 3,
+        "Type": 1,
+        "IsDeleted": false
+      },
+      {
+        "Id": 3,
+        "Name": "Selotejp",
+        "Quantity": 4,
+        "Type": 1,
         "IsDeleted": false
       }
     ],
-    "RoomType": 2,
-    "RoomNumber": 2,
-    "RoomFloor": 0,
-    "IsDeleted": false,
-    "Equipment": [
+    "Renovation": [
       {
-        "Id": 1,
-        "Name": "Hanzaplast",
-        "Quantity": 79,
-        "Type": 0,
-        "IsDeleted": false
+        "StartTime": "2021-10-10T10:00:00",
+        "DurationInDays": 10,
+        "RenovationID": 1
       }
     ]
-  },
-  {
-    "Capacity": 0,
-    "equipment": null,
-    "RoomType": 0,
-    "RoomNumber": 44,
-    "RoomFloor": 1,
-    "IsDeleted": false,
-    "Equipment": []
-  },
-  {
-    "Capacity": 0,
-    "equipment": [
-      {
-        "Id": 1,
-        "Name": "Hanzaplast",
-        "Quantity": 79,
-        "Type": 0,
-        "IsDeleted": false
-      }
-    ],
-    "RoomType": 2,
-    "RoomNumber": 2,
-    "RoomFloor": 0,
-    "IsDeleted": false,
-    "Equipment": [
-      {
-        "Id": 1,
-        "Name": "Hanzaplast",
-        "Quantity": 79,
-        "Type": 0,
-        "IsDeleted": false
-      }
-    ]
-  },
-  {
-    "Capacity": 0,
-    "equipment": null,
-    "RoomType": 0,
-    "RoomNumber": 44,
-    "RoomFloor": 1,
-    "IsDeleted": false,
-    "Equipment": []
-  },
-  {
-    "Capacity": 0,
-    "equipment": null,
-    "RoomType": 0,
-    "RoomNumber": 45,
-    "RoomFloor": 1,
-    "IsDeleted": false,
-    "Equipment": []
   }
 ]

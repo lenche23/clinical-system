@@ -71,6 +71,7 @@ namespace Model
                     rooms[i].RoomFloor = room.RoomFloor;
                     rooms[i].RoomType = room.RoomType;
                     rooms[i].equipment = room.equipment;
+                    rooms[i].renovation = room.renovation;
 
                     try
                     {

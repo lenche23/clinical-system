@@ -78,10 +78,19 @@ namespace vezba
             }
         }
 
-        private void Announcements_Button_Click(object sender, RoutedEventArgs e)
+        private void Renovations_Button_Click(object sender, RoutedEventArgs e)
         {
-            var s = new ViewMyAnnouncements(UserType.menager);
-            s.Show();
+            if (lvDataBinding.SelectedIndex > -1)
+            {
+                Room selected = (Room)lvDataBinding.SelectedItems[0];
+                var s = new WindowRenovations(selected);
+                s.Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+            }
         }
     }
 }
