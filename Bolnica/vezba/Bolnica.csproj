@@ -14,6 +14,21 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -85,9 +100,6 @@
     <Compile Include="CreateAppointmentPage.xaml.cs">
       <DependentUpon>CreateAppointmentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreateAppointmentView.xaml.cs">
-      <DependentUpon>CreateAppointmentView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CreatePrescriptionView.xaml.cs">
       <DependentUpon>CreatePrescriptionView.xaml</DependentUpon>
     </Compile>
@@ -103,11 +115,11 @@
     <Compile Include="EditAppointment.xaml.cs">
       <DependentUpon>EditAppointment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditAppointmentView.xaml.cs">
-      <DependentUpon>EditAppointmentView.xaml</DependentUpon>
+    <Compile Include="EditAppointmentPage.xaml.cs">
+      <DependentUpon>EditAppointmentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditMedicineView.xaml.cs">
-      <DependentUpon>EditMedicineView.xaml</DependentUpon>
+    <Compile Include="EditMedicinePage.xaml.cs">
+      <DependentUpon>EditMedicinePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditPatient.xaml.cs">
       <DependentUpon>EditPatient.xaml</DependentUpon>
@@ -121,9 +133,10 @@
     <Compile Include="MedicinePageView.xaml.cs">
       <DependentUpon>MedicinePageView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MedicineView.xaml.cs">
-      <DependentUpon>MedicineView.xaml</DependentUpon>
+    <Compile Include="MedicineRevisionPage.xaml.cs">
+      <DependentUpon>MedicineRevisionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\DeclinedMedicine.cs" />
     <Compile Include="Model\DoctorEvaluation.cs" />
     <Compile Include="Model\DoctorEvaluationStorage.cs" />
     <Compile Include="Model\EventsLog.cs" />
@@ -189,9 +202,6 @@
     <Compile Include="PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RevisionView.xaml.cs">
-      <DependentUpon>RevisionView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SecretaryAppointments.xaml.cs">
       <DependentUpon>SecretaryAppointments.xaml</DependentUpon>
     </Compile>
@@ -203,6 +213,12 @@
     </Compile>
     <Compile Include="ViewAppointment.xaml.cs">
       <DependentUpon>ViewAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAppointmentPage.xaml.cs">
+      <DependentUpon>ViewAppointmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMedicinePage.xaml.cs">
+      <DependentUpon>ViewMedicinePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewMyAnnouncements.xaml.cs">
       <DependentUpon>ViewMyAnnouncements.xaml</DependentUpon>
@@ -264,10 +280,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateAppointmentView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="CreatePrescriptionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -288,11 +300,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditAppointmentView.xaml">
+    <Page Include="EditAppointmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditMedicineView.xaml">
+    <Page Include="EditMedicinePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -324,7 +336,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MedicineView.xaml">
+    <Page Include="MedicineRevisionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -356,10 +368,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RevisionView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="SecretaryAppointments.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -373,6 +381,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewAppointmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewMedicinePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -438,6 +454,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

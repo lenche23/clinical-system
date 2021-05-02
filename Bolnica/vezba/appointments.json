@@ -1699,7 +1699,7 @@
       "Name": "Pera",
       "Surname": "Peric",
       "Jmbg": "1541546542644",
-      "DateOfBirth": "2021-04-27T17:09:26.3062775+02:00",
+      "DateOfBirth": "2021-04-30T17:13:47.5143756+02:00",
       "Sex": 0,
       "PhoneNumber": "0621846712",
       "Adress": "neka ulica 45, Novi Sad",
@@ -1937,7 +1937,7 @@
       "Name": "Dana",
       "Surname": "Dimitrijevic",
       "Jmbg": "0104998253658",
-      "DateOfBirth": "2021-04-27T17:11:10.7470973+02:00",
+      "DateOfBirth": "2021-05-02T18:41:50.765087+02:00",
       "Sex": 1,
       "PhoneNumber": "0621975732",
       "Adress": "neka ulica 62, Novi Sad",
@@ -1948,28 +1948,12 @@
     },
     "Room": {
       "Capacity": 0,
-      "equipment": [
-        {
-          "Id": 1,
-          "Name": "Hanzaplast",
-          "Quantity": 79,
-          "Type": 0,
-          "IsDeleted": false
-        }
-      ],
-      "RoomType": 2,
-      "RoomNumber": 2,
-      "RoomFloor": 0,
+      "equipment": null,
+      "RoomType": 0,
+      "RoomNumber": 44,
+      "RoomFloor": 1,
       "IsDeleted": false,
-      "Equipment": [
-        {
-          "Id": 1,
-          "Name": "Hanzaplast",
-          "Quantity": 79,
-          "Type": 0,
-          "IsDeleted": false
-        }
-      ]
+      "Equipment": []
     },
     "Patient": {
       "appointment": null,
@@ -2135,30 +2119,32 @@
     },
     "IsEmergency": false,
     "PatientName": "Milena Jovanovic",
-    "RoomName": "2",
+    "RoomName": "44",
     "DoctorName": "Dana Dimitrijevic"
   },
   {
     "StartTime": "2020-10-10T11:00:00",
-    "DurationInMunutes": 30,
+    "DurationInMunutes": 35,
     "ApointmentDescription": "stiskanje glavudze",
     "AppointentId": 12,
     "IsDeleted": false,
     "Doctor": {
-      "Speciality": null,
-      "NameAndSurname": "Darko Torbica",
-      "SalaryInRsd": 70000,
-      "Username": "darko",
-      "Password": "dare",
-      "Name": "Darko",
-      "Surname": "Torbica",
-      "Jmbg": "1708962324890",
-      "DateOfBirth": "2021-04-29T18:46:56.0202347+02:00",
-      "Sex": 0,
-      "PhoneNumber": "0665813272",
-      "Adress": "neka ulica 38, Novi Sad",
-      "Email": "darko@gmail.com",
-      "IdCard": "007155721",
+      "Speciality": {
+        "Name": "Stomatolog"
+      },
+      "NameAndSurname": "Milica Milicevic",
+      "SalaryInRsd": 100000,
+      "Username": "milica",
+      "Password": "mica",
+      "Name": "Milica",
+      "Surname": "Milicevic",
+      "Jmbg": "2205972659017",
+      "DateOfBirth": "2021-04-30T17:04:13.8483783+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06364789110",
+      "Adress": "neka ulica 98, Novi Sad",
+      "Email": "milica@gmail.com",
+      "IdCard": "008100252",
       "Type": 2,
       "IsDeleted": false
     },
@@ -2174,28 +2160,189 @@
     "Patient": {
       "appointment": null,
       "IsGuest": false,
-      "EmergencyContact": "0638756221",
-      "MedicalRecord": null,
-      "NameAndSurname": "Petar Ilic",
+      "EmergencyContact": "06699592141",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T12:42:00.2750169+02:00",
+            "Comment": "test",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T12:42:40.7710091+02:00",
+            "Comment": "test2",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:42:36.9534669+02:00",
+            "Comment": "test 3",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:53:04.7925427+02:00",
+            "Comment": "test4",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 0,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "ibuprofen",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": [
+          {
+            "StartDate": "2021-04-30T00:00:00",
+            "DurationPeriodInDays": 5,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-04-27T13:34:18.6995324+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ],
+        "HealthInsuranceNumber": "07167166",
+        "MedicalIdNumber": "620178060616",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T12:42:00.2750169+02:00",
+            "Comment": "test",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T12:42:40.7710091+02:00",
+            "Comment": "test2",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:42:36.9534669+02:00",
+            "Comment": "test 3",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:53:04.7925427+02:00",
+            "Comment": "test4",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 0,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "ibuprofen",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": [
+          {
+            "StartDate": "2021-04-30T00:00:00",
+            "DurationPeriodInDays": 5,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-04-27T13:34:18.6995324+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ]
+      },
+      "NameAndSurname": "Mira Torbica",
       "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
+      "Username": "miki17",
+      "Password": "Tin3",
+      "Name": "Mira",
+      "Surname": "Torbica",
+      "Jmbg": "1701994261473",
+      "DateOfBirth": "1994-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0627844326",
+      "Adress": "Hajduk Veljkova 42, Novi Sad",
+      "Email": "mira94@gmail.com",
+      "IdCard": "008755974",
       "Type": 3,
       "IsDeleted": false
     },
     "IsEmergency": false,
-    "PatientName": "Petar Ilic",
+    "PatientName": "Mira Torbica",
     "RoomName": "44",
-    "DoctorName": "Darko Torbica"
+    "DoctorName": "Milica Milicevic"
   },
   {
     "StartTime": "2020-10-10T11:30:00",
@@ -2214,7 +2361,7 @@
       "Name": "Milica",
       "Surname": "Milicevic",
       "Jmbg": "2205972659017",
-      "DateOfBirth": "2021-04-29T18:50:10.5360603+02:00",
+      "DateOfBirth": "2021-04-30T17:10:05.4674256+02:00",
       "Sex": 1,
       "PhoneNumber": "06364789110",
       "Adress": "neka ulica 98, Novi Sad",

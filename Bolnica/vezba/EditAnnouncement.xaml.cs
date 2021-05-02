@@ -28,7 +28,7 @@ namespace vezba
             Visibility.Items.Add("Zaposleni");
             Visibility.Items.Add("Pacijenti");
             announcement = a;
-            if (a.Visibility == Model.Visibility.all)
+            /*if (a.Visibility == Model.Visibility.all)
             {
                 Visibility.SelectedIndex = 0;
             }
@@ -39,7 +39,7 @@ namespace vezba
             else
             {
                 Visibility.SelectedIndex = 2;
-            }
+            }*/
             Content.Text = a.Content;
             Title.Text = a.Title;
 
@@ -53,7 +53,7 @@ namespace vezba
             DateTime ed = DateTime.Today;
             String con = Content.Text;
             String tit = Title.Text;
-            Model.Visibility vis = Model.Visibility.all;
+            /*Model.Visibility vis = Model.Visibility.all;
             if (Visibility.SelectedIndex == 1)
             {
                 vis = Model.Visibility.staff;
@@ -70,7 +70,7 @@ namespace vezba
             if (an != null)
             {
                 Announcements.Ans[Announcements.Ans.IndexOf(an)] = announcement;
-            }
+            }*/
 
             this.Close();
         }

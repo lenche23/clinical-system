@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,28 +11,33 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Model;
 
 namespace vezba
 {
     /// <summary>
-    /// Interaction logic for EditMedicineView.xaml
+    /// Interaction logic for EditMedicinePage.xaml
     /// </summary>
-    public partial class EditMedicineView : Window
+    public partial class EditMedicinePage : Page
     {
-        public Medicine medicine;
+        public Medicine Medicine { get; set; }
 
-        public DoctorView view;
+        public List<Medicine> AllMedicine { get; set; }
+
+        private MedicineStorage MedStorage;
 
         public List<Ingridient> Ingredients { get; set; }
 
-        public EditMedicineView(Medicine medicine, DoctorView view)
+        private DoctorView dw;
+
+        public EditMedicinePage(Medicine medicine, DoctorView dw)
         {
             InitializeComponent();
-            this.DataContext = medicine;
-            this.medicine = medicine;
-            switch(medicine.Condition)
+            DataContext = this;
+            Medicine = medicine;
+            this.dw = dw;
+            switch (medicine.Condition)
             {
                 case MedicineCondition.pill:
                     ConditionCMB.SelectedIndex = 0;
@@ -43,9 +49,12 @@ namespace vezba
                     ConditionCMB.SelectedIndex = 2;
                     break;
             }
-            this.view = view;
             Ingredients = new List<Ingridient>(medicine.ingridient);
             listViewAllergens.ItemsSource = Ingredients;
+            MedStorage = new MedicineStorage();
+            AllMedicine = MedStorage.GetApproved();
+            if (medicine.ReplacementMedicine != null)
+                ReplacementMedicineCB.SelectedValue = medicine.ReplacementMedicine.MedicineID;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -54,7 +63,7 @@ namespace vezba
             var Manufacturer = ManufacturerTB.Text;
             var Packaging = PackagingTB.Text;
             MedicineCondition Condition;
-            switch(ConditionCMB.SelectedIndex)
+            switch (ConditionCMB.SelectedIndex)
             {
                 case 0:
                     Condition = MedicineCondition.pill;
@@ -66,21 +75,17 @@ namespace vezba
                     Condition = MedicineCondition.syrup;
                     break;
             }
-            //var Medicine = new Medicine(Name, Manufacturer, Packaging, medicine.MedicineID, MedicineStatus.approved, Condition);
-            //Medicine.Ingridient = new List<Ingridient>(Ingredients);
-            medicine.Name = Name;
-            medicine.Manufacturer = Manufacturer;
-            medicine.Packaging = Packaging;
-            medicine.Condition = Condition;
-            medicine.Ingridient = new List<Ingridient>(Ingredients);
-            //CHANGE!!!
-            //view.listViewMedicine.Items.Refresh();
-            this.Close();
+            Medicine.Name = Name;
+            Medicine.Manufacturer = Manufacturer;
+            Medicine.Packaging = Packaging;
+            Medicine.Condition = Condition;
+            Medicine.Ingridient = new List<Ingridient>(Ingredients);
+            dw.Main.Content = new ViewMedicinePage(Medicine, dw);
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            dw.Main.Content = new ViewMedicinePage(Medicine, dw);
         }
 
         private void PlusButtonClick(object sender, RoutedEventArgs e)
@@ -94,7 +99,7 @@ namespace vezba
 
         private void MinusButtonClick(object sender, RoutedEventArgs e)
         {
-            if(listViewAllergens.SelectedItems.Count>0)
+            if (listViewAllergens.SelectedItems.Count > 0)
             {
                 Ingridient Allergen = (Ingridient)listViewAllergens.SelectedItem;
                 Ingredients.Remove(Allergen);

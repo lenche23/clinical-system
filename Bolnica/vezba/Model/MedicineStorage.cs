@@ -51,9 +51,14 @@ namespace Model
             Medicine m1 = new Medicine("Ibuprofen", "Union-medic d.o.o. Novi Sad", "30x400mg", 0, MedicineStatus.awaiting, MedicineCondition.pill);
             medicine.Add(m1);
             Ingridient i1 = new Ingridient("Neki alergen");
-            Medicine m2 = new Medicine("Panklav", "Union-medic d.o.o. Novi Sad", "30x400mg", 0, MedicineStatus.approved, MedicineCondition.pill);
+            Medicine m2 = new Medicine("Panklav", "Union-medic d.o.o. Novi Sad", "30x400mg", 1, MedicineStatus.approved, MedicineCondition.pill);
             m2.AddIngridient(i1);
             medicine.Add(m2);
+            Ingridient i2 = new Ingridient("Neki drugi alergen");
+            Medicine m3 = new Medicine("Enterofuryl", "Union-medic d.o.o. Novi Sad", "30x400mg", 2, MedicineStatus.approved, MedicineCondition.pill);
+            m3.AddIngridient(i2);
+            m3.ReplacementMedicine = m2;
+            medicine.Add(m3);
             return medicine;
       }
 

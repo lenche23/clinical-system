@@ -26,7 +26,9 @@ namespace vezba
 
         public static ObservableCollection<Medicine> ApprovedMedicine { get; set; }
 
-        public MedicinePageView()
+        private DoctorView dw;
+
+        public MedicinePageView(DoctorView dw)
         {
             InitializeComponent();
             MedicineStorage ms = new MedicineStorage();
@@ -37,6 +39,7 @@ namespace vezba
             List<Medicine> approvedMedicine = ms.GetApproved();
             ApprovedMedicine = new ObservableCollection<Medicine>(approvedMedicine);
             listViewMedicine.ItemsSource = ApprovedMedicine;
+            this.dw = dw;
         }
 
         private void ViewClick(object sender, RoutedEventArgs e)
@@ -44,9 +47,7 @@ namespace vezba
             if (listViewMedicine.SelectedItems.Count > 0)
             {
                 Medicine medicine = (Medicine)listViewMedicine.SelectedItem;
-                //CHANGE
-                //var s = new MedicineView(medicine, this);
-                //s.Show();
+                dw.Main.Content = new ViewMedicinePage(medicine,dw);
             }
         }
 
@@ -55,8 +56,7 @@ namespace vezba
             if (listViewMedicineRevision.SelectedItems.Count > 0)
             {
                 Medicine medicine = (Medicine)listViewMedicineRevision.SelectedItem;
-                var s = new RevisionView(medicine);
-                s.Show();
+                dw.Main.Content = new MedicineRevisionPage(medicine, dw);
             }
         }
     }

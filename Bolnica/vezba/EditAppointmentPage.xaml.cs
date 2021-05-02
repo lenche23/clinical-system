@@ -12,18 +12,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using vezba;
 
-namespace Bolnica
+namespace vezba
 {
     /// <summary>
-    /// Interaction logic for EditAppointmentView.xaml
+    /// Interaction logic for EditAppointmentPage.xaml
     /// </summary>
-    public partial class EditAppointmentView : Window
+    public partial class EditAppointmentPage : Page
     {
         public Appointment Selected { get; set; }
-        private CalendarView cw;
+        private DoctorView dw;
         public PatientStorage storage;
         public DoctorStorage docstorage;
         public RoomStorage rs;
@@ -31,7 +31,7 @@ namespace Bolnica
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
 
-        public EditAppointmentView(Appointment selected, CalendarView cw)
+        public EditAppointmentPage(Appointment selected, DoctorView dw)
         {
             InitializeComponent();
             storage = new PatientStorage();
@@ -42,18 +42,18 @@ namespace Bolnica
             Rooms = rs.GetAll();
             this.Selected = selected;
             this.DataContext = this;
-            this.cw = cw;
-            if(Selected.Patient != null && Selected.Patient.Jmbg != null)
+            this.dw = dw;
+            if (Selected.Patient != null && Selected.Patient.Jmbg != null)
                 cmbPatients.SelectedValue = Selected.Patient.Jmbg;
             if (Selected.Room != null)
                 cmbRooms.SelectedValue = selected.Room.RoomNumber;
-            if(Selected.Doctor != null && Selected.Doctor.Jmbg != null)
-                cmbDoctors.SelectedValue = Selected.Patient.Jmbg;
+            if (Selected.Doctor != null && Selected.Doctor.Jmbg != null)
+                cmbDoctors.SelectedValue = Selected.Doctor.Jmbg;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            var AppointmentID = int.Parse(idTB.Text);
+            var AppointmentID = Selected.AppointentId;
             var format = "dd/MM/yyyy HH:mm";
             CultureInfo provider = CultureInfo.InvariantCulture;
             var StartTime = DateTime.ParseExact(startTB.Text, format, provider);
@@ -62,28 +62,18 @@ namespace Bolnica
 
             var Patient = (Patient)cmbPatients.SelectedItem;
             var Room = (Room)cmbRooms.SelectedItem;
-			      var Doctor = (Doctor)cmbDoctors.SelectedItem;
-            var appointment1 = new Appointment(AppointmentID, Patient, Doctor, Room, StartTime, DurationInMinutes, ApointmentDescription);
-
-            //var appointment1 = new Appointment(StartTime, DurationInMinutes, ApointmentDescription, AppointmentID, (Doctor) Doctor, (Room)Room, (Patient)Patient);
+            var Doctor = (Doctor)cmbDoctors.SelectedItem;
+            var IsEmergency = IsEmergencyCB.IsChecked;
+            var appointment1 = new Appointment(AppointmentID, Patient, Doctor, Room, StartTime, DurationInMinutes, ApointmentDescription, (Boolean)IsEmergency);
 
             AppointmentStorage aps = new AppointmentStorage();
             aps.Update(appointment1);
-            Selected.StartTime = StartTime;
-            Selected.DurationInMunutes = DurationInMinutes;
-            Selected.ApointmentDescription = ApointmentDescription;
-
-            Selected.Patient = (Patient)Patient;
-            //Selected.patient = (Patient)Patient;
-            Selected.Doctor = (Doctor)Doctor;
-            Selected.Room = (Room)Room;
-            cw.listViewAppointments.Items.Refresh();
-            this.Close();
+            dw.Main.Content = new CalendarView(dw);
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            dw.Main.Content = new CalendarView(dw);
         }
     }
 }

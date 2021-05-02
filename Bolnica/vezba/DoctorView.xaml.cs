@@ -27,7 +27,7 @@ namespace vezba
 
         private void MedicineClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new MedicinePageView();
+            Main.Content = new MedicinePageView(this);
         }
 
         private void AnnouncementsClick(object sender, RoutedEventArgs e)
