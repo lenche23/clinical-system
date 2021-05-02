@@ -67,6 +67,9 @@ namespace Bolnica
             EquipmentList = new ObservableCollection<Equipment>(equipmentList);
             EquipmentBinding.ItemsSource = EquipmentList;
 
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(EquipmentBinding.ItemsSource);
+            view.Filter = EquipmentFilter;
+
         }
 
         private void Potvrda_Button_Click(object sender, RoutedEventArgs e)
@@ -169,5 +172,90 @@ namespace Bolnica
                 MessageBox.Show("Ni jedan proizvod nije selektovan!");
             }
         }
+
+        private void StaticCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (EquipmentList != null)
+            {
+                if (CheckedBoxStatic.IsChecked == true)
+                {
+                    foreach (Equipment equipment in selected.equipment)
+                    {
+                        if (equipment.Type == EquipmentType.statical)
+                        {
+                            EquipmentList.Add(equipment);
+                            EquipmentBinding.Items.Refresh();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void DinamicCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (EquipmentList != null)
+            {
+                if (CheckedBoxDinamic.IsChecked == true)
+                {
+                    foreach (Equipment equipment in selected.equipment)
+                    {
+                        if (equipment.Type == EquipmentType.dinamical)
+                        {
+                            EquipmentList.Add(equipment);
+                            EquipmentBinding.Items.Refresh();
+                        }
+                    }
+                }
+            }
+        }
+
+        private bool EquipmentFilter(object item)
+        {
+            if (String.IsNullOrEmpty(txtFilter.Text))
+                return true;
+            else
+                return ((item as Equipment).Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(EquipmentBinding.ItemsSource).Refresh();
+        }
+
+        private void StaticCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (EquipmentList != null)
+            {
+                if (CheckedBoxStatic.IsChecked == false)
+                {
+                    foreach (Equipment equipment in selected.equipment)
+                    {
+                        if (equipment.Type == EquipmentType.statical)
+                        {
+                            Equipment eq = equipment;
+                            EquipmentList.Remove(eq);
+                            EquipmentBinding.Items.Refresh();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void DinamicCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (EquipmentList != null) { 
+            if (CheckedBoxDinamic.IsChecked == false)
+            {
+                foreach (Equipment equipment in selected.equipment)
+                {
+                    if (equipment.Type == EquipmentType.dinamical)
+                    {
+                        EquipmentList.Remove(equipment);
+                        EquipmentBinding.Items.Refresh();
+                        }
+                    }
+                }
+            }
+         }
     }
 }

@@ -1,86 +1,58 @@
 [
   {
     "Id": 2,
-    "Name": "2",
+    "Name": "Krevet",
     "Quantity": 2,
     "Type": 0,
     "IsDeleted": false
   },
   {
-    "Id": 1,
-    "Name": "Stolica",
-    "Quantity": 10,
-    "Type": 0,
-    "IsDeleted": true
-  },
-  {
-    "Id": 1,
-    "Name": "Stolica",
-    "Quantity": 10,
-    "Type": 0,
-    "IsDeleted": false
-  },
-  {
     "Id": 12,
-    "Name": "baba",
-    "Quantity": 22,
+    "Name": "Hanzaplast",
+    "Quantity": 4,
     "Type": 1,
     "IsDeleted": false
   },
   {
     "Id": 12,
-    "Name": "oprema",
-    "Quantity": 12,
-    "Type": 0,
-    "IsDeleted": false
-  },
-  {
-    "Id": 12,
-    "Name": "12",
-    "Quantity": 12,
-    "Type": 0,
-    "IsDeleted": false
-  },
-  {
-    "Id": 12,
-    "Name": "blabla",
-    "Quantity": 2,
-    "Type": 0,
-    "IsDeleted": false
-  },
-  {
-    "Id": 222,
-    "Name": "222",
-    "Quantity": 222,
-    "Type": 0,
-    "IsDeleted": false
-  },
-  {
-    "Id": 33,
-    "Name": "33",
+    "Name": "Hanzaplast",
     "Quantity": 4,
+    "Type": 1,
+    "IsDeleted": false
+  },
+  {
+    "Id": 7,
+    "Name": "Stolica",
+    "Quantity": 10,
     "Type": 0,
     "IsDeleted": false
   },
   {
-    "Id": 33,
-    "Name": "33",
+    "Id": 6,
+    "Name": "6",
+    "Quantity": 6,
+    "Type": 0,
+    "IsDeleted": false
+  },
+  {
+    "Id": 1,
+    "Name": "Krevet",
+    "Quantity": 5,
+    "Type": 0,
+    "IsDeleted": false
+  },
+  {
+    "Id": 2,
+    "Name": "Stolica",
+    "Quantity": 3,
+    "Type": 1,
+    "IsDeleted": false
+  },
+  {
+    "Id": 3,
+    "Name": "Selotejp",
     "Quantity": 4,
-    "Type": 0,
-    "IsDeleted": false
-  },
-  {
-    "Id": 54,
-    "Name": "45",
-    "Quantity": 54,
-    "Type": 0,
-    "IsDeleted": false
-  },
-  {
-    "Id": 555,
-    "Name": "555",
-    "Quantity": 7,
-    "Type": 0,
+    "Type": 1,
     "IsDeleted": false
   }
 ]

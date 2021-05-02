@@ -1,0 +1,14 @@
+[
+  {
+    "ingridient": [],
+    "Name": "Brufen",
+    "Manufacturer": "UnionMedic Novi Sad",
+    "Packaging": "30*400g",
+    "MedicineID": 1,
+    "Status": 1,
+    "Condition": 0,
+    "IsDeleted": false,
+    "ReplacementMedicine": null,
+    "Ingridient": []
+  }
+]

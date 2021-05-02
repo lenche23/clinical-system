@@ -1,0 +1,23 @@
+﻿<Window x:Class="vezba.Inventary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vezba"
+        mc:Ignorable="d"
+        Title="Inventary" Height="561" Width="734">
+    <Grid>
+
+        <Label Margin="250,35,268,438" FontSize="28"> Inventar Bolnice </Label>
+        <ListView Height ="300" Name="InventaryBinding" Margin="113,115,129,115">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Naziv proizvoda" Width="120" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Količina" Width="120" DisplayMemberBinding="{Binding Quantity}" />
+                    <GridViewColumn Header="Tip" Width="120" DisplayMemberBinding="{Binding Type}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

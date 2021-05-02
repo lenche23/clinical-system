@@ -4,6 +4,19 @@ namespace Model
 {
    public class Medicine
    {
+        public Medicine() { }
+        public Medicine(String name, String manufacturer, String packaging, int medicineID, MedicineCondition condition)
+        {
+            this.MedicineID = medicineID;
+            this.Name = name;
+            this.Manufacturer = manufacturer;
+            this.Packaging = packaging;
+            this.Condition = condition;
+            this.Status = MedicineStatus.awaiting;
+            this.ReplacementMedicine = null;
+            this.ingridient = new System.Collections.Generic.List<Ingridient>();
+            this.IsDeleted = false;
+        }
         public String Name { get; set; }
 
         //******** Dodati deo - ako nesto ne radi
@@ -12,6 +25,7 @@ namespace Model
         public int MedicineID { get; set; }
         public MedicineStatus Status { get; set; }
         public MedicineCondition Condition { get; set; }
+        public Boolean IsDeleted { get; set; }
 
         public Medicine ReplacementMedicine { get; set; }
         //********

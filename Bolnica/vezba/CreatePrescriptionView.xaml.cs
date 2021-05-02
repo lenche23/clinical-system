@@ -42,7 +42,7 @@ namespace vezba
                 ReferencePeriod = Period.weekly;
             var Number = int.Parse(TbNumber.Text);
             var MedicineName = TbMedicine.Text;
-            var medicine = new Medicine { Name = MedicineName };
+            var medicine = new Medicine() { Name = MedicineName };
             var prescription = new Prescription { Id = Id, StartDate = (DateTime)StartDate, DurationInDays = DurationInDays, ReferencePeriod = ReferencePeriod, Medicine = medicine, Number = Number };
 
             patient.MedicalRecord.AddPrescription(prescription);
