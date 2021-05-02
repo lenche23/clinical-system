@@ -43,6 +43,24 @@
                     </ListView>
                 </DockPanel>
             </TabItem>
+            <TabItem Header="Odbijeni Lekovi">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                        <Button Margin="5" Padding="5" Click="ViewDeclinedClick" Width="100">Prikaz</Button>
+                    </StackPanel>
+                    <ListView Margin="10" Name="listViewDeclinedMedicine" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Naziv leka" Width="150" DisplayMemberBinding="{Binding Medicine.Name, Mode=OneWay}" />
+                                <GridViewColumn Header="Pakovanje" Width="150" DisplayMemberBinding="{Binding Medicine.Packaging, Mode=OneWay}"/>
+                                <GridViewColumn Header="Proizvođač" Width="150" DisplayMemberBinding="{Binding Medicine.Manufacturer, Mode=OneWay}"/>
+                                <GridViewColumn Header="Oblik" Width="150" DisplayMemberBinding="{Binding Medicine.Condition, Mode=OneWay}"/>
+                                <GridViewColumn Header="Komentar" Width="150" DisplayMemberBinding="{Binding Description, Mode=OneWay}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </DockPanel>
+            </TabItem>
         </TabControl>
     </Grid>
 </Page>

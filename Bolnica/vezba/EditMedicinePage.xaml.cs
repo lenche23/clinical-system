@@ -80,6 +80,7 @@ namespace vezba
             Medicine.Packaging = Packaging;
             Medicine.Condition = Condition;
             Medicine.Ingridient = new List<Ingridient>(Ingredients);
+            MedStorage.Update(Medicine);
             dw.Main.Content = new ViewMedicinePage(Medicine, dw);
         }
 

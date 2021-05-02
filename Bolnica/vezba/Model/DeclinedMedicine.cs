@@ -7,15 +7,18 @@ using System.Threading.Tasks;
 
 namespace vezba.Model
 {
-    class DeclinedMedicine
+    public class DeclinedMedicine
     {
-        private Medicine Medicine { get; set; }
-        private String Description { get; set; }
-
-        public DeclinedMedicine(Medicine Medicine, String Description)
+        public int DeclinedMedicineID { get; set; }
+        public Medicine Medicine { get; set; }
+        public String Description { get; set; }
+        public Boolean IsDeleted { get; set; }
+        public DeclinedMedicine(int DeclinedMedicineID, Medicine Medicine, String Description)
         {
+            this.DeclinedMedicineID = DeclinedMedicineID;
             this.Medicine = Medicine;
             this.Description = Description;
+            this.IsDeleted = false;
         }
     }
 }

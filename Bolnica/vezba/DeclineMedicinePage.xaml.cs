@@ -13,50 +13,49 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vezba.Model;
 
 namespace vezba
 {
     /// <summary>
-    /// Interaction logic for MedicineRevisionPage.xaml
+    /// Interaction logic for DeclineMedicinePage.xaml
     /// </summary>
-    public partial class MedicineRevisionPage : Page
+    public partial class DeclineMedicinePage : Page
     {
-
         public Medicine Medicine { get; set; }
 
         private DoctorView dw;
 
-        public MedicineStorage medStorage;
+        public DeclinedMedicineStorage Storage;
 
-        public MedicineRevisionPage(Medicine medicine, DoctorView dw)
+        public MedicineStorage MedStorage;
+
+        public DeclineMedicinePage(Medicine medicine, DoctorView dw)
         {
             InitializeComponent();
             Medicine = medicine;
             DataContext = Medicine;
             this.dw = dw;
             listViewAlergens.ItemsSource = medicine.Ingridient;
+            Storage = new DeclinedMedicineStorage();
+            MedStorage = new MedicineStorage();
         }
 
-        private void ApproveClick(object sender, RoutedEventArgs e)
+        private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            Medicine.Status = MedicineStatus.approved;
-            medStorage = new MedicineStorage();
-            medStorage.Update(Medicine);
+            MedStorage.Delete(Medicine.MedicineID);
+            var id = Storage.generateNextId();
+            var Description = DescriptionTB.Text;
+            var declinedMedicine = new DeclinedMedicine(id, Medicine, Description);
+            Storage.Save(declinedMedicine);
             MedicinePageView mpw = new MedicinePageView(dw);
             mpw.MedicineTabs.SelectedIndex = 0;
             dw.Main.Content = mpw;
         }
 
-        private void DeclineClick(object sender, RoutedEventArgs e)
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new DeclineMedicinePage(Medicine, dw);
-        }
-
-        private void ReturnClick(object sender, RoutedEventArgs e)
-        {
-            MedicinePageView mpw = new MedicinePageView(dw);
-            mpw.MedicineTabs.SelectedIndex = 0;
-            dw.Main.Content = mpw;
+            dw.Main.Content = new MedicineRevisionPage(Medicine, dw);
         }
     }
 }

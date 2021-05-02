@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vezba.Model;
 
 namespace vezba
 {
@@ -25,6 +26,8 @@ namespace vezba
         public static ObservableCollection<Medicine> MedicineToApprove { get; set; }
 
         public static ObservableCollection<Medicine> ApprovedMedicine { get; set; }
+
+        public static ObservableCollection<DeclinedMedicine> DeclinedMedicine { get; set; }
 
         private DoctorView dw;
 
@@ -39,6 +42,12 @@ namespace vezba
             List<Medicine> approvedMedicine = ms.GetApproved();
             ApprovedMedicine = new ObservableCollection<Medicine>(approvedMedicine);
             listViewMedicine.ItemsSource = ApprovedMedicine;
+
+            DeclinedMedicineStorage dms = new DeclinedMedicineStorage();
+            List<DeclinedMedicine> declinedMedicine = dms.GetAll();
+            DeclinedMedicine = new ObservableCollection<DeclinedMedicine>(declinedMedicine);
+            listViewDeclinedMedicine.ItemsSource = DeclinedMedicine;
+
             this.dw = dw;
         }
 
@@ -57,6 +66,15 @@ namespace vezba
             {
                 Medicine medicine = (Medicine)listViewMedicineRevision.SelectedItem;
                 dw.Main.Content = new MedicineRevisionPage(medicine, dw);
+            }
+        }
+
+        private void ViewDeclinedClick(object sender, RoutedEventArgs e)
+        {
+            if(listViewDeclinedMedicine.SelectedItems.Count > 0)
+            {
+                DeclinedMedicine declinedMedicine = (DeclinedMedicine)listViewDeclinedMedicine.SelectedItem;
+                dw.Main.Content = new ViewDeclinedMedicine(declinedMedicine, dw);
             }
         }
     }
