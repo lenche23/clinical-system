@@ -151,8 +151,14 @@ namespace Model
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
             return m;
         }
-      
-      public String FileName { get; set; }
+
+        public int generateNextId()
+        {
+            List<Medicine> list = Load();
+            return list.Count;
+        }
+
+        public String FileName { get; set; }
 
     }
 }

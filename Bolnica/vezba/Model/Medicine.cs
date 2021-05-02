@@ -4,7 +4,6 @@ namespace Model
 {
    public class Medicine
    {
-        public Medicine() { }
         public Medicine(String name, String manufacturer, String packaging, int medicineID, MedicineCondition condition)
         {
             this.MedicineID = medicineID;

@@ -52,7 +52,6 @@ namespace vezba
         private void Odobravanje_Button_Click(object sender, RoutedEventArgs e)
         {
             var Name = nazivTB.Text;
-            var MedicineID = int.Parse(idTB.Text);
             var Manufacturer = proizvodjacTB.Text;
             var Packaging = pakovanjeTB.Text;
             var Condition = MedicineCondition.pill;
@@ -72,13 +71,14 @@ namespace vezba
                 Condition = MedicineCondition.syrup;
             }
 
+            MedicineStorage storage = new MedicineStorage();
+            int MedicineID = storage.generateNextId();
+
             newMedicine = new Medicine(Name, Manufacturer, Packaging, MedicineID, Condition) { };
 
-            MedicineStorage storage = new MedicineStorage();
-            storage.Save(newMedicine);
             AddMedicineWindow.MedicineList.Add(newMedicine);
             newMedicine.ingridient = ingredientTemporaryList;
-
+            storage.Save(newMedicine);
             this.Close();
 
         }
