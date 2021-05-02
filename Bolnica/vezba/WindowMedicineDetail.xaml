@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:vezba"
         mc:Ignorable="d"
         Title="WindowMedicineDetail" Height="450" Width="600">
-    <Grid Margin="156,10,117,212" Background="White">
+    <Grid Margin="156,10,97,177" Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="42*" />
-            <RowDefinition Height="43*" />
-            <RowDefinition Height="42*" />
-            <RowDefinition Height="42*" />
-            <RowDefinition Height="42*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="39*" />
+            <RowDefinition Height="39*" />
+            <RowDefinition Height="39*" />
+            <RowDefinition Height="39*" />
             <RowDefinition Height="0*"/>
 
 
@@ -25,22 +26,24 @@
         <TextBlock Grid.Column="0" Grid.Row="1" Padding="2" FontSize="14" Margin="41,7,29,13">Naziv leka:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="2" Padding="2" FontSize="14" Margin="38,10,29,12">Proizvođač:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="3" Padding="2" FontSize="14" Margin="41,5,29,10">Pakovanje:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="4" Padding="2" FontSize="14" Margin="69,7,38,10">Oblik:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="5" Padding="2" FontSize="14" Margin="69,7,38,10">Oblik:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4" Padding="2" FontSize="14" Margin="21,10,18,0">Zamenski lek:</TextBlock>
 
 
         <Label Margin="7,7,93,7" Grid.Column="1" Grid.Row="0" Name="idText"></Label>
         <Label Margin="7" Grid.Column="1" Grid.Row="1" Name="nazivText"></Label>
         <Label Margin="7" Grid.Column="1" Grid.Row="2" Name="proizvodjacText"></Label>
         <Label Margin="7" Grid.Column="1" Grid.Row="3" Name="pakovanjeText"></Label>
-        <Label Margin="7" Grid.Column="1" Grid.Row="4" Name="oblikText"></Label>
-        <ListView Margin="20,54,33,-153" Name="IngredientsBinding" RenderTransformOrigin="0.5,0.5" Grid.Row="5" Grid.ColumnSpan="2">
+        <Label Margin="7" Grid.Column="1" Grid.Row="5" Name="oblikText"></Label>
+        <Label Margin="7" Grid.Column="1" Grid.Row="4" Name="zamenskiText"></Label>
+        <ListView Margin="20,42,69,-153" Name="IngredientsBinding" RenderTransformOrigin="0.5,0.5" Grid.Row="6" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Sastojci" Width="250" DisplayMemberBinding="{Binding Name}" />
                 </GridView>
             </ListView.View>
         </ListView>
-       
+
 
     </Grid>
 </Window>

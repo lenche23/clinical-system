@@ -44,6 +44,15 @@ namespace vezba
                 oblikText.Content = oblikText.Content + " Sirup";
             }
 
+            if (medicine.ReplacementMedicine == null)
+            {
+                zamenskiText.Content = " ";
+            }
+            else
+            {
+                zamenskiText.Content = zamenskiText.Content + " " + medicine.ReplacementMedicine.Name;
+            }
+
             List<Ingridient> ingredientList = medicine.ingridient;
             IngredientList = new ObservableCollection<Ingridient>(ingredientList);
             IngredientsBinding.ItemsSource = IngredientList; 

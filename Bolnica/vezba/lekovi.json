@@ -5,10 +5,16 @@
         "Name": "SilicijumDioksid"
       },
       {
-        "Name": "Povidon(K25)"
+        "Name": "Kroskarmeloza-natrijum"
       },
       {
-        "Name": "Celuloza, mikrokristalna"
+        "Name": "Skrob, kukuruzni"
+      },
+      {
+        "Name": "Povidon (K25)"
+      },
+      {
+        "Name": "Eritrozin (E127)"
       }
     ],
     "Name": "Ibuprofen",
@@ -24,20 +30,29 @@
         "Name": "SilicijumDioksid"
       },
       {
-        "Name": "Povidon(K25)"
+        "Name": "Kroskarmeloza-natrijum"
       },
       {
-        "Name": "Celuloza, mikrokristalna"
+        "Name": "Skrob, kukuruzni"
+      },
+      {
+        "Name": "Povidon (K25)"
+      },
+      {
+        "Name": "Eritrozin (E127)"
       }
     ]
   },
   {
     "ingridient": [
       {
+        "Name": "Celuloza, mikrokristalna"
+      },
+      {
         "Name": "Hipromeloza (E464)"
       },
       {
-        "Name": " Titan-dioksid (E171)"
+        "Name": "Titan-dioksid (E171)"
       },
       {
         "Name": "Makrogol 400"
@@ -53,13 +68,68 @@
     "ReplacementMedicine": null,
     "Ingridient": [
       {
+        "Name": "Celuloza, mikrokristalna"
+      },
+      {
         "Name": "Hipromeloza (E464)"
       },
       {
-        "Name": " Titan-dioksid (E171)"
+        "Name": "Titan-dioksid (E171)"
       },
       {
         "Name": "Makrogol 400"
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "Acetilsalicilna kiselina"
+      },
+      {
+        "Name": "Skrob, kukuruzni"
+      },
+      {
+        "Name": "Trietil-citrat"
+      }
+    ],
+    "Name": "Aspirin",
+    "Manufacturer": "Bayer Bitterfeld GmbH ",
+    "Packaging": "30 x 100mg",
+    "MedicineID": 2,
+    "Status": 1,
+    "Condition": 0,
+    "IsDeleted": false,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "Acetilsalicilna kiselina"
+      },
+      {
+        "Name": "Skrob, kukuruzni"
+      },
+      {
+        "Name": "Trietil-citrat"
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "Trifolium pratense extractum siccum standardisatum"
+      }
+    ],
+    "Name": "Oestrofact",
+    "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+    "Packaging": "50 x 70 mg",
+    "MedicineID": 3,
+    "Status": 1,
+    "Condition": 1,
+    "IsDeleted": false,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "Trifolium pratense extractum siccum standardisatum"
       }
     ]
   }

@@ -31,6 +31,9 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
+            MedicineStorage ms = new MedicineStorage();
+            List<Medicine> medicineList = ms.GetAll();
+            comboReplacementMedicine.ItemsSource = medicineList;
             List<string> condition = new List<string> { "Kapsula", "Pilula", "Sirup" };
             comboCondition.ItemsSource = condition;
             newMedicine = new Medicine("Naziv", "Naziv", "Naziv", 0, MedicineCondition.pill);
@@ -71,10 +74,12 @@ namespace vezba
                 Condition = MedicineCondition.syrup;
             }
 
+            Medicine replacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
+
             MedicineStorage storage = new MedicineStorage();
             int MedicineID = storage.generateNextId();
 
-            newMedicine = new Medicine(Name, Manufacturer, Packaging, MedicineID, Condition) { };
+            newMedicine = new Medicine(Name, Manufacturer, Packaging, MedicineID, Condition) { ReplacementMedicine = replacementMedicine };
 
             AddMedicineWindow.MedicineList.Add(newMedicine);
             newMedicine.ingridient = ingredientTemporaryList;
@@ -86,6 +91,23 @@ namespace vezba
         private void Odustani_Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void ButtonMinus_Click(object sender, RoutedEventArgs e)
+        {
+            if (IngredientsBinding.SelectedIndex > -1)
+            {
+                Ingridient ingredient = (Ingridient)IngredientsBinding.SelectedItem;
+                ingredientTemporaryList.Remove(ingredient);
+                IngredientList = new ObservableCollection<Ingridient>(ingredientTemporaryList);
+                IngredientsBinding.ItemsSource = IngredientList;
+                IngredientsBinding.Items.Refresh();
+            }
+
+            else
+            {
+                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+            }
         }
     }
 }
