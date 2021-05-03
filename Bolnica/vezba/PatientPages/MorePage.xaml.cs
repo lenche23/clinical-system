@@ -51,6 +51,7 @@ namespace vezba.PatientPages
 
         private void BtnOcenaBolnice_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("aaaa", "nesto" + currentAppointments);
             if (currentAppointments % 5 == 0)
             {
                 this.NavigationService.Navigate(new GradeHospitalPage());

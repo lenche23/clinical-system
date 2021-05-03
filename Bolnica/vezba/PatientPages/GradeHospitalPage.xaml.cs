@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,37 @@ namespace vezba.PatientPages
 
         private void ButtonConfirmGradeHospital_Click(object sender, RoutedEventArgs e)
         {
-
+            HospitalEvaluationStorage storage = new HospitalEvaluationStorage();
+            int gradeHospital = grade.SelectedIndex;
+            int rating = 0;
+            switch (gradeHospital)
+            {
+                case 0:
+                    rating = 1;
+                    break;
+                case 1:
+                    rating = 2;
+                    break;
+                case 2:
+                    rating = 3;
+                    break;
+                case 3:
+                    rating = 4;
+                    break;
+                case 4:
+                    rating = 5;
+                    break;
+                default:
+                    rating = 1;
+                    break;
+            }
+            String comm = comment.Text;
+            int id = storage.GenerateNextId();
+            Boolean deleted = false;
+            HospitalEvaluation hospitalEvaluation = new HospitalEvaluation(rating, comm, id, deleted);
+            storage.Save(hospitalEvaluation);
+            var s = new SuccessfulGradeHospital();
+            s.Show();
         }
     }
 }

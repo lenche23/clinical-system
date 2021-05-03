@@ -24,11 +24,9 @@ namespace vezba
             PatientStorage pps = new PatientStorage();
             Patient patient = pps.GetOne("1008985563244");  //ja
             Patient = patient;
-            Medicine medicine = new Medicine();
-            medicine.Name = "Vitamin C";
-            Prescription p1 = new Prescription(DateTime.Now, 21, Period.daily, 1, 0, true, medicine);
-            Medicine medicine2 = new Medicine();
-            medicine2.Name = "Brufen";
+            var medicine1 = new Medicine("Vitamin C", "nesto", "nesto", 0, MedicineCondition.pill);
+            Prescription p1 = new Prescription(DateTime.Now, 21, Period.daily, 1, 0, true, medicine1);
+            var medicine2 = new Medicine("Brufen", "nesto", "nesto", 0, MedicineCondition.pill);
             Prescription p2 = new Prescription(DateTime.Now, 21, Period.daily, 2, 1, true, medicine2);
             MedicalRecord medicalRecord = new MedicalRecord("12345", "12345");
             Patient.MedicalRecord = medicalRecord;

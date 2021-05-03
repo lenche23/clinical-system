@@ -36,6 +36,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -48,7 +49,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -104,11 +106,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 44,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -158,12 +162,20 @@
             "Id": 0,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "ibuprofen",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
         ],
+        "referralLetter": null,
         "HealthInsuranceNumber": "07167166",
         "MedicalIdNumber": "620178060616",
         "Allergen": [
@@ -209,12 +221,20 @@
             "Id": 0,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "ibuprofen",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
-        ]
+        ],
+        "ReferralLetter": []
       },
       "NameAndSurname": "Mira Torbica",
       "Appointment": [],
@@ -263,11 +283,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -317,12 +339,20 @@
             "Id": 0,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "ibuprofen",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
         ],
+        "referralLetter": null,
         "HealthInsuranceNumber": "07167166",
         "MedicalIdNumber": "620178060616",
         "Allergen": [
@@ -368,12 +398,20 @@
             "Id": 0,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "ibuprofen",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
-        ]
+        ],
+        "ReferralLetter": []
       },
       "NameAndSurname": "Mira Torbica",
       "Appointment": [],
@@ -424,11 +462,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 44,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -484,11 +524,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -526,12 +568,20 @@
             "Id": 1,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "panklav",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
         ],
+        "referralLetter": null,
         "HealthInsuranceNumber": "1651",
         "MedicalIdNumber": "546356354",
         "Allergen": [
@@ -565,12 +615,20 @@
             "Id": 1,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "panklav",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
-        ]
+        ],
+        "ReferralLetter": []
       },
       "NameAndSurname": "Milena Jovanovic",
       "Appointment": [],
@@ -621,11 +679,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -663,12 +723,20 @@
             "Id": 1,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "panklav",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
         ],
+        "referralLetter": null,
         "HealthInsuranceNumber": "1651",
         "MedicalIdNumber": "546356354",
         "Allergen": [
@@ -702,12 +770,20 @@
             "Id": 1,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "panklav",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
-        ]
+        ],
+        "ReferralLetter": []
       },
       "NameAndSurname": "Milena Jovanovic",
       "Appointment": [],
@@ -756,11 +832,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -798,12 +876,20 @@
             "Id": 1,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "panklav",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
         ],
+        "referralLetter": null,
         "HealthInsuranceNumber": "1651",
         "MedicalIdNumber": "546356354",
         "Allergen": [
@@ -837,12 +923,20 @@
             "Id": 1,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "panklav",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
-        ]
+        ],
+        "ReferralLetter": []
       },
       "NameAndSurname": "Milena Jovanovic",
       "Appointment": [],
@@ -893,11 +987,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": null,
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -935,12 +1031,20 @@
             "Id": 1,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "panklav",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
         ],
+        "referralLetter": null,
         "HealthInsuranceNumber": "1651",
         "MedicalIdNumber": "546356354",
         "Allergen": [
@@ -974,12 +1078,20 @@
             "Id": 1,
             "isActive": false,
             "Medicine": {
-              "allergen": [],
+              "ingridient": [],
               "Name": "panklav",
-              "Allergen": []
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
             }
           }
-        ]
+        ],
+        "ReferralLetter": []
       },
       "NameAndSurname": "Milena Jovanovic",
       "Appointment": [],
@@ -1038,6 +1150,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1050,7 +1163,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1112,6 +1226,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1124,7 +1239,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1186,6 +1302,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1198,7 +1315,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1260,6 +1378,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1272,7 +1391,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1334,6 +1454,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1346,7 +1467,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1408,6 +1530,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1420,7 +1543,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1482,6 +1606,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1494,7 +1619,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1556,6 +1682,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1568,7 +1695,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1632,6 +1760,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1644,7 +1773,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1706,6 +1836,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1718,7 +1849,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1780,6 +1912,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1792,7 +1925,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1854,6 +1988,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1866,7 +2001,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1928,6 +2064,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1940,7 +2077,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -2002,6 +2140,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -2014,7 +2153,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -2076,6 +2216,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -2088,7 +2229,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -2150,6 +2292,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -2162,7 +2305,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -2224,6 +2368,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -2236,7 +2381,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -2298,6 +2444,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -2309,6 +2456,125 @@
           "Quantity": 122,
           "Type": 0,
           "IsDeleted": false
+        }
+      ],
+      "Renovation": []
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-03T22:05:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 26,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Stomatolog"
+      },
+      "NameAndSurname": "Milica Milicevic",
+      "SalaryInRsd": 100000,
+      "Username": "milica",
+      "Password": "mica",
+      "Name": "Milica",
+      "Surname": "Milicevic",
+      "Jmbg": "2205972659017",
+      "DateOfBirth": "2021-05-03T22:04:12.0042804+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06364789110",
+      "Adress": "neka ulica 98, Novi Sad",
+      "Email": "milica@gmail.com",
+      "IdCard": "008100252",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
         }
       ]
     },
@@ -2335,6 +2601,124 @@
     },
     "PatientName": "Petar Ilic",
     "RoomName": "1",
-    "DoctorName": "Darko Torbica"
+    "DoctorName": "Milica Milicevic"
+  },
+  {
+    "StartTime": "2021-05-03T22:05:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 27,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Oftalmolog"
+      },
+      "NameAndSurname": "Pera Peric",
+      "SalaryInRsd": 90000,
+      "Username": "pera",
+      "Password": "perica",
+      "Name": "Pera",
+      "Surname": "Peric",
+      "Jmbg": "1541546542644",
+      "DateOfBirth": "2021-05-03T22:06:03.5683707+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0621846712",
+      "Adress": "neka ulica 45, Novi Sad",
+      "Email": "pera@gmail.com",
+      "IdCard": "007123352",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Pera Peric"
   }
 ]

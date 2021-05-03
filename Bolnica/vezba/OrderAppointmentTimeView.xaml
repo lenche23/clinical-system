@@ -36,6 +36,7 @@
             <ComboBoxItem Content="18:30"/>
             <ComboBoxItem Content="19:00"/>
             <ComboBoxItem Content="19:30"/>
+            <ComboBoxItem Content="22:05"/>
         </ComboBox>
         <DataGrid x:Name="doctorsTable" ItemsSource="{Binding Doctors}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" Height="172" Margin="200,144,0,0" >
             <DataGrid.Columns>

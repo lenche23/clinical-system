@@ -28,22 +28,38 @@ namespace vezba.PatientPages
 
         private void ButtonConfirmGradeDoctor_Click(object sender, RoutedEventArgs e)
         {
+            DoctorEvaluationStorage storage = new DoctorEvaluationStorage();
             int gradeDoctor = grade.SelectedIndex;
+            int rating = 0;
             switch (gradeDoctor)
             {
-                /*case 0:
-
+                case 0:
+                    rating = 1;
+                    break;
                 case 1:
-
+                    rating = 2;
+                    break;
                 case 2:
-
+                    rating = 3;
+                    break;
                 case 3:
-
-                case 4:*/
-
+                    rating = 4;
+                    break;
+                case 4:
+                    rating = 5;
+                    break;
+                default:
+                    rating = 1;
+                    break;
             }
-                
-
+            String comm = comment.Text;
+            int id = storage.GenerateNextId();
+            Boolean deleted = false;
+            Doctor doctor = Doctor;
+            DoctorEvaluation doctorEvaluation = new DoctorEvaluation(rating, comm, id, deleted, doctor);
+            storage.Save(doctorEvaluation);
+            var s = new SuccessfulGradeDoctor();
+            s.Show();
         }
     }
 }

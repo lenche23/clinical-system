@@ -233,6 +233,12 @@
     <Compile Include="SecretaryView.xaml.cs">
       <DependentUpon>SecretaryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuccessfulGradeDoctor.xaml.cs">
+      <DependentUpon>SuccessfulGradeDoctor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessfulGradeHospital.xaml.cs">
+      <DependentUpon>SuccessfulGradeHospital.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TableNote.xaml.cs">
       <DependentUpon>TableNote.xaml</DependentUpon>
     </Compile>
@@ -448,6 +454,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SecretaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuccessfulGradeDoctor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SuccessfulGradeHospital.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
