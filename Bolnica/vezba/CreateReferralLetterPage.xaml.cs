@@ -12,21 +12,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace vezba
 {
     /// <summary>
-    /// Interaction logic for CreateReferralLetterView.xaml
+    /// Interaction logic for CreateReferralLetterPage.xaml
     /// </summary>
-    public partial class CreateReferralLetterView : Window
+    public partial class CreateReferralLetterPage : Page
     {
+
         public DoctorStorage docstorage;
         public List<Doctor> Doctors { get; set; }
 
         public Patient patient;
 
-        public CreateReferralLetterView(Patient patient)
+        private DoctorView dw;
+
+        public CreateReferralLetterPage(Patient patient, DoctorView dw)
         {
             InitializeComponent();
             this.DataContext = patient;
@@ -35,6 +39,7 @@ namespace vezba
             cmbDoctors.DataContext = this;
             cmbDoctors.SelectedIndex = 0;
             this.patient = patient;
+            this.dw = dw;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -57,12 +62,12 @@ namespace vezba
                     aps.Update(appointment1);
                 }
             }
-            this.Close();
+            dw.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            dw.Main.GoBack();
         }
     }
 }

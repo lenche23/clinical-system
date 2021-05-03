@@ -1814,6 +1814,12 @@
             "Comment": "test4",
             "Patient": "Mira Torbica",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-05-03T16:12:15.8810079+02:00",
+            "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
           }
         ],
         "prescription": [
@@ -1836,6 +1842,58 @@
               "ReplacementMedicine": null,
               "Ingridient": []
             }
+          },
+          {
+            "StartDate": "2021-05-28T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 4,
+            "Id": 12345,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
           }
         ],
         "referralLetter": [
@@ -1857,6 +1915,30 @@
               "Adress": "neka ulica 38, Novi Sad",
               "Email": "darko@gmail.com",
               "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-03T16:39:43.8390906+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
               "Type": 2,
               "IsDeleted": false
             }
@@ -1896,6 +1978,12 @@
             "Comment": "test4",
             "Patient": "Mira Torbica",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-05-03T16:12:15.8810079+02:00",
+            "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
           }
         ],
         "Prescription": [
@@ -1918,6 +2006,58 @@
               "ReplacementMedicine": null,
               "Ingridient": []
             }
+          },
+          {
+            "StartDate": "2021-05-28T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 4,
+            "Id": 12345,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
           }
         ],
         "ReferralLetter": [
@@ -1939,6 +2079,30 @@
               "Adress": "neka ulica 38, Novi Sad",
               "Email": "darko@gmail.com",
               "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-03T16:39:43.8390906+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
               "Type": 2,
               "IsDeleted": false
             }
@@ -2248,6 +2412,12 @@
             "Comment": "test4",
             "Patient": "Mira Torbica",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-05-03T16:12:15.8810079+02:00",
+            "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
           }
         ],
         "prescription": [
@@ -2270,6 +2440,58 @@
               "ReplacementMedicine": null,
               "Ingridient": []
             }
+          },
+          {
+            "StartDate": "2021-05-28T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 4,
+            "Id": 12345,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
           }
         ],
         "referralLetter": [
@@ -2291,6 +2513,30 @@
               "Adress": "neka ulica 38, Novi Sad",
               "Email": "darko@gmail.com",
               "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-03T16:39:43.8390906+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
               "Type": 2,
               "IsDeleted": false
             }
@@ -2330,6 +2576,12 @@
             "Comment": "test4",
             "Patient": "Mira Torbica",
             "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-05-03T16:12:15.8810079+02:00",
+            "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
           }
         ],
         "Prescription": [
@@ -2352,6 +2604,58 @@
               "ReplacementMedicine": null,
               "Ingridient": []
             }
+          },
+          {
+            "StartDate": "2021-05-28T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 4,
+            "Id": 12345,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
           }
         ],
         "ReferralLetter": [
@@ -2373,6 +2677,30 @@
               "Adress": "neka ulica 38, Novi Sad",
               "Email": "darko@gmail.com",
               "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-03T16:39:43.8390906+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
               "Type": 2,
               "IsDeleted": false
             }

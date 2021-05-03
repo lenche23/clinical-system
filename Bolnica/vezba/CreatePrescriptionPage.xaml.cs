@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -11,22 +12,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Model;
 
 namespace vezba
 {
     /// <summary>
-    /// Interaction logic for CreatePrescriptionView.xaml
+    /// Interaction logic for CreatePrescriptionPage.xaml
     /// </summary>
-    public partial class CreatePrescriptionView : Window
+    public partial class CreatePrescriptionPage : Page
     {
         public Patient patient;
 
         public List<Medicine> Medicine { get; set; }
         public MedicineStorage medStorage;
-
-        public CreatePrescriptionView(Patient patient)
+        private DoctorView dw;
+        public CreatePrescriptionPage(Patient patient, DoctorView dw)
         {
             InitializeComponent();
             cmbPeriod.SelectedIndex = 0;
@@ -35,6 +36,7 @@ namespace vezba
             Medicine = medStorage.GetApproved();
             this.DataContext = this;
             CmbMedicine.SelectedIndex = 0;
+            this.dw = dw;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -66,12 +68,12 @@ namespace vezba
                     aps.Update(appointment1);
                 }
             }
-            this.Close();
+            dw.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            dw.Main.GoBack();
         }
     }
 }

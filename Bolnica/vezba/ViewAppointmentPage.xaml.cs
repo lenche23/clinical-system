@@ -54,14 +54,12 @@ namespace vezba
 
         private void NovReceptClick(object sender, RoutedEventArgs e)
         {
-            var s = new CreatePrescriptionView(Selected.Patient);
-            s.Show();
+            dw.Main.Content = new CreatePrescriptionPage(Selected.Patient, dw);
         }
 
         private void IzdavanjeUputaClick(object sender, RoutedEventArgs e)
         {
-            var s = new CreateReferralLetterView(Selected.Patient);
-            s.Show();
+            dw.Main.Content = new CreateReferralLetterPage(Selected.Patient, dw);
         }
 
         private void PovratakClick(object sender, RoutedEventArgs e)
