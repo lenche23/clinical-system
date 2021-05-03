@@ -17,14 +17,14 @@ using System.Windows.Shapes;
 
 namespace vezba.PatientPages
 {
-    public partial class MorePage : Page
+    public partial class GradeDoctorPage : Page
     {
         public static ObservableCollection<Appointment> Appointments { get; set; }
-        public static int currentAppointments = 0;
 
-        public MorePage()
+        public GradeDoctorPage()
         {
             InitializeComponent();
+            this.DataContext = this;
             AppointmentStorage ps = new AppointmentStorage();
             List<Appointment> temp = new List<Appointment>();
             foreach (Appointment appointment in ps.GetAll())
@@ -36,50 +36,22 @@ namespace vezba.PatientPages
                 }
             }
             Appointments = new ObservableCollection<Appointment>(temp);
-            currentAppointments = Appointments.Count();
         }
 
-        private void BtnZahtev_Click(object sender, RoutedEventArgs e)
+        private void ButtonGradeDoctor_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void BtnOcenaLekara_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new GradeDoctorPage());
-        }
-
-        private void BtnOcenaBolnice_Click(object sender, RoutedEventArgs e)
-        {
-            if (currentAppointments % 5 == 0)
+            if (gradingTable.SelectedItems.Count > 0)
             {
-                this.NavigationService.Navigate(new GradeHospitalPage());
+                Appointment a = (Appointment)gradingTable.SelectedItem;
+                Doctor selectedDoctor = a.Doctor;
+                this.NavigationService.Navigate(new GradeSelectedDoctorPage(selectedDoctor));
             }
             else
             {
-                var s = new GradePopup();
-                s.Show();
+                var s = new TableNote();
+                s.ShowDialog();
             }
-        }
-
-        private void BtnStatistika_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnMojLekar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnPlacanje_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnIzvestaj_Click(object sender, RoutedEventArgs e)
-        {
-
+            
         }
     }
 }

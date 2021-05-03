@@ -40,7 +40,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\star (3).png" Height="35" Width="35" Margin="351,270,44,295"/>
+        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\hospital.png" Height="35" Width="35" Margin="351,270,44,295"/>
         <Button x:Name="BtnStatistika" Content="Statistika........................................................" HorizontalContentAlignment="Left" FontSize="20" Foreground="Black" BorderThickness="0" Padding="10" Margin="10,335,79,215" Click="BtnStatistika_Click" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">

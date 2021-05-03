@@ -105,6 +105,9 @@
     <Compile Include="EditPatient.xaml.cs">
       <DependentUpon>EditPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GradePopup.xaml.cs">
+      <DependentUpon>GradePopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LogoutPopup.xaml.cs">
       <DependentUpon>LogoutPopup.xaml</DependentUpon>
     </Compile>
@@ -172,6 +175,15 @@
     <Compile Include="PatientPages\CalendarPage.xaml.cs">
       <DependentUpon>CalendarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PatientPages\GradeDoctorPage.xaml.cs">
+      <DependentUpon>GradeDoctorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\GradeHospitalPage.xaml.cs">
+      <DependentUpon>GradeHospitalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\GradeSelectedDoctorPage.xaml.cs">
+      <DependentUpon>GradeSelectedDoctorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PatientPages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -195,6 +207,9 @@
     </Compile>
     <Compile Include="SecretaryView.xaml.cs">
       <DependentUpon>SecretaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TableNote.xaml.cs">
+      <DependentUpon>TableNote.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewAnnouncement.xaml.cs">
       <DependentUpon>ViewAnnouncement.xaml</DependentUpon>
@@ -278,6 +293,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GradePopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LogoutPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -338,6 +357,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PatientPages\GradeDoctorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\GradeHospitalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\GradeSelectedDoctorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientPages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -367,6 +398,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SecretaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TableNote.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -483,6 +518,13 @@
     <Resource Include="PatientImages\credit-card %282%29.png" />
     <Resource Include="PatientImages\medical-report %281%29.png" />
     <Resource Include="PatientImages\medical-report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\speech-bubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\hospital %281%29.png" />
+    <Resource Include="PatientImages\hospital.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
