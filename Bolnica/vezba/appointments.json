@@ -1,8 +1,8 @@
 [
   {
-    "StartTime": "2021-10-10T10:00:00",
-    "DurationInMunutes": 30,
-    "ApointmentDescription": "papanikolau",
+    "StartTime": "2021-10-19T10:35:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
     "AppointentId": 0,
     "IsDeleted": false,
     "Doctor": {
@@ -27,137 +27,52 @@
     },
     "Room": {
       "Capacity": 0,
-      "equipment": [],
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
       "RoomType": 0,
-      "RoomNumber": 45,
-      "RoomFloor": 2,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
     },
     "Patient": {
-      "appointment": [],
+      "appointment": null,
       "IsGuest": false,
-      "EmergencyContact": "06699592141",
-      "MedicalRecord": {
-        "allergen": [
-          {
-            "Name": "Ambrozija"
-          },
-          {
-            "Name": "BI-278"
-          }
-        ],
-        "anamnesis": [
-          {
-            "Time": "2021-04-18T12:42:00.2750169+02:00",
-            "Comment": "test",
-            "Patient": "Mira Torbica",
-            "Doctor": "Imenko Prezimenić"
-          },
-          {
-            "Time": "2021-04-18T12:42:40.7710091+02:00",
-            "Comment": "test2",
-            "Patient": "Mira Torbica",
-            "Doctor": "Imenko Prezimenić"
-          },
-          {
-            "Time": "2021-04-18T13:42:36.9534669+02:00",
-            "Comment": "test 3",
-            "Patient": "Mira Torbica",
-            "Doctor": "Imenko Prezimenić"
-          },
-          {
-            "Time": "2021-04-18T13:53:04.7925427+02:00",
-            "Comment": "test4",
-            "Patient": "Mira Torbica",
-            "Doctor": "Imenko Prezimenić"
-          }
-        ],
-        "prescription": [
-          {
-            "StartDate": "2021-04-22T00:00:00",
-            "DurationInDays": 7,
-            "ReferencePeriod": 0,
-            "Number": 3,
-            "Id": 0,
-            "isActive": false,
-            "Medicine": {
-              "allergen": [],
-              "Name": "ibuprofen",
-              "Allergen": []
-            }
-          }
-        ],
-        "HealthInsuranceNumber": "07167166",
-        "MedicalIdNumber": "620178060616",
-        "Allergen": [
-          {
-            "Name": "Ambrozija"
-          },
-          {
-            "Name": "BI-278"
-          }
-        ],
-        "Anamnesis": [
-          {
-            "Time": "2021-04-18T12:42:00.2750169+02:00",
-            "Comment": "test",
-            "Patient": "Mira Torbica",
-            "Doctor": "Imenko Prezimenić"
-          },
-          {
-            "Time": "2021-04-18T12:42:40.7710091+02:00",
-            "Comment": "test2",
-            "Patient": "Mira Torbica",
-            "Doctor": "Imenko Prezimenić"
-          },
-          {
-            "Time": "2021-04-18T13:42:36.9534669+02:00",
-            "Comment": "test 3",
-            "Patient": "Mira Torbica",
-            "Doctor": "Imenko Prezimenić"
-          },
-          {
-            "Time": "2021-04-18T13:53:04.7925427+02:00",
-            "Comment": "test4",
-            "Patient": "Mira Torbica",
-            "Doctor": "Imenko Prezimenić"
-          }
-        ],
-        "Prescription": [
-          {
-            "StartDate": "2021-04-22T00:00:00",
-            "DurationInDays": 7,
-            "ReferencePeriod": 0,
-            "Number": 3,
-            "Id": 0,
-            "isActive": false,
-            "Medicine": {
-              "allergen": [],
-              "Name": "ibuprofen",
-              "Allergen": []
-            }
-          }
-        ]
-      },
-      "NameAndSurname": "Mira Torbica",
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
       "Appointment": [],
-      "Username": "miki17",
-      "Password": "Tin3",
-      "Name": "Mira",
-      "Surname": "Torbica",
-      "Jmbg": "1701994261473",
-      "DateOfBirth": "1994-01-01T00:00:00",
-      "Sex": 1,
-      "PhoneNumber": "0627844326",
-      "Adress": "Hajduk Veljkova 42, Novi Sad",
-      "Email": "mira94@gmail.com",
-      "IdCard": "008755974",
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
       "Type": 3,
       "IsDeleted": false
     },
-    "PatientName": "Mira Torbica",
-    "RoomName": "45",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
     "DoctorName": "Milica Milicevic"
   },
   {
@@ -1178,6 +1093,1192 @@
       "Surname": "Torbica",
       "Jmbg": "1708962324890",
       "DateOfBirth": "2021-04-18T23:00:22.3824204+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-13T13:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 10,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T22:18:50.1199191+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-15T10:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 11,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T22:19:10.5863445+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-23T10:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 12,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T22:19:37.2376046+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-19T14:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 13,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T22:19:55.4433239+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-19T18:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 14,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T22:20:07.1132194+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-19T19:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 15,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T22:20:19.8019173+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-22T12:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 16,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Dana Dimitrijevic",
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-04-20T22:20:39.0209001+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Dana Dimitrijevic"
+  },
+  {
+    "StartTime": "2021-04-20T18:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 17,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T22:38:49.4628171+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-21T18:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 18,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T22:39:05.2719259+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-15T14:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 19,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T22:39:18.7457036+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-21T08:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 20,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T23:33:59.8420802+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-21T12:01:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 21,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T23:37:20.5733587+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-21T00:01:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 22,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T23:38:03.4023748+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-21T00:01:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 23,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-20T23:40:30.3484272+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-04-22T10:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 24,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-04-21T00:46:21.0667798+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Hanzaplast",
+          "Quantity": 122,
+          "Type": 0,
+          "IsDeleted": false
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-13T13:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 25,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-01T16:11:53.9149634+02:00",
       "Sex": 0,
       "PhoneNumber": "0665813272",
       "Adress": "neka ulica 38, Novi Sad",

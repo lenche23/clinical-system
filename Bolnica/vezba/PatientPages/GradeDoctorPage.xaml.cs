@@ -12,14 +12,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace vezba
+namespace vezba.PatientPages
 {
-    public partial class CancelAppointmentView : Window
+    public partial class GradeDoctorPage : Page
     {
         public static ObservableCollection<Appointment> Appointments { get; set; }
-        public CancelAppointmentView()
+
+        public GradeDoctorPage()
         {
             InitializeComponent();
             this.DataContext = this;
@@ -27,7 +29,7 @@ namespace vezba
             List<Appointment> temp = new List<Appointment>();
             foreach (Appointment appointment in ps.GetAll())
             {
-                if (appointment.StartTime.Date > DateTime.Now && appointment.Patient.Jmbg.Equals("1008985563244"))
+                if (appointment.StartTime.Date < DateTime.Now && appointment.Patient.Jmbg.Equals("1008985563244"))
                 {
                     temp.Add(appointment);
 
@@ -36,21 +38,20 @@ namespace vezba
             Appointments = new ObservableCollection<Appointment>(temp);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonGradeDoctor_Click(object sender, RoutedEventArgs e)
         {
-            if (cancelTable.SelectedItems.Count > 0)
+            if (gradingTable.SelectedItems.Count > 0)
             {
-                Appointment a = (Appointment)cancelTable.SelectedItem;
-                AppointmentStorage storage = new AppointmentStorage();
-                Boolean bla =  storage.Delete(a.AppointentId);
-                Appointments.Remove(a);
-                MessageBox.Show("Your appointment has been canceled.");
-                this.Close();
+                Appointment a = (Appointment)gradingTable.SelectedItem;
+                Doctor selectedDoctor = a.Doctor;
+                this.NavigationService.Navigate(new GradeSelectedDoctorPage(selectedDoctor));
             }
-            else 
+            else
             {
-                MessageBox.Show("You did not pick an appointment!");
+                var s = new TableNote();
+                s.ShowDialog();
             }
+            
         }
     }
 }

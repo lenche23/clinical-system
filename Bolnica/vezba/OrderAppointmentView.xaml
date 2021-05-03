@@ -13,6 +13,7 @@
         <Button Margin="25,373,653,10" Content="Schedule" FontSize="15" Background="#FFB3EDC4" BorderBrush="#FF485F47" Click="Button_Click"/>
         <Label Content="Moj lekar:                                  Darko Torbica" HorizontalAlignment="Left" Margin="25,60,0,0" VerticalAlignment="Top" Width="354" FontSize="15"/>
         <ComboBox Name="comboBox" HorizontalAlignment="Left" Margin="233,150,0,0" VerticalAlignment="Top" Width="146" Height="29">
+            <ComboBoxItem Content="00:01"/>
             <ComboBoxItem Content="08:00"/>
             <ComboBoxItem Content="10:30"/>
             <ComboBoxItem Content="13:00"/>

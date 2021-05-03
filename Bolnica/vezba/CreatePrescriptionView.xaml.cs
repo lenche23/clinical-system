@@ -16,9 +16,6 @@ using Model;
 
 namespace vezba
 {
-    /// <summary>
-    /// Interaction logic for CreatePrescriptionView.xaml
-    /// </summary>
     public partial class CreatePrescriptionView : Window
     {
         public Patient patient;
@@ -43,7 +40,8 @@ namespace vezba
             var Number = int.Parse(TbNumber.Text);
             var MedicineName = TbMedicine.Text;
             var medicine = new Medicine(MedicineName, "nesto", "nesto", 0, MedicineCondition.pill);
-            var prescription = new Prescription { Id = Id, StartDate = (DateTime)StartDate, DurationInDays = DurationInDays, ReferencePeriod = ReferencePeriod, Medicine = medicine, Number = Number };
+            var active = true;
+            var prescription = new Prescription((DateTime)StartDate, DurationInDays, ReferencePeriod, Number, Id, active, medicine);
 
             patient.MedicalRecord.AddPrescription(prescription);
             PatientStorage ps = new PatientStorage();

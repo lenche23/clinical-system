@@ -36,7 +36,7 @@ namespace vezba
 
                 this.Close();
             }
-            else if (Username.Text.Equals("pacijent") && Password.Password.Equals("bolnica"))
+            else if (Username.Text.Equals("p") && Password.Password.Equals("p"))
             {
                 var s = new PatientView();
                 s.Show();
