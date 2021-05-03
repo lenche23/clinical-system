@@ -37,16 +37,14 @@ namespace vezba
 
         private void ZdravstveniKartonClick(object sender, RoutedEventArgs e)
         {
-            var s = new MedicalRecordView(Selected.Patient);
-            s.Show();
+            dw.Main.Content = new MedicalRecordPage(Selected.Patient, dw);
         }
 
         private void NovaAnamnezaClick(object sender, RoutedEventArgs e)
         {
             if (DateTime.Compare(DateTime.Now, Selected.StartTime) >= 0)
             {
-                var s = new CreateAnamnesisView(Selected);
-                s.Show();
+                dw.Main.Content = new CreateAnamnesisPage(Selected, dw);
             }
             else
             {
@@ -68,7 +66,7 @@ namespace vezba
 
         private void PovratakClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new CalendarView(dw);
+            dw.Main.GoBack();
         }
     }
 }

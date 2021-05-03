@@ -12,22 +12,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace vezba
 {
     /// <summary>
-    /// Interaction logic for CreateAnamnesisView.xaml
+    /// Interaction logic for CreateAnamnesisPage.xaml
     /// </summary>
-    public partial class CreateAnamnesisView : Window
+    public partial class CreateAnamnesisPage : Page
     {
         public Appointment appointment;
 
-        public CreateAnamnesisView(Appointment appointment)
-        { 
+        private DoctorView dw;
+
+        public CreateAnamnesisPage(Appointment appointment, DoctorView dw)
+        {
             InitializeComponent();
-            this.DataContext = appointment;
+            DataContext = appointment;
             this.appointment = appointment;
+            this.dw = dw;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -42,19 +46,20 @@ namespace vezba
             ps.Update(appointment.Patient);
             AppointmentStorage aps = new AppointmentStorage();
             ObservableCollection<Appointment> appointments = CalendarView.Appointments;
-            foreach (Appointment appointment1 in appointments) { 
-                if(appointment1.Patient.Jmbg.Equals(appointment.Patient.Jmbg))
+            foreach (Appointment appointment1 in appointments)
+            {
+                if (appointment1.Patient.Jmbg.Equals(appointment.Patient.Jmbg))
                 {
                     appointment1.Patient.MedicalRecord.AddAnamnesis(Anamnesis);
                     aps.Update(appointment1);
                 }
             }
-            this.Close();
+            dw.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            dw.Main.GoBack();
         }
     }
 }

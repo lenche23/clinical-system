@@ -36,9 +36,7 @@ namespace vezba
 
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
-            MedicinePageView mpw = new MedicinePageView(dw);
-            mpw.MedicineTabs.SelectedIndex = 0;
-            dw.Main.Content = mpw;
+            dw.Main.GoBack();
         }
     }
 }

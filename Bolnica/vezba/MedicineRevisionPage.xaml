@@ -45,12 +45,12 @@
                 <TextBlock Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Text="{Binding Condition, Mode=OneWay}"/>
                 <TextBlock Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Text="{Binding ReplacementMedicine.Name, Mode=OneWay}"/>
             </Grid>
-            <StackPanel Width="150" Height="200">
+            <StackPanel Width="300" Height="300">
                 <TextBlock Margin="5" Name="Alergens" HorizontalAlignment="Left">Alergeni:</TextBlock>
                 <ListView Margin="5" Height="100" x:Name="listViewAlergens">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Alergen" Width="135" DisplayMemberBinding="{Binding Name}" />
+                            <GridViewColumn Header="Alergen" Width="290" DisplayMemberBinding="{Binding Name}" />
                         </GridView>
                     </ListView.View>
                 </ListView>

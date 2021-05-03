@@ -49,7 +49,7 @@
                 <ListView Margin="5" Height="100" x:Name="listViewAlergens">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Alergen" Width="135" DisplayMemberBinding="{Binding Name}" />
+                            <GridViewColumn Header="Alergen" Width="290" DisplayMemberBinding="{Binding Name}" />
                         </GridView>
                     </ListView.View>
                 </ListView>

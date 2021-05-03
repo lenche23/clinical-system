@@ -85,17 +85,14 @@
     <Compile Include="AppointmentHistory.xaml.cs">
       <DependentUpon>AppointmentHistory.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppointmentView.xaml.cs">
-      <DependentUpon>AppointmentView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CalendarView.xaml.cs">
       <DependentUpon>CalendarView.xaml</DependentUpon>
     </Compile>
     <Compile Include="CancelAppointmentView.xaml.cs">
       <DependentUpon>CancelAppointmentView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreateAnamnesisView.xaml.cs">
-      <DependentUpon>CreateAnamnesisView.xaml</DependentUpon>
+    <Compile Include="CreateAnamnesisPage.xaml.cs">
+      <DependentUpon>CreateAnamnesisPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ChangeAppointmentView.xaml.cs">
       <DependentUpon>ChangeAppointmentView.xaml</DependentUpon>
@@ -139,8 +136,8 @@
     <Compile Include="ManagerView.xaml.cs">
       <DependentUpon>ManagerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MedicalRecordView.xaml.cs">
-      <DependentUpon>MedicalRecordView.xaml</DependentUpon>
+    <Compile Include="MedicalRecordPage.xaml.cs">
+      <DependentUpon>MedicalRecordPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MedicinePageView.xaml.cs">
       <DependentUpon>MedicinePageView.xaml</DependentUpon>
@@ -288,10 +285,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AppointmentView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="CalendarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -300,7 +293,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateAnamnesisView.xaml">
+    <Page Include="CreateAnamnesisPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -372,7 +365,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MedicalRecordView.xaml">
+    <Page Include="MedicalRecordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

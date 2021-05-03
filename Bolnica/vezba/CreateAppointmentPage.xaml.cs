@@ -62,12 +62,13 @@ namespace vezba
             var IsEmergency = IsEmergencyCB.IsChecked;
             Appointment appointment1 = new Appointment(AppointmentID, (Patient)Patient, (Doctor)Doctor, (Room)Room, StartTime, DurationInMinutes, ApointmentDescription, (Boolean)IsEmergency);
             aps.Save(appointment1);
-            dw.Main.Content = new CalendarView(dw);
+            CalendarView.Appointments.Add(appointment1);
+            dw.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new CalendarView(dw);
+            dw.Main.GoBack();
         }
     }
 }

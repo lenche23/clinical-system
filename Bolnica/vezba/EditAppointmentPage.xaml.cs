@@ -31,7 +31,9 @@ namespace vezba
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
 
-        public EditAppointmentPage(Appointment selected, DoctorView dw)
+        private CalendarView cw;
+
+        public EditAppointmentPage(Appointment selected, DoctorView dw, CalendarView cw)
         {
             InitializeComponent();
             storage = new PatientStorage();
@@ -43,6 +45,7 @@ namespace vezba
             this.Selected = selected;
             this.DataContext = this;
             this.dw = dw;
+            this.cw = cw;
             if (Selected.Patient != null && Selected.Patient.Jmbg != null)
                 cmbPatients.SelectedValue = Selected.Patient.Jmbg;
             if (Selected.Room != null)
@@ -63,17 +66,26 @@ namespace vezba
             var Patient = (Patient)cmbPatients.SelectedItem;
             var Room = (Room)cmbRooms.SelectedItem;
             var Doctor = (Doctor)cmbDoctors.SelectedItem;
-            var IsEmergency = IsEmergencyCB.IsChecked;
-            var appointment1 = new Appointment(AppointmentID, Patient, Doctor, Room, StartTime, DurationInMinutes, ApointmentDescription, (Boolean)IsEmergency);
+            var IsEmergency = (Boolean)IsEmergencyCB.IsChecked;
+            var appointment1 = new Appointment(AppointmentID, Patient, Doctor, Room, StartTime, DurationInMinutes, ApointmentDescription, IsEmergency);
 
             AppointmentStorage aps = new AppointmentStorage();
             aps.Update(appointment1);
-            dw.Main.Content = new CalendarView(dw);
+
+            Selected.StartTime = StartTime;
+            Selected.DurationInMunutes = DurationInMinutes;
+            Selected.ApointmentDescription = ApointmentDescription;
+            Selected.Patient = Patient;
+            Selected.Room = Room;
+            Selected.Doctor = Doctor;
+            Selected.IsEmergency = IsEmergency;
+            cw.listViewAppointments.Items.Refresh();
+            dw.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new CalendarView(dw);
+            dw.Main.GoBack();
         }
     }
 }

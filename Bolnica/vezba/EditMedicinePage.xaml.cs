@@ -31,12 +31,15 @@ namespace vezba
 
         private DoctorView dw;
 
-        public EditMedicinePage(Medicine medicine, DoctorView dw)
+        private MedicinePageView mpw;
+
+        public EditMedicinePage(Medicine medicine, DoctorView dw, MedicinePageView mpw)
         {
             InitializeComponent();
             DataContext = this;
             Medicine = medicine;
             this.dw = dw;
+            this.mpw = mpw;
             switch (medicine.Condition)
             {
                 case MedicineCondition.pill:
@@ -81,12 +84,14 @@ namespace vezba
             Medicine.Condition = Condition;
             Medicine.Ingridient = new List<Ingridient>(Ingredients);
             MedStorage.Update(Medicine);
-            dw.Main.Content = new ViewMedicinePage(Medicine, dw);
+            mpw.listViewMedicine.Items.Refresh();
+            dw.Main.GoBack();
+            dw.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new ViewMedicinePage(Medicine, dw);
+            dw.Main.GoBack();
         }
 
         private void PlusButtonClick(object sender, RoutedEventArgs e)

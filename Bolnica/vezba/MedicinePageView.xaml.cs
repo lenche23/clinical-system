@@ -56,7 +56,7 @@ namespace vezba
             if (listViewMedicine.SelectedItems.Count > 0)
             {
                 Medicine medicine = (Medicine)listViewMedicine.SelectedItem;
-                dw.Main.Content = new ViewMedicinePage(medicine,dw);
+                dw.Main.Content = new ViewMedicinePage(medicine, dw, this);
             }
         }
 
@@ -65,7 +65,7 @@ namespace vezba
             if (listViewMedicineRevision.SelectedItems.Count > 0)
             {
                 Medicine medicine = (Medicine)listViewMedicineRevision.SelectedItem;
-                dw.Main.Content = new MedicineRevisionPage(medicine, dw);
+                dw.Main.Content = new MedicineRevisionPage(medicine, dw, this);
             }
         }
 

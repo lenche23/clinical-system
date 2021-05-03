@@ -26,25 +26,26 @@ namespace vezba
 
         private Medicine Medicine { get; set; }
 
-        public ViewMedicinePage(Medicine medicine, DoctorView dw)
+        private MedicinePageView mpw;
+
+        public ViewMedicinePage(Medicine medicine, DoctorView dw, MedicinePageView mpw)
         {
             InitializeComponent();
             this.DataContext = medicine;
             listViewAlergens.ItemsSource = medicine.Ingridient;
             this.dw = dw;
+            this.mpw = mpw;
             Medicine = medicine;
         }
 
         private void EditClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new EditMedicinePage(Medicine, this.dw);
+            dw.Main.Content = new EditMedicinePage(Medicine, dw, mpw);
         }
 
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
-            MedicinePageView mpw = new MedicinePageView(dw);
-            mpw.MedicineTabs.SelectedIndex = 1;
-            dw.Main.Content = mpw;
+            dw.Main.GoBack();
         }
     }
 }

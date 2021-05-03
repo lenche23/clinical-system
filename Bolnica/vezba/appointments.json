@@ -28,11 +28,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -89,6 +91,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -170,6 +173,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -250,11 +254,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 44,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -311,6 +317,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -392,6 +399,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -470,11 +478,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -531,6 +541,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -612,6 +623,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -692,11 +704,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 44,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -753,11 +767,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -808,6 +824,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -827,6 +844,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -879,6 +897,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -898,6 +917,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -955,11 +975,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -1010,6 +1032,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1029,6 +1052,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1081,6 +1105,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1100,6 +1125,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1155,11 +1181,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": [],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": [],
@@ -1210,6 +1238,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1229,6 +1258,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1281,6 +1311,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1300,6 +1331,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1357,11 +1389,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": null,
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 45,
       "RoomFloor": 2,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1412,6 +1446,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1431,6 +1466,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1483,6 +1519,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1502,6 +1539,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1567,6 +1605,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1579,7 +1618,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1642,6 +1682,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 1,
       "RoomFloor": 0,
@@ -1654,7 +1695,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1719,6 +1761,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 2,
       "RoomNumber": 2,
       "RoomFloor": 0,
@@ -1731,7 +1774,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -1788,6 +1832,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1869,6 +1914,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -1949,11 +1995,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": null,
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 44,
       "RoomFloor": 1,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -2004,6 +2052,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -2023,6 +2072,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -2075,6 +2125,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -2094,6 +2145,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -2151,11 +2203,13 @@
     "Room": {
       "Capacity": 0,
       "equipment": null,
+      "renovation": [],
       "RoomType": 0,
       "RoomNumber": 44,
       "RoomFloor": 1,
       "IsDeleted": false,
-      "Equipment": []
+      "Equipment": [],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -2212,6 +2266,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -2293,6 +2348,7 @@
               "MedicineID": 0,
               "Status": 0,
               "Condition": 0,
+              "IsDeleted": false,
               "ReplacementMedicine": null,
               "Ingridient": []
             }
@@ -2381,6 +2437,7 @@
           "IsDeleted": false
         }
       ],
+      "renovation": [],
       "RoomType": 2,
       "RoomNumber": 2,
       "RoomFloor": 0,
@@ -2393,7 +2450,8 @@
           "Type": 0,
           "IsDeleted": false
         }
-      ]
+      ],
+      "Renovation": []
     },
     "Patient": {
       "appointment": null,
@@ -2419,6 +2477,534 @@
     "IsEmergency": false,
     "PatientName": "Petar Ilic",
     "RoomName": "2",
+    "DoctorName": "Milica Milicevic"
+  },
+  {
+    "StartTime": "2020-10-10T13:00:00",
+    "DurationInMunutes": 44,
+    "ApointmentDescription": "pregled ocne jabucice",
+    "AppointentId": 14,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Dana Dimitrijevic",
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-05-03T14:41:45.5128249+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Dana Dimitrijevic"
+  },
+  {
+    "StartTime": "2020-10-10T14:00:00",
+    "DurationInMunutes": 35,
+    "ApointmentDescription": "izmisljeni pregled",
+    "AppointentId": 15,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Stomatolog"
+      },
+      "NameAndSurname": "Milica Milicevic",
+      "SalaryInRsd": 100000,
+      "Username": "milica",
+      "Password": "mica",
+      "Name": "Milica",
+      "Surname": "Milicevic",
+      "Jmbg": "2205972659017",
+      "DateOfBirth": "2021-05-03T15:50:04.3230418+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06364789110",
+      "Adress": "neka ulica 98, Novi Sad",
+      "Email": "milica@gmail.com",
+      "IdCard": "008100252",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
     "DoctorName": "Milica Milicevic"
   }
 ]

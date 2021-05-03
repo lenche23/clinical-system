@@ -54,7 +54,7 @@ namespace vezba
             if (listViewAppointments.SelectedItems.Count > 0)
             {
                 Appointment selected = (Appointment)listViewAppointments.SelectedItems[0];
-                dw.Main.Content = new EditAppointmentPage(selected, dw);
+                dw.Main.Content = new EditAppointmentPage(selected, dw, this);
             }
         }
 
@@ -77,8 +77,6 @@ namespace vezba
             if (listViewAppointments.SelectedItems.Count > 0)
             {
                 Appointment selected = (Appointment)listViewAppointments.SelectedItems[0];
-                //var s = new AppointmentView(selected);
-                //s.Show();
                 dw.Main.Content = new ViewAppointmentPage(selected, dw);
             }
         }

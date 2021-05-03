@@ -30,12 +30,14 @@ namespace vezba
 
         public MedicineStorage MedStorage;
 
-        public DeclineMedicinePage(Medicine medicine, DoctorView dw)
+        private MedicinePageView mpw;
+        public DeclineMedicinePage(Medicine medicine, DoctorView dw, MedicinePageView mpw)
         {
             InitializeComponent();
             Medicine = medicine;
             DataContext = Medicine;
             this.dw = dw;
+            this.mpw = mpw;
             listViewAlergens.ItemsSource = medicine.Ingridient;
             Storage = new DeclinedMedicineStorage();
             MedStorage = new MedicineStorage();
@@ -48,14 +50,17 @@ namespace vezba
             var Description = DescriptionTB.Text;
             var declinedMedicine = new DeclinedMedicine(id, Medicine, Description);
             Storage.Save(declinedMedicine);
-            MedicinePageView mpw = new MedicinePageView(dw);
-            mpw.MedicineTabs.SelectedIndex = 0;
-            dw.Main.Content = mpw;
+            MedicinePageView.MedicineToApprove.Remove(Medicine);
+            MedicinePageView.DeclinedMedicine.Add(declinedMedicine);
+            mpw.listViewMedicineRevision.Items.Refresh();
+            mpw.listViewDeclinedMedicine.Items.Refresh();
+            dw.Main.GoBack();
+            dw.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new MedicineRevisionPage(Medicine, dw);
+            dw.Main.GoBack();
         }
     }
 }

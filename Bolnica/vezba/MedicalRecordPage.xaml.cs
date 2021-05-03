@@ -11,26 +11,36 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace vezba
 {
     /// <summary>
-    /// Interaction logic for MedicalRecordView.xaml
+    /// Interaction logic for MedicalRecord.xaml
     /// </summary>
-    public partial class MedicalRecordView : Window
+    public partial class MedicalRecordPage : Page
     {
-        public MedicalRecordView(Patient Patient)
+        private DoctorView dw;
+
+        public MedicalRecordPage(Patient Patient, DoctorView dw)
         {
             InitializeComponent();
-            this.DataContext = Patient;
-            if (Patient.MedicalRecord != null) {
+            DataContext = Patient;
+            if (Patient.MedicalRecord != null)
+            {
                 listViewAlergens.ItemsSource = Patient.MedicalRecord.Allergen;
                 listViewAnamnesis.ItemsSource = Patient.MedicalRecord.Anamnesis;
                 listViewPrescriptions.ItemsSource = Patient.MedicalRecord.Prescription;
                 listViewReferralLetters.ItemsSource = Patient.MedicalRecord.ReferralLetter;
+                this.dw = dw;
             }
         }
 
+        private void ReturnClick(object sender, RoutedEventArgs e)
+        {
+            dw.Main.GoBack();
+        }
     }
 }
+
