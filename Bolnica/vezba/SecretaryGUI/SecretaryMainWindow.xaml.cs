@@ -38,6 +38,7 @@ namespace vezba.SecretaryGUI
 
         private void AppointmentsButton_Click(object sender, RoutedEventArgs e)
         {
+            WindowContent.Content = new SecretaryAppointments();
             ResetButtonColors(); 
             SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
             AppointmentsButton.Background = b;

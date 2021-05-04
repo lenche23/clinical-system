@@ -13,10 +13,26 @@
             <Setter Property="FontFamily" Value="Segoe UI Light"/>
             <Setter Property="FontSize" Value="28"/>
         </Style>
-        
-        
+
+        <Style TargetType="ComboBox" x:Key="SecStandardComboBox">
+            <Setter Property="Height" Value="27"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style TargetType="ComboBox" x:Key="SecShortComboBox">
+            <Setter Property="Height" Value="27"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+
         <Style TargetType="TextBox" x:Key="SecStandardTextBox">
             <Setter Property="Height" Value="27"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        
+        <Style TargetType="TextBox" x:Key="SecDescriptionTextBox">
+            <Setter Property="Height" Value="54"/>
             <Setter Property="Width" Value="200"/>
             <Setter Property="Margin" Value="3"/>
         </Style>
@@ -35,6 +51,13 @@
         </Style>
 
         <Style TargetType="Label" x:Key="SecStandardLabelLeft">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="SecStandardTextBlock">
             <Setter Property="FontFamily" Value="Segoe UI"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>

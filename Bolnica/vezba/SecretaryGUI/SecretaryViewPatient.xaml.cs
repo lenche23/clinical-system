@@ -52,25 +52,8 @@ namespace vezba.SecretaryGUI
             {
                 HealthEnsuranceNumber.Content = p.MedicalRecord.HealthInsuranceNumber;
                 MedicalIdNumber.Content = p.MedicalRecord.MedicalIdNumber;
-                //StringBuilder sb = new StringBuilder();
                 if (p.MedicalRecord.Allergen != null)
                 {
-                    /*if (p.MedicalRecord.Allergen.Count != 0)
-                    {
-                        for (int i = 0; i < p.MedicalRecord.Allergen.Count; i++)
-                        {
-                            if (i != 0)
-                            {
-                                sb.Append(", ");
-                            }
-                            sb.Append(p.MedicalRecord.Allergen[i].Name);
-                        }
-                        Allergens.Content = Allergens.Content + sb.ToString();
-                    }
-                    else
-                    {
-                        Allergens.Content = Allergens.Content + "Nema alergije";
-                    }*/
                     foreach(Ingridient allergen in p.MedicalRecord.Allergen)
                     {
                         Allergens.Add(allergen);

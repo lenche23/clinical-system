@@ -538,6 +538,6 @@
     "Email": "",
     "IdCard": "",
     "Type": 3,
-    "IsDeleted": false
+    "IsDeleted": true
   }
 ]
