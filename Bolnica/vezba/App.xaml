@@ -4,6 +4,75 @@
              xmlns:local="clr-namespace:vezba"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Label" x:Key="SecTitle">
+            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
+        
+        <Style TargetType="Label" x:Key="SecSubtitle">
+            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+            <Setter Property="FontSize" Value="28"/>
+        </Style>
+        
+        
+        <Style TargetType="TextBox" x:Key="SecStandardTextBox">
+            <Setter Property="Height" Value="27"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        
+        <Style TargetType="DatePicker" x:Key="SecStandardDatePicker">
+            <Setter Property="Height" Value="27"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="SecStandardLabel">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="SecStandardLabelLeft">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="SecSmallSquereButton">
+            <Setter Property="Width" Value="27"/>
+            <Setter Property="Height" Value="27"/>
+            <Setter Property="Background" Value="Lavender"/>
+            <Setter Property="BorderBrush" Value="#ced0fd"/>
+        </Style>
+        
+        <Style TargetType="DataGridCell" x:Key="SecTableCell">
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        
+        <Style TargetType="DataGrid" x:Key="SecTable">
+            <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CellStyle" Value="{StaticResource SecTableCell}"/>
+            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+        </Style>
+        
+        <Style TargetType="Button" x:Key="SecStandardButton">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="110"/>
+            <!--Setter Property="Background" Value="#ced0fd"/-->
+            <Setter Property="Background" Value="Lavender"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="BorderBrush" Value="#ced0fd"/>
+        </Style>
+
+        <Style TargetType="Grid" x:Key="ColoredBackgroundGrid">
+            <Setter Property="Background" Value="GhostWhite"/>
+        </Style>
+        
     </Application.Resources>
 </Application>

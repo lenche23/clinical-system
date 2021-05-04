@@ -47,7 +47,7 @@
           "Id": 0,
           "isActive": false,
           "Medicine": {
-            "ingridient": null,
+            "ingridient": [],
             "Name": "ibuprofen",
             "Manufacturer": null,
             "Packaging": null,
@@ -192,7 +192,7 @@
           "Id": 1,
           "isActive": false,
           "Medicine": {
-            "ingridient": null,
+            "ingridient": [],
             "Name": "panklav",
             "Manufacturer": null,
             "Packaging": null,
@@ -391,6 +391,148 @@
     "Jmbg": "35422523",
     "DateOfBirth": "1900-01-01T00:00:00",
     "Sex": 1,
+    "PhoneNumber": "",
+    "Adress": "",
+    "Email": "",
+    "IdCard": "",
+    "Type": 3,
+    "IsDeleted": false
+  },
+  {
+    "appointment": null,
+    "IsGuest": true,
+    "EmergencyContact": "",
+    "MedicalRecord": {
+      "allergen": null,
+      "anamnesis": null,
+      "prescription": null,
+      "referralLetter": null,
+      "HealthInsuranceNumber": "",
+      "MedicalIdNumber": "",
+      "Allergen": [],
+      "Anamnesis": [],
+      "Prescription": [],
+      "ReferralLetter": []
+    },
+    "NameAndSurname": " ",
+    "Appointment": [],
+    "Username": "",
+    "Password": "",
+    "Name": "",
+    "Surname": "",
+    "Jmbg": "fghgbgff",
+    "DateOfBirth": "1900-01-01T00:00:00",
+    "Sex": 1,
+    "PhoneNumber": "",
+    "Adress": "",
+    "Email": "",
+    "IdCard": "",
+    "Type": 3,
+    "IsDeleted": true
+  },
+  {
+    "appointment": null,
+    "IsGuest": true,
+    "EmergencyContact": "4241",
+    "MedicalRecord": {
+      "allergen": [
+        {
+          "Name": "novo"
+        },
+        {
+          "Name": "r"
+        }
+      ],
+      "anamnesis": null,
+      "prescription": null,
+      "referralLetter": null,
+      "HealthInsuranceNumber": "",
+      "MedicalIdNumber": "",
+      "Allergen": [
+        {
+          "Name": "novo"
+        },
+        {
+          "Name": "r"
+        }
+      ],
+      "Anamnesis": [],
+      "Prescription": [],
+      "ReferralLetter": []
+    },
+    "NameAndSurname": "Ahb dcds",
+    "Appointment": [],
+    "Username": "jmvb",
+    "Password": "b gg",
+    "Name": "Ahb",
+    "Surname": "dcds",
+    "Jmbg": "42524452",
+    "DateOfBirth": "1900-01-01T00:00:00",
+    "Sex": 1,
+    "PhoneNumber": "k141414",
+    "Adress": "4414",
+    "Email": "441414",
+    "IdCard": "cds",
+    "Type": 3,
+    "IsDeleted": false
+  },
+  {
+    "appointment": null,
+    "IsGuest": true,
+    "EmergencyContact": "",
+    "MedicalRecord": {
+      "allergen": null,
+      "anamnesis": null,
+      "prescription": null,
+      "referralLetter": null,
+      "HealthInsuranceNumber": "",
+      "MedicalIdNumber": "",
+      "Allergen": [],
+      "Anamnesis": [],
+      "Prescription": [],
+      "ReferralLetter": []
+    },
+    "NameAndSurname": " ",
+    "Appointment": [],
+    "Username": "",
+    "Password": "",
+    "Name": "",
+    "Surname": "",
+    "Jmbg": "572872775",
+    "DateOfBirth": "1900-01-01T00:00:00",
+    "Sex": 0,
+    "PhoneNumber": "",
+    "Adress": "",
+    "Email": "",
+    "IdCard": "",
+    "Type": 3,
+    "IsDeleted": true
+  },
+  {
+    "appointment": null,
+    "IsGuest": true,
+    "EmergencyContact": "",
+    "MedicalRecord": {
+      "allergen": null,
+      "anamnesis": null,
+      "prescription": null,
+      "referralLetter": null,
+      "HealthInsuranceNumber": "",
+      "MedicalIdNumber": "",
+      "Allergen": [],
+      "Anamnesis": [],
+      "Prescription": [],
+      "ReferralLetter": []
+    },
+    "NameAndSurname": " ",
+    "Appointment": [],
+    "Username": "",
+    "Password": "",
+    "Name": "",
+    "Surname": "",
+    "Jmbg": "bhdvchc",
+    "DateOfBirth": "2021-05-13T00:00:00",
+    "Sex": 0,
     "PhoneNumber": "",
     "Adress": "",
     "Email": "",
