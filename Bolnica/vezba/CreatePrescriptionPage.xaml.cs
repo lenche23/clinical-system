@@ -24,19 +24,38 @@ namespace vezba
     {
         public Patient patient;
 
-        public List<Medicine> Medicine { get; set; }
         public MedicineStorage medStorage;
         private DoctorView dw;
+        public List<Medicine> FilteredMedicine { get; set; }
+
         public CreatePrescriptionPage(Patient patient, DoctorView dw)
         {
             InitializeComponent();
             cmbPeriod.SelectedIndex = 0;
             this.patient = patient;
             medStorage = new MedicineStorage();
-            Medicine = medStorage.GetApproved();
-            this.DataContext = this;
+            List<Medicine> Medicine = medStorage.GetApproved();
+            DataContext = this;
             CmbMedicine.SelectedIndex = 0;
             this.dw = dw;
+            Boolean matches = false;
+            FilteredMedicine = new List<Medicine>();
+            foreach(Medicine med in Medicine)
+            {
+                foreach(Ingridient ing in med.ingridient)
+                {
+                    foreach(Ingridient al in patient.MedicalRecord.Allergen)
+                    {
+                        if(ing.Name.Equals(al.Name))
+                        {
+                            matches = true;
+                        }
+                    }
+                }
+                if (!matches)
+                    FilteredMedicine.Add(med);
+                matches = false;
+            }
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -58,14 +77,20 @@ namespace vezba
             ps.Update(patient);
 
             AppointmentStorage aps = new AppointmentStorage();
-
-            ObservableCollection<Appointment> appointments = CalendarView.Appointments;
-            foreach (Appointment appointment1 in appointments)
+            List<Appointment> appointments = aps.GetAll();
+            foreach (Appointment appointment in appointments)
             {
-                if (appointment1.Patient.Jmbg.Equals(patient.Jmbg))
+                if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
                 {
-                    appointment1.Patient.MedicalRecord.AddPrescription(Prescription);
-                    aps.Update(appointment1);
+                    appointment.Patient.MedicalRecord.AddPrescription(Prescription);
+                    aps.Update(appointment);
+                }
+            }
+            foreach (Appointment appointment in CalendarView.Appointments)
+            {
+                if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
+                {
+                    appointment.Patient.MedicalRecord.AddPrescription(Prescription);
                 }
             }
             dw.Main.GoBack();
@@ -75,5 +100,6 @@ namespace vezba
         {
             dw.Main.GoBack();
         }
+
     }
 }

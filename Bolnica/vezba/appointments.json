@@ -1820,6 +1820,30 @@
             "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
             "Patient": "Mira Torbica",
             "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:11.2944242+02:00",
+            "Comment": "procedura uspesno izvrsena kapetane",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:45.3964802+02:00",
+            "Comment": "a",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:11:45.274972+02:00",
+            "Comment": "jos jedna anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:21:59.8701165+02:00",
+            "Comment": "treca anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
           }
         ],
         "prescription": [
@@ -1894,6 +1918,34 @@
                 }
               ]
             }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 2,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
           }
         ],
         "referralLetter": [
@@ -1942,6 +1994,76 @@
               "Type": 2,
               "IsDeleted": false
             }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Stomatolog"
+              },
+              "NameAndSurname": "Milica Milicevic",
+              "SalaryInRsd": 100000,
+              "Username": "milica",
+              "Password": "mica",
+              "Name": "Milica",
+              "Surname": "Milicevic",
+              "Jmbg": "2205972659017",
+              "DateOfBirth": "2021-05-04T21:55:56.3657729+02:00",
+              "Sex": 1,
+              "PhoneNumber": "06364789110",
+              "Adress": "neka ulica 98, Novi Sad",
+              "Email": "milica@gmail.com",
+              "IdCard": "008100252",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Oftalmolog"
+              },
+              "NameAndSurname": "Pera Peric",
+              "SalaryInRsd": 90000,
+              "Username": "pera",
+              "Password": "perica",
+              "Name": "Pera",
+              "Surname": "Peric",
+              "Jmbg": "1541546542644",
+              "DateOfBirth": "2021-05-04T21:57:53.1569556+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0621846712",
+              "Adress": "neka ulica 45, Novi Sad",
+              "Email": "pera@gmail.com",
+              "IdCard": "007123352",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-05-04T22:03:47.4994756+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
           }
         ],
         "HealthInsuranceNumber": "07167166",
@@ -1982,6 +2104,30 @@
           {
             "Time": "2021-05-03T16:12:15.8810079+02:00",
             "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:11.2944242+02:00",
+            "Comment": "procedura uspesno izvrsena kapetane",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:45.3964802+02:00",
+            "Comment": "a",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:11:45.274972+02:00",
+            "Comment": "jos jedna anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:21:59.8701165+02:00",
+            "Comment": "treca anamneza",
             "Patient": "Mira Torbica",
             "Doctor": "Pera Peric"
           }
@@ -2058,6 +2204,34 @@
                 }
               ]
             }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 2,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
           }
         ],
         "ReferralLetter": [
@@ -2103,6 +2277,76 @@
               "Adress": "neka ulica 62, Novi Sad",
               "Email": "dana@gmail.com",
               "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Stomatolog"
+              },
+              "NameAndSurname": "Milica Milicevic",
+              "SalaryInRsd": 100000,
+              "Username": "milica",
+              "Password": "mica",
+              "Name": "Milica",
+              "Surname": "Milicevic",
+              "Jmbg": "2205972659017",
+              "DateOfBirth": "2021-05-04T21:55:56.3657729+02:00",
+              "Sex": 1,
+              "PhoneNumber": "06364789110",
+              "Adress": "neka ulica 98, Novi Sad",
+              "Email": "milica@gmail.com",
+              "IdCard": "008100252",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Oftalmolog"
+              },
+              "NameAndSurname": "Pera Peric",
+              "SalaryInRsd": 90000,
+              "Username": "pera",
+              "Password": "perica",
+              "Name": "Pera",
+              "Surname": "Peric",
+              "Jmbg": "1541546542644",
+              "DateOfBirth": "2021-05-04T21:57:53.1569556+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0621846712",
+              "Adress": "neka ulica 45, Novi Sad",
+              "Email": "pera@gmail.com",
+              "IdCard": "007123352",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-05-04T22:03:47.4994756+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
               "Type": 2,
               "IsDeleted": false
             }
@@ -2198,6 +2442,24 @@
             "Comment": "izvestaj123",
             "Patient": "Milena Jovanovic",
             "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-05-04T22:10:11.2944242+02:00",
+            "Comment": "procedura uspesno izvrsena kapetane",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:45.3964802+02:00",
+            "Comment": "a",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:11:45.274972+02:00",
+            "Comment": "jos jedna anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
           }
         ],
         "prescription": [
@@ -2271,6 +2533,24 @@
             "Comment": "izvestaj123",
             "Patient": "Milena Jovanovic",
             "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-05-04T22:10:11.2944242+02:00",
+            "Comment": "procedura uspesno izvrsena kapetane",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:45.3964802+02:00",
+            "Comment": "a",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:11:45.274972+02:00",
+            "Comment": "jos jedna anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
           }
         ],
         "Prescription": [
@@ -2418,6 +2698,30 @@
             "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
             "Patient": "Mira Torbica",
             "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:11.2944242+02:00",
+            "Comment": "procedura uspesno izvrsena kapetane",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:45.3964802+02:00",
+            "Comment": "a",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:11:45.274972+02:00",
+            "Comment": "jos jedna anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:21:59.8701165+02:00",
+            "Comment": "treca anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
           }
         ],
         "prescription": [
@@ -2492,6 +2796,34 @@
                 }
               ]
             }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 2,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
           }
         ],
         "referralLetter": [
@@ -2540,6 +2872,76 @@
               "Type": 2,
               "IsDeleted": false
             }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Stomatolog"
+              },
+              "NameAndSurname": "Milica Milicevic",
+              "SalaryInRsd": 100000,
+              "Username": "milica",
+              "Password": "mica",
+              "Name": "Milica",
+              "Surname": "Milicevic",
+              "Jmbg": "2205972659017",
+              "DateOfBirth": "2021-05-04T21:55:56.3657729+02:00",
+              "Sex": 1,
+              "PhoneNumber": "06364789110",
+              "Adress": "neka ulica 98, Novi Sad",
+              "Email": "milica@gmail.com",
+              "IdCard": "008100252",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Oftalmolog"
+              },
+              "NameAndSurname": "Pera Peric",
+              "SalaryInRsd": 90000,
+              "Username": "pera",
+              "Password": "perica",
+              "Name": "Pera",
+              "Surname": "Peric",
+              "Jmbg": "1541546542644",
+              "DateOfBirth": "2021-05-04T21:57:53.1569556+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0621846712",
+              "Adress": "neka ulica 45, Novi Sad",
+              "Email": "pera@gmail.com",
+              "IdCard": "007123352",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-05-04T22:03:47.4994756+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
           }
         ],
         "HealthInsuranceNumber": "07167166",
@@ -2580,6 +2982,30 @@
           {
             "Time": "2021-05-03T16:12:15.8810079+02:00",
             "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:11.2944242+02:00",
+            "Comment": "procedura uspesno izvrsena kapetane",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:45.3964802+02:00",
+            "Comment": "a",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:11:45.274972+02:00",
+            "Comment": "jos jedna anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:21:59.8701165+02:00",
+            "Comment": "treca anamneza",
             "Patient": "Mira Torbica",
             "Doctor": "Pera Peric"
           }
@@ -2656,6 +3082,34 @@
                 }
               ]
             }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 2,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
           }
         ],
         "ReferralLetter": [
@@ -2701,6 +3155,76 @@
               "Adress": "neka ulica 62, Novi Sad",
               "Email": "dana@gmail.com",
               "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Stomatolog"
+              },
+              "NameAndSurname": "Milica Milicevic",
+              "SalaryInRsd": 100000,
+              "Username": "milica",
+              "Password": "mica",
+              "Name": "Milica",
+              "Surname": "Milicevic",
+              "Jmbg": "2205972659017",
+              "DateOfBirth": "2021-05-04T21:55:56.3657729+02:00",
+              "Sex": 1,
+              "PhoneNumber": "06364789110",
+              "Adress": "neka ulica 98, Novi Sad",
+              "Email": "milica@gmail.com",
+              "IdCard": "008100252",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Oftalmolog"
+              },
+              "NameAndSurname": "Pera Peric",
+              "SalaryInRsd": 90000,
+              "Username": "pera",
+              "Password": "perica",
+              "Name": "Pera",
+              "Surname": "Peric",
+              "Jmbg": "1541546542644",
+              "DateOfBirth": "2021-05-04T21:57:53.1569556+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0621846712",
+              "Adress": "neka ulica 45, Novi Sad",
+              "Email": "pera@gmail.com",
+              "IdCard": "007123352",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-05-04T22:03:47.4994756+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
               "Type": 2,
               "IsDeleted": false
             }

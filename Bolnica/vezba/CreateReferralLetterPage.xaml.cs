@@ -53,13 +53,20 @@ namespace vezba
             ps.Update(patient);
 
             AppointmentStorage aps = new AppointmentStorage();
-            ObservableCollection<Appointment> appointments = CalendarView.Appointments;
-            foreach (Appointment appointment1 in appointments)
+            List<Appointment> appointments = aps.GetAll();
+            foreach (Appointment appointment in appointments)
             {
-                if (appointment1.Patient.Jmbg.Equals(patient.Jmbg))
+                if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
                 {
-                    appointment1.Patient.MedicalRecord.AddReferralLetter(ReferralLtter);
-                    aps.Update(appointment1);
+                    appointment.Patient.MedicalRecord.AddReferralLetter(ReferralLtter);
+                    aps.Update(appointment);
+                }
+            }
+            foreach (Appointment appointment in CalendarView.Appointments)
+            {
+                if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
+                {
+                    appointment.Patient.MedicalRecord.AddReferralLetter(ReferralLtter);
                 }
             }
             dw.Main.GoBack();
@@ -68,6 +75,11 @@ namespace vezba
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             dw.Main.GoBack();
+        }
+
+        private void ValidateEntries()
+        {
+
         }
     }
 }
