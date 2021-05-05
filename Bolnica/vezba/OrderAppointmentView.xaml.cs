@@ -49,10 +49,10 @@ namespace vezba
                 int id = storage.generateNextId();
                 Appointment a = new Appointment(doctor, dateTimeFinal, patient);
                 a.AppointentId = id;
-                storage.Save(a);
-                PatientView.Apps.Add(a);
 
-                int diff = (selectedDate - DateTime.Now.Date).Days;
+
+
+                int diff = (selectedDate - DateTime.Now.Date).Days;//provera da li zakazuje za proslost i za danasnji dan
                 if (diff <= 0)
                 {
                     MessageBox.Show("Unet datum nije validan!");
@@ -60,6 +60,8 @@ namespace vezba
                 }
                 else
                 {
+                    storage.Save(a);
+                    PatientView.Apps.Add(a);
                     MessageBox.Show("Uspešno ste zakazali pregled.");
                     this.Close();
                 };
