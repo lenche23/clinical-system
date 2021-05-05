@@ -3074,7 +3074,7 @@
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opste prakse.",
     "AppointentId": 31,
-    "IsDeleted": false,
+    "IsDeleted": true,
     "Doctor": {
       "Speciality": null,
       "NameAndSurname": "Darko Torbica",
@@ -3306,7 +3306,7 @@
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opste prakse.",
     "AppointentId": 33,
-    "IsDeleted": false,
+    "IsDeleted": true,
     "Doctor": {
       "Speciality": {
         "Name": "Kardiolog"
@@ -3418,5 +3418,2142 @@
     "PatientName": "Petar Ilic",
     "RoomName": "1",
     "DoctorName": "Dana Dimitrijevic"
+  },
+  {
+    "StartTime": "2021-05-08T13:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 34,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T20:19:50.6193282+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-08T18:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 35,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T20:20:27.492521+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-06T00:01:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 36,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T20:26:00.3944356+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-06T08:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 37,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T20:28:54.4384835+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-06T08:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 38,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T20:29:25.6138788+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-07T08:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 39,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T20:52:32.9312295+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-06T13:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 40,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T20:54:06.5814359+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-06T14:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 41,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T20:56:13.2188376+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-06T08:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 42,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T20:57:41.7367035+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-08T13:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 43,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T20:58:28.0760665+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-13T08:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 44,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T21:26:57.4968789+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-07T00:01:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 45,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T21:27:27.1228691+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-30T10:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 46,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T21:29:17.7607733+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-21T11:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 47,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Dana Dimitrijevic",
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-05-05T21:31:03.0139852+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Dana Dimitrijevic"
+  },
+  {
+    "StartTime": "2021-05-07T10:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 48,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T23:07:47.6105651+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-10T00:01:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 49,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-05T23:08:57.2385074+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": null,
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
   }
 ]

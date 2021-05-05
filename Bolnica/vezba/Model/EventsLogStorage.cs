@@ -31,7 +31,8 @@ namespace Model
       
         public Boolean Save(EventsLog log)
         {
-            List<EventsLog> logs = Load();
+            List<EventsLog> logs = new List<EventsLog>();
+            logs = Load();
             logs.Add(log);
             try
             {
@@ -48,12 +49,38 @@ namespace Model
       
         public Boolean Update(EventsLog log)
         {
-            throw new NotImplementedException();
+            List<EventsLog> logs = Load();
+            for (int i = 0; i < logs.Count; i++)
+            {
+                if (logs[i].PatientJmbg.Equals(log.PatientJmbg))
+                {
+                    logs[i].PatientJmbg = log.PatientJmbg;
+                    logs[i].EventDates = log.EventDates;
+                    try
+                    {
+                        var jsonToFile = JsonConvert.SerializeObject(logs, Formatting.Indented);
+                        using (StreamWriter writer = new StreamWriter(this.FileName))
+                        {
+                            writer.Write(jsonToFile);
+                        }
+                    }
+                    catch (Exception e) { }
+                }
+            }
+            return false;
         }
       
         public EventsLog GetOne(String patientJmbg)
         {
-            throw new NotImplementedException();
+            List<EventsLog> logs = Load();
+            for (int i = 0; i < logs.Count; i++)
+            {
+                if (logs[i].PatientJmbg == patientJmbg)
+                {
+                    return logs[i];
+                }
+            }
+            return null;
         }
       
         public Boolean Delete(String patientJmbg)
@@ -67,7 +94,10 @@ namespace Model
             try
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
-                List<EventsLog> logs1 = JsonConvert.DeserializeObject<List<EventsLog>>(jsonFromFile);
+                List<EventsLog> logs1 = new List<EventsLog>();
+                logs1 = JsonConvert.DeserializeObject<List<EventsLog>>(jsonFromFile);
+                if (logs1 == null)
+                    return new List<EventsLog>();
                 return logs1;
             }
             catch { }

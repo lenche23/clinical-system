@@ -49,6 +49,16 @@ namespace vezba
                 Appointment a = new Appointment(selectedDoctor, dateTimeFinal, patient);
                 a.AppointentId = id;
 
+                /*EventsLogStorage eventsLogStorage = new EventsLogStorage();
+                String patientJMBG = patient.Jmbg;
+                List<DateTime> events = new List<DateTime>();*/
+
+                EventsLogStorage eventsLogStorage = new EventsLogStorage();
+                List<EventsLog> list = eventsLogStorage.Load();
+                String patientJMBG = patient.Jmbg;
+                List<DateTime> events = new List<DateTime>();
+                DateTime log = DateTime.Now;
+
                 int diff = (selectedDate - DateTime.Now.Date).Days;
                 if (diff <= 0)
                 {
@@ -63,6 +73,15 @@ namespace vezba
                         {
                             PatientView.Apps.Add(a);
                         }
+                        log = DateTime.Now;
+                        foreach (EventsLog elog in list)
+                        {
+                            if (elog.PatientJmbg.Equals(patientJMBG))
+                            {
+                                elog.EventDates.Add(log);
+                                eventsLogStorage.Update(elog);
+                            }
+                        }
                         MessageBox.Show("Uspešno ste zakazali pregled.");
                         this.Close();
                     }
@@ -70,7 +89,10 @@ namespace vezba
                     {
                         MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.");
                     }
-                }                
+                }
+                
+                /*EventsLog eventsLog = new EventsLog(patientJMBG, events);
+                eventsLogStorage.Save(eventsLog);*/
             }
             else
             {

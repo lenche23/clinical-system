@@ -43,12 +43,19 @@ namespace vezba
                 DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
                 DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
                 PatientStorage pps = new PatientStorage();
-                Patient patient = pps.GetOne("1008985563244");
+                Patient patient = pps.GetOne("1008985563244");//5406504526555//1008985563244
 
                 AppointmentStorage storage = new AppointmentStorage();
                 int id = storage.generateNextId();
                 Appointment a = new Appointment(doctor, dateTimeFinal, patient);
                 a.AppointentId = id;
+
+                EventsLogStorage eventsLogStorage = new EventsLogStorage();
+                List<EventsLog> list = eventsLogStorage.Load();
+                String patientJMBG = patient.Jmbg;
+                List<DateTime> events = new List<DateTime>();
+                DateTime log = DateTime.Now;
+
 
                 int diff = (selectedDate - DateTime.Now.Date).Days;//provera da li zakazuje za proslost i za danasnji dan
                 if (diff <= 0)
@@ -65,6 +72,15 @@ namespace vezba
                         {
                             PatientView.Apps.Add(a);
                         }
+                        log = DateTime.Now;
+                        foreach (EventsLog elog in list)
+                        {
+                            if (elog.PatientJmbg.Equals(patientJMBG))
+                            {
+                                elog.EventDates.Add(log);
+                                eventsLogStorage.Update(elog);
+                            }
+                        }
                         MessageBox.Show("Uspešno ste zakazali pregled.");
                         this.Close();
                     }
@@ -72,7 +88,10 @@ namespace vezba
                     {
                         MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.");
                     }                  
-                };
+                }
+                
+                //EventsLog eventsLog = new EventsLog(patientJMBG, events);
+                //eventsLogStorage.Save(eventsLog);
             }
             else
             {
