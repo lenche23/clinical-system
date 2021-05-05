@@ -59,8 +59,15 @@ namespace vezba.SecretaryGUI
             RoomsButton.Background = Brushes.Transparent;
             AnnouncementsButton.Background = Brushes.Transparent;
             PriceListButton.Background = Brushes.Transparent;
+            NotificationButton.Background = Brushes.Transparent;
         }
 
-       
+        private void NotificationButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowContent.Content = new SecretaryNotifications();
+            ResetButtonColors();
+            SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
+            NotificationButton.Background = b;
+        }
     }
 }

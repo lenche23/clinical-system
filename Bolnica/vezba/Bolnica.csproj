@@ -223,6 +223,9 @@
     <Compile Include="SecretaryGUI\SecretaryNewPatient.xaml.cs">
       <DependentUpon>SecretaryNewPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNotifications.xaml.cs">
+      <DependentUpon>SecretaryNotifications.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecretaryGUI\SecretaryOverlapingAppointments.xaml.cs">
       <DependentUpon>SecretaryOverlapingAppointments.xaml</DependentUpon>
     </Compile>
@@ -440,6 +443,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SecretaryGUI\SecretaryNewPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryNotifications.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

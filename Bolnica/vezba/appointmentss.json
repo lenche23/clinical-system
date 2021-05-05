@@ -678,7 +678,7 @@
     "DurationInMunutes": 30,
     "ApointmentDescription": "",
     "AppointentId": 7,
-    "IsDeleted": false,
+    "IsDeleted": true,
     "Doctor": {
       "Speciality": {
         "Name": "Stomatolog"
