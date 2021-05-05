@@ -187,8 +187,14 @@
     <Compile Include="SecretaryAppointments.xaml.cs">
       <DependentUpon>SecretaryAppointments.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\SecretaryAnnouncements.xaml.cs">
+      <DependentUpon>SecretaryAnnouncements.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecretaryGUI\SecretaryAppointments.xaml.cs">
       <DependentUpon>SecretaryAppointments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryEditAnnouncement.xaml.cs">
+      <DependentUpon>SecretaryEditAnnouncement.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryEditAppointment.xaml.cs">
       <DependentUpon>SecretaryEditAppointment.xaml</DependentUpon>
@@ -205,6 +211,9 @@
     <Compile Include="SecretaryGUI\SecretaryNewAllergen.xaml.cs">
       <DependentUpon>SecretaryNewAllergen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNewAnnouncement.xaml.cs">
+      <DependentUpon>SecretaryNewAnnouncement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecretaryGUI\SecretaryNewAppointment.xaml.cs">
       <DependentUpon>SecretaryNewAppointment.xaml</DependentUpon>
     </Compile>
@@ -219,6 +228,9 @@
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryPatients.xaml.cs">
       <DependentUpon>SecretaryPatients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryViewAnnouncement.xaml.cs">
+      <DependentUpon>SecretaryViewAnnouncement.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryViewAppointment.xaml.cs">
       <DependentUpon>SecretaryViewAppointment.xaml</DependentUpon>
@@ -383,7 +395,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SecretaryGUI\SecretaryAnnouncements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SecretaryGUI\SecretaryAppointments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryEditAnnouncement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -407,6 +427,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SecretaryGUI\SecretaryNewAnnouncement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SecretaryGUI\SecretaryNewAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -424,6 +448,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SecretaryGUI\SecretaryPatients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryViewAnnouncement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

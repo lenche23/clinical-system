@@ -55,47 +55,46 @@ namespace vezba.SecretaryGUI
             int duration = (int)Duration.SelectedItem;
             string description = Description.Text;
 
-            Appointment emergencyAppointment = MakeEmergencyAppointment(patient, speciality, room, duration, description);
-            if (emergencyAppointment != null)
+            Appointment emergencyAppointment = MakeEarliestEmergencyAppointment(patient, speciality, room, duration, description);
+            if (emergencyAppointment == null)
+                return;
+            DateTime timeLimit = DateTime.Now.AddMinutes(15);
+            if (emergencyAppointment.StartTime <= timeLimit)
             {
-                DateTime timeLimit = DateTime.Now.AddMinutes(15);
-                if (emergencyAppointment.StartTime <= timeLimit)
+                AppointmentStorage appointmentStorage = new AppointmentStorage();
+                Boolean isSuccess = appointmentStorage.Save(emergencyAppointment);
+                if (isSuccess)
                 {
-                    AppointmentStorage aps = new AppointmentStorage();
-                    Boolean b = aps.Save(emergencyAppointment);
-                    if (b)
-                    {
-                        SecretaryAppointments.Appointments.Add(emergencyAppointment);
-                        MessageBox.Show("Zakazan je hitan termin za " + emergencyAppointment.StartTime.ToString("dd.MM.yyyy. HH:mm") + " kod lekara " + emergencyAppointment.DoctorName);
-                    }
-                    this.Close();
+                    SecretaryAppointments.Appointments.Add(emergencyAppointment);
+                    MessageBox.Show("Zakazan je hitan termin za " + emergencyAppointment.StartTime.ToString("dd.MM.yyyy. HH:mm") + " kod lekara " + emergencyAppointment.DoctorName);
                 }
-                else
-                {
-                    SecretaryNearestAvailableEmergencyAppointment s = new SecretaryNearestAvailableEmergencyAppointment(emergencyAppointment);
-                    //var s = new ScheduleEmergencyAppointment(emergencyAppointment);
-                    s.Show();
-                }
-
+                this.Close();
+            }
+            else
+            {
+                SecretaryNearestAvailableEmergencyAppointment s = new SecretaryNearestAvailableEmergencyAppointment(emergencyAppointment);
+                s.Show();
             }
             return;
         }
 
-        private Appointment MakeEmergencyAppointment(Patient patient, Speciality speciality, Room room, int duration, string description)
+        private Appointment MakeEarliestEmergencyAppointment(Patient patient, Speciality speciality, Room room, int duration, string description)
         {
-            DoctorStorage ds = new DoctorStorage();
-            List<Doctor> doctors = ds.GetDoctorsWithSpeciality(speciality);
+            DoctorStorage doctorStorage = new DoctorStorage();
+            List<Doctor> doctors = doctorStorage.GetDoctorsWithSpeciality(speciality); // izmeniti tako da postoji funkcija koja vraca postojece specijalizacije
             if (doctors.Count == 0)
             {
                 MessageBox.Show("Nema doktora sa ovom specijalizacijom!");
                 return null;
             }
-            AppointmentStorage aps = new AppointmentStorage();
+
+            AppointmentStorage appointmentStorage = new AppointmentStorage();
             List<Appointment> appointments = new List<Appointment>();
             foreach (Doctor d in doctors)
             {
-                Appointment emergencyAppointment = new Appointment(aps.generateNextId(), patient, d, room, DateTime.Now, duration, description);
-                emergencyAppointment = FindFirstFreeAppointment(emergencyAppointment);
+                Appointment emergencyAppointment = new Appointment(appointmentStorage.generateNextId(), patient, d, room, DateTime.Now, duration, description);
+                //emergencyAppointment = FindFirstFreeAppointment(emergencyAppointment);
+                emergencyAppointment.StartTime = FindNextFreeAppointmentStartTime(emergencyAppointment);
                 appointments.Add(emergencyAppointment);
             }
             return FindEarliestAppointment(appointments);
@@ -112,35 +111,69 @@ namespace vezba.SecretaryGUI
             return earliestAppoinment;
         }
 
-        private Boolean DoShareResources(Appointment a1, Appointment a2)
+        private Boolean AppointmentsOverlap(Appointment appointment1, Appointment appointment2)
         {
-            if (a1.Doctor.Jmbg.Equals(a2.Doctor.Jmbg) || a1.Patient.Jmbg.Equals(a2.Patient.Jmbg) || a1.Room.RoomNumber == a2.Room.RoomNumber)
+            if (AppointmentsShareDoctor(appointment1, appointment2) || AppointmentsSharePatient(appointment1, appointment2) || AppointmentsShareRoom(appointment1, appointment2))
             {
-                if (DateTime.Compare(a2.EndTime, a1.StartTime) <= 0) //drugi zavrsava pre pocetka prvog
+                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <= 0) //drugi zavrsava pre pocetka prvog
                     return false;
-                else if (DateTime.Compare(a1.EndTime, a2.StartTime) <= 0) //prvi zavrsava pre pocetka drugog
+                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <= 0) //prvi zavrsava pre pocetka drugog
                     return false;
                 else
                     return true;
             }
             return false;
-
         }
 
-        private Appointment FindFirstFreeAppointment(Appointment appointment)
+        private Boolean AppointmentsSharePatient(Appointment appointment1, Appointment appointment2)
         {
-            AppointmentStorage aps = new AppointmentStorage();
-            List<Appointment> appointments = aps.GetAll();
-            //DateTime startTimeLimit = appointment.StartTime.AddHours(1);
+            return appointment1.Patient.Jmbg.Equals(appointment2.Patient.Jmbg);
+        }
+
+        private Boolean AppointmentsShareDoctor(Appointment appointment1, Appointment appointment2)
+        {
+            return appointment1.Doctor.Jmbg.Equals(appointment2.Doctor.Jmbg);
+        }
+
+        private Boolean AppointmentsShareRoom(Appointment appointment1, Appointment appointment2)
+        {
+            return appointment1.Room.RoomNumber == appointment2.Room.RoomNumber;
+        }
+
+        private DateTime FindNextFreeAppointmentStartTime(Appointment appointment)
+        {
+            AppointmentStorage appointmentStorage = new AppointmentStorage();
+            List<Appointment> scheduledAppointments = appointmentStorage.GetAll();
             Boolean newTimeFound = false;
             while (!newTimeFound)
             {
                 newTimeFound = true;
-                foreach (Appointment a in appointments)
+                foreach (Appointment a in scheduledAppointments)
                 {
-                    if (DoShareResources(a, appointment))
+                    if (AppointmentsOverlap(a, appointment))
                     {
-                        appointment.StartTime = generateNewStartTime(a.EndTime);//.StartTime.AddMinutes(a.DurationInMunutes)); // dodati metodu get end time u klasu appointment
+                        appointment.StartTime = CalculateNewStartTime(a.EndTime);
+                        newTimeFound = false;
+                        break;
+                    }
+                }
+            }
+            return appointment.StartTime;
+        }
+
+        private Appointment FindFirstFreeAppointment(Appointment appointment)
+        {
+            AppointmentStorage appointmentStorage = new AppointmentStorage();
+            List<Appointment> scheduledAppointments = appointmentStorage.GetAll();
+            Boolean newTimeFound = false;
+            while (!newTimeFound)
+            {
+                newTimeFound = true;
+                foreach (Appointment a in scheduledAppointments)
+                {
+                    if (AppointmentsOverlap(a, appointment))
+                    {
+                        appointment.StartTime = CalculateNewStartTime(a.EndTime);
                         newTimeFound = false;
                         break;
                     }
@@ -149,10 +182,10 @@ namespace vezba.SecretaryGUI
             return appointment;
         }
 
-        private DateTime generateNewStartTime(DateTime overlapingAppointmentEndTime)
+        private DateTime CalculateNewStartTime(DateTime overlapingAppointmentEndTime)
         {
             DateTime newStartTime = overlapingAppointmentEndTime;
-            if (isAfterHours(newStartTime))
+            if (IsAfterWorkingHours(newStartTime))
             {
                 newStartTime = new DateTime(newStartTime.Year, newStartTime.Month, newStartTime.Day, 8, 0, 0);
                 newStartTime = newStartTime.AddDays(1);
@@ -160,7 +193,7 @@ namespace vezba.SecretaryGUI
             return newStartTime;
         }
 
-        private Boolean isAfterHours(DateTime time)
+        private Boolean IsAfterWorkingHours(DateTime time)
         {
             DateTime endOfDay = new DateTime(time.Year, time.Month, time.Day, 19, 45, 0);
             if (time >= endOfDay)

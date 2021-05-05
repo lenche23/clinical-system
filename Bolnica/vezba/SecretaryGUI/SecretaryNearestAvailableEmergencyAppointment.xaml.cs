@@ -42,7 +42,7 @@ namespace vezba.SecretaryGUI
 
         private void ShowOverlapingAppointmentsButton_Click(object sender, RoutedEventArgs e)
         {
-            var s = new OverlapingAppointments(EmergencyAppointment);
+            SecretaryOverlapingAppointments s = new SecretaryOverlapingAppointments(EmergencyAppointment);
             s.Show();
             this.Close();
         }

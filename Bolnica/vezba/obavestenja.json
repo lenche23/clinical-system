@@ -98,5 +98,45 @@
     ],
     "FormatedDatePosted": "28.04.2021.",
     "FormatedDateEdited": "28.04.2021."
+  },
+  {
+    "Id": 8,
+    "Posted": "2021-05-05T00:00:00+02:00",
+    "Edited": "2021-05-05T00:00:00+02:00",
+    "Title": "Tralala",
+    "Content": "wiiiiiiiiiiiiiiiiiiiiiii",
+    "IsDeleted": false,
+    "Visibility": 6,
+    "Recipients": [
+      "1008985563244"
+    ],
+    "FormatedDatePosted": "05.05.2021.",
+    "FormatedDateEdited": "05.05.2021."
+  },
+  {
+    "Id": 9,
+    "Posted": "2021-05-05T00:00:00+02:00",
+    "Edited": "2021-05-05T00:00:00+02:00",
+    "Title": "novo za peru",
+    "Content": "wiiiiiii",
+    "IsDeleted": false,
+    "Visibility": 6,
+    "Recipients": [
+      "1008985563244"
+    ],
+    "FormatedDatePosted": "05.05.2021.",
+    "FormatedDateEdited": "05.05.2021."
+  },
+  {
+    "Id": 10,
+    "Posted": "2021-05-05T00:00:00+02:00",
+    "Edited": "2021-05-05T00:00:00+02:00",
+    "Title": "za zaposlene",
+    "Content": "xoxo",
+    "IsDeleted": false,
+    "Visibility": 1,
+    "Recipients": [],
+    "FormatedDatePosted": "05.05.2021.",
+    "FormatedDateEdited": "05.05.2021."
   }
 ]
