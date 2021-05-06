@@ -19,8 +19,8 @@ namespace vezba
             Apps = new ObservableCollection<Appointment>(apps);
 
             /*PatientStorage pps = new PatientStorage();
-            Patient patient = pps.GetOne("1008985563244");  //ja
-            Patient = patient;*/
+            Patient Patient = pps.GetOne("1008985563244");  //ja
+            Patient = Patient;*/
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -22,84 +22,100 @@ namespace vezba
     /// </summary>
     public partial class CreatePrescriptionPage : Page
     {
-        public Patient patient;
+        private readonly Patient _patient;
+        private readonly MedicineStorage _medicineStorage;
+        private readonly DoctorView _doctorView;
+        private Prescription _newPrescription;
+        public List<Medicine> ValidMedicine { get; set; }
 
-        public MedicineStorage medStorage;
-        private DoctorView dw;
-        public List<Medicine> FilteredMedicine { get; set; }
-
-        public CreatePrescriptionPage(Patient patient, DoctorView dw)
+        public CreatePrescriptionPage(Patient patient, DoctorView doctorView)
         {
             InitializeComponent();
-            cmbPeriod.SelectedIndex = 0;
-            this.patient = patient;
-            medStorage = new MedicineStorage();
-            List<Medicine> Medicine = medStorage.GetApproved();
+            this._patient = patient;
+            this._doctorView = doctorView;
+            _medicineStorage = new MedicineStorage();
             DataContext = this;
-            CmbMedicine.SelectedIndex = 0;
-            this.dw = dw;
-            Boolean matches = false;
-            FilteredMedicine = new List<Medicine>();
-            foreach(Medicine med in Medicine)
+            GenerateValidMedicine();
+        }
+
+        private void GenerateValidMedicine()
+        {
+            ValidMedicine = new List<Medicine>();
+            foreach (var medicine in _medicineStorage.GetApproved())
             {
-                foreach(Ingridient ing in med.ingridient)
+                if (!AllergenMatchFound(medicine))
+                    ValidMedicine.Add(medicine);
+            }
+        }
+
+        private bool AllergenMatchFound(Medicine medicine)
+        {
+            var allergenMatchFound = false;
+            foreach (var ingredient in medicine.ingridient)
+            {
+                foreach (var allergen in _patient.MedicalRecord.Allergen)
                 {
-                    foreach(Ingridient al in patient.MedicalRecord.Allergen)
+                    if (ingredient.Name.Equals(allergen.Name))
                     {
-                        if(ing.Name.Equals(al.Name))
-                        {
-                            matches = true;
-                        }
+                        allergenMatchFound = true;
                     }
                 }
-                if (!matches)
-                    FilteredMedicine.Add(med);
-                matches = false;
             }
+
+            return allergenMatchFound;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            var Id = int.Parse(TbId.Text);
-            var StartDate = DpStartDate.SelectedDate;
-            var DurationInDays = int.Parse(TbDuration.Text);
-            Period ReferencePeriod;
-            if (cmbPeriod.SelectedIndex == 0)
-                ReferencePeriod = Period.daily;
-            else
-                ReferencePeriod = Period.weekly;
-            var Number = int.Parse(TbNumber.Text);
-            var SelectedMedicine = CmbMedicine.SelectedItem;
-            var Prescription = new Prescription(Id, (DateTime)StartDate, DurationInDays, ReferencePeriod, Number, (Medicine)SelectedMedicine);
+            NewPrescription();
+            AddPrescriptionToPatient();
+            AddPrescriptionToAppointments();
+            UpdateAppointmentsView();
+            _doctorView.Main.GoBack();
+        }
 
-            patient.MedicalRecord.AddPrescription(Prescription);
-            PatientStorage ps = new PatientStorage();
-            ps.Update(patient);
+        private void UpdateAppointmentsView()
+        {
+            foreach (var appointment in CalendarView.Appointments)
+            {
+                if (appointment.Patient.Jmbg.Equals(_patient.Jmbg))
+                    appointment.Patient.MedicalRecord.AddPrescription(_newPrescription);
+            }
+        }
 
-            AppointmentStorage aps = new AppointmentStorage();
-            List<Appointment> appointments = aps.GetAll();
-            foreach (Appointment appointment in appointments)
+        private void AddPrescriptionToAppointments()
+        {
+            var appointmentStorage = new AppointmentStorage();
+            foreach (var appointment in appointmentStorage.GetAll())
             {
-                if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
-                {
-                    appointment.Patient.MedicalRecord.AddPrescription(Prescription);
-                    aps.Update(appointment);
-                }
+                if (!appointment.Patient.Jmbg.Equals(_patient.Jmbg)) continue;
+
+                appointment.Patient.MedicalRecord.AddPrescription(_newPrescription);
+                appointmentStorage.Update(appointment);
             }
-            foreach (Appointment appointment in CalendarView.Appointments)
-            {
-                if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
-                {
-                    appointment.Patient.MedicalRecord.AddPrescription(Prescription);
-                }
-            }
-            dw.Main.GoBack();
+        }
+
+        private void AddPrescriptionToPatient()
+        {
+            _patient.MedicalRecord.AddPrescription(_newPrescription);
+            var patientStorage = new PatientStorage();
+            patientStorage.Update(_patient);
+        }
+
+        private void NewPrescription()
+        {
+            var id = int.Parse(TbId.Text);
+            var startDate = (DateTime) DpStartDate.SelectedDate;
+            var durationInDays = int.Parse(TbDuration.Text);
+            var referencePeriod = (CmbPeriod.SelectedIndex == 0) ? Period.daily : Period.weekly;
+            var number = int.Parse(TbNumber.Text);
+            var selectedMedicine = (Medicine) CmbMedicine.SelectedItem;
+            _newPrescription = new Prescription(id, startDate, durationInDays, referencePeriod, number, selectedMedicine);
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.GoBack();
+            _doctorView.Main.GoBack();
         }
-
     }
 }
