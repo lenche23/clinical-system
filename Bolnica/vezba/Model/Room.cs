@@ -57,7 +57,7 @@ namespace Model
                 this.equipment.Add(newEquipment);
         }
 
-        public void QuantityEquipment(Equipment changedEquipment, int quantity)
+        /*public void QuantityEquipment(Equipment changedEquipment, int quantity)
         {
             int id = changedEquipment.Id;
             if (changedEquipment == null)
@@ -85,7 +85,7 @@ namespace Model
                 }
             }
         }
-
+        */
         public void RemoveEquipment(Equipment oldEquipment)
         {
             if (oldEquipment == null)

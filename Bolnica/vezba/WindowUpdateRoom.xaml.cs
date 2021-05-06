@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Timers;
 using vezba;
 
 namespace Bolnica
@@ -26,8 +27,8 @@ namespace Bolnica
         private Room selected;
         private ManagerView mv;
 
-        public static ObservableCollection<Equipment> EquipmentList { get; set; }
-        private EquipmentStorage eq_storage;
+        public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
+        private RoomInventoryStorage roomInventoryStorage;
 
         public WindowUpdateRoom(Room selected, ManagerView mv)
         {
@@ -63,11 +64,25 @@ namespace Bolnica
             }
 
 
-            List<Equipment> equipmentList = selected.equipment;
-            EquipmentList = new ObservableCollection<Equipment>(equipmentList);
-            EquipmentBinding.ItemsSource = EquipmentList;
+            roomInventoryStorage = new RoomInventoryStorage();
 
-            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(EquipmentBinding.ItemsSource);
+            List<RoomInventory> roomInventoryList = new List<RoomInventory>();
+            foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
+            {
+                if (roomInventory.room.RoomNumber == selected.RoomNumber)
+                    if (DateTime.Compare(roomInventory.StartTime, DateTime.Now) <= 0 && DateTime.Compare(roomInventory.EndTime, DateTime.Now) >=0) 
+                    {
+                        {
+                            roomInventoryList.Add(roomInventory);
+                        } 
+                    }
+            }
+
+            RoomInventoryList = new ObservableCollection<RoomInventory>(roomInventoryList);
+            RoomInventoryBinding.ItemsSource = RoomInventoryList;
+
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(RoomInventoryBinding.ItemsSource);
+            RoomInventoryBinding.Items.Refresh();
             view.Filter = EquipmentFilter;
 
         }
@@ -126,13 +141,11 @@ namespace Bolnica
 
         private void Izbriši_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (EquipmentBinding.SelectedIndex > -1)
+            if (RoomInventoryBinding.SelectedIndex > -1)
             {
-                Equipment eq = (Equipment)EquipmentBinding.SelectedItem;
-                 this.selected.equipment.Remove(eq);
-                 EquipmentList.Remove(eq);
-                RoomStorage rs = new RoomStorage();
-                 rs.Update(this.selected);
+                RoomInventory ri = (RoomInventory)RoomInventoryBinding.SelectedItem;
+                roomInventoryStorage.Delete(ri.Id);
+                RoomInventoryList.Remove(ri);
             }
 
             else
@@ -144,10 +157,11 @@ namespace Bolnica
 
         private void Izmeni_Količinu_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (EquipmentBinding.SelectedIndex > -1)
+            if (RoomInventoryBinding.SelectedIndex > -1)
             {
-                Equipment selected_e = (Equipment)EquipmentBinding.SelectedItems[0];
-                var s = new WindowChangeItemQuantity(selected_e, this, this.selected);
+
+                RoomInventory selectedRoomInventory = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
+                var s = new WindowChangeItemQuantity(selectedRoomInventory, this, this.selected);
                 s.Show();
             }
 
@@ -159,11 +173,19 @@ namespace Bolnica
 
         private void Razmena_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (EquipmentBinding.SelectedIndex > -1)
+            if (RoomInventoryBinding.SelectedIndex > -1)
             {
-                Equipment eq_selected = (Equipment)EquipmentBinding.SelectedItems[0];
-            var s = new WindowExchangeEquipment(eq_selected, this, this.selected, this.mv);
-            s.Show();
+                RoomInventory roomInventorySelected = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
+                if (roomInventorySelected.equipment.Type == EquipmentType.dinamical)
+                {
+                    var s = new WindowExchangeEquipment(roomInventorySelected, this, this.selected, this.mv);
+                    s.Show();
+                }
+                else if (roomInventorySelected.equipment.Type == EquipmentType.statical)
+                {
+                    var s = new WindowExchangeStaticEquipment(roomInventorySelected, this, this.selected, this.mv);
+                    s.Show();
+                }
 
             }
 
@@ -175,87 +197,113 @@ namespace Bolnica
 
         private void StaticCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            if (EquipmentList != null)
+           /* if (RoomInventoryList != null)
             {
                 if (CheckedBoxStatic.IsChecked == true)
                 {
-                    foreach (Equipment equipment in selected.equipment)
+                    foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
                     {
-                        if (equipment.Type == EquipmentType.statical)
+                        if (roomInventory.room.RoomNumber == selected.RoomNumber)
                         {
-                            EquipmentList.Add(equipment);
-                            EquipmentBinding.Items.Refresh();
+                            if (roomInventory.equipment.Type == EquipmentType.statical)
+                            {
+                                RoomInventoryList.Add(roomInventory);
+                                RoomInventoryBinding.Items.Refresh();
+                            }
                         }
                     }
                 }
-            }
+            }*/
         }
 
         private void DinamicCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            if (EquipmentList != null)
+            /*if (RoomInventoryList != null)
             {
                 if (CheckedBoxDinamic.IsChecked == true)
                 {
-                    foreach (Equipment equipment in selected.equipment)
+                    foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
                     {
-                        if (equipment.Type == EquipmentType.dinamical)
+                        if (roomInventory.room.RoomNumber == selected.RoomNumber)
                         {
-                            EquipmentList.Add(equipment);
-                            EquipmentBinding.Items.Refresh();
+                            if (roomInventory.equipment.Type == EquipmentType.dinamical)
+                            {
+                                RoomInventoryList.Add(roomInventory);
+                                RoomInventoryBinding.Items.Refresh();
+                            }
                         }
                     }
                 }
-            }
+            }*/
         }
-
+  
         private bool EquipmentFilter(object item)
         {
             if (String.IsNullOrEmpty(txtFilter.Text))
                 return true;
             else
-                return ((item as Equipment).Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as RoomInventory).equipment.Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+            
         }
 
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            CollectionViewSource.GetDefaultView(EquipmentBinding.ItemsSource).Refresh();
+            CollectionViewSource.GetDefaultView(RoomInventoryBinding.ItemsSource).Refresh();
+            
         }
 
         private void StaticCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            if (EquipmentList != null)
+            /*if (RoomInventoryList != null)
             {
                 if (CheckedBoxStatic.IsChecked == false)
                 {
-                    foreach (Equipment equipment in selected.equipment)
+                    foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
                     {
-                        if (equipment.Type == EquipmentType.statical)
+                        if (roomInventory.room.RoomNumber == selected.RoomNumber)
                         {
-                            Equipment eq = equipment;
-                            EquipmentList.Remove(eq);
-                            EquipmentBinding.Items.Refresh();
+                            if (roomInventory.equipment.Type == EquipmentType.statical)
+                            {
+                                for (int i = 0; i < RoomInventoryList.Count; i++)
+                                {
+                                    if (RoomInventoryList[i].Id == roomInventory.Id)
+                                    {
+                                        RoomInventoryList.Remove(RoomInventoryList[i]);
+                                        RoomInventoryBinding.Items.Refresh();
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-            }
+            }*/
         }
 
         private void DinamicCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            if (EquipmentList != null) { 
-            if (CheckedBoxDinamic.IsChecked == false)
+           /* if (RoomInventoryList != null)
             {
-                foreach (Equipment equipment in selected.equipment)
+                if (CheckedBoxDinamic.IsChecked == false)
                 {
-                    if (equipment.Type == EquipmentType.dinamical)
+                    foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
                     {
-                        EquipmentList.Remove(equipment);
-                        EquipmentBinding.Items.Refresh();
+                        if (roomInventory.room.RoomNumber == selected.RoomNumber)
+                        {
+                            if (roomInventory.equipment.Type == EquipmentType.dinamical)
+                            {
+                                for (int i=0; i<RoomInventoryList.Count; i++)
+                                {
+                                    if(RoomInventoryList[i].Id == roomInventory.Id)
+                                    {
+                                        RoomInventoryList.Remove(RoomInventoryList[i]);
+                                        RoomInventoryBinding.Items.Refresh();
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-            }
-         }
+            }*/
+        }
     }
 }

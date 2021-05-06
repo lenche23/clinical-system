@@ -21,23 +21,24 @@ namespace vezba
     /// </summary>
     public partial class WindowChangeItemQuantity : Window
     {
-        private Equipment selected;
+        private RoomInventory selected;
         private WindowUpdateRoom wur;
         private Room r_selected;
-        public WindowChangeItemQuantity(Equipment selected, WindowUpdateRoom wur, Room r_selected)
+        public WindowChangeItemQuantity(RoomInventory selected, WindowUpdateRoom wur, Room r_selected)
         {
             InitializeComponent();
+            this.DataContext = selected;
             this.selected = selected;
             this.wur = wur;
             this.r_selected = r_selected;
-            NazivOpreme.Content = NazivOpreme.Content + "    " + selected.Name;
-            Id.Content = Id.Content + "    " + selected.Id;
+            NazivOpreme.Content = NazivOpreme.Content + "    " + selected.equipment.Name;
+            Id.Content = Id.Content + "    " + selected.equipment.Id;
 
-            if (selected.Type == EquipmentType.dinamical)
+            if (selected.equipment.Type == EquipmentType.dinamical)
             {
                 TipOpreme.Content = TipOpreme.Content + "    Dinamička";
             }
-            else if (selected.Type == EquipmentType.statical)
+            else if (selected.equipment.Type == EquipmentType.statical)
             {
                 TipOpreme.Content = TipOpreme.Content + "    Statička";
             }
@@ -47,9 +48,12 @@ namespace vezba
         {
             var Quantity = int.Parse(Količina.Text);
             selected.Quantity = Quantity;
-            RoomStorage rs = new RoomStorage();
-            rs.Update(this.r_selected);
-            wur.EquipmentBinding.Items.Refresh();
+
+            //RoomStorage rs = new RoomStorage();
+            //rs.Update(this.r_selected);
+            RoomInventoryStorage ris = new RoomInventoryStorage();
+            ris.Update(this.selected);
+            wur.RoomInventoryBinding.Items.Refresh();
             this.Close();
 
         }

@@ -33,13 +33,13 @@
         <Label Margin="576,202,-2,210" Content="Pretraga opreme po nazivu"/>
         <Label Margin="576,269,91,135" Content="Filter:" FontSize="14"/>
         <TextBox Margin="583,232,10,182" Name="txtFilter" TextChanged="txtFilter_TextChanged" />
-        <ListView Margin="204,204,163,81" Name="EquipmentBinding">
+        <ListView Margin="204,204,163,81" Name="RoomInventoryBinding">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding Id}" />
-                    <GridViewColumn Header="Naziv proizvoda" Width="100" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding EquipmentId}" />
+                    <GridViewColumn Header="Naziv proizvoda" Width="100" DisplayMemberBinding="{Binding EquipmentName}" />
                     <GridViewColumn Header="Količina" Width="100" DisplayMemberBinding="{Binding Quantity}" />
-                    <GridViewColumn Header="Tip" Width="100" DisplayMemberBinding="{Binding Type}" />
+                    <GridViewColumn Header="Tip" Width="100" DisplayMemberBinding="{Binding EquipmentType}" />
                 </GridView>
             </ListView.View>
         </ListView>

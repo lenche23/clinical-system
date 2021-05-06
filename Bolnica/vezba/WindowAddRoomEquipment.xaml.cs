@@ -27,51 +27,22 @@ namespace vezba
         {
             InitializeComponent();
             this.selected = selected;
+            Title.Content = Title.Content + " " + selected.RoomNumber;
+            EquipmentStorage es = new EquipmentStorage();
+            List<Equipment> equipmentList = es.GetAll();
+            comboEquipmentName.ItemsSource = equipmentList;
         }
 
         private void PotvrdiDodavanje_Button_Click(object sender, RoutedEventArgs e)
         {
-            EquipmentType type = EquipmentType.statical;
-
-            if (Convert.ToBoolean(Statička.IsChecked))
-            {
-                type = EquipmentType.statical;
-            }
-
-            else if (Convert.ToBoolean(Dinamička.IsChecked))
-            {
-                type = EquipmentType.dinamical;
-            }
-
-            var newEquipment = new Equipment(int.Parse(ID.Text), NazivOpreme.Text, int.Parse(Količina.Text), type) { };
-
-            int id = int.Parse(ID.Text);
-
-            ObservableCollection<Equipment> EquipmentList = Inventary.EquipmentList;
-            EquipmentStorage es = new EquipmentStorage();
-
-            if (EquipmentList == null)
-            {
-                es.Save(newEquipment);
-            }
-            else
-            {
-                foreach (Equipment equipment in EquipmentList)
-                {
-                    if (equipment.Id != id)
-                    {
-                        es.Save(newEquipment);
-                    }
-                    else
-                    {
-                        es.Update(newEquipment);
-                    }
-                }
-            }
-            this.selected.AddEquipment(newEquipment);
-            RoomStorage rs = new RoomStorage();
-            rs.Update(this.selected);
-            WindowUpdateRoom.EquipmentList.Add(newEquipment);
+            Equipment comboEquipment = (Equipment)comboEquipmentName.SelectedItem;
+            var Quantity = int.Parse(Količina.Text);
+            var endTime = new DateTime(2999, 1, 1, 0, 0, 0);
+            RoomInventoryStorage ris = new RoomInventoryStorage();
+            var id = ris.GenerateNextId();
+            RoomInventory newRoomInventory = new RoomInventory(DateTime.Now, endTime, Quantity, id, comboEquipment, this.selected);
+            ris.Save(newRoomInventory);
+            WindowUpdateRoom.RoomInventoryList.Add(newRoomInventory);
             this.Close();
         }
 

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ManagerMainView" Height="450" Width="800">
     <Grid>
-        <Button Width="80" Height="40" Margin="341,22,371,357" Background="#FFFFD6C2" Click="Announcements_Button_Click">Obaveštenja</Button>
+        <Button Margin="341,25,352,351" Background="#FFFFD6C2" Click="Announcements_Button_Click">Obaveštenja</Button>
         <Button Margin="341,225,352,141" Background="#FFFFD6C2" Click="Inventary_Button_Click">Inventar bolnice</Button>
         <Button Margin="183,225,509,141" Background="#FFFFD6C2" Click="Medicine_Button_Click">Lekovi</Button>
         <Button Margin="503,225,189,141" Background="#FFFFD6C2" Click="Rooms_Button_Click">Prostorije</Button>

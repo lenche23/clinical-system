@@ -35,15 +35,40 @@ namespace vezba
             CultureInfo provider = CultureInfo.InvariantCulture;
             var StartTime = DateTime.ParseExact(PocetniDatum.Text, format, provider);
             var trajanje = int.Parse(Trajanje.Text);
+            var EndTime = StartTime.AddDays(trajanje);
             var id = int.Parse(Id.Text);
 
-            var newRenovation = new Renovation(StartTime, trajanje, id) {};
+            AppointmentStorage aps = new AppointmentStorage();
+            List<Appointment> appointments = aps.GetAll();
+            var overlap = false;
+
+            for (int i = 0; i < appointments.Count; i++)
+            {
+                if (appointments[i].Room.RoomNumber == selected.RoomNumber)
+                {
+                    DateTime appointmentStart = appointments[i].StartTime;
+                    if (DateTime.Compare(appointmentStart, StartTime) > 0 && DateTime.Compare(appointmentStart, EndTime) < 0)
+                    {
+                        overlap = true;
+                    }
+
+                }
+            }
+
+            if (overlap == true)
+            {
+                MessageBox.Show("Datum renovacije se poklapa sa već zakazanim pregledima");
+            }
+
+            else { 
+            var newRenovation = new Renovation(StartTime, trajanje, id) { };
 
             selected.AddRenovation(newRenovation);
             RoomStorage rs = new RoomStorage();
             rs.Update(this.selected);
             WindowRenovations.RenovationList.Add(newRenovation);
             this.Close();
+            }
         }
 
         private void OdustaniDodavanje1_Button_Click(object sender, RoutedEventArgs e)

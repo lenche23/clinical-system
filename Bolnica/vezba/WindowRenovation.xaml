@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="WindowRenovation" Height="450" Width="500">
     <Grid>
-        <Label Content="Zakazivanje renoviranja"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="153,33,152,350"/>
-        <Label Name="BrojProstorije" Content="Prostorija: " Margin="173,69,172,318" FontSize="14"></Label>
-        <Label Content="Početni datum:" Margin="135,106,264,278"/>
-        <Label Content="Predviđeno trajanje:" Margin="111,148,264,232" />
-        <Label Content="ID:" Margin="201,187,264,195"/>
-        <TextBox Name="PocetniDatum" Height ="24" Margin="233,106,111,289" RenderTransformOrigin="0.491,0.484" />
-        <TextBox Name="Trajanje" Height ="24" RenderTransformOrigin="0.491,0.484" Margin="233,148,111,247" />
-        <TextBox Name="Id" Height ="24" RenderTransformOrigin="0.491,0.484" Margin="233,187,214,208" />
+        <Label Content="Zakazivanje renoviranja"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="163,25,132,350"/>
+        <Label Name="BrojProstorije" Content="Prostorija: " Margin="173,69,172,313" FontSize="14"></Label>
+        <Label Content="Početni datum:" Margin="125,106,264,276"/>
+        <Label Content="Predviđeno trajanje:" Margin="100,148,264,237" />
+        <Label Content="ID:" Margin="190,187,264,189"/>
+        <TextBox Name="PocetniDatum" Margin="233,106,111,284" RenderTransformOrigin="0.491,0.484" />
+        <TextBox Name="Trajanje" RenderTransformOrigin="0.491,0.484" Margin="233,148,111,244" />
+        <TextBox Name="Id" RenderTransformOrigin="0.491,0.484" Margin="233,187,212,204" />
         <Button Click="PotvrdiDodavanje1_Button_Click" Margin="92,264,278,109">Potvrdi</Button>
         <Button Click="OdustaniDodavanje1_Button_Click" Margin="264,264,94,109">Odustani</Button>
     </Grid>

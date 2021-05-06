@@ -24,14 +24,15 @@ namespace vezba
     {
         WindowUpdateRoom wur;
         Room room;
+        RoomInventory roomInventory;
         Equipment eq;
         ManagerView mv;
 
-        public WindowExchangeEquipment(Equipment selected, WindowUpdateRoom wur, Room r_selected, ManagerView mv)
+        public WindowExchangeEquipment(RoomInventory selected, WindowUpdateRoom wur, Room r_selected, ManagerView mv)
         {
             InitializeComponent();
             this.wur = wur;
-            this.eq = selected;
+            this.roomInventory = selected;
             this.room = r_selected;
             this.mv = mv;
         }
@@ -40,9 +41,10 @@ namespace vezba
         {
             int id_sobe = int.Parse(BrojSobe.Text);
             int kolicina_robe = int.Parse(Količina.Text);
-            int maks_kolicina = this.eq.Quantity;
+            int maks_kolicina = this.roomInventory.Quantity;
 
             RoomStorage rs = new RoomStorage();
+            RoomInventoryStorage ris = new RoomInventoryStorage();
             Room room1 = rs.GetOne(id_sobe);
 
             if (room1 != null && room1 != this.room)
@@ -50,22 +52,34 @@ namespace vezba
 
                 if (maks_kolicina >= kolicina_robe)
                 {
-                    this.room.QuantityEquipment(eq, -kolicina_robe);
-                    rs.Update(this.room);
-                    wur.EquipmentBinding.Items.Refresh();
+                    this.roomInventory.Quantity -= kolicina_robe;
+                    ris.Update(this.roomInventory);
 
-                    ObservableCollection<Room> Rooms = ManagerView.Rooms;
+                    wur.RoomInventoryBinding.Items.Refresh();
 
-                    foreach (Room r in Rooms)
+                    var exists = false;
+
+                    foreach (RoomInventory ri in ris.GetAll())
                     {
-                        if (r.RoomNumber == room1.RoomNumber)
-                        {
-                            r.QuantityEquipment(eq, kolicina_robe);
-                            rs.Update(r);
+                        if(ri.room.RoomNumber == id_sobe) {
+                            if (ri.equipment.Id == roomInventory.equipment.Id)
+                            {
+                                ri.Quantity += kolicina_robe;
+                                ris.Update(ri);
+                                exists = true;
+                            }
                         }
                     }
 
-                    this.Close();
+                    if (exists == false)
+                    {
+                        var endTime = new DateTime(2999, 12, 31);
+                        var id = ris.GenerateNextId();
+                        RoomInventory ri = new RoomInventory(DateTime.Now, endTime, kolicina_robe, id, roomInventory.equipment, room1);
+                        ris.Save(ri);
+                    }
+
+                 this.Close();
                 }
             }
         }

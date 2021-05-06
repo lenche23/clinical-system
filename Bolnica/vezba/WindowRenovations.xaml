@@ -18,8 +18,8 @@
             </ListView.View>
         </ListView>
 
-        <Button Width="120" Height="40" Margin="149,354,323,25" Background="#FFFFD6C2" Click="Renovation_Button_Click">Zakaži renoviranje</Button>
-        <Button Width="120" Height="40" Margin="323,354,149,25" Background="#FFFFD6C2" Click="Discard_Button_Click">Otkaži renoviranje</Button>
-        
+        <Button Margin="159,348,312,25" Background="#FFFFD6C2" Click="Renovation_Button_Click">Zakaži renoviranje</Button>
+        <Button Margin="325,348,145,25" Background="#FFFFD6C2" Click="Discard_Button_Click">Otkaži renoviranje</Button>
+
     </Grid>
 </Window>

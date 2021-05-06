@@ -93,7 +93,6 @@ namespace Model
                 if (equimentList[i].Id.Equals(eq.Id))
                 {
                     equimentList[i].Name = eq.Name;
-                    equimentList[i].Quantity = eq.Quantity;
                     equimentList[i].Type = eq.Type;
 
                     try
@@ -152,8 +151,10 @@ namespace Model
             }
             return false;
         }
-      
-     
-
+        public int generateNextId()
+        {
+            List<Equipment> list = Load();
+            return list.Count;
+        }
     }
 }

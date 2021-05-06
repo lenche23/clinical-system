@@ -24,7 +24,8 @@ namespace Bolnica
     {
         private Room selected;
         private ManagerView mv;
-        public static ObservableCollection<Equipment> EquipmentList { get; set; }
+        public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
+        private RoomInventoryStorage roomInventoryStorage;
         public WindowViewRoom(Room selected, ManagerView mv)
         {
             InitializeComponent();
@@ -61,9 +62,19 @@ namespace Bolnica
                 TipLabel.Content = TipLabel.Content + " Prostorija za odmor";
             }
 
-            List<Equipment> equipmentList = selected.equipment;
-            EquipmentList = new ObservableCollection<Equipment>(equipmentList);
-            EquipmentBinding.ItemsSource = EquipmentList;
+            roomInventoryStorage = new RoomInventoryStorage();
+
+            List<RoomInventory> roomInventoryList = new List<RoomInventory>();
+            foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
+            {
+                if (roomInventory.room.RoomNumber == selected.RoomNumber)
+                {
+                    roomInventoryList.Add(roomInventory);
+                }
+            }
+
+            RoomInventoryList = new ObservableCollection<RoomInventory>(roomInventoryList);
+            RoomInventoryBinding.ItemsSource = RoomInventoryList;
         }
     }
 }
