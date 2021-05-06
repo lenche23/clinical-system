@@ -5,7 +5,8 @@ namespace Model
 {
     public class Patient : User
     {
-        public Patient(Boolean isGuest, string name, string surname, string jmbg , DateTime date, Sex sex, string phoneNumber, string adress, string email, string idNum, string emContact, MedicalRecord med, string username, string password)
+        public Boolean IsBlocked { get; set; }
+        public Patient(Boolean isGuest, string name, string surname, string jmbg , DateTime date, Sex sex, string phoneNumber, string adress, string email, string idNum, string emContact, MedicalRecord med, string username, string password, Boolean block)
         {
 
             this.IsDeleted = false;
@@ -25,7 +26,7 @@ namespace Model
             this.Password = password;
             this.appointment = null;
             this.Type = UserType.patient;
-
+            this.IsBlocked = block;
         }
         public Boolean IsGuest { get; set; }
         public String EmergencyContact { get; set; }
