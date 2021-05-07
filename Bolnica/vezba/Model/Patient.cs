@@ -6,7 +6,7 @@ namespace Model
     public class Patient : User
     {
         public Boolean IsBlocked { get; set; }
-        public Patient(Boolean isGuest, string name, string surname, string jmbg , DateTime date, Sex sex, string phoneNumber, string adress, string email, string idNum, string emContact, MedicalRecord med, string username, string password, Boolean block)
+        public Patient(Boolean isGuest, string name, string surname, string jmbg , DateTime date, Sex sex, string phoneNumber, string adress, string email, string idNum, string emContact, MedicalRecord med, string username, string password, Boolean block = false)
         {
 
             this.IsDeleted = false;

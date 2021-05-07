@@ -46,6 +46,7 @@ namespace vezba
                 Appointment selectedAppointment = (Appointment)appointmentsTable.SelectedItem;
                 var s = new PatientEditAppointment(selectedAppointment);
                 s.Show();
+                this.Close();
             }
             else
             {

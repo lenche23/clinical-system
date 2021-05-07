@@ -77,9 +77,8 @@ namespace Bolnica
             string emContact = EmergencyContact.Text;
             string username = Username.Text;
             string password = Password.Text;
-            Boolean block = false;
 
-            Patient pat = new Patient(isGuest, name, surname, jmbg, date, sex, phoneNumber, adress, email, idNum, emContact, medRecord, username, password, block);
+            Patient pat = new Patient(isGuest, name, surname, jmbg, date, sex, phoneNumber, adress, email, idNum, emContact, medRecord, username, password);
 
             PatientStorage ps = new PatientStorage();
             ps.Save(pat);
