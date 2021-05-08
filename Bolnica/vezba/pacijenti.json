@@ -3,147 +3,74 @@
     "appointment": null,
     "IsBlocked": false,
     "IsGuest": false,
-    "EmergencyContact": "06699592141",
+    "EmergencyContact": "0637899851",
     "MedicalRecord": {
       "allergen": [
         {
-          "Name": "Ambrozija"
+          "Name": "Prasina"
         },
         {
-          "Name": "BI-278"
+          "Name": "Ibuprofen"
         }
       ],
-      "anamnesis": [
-        {
-          "Time": "2021-04-18T12:42:00.2750169+02:00",
-          "Comment": "test",
-          "Patient": "Mira Torbica",
-          "Doctor": "Imenko Prezimenić"
-        },
-        {
-          "Time": "2021-04-18T12:42:40.7710091+02:00",
-          "Comment": "test2",
-          "Patient": "Mira Torbica",
-          "Doctor": "Imenko Prezimenić"
-        },
-        {
-          "Time": "2021-04-18T13:42:36.9534669+02:00",
-          "Comment": "test 3",
-          "Patient": "Mira Torbica",
-          "Doctor": "Imenko Prezimenić"
-        },
-        {
-          "Time": "2021-04-18T13:53:04.7925427+02:00",
-          "Comment": "test4",
-          "Patient": "Mira Torbica",
-          "Doctor": "Imenko Prezimenić"
-        }
-      ],
-      "prescription": [
-        {
-          "StartDate": "2021-04-22T00:00:00",
-          "DurationInDays": 7,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": false,
-          "Medicine": {
-            "ingridient": [],
-            "Name": "ibuprofen",
-            "Manufacturer": null,
-            "Packaging": null,
-            "MedicineID": 0,
-            "Status": 1,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": null,
-            "Ingridient": []
-          }
-        }
-      ],
+      "anamnesis": null,
+      "prescription": null,
       "referralLetter": null,
-      "HealthInsuranceNumber": "07167166",
-      "MedicalIdNumber": "620178060616",
+      "HealthInsuranceNumber": "65415616541",
+      "MedicalIdNumber": "4564156465",
       "Allergen": [
         {
-          "Name": "Ambrozija"
+          "Name": "Prasina"
         },
         {
-          "Name": "BI-278"
+          "Name": "Ibuprofen"
         }
       ],
-      "Anamnesis": [
-        {
-          "Time": "2021-04-18T12:42:00.2750169+02:00",
-          "Comment": "test",
-          "Patient": "Mira Torbica",
-          "Doctor": "Imenko Prezimenić"
-        },
-        {
-          "Time": "2021-04-18T12:42:40.7710091+02:00",
-          "Comment": "test2",
-          "Patient": "Mira Torbica",
-          "Doctor": "Imenko Prezimenić"
-        },
-        {
-          "Time": "2021-04-18T13:42:36.9534669+02:00",
-          "Comment": "test 3",
-          "Patient": "Mira Torbica",
-          "Doctor": "Imenko Prezimenić"
-        },
-        {
-          "Time": "2021-04-18T13:53:04.7925427+02:00",
-          "Comment": "test4",
-          "Patient": "Mira Torbica",
-          "Doctor": "Imenko Prezimenić"
-        }
-      ],
-      "Prescription": [
-        {
-          "StartDate": "2021-04-22T00:00:00",
-          "DurationInDays": 7,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": false,
-          "Medicine": {
-            "ingridient": [],
-            "Name": "ibuprofen",
-            "Manufacturer": null,
-            "Packaging": null,
-            "MedicineID": 0,
-            "Status": 1,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": null,
-            "Ingridient": []
-          }
-        }
-      ],
+      "Anamnesis": [],
+      "Prescription": [],
       "ReferralLetter": []
     },
-    "NameAndSurname": "Mira Torbica",
+    "NameAndSurname": "Milena Jovanovic",
     "Appointment": [],
-    "Username": "miki17",
-    "Password": "Tin3",
-    "Name": "Mira",
-    "Surname": "Torbica",
-    "Jmbg": "1701994261473",
-    "DateOfBirth": "1994-01-01T00:00:00",
+    "Username": "milena",
+    "Password": "mila4",
+    "Name": "Milena",
+    "Surname": "Jovanovic",
+    "Jmbg": "1706971459311",
+    "DateOfBirth": "1971-06-17T00:00:00",
     "Sex": 1,
-    "PhoneNumber": "0627844326",
-    "Adress": "Hajduk Veljkova 42, Novi Sad",
-    "Email": "mira94@gmail.com",
-    "IdCard": "008755974",
+    "PhoneNumber": "0628462114",
+    "Adress": "Ulica neka 54, Novi Sad",
+    "Email": "mila@gmail.com",
+    "IdCard": "007963121",
     "Type": 3,
     "IsDeleted": false
   },
   {
     "appointment": null,
-    "IsBlocked": true,
+    "IsBlocked": false,
     "IsGuest": false,
     "EmergencyContact": "0638756221",
-    "MedicalRecord": null,
+    "MedicalRecord": {
+      "allergen": [
+        {
+          "Name": "Ambrozija"
+        }
+      ],
+      "anamnesis": null,
+      "prescription": null,
+      "referralLetter": null,
+      "HealthInsuranceNumber": "",
+      "MedicalIdNumber": "",
+      "Allergen": [
+        {
+          "Name": "Ambrozija"
+        }
+      ],
+      "Anamnesis": [],
+      "Prescription": [],
+      "ReferralLetter": []
+    },
     "NameAndSurname": "Petar Ilic",
     "Appointment": [],
     "Username": "pera85",
@@ -164,215 +91,47 @@
     "appointment": null,
     "IsBlocked": false,
     "IsGuest": false,
-    "EmergencyContact": "541356361",
+    "EmergencyContact": "06699592141",
     "MedicalRecord": {
       "allergen": [
         {
-          "Name": "a"
+          "Name": "Ambrozija"
         },
         {
-          "Name": "b"
+          "Name": "BI-278"
         }
       ],
-      "anamnesis": [
-        {
-          "Time": "2021-04-18T14:23:04.1519302+02:00",
-          "Comment": "pacijentu istegnuta glava",
-          "Patient": "Milena Jovanovic",
-          "Doctor": "Imenko Prezimenić"
-        },
-        {
-          "Time": "2021-04-18T16:05:10.7826089+02:00",
-          "Comment": "srce joj je kamen",
-          "Patient": "Milena Jovanovic",
-          "Doctor": "Dana Dimitrijevic"
-        }
-      ],
-      "prescription": [
-        {
-          "StartDate": "2021-04-22T00:00:00",
-          "DurationInDays": 3,
-          "ReferencePeriod": 0,
-          "Number": 2,
-          "Id": 1,
-          "isActive": false,
-          "Medicine": {
-            "ingridient": [],
-            "Name": "panklav",
-            "Manufacturer": null,
-            "Packaging": null,
-            "MedicineID": 0,
-            "Status": 1,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": null,
-            "Ingridient": []
-          }
-        }
-      ],
+      "anamnesis": null,
+      "prescription": null,
       "referralLetter": null,
-      "HealthInsuranceNumber": "1651",
-      "MedicalIdNumber": "546356354",
+      "HealthInsuranceNumber": "926435596413",
+      "MedicalIdNumber": "65415896541",
       "Allergen": [
         {
-          "Name": "a"
+          "Name": "Ambrozija"
         },
         {
-          "Name": "b"
+          "Name": "BI-278"
         }
       ],
-      "Anamnesis": [
-        {
-          "Time": "2021-04-18T14:23:04.1519302+02:00",
-          "Comment": "pacijentu istegnuta glava",
-          "Patient": "Milena Jovanovic",
-          "Doctor": "Imenko Prezimenić"
-        },
-        {
-          "Time": "2021-04-18T16:05:10.7826089+02:00",
-          "Comment": "srce joj je kamen",
-          "Patient": "Milena Jovanovic",
-          "Doctor": "Dana Dimitrijevic"
-        }
-      ],
-      "Prescription": [
-        {
-          "StartDate": "2021-04-22T00:00:00",
-          "DurationInDays": 3,
-          "ReferencePeriod": 0,
-          "Number": 2,
-          "Id": 1,
-          "isActive": false,
-          "Medicine": {
-            "ingridient": [],
-            "Name": "panklav",
-            "Manufacturer": null,
-            "Packaging": null,
-            "MedicineID": 0,
-            "Status": 1,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": null,
-            "Ingridient": []
-          }
-        }
-      ],
+      "Anamnesis": [],
+      "Prescription": [],
       "ReferralLetter": []
     },
-    "NameAndSurname": "Milena Jovanovic",
+    "NameAndSurname": "Mira Torbica",
     "Appointment": [],
-    "Username": "fgjcj",
-    "Password": "dfgh",
-    "Name": "Milena",
-    "Surname": "Jovanovic",
-    "Jmbg": "5406504526555",
-    "DateOfBirth": "1900-01-01T00:00:00",
+    "Username": "miki17",
+    "Password": "Tin3",
+    "Name": "Mira",
+    "Surname": "Torbica",
+    "Jmbg": "0902994143189",
+    "DateOfBirth": "1994-02-09T00:00:00",
     "Sex": 1,
-    "PhoneNumber": "654216",
-    "Adress": "hgyhv hvjg",
-    "Email": "ghcd@wdfgh",
-    "IdCard": "154261",
+    "PhoneNumber": "0627792221",
+    "Adress": "Hajduk Veljkova 42, Novi Sad",
+    "Email": "mira94@gmail.com",
+    "IdCard": "008621493",
     "Type": 3,
     "IsDeleted": false
-  },
-  {
-    "appointment": null,
-    "IsBlocked": false,
-    "IsGuest": true,
-    "EmergencyContact": "",
-    "MedicalRecord": {
-      "allergen": [
-        {
-          "Name": "fdhjk"
-        },
-        {
-          "Name": "ghjk"
-        }
-      ],
-      "anamnesis": null,
-      "prescription": null,
-      "referralLetter": null,
-      "HealthInsuranceNumber": "",
-      "MedicalIdNumber": "",
-      "Allergen": [
-        {
-          "Name": "fdhjk"
-        },
-        {
-          "Name": "ghjk"
-        }
-      ],
-      "Anamnesis": [],
-      "Prescription": [],
-      "ReferralLetter": []
-    },
-    "NameAndSurname": "Ajn Ibjhsvda",
-    "Appointment": [],
-    "Username": "",
-    "Password": "",
-    "Name": "Ajn",
-    "Surname": "Ibjhsvda",
-    "Jmbg": "5612564",
-    "DateOfBirth": "1900-01-01T00:00:00",
-    "Sex": 0,
-    "PhoneNumber": "",
-    "Adress": "",
-    "Email": "",
-    "IdCard": "",
-    "Type": 3,
-    "IsDeleted": true
-  },
-  {
-    "appointment": null,
-    "IsBlocked": false,
-    "IsGuest": false,
-    "EmergencyContact": "541341",
-    "MedicalRecord": {
-      "allergen": [
-        {
-          "Name": "ghf"
-        },
-        {
-          "Name": "hkhj"
-        },
-        {
-          "Name": "hjgjh"
-        }
-      ],
-      "anamnesis": null,
-      "prescription": null,
-      "referralLetter": null,
-      "HealthInsuranceNumber": "465168",
-      "MedicalIdNumber": "531534",
-      "Allergen": [
-        {
-          "Name": "ghf"
-        },
-        {
-          "Name": "hkhj"
-        },
-        {
-          "Name": "hjgjh"
-        }
-      ],
-      "Anamnesis": [],
-      "Prescription": [],
-      "ReferralLetter": []
-    },
-    "NameAndSurname": "afd fd",
-    "Appointment": [],
-    "Username": "gjhfh",
-    "Password": "ghjy",
-    "Name": "afd",
-    "Surname": "fd",
-    "Jmbg": "fadf",
-    "DateOfBirth": "2000-02-01T00:00:00",
-    "Sex": 1,
-    "PhoneNumber": "544",
-    "Adress": "fgdgdf",
-    "Email": "fgd@fhjg",
-    "IdCard": "453413",
-    "Type": 3,
-    "IsDeleted": true
   }
 ]
