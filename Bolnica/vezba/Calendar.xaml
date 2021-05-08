@@ -5,20 +5,45 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="700" d:DesignWidth="1200"
       Title="Calendar">
 
-    <Grid>
-        <DockPanel>
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 0, 15, 0">
-                <Button Height="30" Width="120" Margin="5" Padding="5" Click="NewAppointmentClick">+ Nov termin</Button>
-                <Button Height="30" Width="120" Margin="5" Padding="5" Click="PreviousWeekClick">Prethodna nedelja</Button>
-                <Button Height="30" Width="120" Margin="5" Padding="5" Click="NextWeekClick">Sledeca nedelja</Button>
-                <ComboBox Height="30" Width="120" Margin="5" Padding="5" Name="DoctorsComboBox" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" SelectedValuePath="Jmbg" SelectionChanged="SelectedDoctorChanged"></ComboBox>
+    <Grid Background ="White">
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily" Value="Verdana"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 0, 15, 0">
+            <Button Height="30" Width="120" Margin="5" Padding="5" Click="NewAppointmentClick" FontSize="14" FontWeight="Bold" Content="+ Nov termin" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
+            </Button>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="20, 5, 5, 5" Grid.Column="0" Orientation="Horizontal">
+                <StackPanel Height="25" Width="25" MouseLeftButtonDown="PreviousWeekClick">
+                    <Image Source="DoctorImages/prev.png" Width="10" Height="10" Margin="5"/>
+                </StackPanel>
+                <StackPanel Height="25" Width="25" MouseLeftButtonDown="NextWeekClick">
+                    <Image Source="DoctorImages/next.png" Width="10" Height="10" Margin="5"/>
+                </StackPanel>
+                <TextBlock Height="25" Name="MonthYearBlock" VerticalAlignment="Bottom" FontWeight="Bold">some text</TextBlock>
             </StackPanel>
-            <Border BorderBrush="Gray" BorderThickness="1"  Margin="20, 0,20, 20">
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Height="25" VerticalAlignment="Bottom">Lekar:</TextBlock>
+                <ComboBox Height="20" Width="120" Margin="5, 5, 20, 5" Name="DoctorsComboBox" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" SelectedValuePath="Jmbg" SelectionChanged="SelectedDoctorChanged"></ComboBox>
+            </StackPanel>
+        </Grid>
+        <Border Grid.Row="2" BorderBrush="Gray" BorderThickness="1"  Margin="20, 0,20, 20">
                 <Grid Name="CalendarGrid"/>
             </Border>
-        </DockPanel>
     </Grid>
 </Page>

@@ -31,6 +31,13 @@ namespace vezba
         private Doctor selectedDoctor;
         private ScrollViewer scrollViewer;
         private bool disableComboBox;
+        private TextBlock mondayBlock;
+        private TextBlock tuesdayBlock;
+        private TextBlock wednesdayBlock;
+        private TextBlock thursdayBlock;
+        private TextBlock fridayBlock;
+        private TextBlock saturdayBlock;
+        private TextBlock sundayBlock;
 
         public Calendar(DoctorView doctorView)
         {
@@ -65,6 +72,7 @@ namespace vezba
                 TextBlock timeBlock = new TextBlock();
                 timeBlock.Text = "" + i;
                 timeBlock.FontSize = 14;
+                timeBlock.Foreground = Brushes.DimGray;
                 timeBlock.HorizontalAlignment = HorizontalAlignment.Center;
                 Grid.SetRow(timeBlock, i);
                 timeGrid.Children.Add(timeBlock);
@@ -94,54 +102,63 @@ namespace vezba
                 daysOfWeekGrid.ColumnDefinitions.Add(new ColumnDefinition());
             }
 
-            TextBlock mondayBlock = new TextBlock() { Text = "Ponedeljak" };
+            mondayBlock = new TextBlock();
             mondayBlock.HorizontalAlignment = HorizontalAlignment.Center;
             mondayBlock.VerticalAlignment = VerticalAlignment.Bottom;
             mondayBlock.FontSize = 14;
+            mondayBlock.Foreground = Brushes.DimGray;
             Grid.SetColumn(mondayBlock, 1);
             daysOfWeekGrid.Children.Add(mondayBlock);
 
-            TextBlock tuesdayBlock = new TextBlock() { Text = "Utorak" };
+            tuesdayBlock = new TextBlock();
             tuesdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
             tuesdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
             tuesdayBlock.FontSize = 14;
+            tuesdayBlock.Foreground = Brushes.DimGray;
             Grid.SetColumn(tuesdayBlock, 2);
             daysOfWeekGrid.Children.Add(tuesdayBlock);
 
-            TextBlock wednesdayBlock = new TextBlock() { Text = "Sreda" };
+            wednesdayBlock = new TextBlock();
             wednesdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
             wednesdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
             wednesdayBlock.FontSize = 14;
+            wednesdayBlock.Foreground = Brushes.DimGray;
             Grid.SetColumn(wednesdayBlock, 3);
             daysOfWeekGrid.Children.Add(wednesdayBlock);
 
-            TextBlock thursdayBlock = new TextBlock() { Text = "Četvrtak" };
+            thursdayBlock = new TextBlock();
             thursdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
             thursdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
             thursdayBlock.FontSize = 14;
+            thursdayBlock.Foreground = Brushes.DimGray;
             Grid.SetColumn(thursdayBlock, 4);
             daysOfWeekGrid.Children.Add(thursdayBlock);
 
-            TextBlock fridayBlock = new TextBlock() { Text = "Petak" };
+            fridayBlock = new TextBlock();
             fridayBlock.HorizontalAlignment = HorizontalAlignment.Center;
             fridayBlock.VerticalAlignment = VerticalAlignment.Bottom;
             fridayBlock.FontSize = 14;
+            fridayBlock.Foreground = Brushes.DimGray;
             Grid.SetColumn(fridayBlock, 5);
             daysOfWeekGrid.Children.Add(fridayBlock);
 
-            TextBlock saturdayBlock = new TextBlock() { Text = "Subota" };
+            saturdayBlock = new TextBlock();
             saturdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
             saturdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
             saturdayBlock.FontSize = 14;
+            saturdayBlock.Foreground = Brushes.DimGray;
             Grid.SetColumn(saturdayBlock, 6);
             daysOfWeekGrid.Children.Add(saturdayBlock);
 
-            TextBlock sundayBlock = new TextBlock() { Text = "Nedelja" };
+            sundayBlock = new TextBlock();
             sundayBlock.HorizontalAlignment = HorizontalAlignment.Center;
             sundayBlock.VerticalAlignment = VerticalAlignment.Bottom;
             sundayBlock.FontSize = 14;
+            sundayBlock.Foreground = Brushes.DimGray;
             Grid.SetColumn(sundayBlock, 7);
             daysOfWeekGrid.Children.Add(sundayBlock);
+
+            UpdateDateIndicators();
 
             daysOfWeekBorder.Child = daysOfWeekGrid;
 
@@ -306,10 +323,30 @@ namespace vezba
             timeDockPanel.Children.Remove(dynamicGrid);
             startOfWeek = startOfWeek.AddDays(-7);
             endOfWeek = endOfWeek.AddDays(-7);
+            UpdateDateIndicators();
             GenerateAppointmentsForSelectedWeek();
             CreateSchedule();
             timeDockPanel.Children.Add(dynamicGrid);
             SetScrollViewerToFirstAppointment();
+        }
+
+        private void UpdateDateIndicators()
+        {
+            var monday = startOfWeek;
+            var tuesday = monday.AddDays(1);
+            var wednesday = tuesday.AddDays(1);
+            var thursday = wednesday.AddDays(1);
+            var friday = thursday.AddDays(1);
+            var saturday = friday.AddDays(1);
+            var sunday = saturday.AddDays(1);
+            MonthYearBlock.Text = monday.ToString("d") + " - " + sunday.ToString("d");
+            mondayBlock.Text = "Ponedeljak " + monday.Day + "." + monday.Month + ".";
+            tuesdayBlock.Text = "Utorak " + tuesday.Day + "." + tuesday.Month + ".";
+            wednesdayBlock.Text = "Sreda " + wednesday.Day + "." + wednesday.Month + ".";
+            thursdayBlock.Text = "Četvrtak " + thursday.Day + "." + thursday.Month + ".";
+            fridayBlock.Text = "Petak " + friday.Day + "." + friday.Month + ".";
+            saturdayBlock.Text = "Subota " + saturday.Day + "." + saturday.Month + ".";
+            sundayBlock.Text = "Nedelja " + sunday.Day + "." + sunday.Month + ".";
         }
 
         private void NextWeekClick(object sender, RoutedEventArgs e)
@@ -317,6 +354,7 @@ namespace vezba
             timeDockPanel.Children.Remove(dynamicGrid);
             startOfWeek = startOfWeek.AddDays(7);
             endOfWeek = endOfWeek.AddDays(7);
+            UpdateDateIndicators();
             GenerateAppointmentsForSelectedWeek();
             CreateSchedule();
             timeDockPanel.Children.Add(dynamicGrid);

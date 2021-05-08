@@ -56,7 +56,7 @@ namespace vezba
             this.calendar = calendar;
             this.appointmentGrid = appointmentGrid;
             StartDatePicker.SelectedDate = selected.StartTime.Date;
-            TimeTB.Text = Selected.StartTime.Hour + ":" + Selected.StartTime.Minute;
+            TimeTB.Text = Selected.StartTime.ToString("t");
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
