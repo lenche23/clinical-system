@@ -76,7 +76,7 @@ namespace vezba
 
         private void UpdateAppointmentsView()
         {
-            foreach (var appointment in CalendarView.Appointments)
+            foreach (var appointment in Calendar.appointments)
             {
                 if (appointment.Patient.Jmbg.Equals(_patient.Jmbg))
                     appointment.Patient.MedicalRecord.AddPrescription(_newPrescription);

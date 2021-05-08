@@ -54,7 +54,7 @@ namespace vezba
                     aps.Update(appointment1);
                 }
             }
-            foreach (Appointment appointment1 in CalendarView.Appointments)
+            foreach (Appointment appointment1 in Calendar.appointments)
             {
                 if (appointment1.Patient.Jmbg.Equals(appointment.Patient.Jmbg))
                 {

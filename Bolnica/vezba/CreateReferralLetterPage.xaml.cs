@@ -62,7 +62,7 @@ namespace vezba
                     aps.Update(appointment);
                 }
             }
-            foreach (Appointment appointment in CalendarView.Appointments)
+            foreach (Appointment appointment in Calendar.appointments)
             {
                 if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
                 {

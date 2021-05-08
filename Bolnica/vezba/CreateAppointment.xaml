@@ -76,7 +76,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <ComboBox Grid.Column="1" Grid.Row="6" Name="cmbRooms" ItemsSource="{Binding Path=Rooms}" DisplayMemberPath="RoomNumber"/>
-        <ComboBox Grid.Column="1" Grid.Row="7" Name="cmbDoctors" ItemsSource="{Binding Doctors}" VerticalAlignment="Top">
+        <ComboBox Grid.Column="1" Grid.Row="7" Name="cmbDoctors" ItemsSource="{Binding Doctors}" SelectedValuePath="Jmbg" VerticalAlignment="Top">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>

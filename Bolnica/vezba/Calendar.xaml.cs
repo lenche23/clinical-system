@@ -25,13 +25,22 @@ namespace vezba
         private DoctorView doctorView;
         private DateTime startOfWeek;
         private DateTime endOfWeek;
-        private List<Appointment> appointments;
+        public static List<Appointment> appointments;
         private DockPanel timeDockPanel;
+        public List<Doctor> Doctors { get; set; }
+        private Doctor selectedDoctor;
+        private ScrollViewer scrollViewer;
 
         public Calendar(DoctorView doctorView)
         {
             InitializeComponent();
             this.doctorView = doctorView;
+            DoctorStorage doctorStorage = new DoctorStorage();
+            Doctors = doctorStorage.GetAll();
+            selectedDoctor = doctorView.DoctorUser;
+            if (selectedDoctor != null && selectedDoctor.Jmbg != null)
+                DoctorsComboBox.SelectedValue = selectedDoctor.Jmbg;
+            DataContext = this;
 
             startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + 1);
             endOfWeek = startOfWeek.AddDays(7);
@@ -58,24 +67,13 @@ namespace vezba
                 timeGrid.Children.Add(timeBlock);
             }
 
-
             DockPanel.SetDock(timeGrid, Dock.Left);
             timeDockPanel.Children.Add(timeGrid);
             timeDockPanel.Children.Add(dynamicGrid);
 
-            ScrollViewer scrollViewer = new ScrollViewer();
+            scrollViewer = new ScrollViewer();
             scrollViewer.Content = timeDockPanel;
-            var earliestTime = appointments[0].StartTime.TimeOfDay;
-            foreach (var appointment in appointments)
-            {
-                if (TimeSpan.Compare(appointment.StartTime.TimeOfDay, earliestTime) < 0)
-                {
-                    earliestTime = appointment.StartTime.TimeOfDay;
-                }
-            }
-
-            var scrollOffset = (earliestTime.Hours + earliestTime.Minutes / 60) * dynamicGrid.Height / 24;
-            scrollViewer.ScrollToVerticalOffset(scrollOffset);
+            SetScrollViewerToFirstAppointment();
 
             DockPanel daysOfWeekDockPanel = new DockPanel();
 
@@ -150,6 +148,23 @@ namespace vezba
             CalendarGrid.Children.Add(daysOfWeekDockPanel);
         }
 
+        public void SetScrollViewerToFirstAppointment()
+        {
+            if(appointments.Count == 0)
+                return;
+            var earliestTime = appointments[0].StartTime.TimeOfDay;
+            foreach (var appointment in appointments)
+            {
+                if (TimeSpan.Compare(appointment.StartTime.TimeOfDay, earliestTime) < 0)
+                {
+                    earliestTime = appointment.StartTime.TimeOfDay;
+                }
+            }
+
+            var scrollOffset = (earliestTime.Hours + earliestTime.Minutes / 60) * dynamicGrid.Height / 24;
+            scrollViewer.ScrollToVerticalOffset(scrollOffset);
+        }
+
         private void CreateSchedule()
         {
             dynamicGrid = new Grid();
@@ -177,7 +192,7 @@ namespace vezba
                     generatedStartTime = generatedStartTime.AddHours(i);
                     innerGrid.MouseLeftButtonDown += (sen, evg) =>
                     {
-                        doctorView.Main.Content = new CreateAppointment(doctorView, this, generatedStartTime);
+                        doctorView.Main.Content = new CreateAppointment(doctorView, this, generatedStartTime, selectedDoctor);
                     };
                     innerGridBorder.Child = innerGrid;
                     Grid.SetRow(innerGridBorder, i);
@@ -201,11 +216,7 @@ namespace vezba
 
             foreach (var appointment in appointmentStorage.GetAll())
             {
-                if (DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
-                    DateTime.Compare(appointment.StartTime, endOfWeek) < 0)
-                {
-                    appointments.Add(appointment);
-                }
+                AddAppointmentToCurrentView(appointment);
             }
         }
 
@@ -280,7 +291,7 @@ namespace vezba
 
         private void NewAppointmentClick(object sender, RoutedEventArgs e)
         {
-            doctorView.Main.Content = new CreateAppointment(doctorView, this);
+            doctorView.Main.Content = new CreateAppointment(doctorView, this, selectedDoctor);
         }
 
         private void PreviousWeekClick(object sender, RoutedEventArgs e)
@@ -291,6 +302,7 @@ namespace vezba
             GenerateAppointmentsForSelectedWeek();
             CreateSchedule();
             timeDockPanel.Children.Add(dynamicGrid);
+            SetScrollViewerToFirstAppointment();
         }
 
         private void NextWeekClick(object sender, RoutedEventArgs e)
@@ -301,6 +313,29 @@ namespace vezba
             GenerateAppointmentsForSelectedWeek();
             CreateSchedule();
             timeDockPanel.Children.Add(dynamicGrid);
+            SetScrollViewerToFirstAppointment();
+        }
+
+        private void SelectedDoctorChanged(object sender, SelectionChangedEventArgs e)
+        {
+            timeDockPanel.Children.Remove(dynamicGrid);
+            selectedDoctor = (Doctor)DoctorsComboBox.SelectedItem;
+            GenerateAppointmentsForSelectedWeek();
+            CreateSchedule();
+            timeDockPanel.Children.Add(dynamicGrid);
+            SetScrollViewerToFirstAppointment();
+        }
+
+        public Boolean AddAppointmentToCurrentView(Appointment appointment)
+        {
+            if (DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
+                DateTime.Compare(appointment.StartTime, endOfWeek) < 0 && appointment.Doctor.Jmbg.Equals(selectedDoctor.Jmbg))
+            {
+                appointments.Add(appointment);
+                return true;
+            }
+
+            return false;
         }
     }
 }

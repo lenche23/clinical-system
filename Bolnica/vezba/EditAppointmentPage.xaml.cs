@@ -78,16 +78,12 @@ namespace vezba
             AppointmentStorage aps = new AppointmentStorage();
             aps.Update(appointment);
             calendar.RemoveAppointment(appointmentGrid);
-            calendar.ShowAppointment(appointment);
+            if (calendar.AddAppointmentToCurrentView(appointment))
+            {
+                calendar.ShowAppointment(appointment);
+                calendar.SetScrollViewerToFirstAppointment();
+            }
 
-            /*Selected.StartTime = StartTime;
-            Selected.DurationInMunutes = DurationInMinutes;
-            Selected.ApointmentDescription = ApointmentDescription;
-            Selected.Patient = Patient;
-            Selected.Room = Room;
-            Selected.Doctor = Doctor;
-            Selected.IsEmergency = IsEmergency;
-            cw.listViewAppointments.Items.Refresh();*/
             dw.Main.GoBack();
         }
 

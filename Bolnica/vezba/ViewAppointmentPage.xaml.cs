@@ -84,6 +84,7 @@ namespace vezba
                 AppointmentStorage appointmentStorage = new AppointmentStorage();
                 appointmentStorage.Delete(Selected.AppointentId);
                 calendar.RemoveAppointment(appointmentGrid);
+                calendar.SetScrollViewerToFirstAppointment();
                 dw.Main.GoBack();
             }
         }

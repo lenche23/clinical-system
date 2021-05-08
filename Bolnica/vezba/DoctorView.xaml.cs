@@ -14,16 +14,19 @@ namespace vezba
 
     public partial class DoctorView : Window
     {
+        public Doctor DoctorUser;
+
         public DoctorView()
         {
             InitializeComponent();
-            //Main.Content = new CalendarView(this);
+            DoctorStorage ds = new DoctorStorage();
+            DoctorUser = ds.GetOne("1708962324890");
             Main.Content = new Calendar(this);
         }
 
         private void CalendarClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new CalendarView(this);
+            Main.Content = new Calendar(this);
         }
 
         private void MedicineClick(object sender, RoutedEventArgs e)

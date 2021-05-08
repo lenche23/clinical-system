@@ -33,7 +33,7 @@ namespace vezba
 
         private Calendar calendar;
 
-        public CreateAppointment(DoctorView dw, Calendar calendar)
+        public CreateAppointment(DoctorView dw, Calendar calendar, Doctor doctor)
         {
             InitializeComponent();
             storage = new PatientStorage();
@@ -45,12 +45,13 @@ namespace vezba
             DataContext = this;
             cmbPatients.SelectedIndex = 0;
             cmbRooms.SelectedIndex = 0;
-            cmbDoctors.SelectedIndex = 0;
             this.dw = dw;
             this.calendar = calendar;
+            if (doctor != null && doctor.Jmbg != null)
+                cmbDoctors.SelectedValue = doctor.Jmbg;
         }
 
-        public CreateAppointment(DoctorView dw, Calendar calendar, DateTime generatedStartTime)
+        public CreateAppointment(DoctorView dw, Calendar calendar, DateTime generatedStartTime, Doctor doctor)
         {
             InitializeComponent();
             storage = new PatientStorage();
@@ -62,11 +63,12 @@ namespace vezba
             DataContext = this;
             cmbPatients.SelectedIndex = 0;
             cmbRooms.SelectedIndex = 0;
-            cmbDoctors.SelectedIndex = 0;
             this.dw = dw;
             this.calendar = calendar;
             StartDatePicker.SelectedDate = generatedStartTime.Date;
             TimeTB.Text = generatedStartTime.Hour + ":" + generatedStartTime.Minute;
+            if (doctor != null && doctor.Jmbg != null)
+                cmbDoctors.SelectedValue = doctor.Jmbg;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -87,7 +89,12 @@ namespace vezba
             Appointment appointment = new Appointment(AppointmentID, (Patient)Patient, (Doctor)Doctor, (Room)Room, startDateTime, DurationInMinutes, ApointmentDescription, (Boolean)IsEmergency);
             aps.Save(appointment);
             dw.Main.GoBack();
-            calendar.ShowAppointment(appointment);
+
+            if (calendar.AddAppointmentToCurrentView(appointment))
+            {
+                calendar.ShowAppointment(appointment);
+                calendar.SetScrollViewerToFirstAppointment();
+            }
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
