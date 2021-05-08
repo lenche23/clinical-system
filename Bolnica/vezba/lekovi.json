@@ -61,7 +61,7 @@
     "MedicineID": 2,
     "Status": 1,
     "Condition": 0,
-    "IsDeleted": false,
+    "IsDeleted": true,
     "ReplacementMedicine": null,
     "Ingridient": [
       {

@@ -41,5 +41,42 @@
     },
     "Description": "upravnik mom gay",
     "IsDeleted": false
+  },
+  {
+    "DeclinedMedicineID": 1,
+    "Medicine": {
+      "ingridient": [
+        {
+          "Name": "Acetilsalicilna kiselina"
+        },
+        {
+          "Name": "Skrob, kukuruzni"
+        },
+        {
+          "Name": "Trietil-citrat"
+        }
+      ],
+      "Name": "Aspirin",
+      "Manufacturer": "Bayer Bitterfeld GmbH ",
+      "Packaging": "30 x 100mg",
+      "MedicineID": 2,
+      "Status": 1,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "Acetilsalicilna kiselina"
+        },
+        {
+          "Name": "Skrob, kukuruzni"
+        },
+        {
+          "Name": "Trietil-citrat"
+        }
+      ]
+    },
+    "Description": "Upravnik mom gay",
+    "IsDeleted": false
   }
 ]
