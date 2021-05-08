@@ -30,6 +30,7 @@ namespace vezba
         public List<Doctor> Doctors { get; set; }
         private Doctor selectedDoctor;
         private ScrollViewer scrollViewer;
+        private bool disableComboBox;
 
         public Calendar(DoctorView doctorView)
         {
@@ -38,9 +39,11 @@ namespace vezba
             DoctorStorage doctorStorage = new DoctorStorage();
             Doctors = doctorStorage.GetAll();
             selectedDoctor = doctorView.DoctorUser;
+            disableComboBox = true;
             if (selectedDoctor != null && selectedDoctor.Jmbg != null)
                 DoctorsComboBox.SelectedValue = selectedDoctor.Jmbg;
             DataContext = this;
+            disableComboBox = false;
 
             startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + 1);
             endOfWeek = startOfWeek.AddDays(7);
@@ -320,9 +323,11 @@ namespace vezba
             SetScrollViewerToFirstAppointment();
         }
 
-        /*
+        
         private void SelectedDoctorChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(disableComboBox)
+                return;
             timeDockPanel.Children.Remove(dynamicGrid);
             selectedDoctor = (Doctor)DoctorsComboBox.SelectedItem;
             GenerateAppointmentsForSelectedWeek();
@@ -330,7 +335,7 @@ namespace vezba
             timeDockPanel.Children.Add(dynamicGrid);
             SetScrollViewerToFirstAppointment();
         }
-        */
+        
         public void AddAppointmentToCurrentView(Appointment appointment)
         {
             if (DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&

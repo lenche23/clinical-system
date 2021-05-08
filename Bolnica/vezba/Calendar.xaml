@@ -14,7 +14,7 @@
                 <Button Height="30" Width="120" Margin="5" Padding="5" Click="NewAppointmentClick">+ Nov termin</Button>
                 <Button Height="30" Width="120" Margin="5" Padding="5" Click="PreviousWeekClick">Prethodna nedelja</Button>
                 <Button Height="30" Width="120" Margin="5" Padding="5" Click="NextWeekClick">Sledeca nedelja</Button>
-                <ComboBox Height="30" Width="120" Margin="5" Padding="5" Name="DoctorsComboBox" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" SelectedValuePath="Jmbg"></ComboBox>
+                <ComboBox Height="30" Width="120" Margin="5" Padding="5" Name="DoctorsComboBox" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" SelectedValuePath="Jmbg" SelectionChanged="SelectedDoctorChanged"></ComboBox>
             </StackPanel>
             <Border BorderBrush="Gray" BorderThickness="1"  Margin="20, 0,20, 20">
                 <Grid Name="CalendarGrid"/>
