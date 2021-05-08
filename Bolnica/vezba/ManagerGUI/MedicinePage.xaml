@@ -1,0 +1,29 @@
+﻿<Page x:Class="vezba.ManagerGUI.MedicinePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba.ManagerGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="570" d:DesignWidth="750"
+      Title="MedicinePage">
+
+    <Grid Margin="0,0,-8,-11">
+        <Label Margin="344,54,341,318" FontSize="28">Lekovi</Label>
+        <ListView Name="MedicineBinding" Margin="149,117,161,110">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding MedicineID}" />
+                    <GridViewColumn Header="Naziv leka" Width="120" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Proizvođač" Width="120" DisplayMemberBinding="{Binding Manufacturer}" />
+                    <GridViewColumn Header="Status" Width="120" DisplayMemberBinding="{Binding Status}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Margin="149,339,552,50" Click="Add_Medicine_Button_Click" Background="#FFBBEAB6">Dodaj nov lek</Button>
+        <Button Margin="255,339,447,50" Click="Remove_Medicine_Button_Click" Background="#FFBBEAB6">Ukloni lek</Button>
+        <Button Margin="361,339,341,50" Click="Detail_Medicine_Button_Click" Background="#FFBBEAB6">Detaljan prikaz</Button>
+
+    </Grid>
+</Page>

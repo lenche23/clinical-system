@@ -38,7 +38,7 @@ namespace vezba
             this.mv = mv;
         }
 
-        private void Potvrdi_Button_Click(object sender, RoutedEventArgs e)
+        private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             int id_sobe = int.Parse(BrojSobe.Text);
             int kolicina_robe = int.Parse(Količina.Text);
@@ -96,7 +96,7 @@ namespace vezba
             }
         }
 
-        private void Odustani_Button_Click(object sender, RoutedEventArgs e)
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

@@ -1,91 +1,106 @@
 ﻿using Bolnica;
 using Model;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace vezba
 {
-    /// <summary>
-    /// Interaction logic for WindowExchangeEquipment.xaml
-    /// </summary>
     public partial class WindowExchangeEquipment : Window
     {
-        WindowUpdateRoom wur;
-        Room room;
-        RoomInventory roomInventory;
-        Equipment eq;
-        ManagerView mv;
+        private WindowUpdateRoom windowUpdateRoom;
+        private Room room;
+        private RoomInventory roomInventory;
+        private int maximumQuantity;
+        private int itemQuantity;
+        private DateTime infiniteTime = new DateTime(2999, 12, 31);
+        private RoomInventoryStorage roomInventoryStorage;
 
-        public WindowExchangeEquipment(RoomInventory selected, WindowUpdateRoom wur, Room r_selected, ManagerView mv)
+        public WindowExchangeEquipment(RoomInventory roomInventory, WindowUpdateRoom windowUpdateRoom, Room room)
         {
             InitializeComponent();
-            this.wur = wur;
-            this.roomInventory = selected;
-            this.room = r_selected;
-            this.mv = mv;
+            this.windowUpdateRoom = windowUpdateRoom;
+            this.roomInventory = roomInventory;
+            this.room = room;
         }
 
-        private void Potvrdi_Button_Click(object sender, RoutedEventArgs e)
+        private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            int id_sobe = int.Parse(BrojSobe.Text);
-            int kolicina_robe = int.Parse(Količina.Text);
-            int maks_kolicina = this.roomInventory.Quantity;
+            int roomNumber = int.Parse(RoomNumberTextBox.Text);
+            itemQuantity = int.Parse(ItemQuantity.Text);
+            maximumQuantity = roomInventory.Quantity;
 
-            RoomStorage rs = new RoomStorage();
-            RoomInventoryStorage ris = new RoomInventoryStorage();
-            Room room1 = rs.GetOne(id_sobe);
+            RoomStorage roomStorage = new RoomStorage();
+            Room roomEntry = roomStorage.GetOne(roomNumber);
 
-            if (room1 != null && room1 != this.room)
+            if (Validate(roomEntry) == false)
+                return;
+
+            roomInventoryStorage = new RoomInventoryStorage();
+
+            RemoveQuantityFromCurrentRoom();
+
+            if (!AddQuantityToDesiredRoom(roomNumber))
             {
-
-                if (maks_kolicina >= kolicina_robe)
-                {
-                    this.roomInventory.Quantity -= kolicina_robe;
-                    ris.Update(this.roomInventory);
-
-                    wur.RoomInventoryBinding.Items.Refresh();
-
-                    var exists = false;
-
-                    foreach (RoomInventory ri in ris.GetAll())
-                    {
-                        if(ri.room.RoomNumber == id_sobe) {
-                            if (ri.equipment.Id == roomInventory.equipment.Id)
-                            {
-                                ri.Quantity += kolicina_robe;
-                                ris.Update(ri);
-                                exists = true;
-                            }
-                        }
-                    }
-
-                    if (exists == false)
-                    {
-                        var endTime = new DateTime(2999, 12, 31);
-                        var id = ris.GenerateNextId();
-                        RoomInventory ri = new RoomInventory(DateTime.Now, endTime, kolicina_robe, id, roomInventory.equipment, room1);
-                        ris.Save(ri);
-                    }
-
-                 this.Close();
-                }
+                CreateRoomInventory(roomEntry);
             }
+            this.Close();
         }
-        private void Odustani_Button_Click(object sender, RoutedEventArgs e)
+
+        private void CreateRoomInventory(Room roomEntry)
+        {
+            var id = roomInventoryStorage.GenerateNextId();
+            RoomInventory ri = new RoomInventory(DateTime.Now, infiniteTime, itemQuantity, id, roomInventory.equipment, roomEntry);
+            roomInventoryStorage.Save(ri);
+        }
+
+        private void RemoveQuantityFromCurrentRoom()
+        {
+            roomInventory.Quantity -= itemQuantity;
+            roomInventoryStorage.Update(this.roomInventory);
+            windowUpdateRoom.RoomInventoryBinding.Items.Refresh();
+        }
+
+        private bool AddQuantityToDesiredRoom(int roomNumber)
+        {
+            var itemFound = false;
+            foreach (RoomInventory inventory in roomInventoryStorage.GetAll())
+            {
+                if (inventory.room.RoomNumber == roomNumber && inventory.equipment.Id == roomInventory.equipment.Id)
+                {
+                        inventory.Quantity += itemQuantity;
+                        roomInventoryStorage.Update(inventory);
+                        itemFound = true;
+                }
+            } 
+            return itemFound;
+        }
+
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
                     this.Close();
                 }
+
+        public Boolean Validate(Room roomEntry)
+        {
+            if (roomEntry == null)
+            {
+                MessageBox.Show("Soba ne postoji");
+                return false;
+            }
+
+            if (roomEntry.RoomNumber == this.room.RoomNumber)
+            {
+                MessageBox.Show("Soba ne može biti trenutno selektovana soba");
+                return false;
+            }
+
+            if (maximumQuantity < itemQuantity)
+            {
+                MessageBox.Show("ItemQuantity robe prekoračava maksimalnu postojeću u sobi");
+                return false;
+            }
+            return true;
+        }
     }
 }

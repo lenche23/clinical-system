@@ -2,18 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Timers;
 using vezba;
 
 namespace Bolnica
@@ -89,8 +79,8 @@ namespace Bolnica
 
         private void Potvrda_Button_Click(object sender, RoutedEventArgs e)
         {
-            var RoomNumber = int.Parse(BrojSobe.Text);
-            selected.RoomNumber = RoomNumber;
+            var roomNumber = int.Parse(BrojSobe.Text);
+            selected.RoomNumber = roomNumber;
 
             
 
@@ -178,7 +168,7 @@ namespace Bolnica
                 RoomInventory roomInventorySelected = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
                 if (roomInventorySelected.equipment.Type == EquipmentType.dinamical)
                 {
-                    var s = new WindowExchangeEquipment(roomInventorySelected, this, this.selected, this.mv);
+                    var s = new WindowExchangeEquipment(roomInventorySelected, this, this.selected);
                     s.Show();
                 }
                 else if (roomInventorySelected.equipment.Type == EquipmentType.statical)

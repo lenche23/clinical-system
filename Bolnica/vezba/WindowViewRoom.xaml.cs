@@ -69,7 +69,11 @@ namespace Bolnica
             {
                 if (roomInventory.room.RoomNumber == selected.RoomNumber)
                 {
-                    roomInventoryList.Add(roomInventory);
+                    if (DateTime.Compare(roomInventory.StartTime, DateTime.Now) <= 0 &&
+                        DateTime.Compare(roomInventory.EndTime, DateTime.Now) >= 0)
+                    {
+                        roomInventoryList.Add(roomInventory);
+                    }
                 }
             }
 

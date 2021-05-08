@@ -1,0 +1,55 @@
+﻿<Page x:Class="vezba.ManagerGUI.InventoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba.ManagerGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="570" d:DesignWidth="750"
+      Title="InventoryPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="18*"></RowDefinition>
+            <RowDefinition Height="57*"></RowDefinition>
+            <RowDefinition Height="25*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" Margin="250,30,250,20" FontSize="28" TextAlignment="Center">Inventar Bolnice</TextBlock>
+        <ListView Grid.Row="2" Name="InventaryBinding" Margin="45,0,45,10" FontSize="24" Background="#FFFFF0E6" Foreground="#FF8F2D00">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width ="100" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Naziv proizvoda" Width="400" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Tip" Width="160" DisplayMemberBinding="{Binding Type}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Click="Add_Equipment_Button_Click" Background="#FFFFC9B6" Grid.Row="3" Margin="45,5,570,75">Dodaj opremu</Button>
+        <Button Margin="216,5,400,75" Click="Remove_Equipment_Button_Click" Background="#FFFFC9B6" Grid.Row="3">Ukloni opremu</Button>
+        <Button Margin="386,5,231,75" Click="View_Equipment_Button_Click" Background="#FFFFC9B6" Grid.Row="3">Detaljan prikaz</Button>
+        <Button Margin="576,5,45,75" Click="Change_Equipment_Button_Click" Background="#FFFFC9B6" Grid.Row="3">Izmeni opremu</Button>
+
+        <CheckBox Name ="CheckedBoxStatic" Margin="45,63,586,10" IsChecked ="True" Unchecked ="StaticCheckBox_Unchecked" Checked="StaticCheckBox_Checked" Grid.Row="1">Statička</CheckBox>
+        <CheckBox Name ="CheckedBoxDinamic" Margin="45,43,586,27" IsChecked ="True" Unchecked ="DinamicCheckBox_Unchecked" Checked="DinamicCheckBox_Checked" Grid.Row="1">Dinamička</CheckBox>
+        <Label Margin="560,2,31,60" Content="Pretraga opreme po nazivu" Grid.Row="1"/>
+        <Label Margin="45,13,535,47" Content="Filter:" FontSize="14" Grid.Row="1"/>
+        <TextBox Margin="560,30,31,20" Name="txtFilter" TextChanged="txtFilter_TextChanged" Grid.Row="1"/>
+
+        <Button Click ="ButtonBackClick" Grid.Row="3" Margin="10,55,675,10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property ="IsMouseOver" Value="True">
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Background>
+                <ImageBrush ImageSource="BackArrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

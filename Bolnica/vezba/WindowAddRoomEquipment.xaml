@@ -9,7 +9,7 @@
     <Grid Margin="0,0,-8,-6">
         <Label Name="Title" Content="Dodavanje nove opreme u prostoriju"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="40,35,30,370"/>
         <Label Content="Naziv opreme:" Margin="84,96,246,347"/>
-        <Label Content="Količina:" Margin="115,152,246,296"/>
+        <Label Content="ItemQuantity:" Margin="115,152,246,296"/>
         <TextBox Name="Količina" Height ="24" RenderTransformOrigin="0.491,0.484" Margin="184,146,118,290" />
         <Button Click="PotvrdiDodavanje_Button_Click" Margin="65,215,231,212">Potvrdi</Button>
         <Button Click="OdustaniDodavanje_Button_Click" Margin="235,215,55,212">Odustani</Button>

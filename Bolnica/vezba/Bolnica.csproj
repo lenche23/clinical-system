@@ -112,6 +112,21 @@
     <Compile Include="InventaryViewEquipment.xaml.cs">
       <DependentUpon>InventaryViewEquipment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerGUI\InventoryPage.xaml.cs">
+      <DependentUpon>InventoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerGUI\MainManagerPage.xaml.cs">
+      <DependentUpon>MainManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerGUI\MainManagerWindow.xaml.cs">
+      <DependentUpon>MainManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerGUI\MedicinePage.xaml.cs">
+      <DependentUpon>MedicinePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerGUI\RoomsPage.xaml.cs">
+      <DependentUpon>RoomsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerMainView.xaml.cs">
       <DependentUpon>ManagerMainView.xaml</DependentUpon>
     </Compile>
@@ -321,6 +336,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManagerGUI\InventoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\MainManagerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\MainManagerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\MedicinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\RoomsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerMainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -459,6 +494,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="ManagerImages\BackArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerGUI\BackArrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

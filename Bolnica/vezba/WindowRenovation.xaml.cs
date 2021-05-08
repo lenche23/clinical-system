@@ -29,17 +29,41 @@ namespace vezba
             BrojProstorije.Content = BrojProstorije.Content + " " + selected.RoomNumber;
         }
 
-        private void PotvrdiDodavanje1_Button_Click(object sender, RoutedEventArgs e)
+        private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             var format = "dd/MM/yyyy HH:mm";
             CultureInfo provider = CultureInfo.InvariantCulture;
-            var StartTime = DateTime.ParseExact(PocetniDatum.Text, format, provider);
-            var trajanje = int.Parse(Trajanje.Text);
-            var EndTime = StartTime.AddDays(trajanje);
-            var id = int.Parse(Id.Text);
+            var startTime = DateTime.ParseExact(PocetniDatum.Text, format, provider);
+            var durationInDays = int.Parse(Trajanje.Text);
+            var endTime = startTime.AddDays(durationInDays);
+            var id = selected.renovation.Count + 1;
 
             AppointmentStorage aps = new AppointmentStorage();
             List<Appointment> appointments = aps.GetAll();
+
+            if (DateTime.Compare(startTime, DateTime.Now) < 0)
+            {
+                MessageBox.Show("Izabrani datum je već prošao!");
+                return;
+            }
+
+            if (Overlap(appointments, startTime, endTime))
+            {
+                MessageBox.Show("Datum renovacije se poklapa sa već zakazanim pregledima");
+                return;
+            }
+
+            var newRenovation = new Renovation(startTime, durationInDays, id);
+            selected.AddRenovation(newRenovation);
+            RoomStorage rs = new RoomStorage();
+            rs.Update(this.selected);
+            WindowRenovations.RenovationList.Add(newRenovation);
+            this.Close();
+            
+        }
+
+        private bool Overlap(List<Appointment> appointments, DateTime StartTime, DateTime EndTime)
+        {
             var overlap = false;
 
             for (int i = 0; i < appointments.Count; i++)
@@ -51,27 +75,13 @@ namespace vezba
                     {
                         overlap = true;
                     }
-
                 }
             }
 
-            if (overlap == true)
-            {
-                MessageBox.Show("Datum renovacije se poklapa sa već zakazanim pregledima");
-            }
-
-            else { 
-            var newRenovation = new Renovation(StartTime, trajanje, id) { };
-
-            selected.AddRenovation(newRenovation);
-            RoomStorage rs = new RoomStorage();
-            rs.Update(this.selected);
-            WindowRenovations.RenovationList.Add(newRenovation);
-            this.Close();
-            }
+            return overlap;
         }
 
-        private void OdustaniDodavanje1_Button_Click(object sender, RoutedEventArgs e)
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

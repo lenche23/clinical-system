@@ -16,7 +16,7 @@
         <Label Content="Datum transfera:" Margin="100,171,182,124"/>
         <DatePicker Name ="Date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,172,0,0" Width="137"/>
 
-        <Button Click="Potvrdi_Button_Click" Margin="64,234,216,55">Potvrdi</Button>
-        <Button Click="Odustani_Button_Click" Margin="202,234,74,55">Odustani</Button>
+        <Button Click="OkButtonClick" Margin="64,234,216,55">Potvrdi</Button>
+        <Button Click="CancelButtonClick" Margin="202,234,74,55">Odustani</Button>
     </Grid>
 </Window>

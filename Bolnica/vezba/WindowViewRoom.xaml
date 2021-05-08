@@ -17,7 +17,7 @@
                 <GridView>
                     <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding EquipmentId}" />
                     <GridViewColumn Header="Naziv proizvoda" Width="100" DisplayMemberBinding="{Binding EquipmentName}" />
-                    <GridViewColumn Header="Količina" Width="100" DisplayMemberBinding="{Binding Quantity}" />
+                    <GridViewColumn Header="ItemQuantity" Width="100" DisplayMemberBinding="{Binding Quantity}" />
                     <GridViewColumn Header="Tip" Width="100" DisplayMemberBinding="{Binding EquipmentType}" />
                 </GridView>
             </ListView.View>

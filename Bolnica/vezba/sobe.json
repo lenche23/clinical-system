@@ -4,9 +4,14 @@
     "equipment": [],
     "renovation": [
       {
-        "StartTime": "2021-04-22T10:00:00",
+        "StartTime": "2021-10-10T10:00:00",
         "DurationInDays": 2,
         "RenovationID": 1
+      },
+      {
+        "StartTime": "2021-12-12T10:00:00",
+        "DurationInDays": 4,
+        "RenovationID": 2
       }
     ],
     "RoomType": 0,
@@ -16,21 +21,38 @@
     "Equipment": [],
     "Renovation": [
       {
-        "StartTime": "2021-04-22T10:00:00",
+        "StartTime": "2021-10-10T10:00:00",
         "DurationInDays": 2,
         "RenovationID": 1
+      },
+      {
+        "StartTime": "2021-12-12T10:00:00",
+        "DurationInDays": 4,
+        "RenovationID": 2
       }
     ]
   },
   {
     "Capacity": 0,
     "equipment": [],
-    "renovation": [],
+    "renovation": [
+      {
+        "StartTime": "2021-10-10T10:00:00",
+        "DurationInDays": 4,
+        "RenovationID": 1
+      }
+    ],
     "RoomType": 2,
     "RoomNumber": 2,
     "RoomFloor": 1,
     "IsDeleted": false,
     "Equipment": [],
-    "Renovation": []
+    "Renovation": [
+      {
+        "StartTime": "2021-10-10T10:00:00",
+        "DurationInDays": 4,
+        "RenovationID": 1
+      }
+    ]
   }
 ]

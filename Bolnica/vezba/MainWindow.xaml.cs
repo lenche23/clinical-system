@@ -24,6 +24,7 @@ namespace vezba
             }
             else if (Username.Text.Equals("upravnik") && Password.Password.Equals("bolnica"))
             {
+                //var s = new ManagerGUI.MainManagerWindow();
                 var s = new ManagerMainView();
                 s.Show();
 

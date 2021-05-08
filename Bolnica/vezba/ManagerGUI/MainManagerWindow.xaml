@@ -1,0 +1,15 @@
+﻿<Window x:Class="vezba.ManagerGUI.MainManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vezba.ManagerGUI"
+        mc:Ignorable="d"
+        Height="660" Width="750">
+    <Grid>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Label x:Name="UpravnikLabel" Background="#FFFFDEB6" FontFamily="Yu Gothic UI Semibold" FontSize="20" Margin="0,0,0,10" Foreground="#FFCD4100">Upravnik</Label>
+        </StackPanel>
+        <Frame x:Name ="MainManagerView" Margin="0,0,0,60" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
