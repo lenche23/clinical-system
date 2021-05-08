@@ -12,7 +12,7 @@ namespace Model
 
         public AppointmentStorage()
         {
-            this.FileName = "../../appointments.json";
+            this.FileName = "../../appointmentss.json";
         }
 
         public List<Appointment> Load()

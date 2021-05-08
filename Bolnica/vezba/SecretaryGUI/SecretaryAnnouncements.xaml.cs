@@ -12,70 +12,65 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace vezba
+namespace vezba.SecretaryGUI
 {
-    public partial class Announcements : Window
+    public partial class SecretaryAnnouncements : Page
     {
-        public static ObservableCollection<Announcement> Ans { get; set; }
-        public Announcements()
+        public static ObservableCollection<Announcement> Announcements { get; set; }
+        public SecretaryAnnouncements()
         {
             InitializeComponent();
             this.DataContext = this;
             AnnouncementStorage s = new AnnouncementStorage();
             List<Announcement> temp = s.GetAll();
-            Ans = new ObservableCollection<Announcement>(temp);
+            Announcements = new ObservableCollection<Announcement>(temp);
         }
 
-        private void New_Button_Click(object sender, RoutedEventArgs e)
+        private void NewAnnouncementButton_Click(object sender, RoutedEventArgs e)
         {
-            var w = new ChooseAnouncementType();
+            SecretaryNewAnnouncement w = new SecretaryNewAnnouncement();
             w.Show();
         }
 
-        private void View_Button_Click(object sender, RoutedEventArgs e)
+        private void ViewAnnouncementButton_Click(object sender, RoutedEventArgs e)
         {
             if (announcementTable.SelectedCells.Count > 0)
             {
                 Announcement a = (Announcement)announcementTable.SelectedItem;
-                var w = new ViewAnnouncement(a);
+                SecretaryViewAnnouncement w = new SecretaryViewAnnouncement(a);
                 w.Show();
             }
             else
-            {
                 MessageBox.Show("Niste selektovali obavestenje!");
-            }
         }
 
-        private void Edit_Button_Click(object sender, RoutedEventArgs e)
+        private void EditAnnouncementButton_Click(object sender, RoutedEventArgs e)
         {
             if (announcementTable.SelectedCells.Count > 0)
             {
                 Announcement a = (Announcement)announcementTable.SelectedItem;
-                var w = new EditAnnouncement(a);
+                SecretaryEditAnnouncement w = new SecretaryEditAnnouncement(a);
                 w.Show();
             }
             else
-            {
                 MessageBox.Show("Niste selektovali obavestenje!");
-            }
         }
 
-        private void Delete_Button_Click(object sender, RoutedEventArgs e)
+        private void DeleteAnnouncementButton_Click(object sender, RoutedEventArgs e)
         {
             if (announcementTable.SelectedCells.Count > 0)
             {
                 Announcement a = (Announcement)announcementTable.SelectedItem;
                 AnnouncementStorage s = new AnnouncementStorage();
                 s.Delete(a.Id);
-                Ans.Remove(a);
+                Announcements.Remove(a);
 
             }
             else
-            {
                 MessageBox.Show("Niste selektovali obavestenje!");
-            }
         }
     }
 }

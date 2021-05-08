@@ -81,6 +81,9 @@
     <Compile Include="CancelAppointmentView.xaml.cs">
       <DependentUpon>CancelAppointmentView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChooseAnouncementType.xaml.cs">
+      <DependentUpon>ChooseAnouncementType.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreateAnamnesisView.xaml.cs">
       <DependentUpon>CreateAnamnesisView.xaml</DependentUpon>
     </Compile>
@@ -144,12 +147,16 @@
     <Compile Include="LogoutPopup.xaml.cs">
       <DependentUpon>LogoutPopup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EmergencyAppointment.xaml.cs">
+      <DependentUpon>EmergencyAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerView.xaml.cs">
       <DependentUpon>ManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MedicalRecordView.xaml.cs">
       <DependentUpon>MedicalRecordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AppointmentForReschedulingDTO.cs" />
     <Compile Include="Model\DoctorEvaluation.cs" />
     <Compile Include="Model\DoctorEvaluationStorage.cs" />
     <Compile Include="Model\EventsLog.cs" />
@@ -203,6 +210,9 @@
     <Compile Include="NewMedicine.xaml.cs">
       <DependentUpon>NewMedicine.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewIndividualAnouncement.xaml.cs">
+      <DependentUpon>NewIndividualAnouncement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewPatient.xaml.cs">
       <DependentUpon>NewPatient.xaml</DependentUpon>
     </Compile>
@@ -214,6 +224,9 @@
     </Compile>
     <Compile Include="OrderAppointmentView.xaml.cs">
       <DependentUpon>OrderAppointmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OverlapingAppointments.xaml.cs">
+      <DependentUpon>OverlapingAppointments.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientEditAppointment.xaml.cs">
       <DependentUpon>PatientEditAppointment.xaml</DependentUpon>
@@ -251,8 +264,65 @@
     <Compile Include="PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleEmergencyAppointment.xaml.cs">
+      <DependentUpon>ScheduleEmergencyAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecretaryAppointments.xaml.cs">
       <DependentUpon>SecretaryAppointments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryAnnouncements.xaml.cs">
+      <DependentUpon>SecretaryAnnouncements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryAppointments.xaml.cs">
+      <DependentUpon>SecretaryAppointments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryEditAnnouncement.xaml.cs">
+      <DependentUpon>SecretaryEditAnnouncement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryEditAppointment.xaml.cs">
+      <DependentUpon>SecretaryEditAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryEditPatient.xaml.cs">
+      <DependentUpon>SecretaryEditPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryMainWindow.xaml.cs">
+      <DependentUpon>SecretaryMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNearestAvailableEmergencyAppointment.xaml.cs">
+      <DependentUpon>SecretaryNearestAvailableEmergencyAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNewAllergen.xaml.cs">
+      <DependentUpon>SecretaryNewAllergen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNewAnnouncement.xaml.cs">
+      <DependentUpon>SecretaryNewAnnouncement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNewAppointment.xaml.cs">
+      <DependentUpon>SecretaryNewAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNewEmergencyAppointment.xaml.cs">
+      <DependentUpon>SecretaryNewEmergencyAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNewPatient.xaml.cs">
+      <DependentUpon>SecretaryNewPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNotifications.xaml.cs">
+      <DependentUpon>SecretaryNotifications.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryOverlapingAppointments.xaml.cs">
+      <DependentUpon>SecretaryOverlapingAppointments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryPatients.xaml.cs">
+      <DependentUpon>SecretaryPatients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryViewAnnouncement.xaml.cs">
+      <DependentUpon>SecretaryViewAnnouncement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryViewAppointment.xaml.cs">
+      <DependentUpon>SecretaryViewAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryViewPatient.xaml.cs">
+      <DependentUpon>SecretaryViewPatient.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryView.xaml.cs">
       <DependentUpon>SecretaryView.xaml</DependentUpon>
@@ -328,6 +398,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ChooseAnouncementType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateAnamnesisView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -388,6 +462,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EmergencyAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -444,6 +522,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NewIndividualAnouncement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>  
     <Page Include="NewPatient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -457,6 +539,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="OrderAppointmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OverlapingAppointments.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -508,7 +594,83 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ScheduleEmergencyAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SecretaryAppointments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryAnnouncements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryAppointments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryEditAnnouncement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryEditAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryEditPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryNearestAvailableEmergencyAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryNewAllergen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryNewAnnouncement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryNewAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryNewEmergencyAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryNewPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryNotifications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryOverlapingAppointments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryPatients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryViewAnnouncement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryViewAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryViewPatient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

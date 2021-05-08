@@ -75,5 +75,11 @@ namespace vezba
                 MessageBox.Show("Niste selektovali termin!");
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new EmergencyAppointment();
+            s.Show();
+        }
     }
 }
