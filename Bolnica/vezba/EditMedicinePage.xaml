@@ -1,0 +1,76 @@
+﻿<Page x:Class="vezba.EditMedicinePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditMedicinePage">
+
+    <Grid Background="White">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Width="70" Click="OkButtonClick">Potvrdi</Button>
+                <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Width="70" Click="CancelButtonClick">Odustani</Button>
+            </StackPanel>
+            <Grid Margin="10" DockPanel.Dock="Left">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="Margin" Value="10"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Width" Value="100"/>
+                    </Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Margin" Value="10"/>
+                        <Setter Property="Height" Value="20"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="86" />
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,11,4,11">Naziv Leka:</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,12,4,11">Proizvođač:</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0,11,5,11">Pakovanje:</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" Margin="0,11,4,11">Oblik:</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Margin="0,11,4,11">Zamenski lek:</TextBlock>
+
+                <TextBox Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Name="NameTB" Text="{ Binding Medicine.Name, Mode=OneWay}" Margin="10,11,0,11"/>
+                <TextBox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Name="ManufacturerTB" Text="{ Binding Medicine.Manufacturer, Mode=OneWay}" Margin="10,12,0,11"/>
+                <TextBox Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Name="PackagingTB" Text="{Binding Medicine.Packaging, Mode=OneWay}" Margin="10,11,0,11"/>
+                <ComboBox Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Height="20" Width="100" Margin="10,11,0,11" Name="ConditionCMB">
+                    <ComboBoxItem>Pilula</ComboBoxItem>
+                    <ComboBoxItem>Kapsula</ComboBoxItem>
+                    <ComboBoxItem>Sirup</ComboBoxItem>
+                </ComboBox>
+                <ComboBox Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" Height="20" Width="100" Margin="10,11,0,11" Name="ReplacementMedicineCB" ItemsSource="{Binding Path=AllMedicine}" DisplayMemberPath="Name" SelectedValuePath="MedicineID"></ComboBox>
+            </Grid>
+            <StackPanel Width="300" Height="300">
+                <TextBlock Margin="5">Alergeni:</TextBlock>
+                <DockPanel>
+                    <TextBox Margin="5" Width="100" Height="20" DockPanel.Dock="Left" Name="TbAllergen" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Height="20" Width="20" Margin="5" Click="PlusButtonClick">+</Button>
+                        <Button Height="20" Width="20" Margin="5" Click="MinusButtonClick">-</Button>
+                    </StackPanel>
+                </DockPanel>
+                <ListView x:Name="listViewAllergens" Margin="5, 0" Height="100">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Alergen" Width="290" DisplayMemberBinding="{Binding Name}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Page>

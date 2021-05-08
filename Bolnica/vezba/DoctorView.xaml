@@ -5,53 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vezba"
         mc:Ignorable="d"
-        Title="DoctorView" Height="450" Width="800">
+        Title="DoctorView" Height="700" Width="1200">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
-            <Button Margin="5" Padding="5" Click="AddClick">+ Nov termin</Button>
-            <Button Margin="5" Padding="5" Click="EditClick">Izmeni termin</Button>
-            <Button Margin="5" Padding="5" Click="DeleteClick">- Obriši termin</Button>
-            <Button Margin="5" Padding="5" Click="ViewClick">Informacije o terminu</Button>
-            <Button Margin="5" Padding="5" Click="AnnouncmentsClick">Obaveštenja</Button>
+        <StackPanel DockPanel.Dock="Left" Width="50" Orientation="Vertical">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Height" Value="50"/>
+                </Style>
+            </StackPanel.Resources>
+            <Button Click="CalendarClick">Kalendar</Button>
+            <Button Click="MedicineClick">Lekovi</Button>
+            <Button Click="AnnouncementsClick">Obaveštenja</Button>
         </StackPanel>
-        <ListView Margin="10" Name="listViewAppointments" >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Početak" Width="130" DisplayMemberBinding="{Binding StartTime, StringFormat=dd/MM/yyyy HH:mm}" />
-                    <GridViewColumn Header="Trajanje" Width="130" DisplayMemberBinding="{Binding DurationInMunutes}" />
-                    <GridViewColumn Header="Pregled" Width="130" DisplayMemberBinding="{Binding ApointmentDescription}" />
-                    <GridViewColumn Header="Pacijent" Width="130">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock>
-                                    <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}{0} {1}">
-                                            <Binding Path="Patient.Name" />
-                                            <Binding Path="Patient.Surname" />
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Soba" Width ="130" DisplayMemberBinding="{Binding Room.RoomNumber}" />
-                    <GridViewColumn Header="Lekar" Width="130">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock>
-                                    <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}{0} {1}">
-                                            <Binding Path="Doctor.Name" />
-                                            <Binding Path="Doctor.Surname" />
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Grid>
+            <Frame x:Name="Main" NavigationUIVisibility="Hidden"></Frame>
+        </Grid>
     </DockPanel>
-
 </Window>

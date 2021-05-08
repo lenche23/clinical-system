@@ -5,6 +5,19 @@ namespace Model
 {
     public class Appointment
     {
+        /*public Appointment(DateTime StartTime, int DurationInMinutes, String AppointmentDescription, int AppointmentId, Doctor Doctor, Room Room, Patient Patient)
+        {
+            this.StartTime = StartTime;
+            this.DurationInMunutes = DurationInMinutes;
+            this.ApointmentDescription = AppointmentDescription;
+            this.AppointentId = AppointmentId;
+            this.Doctor = Doctor;
+            this.Room = Room;
+            this.Patient = Patient;
+
+            this.IsDeleted = false;
+        }*/
+
         public DateTime StartTime { get; set; }
         public int DurationInMunutes { get; set; }
         public String ApointmentDescription { get; set; }
@@ -16,8 +29,9 @@ namespace Model
 
         public Patient Patient { get; set; }
 
+        public Boolean IsEmergency { get; set; }
 
-        public Appointment(int id, Patient patient, Doctor doctor, Room room, DateTime startTime, int duration, string apDesc)
+        public Appointment(int id, Patient patient, Doctor doctor, Room room, DateTime startTime, int duration, string apDesc, Boolean IsEmergency = false)
         {
             AppointentId = id;
             Patient = patient;
@@ -27,6 +41,7 @@ namespace Model
             DurationInMunutes = duration;
             ApointmentDescription = apDesc;
             IsDeleted = false;
+            this.IsEmergency = IsEmergency;
         }
 
         public Appointment(Doctor doctor, DateTime startTime, Patient patient) {

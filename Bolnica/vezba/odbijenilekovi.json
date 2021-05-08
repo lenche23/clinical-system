@@ -1,0 +1,82 @@
+[
+  {
+    "DeclinedMedicineID": 0,
+    "Medicine": {
+      "ingridient": [
+        {
+          "Name": "Celuloza, mikrokristalna"
+        },
+        {
+          "Name": "Hipromeloza (E464)"
+        },
+        {
+          "Name": "Titan-dioksid (E171)"
+        },
+        {
+          "Name": "Makrogol 400"
+        }
+      ],
+      "Name": "Xyzal",
+      "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
+      "Packaging": "30 x 5 mg",
+      "MedicineID": 1,
+      "Status": 1,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "Celuloza, mikrokristalna"
+        },
+        {
+          "Name": "Hipromeloza (E464)"
+        },
+        {
+          "Name": "Titan-dioksid (E171)"
+        },
+        {
+          "Name": "Makrogol 400"
+        }
+      ]
+    },
+    "Description": "upravnik mom gay",
+    "IsDeleted": false
+  },
+  {
+    "DeclinedMedicineID": 1,
+    "Medicine": {
+      "ingridient": [
+        {
+          "Name": "Acetilsalicilna kiselina"
+        },
+        {
+          "Name": "Skrob, kukuruzni"
+        },
+        {
+          "Name": "Trietil-citrat"
+        }
+      ],
+      "Name": "Aspirin",
+      "Manufacturer": "Bayer Bitterfeld GmbH ",
+      "Packaging": "30 x 100mg",
+      "MedicineID": 2,
+      "Status": 1,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "Acetilsalicilna kiselina"
+        },
+        {
+          "Name": "Skrob, kukuruzni"
+        },
+        {
+          "Name": "Trietil-citrat"
+        }
+      ]
+    },
+    "Description": "Upravnik mom gay",
+    "IsDeleted": false
+  }
+]

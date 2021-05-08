@@ -158,7 +158,60 @@ namespace Model
             return list.Count;
         }
 
-        public String FileName { get; set; }
+      public List<Medicine> GetAwaiting()
+      {
+            List<Medicine> ms = new List<Medicine>();
 
+            try
+            {
+                String jsonFromFile = File.ReadAllText(this.FileName);
+                List<Medicine> medicineList = JsonConvert.DeserializeObject<List<Medicine>>(jsonFromFile);
+
+                for (int i = 0; i < medicineList.Count; i++)
+                {
+                    if (medicineList[i].IsDeleted == false && medicineList[i].Status == MedicineStatus.awaiting)
+                    {
+                        ms.Add(medicineList[i]);
+                    }
+                }
+                return ms;
+            }
+            catch
+            {
+
+            }
+
+            MessageBox.Show("Neuspesno ucitavanje iz fajla" + this.FileName + "!");
+            return ms;
+        }
+
+        public List<Medicine> GetApproved()
+        {
+            List<Medicine> ms = new List<Medicine>();
+
+            try
+            {
+                String jsonFromFile = File.ReadAllText(this.FileName);
+                List<Medicine> medicineList = JsonConvert.DeserializeObject<List<Medicine>>(jsonFromFile);
+
+                for (int i = 0; i < medicineList.Count; i++)
+                {
+                    if (medicineList[i].IsDeleted == false && medicineList[i].Status == MedicineStatus.approved)
+                    {
+                        ms.Add(medicineList[i]);
+                    }
+                }
+                return ms;
+            }
+            catch
+            {
+
+            }
+
+            MessageBox.Show("Neuspesno ucitavanje iz fajla" + this.FileName + "!");
+            return ms;
+        }
+
+        public String FileName { get; set; }
     }
 }
