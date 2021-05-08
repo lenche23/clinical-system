@@ -1,6 +1,7 @@
 [
   {
     "appointment": null,
+    "IsBlocked": false,
     "IsGuest": false,
     "EmergencyContact": "06699592141",
     "MedicalRecord": {
@@ -47,12 +48,20 @@
           "Id": 0,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": [],
             "Name": "ibuprofen",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 1,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         }
       ],
+      "referralLetter": null,
       "HealthInsuranceNumber": "07167166",
       "MedicalIdNumber": "620178060616",
       "Allergen": [
@@ -98,13 +107,22 @@
           "Id": 0,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": [],
             "Name": "ibuprofen",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 1,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         }
-      ]
+      ],
+      "ReferralLetter": []
     },
+    "NameAndSurname": "Mira Torbica",
     "Appointment": [],
     "Username": "miki17",
     "Password": "Tin3",
@@ -122,9 +140,11 @@
   },
   {
     "appointment": null,
+    "IsBlocked": true,
     "IsGuest": false,
     "EmergencyContact": "0638756221",
     "MedicalRecord": null,
+    "NameAndSurname": "Petar Ilic",
     "Appointment": [],
     "Username": "pera85",
     "Password": "p123",
@@ -142,6 +162,7 @@
   },
   {
     "appointment": null,
+    "IsBlocked": false,
     "IsGuest": false,
     "EmergencyContact": "541356361",
     "MedicalRecord": {
@@ -176,12 +197,20 @@
           "Id": 1,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": [],
             "Name": "panklav",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 1,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         }
       ],
+      "referralLetter": null,
       "HealthInsuranceNumber": "1651",
       "MedicalIdNumber": "546356354",
       "Allergen": [
@@ -215,13 +244,22 @@
           "Id": 1,
           "isActive": false,
           "Medicine": {
-            "allergen": [],
+            "ingridient": [],
             "Name": "panklav",
-            "Allergen": []
+            "Manufacturer": null,
+            "Packaging": null,
+            "MedicineID": 0,
+            "Status": 1,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": []
           }
         }
-      ]
+      ],
+      "ReferralLetter": []
     },
+    "NameAndSurname": "Milena Jovanovic",
     "Appointment": [],
     "Username": "fgjcj",
     "Password": "dfgh",
@@ -239,6 +277,7 @@
   },
   {
     "appointment": null,
+    "IsBlocked": false,
     "IsGuest": true,
     "EmergencyContact": "",
     "MedicalRecord": {
@@ -252,6 +291,7 @@
       ],
       "anamnesis": null,
       "prescription": null,
+      "referralLetter": null,
       "HealthInsuranceNumber": "",
       "MedicalIdNumber": "",
       "Allergen": [
@@ -263,8 +303,10 @@
         }
       ],
       "Anamnesis": [],
-      "Prescription": []
+      "Prescription": [],
+      "ReferralLetter": []
     },
+    "NameAndSurname": "Ajn Ibjhsvda",
     "Appointment": [],
     "Username": "",
     "Password": "",
@@ -282,6 +324,7 @@
   },
   {
     "appointment": null,
+    "IsBlocked": false,
     "IsGuest": false,
     "EmergencyContact": "541341",
     "MedicalRecord": {
@@ -298,6 +341,7 @@
       ],
       "anamnesis": null,
       "prescription": null,
+      "referralLetter": null,
       "HealthInsuranceNumber": "465168",
       "MedicalIdNumber": "531534",
       "Allergen": [
@@ -312,8 +356,10 @@
         }
       ],
       "Anamnesis": [],
-      "Prescription": []
+      "Prescription": [],
+      "ReferralLetter": []
     },
+    "NameAndSurname": "afd fd",
     "Appointment": [],
     "Username": "gjhfh",
     "Password": "ghjy",

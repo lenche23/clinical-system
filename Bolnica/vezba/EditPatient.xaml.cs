@@ -17,9 +17,6 @@ using vezba;
 
 namespace Bolnica
 {
-    /// <summary>
-    /// Interaction logic for EditPatient.xaml
-    /// </summary>
     public partial class EditPatient : Window
     {
         public EditPatient(Patient p)

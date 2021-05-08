@@ -1,0 +1,48 @@
+﻿<Window x:Class="vezba.OrderAppointmentPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vezba"
+        mc:Ignorable="d"
+        Title="OrderAppointmentPopup" Height="200" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FF437C62" Offset="1"/>
+                <GradientStop Color="#FF80C2A3" Offset="0.533"/>
+                <GradientStop Color="#FF8FC7A9" Offset="0.38"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Button x:Name="btnVreme" Content="Vreme"  Click="btnVreme_Click" Margin="148,142,14,10" Foreground="#FF2E421A">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF7E7A7A" Offset="1"/>
+                    <GradientStop Color="#FFBEBEBE" Offset="0.41"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLekar" Content="Lekar" Click="btnLekar_Click" Margin="16,142,144,10" Foreground="#FF2E421A">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF7E7A7A" Offset="1"/>
+                    <GradientStop Color="#FFBEBEBE" Offset="0.41"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="Da li Vam je bitnije" HorizontalAlignment="Center" Margin="40,10,44,129" FontSize="15" Width="158" HorizontalContentAlignment="Center" Foreground="#FF2E421A"/>
+        <Label Content="da pregled zakažete kod svog" HorizontalAlignment="Center" Margin="10,36,10,103" FontSize="15" Width="222" HorizontalContentAlignment="Center" Foreground="#FF2E421A"/>
+        <Label Content="izabranog lekara, ili Vam" HorizontalAlignment="Center" Margin="0,60,10,77" FontSize="15" Width="232" HorizontalContentAlignment="Center" Foreground="#FF2E421A"/>
+        <Label Content="je bitnije vreme?" HorizontalAlignment="Center" Margin="10,82,10,57" FontSize="15" Width="222" HorizontalContentAlignment="Center" Foreground="#FF2E421A"/>
+    </Grid>
+</Window>

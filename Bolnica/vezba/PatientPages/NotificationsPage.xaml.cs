@@ -1,0 +1,46 @@
+﻿using Model;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace vezba.PatientPages
+{
+    public partial class NotificationsPage : Page
+    {
+        public static ObservableCollection<Announcement> Ans { get; set; }
+        public NotificationsPage(UserType ut)
+        {
+            InitializeComponent();
+            this.DataContext = this;
+            AnnouncementStorage s = new AnnouncementStorage();
+            List<Announcement> announcements = s.GetByUser(ut);
+            Ans = new ObservableCollection<Announcement>(announcements);
+        }
+
+        private void ButtonShowNotification_Click(object sender, RoutedEventArgs e)
+        {
+            if (announcementsTable.SelectedCells.Count > 0)
+            {
+                Announcement a = (Announcement)announcementsTable.SelectedItem;
+                this.NavigationService.Navigate(new ShowNotificationPage(a));
+            }
+            else
+            {
+                MessageBox.Show("Niste selektovali obavestenje!");
+            }
+            
+        }
+    }
+}

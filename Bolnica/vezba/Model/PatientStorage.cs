@@ -103,7 +103,7 @@ namespace Model
                     patients[i].Username = p.Username;
                     patients[i].IsGuest = p.IsGuest;
                     patients[i].Password = p.Password;
-
+                    patients[i].IsBlocked = p.IsBlocked;
                     try
                     {
                         var jsonToFile = JsonConvert.SerializeObject(patients, Formatting.Indented);

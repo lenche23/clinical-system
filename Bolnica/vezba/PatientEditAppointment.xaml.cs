@@ -18,60 +18,95 @@ namespace vezba
 {
     public partial class PatientEditAppointment : Window
     {
-        public Appointment App { get; set; }
-        public PatientEditAppointment(Appointment p)
+        public Appointment Appointment { get; set; }
+
+        public PatientEditAppointment(Appointment appointment)
         {
             InitializeComponent();
-            ID.Text = p.AppointentId.ToString();
-            Datum.Text = p.StartTime.ToString("dd.MM.yyyy.");
-            Opis.Text = p.ApointmentDescription;
-            Vreme.Text = p.StartTime.ToString("HH:mm");
-            Trajanje.Text = p.DurationInMunutes.ToString();
-            Lekar.Text = p.Doctor.ToString();
-            if (p.Room == null)
+            ID.Text = appointment.AppointentId.ToString();
+            Datum.Text = appointment.StartTime.ToString("dd.MM.yyyy.");
+            Opis.Text = appointment.ApointmentDescription;
+            Vreme.Text = appointment.StartTime.ToString("HH:mm");
+            Trajanje.Text = appointment.DurationInMunutes.ToString();
+            Lekar.Text = appointment.Doctor.ToString();
+            if (appointment.Room == null)
             {
-                Soba.Text = "01";
+                Soba.Text = "100";
             }
             else
             {
-                Soba.Text = p.Room.RoomNumber.ToString();
+                Soba.Text = appointment.Room.RoomNumber.ToString();
             }
-            App = p;
+            Appointment = appointment;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Save_Click(object sender, RoutedEventArgs e)
         {
-            DateTime initDate = App.StartTime.Date;
+            if (MoveableAppointment()) 
+            {
+                Appointment appointment = ChangeAppointment();
+                AddLog(appointment);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Pregled možete pomeriti maksimalno za dva dana.");
+            }           
+        }
+
+        private Boolean MoveableAppointment()
+        {
+            DateTime initDate = Appointment.StartTime.Date;
             DateTime endDate = Datum.SelectedDate.Value.Date;
             int diff = (endDate - initDate).Days;
             if (diff > 2)
-            {
-                MessageBox.Show("Pregled mozete pomeriti maksimalno za dva dana.");
-            }
+                return false;
 
-            int id = App.AppointentId;
-            DateTime datum = Datum.SelectedDate.Value.Date;
-            datum.ToString("MM/dd/yyyy");
-            Doctor doc = App.Doctor;
+            return true;
+        }
+
+        private Appointment ChangeAppointment()
+        {
+            int id = Appointment.AppointentId;
+            DateTime selectedDate = Datum.SelectedDate.Value.Date;
+            selectedDate.ToString("MM/dd/yyyy");
+            Doctor initDoctor = Appointment.Doctor;
             String selectedTime = Vreme.Text;
-            DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
-            DateTime dateTimeFinal = datum.Date.Add(dateTime.TimeOfDay);
+            DateTime parsedTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
+            DateTime movedDate = selectedDate.Date.Add(parsedTime.TimeOfDay);
 
-            PatientStorage pps = new PatientStorage();
-            Patient patient = pps.GetOne("1008985563244");
+            PatientStorage patientStorage = new PatientStorage();
+            Patient patient = patientStorage.GetOne("1008985563244");
 
-            Appointment pat = new Appointment(doc, dateTimeFinal, patient);
-            pat.AppointentId = id;
-            AppointmentStorage ps = new AppointmentStorage();
-            ps.Update(pat);
+            Appointment appointment = new Appointment(initDoctor, movedDate, patient);
+            appointment.AppointentId = id;
+            AppointmentStorage appointmentStorage = new AppointmentStorage();
+            appointmentStorage.Update(appointment);
 
-            var pa = ChangeAppointmentView.Appointments.FirstOrDefault(p => p.AppointentId.Equals(id));
-            if (pa != null)
+            var appointment1 = ChangeAppointmentView.Appointments.FirstOrDefault(a => a.AppointentId.Equals(id));
+            if (appointment1 != null)
             {
-                ChangeAppointmentView.Appointments[ChangeAppointmentView.Appointments.IndexOf(pa)] = pat;
+                ChangeAppointmentView.Appointments[ChangeAppointmentView.Appointments.IndexOf(appointment1)] = appointment;
             }
 
-            this.Close();
+            return appointment1;
+        }
+
+        private void AddLog(Appointment appointment)
+        {
+            EventsLogStorage eventsLogStorage = new EventsLogStorage();
+            List<EventsLog> list = eventsLogStorage.Load();
+            String patientJMBG = appointment.Patient.Jmbg;
+            List<DateTime> events = new List<DateTime>();
+            DateTime log = DateTime.Now;
+            foreach (EventsLog elog in list)
+            {
+                if (elog.PatientJmbg.Equals(patientJMBG))
+                {
+                    elog.EventDates.Add(log);
+                    eventsLogStorage.Update(elog);
+                }
+            }
         }
     }
 }

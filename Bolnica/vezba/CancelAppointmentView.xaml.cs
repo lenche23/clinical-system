@@ -18,21 +18,33 @@ namespace vezba
 {
     public partial class CancelAppointmentView : Window
     {
+        public static ObservableCollection<Appointment> Appointments { get; set; }
         public CancelAppointmentView()
         {
             InitializeComponent();
-            lvUsers2.ItemsSource = PatientView.Apps;
+            this.DataContext = this;
+            AppointmentStorage ps = new AppointmentStorage();
+            List<Appointment> temp = new List<Appointment>();
+            foreach (Appointment appointment in ps.GetAll())
+            {
+                if (appointment.StartTime.Date > DateTime.Now && appointment.Patient.Jmbg.Equals("1008985563244"))
+                {
+                    temp.Add(appointment);
+
+                }
+            }
+            Appointments = new ObservableCollection<Appointment>(temp);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (lvUsers2.SelectedItems.Count > 0)
+            if (cancelTable.SelectedItems.Count > 0)
             {
-                Appointment a = (Appointment)lvUsers2.SelectedItem;
+                Appointment a = (Appointment)cancelTable.SelectedItem;
                 AppointmentStorage storage = new AppointmentStorage();
                 Boolean bla =  storage.Delete(a.AppointentId);
-                PatientView.Apps.Remove(a);
-                MessageBox.Show("Your appopintment has been canceled.");
+                Appointments.Remove(a);
+                MessageBox.Show("Your appointment has been canceled.");
                 this.Close();
             }
             else 

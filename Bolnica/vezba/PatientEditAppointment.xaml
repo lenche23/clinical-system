@@ -22,7 +22,7 @@
         <TextBox Name ="Soba" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Margin="110,241,0,0" IsEnabled="False"/>
         <TextBox x:Name ="Trajanje" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Margin="110,211,0,0" IsEnabled="False"/>
 
-        <Button Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" Width="110" Height="26"  Background="CadetBlue" Click="Button_Click"/>
+        <Button x:Name="Save" Content="Sačuvaj izmene" HorizontalAlignment="Left" Margin="10,285,0,0" VerticalAlignment="Top" Width="110" Height="26"  Background="CadetBlue" Click="Save_Click"/>
         <Label Content="Izmeni pregled" HorizontalAlignment="Left" Height="33" Margin="10,10,0,0" VerticalAlignment="Top" Width="189" FontSize="15" Background="BlanchedAlmond"/>
         <DatePicker x:Name="Datum" HorizontalAlignment="Left" Height="25" Margin="110,91,0,0" VerticalAlignment="Top" Width="164"/>
     </Grid>
