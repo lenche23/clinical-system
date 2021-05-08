@@ -118,7 +118,15 @@ namespace vezba
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-            PatientMainPage.NavigationService.GoBack();
+            try
+            {
+                PatientMainPage.NavigationService.GoBack();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
         }
 
         private void Appointments_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
