@@ -31,9 +31,11 @@ namespace vezba
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
 
-        private CalendarView cw;
+        private Calendar calendar;
 
-        public EditAppointmentPage(Appointment selected, DoctorView dw, CalendarView cw)
+        private Grid appointmentGrid;
+
+        public EditAppointmentPage(Appointment selected, DoctorView dw, Calendar calendar, Grid appointmentGrid)
         {
             InitializeComponent();
             storage = new PatientStorage();
@@ -42,24 +44,28 @@ namespace vezba
             Doctors = docstorage.GetAll();
             rs = new RoomStorage();
             Rooms = rs.GetAll();
-            this.Selected = selected;
-            this.DataContext = this;
+            Selected = selected;
+            DataContext = this;
             this.dw = dw;
-            this.cw = cw;
             if (Selected.Patient != null && Selected.Patient.Jmbg != null)
                 cmbPatients.SelectedValue = Selected.Patient.Jmbg;
             if (Selected.Room != null)
                 cmbRooms.SelectedValue = selected.Room.RoomNumber;
             if (Selected.Doctor != null && Selected.Doctor.Jmbg != null)
                 cmbDoctors.SelectedValue = Selected.Doctor.Jmbg;
+            this.calendar = calendar;
+            this.appointmentGrid = appointmentGrid;
+            StartDatePicker.SelectedDate = selected.StartTime.Date;
+            TimeTB.Text = Selected.StartTime.Hour + ":" + Selected.StartTime.Minute;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             var AppointmentID = Selected.AppointentId;
-            var format = "dd/MM/yyyy HH:mm";
-            CultureInfo provider = CultureInfo.InvariantCulture;
-            var StartTime = DateTime.ParseExact(startTB.Text, format, provider);
+            var startDate = StartDatePicker.SelectedDate;
+            var hour = int.Parse(TimeTB.Text.Split(':')[0]);
+            var minute = int.Parse(TimeTB.Text.Split(':')[1]);
+            var startDateTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, hour, minute, 0);
             var DurationInMinutes = int.Parse(DurationTB.Text);
             var ApointmentDescription = DescriptionTB.Text;
 
@@ -67,19 +73,21 @@ namespace vezba
             var Room = (Room)cmbRooms.SelectedItem;
             var Doctor = (Doctor)cmbDoctors.SelectedItem;
             var IsEmergency = (Boolean)IsEmergencyCB.IsChecked;
-            var appointment1 = new Appointment(AppointmentID, Patient, Doctor, Room, StartTime, DurationInMinutes, ApointmentDescription, IsEmergency);
+            var appointment = new Appointment(AppointmentID, Patient, Doctor, Room, startDateTime, DurationInMinutes, ApointmentDescription, IsEmergency);
 
             AppointmentStorage aps = new AppointmentStorage();
-            aps.Update(appointment1);
+            aps.Update(appointment);
+            calendar.RemoveAppointment(appointmentGrid);
+            calendar.ShowAppointment(appointment);
 
-            Selected.StartTime = StartTime;
+            /*Selected.StartTime = StartTime;
             Selected.DurationInMunutes = DurationInMinutes;
             Selected.ApointmentDescription = ApointmentDescription;
             Selected.Patient = Patient;
             Selected.Room = Room;
             Selected.Doctor = Doctor;
             Selected.IsEmergency = IsEmergency;
-            cw.listViewAppointments.Items.Refresh();
+            cw.listViewAppointments.Items.Refresh();*/
             dw.Main.GoBack();
         }
 

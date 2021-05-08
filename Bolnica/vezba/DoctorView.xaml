@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vezba"
         mc:Ignorable="d"
-        Title="DoctorView" Height="450" Width="800">
+        Title="DoctorView" Height="700" Width="1200">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Width="50" Orientation="Vertical">
             <StackPanel.Resources>

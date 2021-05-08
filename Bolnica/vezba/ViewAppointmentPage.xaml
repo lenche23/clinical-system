@@ -42,6 +42,8 @@
             <Button HorizontalAlignment="Right" Padding="5" Margin="5" Click="NovReceptClick">+ Nov recept</Button>
             <Button HorizontalAlignment="Right" Padding="5" Margin="5" Click="IzdavanjeUputaClick">+ Izdavanje uputa</Button>
             <Button HorizontalAlignment="Right" Padding="5" Margin="5" Click="PovratakClick"> Povratak </Button>
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Click="EditClick">Izmeni</Button>
+            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Click="DeleteClick">Obriši</Button>
         </StackPanel>
 
         <TextBlock Grid.Column="1" Grid.Row="1" Name="IsEmergencyTB" Text="{Binding IsEmergency}"/>

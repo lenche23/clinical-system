@@ -17,7 +17,8 @@ namespace vezba
         public DoctorView()
         {
             InitializeComponent();
-            Main.Content = new CalendarView(this);
+            //Main.Content = new CalendarView(this);
+            Main.Content = new Calendar(this);
         }
 
         private void CalendarClick(object sender, RoutedEventArgs e)

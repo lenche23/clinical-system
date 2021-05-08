@@ -26,13 +26,17 @@ namespace vezba
 
 
         private DoctorView dw;
+        private Calendar calendar;
+        private Grid appointmentGrid;
 
-        public ViewAppointmentPage(Appointment selected, DoctorView dw)
+        public ViewAppointmentPage(Appointment selected, DoctorView dw, Calendar calendar, Grid appointmentGrid)
         {
             InitializeComponent();
-            this.DataContext = selected;
+            DataContext = selected;
             Selected = selected;
             this.dw = dw;
+            this.calendar = calendar;
+            this.appointmentGrid = appointmentGrid;
         }
 
         private void ZdravstveniKartonClick(object sender, RoutedEventArgs e)
@@ -65,6 +69,23 @@ namespace vezba
         private void PovratakClick(object sender, RoutedEventArgs e)
         {
             dw.Main.GoBack();
+        }
+
+        private void EditClick(object sender, RoutedEventArgs e)
+        {
+            dw.Main.Content = new EditAppointmentPage(Selected, dw, calendar, appointmentGrid);
+        }
+
+        private void DeleteClick(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                AppointmentStorage appointmentStorage = new AppointmentStorage();
+                appointmentStorage.Delete(Selected.AppointentId);
+                calendar.RemoveAppointment(appointmentGrid);
+                dw.Main.GoBack();
+            }
         }
     }
 }

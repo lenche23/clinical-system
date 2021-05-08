@@ -1725,7 +1725,7 @@
     "DoctorName": "Darko Torbica"
   },
   {
-    "StartTime": "2020-10-10T10:00:00",
+    "StartTime": "2021-05-07T10:00:00",
     "DurationInMunutes": 30,
     "ApointmentDescription": "papanikolau",
     "AppointentId": 10,
@@ -1741,7 +1741,7 @@
       "Name": "Pera",
       "Surname": "Peric",
       "Jmbg": "1541546542644",
-      "DateOfBirth": "2021-04-30T17:13:47.5143756+02:00",
+      "DateOfBirth": "2021-05-07T21:18:20.3238481+02:00",
       "Sex": 0,
       "PhoneNumber": "0621846712",
       "Adress": "neka ulica 45, Novi Sad",
@@ -1755,27 +1755,67 @@
       "equipment": [
         {
           "Id": 1,
-          "Name": "Hanzaplast",
-          "Quantity": 79,
+          "Name": "Krevet",
+          "Quantity": 5,
           "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
           "IsDeleted": false
         }
       ],
-      "renovation": [],
-      "RoomType": 2,
-      "RoomNumber": 2,
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
       "RoomFloor": 0,
       "IsDeleted": false,
       "Equipment": [
         {
           "Id": 1,
-          "Name": "Hanzaplast",
-          "Quantity": 79,
+          "Name": "Krevet",
+          "Quantity": 5,
           "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
           "IsDeleted": false
         }
       ],
-      "Renovation": []
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
     },
     "Patient": {
       "appointment": null,
@@ -2427,11 +2467,11 @@
     },
     "IsEmergency": false,
     "PatientName": "Mira Torbica",
-    "RoomName": "2",
+    "RoomName": "1",
     "DoctorName": "Pera Peric"
   },
   {
-    "StartTime": "2020-10-10T10:30:00",
+    "StartTime": "2021-05-06T11:00:00",
     "DurationInMunutes": 30,
     "ApointmentDescription": "pregled prostate",
     "AppointentId": 11,
@@ -2447,7 +2487,7 @@
       "Name": "Dana",
       "Surname": "Dimitrijevic",
       "Jmbg": "0104998253658",
-      "DateOfBirth": "2021-05-02T18:41:50.765087+02:00",
+      "DateOfBirth": "2021-05-07T16:42:54.0301857+02:00",
       "Sex": 1,
       "PhoneNumber": "0621975732",
       "Adress": "neka ulica 62, Novi Sad",
@@ -2458,14 +2498,70 @@
     },
     "Room": {
       "Capacity": 0,
-      "equipment": null,
-      "renovation": [],
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
       "RoomType": 0,
-      "RoomNumber": 44,
-      "RoomFloor": 1,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": [],
-      "Renovation": []
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
     },
     "Patient": {
       "appointment": null,
@@ -2498,24 +2594,6 @@
             "Comment": "izvestaj123",
             "Patient": "Milena Jovanovic",
             "Doctor": "Dana Dimitrijevic"
-          },
-          {
-            "Time": "2021-05-04T22:10:11.2944242+02:00",
-            "Comment": "procedura uspesno izvrsena kapetane",
-            "Patient": "Mira Torbica",
-            "Doctor": "Pera Peric"
-          },
-          {
-            "Time": "2021-05-04T22:10:45.3964802+02:00",
-            "Comment": "a",
-            "Patient": "Mira Torbica",
-            "Doctor": "Pera Peric"
-          },
-          {
-            "Time": "2021-05-04T22:11:45.274972+02:00",
-            "Comment": "jos jedna anamneza",
-            "Patient": "Mira Torbica",
-            "Doctor": "Pera Peric"
           }
         ],
         "prescription": [
@@ -2589,24 +2667,6 @@
             "Comment": "izvestaj123",
             "Patient": "Milena Jovanovic",
             "Doctor": "Dana Dimitrijevic"
-          },
-          {
-            "Time": "2021-05-04T22:10:11.2944242+02:00",
-            "Comment": "procedura uspesno izvrsena kapetane",
-            "Patient": "Mira Torbica",
-            "Doctor": "Pera Peric"
-          },
-          {
-            "Time": "2021-05-04T22:10:45.3964802+02:00",
-            "Comment": "a",
-            "Patient": "Mira Torbica",
-            "Doctor": "Pera Peric"
-          },
-          {
-            "Time": "2021-05-04T22:11:45.274972+02:00",
-            "Comment": "jos jedna anamneza",
-            "Patient": "Mira Torbica",
-            "Doctor": "Pera Peric"
           }
         ],
         "Prescription": [
@@ -2671,12 +2731,12 @@
     },
     "IsEmergency": false,
     "PatientName": "Milena Jovanovic",
-    "RoomName": "44",
+    "RoomName": "1",
     "DoctorName": "Dana Dimitrijevic"
   },
   {
-    "StartTime": "2020-10-10T11:00:00",
-    "DurationInMunutes": 35,
+    "StartTime": "2021-05-03T11:00:00",
+    "DurationInMunutes": 30,
     "ApointmentDescription": "stiskanje glavudze",
     "AppointentId": 12,
     "IsDeleted": false,
@@ -2691,7 +2751,7 @@
       "Name": "Milica",
       "Surname": "Milicevic",
       "Jmbg": "2205972659017",
-      "DateOfBirth": "2021-04-30T17:04:13.8483783+02:00",
+      "DateOfBirth": "2021-05-07T11:09:20.8566296+02:00",
       "Sex": 1,
       "PhoneNumber": "06364789110",
       "Adress": "neka ulica 98, Novi Sad",
@@ -2702,14 +2762,70 @@
     },
     "Room": {
       "Capacity": 0,
-      "equipment": null,
-      "renovation": [],
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
       "RoomType": 0,
-      "RoomNumber": 44,
-      "RoomFloor": 1,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": [],
-      "Renovation": []
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
     },
     "Patient": {
       "appointment": null,
@@ -3361,11 +3477,11 @@
     },
     "IsEmergency": false,
     "PatientName": "Mira Torbica",
-    "RoomName": "44",
+    "RoomName": "1",
     "DoctorName": "Milica Milicevic"
   },
   {
-    "StartTime": "2020-10-10T11:30:00",
+    "StartTime": "2021-05-02T11:30:00",
     "DurationInMunutes": 30,
     "ApointmentDescription": "masaza butine",
     "AppointentId": 13,
@@ -3381,7 +3497,7 @@
       "Name": "Milica",
       "Surname": "Milicevic",
       "Jmbg": "2205972659017",
-      "DateOfBirth": "2021-04-30T17:10:05.4674256+02:00",
+      "DateOfBirth": "2021-05-07T10:59:32.4638051+02:00",
       "Sex": 1,
       "PhoneNumber": "06364789110",
       "Adress": "neka ulica 98, Novi Sad",
@@ -3395,27 +3511,67 @@
       "equipment": [
         {
           "Id": 1,
-          "Name": "Hanzaplast",
-          "Quantity": 79,
+          "Name": "Krevet",
+          "Quantity": 5,
           "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
           "IsDeleted": false
         }
       ],
-      "renovation": [],
-      "RoomType": 2,
-      "RoomNumber": 2,
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
       "RoomFloor": 0,
       "IsDeleted": false,
       "Equipment": [
         {
           "Id": 1,
-          "Name": "Hanzaplast",
-          "Quantity": 79,
+          "Name": "Krevet",
+          "Quantity": 5,
           "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
           "IsDeleted": false
         }
       ],
-      "Renovation": []
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
     },
     "Patient": {
       "appointment": null,
@@ -3440,11 +3596,11 @@
     },
     "IsEmergency": false,
     "PatientName": "Petar Ilic",
-    "RoomName": "2",
+    "RoomName": "1",
     "DoctorName": "Milica Milicevic"
   },
   {
-    "StartTime": "2020-10-10T13:00:00",
+    "StartTime": "2021-05-09T13:00:00",
     "DurationInMunutes": 44,
     "ApointmentDescription": "pregled ocne jabucice",
     "AppointentId": 14,
@@ -3460,7 +3616,7 @@
       "Name": "Dana",
       "Surname": "Dimitrijevic",
       "Jmbg": "0104998253658",
-      "DateOfBirth": "2021-05-03T14:41:45.5128249+02:00",
+      "DateOfBirth": "2021-05-07T10:55:54.147407+02:00",
       "Sex": 1,
       "PhoneNumber": "0621975732",
       "Adress": "neka ulica 62, Novi Sad",
@@ -3708,8 +3864,8 @@
     "DoctorName": "Dana Dimitrijevic"
   },
   {
-    "StartTime": "2020-10-10T14:00:00",
-    "DurationInMunutes": 35,
+    "StartTime": "2021-05-10T14:00:00",
+    "DurationInMunutes": 90,
     "ApointmentDescription": "izmisljeni pregled",
     "AppointentId": 15,
     "IsDeleted": false,
@@ -3724,7 +3880,7 @@
       "Name": "Milica",
       "Surname": "Milicevic",
       "Jmbg": "2205972659017",
-      "DateOfBirth": "2021-05-03T15:50:04.3230418+02:00",
+      "DateOfBirth": "2021-05-07T11:09:11.8941138+02:00",
       "Sex": 1,
       "PhoneNumber": "06364789110",
       "Adress": "neka ulica 98, Novi Sad",
@@ -3970,5 +4126,3599 @@
     "PatientName": "Milena Jovanovic",
     "RoomName": "1",
     "DoctorName": "Milica Milicevic"
+  },
+  {
+    "StartTime": "2021-05-03T12:00:00",
+    "DurationInMunutes": 60,
+    "ApointmentDescription": "istezanje kicmenog stuba",
+    "AppointentId": 16,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-07T13:51:38.6374179+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-06T08:00:00",
+    "DurationInMunutes": 100,
+    "ApointmentDescription": "pregled za brisanje",
+    "AppointentId": 17,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-07T16:49:03.1348865+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-07T17:00:00",
+    "DurationInMunutes": 80,
+    "ApointmentDescription": "pregled krajnika",
+    "AppointentId": 18,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-07T17:19:27.6106379+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-07T05:14:00",
+    "DurationInMunutes": 90,
+    "ApointmentDescription": "masaza zucne kese",
+    "AppointentId": 19,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-07T17:33:22.816877+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-07T00:00:00",
+    "DurationInMunutes": 90,
+    "ApointmentDescription": "Cackanje nosa",
+    "AppointentId": 20,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Dana Dimitrijevic",
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-05-07T17:48:23.6527379+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Dana Dimitrijevic"
+  },
+  {
+    "StartTime": "2021-05-07T00:00:00",
+    "DurationInMunutes": 90,
+    "ApointmentDescription": "Cackanje nosa",
+    "AppointentId": 21,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Oftalmolog"
+      },
+      "NameAndSurname": "Pera Peric",
+      "SalaryInRsd": 90000,
+      "Username": "pera",
+      "Password": "perica",
+      "Name": "Pera",
+      "Surname": "Peric",
+      "Jmbg": "1541546542644",
+      "DateOfBirth": "2021-05-07T17:49:52.2084151+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0621846712",
+      "Adress": "neka ulica 45, Novi Sad",
+      "Email": "pera@gmail.com",
+      "IdCard": "007123352",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "06699592141",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T12:42:00.2750169+02:00",
+            "Comment": "test",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T12:42:40.7710091+02:00",
+            "Comment": "test2",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:42:36.9534669+02:00",
+            "Comment": "test 3",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:53:04.7925427+02:00",
+            "Comment": "test4",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-05-03T16:12:15.8810079+02:00",
+            "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:11.2944242+02:00",
+            "Comment": "procedura uspesno izvrsena kapetane",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:45.3964802+02:00",
+            "Comment": "a",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:11:45.274972+02:00",
+            "Comment": "jos jedna anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:21:59.8701165+02:00",
+            "Comment": "treca anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 0,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "ibuprofen",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-05-28T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 4,
+            "Id": 12345,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 2,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 10,
+            "ReferencePeriod": 0,
+            "Number": 5,
+            "Id": 4,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
+          }
+        ],
+        "referralLetter": [
+          {
+            "StartDate": "2021-04-30T00:00:00",
+            "DurationPeriodInDays": 5,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-04-27T13:34:18.6995324+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-03T16:39:43.8390906+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Stomatolog"
+              },
+              "NameAndSurname": "Milica Milicevic",
+              "SalaryInRsd": 100000,
+              "Username": "milica",
+              "Password": "mica",
+              "Name": "Milica",
+              "Surname": "Milicevic",
+              "Jmbg": "2205972659017",
+              "DateOfBirth": "2021-05-04T21:55:56.3657729+02:00",
+              "Sex": 1,
+              "PhoneNumber": "06364789110",
+              "Adress": "neka ulica 98, Novi Sad",
+              "Email": "milica@gmail.com",
+              "IdCard": "008100252",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Oftalmolog"
+              },
+              "NameAndSurname": "Pera Peric",
+              "SalaryInRsd": 90000,
+              "Username": "pera",
+              "Password": "perica",
+              "Name": "Pera",
+              "Surname": "Peric",
+              "Jmbg": "1541546542644",
+              "DateOfBirth": "2021-05-04T21:57:53.1569556+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0621846712",
+              "Adress": "neka ulica 45, Novi Sad",
+              "Email": "pera@gmail.com",
+              "IdCard": "007123352",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-05-04T22:03:47.4994756+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ],
+        "HealthInsuranceNumber": "07167166",
+        "MedicalIdNumber": "620178060616",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T12:42:00.2750169+02:00",
+            "Comment": "test",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T12:42:40.7710091+02:00",
+            "Comment": "test2",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:42:36.9534669+02:00",
+            "Comment": "test 3",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:53:04.7925427+02:00",
+            "Comment": "test4",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-05-03T16:12:15.8810079+02:00",
+            "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:11.2944242+02:00",
+            "Comment": "procedura uspesno izvrsena kapetane",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:45.3964802+02:00",
+            "Comment": "a",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:11:45.274972+02:00",
+            "Comment": "jos jedna anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:21:59.8701165+02:00",
+            "Comment": "treca anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 0,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "ibuprofen",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-05-28T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 4,
+            "Id": 12345,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 2,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 10,
+            "ReferencePeriod": 0,
+            "Number": 5,
+            "Id": 4,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
+          }
+        ],
+        "ReferralLetter": [
+          {
+            "StartDate": "2021-04-30T00:00:00",
+            "DurationPeriodInDays": 5,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-04-27T13:34:18.6995324+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-03T16:39:43.8390906+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Stomatolog"
+              },
+              "NameAndSurname": "Milica Milicevic",
+              "SalaryInRsd": 100000,
+              "Username": "milica",
+              "Password": "mica",
+              "Name": "Milica",
+              "Surname": "Milicevic",
+              "Jmbg": "2205972659017",
+              "DateOfBirth": "2021-05-04T21:55:56.3657729+02:00",
+              "Sex": 1,
+              "PhoneNumber": "06364789110",
+              "Adress": "neka ulica 98, Novi Sad",
+              "Email": "milica@gmail.com",
+              "IdCard": "008100252",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Oftalmolog"
+              },
+              "NameAndSurname": "Pera Peric",
+              "SalaryInRsd": 90000,
+              "Username": "pera",
+              "Password": "perica",
+              "Name": "Pera",
+              "Surname": "Peric",
+              "Jmbg": "1541546542644",
+              "DateOfBirth": "2021-05-04T21:57:53.1569556+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0621846712",
+              "Adress": "neka ulica 45, Novi Sad",
+              "Email": "pera@gmail.com",
+              "IdCard": "007123352",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-05-04T22:03:47.4994756+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ]
+      },
+      "NameAndSurname": "Mira Torbica",
+      "Appointment": [],
+      "Username": "miki17",
+      "Password": "Tin3",
+      "Name": "Mira",
+      "Surname": "Torbica",
+      "Jmbg": "1701994261473",
+      "DateOfBirth": "1994-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0627844326",
+      "Adress": "Hajduk Veljkova 42, Novi Sad",
+      "Email": "mira94@gmail.com",
+      "IdCard": "008755974",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Mira Torbica",
+    "RoomName": "1",
+    "DoctorName": "Pera Peric"
+  },
+  {
+    "StartTime": "2021-05-07T00:00:00",
+    "DurationInMunutes": 90,
+    "ApointmentDescription": "cackanje nosa",
+    "AppointentId": 22,
+    "IsDeleted": true,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Oftalmolog"
+      },
+      "NameAndSurname": "Pera Peric",
+      "SalaryInRsd": 90000,
+      "Username": "pera",
+      "Password": "perica",
+      "Name": "Pera",
+      "Surname": "Peric",
+      "Jmbg": "1541546542644",
+      "DateOfBirth": "2021-05-07T17:50:32.5615871+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0621846712",
+      "Adress": "neka ulica 45, Novi Sad",
+      "Email": "pera@gmail.com",
+      "IdCard": "007123352",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "06699592141",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T12:42:00.2750169+02:00",
+            "Comment": "test",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T12:42:40.7710091+02:00",
+            "Comment": "test2",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:42:36.9534669+02:00",
+            "Comment": "test 3",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:53:04.7925427+02:00",
+            "Comment": "test4",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-05-03T16:12:15.8810079+02:00",
+            "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:11.2944242+02:00",
+            "Comment": "procedura uspesno izvrsena kapetane",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:45.3964802+02:00",
+            "Comment": "a",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:11:45.274972+02:00",
+            "Comment": "jos jedna anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:21:59.8701165+02:00",
+            "Comment": "treca anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 0,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "ibuprofen",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-05-28T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 4,
+            "Id": 12345,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 2,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 10,
+            "ReferencePeriod": 0,
+            "Number": 5,
+            "Id": 4,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
+          }
+        ],
+        "referralLetter": [
+          {
+            "StartDate": "2021-04-30T00:00:00",
+            "DurationPeriodInDays": 5,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-04-27T13:34:18.6995324+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-03T16:39:43.8390906+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Stomatolog"
+              },
+              "NameAndSurname": "Milica Milicevic",
+              "SalaryInRsd": 100000,
+              "Username": "milica",
+              "Password": "mica",
+              "Name": "Milica",
+              "Surname": "Milicevic",
+              "Jmbg": "2205972659017",
+              "DateOfBirth": "2021-05-04T21:55:56.3657729+02:00",
+              "Sex": 1,
+              "PhoneNumber": "06364789110",
+              "Adress": "neka ulica 98, Novi Sad",
+              "Email": "milica@gmail.com",
+              "IdCard": "008100252",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Oftalmolog"
+              },
+              "NameAndSurname": "Pera Peric",
+              "SalaryInRsd": 90000,
+              "Username": "pera",
+              "Password": "perica",
+              "Name": "Pera",
+              "Surname": "Peric",
+              "Jmbg": "1541546542644",
+              "DateOfBirth": "2021-05-04T21:57:53.1569556+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0621846712",
+              "Adress": "neka ulica 45, Novi Sad",
+              "Email": "pera@gmail.com",
+              "IdCard": "007123352",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-05-04T22:03:47.4994756+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ],
+        "HealthInsuranceNumber": "07167166",
+        "MedicalIdNumber": "620178060616",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          },
+          {
+            "Name": "BI-278"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T12:42:00.2750169+02:00",
+            "Comment": "test",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T12:42:40.7710091+02:00",
+            "Comment": "test2",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:42:36.9534669+02:00",
+            "Comment": "test 3",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T13:53:04.7925427+02:00",
+            "Comment": "test4",
+            "Patient": "Mira Torbica",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-05-03T16:12:15.8810079+02:00",
+            "Comment": "sproveden test uspesno.\r\nsubjekat preziveo.",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:11.2944242+02:00",
+            "Comment": "procedura uspesno izvrsena kapetane",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:10:45.3964802+02:00",
+            "Comment": "a",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:11:45.274972+02:00",
+            "Comment": "jos jedna anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          },
+          {
+            "Time": "2021-05-04T22:21:59.8701165+02:00",
+            "Comment": "treca anamneza",
+            "Patient": "Mira Torbica",
+            "Doctor": "Pera Peric"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 0,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "ibuprofen",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-05-28T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 4,
+            "Id": 12345,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 2,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationInDays": 10,
+            "ReferencePeriod": 0,
+            "Number": 5,
+            "Id": 4,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            }
+          }
+        ],
+        "ReferralLetter": [
+          {
+            "StartDate": "2021-04-30T00:00:00",
+            "DurationPeriodInDays": 5,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-04-27T13:34:18.6995324+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-03T16:39:43.8390906+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 10,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Stomatolog"
+              },
+              "NameAndSurname": "Milica Milicevic",
+              "SalaryInRsd": 100000,
+              "Username": "milica",
+              "Password": "mica",
+              "Name": "Milica",
+              "Surname": "Milicevic",
+              "Jmbg": "2205972659017",
+              "DateOfBirth": "2021-05-04T21:55:56.3657729+02:00",
+              "Sex": 1,
+              "PhoneNumber": "06364789110",
+              "Adress": "neka ulica 98, Novi Sad",
+              "Email": "milica@gmail.com",
+              "IdCard": "008100252",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Oftalmolog"
+              },
+              "NameAndSurname": "Pera Peric",
+              "SalaryInRsd": 90000,
+              "Username": "pera",
+              "Password": "perica",
+              "Name": "Pera",
+              "Surname": "Peric",
+              "Jmbg": "1541546542644",
+              "DateOfBirth": "2021-05-04T21:57:53.1569556+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0621846712",
+              "Adress": "neka ulica 45, Novi Sad",
+              "Email": "pera@gmail.com",
+              "IdCard": "007123352",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          },
+          {
+            "StartDate": "2021-05-20T00:00:00",
+            "DurationPeriodInDays": 15,
+            "Doctor": {
+              "Speciality": null,
+              "NameAndSurname": "Darko Torbica",
+              "SalaryInRsd": 70000,
+              "Username": "darko",
+              "Password": "dare",
+              "Name": "Darko",
+              "Surname": "Torbica",
+              "Jmbg": "1708962324890",
+              "DateOfBirth": "2021-05-04T22:03:47.4994756+02:00",
+              "Sex": 0,
+              "PhoneNumber": "0665813272",
+              "Adress": "neka ulica 38, Novi Sad",
+              "Email": "darko@gmail.com",
+              "IdCard": "007155721",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ]
+      },
+      "NameAndSurname": "Mira Torbica",
+      "Appointment": [],
+      "Username": "miki17",
+      "Password": "Tin3",
+      "Name": "Mira",
+      "Surname": "Torbica",
+      "Jmbg": "1701994261473",
+      "DateOfBirth": "1994-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0627844326",
+      "Adress": "Hajduk Veljkova 42, Novi Sad",
+      "Email": "mira94@gmail.com",
+      "IdCard": "008755974",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Mira Torbica",
+    "RoomName": "1",
+    "DoctorName": "Pera Peric"
+  },
+  {
+    "StartTime": "2021-05-07T14:00:00",
+    "DurationInMunutes": 50,
+    "ApointmentDescription": "Sistematski pregled",
+    "AppointentId": 23,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Dana Dimitrijevic",
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-05-07T18:04:34.8043812+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Dana Dimitrijevic"
+  },
+  {
+    "StartTime": "2021-05-07T11:00:00",
+    "DurationInMunutes": 45,
+    "ApointmentDescription": "Nadvlacenje kuke",
+    "AppointentId": 24,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": null,
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-07T18:09:34.2042102+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-06T12:15:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "isterivanje djavola",
+    "AppointentId": 25,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Dana Dimitrijevic",
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-05-07T20:12:20.6005332+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [
+        {
+          "Id": 1,
+          "Name": "Krevet",
+          "Quantity": 5,
+          "Type": 0,
+          "IsDeleted": false
+        },
+        {
+          "Id": 2,
+          "Name": "Stolica",
+          "Quantity": 3,
+          "Type": 1,
+          "IsDeleted": false
+        },
+        {
+          "Id": 3,
+          "Name": "Selotejp",
+          "Quantity": 4,
+          "Type": 1,
+          "IsDeleted": false
+        }
+      ],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 10,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsGuest": false,
+      "EmergencyContact": "541356361",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "1651",
+        "MedicalIdNumber": "546356354",
+        "Allergen": [
+          {
+            "Name": "a"
+          },
+          {
+            "Name": "b"
+          }
+        ],
+        "Anamnesis": [
+          {
+            "Time": "2021-04-18T14:23:04.1519302+02:00",
+            "Comment": "pacijentu istegnuta glava",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Imenko Prezimenić"
+          },
+          {
+            "Time": "2021-04-18T16:05:10.7826089+02:00",
+            "Comment": "srce joj je kamen",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          },
+          {
+            "Time": "2021-04-20T10:03:04.6063076+02:00",
+            "Comment": "izvestaj123",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Dana Dimitrijevic"
+          }
+        ],
+        "Prescription": [
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 3,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "panklav",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-04-22T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234565,
+            "isActive": false,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "analgin",
+              "Manufacturer": null,
+              "Packaging": null,
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Milena Jovanovic",
+      "Appointment": [],
+      "Username": "fgjcj",
+      "Password": "dfgh",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "5406504526555",
+      "DateOfBirth": "1900-01-01T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "654216",
+      "Adress": "hgyhv hvjg",
+      "Email": "ghcd@wdfgh",
+      "IdCard": "154261",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "PatientName": "Milena Jovanovic",
+    "RoomName": "1",
+    "DoctorName": "Dana Dimitrijevic"
   }
 ]

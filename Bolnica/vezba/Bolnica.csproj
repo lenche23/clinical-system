@@ -85,6 +85,9 @@
     <Compile Include="AppointmentHistory.xaml.cs">
       <DependentUpon>AppointmentHistory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Calendar.xaml.cs">
+      <DependentUpon>Calendar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CalendarView.xaml.cs">
       <DependentUpon>CalendarView.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,9 @@
     </Compile>
     <Compile Include="ChangeAppointmentView.xaml.cs">
       <DependentUpon>ChangeAppointmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAppointment.xaml.cs">
+      <DependentUpon>CreateAppointment.xaml</DependentUpon>
     </Compile>
     <Compile Include="CreateAppointmentPage.xaml.cs">
       <DependentUpon>CreateAppointmentPage.xaml</DependentUpon>
@@ -285,6 +291,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Calendar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CalendarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -298,6 +308,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ChangeAppointmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
