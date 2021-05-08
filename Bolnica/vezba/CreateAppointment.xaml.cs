@@ -90,11 +90,8 @@ namespace vezba
             aps.Save(appointment);
             dw.Main.GoBack();
 
-            if (calendar.AddAppointmentToCurrentView(appointment))
-            {
-                calendar.ShowAppointment(appointment);
-                calendar.SetScrollViewerToFirstAppointment();
-            }
+            calendar.AddAppointmentToCurrentView(appointment);
+
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)

@@ -78,11 +78,7 @@ namespace vezba
             AppointmentStorage aps = new AppointmentStorage();
             aps.Update(appointment);
             calendar.RemoveAppointment(appointmentGrid);
-            if (calendar.AddAppointmentToCurrentView(appointment))
-            {
-                calendar.ShowAppointment(appointment);
-                calendar.SetScrollViewerToFirstAppointment();
-            }
+            calendar.AddAppointmentToCurrentView(appointment);
 
             dw.Main.GoBack();
         }

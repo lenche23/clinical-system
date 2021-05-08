@@ -216,7 +216,11 @@ namespace vezba
 
             foreach (var appointment in appointmentStorage.GetAll())
             {
-                AddAppointmentToCurrentView(appointment);
+                if (DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
+                    DateTime.Compare(appointment.StartTime, endOfWeek) < 0 && appointment.Doctor.Jmbg.Equals(selectedDoctor.Jmbg))
+                {
+                    appointments.Add(appointment);
+                }
             }
         }
 
@@ -326,16 +330,15 @@ namespace vezba
             SetScrollViewerToFirstAppointment();
         }
 
-        public Boolean AddAppointmentToCurrentView(Appointment appointment)
+        public void AddAppointmentToCurrentView(Appointment appointment)
         {
             if (DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
                 DateTime.Compare(appointment.StartTime, endOfWeek) < 0 && appointment.Doctor.Jmbg.Equals(selectedDoctor.Jmbg))
             {
                 appointments.Add(appointment);
-                return true;
+                ShowAppointment(appointment);
+                SetScrollViewerToFirstAppointment();
             }
-
-            return false;
         }
     }
 }
