@@ -320,6 +320,7 @@ namespace vezba
             SetScrollViewerToFirstAppointment();
         }
 
+        /*
         private void SelectedDoctorChanged(object sender, SelectionChangedEventArgs e)
         {
             timeDockPanel.Children.Remove(dynamicGrid);
@@ -329,7 +330,7 @@ namespace vezba
             timeDockPanel.Children.Add(dynamicGrid);
             SetScrollViewerToFirstAppointment();
         }
-
+        */
         public void AddAppointmentToCurrentView(Appointment appointment)
         {
             if (DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
