@@ -7,23 +7,88 @@
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="MedicinePage">
-
-    <Grid Margin="0,0,-8,-11">
-        <Label Margin="344,54,341,318" FontSize="28">Lekovi</Label>
-        <ListView Name="MedicineBinding" Margin="149,117,161,110">
+    <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="18*"></RowDefinition>
+                <RowDefinition Height="57*"></RowDefinition>
+                <RowDefinition Height="25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Background="#FFF3EEEE" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" ></ColumnDefinition>
+                    <ColumnDefinition Width="23*" ></ColumnDefinition>
+                    <ColumnDefinition Width="21*" ></ColumnDefinition>
+                    <ColumnDefinition Width="28*" ></ColumnDefinition>
+                    <ColumnDefinition Width="22*" ></ColumnDefinition>
+                    <ColumnDefinition Width="18*" ></ColumnDefinition>
+                    <ColumnDefinition Width="18*" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="5,10" FontSize="20" Foreground="DarkOrange" Background="White" Click="ButtonMainClick" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Početna
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="1" Margin="5, 10" FontSize="20" Foreground="DarkOrange" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Prostorije
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="2" Margin="5, 10" FontSize="20" Foreground="DarkOrange" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Inventar
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="3" Margin="5, 10" FontSize="20" Foreground="DarkOrange" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Snabdevanje
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="4" Margin="5, 10" FontSize="20" Foreground="DarkOrange" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Zaposleni
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="5" Margin="5, 10" FontSize="20" Foreground="DarkOrange" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Ankete
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="6" Margin="5, 10" FontSize="20" Foreground="DarkOrange" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Lekovi
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Label Grid.Row="1"  FontSize="28" Margin="320,26,320,10">Lekovi</Label>
+        <ListView FontSize ="20" Grid.Row="2" Name="MedicineBinding" Margin="70,10,70,20">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding MedicineID}" />
-                    <GridViewColumn Header="Naziv leka" Width="120" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Proizvođač" Width="120" DisplayMemberBinding="{Binding Manufacturer}" />
-                    <GridViewColumn Header="Status" Width="120" DisplayMemberBinding="{Binding Status}" />
+                    <GridViewColumn Header="ID" Width="140" DisplayMemberBinding="{Binding MedicineID}" />
+                    <GridViewColumn Header="Naziv leka" Width="140" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Proizvođač" Width="185" DisplayMemberBinding="{Binding Manufacturer}" />
+                    <GridViewColumn Header="Status" Width="140" DisplayMemberBinding="{Binding Status}" />
                 </GridView>
             </ListView.View>
         </ListView>
 
-        <Button Margin="149,339,552,50" Click="Add_Medicine_Button_Click" Background="#FFBBEAB6">Dodaj nov lek</Button>
-        <Button Margin="255,339,447,50" Click="Remove_Medicine_Button_Click" Background="#FFBBEAB6">Ukloni lek</Button>
-        <Button Margin="361,339,341,50" Click="Detail_Medicine_Button_Click" Background="#FFBBEAB6">Detaljan prikaz</Button>
+        <Button Grid.Row="3" Click="Add_Medicine_Button_Click" Background="#FFBBEAB6" Margin="70,16,495,62">Dodaj nov lek</Button>
+        <Button Grid.Row="3" Click="Remove_Medicine_Button_Click" Background="#FFBBEAB6" Margin="293,16,285,62">Ukloni lek</Button>
+        <Button Grid.Row="3" Click="Detail_Medicine_Button_Click" Background="#FFBBEAB6" Margin="515,16,70,62">Detaljan prikaz</Button>
 
     </Grid>
 </Page>

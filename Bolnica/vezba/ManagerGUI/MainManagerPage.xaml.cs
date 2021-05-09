@@ -36,17 +36,17 @@ namespace vezba.ManagerGUI
 
         private void ButtonMedicineClick(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new MedicinePage();
+            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
         }
 
         private void ButtonInventoryClick(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new InventoryPage();
+            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
         }
 
         private void ButtonRoomsClick(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new RoomsPage();
+            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
         }
 
         private void ButtonStaffClick(object sender, RoutedEventArgs e)

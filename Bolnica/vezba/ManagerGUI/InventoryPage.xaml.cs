@@ -25,16 +25,17 @@ namespace vezba.ManagerGUI
         public static ObservableCollection<Equipment> EquipmentList { get; set; }
         public static List<Equipment> equipmentList;
         private EquipmentStorage storage;
+        private MainManagerWindow mainManagerWindow;
 
-        public InventoryPage()
+        public InventoryPage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
             this.DataContext = this;
+            this.mainManagerWindow = mainManagerWindow;
             storage = new EquipmentStorage();
-            EquipmentList = new ObservableCollection<Equipment>(storage.GetAll());
+            equipmentList = storage.GetAll();
+            EquipmentList = new ObservableCollection<Equipment>(equipmentList);
             InventaryBinding.ItemsSource = EquipmentList;
-
-
 
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(InventaryBinding.ItemsSource);
             view.Filter = EquipmentFilter;
@@ -42,8 +43,8 @@ namespace vezba.ManagerGUI
 
         private void Add_Equipment_Button_Click(object sender, RoutedEventArgs e)
         {
-            var s = new InventaryAddEquipment();
-            s.Show();
+            //mainManagerWindow.MainManagerView.Content = new InventoryAddEquipmentPage();
+            //equipmentList = storage.GetAll();
         }
 
         private void Remove_Equipment_Button_Click(object sender, RoutedEventArgs e)
@@ -51,8 +52,8 @@ namespace vezba.ManagerGUI
             if (InventaryBinding.SelectedIndex > -1)
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
-                EquipmentStorage es = new EquipmentStorage();
-                es.Delete(equipment.Id);
+                storage.Delete(equipment.Id);
+                equipmentList = storage.GetAll();
                 EquipmentList.Remove(equipment);
             }
 
@@ -67,6 +68,7 @@ namespace vezba.ManagerGUI
             if (InventaryBinding.SelectedIndex > -1)
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
+                //mainManagerWindow.MainManagerView.Content = new InventoryViewEquipmentPage(equipment);
                 var s = new InventaryViewEquipment(equipment);
                 s.Show();
             }
@@ -82,6 +84,7 @@ namespace vezba.ManagerGUI
             if (InventaryBinding.SelectedIndex > -1)
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
+                //mainManagerWindow.MainManagerView.Content = new InventoryViewEquipmentPage(equipment);
                 //var s = new InventaryChangeEquipment(equipment, this);
                 //s.Show();
             }
@@ -98,13 +101,17 @@ namespace vezba.ManagerGUI
             if (EquipmentList != null)
             {
                 if (CheckedBoxStatic.IsChecked == true)
+
                 {
-                    foreach (Equipment equipment in storage.GetAll())
+                    if (equipmentList != null)
                     {
-                        if (equipment.Type == EquipmentType.statical)
+                        foreach (Equipment equipment in equipmentList)
                         {
-                            EquipmentList.Add(equipment);
-                            InventaryBinding.Items.Refresh();
+                            if (equipment.Type == EquipmentType.statical)
+                            {
+                                EquipmentList.Add(equipment);
+                                InventaryBinding.Items.Refresh();
+                            }
                         }
                     }
                 }
@@ -117,7 +124,8 @@ namespace vezba.ManagerGUI
             {
                 if (CheckedBoxDinamic.IsChecked == true)
                 {
-                    foreach (Equipment equipment in storage.GetAll())
+
+                    foreach (Equipment equipment in equipmentList)
                     {
                         if (equipment.Type == EquipmentType.dinamical)
                         {
@@ -150,7 +158,7 @@ namespace vezba.ManagerGUI
             {
                 if (CheckedBoxStatic.IsChecked == false)
                 {
-                    foreach (Equipment equipment in storage.GetAll())
+                    foreach (Equipment equipment in equipmentList)
                     {
                         if (equipment.Type == EquipmentType.statical)
                         {
@@ -174,7 +182,7 @@ namespace vezba.ManagerGUI
             {
                 if (CheckedBoxDinamic.IsChecked == false)
                 {
-                    foreach (Equipment equipment in storage.GetAll())
+                    foreach (Equipment equipment in equipmentList)
                     {
                         if (equipment.Type == EquipmentType.dinamical)
                         {
@@ -193,6 +201,11 @@ namespace vezba.ManagerGUI
         }
 
         private void ButtonBackClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }

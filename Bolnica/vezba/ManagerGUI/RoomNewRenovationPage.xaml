@@ -1,0 +1,20 @@
+﻿<Page x:Class="vezba.ManagerGUI.RoomNewRenovationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba.ManagerGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="570" d:DesignWidth="750"
+      Title="RoomNewRenovationPage">
+    <Grid>
+        <Label Content="Zakazivanje renoviranja"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="163,25,132,350"/>
+        <Label Name="BrojProstorije" Content="Prostorija: " Margin="173,69,172,469" FontSize="14"></Label>
+        <Label Content="Početni datum:" Margin="125,106,264,276"/>
+        <Label Content="Predviđeno trajanje:" Margin="100,148,264,237" />
+        <TextBox Name="PocetniDatum" Margin="233,106,278,427" RenderTransformOrigin="0.491,0.484" />
+        <TextBox Name="Trajanje" RenderTransformOrigin="0.491,0.484" Margin="233,148,278,380" />
+        <Button Click="OkButtonClick" Margin="92,264,480,250">Potvrdi</Button>
+        <Button Click="CancelButtonClick" Margin="472,264,94,250">Odustani</Button>
+    </Grid>
+</Page>

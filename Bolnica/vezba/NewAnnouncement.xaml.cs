@@ -39,7 +39,7 @@ namespace vezba
             int id = ast.generateNextId();
             DateTime po = DateTime.Today;
             DateTime ed = DateTime.Today;
-            String con = Content.Text;
+            String con = ContentTextBox.Text;
             String tit = Title.Text;
             Model.Visibility vis = Model.Visibility.all;
             if(Visibility.SelectedIndex == 1)

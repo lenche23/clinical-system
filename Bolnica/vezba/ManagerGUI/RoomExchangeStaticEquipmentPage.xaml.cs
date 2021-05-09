@@ -16,9 +16,9 @@ using System.Windows.Shapes;
 using System.Timers;
 using System.Threading;
 
-namespace vezba
+namespace vezba.ManagerGUI
 {
-    public partial class WindowExchangeStaticEquipment : Window
+    public partial class RoomExchangeStaticEquipmentPage : Page
     {
         private RoomInventory roomInventory;
         private Room room;
@@ -29,7 +29,7 @@ namespace vezba
         private int desiredRoomItemQuantity;
         private RoomInventoryStorage roomInventoryStorage;
 
-        public WindowExchangeStaticEquipment(RoomInventory roomInventory, Room room)
+        public RoomExchangeStaticEquipmentPage(RoomInventory roomInventory, Room room)
         {
             InitializeComponent();
             this.roomInventory = roomInventory;
@@ -60,7 +60,7 @@ namespace vezba
             SaveNewRoomInventory(currentRoomItemQuantity, room);
             SaveNewRoomInventory(desiredRoomItemQuantity, roomEntry);
 
-            this.Close();
+            //this.Close();
         }
 
         private void SaveNewRoomInventory(int newItemQuantity, Room roomEntry)
@@ -95,7 +95,7 @@ namespace vezba
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         public Boolean Validate(Room roomEntry)

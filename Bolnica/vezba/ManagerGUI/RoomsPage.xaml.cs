@@ -26,11 +26,12 @@ namespace vezba.ManagerGUI
         public static ObservableCollection<Room> Rooms { get; set; }
         public static List<Room> rooms;
         private RoomStorage storage;
-
-        public RoomsPage()
+        private MainManagerWindow mainManagerWindow;
+        public RoomsPage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
             this.DataContext = this;
+            this.mainManagerWindow = mainManagerWindow;
             storage = new RoomStorage();
             rooms = storage.GetAll();
             Rooms = new ObservableCollection<Room>(rooms);

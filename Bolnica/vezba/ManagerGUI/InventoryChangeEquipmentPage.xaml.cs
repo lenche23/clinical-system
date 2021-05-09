@@ -13,16 +13,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace vezba
+namespace vezba.ManagerGUI
 {
-    /// <summary>
-    /// Interaction logic for InventaryChangeEquipment.xaml
-    /// </summary>
-    public partial class InventaryChangeEquipment : Window
+    public partial class InventoryChangeEquipmentPage : Page
     {
         private Equipment equipment;
         private Inventary inventary;
-        public InventaryChangeEquipment(Equipment equipment, Inventary inventary)
+        public InventoryChangeEquipmentPage(Equipment equipment, Inventary inventary)
         {
             InitializeComponent();
             this.equipment = equipment;
@@ -57,12 +54,12 @@ namespace vezba
             inventary.InventaryBinding.Items.Refresh();
             EquipmentStorage es = new EquipmentStorage();
             es.Update(equipment);
-            this.Close();
+            //this.Close();
         }
 
         private void Cancel_Change_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
     }
 }

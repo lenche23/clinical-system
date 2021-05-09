@@ -1,0 +1,22 @@
+﻿<Page x:Class="vezba.ManagerGUI.InventoryAddEquipmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba.ManagerGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="570" d:DesignWidth="750"
+      Title="InventaryAddEquipment" Background="#FFFFC1A4">
+    <Grid Margin="0,0,7,6">
+        <Label Content="Dodavanje nove opreme "  FontSize="18" FontFamily="Myriad Pro Cond" Margin="115,40,84,368"/>
+        <Label Content="Naziv opreme:" Margin="93,124,518,409"/>
+        <Label Content="Tip opreme:" Margin="104,194,562,324" />
+        <TextBox Name="NazivOpreme" Margin="190,124,95,409" RenderTransformOrigin="0.491,0.484" />
+        <Button Click="Approve_Add_Button_Click" Margin="115,325,372,190">Potvrdi</Button>
+        <Button Click="Cancel_Add_Button_Click" Margin="387,325,84,190">Odustani</Button>
+
+        <RadioButton Name ="Statička" GroupName="TipOpreme" Content="Statička" Margin="186,200,463,324"></RadioButton>
+        <RadioButton Name ="Dinamička" GroupName="TipOpreme" Content="Dinamička" Margin="300,201,313,323"></RadioButton>
+
+    </Grid>
+</Page>

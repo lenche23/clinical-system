@@ -25,11 +25,12 @@ namespace vezba.ManagerGUI
         public static ObservableCollection<Medicine> MedicineList { get; set; }
         public static List<Medicine> medicineList;
         private MedicineStorage medicineStorage;
-
-        public MedicinePage()
+        private MainManagerWindow mainManagerWindow;
+        public MedicinePage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
             this.DataContext = this;
+            this.mainManagerWindow = mainManagerWindow;
             medicineStorage = new MedicineStorage();
             medicineList = medicineStorage.GetAll();
             MedicineList = new ObservableCollection<Medicine>(medicineList);
@@ -71,6 +72,11 @@ namespace vezba.ManagerGUI
             {
                 MessageBox.Show("Ni jedan lek nije selektovan!");
             }
+        }
+
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }
