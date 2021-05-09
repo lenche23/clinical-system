@@ -117,8 +117,14 @@
     <Compile Include="CreateReferralLetterPage.xaml.cs">
       <DependentUpon>CreateReferralLetterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DeclinedMedicineWindow.xaml.cs">
+      <DependentUpon>DeclinedMedicineWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DeclineMedicinePage.xaml.cs">
       <DependentUpon>DeclineMedicinePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DetailDeclinedMedicineWindow.xaml.cs">
+      <DependentUpon>DetailDeclinedMedicineWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
@@ -134,6 +140,9 @@
     </Compile>
     <Compile Include="EditMedicinePage.xaml.cs">
       <DependentUpon>EditMedicinePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditMedicineWindow.xaml.cs">
+      <DependentUpon>EditMedicineWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditPatient.xaml.cs">
       <DependentUpon>EditPatient.xaml</DependentUpon>
@@ -515,7 +524,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DeclinedMedicineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DeclineMedicinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DetailDeclinedMedicineWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -536,6 +553,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditMedicinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditMedicineWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

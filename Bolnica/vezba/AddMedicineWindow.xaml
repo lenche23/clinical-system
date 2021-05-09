@@ -19,9 +19,12 @@
             </ListView.View>
         </ListView>
 
-        <Button Margin="149,339,552,50" Click="Add_Medicine_Button_Click" Background="#FFBBEAB6"> Dodaj nov lek </Button>
-        <Button Margin="255,339,447,50" Click="Remove_Medicine_Button_Click" Background="#FFBBEAB6"> Ukloni lek </Button>
-        <Button Margin="361,339,341,50" Click="Detail_Medicine_Button_Click" Background="#FFBBEAB6"> Detaljan prikaz </Button>
+        <Button Margin="149,339,550,50" Click="Add_Medicine_Button_Click" Background="#FFBBEAB6"> Dodaj nov lek </Button>
+        <Button Margin="505,339,198,50" Click="Remove_Medicine_Button_Click" Background="#FFBBEAB6"> Ukloni lek </Button>
+        <Button Margin="270,339,432,50" Click="Detail_Medicine_Button_Click" Background="#FFBBEAB6"> Detaljan prikaz </Button>
+        <Button Margin="615,54,87,335" Click="Declined_Medicine_Button_Click" Background="#FFBBEAB6"> Odbijeni lekovi</Button>
+        <Button Margin="387,339,315,50" Click="Edit_Medicine_Button_Click" Background="#FFBBEAB6">Izmeni lek</Button>
+
 
     </Grid>
 </Window>

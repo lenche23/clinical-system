@@ -33,7 +33,15 @@ namespace vezba
             this.DataContext = this;
             MedicineStorage ms = new MedicineStorage();
             List<Medicine> medicineList = ms.GetAll();
-            comboReplacementMedicine.ItemsSource = medicineList;
+            List<Medicine> temporary = new List<Medicine>();
+            for (int i = 0; i < medicineList.Count; i++)
+            {
+                if (medicineList[i].Status == MedicineStatus.approved)
+                {
+                    temporary.Add(medicineList[i]);
+                }
+            }
+            comboReplacementMedicine.ItemsSource = temporary;
             List<string> condition = new List<string> { "Kapsula", "Pilula", "Sirup" };
             comboCondition.ItemsSource = condition;
             newMedicine = new Medicine("Naziv", "Naziv", "Naziv", 0, MedicineCondition.pill);

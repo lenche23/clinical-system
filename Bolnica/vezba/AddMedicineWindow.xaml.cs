@@ -71,5 +71,26 @@ namespace vezba
                 MessageBox.Show("Ni jedan lek nije selektovan!");
             }
         }
+
+        private void Declined_Medicine_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new DeclinedMedicineWindow();
+            s.Show();
+        }
+
+        private void Edit_Medicine_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (MedicineBinding.SelectedIndex > -1)
+            {
+                Medicine medicine = (Medicine)MedicineBinding.SelectedItems[0];
+                var s = new EditMedicineWindow(medicine);
+                s.Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Ni jedan lek nije selektovan!");
+            }
+        }
     }
 }
