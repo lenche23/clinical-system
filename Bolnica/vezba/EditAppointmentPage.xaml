@@ -50,8 +50,8 @@
             <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right">Soba:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Top">Lekar:</TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
-                <Button DockPanel.Dock="Left" Padding="5" Margin="5" Click="OkButtonClick" Height="30" Width="100" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Potvrdi</Button>
-                <Button DockPanel.Dock="Right" Padding="5" Margin="5" Click="CancelButtonClick" Height="30" Width="100" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Odustani</Button>
+                <Button Padding="5" Margin="5" Click="OkButtonClick" Height="30" Width="100" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Potvrdi</Button>
+                <Button Padding="5" Margin="5" Click="CancelButtonClick" Height="30" Width="100" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Odustani</Button>
             </StackPanel>
 
             <CheckBox Grid.Column="1" Grid.Row="1" Name="IsEmergencyCB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" IsChecked="{Binding Selected.IsEmergency}"/>

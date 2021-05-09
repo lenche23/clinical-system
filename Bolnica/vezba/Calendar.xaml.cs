@@ -30,7 +30,6 @@ namespace vezba
         public List<Doctor> Doctors { get; set; }
         private Doctor selectedDoctor;
         private ScrollViewer scrollViewer;
-        private bool disableComboBox;
         private TextBlock mondayBlock;
         private TextBlock tuesdayBlock;
         private TextBlock wednesdayBlock;
@@ -45,20 +44,125 @@ namespace vezba
             this.doctorView = doctorView;
             DoctorStorage doctorStorage = new DoctorStorage();
             Doctors = doctorStorage.GetAll();
-            selectedDoctor = doctorView.DoctorUser;
-            disableComboBox = true;
-            if (selectedDoctor != null && selectedDoctor.Jmbg != null)
-                DoctorsComboBox.SelectedValue = selectedDoctor.Jmbg;
             DataContext = this;
-            disableComboBox = false;
 
-            startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + 1);
+            var dayOfWeekToday = (6 + (int) DateTime.Today.DayOfWeek) % 7;
+            startOfWeek = DateTime.Today.AddDays(-dayOfWeekToday);
             endOfWeek = startOfWeek.AddDays(7);
 
             CreateSchedule();
 
-            timeDockPanel = new DockPanel();
+            /*GenerateAppointmentsForSelectedWeek();
 
+            foreach (var appointment in appointments)
+            {
+                ShowAppointment(appointment);
+            }*/
+
+            var timeGrid = CreateTimeGrid();
+
+            timeDockPanel = new DockPanel();
+            DockPanel.SetDock(timeGrid, Dock.Left);
+            timeDockPanel.Children.Add(timeGrid);
+            timeDockPanel.Children.Add(dynamicGrid);
+
+            scrollViewer = new ScrollViewer();
+            scrollViewer.Content = timeDockPanel;
+            //SetScrollViewerToFirstAppointment();
+
+            var daysOfWeekBorder = CreateDaysOfWeekBorder();
+
+            DockPanel daysOfWeekDockPanel = new DockPanel();
+            DockPanel.SetDock(daysOfWeekBorder, Dock.Top);
+            daysOfWeekDockPanel.Children.Add(daysOfWeekBorder);
+            daysOfWeekDockPanel.Children.Add(scrollViewer);
+            CalendarGrid.Children.Add(daysOfWeekDockPanel);
+
+            selectedDoctor = doctorView.DoctorUser;
+            if (selectedDoctor != null && selectedDoctor.Jmbg != null)
+                DoctorsComboBox.SelectedValue = selectedDoctor.Jmbg;
+        }
+
+        private Border CreateDaysOfWeekBorder()
+        {
+            Grid daysOfWeekGrid = new Grid();
+            daysOfWeekGrid.Height = 50;
+
+            Border daysOfWeekBorder = new Border();
+            daysOfWeekBorder.BorderThickness = new Thickness(0, 0, 0, 1);
+            daysOfWeekBorder.BorderBrush = Brushes.Gray;
+
+            daysOfWeekGrid.ColumnDefinitions.Add(new ColumnDefinition() {Width = new GridLength(50)});
+
+            for (int i = 0; i < 7; i++)
+            {
+                daysOfWeekGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+
+            mondayBlock = new TextBlock();
+            mondayBlock.HorizontalAlignment = HorizontalAlignment.Center;
+            mondayBlock.VerticalAlignment = VerticalAlignment.Bottom;
+            mondayBlock.Foreground = Brushes.DimGray;
+            mondayBlock.TextTrimming = TextTrimming.CharacterEllipsis;
+            Grid.SetColumn(mondayBlock, 1);
+            daysOfWeekGrid.Children.Add(mondayBlock);
+
+            tuesdayBlock = new TextBlock();
+            tuesdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
+            tuesdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
+            tuesdayBlock.Foreground = Brushes.DimGray;
+            tuesdayBlock.TextTrimming = TextTrimming.CharacterEllipsis;
+            Grid.SetColumn(tuesdayBlock, 2);
+            daysOfWeekGrid.Children.Add(tuesdayBlock);
+
+            wednesdayBlock = new TextBlock();
+            wednesdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
+            wednesdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
+            wednesdayBlock.Foreground = Brushes.DimGray;
+            wednesdayBlock.TextTrimming = TextTrimming.CharacterEllipsis;
+            Grid.SetColumn(wednesdayBlock, 3);
+            daysOfWeekGrid.Children.Add(wednesdayBlock);
+
+            thursdayBlock = new TextBlock();
+            thursdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
+            thursdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
+            thursdayBlock.Foreground = Brushes.DimGray;
+            thursdayBlock.TextTrimming = TextTrimming.CharacterEllipsis;
+            Grid.SetColumn(thursdayBlock, 4);
+            daysOfWeekGrid.Children.Add(thursdayBlock);
+
+            fridayBlock = new TextBlock();
+            fridayBlock.HorizontalAlignment = HorizontalAlignment.Center;
+            fridayBlock.VerticalAlignment = VerticalAlignment.Bottom;
+            fridayBlock.Foreground = Brushes.DimGray;
+            fridayBlock.TextTrimming = TextTrimming.CharacterEllipsis;
+            Grid.SetColumn(fridayBlock, 5);
+            daysOfWeekGrid.Children.Add(fridayBlock);
+
+            saturdayBlock = new TextBlock();
+            saturdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
+            saturdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
+            saturdayBlock.Foreground = Brushes.DimGray;
+            saturdayBlock.TextTrimming = TextTrimming.CharacterEllipsis;
+            Grid.SetColumn(saturdayBlock, 6);
+            daysOfWeekGrid.Children.Add(saturdayBlock);
+
+            sundayBlock = new TextBlock();
+            sundayBlock.HorizontalAlignment = HorizontalAlignment.Center;
+            sundayBlock.VerticalAlignment = VerticalAlignment.Bottom;
+            sundayBlock.Foreground = Brushes.DimGray;
+            sundayBlock.TextTrimming = TextTrimming.CharacterEllipsis;
+            Grid.SetColumn(sundayBlock, 7);
+            daysOfWeekGrid.Children.Add(sundayBlock);
+
+            UpdateDateIndicators();
+
+            daysOfWeekBorder.Child = daysOfWeekGrid;
+            return daysOfWeekBorder;
+        }
+
+        private static Grid CreateTimeGrid()
+        {
             Grid timeGrid = new Grid();
             timeGrid.Height = 3000;
             timeGrid.Width = 50;
@@ -78,94 +182,7 @@ namespace vezba
                 timeGrid.Children.Add(timeBlock);
             }
 
-            DockPanel.SetDock(timeGrid, Dock.Left);
-            timeDockPanel.Children.Add(timeGrid);
-            timeDockPanel.Children.Add(dynamicGrid);
-
-            scrollViewer = new ScrollViewer();
-            scrollViewer.Content = timeDockPanel;
-            SetScrollViewerToFirstAppointment();
-
-            DockPanel daysOfWeekDockPanel = new DockPanel();
-
-            Grid daysOfWeekGrid = new Grid();
-            daysOfWeekGrid.Height = 50;
-
-            Border daysOfWeekBorder = new Border();
-            daysOfWeekBorder.BorderThickness = new Thickness(0, 0, 0, 1);
-            daysOfWeekBorder.BorderBrush = Brushes.Gray;
-
-            daysOfWeekGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50) });
-
-            for (int i = 0; i < 7; i++)
-            {
-                daysOfWeekGrid.ColumnDefinitions.Add(new ColumnDefinition());
-            }
-
-            mondayBlock = new TextBlock();
-            mondayBlock.HorizontalAlignment = HorizontalAlignment.Center;
-            mondayBlock.VerticalAlignment = VerticalAlignment.Bottom;
-            mondayBlock.FontSize = 14;
-            mondayBlock.Foreground = Brushes.DimGray;
-            Grid.SetColumn(mondayBlock, 1);
-            daysOfWeekGrid.Children.Add(mondayBlock);
-
-            tuesdayBlock = new TextBlock();
-            tuesdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
-            tuesdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
-            tuesdayBlock.FontSize = 14;
-            tuesdayBlock.Foreground = Brushes.DimGray;
-            Grid.SetColumn(tuesdayBlock, 2);
-            daysOfWeekGrid.Children.Add(tuesdayBlock);
-
-            wednesdayBlock = new TextBlock();
-            wednesdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
-            wednesdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
-            wednesdayBlock.FontSize = 14;
-            wednesdayBlock.Foreground = Brushes.DimGray;
-            Grid.SetColumn(wednesdayBlock, 3);
-            daysOfWeekGrid.Children.Add(wednesdayBlock);
-
-            thursdayBlock = new TextBlock();
-            thursdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
-            thursdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
-            thursdayBlock.FontSize = 14;
-            thursdayBlock.Foreground = Brushes.DimGray;
-            Grid.SetColumn(thursdayBlock, 4);
-            daysOfWeekGrid.Children.Add(thursdayBlock);
-
-            fridayBlock = new TextBlock();
-            fridayBlock.HorizontalAlignment = HorizontalAlignment.Center;
-            fridayBlock.VerticalAlignment = VerticalAlignment.Bottom;
-            fridayBlock.FontSize = 14;
-            fridayBlock.Foreground = Brushes.DimGray;
-            Grid.SetColumn(fridayBlock, 5);
-            daysOfWeekGrid.Children.Add(fridayBlock);
-
-            saturdayBlock = new TextBlock();
-            saturdayBlock.HorizontalAlignment = HorizontalAlignment.Center;
-            saturdayBlock.VerticalAlignment = VerticalAlignment.Bottom;
-            saturdayBlock.FontSize = 14;
-            saturdayBlock.Foreground = Brushes.DimGray;
-            Grid.SetColumn(saturdayBlock, 6);
-            daysOfWeekGrid.Children.Add(saturdayBlock);
-
-            sundayBlock = new TextBlock();
-            sundayBlock.HorizontalAlignment = HorizontalAlignment.Center;
-            sundayBlock.VerticalAlignment = VerticalAlignment.Bottom;
-            sundayBlock.FontSize = 14;
-            sundayBlock.Foreground = Brushes.DimGray;
-            Grid.SetColumn(sundayBlock, 7);
-            daysOfWeekGrid.Children.Add(sundayBlock);
-
-            UpdateDateIndicators();
-
-            daysOfWeekBorder.Child = daysOfWeekGrid;
-
-            DockPanel.SetDock(daysOfWeekBorder, Dock.Top);
-            daysOfWeekDockPanel.Children.Add(daysOfWeekBorder);
-            daysOfWeekDockPanel.Children.Add(scrollViewer);
-            CalendarGrid.Children.Add(daysOfWeekDockPanel);
+            return timeGrid;
         }
 
         public void SetScrollViewerToFirstAppointment()
@@ -221,12 +238,12 @@ namespace vezba
                 }
             }
 
-            GenerateAppointmentsForSelectedWeek();
+            /*GenerateAppointmentsForSelectedWeek();
 
             foreach (var appointment in appointments)
             {
                 ShowAppointment(appointment);
-            }
+            }*/
         }
 
         private void GenerateAppointmentsForSelectedWeek()
@@ -326,6 +343,10 @@ namespace vezba
             UpdateDateIndicators();
             GenerateAppointmentsForSelectedWeek();
             CreateSchedule();
+            foreach (var appointment in appointments)
+            {
+                ShowAppointment(appointment);
+            }
             timeDockPanel.Children.Add(dynamicGrid);
             SetScrollViewerToFirstAppointment();
         }
@@ -357,6 +378,10 @@ namespace vezba
             UpdateDateIndicators();
             GenerateAppointmentsForSelectedWeek();
             CreateSchedule();
+            foreach (var appointment in appointments)
+            {
+                ShowAppointment(appointment);
+            }
             timeDockPanel.Children.Add(dynamicGrid);
             SetScrollViewerToFirstAppointment();
         }
@@ -364,12 +389,14 @@ namespace vezba
         
         private void SelectedDoctorChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(disableComboBox)
-                return;
             timeDockPanel.Children.Remove(dynamicGrid);
             selectedDoctor = (Doctor)DoctorsComboBox.SelectedItem;
             GenerateAppointmentsForSelectedWeek();
             CreateSchedule();
+            foreach (var appointment in appointments)
+            {
+                ShowAppointment(appointment);
+            }
             timeDockPanel.Children.Add(dynamicGrid);
             SetScrollViewerToFirstAppointment();
         }

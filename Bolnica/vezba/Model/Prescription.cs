@@ -1,20 +1,11 @@
 using System;
+using Newtonsoft.Json;
 
 namespace Model
 {
    public class Prescription
    {
-        public Prescription(int Id, DateTime StartDate, int DurationInDays, Period ReferencePeriod, int Number, Medicine Medicine)
-        {
-            this.Id = Id;
-            this.StartDate = StartDate;
-            this.DurationInDays = DurationInDays;
-            this.ReferencePeriod = ReferencePeriod;
-            this.Number = Number;
-            this.Medicine = Medicine;
-        }
-
-		public DateTime StartDate { get; set; }
+       public DateTime StartDate { get; set; }
         public int DurationInDays { get; set; }
         public Period ReferencePeriod { get; set; }
         public int Number { get; set; }
@@ -32,6 +23,15 @@ namespace Model
             this.Id = id;
             this.isActive = a;
             this.Medicine = m;
+        }
+
+        [JsonIgnore]
+        public String Consumption
+        {
+            get
+            {
+                return Number + " " + ((ReferencePeriod == Period.daily) ? "dnevno" : "meseèno");
+            }
         }
     }
 }
