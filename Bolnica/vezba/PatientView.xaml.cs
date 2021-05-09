@@ -146,7 +146,7 @@ namespace vezba
 
         private void Notifications_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            PatientMainPage.Navigate(new NotificationsPage(UserType.patient));
+            PatientMainPage.Navigate(new NotificationsPage(UserType.patient, Patient.Jmbg));
         }
 
         private void ButtonMore_Click(object sender, RoutedEventArgs e)

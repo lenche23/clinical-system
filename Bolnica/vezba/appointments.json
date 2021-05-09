@@ -1,8 +1,8 @@
 [
   {
-    "StartTime": "2021-05-13T09:00:00",
-    "DurationInMunutes": 30,
-    "ApointmentDescription": "Pregled",
+    "StartTime": "2021-05-14T09:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
     "AppointentId": 0,
     "IsDeleted": false,
     "Doctor": {
@@ -31,26 +31,36 @@
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
-          "DurationInDays": 4,
+          "DurationInDays": 2,
           "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-12-12T10:00:00",
+          "DurationInDays": 4,
+          "RenovationID": 2
         }
       ],
-      "RoomType": 2,
-      "RoomNumber": 2,
-      "RoomFloor": 1,
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
       "IsDeleted": false,
       "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
-          "DurationInDays": 4,
+          "DurationInDays": 2,
           "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-12-12T10:00:00",
+          "DurationInDays": 4,
+          "RenovationID": 2
         }
       ]
     },
     "Patient": {
       "appointment": null,
-      "IsBlocked": false,
+      "IsBlocked": true,
       "IsGuest": false,
       "EmergencyContact": "0638756221",
       "MedicalRecord": {
@@ -90,9 +100,115 @@
       "IsDeleted": false
     },
     "IsEmergency": false,
-    "EndTime": "2021-05-13T09:30:00",
+    "EndTime": "2021-05-14T09:15:00",
     "PatientName": "Petar Ilic",
-    "RoomName": "2",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-09T10:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 1,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-09T16:58:18.4271573+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "Capacity": 0,
+      "equipment": [],
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-12-12T10:00:00",
+          "DurationInDays": 4,
+          "RenovationID": 2
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Equipment": [],
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-12-12T10:00:00",
+          "DurationInDays": 4,
+          "RenovationID": 2
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "anamnesis": null,
+        "prescription": null,
+        "referralLetter": null,
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": [],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-05-14T10:45:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
     "DoctorName": "Darko Torbica"
   }
 ]

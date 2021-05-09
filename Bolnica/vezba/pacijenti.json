@@ -48,7 +48,7 @@
   },
   {
     "appointment": null,
-    "IsBlocked": false,
+    "IsBlocked": true,
     "IsGuest": false,
     "EmergencyContact": "0638756221",
     "MedicalRecord": {

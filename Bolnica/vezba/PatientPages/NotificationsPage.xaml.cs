@@ -20,12 +20,14 @@ namespace vezba.PatientPages
     public partial class NotificationsPage : Page
     {
         public static ObservableCollection<Announcement> Ans { get; set; }
-        public NotificationsPage(UserType ut)
+        public NotificationsPage(UserType ut, String jmbg)
         {
             InitializeComponent();
             this.DataContext = this;
             AnnouncementStorage s = new AnnouncementStorage();
             List<Announcement> announcements = s.GetByUser(ut);
+            announcements.AddRange(s.getIndividualAnnouncements(jmbg));
+
             Ans = new ObservableCollection<Announcement>(announcements);
         }
 
