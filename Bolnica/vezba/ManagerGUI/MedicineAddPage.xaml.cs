@@ -75,7 +75,7 @@ namespace vezba.ManagerGUI
             Medicine replacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
 
             MedicineStorage storage = new MedicineStorage();
-            int MedicineID = storage.generateNextId();
+            int MedicineID = storage.GenerateNextId();
 
             newMedicine = new Medicine(Name, Manufacturer, Packaging, MedicineID, Condition) { ReplacementMedicine = replacementMedicine };
 
