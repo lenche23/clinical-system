@@ -22,20 +22,23 @@ namespace vezba
     public partial class EditMedicineWindow : Window
     {
         private Medicine selected;
+        private MedicineStorage medicineStorage;
+        private AddMedicineWindow addMedicineWindow;
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
         public List<Ingridient> ingredientTemporaryList { get; set; }
-        public EditMedicineWindow(Medicine medicine)
+        public EditMedicineWindow(Medicine medicine, AddMedicineWindow addMedicineWindow)
         {
             InitializeComponent();
             selected = medicine;
             this.DataContext = selected;
+            this.addMedicineWindow = addMedicineWindow;
 
-            MedicineStorage ms = new MedicineStorage();
-            List<Medicine> medicineList = ms.GetAll();
+            medicineStorage = new MedicineStorage();
+            List<Medicine> medicineList = medicineStorage.GetAll();
             List<Medicine> temporary = new List<Medicine>();
             for (int i = 0; i < medicineList.Count; i++)
             {
-                if (medicineList[i].Status == MedicineStatus.approved)
+                if (medicineList[i].Status == MedicineStatus.approved && medicineList[i].Name != medicine.Name)
                 {
                     temporary.Add(medicineList[i]);
                 }
@@ -74,7 +77,7 @@ namespace vezba
                 {
                     if (temporary[i].Name == medicine.ReplacementMedicine.Name)
                     {
-                        comboCondition.SelectedIndex = i;
+                        comboReplacementMedicine.SelectedIndex = i;
                     }
                 }
             }
@@ -86,6 +89,30 @@ namespace vezba
 
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
+            selected.Name = nazivTB.Text;
+            selected.Manufacturer = proizvodjacTB.Text;
+            selected.Packaging = pakovanjeTB.Text;
+
+            if (comboCondition.SelectedIndex == 1)
+            {
+                selected.Condition = MedicineCondition.pill;
+            }
+
+            else if (comboCondition.SelectedIndex == 0)
+            {
+                selected.Condition = MedicineCondition.capsule;
+            }
+
+            else if (comboCondition.SelectedIndex == 2)
+            {
+                selected.Condition = MedicineCondition.syrup;
+            }
+
+            selected.ReplacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
+
+            
+            medicineStorage.Update(selected);
+            addMedicineWindow.MedicineBinding.Items.Refresh();
 
             this.Close();
         }

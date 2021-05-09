@@ -83,7 +83,7 @@ namespace vezba
             if (MedicineBinding.SelectedIndex > -1)
             {
                 Medicine medicine = (Medicine)MedicineBinding.SelectedItems[0];
-                var s = new EditMedicineWindow(medicine);
+                var s = new EditMedicineWindow(medicine, this);
                 s.Show();
             }
 

@@ -87,6 +87,7 @@ namespace vezba
             MedicineStorage storage = new MedicineStorage();
             int MedicineID = storage.GenerateNextId();
 
+            
             newMedicine = new Medicine(Name, Manufacturer, Packaging, MedicineID, Condition) { ReplacementMedicine = replacementMedicine };
 
             AddMedicineWindow.MedicineList.Add(newMedicine);
