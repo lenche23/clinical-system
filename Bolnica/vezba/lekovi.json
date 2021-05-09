@@ -24,7 +24,26 @@
     "Status": 0,
     "Condition": 0,
     "IsDeleted": false,
-    "ReplacementMedicine": null,
+    "ReplacementMedicine": {
+      "ingridient": [
+        {
+          "Name": "Trifolium pratense extractum siccum standardisatum"
+        }
+      ],
+      "Name": "Oestrofact",
+      "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+      "Packaging": "50 x 70 mg",
+      "MedicineID": 3,
+      "Status": 0,
+      "Condition": 1,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "Trifolium pratense extractum siccum standardisatum"
+        }
+      ]
+    },
     "Ingridient": [
       {
         "Name": "SilicijumDioksid"
@@ -40,38 +59,6 @@
       },
       {
         "Name": "Eritrozin (E127)"
-      }
-    ]
-  },
-  {
-    "ingridient": [
-      {
-        "Name": "Acetilsalicilna kiselina"
-      },
-      {
-        "Name": "Skrob, kukuruzni"
-      },
-      {
-        "Name": "Trietil-citrat"
-      }
-    ],
-    "Name": "Aspirin",
-    "Manufacturer": "Bayer Bitterfeld GmbH ",
-    "Packaging": "30 x 100mg",
-    "MedicineID": 2,
-    "Status": 1,
-    "Condition": 0,
-    "IsDeleted": true,
-    "ReplacementMedicine": null,
-    "Ingridient": [
-      {
-        "Name": "Acetilsalicilna kiselina"
-      },
-      {
-        "Name": "Skrob, kukuruzni"
-      },
-      {
-        "Name": "Trietil-citrat"
       }
     ]
   },

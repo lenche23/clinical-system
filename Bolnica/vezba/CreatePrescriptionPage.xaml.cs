@@ -110,7 +110,8 @@ namespace vezba
             var referencePeriod = (CmbPeriod.SelectedIndex == 0) ? Period.daily : Period.weekly;
             var number = int.Parse(TbNumber.Text);
             var selectedMedicine = (Medicine) CmbMedicine.SelectedItem;
-            _newPrescription = new Prescription(id, startDate, durationInDays, referencePeriod, number, selectedMedicine);
+            _newPrescription =
+                new Prescription(startDate, durationInDays, referencePeriod, number, id, true, selectedMedicine);
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)

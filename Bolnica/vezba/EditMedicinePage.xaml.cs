@@ -23,7 +23,7 @@ namespace vezba
     {
         public Medicine Medicine { get; set; }
 
-        public List<Medicine> AllMedicine { get; set; }
+        public List<Medicine> MedicineForReplacement { get; set; }
 
         private MedicineStorage MedStorage;
 
@@ -55,7 +55,16 @@ namespace vezba
             Ingredients = new List<Ingridient>(medicine.ingridient);
             listViewAllergens.ItemsSource = Ingredients;
             MedStorage = new MedicineStorage();
-            AllMedicine = MedStorage.GetApproved();
+            MedicineForReplacement = MedStorage.GetApproved();
+            foreach (var replacement in MedicineForReplacement)
+            {
+                if (replacement.MedicineID == Medicine.MedicineID)
+                {
+                    MedicineForReplacement.Remove(replacement);
+                    break;
+                }
+            }
+
             if (medicine.ReplacementMedicine != null)
                 ReplacementMedicineCB.SelectedValue = medicine.ReplacementMedicine.MedicineID;
         }
@@ -78,11 +87,14 @@ namespace vezba
                     Condition = MedicineCondition.syrup;
                     break;
             }
+
+            var ReplacementMedicine = (Medicine)ReplacementMedicineCB.SelectedItem;
             Medicine.Name = Name;
             Medicine.Manufacturer = Manufacturer;
             Medicine.Packaging = Packaging;
             Medicine.Condition = Condition;
             Medicine.Ingridient = new List<Ingridient>(Ingredients);
+            Medicine.ReplacementMedicine = ReplacementMedicine;
             MedStorage.Update(Medicine);
             mpw.listViewMedicine.Items.Refresh();
             dw.Main.GoBack();

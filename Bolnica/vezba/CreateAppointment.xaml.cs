@@ -66,7 +66,7 @@ namespace vezba
             this.dw = dw;
             this.calendar = calendar;
             StartDatePicker.SelectedDate = generatedStartTime.Date;
-            TimeTB.Text = generatedStartTime.Hour + ":" + generatedStartTime.Minute;
+            TimeTB.Text = generatedStartTime.ToString("t");
             if (doctor != null && doctor.Jmbg != null)
                 cmbDoctors.SelectedValue = doctor.Jmbg;
         }

@@ -7,15 +7,10 @@
         mc:Ignorable="d"
         Title="DoctorView" Height="700" Width="1200">
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left" Width="50" Orientation="Vertical">
-            <StackPanel.Resources>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Height" Value="50"/>
-                </Style>
-            </StackPanel.Resources>
-            <Button Click="CalendarClick">Kalendar</Button>
-            <Button Click="MedicineClick">Lekovi</Button>
-            <Button Click="AnnouncementsClick">Obaveštenja</Button>
+        <StackPanel DockPanel.Dock="Left" Width="70" Orientation="Vertical" Background="CornflowerBlue">
+            <Button Click="CalendarClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">Kalendar</Button>
+            <Button Click="MedicineClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">Lekovi</Button>
+            <Button Click="AnnouncementsClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">Obaveštenja</Button>
         </StackPanel>
         <Grid>
             <Frame x:Name="Main" NavigationUIVisibility="Hidden"></Frame>

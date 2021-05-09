@@ -103,6 +103,25 @@
         <Style TargetType="Grid" x:Key="ColoredBackgroundGrid">
             <Setter Property="Background" Value="GhostWhite"/>
         </Style>
-        
+
+        <Style TargetType="{x:Type Button}" x:Key="DoctorDefaultButton">
+            <Setter Property="Background" Value="CornflowerBlue"/>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF3075F0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
     </Application.Resources>
 </Application>
