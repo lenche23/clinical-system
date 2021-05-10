@@ -8,9 +8,24 @@
         Title="DoctorView" Height="700" Width="1200">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Width="70" Orientation="Vertical" Background="CornflowerBlue">
-            <Button Click="CalendarClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">Kalendar</Button>
-            <Button Click="MedicineClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">Lekovi</Button>
-            <Button Click="AnnouncementsClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">Obaveštenja</Button>
+            <Button Click="CalendarClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="DoctorImages/calendar.png" Width="25" Height="25" Margin="5"/>
+                    <TextBlock FontFamily="verdana" FontSize="10">Kalendar</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="MedicineClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="DoctorImages/apple.png" Width="25" Height="25" Margin="5"/>
+                    <TextBlock FontFamily="verdana" FontSize="10">Lekovi</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Click="AnnouncementsClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="DoctorImages/bell.png" Width="25" Height="25" Margin="5"/>
+                    <TextBlock FontFamily="verdana" FontSize="10">Obaveštenja</TextBlock>
+                </StackPanel>
+            </Button>
         </StackPanel>
         <Grid>
             <Frame x:Name="Main" NavigationUIVisibility="Hidden"></Frame>

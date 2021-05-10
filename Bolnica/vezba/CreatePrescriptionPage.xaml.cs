@@ -104,7 +104,9 @@ namespace vezba
 
         private void NewPrescription()
         {
-            var id = int.Parse(TbId.Text);
+            //var id = int.Parse(TbId.Text);
+            //DELETE ID
+            var id = 0;
             var startDate = (DateTime) DpStartDate.SelectedDate;
             var durationInDays = int.Parse(TbDuration.Text);
             var referencePeriod = (CmbPeriod.SelectedIndex == 0) ? Period.daily : Period.weekly;

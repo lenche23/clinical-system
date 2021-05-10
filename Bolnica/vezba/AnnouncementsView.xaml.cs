@@ -24,13 +24,16 @@ namespace vezba
     {
 
         public static ObservableCollection<Announcement> Ans { get; set; }
-        public AnnouncementsView(UserType ut)
+
+        private DoctorView dw;
+        public AnnouncementsView(UserType ut, DoctorView dw)
         {
             InitializeComponent();
             this.DataContext = this;
             AnnouncementStorage s = new AnnouncementStorage();
             List<Announcement> announcements = s.GetByUser(ut);
             Ans = new ObservableCollection<Announcement>(announcements);
+            this.dw = dw;
         }
 
         private void View_Button_Click(object sender, RoutedEventArgs e)
@@ -38,8 +41,7 @@ namespace vezba
             if (announcementTable.SelectedCells.Count > 0)
             {
                 Announcement a = (Announcement)announcementTable.SelectedItem;
-                var w = new ViewAnnouncement(a);
-                w.Show();
+                dw.Main.Content = new ViewAnnouncementPage(a, dw);
             }
             else
             {

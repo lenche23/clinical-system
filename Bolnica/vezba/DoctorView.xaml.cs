@@ -36,7 +36,7 @@ namespace vezba
 
         private void AnnouncementsClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new AnnouncementsView(UserType.doctor);
+            Main.Content = new AnnouncementsView(UserType.doctor, this);
         }
     }
 }

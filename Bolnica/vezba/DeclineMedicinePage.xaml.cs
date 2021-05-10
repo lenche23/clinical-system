@@ -38,7 +38,6 @@ namespace vezba
             DataContext = Medicine;
             this.dw = dw;
             this.mpw = mpw;
-            listViewAlergens.ItemsSource = medicine.Ingridient;
             Storage = new DeclinedMedicineStorage();
             MedStorage = new MedicineStorage();
         }
@@ -52,8 +51,8 @@ namespace vezba
             Storage.Save(declinedMedicine);
             MedicinePageView.MedicineToApprove.Remove(Medicine);
             MedicinePageView.DeclinedMedicine.Add(declinedMedicine);
-            mpw.listViewMedicineRevision.Items.Refresh();
-            mpw.listViewDeclinedMedicine.Items.Refresh();
+            mpw.revisionGrid.Items.Refresh();
+            mpw.declinedGrid.Items.Refresh();
             dw.Main.GoBack();
             dw.Main.GoBack();
         }

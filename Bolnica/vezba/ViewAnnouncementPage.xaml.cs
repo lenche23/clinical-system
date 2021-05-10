@@ -17,20 +17,24 @@ using Model;
 namespace vezba
 {
     /// <summary>
-    /// Interaction logic for ViewDeclinedMedicine.xaml
+    /// Interaction logic for ViewAnnouncementPage.xaml
     /// </summary>
-    public partial class ViewDeclinedMedicine : Page
+    public partial class ViewAnnouncementPage : Page
     {
         private DoctorView dw;
 
-        public DeclinedMedicine DeclinedMedicine { get; set; }
-
-        public ViewDeclinedMedicine(DeclinedMedicine DeclinedMedicine, DoctorView dw)
+        public ViewAnnouncementPage(Announcement a, DoctorView dw)
         {
             InitializeComponent();
-            this.DeclinedMedicine = DeclinedMedicine;
+            Posted.Content += a.FormatedDatePosted;
+            Edited.Content += a.FormatedDateEdited;
+            if (Posted.Content.Equals(Edited.Content))
+            {
+                Edited.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            Content.Text = a.Content;
+            Title.Text = a.Title;
             this.dw = dw;
-            DataContext = DeclinedMedicine;
         }
 
         private void ReturnClick(object sender, RoutedEventArgs e)

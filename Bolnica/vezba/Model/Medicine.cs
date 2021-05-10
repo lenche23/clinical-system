@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 
 namespace Model
 {
@@ -29,6 +30,22 @@ namespace Model
         public Medicine ReplacementMedicine { get; set; }
         //********
 
+        [JsonIgnore]
+        public String ConditionSerbian
+        {
+            get
+            {
+                switch (Condition)
+                {
+                    case MedicineCondition.capsule:
+                        return "kapsula";
+                    case MedicineCondition.pill:
+                        return "pilula";
+                    default:
+                        return "sirup";
+                }
+            }
+        }
 
         public System.Collections.Generic.List<Ingridient> ingridient;
 

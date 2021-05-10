@@ -52,8 +52,8 @@ namespace vezba
                     ConditionCMB.SelectedIndex = 2;
                     break;
             }
-            Ingredients = new List<Ingridient>(medicine.ingridient);
-            listViewAllergens.ItemsSource = Ingredients;
+            Ingredients = new List<Ingridient>(medicine.Ingridient);
+
             MedStorage = new MedicineStorage();
             MedicineForReplacement = MedStorage.GetApproved();
             foreach (var replacement in MedicineForReplacement)
@@ -96,7 +96,7 @@ namespace vezba
             Medicine.Ingridient = new List<Ingridient>(Ingredients);
             Medicine.ReplacementMedicine = ReplacementMedicine;
             MedStorage.Update(Medicine);
-            mpw.listViewMedicine.Items.Refresh();
+            mpw.approvedGrid.Items.Refresh();
             dw.Main.GoBack();
             dw.Main.GoBack();
         }
@@ -111,17 +111,19 @@ namespace vezba
             var Name = TbAllergen.Text;
             var Allergen = new Ingridient(Name);
             Ingredients.Add(Allergen);
-            listViewAllergens.Items.Refresh();
+            ingredientGrid.ItemsSource = null;
+            ingredientGrid.ItemsSource = Ingredients;
             TbAllergen.Clear();
         }
 
         private void MinusButtonClick(object sender, RoutedEventArgs e)
         {
-            if (listViewAllergens.SelectedItems.Count > 0)
+            if (ingredientGrid.SelectedItems.Count > 0)
             {
-                Ingridient Allergen = (Ingridient)listViewAllergens.SelectedItem;
+                Ingridient Allergen = (Ingridient)ingredientGrid.SelectedItem;
                 Ingredients.Remove(Allergen);
-                listViewAllergens.Items.Refresh();
+                ingredientGrid.ItemsSource = null;
+                ingredientGrid.ItemsSource = Ingredients;
             }
         }
     }

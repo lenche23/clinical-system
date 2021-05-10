@@ -13,9 +13,113 @@
           "Name": "Ibuprofen"
         }
       ],
-      "anamnesis": null,
-      "prescription": null,
-      "referralLetter": null,
+      "anamnesis": [
+        {
+          "Time": "2021-05-10T18:57:31.675675+02:00",
+          "Comment": "test",
+          "Patient": "Milena Jovanovic",
+          "Doctor": "Darko Torbica"
+        }
+      ],
+      "prescription": [
+        {
+          "StartDate": "2021-05-10T00:00:00",
+          "DurationInDays": 7,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ],
+            "Name": "Ibuprofen",
+            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+            "Packaging": "30 x 400 mg",
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            },
+            "Ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ]
+          }
+        }
+      ],
+      "referralLetter": [
+        {
+          "StartDate": "2021-05-10T00:00:00",
+          "DurationPeriodInDays": 7,
+          "Doctor": {
+            "Speciality": {
+              "Name": "Kardiolog"
+            },
+            "NameAndSurname": "Dana Dimitrijevic",
+            "SalaryInRsd": 120000,
+            "Username": "dana",
+            "Password": "danica",
+            "Name": "Dana",
+            "Surname": "Dimitrijevic",
+            "Jmbg": "0104998253658",
+            "DateOfBirth": "2021-05-10T18:57:51.916359+02:00",
+            "Sex": 1,
+            "PhoneNumber": "0621975732",
+            "Adress": "neka ulica 62, Novi Sad",
+            "Email": "dana@gmail.com",
+            "IdCard": "008996452",
+            "Type": 2,
+            "IsDeleted": false
+          }
+        }
+      ],
       "HealthInsuranceNumber": "65415616541",
       "MedicalIdNumber": "4564156465",
       "Allergen": [
@@ -26,9 +130,113 @@
           "Name": "Ibuprofen"
         }
       ],
-      "Anamnesis": [],
-      "Prescription": [],
-      "ReferralLetter": []
+      "Anamnesis": [
+        {
+          "Time": "2021-05-10T18:57:31.675675+02:00",
+          "Comment": "test",
+          "Patient": "Milena Jovanovic",
+          "Doctor": "Darko Torbica"
+        }
+      ],
+      "Prescription": [
+        {
+          "StartDate": "2021-05-10T00:00:00",
+          "DurationInDays": 7,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ],
+            "Name": "Ibuprofen",
+            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+            "Packaging": "30 x 400 mg",
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            },
+            "Ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ]
+          }
+        }
+      ],
+      "ReferralLetter": [
+        {
+          "StartDate": "2021-05-10T00:00:00",
+          "DurationPeriodInDays": 7,
+          "Doctor": {
+            "Speciality": {
+              "Name": "Kardiolog"
+            },
+            "NameAndSurname": "Dana Dimitrijevic",
+            "SalaryInRsd": 120000,
+            "Username": "dana",
+            "Password": "danica",
+            "Name": "Dana",
+            "Surname": "Dimitrijevic",
+            "Jmbg": "0104998253658",
+            "DateOfBirth": "2021-05-10T18:57:51.916359+02:00",
+            "Sex": 1,
+            "PhoneNumber": "0621975732",
+            "Adress": "neka ulica 62, Novi Sad",
+            "Email": "dana@gmail.com",
+            "IdCard": "008996452",
+            "Type": 2,
+            "IsDeleted": false
+          }
+        }
+      ]
     },
     "NameAndSurname": "Milena Jovanovic",
     "Appointment": [],

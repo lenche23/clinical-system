@@ -37,43 +37,41 @@ namespace vezba
             MedicineStorage ms = new MedicineStorage();
             List<Medicine> medicineToApprove = ms.GetAwaiting();
             MedicineToApprove = new ObservableCollection<Medicine>(medicineToApprove);
-            listViewMedicineRevision.ItemsSource = MedicineToApprove;
 
             List<Medicine> approvedMedicine = ms.GetApproved();
             ApprovedMedicine = new ObservableCollection<Medicine>(approvedMedicine);
-            listViewMedicine.ItemsSource = ApprovedMedicine;
 
             DeclinedMedicineStorage dms = new DeclinedMedicineStorage();
             List<DeclinedMedicine> declinedMedicine = dms.GetAll();
             DeclinedMedicine = new ObservableCollection<DeclinedMedicine>(declinedMedicine);
-            listViewDeclinedMedicine.ItemsSource = DeclinedMedicine;
 
+            DataContext = this;
             this.dw = dw;
         }
 
         private void ViewClick(object sender, RoutedEventArgs e)
         {
-            if (listViewMedicine.SelectedItems.Count > 0)
+            if (approvedGrid.SelectedItems.Count > 0)
             {
-                Medicine medicine = (Medicine)listViewMedicine.SelectedItem;
+                Medicine medicine = (Medicine)approvedGrid.SelectedItem;
                 dw.Main.Content = new ViewMedicinePage(medicine, dw, this);
             }
         }
 
         private void RevisionClick(object sender, RoutedEventArgs e)
         {
-            if (listViewMedicineRevision.SelectedItems.Count > 0)
+            if (revisionGrid.SelectedItems.Count > 0)
             {
-                Medicine medicine = (Medicine)listViewMedicineRevision.SelectedItem;
+                Medicine medicine = (Medicine)revisionGrid.SelectedItem;
                 dw.Main.Content = new MedicineRevisionPage(medicine, dw, this);
             }
         }
 
         private void ViewDeclinedClick(object sender, RoutedEventArgs e)
         {
-            if(listViewDeclinedMedicine.SelectedItems.Count > 0)
+            if(declinedGrid.SelectedItems.Count > 0)
             {
-                DeclinedMedicine declinedMedicine = (DeclinedMedicine)listViewDeclinedMedicine.SelectedItem;
+                DeclinedMedicine declinedMedicine = (DeclinedMedicine)declinedGrid.SelectedItem;
                 dw.Main.Content = new ViewDeclinedMedicine(declinedMedicine, dw);
             }
         }
