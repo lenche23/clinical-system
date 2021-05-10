@@ -112,7 +112,32 @@
           }
         }
       ],
-      "referralLetter": [],
+      "referralLetter": [
+        {
+          "StartDate": "2021-05-10T00:00:00",
+          "DurationPeriodInDays": 7,
+          "Doctor": {
+            "Speciality": {
+              "Name": "Kardiolog"
+            },
+            "NameAndSurname": "Dana Dimitrijevic",
+            "SalaryInRsd": 120000,
+            "Username": "dana",
+            "Password": "danica",
+            "Name": "Dana",
+            "Surname": "Dimitrijevic",
+            "Jmbg": "0104998253658",
+            "DateOfBirth": "2021-05-10T14:36:14.9409495+02:00",
+            "Sex": 1,
+            "PhoneNumber": "0621975732",
+            "Adress": "neka ulica 62, Novi Sad",
+            "Email": "dana@gmail.com",
+            "IdCard": "008996452",
+            "Type": 2,
+            "IsDeleted": false
+          }
+        }
+      ],
       "HealthInsuranceNumber": "",
       "MedicalIdNumber": "",
       "Allergen": [
@@ -175,7 +200,32 @@
           }
         }
       ],
-      "ReferralLetter": []
+      "ReferralLetter": [
+        {
+          "StartDate": "2021-05-10T00:00:00",
+          "DurationPeriodInDays": 7,
+          "Doctor": {
+            "Speciality": {
+              "Name": "Kardiolog"
+            },
+            "NameAndSurname": "Dana Dimitrijevic",
+            "SalaryInRsd": 120000,
+            "Username": "dana",
+            "Password": "danica",
+            "Name": "Dana",
+            "Surname": "Dimitrijevic",
+            "Jmbg": "0104998253658",
+            "DateOfBirth": "2021-05-10T14:36:14.9409495+02:00",
+            "Sex": 1,
+            "PhoneNumber": "0621975732",
+            "Adress": "neka ulica 62, Novi Sad",
+            "Email": "dana@gmail.com",
+            "IdCard": "008996452",
+            "Type": 2,
+            "IsDeleted": false
+          }
+        }
+      ]
     },
     "NameAndSurname": "Petar Ilic",
     "Appointment": [],

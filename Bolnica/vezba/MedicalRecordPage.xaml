@@ -103,15 +103,13 @@
                     </DataGrid>
                 </TabItem>
                 <TabItem Header="Uputi">
-                    <ListView Margin="30" Name="listViewReferralLetters" >
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Početak važenja uputa" Width="240" DisplayMemberBinding="{Binding StartDate, StringFormat=dd/MM/yyyy, Mode=OneWay}" />
-                                <GridViewColumn Header="Trajanje uputa" Width="240" DisplayMemberBinding="{Binding DurationPeriodInDays, Mode=OneWay}"/>
-                                <GridViewColumn Header="Lekar" Width="240" DisplayMemberBinding="{Binding Doctor.NameAndSurname, Mode=OneWay}" />
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <DataGrid x:Name="referralLeterGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.ReferralLetter}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Početak važenja uputa" Binding="{Binding StartDate, StringFormat=dd/MM/yyyy}"  Width="*"/>
+                            <DataGridTextColumn Header="Trajanje uputa" Binding="{Binding DurationPeriodInDays}"  Width="*"/>
+                            <DataGridTextColumn Header="Lekar" Binding="{Binding Doctor.NameAndSurname}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </TabItem>
             </TabControl>
         </DockPanel>

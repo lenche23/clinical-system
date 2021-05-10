@@ -8,7 +8,7 @@
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="Calendar">
 
-    <Grid Background ="White">
+    <Grid Background="White">
         <Grid.Resources>
             <Style TargetType="{x:Type TextBlock}">
                 <Setter Property="FontFamily" Value="Verdana"/>
