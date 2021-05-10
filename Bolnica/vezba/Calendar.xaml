@@ -19,8 +19,8 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 0, 20, 0">
-            <Button Height="30" Width="120" Margin="5" Padding="5" Click="NewAppointmentClick" FontSize="14" FontWeight="Bold" Content="+ Nov termin" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 5, 20, 5">
+            <Button Height="30" Width="120" Padding="5" Click="NewAppointmentClick" FontSize="14" FontWeight="Bold" Content="+ Nov termin" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
             </Button>
         </StackPanel>
         <Grid Grid.Row="1">
@@ -37,9 +37,9 @@
                 </Button>
                 <TextBlock Height="25" x:Name="MonthYearBlock" VerticalAlignment="Center" Padding="5" FontWeight="Bold"><Run Text="some text"/></TextBlock>
             </StackPanel>
-            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Height="25" VerticalAlignment="Bottom">Lekar:</TextBlock>
-                <ComboBox Height="20" Width="120" Margin="5, 5, 20, 5" Name="DoctorsComboBox" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" SelectedValuePath="Jmbg" SelectionChanged="SelectedDoctorChanged"></ComboBox>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 0, 20, 0">
+                <TextBlock Height="25" VerticalAlignment="Center" Padding="5">Lekar:</TextBlock>
+                <ComboBox Height="20" Width="120" Name="DoctorsComboBox" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" SelectedValuePath="Jmbg" SelectionChanged="SelectedDoctorChanged"></ComboBox>
             </StackPanel>
         </Grid>
         <Border Grid.Row="2" BorderBrush="Gray" BorderThickness="1"  Margin="20, 0,20, 20">

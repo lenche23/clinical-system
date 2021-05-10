@@ -69,6 +69,7 @@ namespace vezba
             TimeTB.Text = generatedStartTime.ToString("t");
             if (doctor != null && doctor.Jmbg != null)
                 cmbDoctors.SelectedValue = doctor.Jmbg;
+            DurationTB.Text = "60";
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
