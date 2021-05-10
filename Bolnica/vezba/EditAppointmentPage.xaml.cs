@@ -81,6 +81,7 @@ namespace vezba
             calendar.AddAppointmentToCurrentView(appointment);
 
             dw.Main.GoBack();
+            dw.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)

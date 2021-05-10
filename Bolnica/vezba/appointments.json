@@ -364,7 +364,7 @@
     "DoctorName": "Dana Dimitrijevic"
   },
   {
-    "StartTime": "2021-05-10T09:00:00",
+    "StartTime": "2021-05-10T10:00:00",
     "DurationInMunutes": 45,
     "ApointmentDescription": "Sistematski pregled",
     "AppointentId": 2,
@@ -380,7 +380,7 @@
       "Name": "Darko",
       "Surname": "Torbica",
       "Jmbg": "1708962324890",
-      "DateOfBirth": "2021-05-10T14:56:29.9329705+02:00",
+      "DateOfBirth": "2021-05-10T21:56:45.7386476+02:00",
       "Sex": 0,
       "PhoneNumber": "0665813272",
       "Adress": "neka ulica 38, Novi Sad",
@@ -678,7 +678,7 @@
       "IsDeleted": false
     },
     "IsEmergency": false,
-    "EndTime": "2021-05-10T09:45:00",
+    "EndTime": "2021-05-10T10:45:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "1",
     "DoctorName": "Darko Torbica"
