@@ -46,38 +46,6 @@
   {
     "ingridient": [
       {
-        "Name": "Acetilsalicilna kiselina"
-      },
-      {
-        "Name": "Skrob, kukuruzni"
-      },
-      {
-        "Name": "Trietil-citrat"
-      }
-    ],
-    "Name": "Aspirin",
-    "Manufacturer": "Bayer Bitterfeld GmbH ",
-    "Packaging": "30 x 100mg",
-    "MedicineID": 2,
-    "Status": 1,
-    "Condition": 0,
-    "IsDeleted": true,
-    "ReplacementMedicine": null,
-    "Ingridient": [
-      {
-        "Name": "Acetilsalicilna kiselina"
-      },
-      {
-        "Name": "Skrob, kukuruzni"
-      },
-      {
-        "Name": "Trietil-citrat"
-      }
-    ]
-  },
-  {
-    "ingridient": [
-      {
         "Name": "Trifolium pratense extractum siccum standardisatum"
       }
     ],
@@ -92,6 +60,69 @@
     "Ingridient": [
       {
         "Name": "Trifolium pratense extractum siccum standardisatum"
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "Quinoline Yellow(E 104)"
+      }
+    ],
+    "Name": "Bromazepan",
+    "Manufacturer": "HEMOFARM ADVRŠAC",
+    "Packaging": "2 * 15 tableta",
+    "MedicineID": 4,
+    "Status": 1,
+    "Condition": 0,
+    "IsDeleted": false,
+    "ReplacementMedicine": {
+      "ingridient": [
+        {
+          "Name": "SilicijumDioksid"
+        },
+        {
+          "Name": "Kroskarmeloza-natrijum"
+        },
+        {
+          "Name": "Skrob, kukuruzni"
+        },
+        {
+          "Name": "Povidon (K25)"
+        },
+        {
+          "Name": "Eritrozin (E127)"
+        }
+      ],
+      "Name": "Ibuprofen",
+      "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+      "Packaging": "30 x 400 mg",
+      "MedicineID": 0,
+      "Status": 0,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "SilicijumDioksid"
+        },
+        {
+          "Name": "Kroskarmeloza-natrijum"
+        },
+        {
+          "Name": "Skrob, kukuruzni"
+        },
+        {
+          "Name": "Povidon (K25)"
+        },
+        {
+          "Name": "Eritrozin (E127)"
+        }
+      ]
+    },
+    "Ingridient": [
+      {
+        "Name": "Quinoline Yellow(E 104)"
       }
     ]
   }
