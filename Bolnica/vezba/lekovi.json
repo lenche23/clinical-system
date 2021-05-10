@@ -68,60 +68,17 @@
         "Name": "Trifolium pratense extractum siccum standardisatum"
       }
     ],
-    "Name": "Bromazepan",
-    "Manufacturer": "HEMOFARM ADVRŠAC",
-    "Packaging": "2 * 15 tableta",
-    "MedicineID": 4,
-    "Status": 1,
-    "Condition": 0,
+    "Name": "Oestrofact",
+    "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+    "Packaging": "50 x 70 mg",
+    "MedicineID": 3,
+    "Status": 0,
+    "Condition": 1,
     "IsDeleted": false,
-    "ReplacementMedicine": {
-      "ingridient": [
-        {
-          "Name": "SilicijumDioksid"
-        },
-        {
-          "Name": "Kroskarmeloza-natrijum"
-        },
-        {
-          "Name": "Skrob, kukuruzni"
-        },
-        {
-          "Name": "Povidon (K25)"
-        },
-        {
-          "Name": "Eritrozin (E127)"
-        }
-      ],
-      "Name": "Ibuprofen",
-      "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-      "Packaging": "30 x 400 mg",
-      "MedicineID": 0,
-      "Status": 0,
-      "Condition": 0,
-      "IsDeleted": false,
-      "ReplacementMedicine": null,
-      "Ingridient": [
-        {
-          "Name": "SilicijumDioksid"
-        },
-        {
-          "Name": "Kroskarmeloza-natrijum"
-        },
-        {
-          "Name": "Skrob, kukuruzni"
-        },
-        {
-          "Name": "Povidon (K25)"
-        },
-        {
-          "Name": "Eritrozin (E127)"
-        }
-      ]
-    },
+    "ReplacementMedicine": null,
     "Ingridient": [
       {
-        "Name": "Quinoline Yellow(E 104)"
+        "Name": "Trifolium pratense extractum siccum standardisatum"
       }
     ]
   }
