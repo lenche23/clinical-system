@@ -11,7 +11,7 @@
         <Label Content="Naslov:" HorizontalAlignment="Left" Margin="32,64,0,0" VerticalAlignment="Top" Height="27"/>
         <Label Content="Vidljivost:" HorizontalAlignment="Left" Margin="32,25,0,0" VerticalAlignment="Top" Height="27"/>
         <ComboBox Name ="Visibility" HorizontalAlignment="Left" VerticalAlignment="Top" Width="246" Margin="99,27,0,0" Height="23"/>
-        <TextBox Name = "Content"  HorizontalAlignment="Left" Height="231" Margin="99,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246"/>
+        <TextBox Name = "ContentTextBox"  HorizontalAlignment="Left" Height="231" Margin="99,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246"/>
         <Label Content="Sadržaj:" HorizontalAlignment="Left" Margin="32,104,0,0" VerticalAlignment="Top" Height="28"/>
         <Button Content="Sačuvaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Margin="142,363,0,0" Height="32" Click="Button_Click"/>
     </Grid>

@@ -30,7 +30,8 @@ namespace vezba
             InitializeComponent();
             this.DataContext = this;
             storage = new EquipmentStorage();
-            EquipmentList = new ObservableCollection<Equipment>(storage.GetAll());
+            equipmentList = storage.GetAll();
+            EquipmentList = new ObservableCollection<Equipment>(equipmentList);
             InventaryBinding.ItemsSource = EquipmentList;
 
 
@@ -43,6 +44,7 @@ namespace vezba
         {
             var s = new InventaryAddEquipment();
             s.Show();
+            equipmentList = storage.GetAll();
         }
 
         private void Remove_Equipment_Button_Click(object sender, RoutedEventArgs e)
@@ -50,8 +52,8 @@ namespace vezba
             if (InventaryBinding.SelectedIndex > -1)
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
-                EquipmentStorage es = new EquipmentStorage();
-                es.Delete(equipment.Id);
+                storage.Delete(equipment.Id);
+                equipmentList = storage.GetAll();
                 EquipmentList.Remove(equipment);
             }
 
@@ -83,6 +85,7 @@ namespace vezba
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
                 var s = new InventaryChangeEquipment(equipment, this);
                 s.Show();
+                equipmentList = storage.GetAll();
             }
 
             else
@@ -98,7 +101,7 @@ namespace vezba
             {
                 if (CheckedBoxStatic.IsChecked == true)
                 {
-                    foreach (Equipment equipment in storage.GetAll())
+                    foreach (Equipment equipment in equipmentList)
                     {
                         if (equipment.Type == EquipmentType.statical)
                         {
@@ -116,7 +119,7 @@ namespace vezba
             {
                 if (CheckedBoxDinamic.IsChecked == true)
                 {
-                    foreach (Equipment equipment in storage.GetAll())
+                    foreach (Equipment equipment in equipmentList)
                     {
                         if (equipment.Type == EquipmentType.dinamical)
                         {
@@ -140,7 +143,7 @@ namespace vezba
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(InventaryBinding.ItemsSource).Refresh();
-          
+
         }
 
         private void StaticCheckBox_Unchecked(object sender, RoutedEventArgs e)
@@ -149,11 +152,11 @@ namespace vezba
             {
                 if (CheckedBoxStatic.IsChecked == false)
                 {
-                    foreach (Equipment equipment in storage.GetAll())
+                    foreach (Equipment equipment in equipmentList)
                     {
                         if (equipment.Type == EquipmentType.statical)
                         {
-                            for (int i=0; i<EquipmentList.Count; i++)
+                            for (int i = 0; i < EquipmentList.Count; i++)
                             {
                                 if (EquipmentList[i].Id == equipment.Id)
                                 {
@@ -173,7 +176,7 @@ namespace vezba
             {
                 if (CheckedBoxDinamic.IsChecked == false)
                 {
-                    foreach (Equipment equipment in storage.GetAll())
+                    foreach (Equipment equipment in equipmentList)
                     {
                         if (equipment.Type == EquipmentType.dinamical)
                         {

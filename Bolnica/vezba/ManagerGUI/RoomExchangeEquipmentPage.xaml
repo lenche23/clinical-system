@@ -1,0 +1,20 @@
+﻿<Page x:Class="vezba.ManagerGUI.RoomExchangeEquipmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba.ManagerGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="570" d:DesignWidth="750"
+      Title="RoomExchangeEquipmentPage" Background="#FFFFE1E1">
+    <Grid Margin="0,0,-22,-8">
+        <Label Content="Broj prostorije u koju prenosimo:" Margin="44,54,533,483"/>
+        <TextBox Name="RoomNumberTextBox" Text="{Binding RoomNumber, Mode=OneWay}" Margin="244,54,64,483"/>
+
+        <Label Content="Količina prenete opreme:" Margin="86,116,533,428"/>
+        <TextBox Name="ItemQuantity" Text="{Binding RoomNumber, Mode=OneWay}" Margin="244,116,64,418"/>
+
+        <Button Click="OkButtonClick" Margin="86,277,465,238">Potvrdi</Button>
+        <Button Click="CancelButtonClick" Margin="440,277,107,238">Odustani</Button>
+    </Grid>
+</Page>

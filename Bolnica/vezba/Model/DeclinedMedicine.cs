@@ -20,5 +20,28 @@ namespace Model
             this.Description = Description;
             this.IsDeleted = false;
         }
+
+
+        public String MedicineName
+        {
+            get
+            {
+                if (Medicine != null)
+                    return (Medicine.Name);
+                else
+                    return "";
+            }
+        }
+
+        public String MedicineManufacturer
+        {
+            get
+            {
+                if (Medicine != null)
+                    return (Medicine.Manufacturer);
+                else
+                    return "";
+            }
+        }
     }
 }

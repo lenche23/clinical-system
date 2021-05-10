@@ -7,8 +7,6 @@
       "IsDeleted": false
     },
     "room": {
-      "Capacity": 0,
-      "equipment": [],
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -25,7 +23,6 @@
       "RoomNumber": 1,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -56,8 +53,6 @@
       "IsDeleted": false
     },
     "room": {
-      "Capacity": 0,
-      "equipment": [],
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -74,7 +69,6 @@
       "RoomNumber": 1,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -105,8 +99,6 @@
       "IsDeleted": false
     },
     "room": {
-      "Capacity": 0,
-      "equipment": [],
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -118,7 +110,6 @@
       "RoomNumber": 2,
       "RoomFloor": 1,
       "IsDeleted": false,
-      "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -144,8 +135,6 @@
       "IsDeleted": false
     },
     "room": {
-      "Capacity": 0,
-      "equipment": [],
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -162,7 +151,6 @@
       "RoomNumber": 1,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -177,8 +165,8 @@
       ]
     },
     "StartTime": "2021-05-08T11:04:17.7327666+02:00",
-    "EndTime": "2999-12-31T00:00:00",
-    "Quantity": 0,
+    "EndTime": "2021-05-10T02:08:06.7892479+02:00",
+    "Quantity": 5,
     "Id": 3,
     "IsDeleted": false,
     "EquipmentName": "Krevet",
@@ -193,8 +181,6 @@
       "IsDeleted": false
     },
     "room": {
-      "Capacity": 0,
-      "equipment": [],
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -206,7 +192,6 @@
       "RoomNumber": 2,
       "RoomFloor": 1,
       "IsDeleted": false,
-      "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -216,7 +201,7 @@
       ]
     },
     "StartTime": "2021-05-08T11:04:17.7327666+02:00",
-    "EndTime": "2999-12-31T00:00:00",
+    "EndTime": "2021-05-10T02:08:06.7892479+02:00",
     "Quantity": 5,
     "Id": 4,
     "IsDeleted": false,
@@ -232,8 +217,6 @@
       "IsDeleted": false
     },
     "room": {
-      "Capacity": 0,
-      "equipment": [],
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -250,7 +233,6 @@
       "RoomNumber": 1,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -266,7 +248,7 @@
     },
     "StartTime": "2021-05-08T11:04:44.8276849+02:00",
     "EndTime": "2999-01-01T00:00:00",
-    "Quantity": 1,
+    "Quantity": 4,
     "Id": 5,
     "IsDeleted": false,
     "EquipmentName": "Trokanalni EKG 300G",
@@ -281,8 +263,6 @@
       "IsDeleted": false
     },
     "room": {
-      "Capacity": 0,
-      "equipment": [],
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -294,7 +274,6 @@
       "RoomNumber": 2,
       "RoomFloor": 1,
       "IsDeleted": false,
-      "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -305,11 +284,103 @@
     },
     "StartTime": "2021-05-08T11:04:58.8524405+02:00",
     "EndTime": "2999-12-31T00:00:00",
-    "Quantity": 4,
+    "Quantity": 1,
     "Id": 6,
     "IsDeleted": false,
     "EquipmentName": "Trokanalni EKG 300G",
     "EquipmentId": "4",
     "EquipmentType": "dinamical"
+  },
+  {
+    "equipment": {
+      "Id": 2,
+      "Name": "Krevet",
+      "Type": 0,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ]
+    },
+    "StartTime": "2021-05-10T02:08:06.7892479+02:00",
+    "EndTime": "2999-12-31T00:00:00",
+    "Quantity": 0,
+    "Id": 7,
+    "IsDeleted": false,
+    "EquipmentName": "Krevet",
+    "EquipmentId": "2",
+    "EquipmentType": "statical"
+  },
+  {
+    "equipment": {
+      "Id": 2,
+      "Name": "Krevet",
+      "Type": 0,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 4,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 2,
+      "RoomNumber": 2,
+      "RoomFloor": 1,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 4,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "StartTime": "2021-05-10T02:08:06.7892479+02:00",
+    "EndTime": "2999-12-31T00:00:00",
+    "Quantity": 10,
+    "Id": 8,
+    "IsDeleted": false,
+    "EquipmentName": "Krevet",
+    "EquipmentId": "2",
+    "EquipmentType": "statical"
   }
 ]

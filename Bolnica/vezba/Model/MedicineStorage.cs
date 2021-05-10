@@ -152,7 +152,7 @@ namespace Model
             return m;
         }
 
-        public int generateNextId()
+        public int GenerateNextId()
         {
             List<Medicine> list = Load();
             return list.Count;

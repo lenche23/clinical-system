@@ -14,12 +14,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace vezba
+namespace vezba.ManagerGUI
+
 {
-    /// <summary>
-    /// Interaction logic for NewMedicine.xaml
-    /// </summary>
-    public partial class NewMedicine : Window
+    public partial class MedicineAddPage : Page
     {
         public List<Medicine> MedicineList { get; set; }
         public MedicineStorage storage;
@@ -27,21 +25,13 @@ namespace vezba
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
         public List<Ingridient> ingredientTemporaryList { get; set; }
 
-        public NewMedicine()
+        public MedicineAddPage()
         {
             InitializeComponent();
             this.DataContext = this;
             MedicineStorage ms = new MedicineStorage();
             List<Medicine> medicineList = ms.GetAll();
-            List<Medicine> temporary = new List<Medicine>();
-            for (int i = 0; i < medicineList.Count; i++)
-            {
-                if (medicineList[i].Status == MedicineStatus.approved)
-                {
-                    temporary.Add(medicineList[i]);
-                }
-            }
-            comboReplacementMedicine.ItemsSource = temporary;
+            comboReplacementMedicine.ItemsSource = medicineList;
             List<string> condition = new List<string> { "Kapsula", "Pilula", "Sirup" };
             comboCondition.ItemsSource = condition;
             newMedicine = new Medicine("Naziv", "Naziv", "Naziv", 0, MedicineCondition.pill);
@@ -67,7 +57,7 @@ namespace vezba
             var Packaging = pakovanjeTB.Text;
             var Condition = MedicineCondition.pill;
 
-            if(comboCondition.SelectedIndex == 1)
+            if (comboCondition.SelectedIndex == 1)
             {
                 Condition = MedicineCondition.pill;
             }
@@ -87,19 +77,18 @@ namespace vezba
             MedicineStorage storage = new MedicineStorage();
             int MedicineID = storage.GenerateNextId();
 
-            
             newMedicine = new Medicine(Name, Manufacturer, Packaging, MedicineID, Condition) { ReplacementMedicine = replacementMedicine };
 
             AddMedicineWindow.MedicineList.Add(newMedicine);
             newMedicine.ingridient = ingredientTemporaryList;
             storage.Save(newMedicine);
-            this.Close();
+            //this.Close();
 
         }
 
         private void Odustani_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void ButtonMinus_Click(object sender, RoutedEventArgs e)

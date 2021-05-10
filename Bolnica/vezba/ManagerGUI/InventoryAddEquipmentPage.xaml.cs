@@ -1,7 +1,5 @@
-﻿using Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,17 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using vezba.ManagerGUI;
+using Model;
 
-namespace vezba
+namespace vezba.ManagerGUI
 {
-    /// <summary>
-    /// Interaction logic for InventaryAddEquipment.xaml
-    /// </summary>
-    public partial class InventaryAddEquipment : Window
+    public partial class InventoryAddEquipmentPage : Page
     {
-        public InventaryAddEquipment()
+        public InventoryAddEquipmentPage()
         {
             InitializeComponent();
         }
@@ -44,15 +40,17 @@ namespace vezba
             EquipmentStorage es = new EquipmentStorage();
             int equipmentID = es.generateNextId();
             var newEquipment = new Equipment(equipmentID, NazivOpreme.Text, type);
-            
+
             es.Save(newEquipment);
             InventoryPage.EquipmentList.Add(newEquipment);
-            this.Close();
+            NavigationService.GoBack();
+
         }
 
         private void Cancel_Add_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            NavigationService.GoBack();
+            //this.Close();
         }
     }
 }

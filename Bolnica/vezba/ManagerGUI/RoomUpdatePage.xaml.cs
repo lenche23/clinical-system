@@ -3,16 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using vezba;
 
-namespace Bolnica
+namespace vezba.ManagerGUI
 {
-    /// <summary>
-    /// Interaction logic for WindowUpdateRoom.xaml
-    /// </summary>
-    /// 
-    public partial class WindowUpdateRoom : Window
+
+    public partial class RoomUpdatePage : Page
     {
         private Room selected;
         private ManagerView mv;
@@ -20,7 +18,7 @@ namespace Bolnica
         public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
         private RoomInventoryStorage roomInventoryStorage;
 
-        public WindowUpdateRoom(Room selected, ManagerView mv)
+        public RoomUpdatePage(Room selected, ManagerView mv)
         {
             InitializeComponent();
             this.selected = selected;
@@ -115,12 +113,12 @@ namespace Bolnica
                 selected.RoomType = RoomType.recoveryRoom;
             }
             mv.lvDataBinding.Items.Refresh();
-            this.Close();
+            //this.Close();
         }
 
         private void Odustanak_Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void Dodaj_Button_Click(object sender, RoutedEventArgs e)
@@ -151,8 +149,8 @@ namespace Bolnica
             {
 
                 RoomInventory selectedRoomInventory = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
-                var s = new WindowChangeItemQuantity(selectedRoomInventory, this, this.selected);
-                s.Show();
+                var s = new RoomChangeEquipmentPage(selectedRoomInventory, this, this.selected);
+                //s.Show();
             }
 
             else
@@ -168,8 +166,8 @@ namespace Bolnica
                 RoomInventory roomInventorySelected = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
                 if (roomInventorySelected.equipment.Type == EquipmentType.dinamical)
                 {
-                    var s = new WindowExchangeEquipment(roomInventorySelected, this, this.selected);
-                    s.Show();
+                    //var s = new WindowExchangeEquipment(roomInventorySelected, this, this.selected);
+                    //s.Show();
                 }
                 else if (roomInventorySelected.equipment.Type == EquipmentType.statical)
                 {
@@ -297,3 +295,4 @@ namespace Bolnica
         }
     }
 }
+

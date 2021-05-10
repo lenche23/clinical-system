@@ -9,9 +9,14 @@
         "RenovationID": 1
       },
       {
-        "StartTime": "2021-12-12T10:00:00",
-        "DurationInDays": 4,
+        "StartTime": "2021-05-25T10:00:00",
+        "DurationInDays": 3,
         "RenovationID": 2
+      },
+      {
+        "StartTime": "2021-05-19T10:00:00",
+        "DurationInDays": 3,
+        "RenovationID": 3
       }
     ],
     "RoomType": 0,
@@ -26,9 +31,14 @@
         "RenovationID": 1
       },
       {
-        "StartTime": "2021-12-12T10:00:00",
-        "DurationInDays": 4,
+        "StartTime": "2021-05-25T10:00:00",
+        "DurationInDays": 3,
         "RenovationID": 2
+      },
+      {
+        "StartTime": "2021-05-19T10:00:00",
+        "DurationInDays": 3,
+        "RenovationID": 3
       }
     ]
   },
