@@ -18,8 +18,8 @@ namespace vezba.ManagerGUI
     public partial class InventoryChangeEquipmentPage : Page
     {
         private Equipment equipment;
-        private Inventary inventary;
-        public InventoryChangeEquipmentPage(Equipment equipment, Inventary inventary)
+        private InventoryPage inventary;
+        public InventoryChangeEquipmentPage(Equipment equipment, InventoryPage inventary)
         {
             InitializeComponent();
             this.equipment = equipment;
@@ -54,12 +54,12 @@ namespace vezba.ManagerGUI
             inventary.InventaryBinding.Items.Refresh();
             EquipmentStorage es = new EquipmentStorage();
             es.Update(equipment);
-            //this.Close();
+            NavigationService.GoBack();
         }
 
         private void Cancel_Change_Button_Click(object sender, RoutedEventArgs e)
         {
-            //this.Close();
+            NavigationService.GoBack();
         }
     }
 }

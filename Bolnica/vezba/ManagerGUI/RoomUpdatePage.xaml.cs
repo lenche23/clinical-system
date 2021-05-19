@@ -13,16 +13,18 @@ namespace vezba.ManagerGUI
     public partial class RoomUpdatePage : Page
     {
         private Room selected;
-        private ManagerView mv;
+        private RoomsPage rp;
 
         public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
         private RoomInventoryStorage roomInventoryStorage;
+        private MainManagerWindow mainManagerWindow;
 
-        public RoomUpdatePage(Room selected, ManagerView mv)
+        public RoomUpdatePage(Room selected, RoomsPage rp, MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
             this.selected = selected;
-            this.mv = mv;
+            this.rp = rp;
+            this.mainManagerWindow = mainManagerWindow;
             this.DataContext = selected;
             if (selected.RoomFloor == Floor.first)
             {
@@ -112,19 +114,22 @@ namespace vezba.ManagerGUI
             {
                 selected.RoomType = RoomType.recoveryRoom;
             }
-            mv.lvDataBinding.Items.Refresh();
+            rp.lvDataBinding.Items.Refresh();
+            NavigationService.GoBack();
             //this.Close();
         }
 
         private void Odustanak_Button_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.GoBack();
             //this.Close();
         }
 
         private void Dodaj_Button_Click(object sender, RoutedEventArgs e)
         {
-            var s = new WindowAddRoomEquipment(this.selected);
-            s.Show();
+            //mainManagerWindow.MainManagerView.Content = new RoomAddEquipmentPage(selected);
+            //var s = new WindowAddRoomEquipment(this.selected);
+            //s.Show();
         }
 
         private void Izbriši_Button_Click(object sender, RoutedEventArgs e)
@@ -149,8 +154,7 @@ namespace vezba.ManagerGUI
             {
 
                 RoomInventory selectedRoomInventory = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
-                var s = new RoomChangeEquipmentPage(selectedRoomInventory, this, this.selected);
-                //s.Show();
+                //mainManagerWindow.MainManagerView.Content = new RoomChangeEquipmentPage(selectedRoomInventory, this, selected);
             }
 
             else
@@ -166,13 +170,11 @@ namespace vezba.ManagerGUI
                 RoomInventory roomInventorySelected = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
                 if (roomInventorySelected.equipment.Type == EquipmentType.dinamical)
                 {
-                    //var s = new WindowExchangeEquipment(roomInventorySelected, this, this.selected);
-                    //s.Show();
+                   // mainManagerWindow.MainManagerView.Content = new RoomExchangeEquipmentPage(roomInventorySelected, this, selected);
                 }
                 else if (roomInventorySelected.equipment.Type == EquipmentType.statical)
                 {
-                    var s = new WindowExchangeStaticEquipment(roomInventorySelected, this.selected);
-                    s.Show();
+                   // mainManagerWindow.MainManagerView.Content = new RoomExchangeStaticEquipmentPage(roomInventorySelected, selected);
                 }
 
             }
@@ -181,48 +183,6 @@ namespace vezba.ManagerGUI
             {
                 MessageBox.Show("Ni jedan proizvod nije selektovan!");
             }
-        }
-
-        private void StaticCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            /* if (RoomInventoryList != null)
-             {
-                 if (CheckedBoxStatic.IsChecked == true)
-                 {
-                     foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
-                     {
-                         if (roomInventory.room.RoomNumber == selected.RoomNumber)
-                         {
-                             if (roomInventory.equipment.Type == EquipmentType.statical)
-                             {
-                                 RoomInventoryList.Add(roomInventory);
-                                 RoomInventoryBinding.Items.Refresh();
-                             }
-                         }
-                     }
-                 }
-             }*/
-        }
-
-        private void DinamicCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            /*if (RoomInventoryList != null)
-            {
-                if (CheckedBoxDinamic.IsChecked == true)
-                {
-                    foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
-                    {
-                        if (roomInventory.room.RoomNumber == selected.RoomNumber)
-                        {
-                            if (roomInventory.equipment.Type == EquipmentType.dinamical)
-                            {
-                                RoomInventoryList.Add(roomInventory);
-                                RoomInventoryBinding.Items.Refresh();
-                            }
-                        }
-                    }
-                }
-            }*/
         }
 
         private bool EquipmentFilter(object item)
@@ -240,59 +200,7 @@ namespace vezba.ManagerGUI
 
         }
 
-        private void StaticCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            /*if (RoomInventoryList != null)
-            {
-                if (CheckedBoxStatic.IsChecked == false)
-                {
-                    foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
-                    {
-                        if (roomInventory.room.RoomNumber == selected.RoomNumber)
-                        {
-                            if (roomInventory.equipment.Type == EquipmentType.statical)
-                            {
-                                for (int i = 0; i < RoomInventoryList.Count; i++)
-                                {
-                                    if (RoomInventoryList[i].Id == roomInventory.Id)
-                                    {
-                                        RoomInventoryList.Remove(RoomInventoryList[i]);
-                                        RoomInventoryBinding.Items.Refresh();
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }*/
-        }
-
-        private void DinamicCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            /* if (RoomInventoryList != null)
-             {
-                 if (CheckedBoxDinamic.IsChecked == false)
-                 {
-                     foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
-                     {
-                         if (roomInventory.room.RoomNumber == selected.RoomNumber)
-                         {
-                             if (roomInventory.equipment.Type == EquipmentType.dinamical)
-                             {
-                                 for (int i=0; i<RoomInventoryList.Count; i++)
-                                 {
-                                     if(RoomInventoryList[i].Id == roomInventory.Id)
-                                     {
-                                         RoomInventoryList.Remove(RoomInventoryList[i]);
-                                         RoomInventoryBinding.Items.Refresh();
-                                     }
-                                 }
-                             }
-                         }
-                     }
-                 }
-             }*/
-        }
+        
     }
 }
 

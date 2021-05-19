@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model;
 using vezba;
+using vezba.ManagerGUI;
 
 namespace Bolnica
 {
@@ -69,7 +70,7 @@ namespace Bolnica
 
             RoomStorage storage = new RoomStorage();
             storage.Save(newRoom);
-            ManagerView.Rooms.Add(newRoom);
+            RoomsPage.Rooms.Add(newRoom);
             this.Close();
         }
 

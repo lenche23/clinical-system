@@ -36,13 +36,13 @@
             <Setter Property="Width" Value="200"/>
             <Setter Property="Margin" Value="3"/>
         </Style>
-        
+
         <Style TargetType="TextBox" x:Key="SecDescriptionTextBox">
             <Setter Property="Height" Value="54"/>
             <Setter Property="Width" Value="200"/>
             <Setter Property="Margin" Value="3"/>
         </Style>
-        
+
         <Style TargetType="DatePicker" x:Key="SecStandardDatePicker">
             <Setter Property="Height" Value="27"/>
             <Setter Property="Width" Value="200"/>
@@ -77,11 +77,11 @@
             <Setter Property="Background" Value="Lavender"/>
             <Setter Property="BorderBrush" Value="#ced0fd"/>
         </Style>
-        
+
         <Style TargetType="DataGridCell" x:Key="SecTableCell">
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
-        
+
         <Style TargetType="DataGrid" x:Key="SecTable">
             <Setter Property="SelectionMode" Value="Single"/>
             <Setter Property="HeadersVisibility" Value="Column"/>
@@ -90,7 +90,7 @@
             <Setter Property="CellStyle" Value="{StaticResource SecTableCell}"/>
             <Setter Property="GridLinesVisibility" Value="Horizontal"/>
         </Style>
-        
+
         <Style TargetType="Button" x:Key="SecStandardButton">
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="110"/>

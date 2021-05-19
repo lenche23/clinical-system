@@ -42,15 +42,9 @@
     "IsDeleted": false
   },
   {
-    "Id": 7,
-    "Name": "Vlažne maramice pakovanje",
-    "Type": 1,
-    "IsDeleted": false
-  },
-  {
     "Id": 8,
-    "Name": "Maramice pakovanje",
+    "Name": "Oprema1",
     "Type": 1,
-    "IsDeleted": false
+    "IsDeleted": true
   }
 ]

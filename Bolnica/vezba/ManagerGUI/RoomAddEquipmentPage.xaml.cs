@@ -40,13 +40,13 @@ namespace vezba.ManagerGUI
             var id = ris.GenerateNextId();
             RoomInventory newRoomInventory = new RoomInventory(DateTime.Now, endTime, Quantity, id, comboEquipment, this.selected);
             ris.Save(newRoomInventory);
-            WindowUpdateRoom.RoomInventoryList.Add(newRoomInventory);
-            //this.Close();
+            RoomUpdatePage.RoomInventoryList.Add(newRoomInventory);
+            NavigationService.GoBack();
         }
 
         private void OdustaniDodavanje_Button_Click(object sender, RoutedEventArgs e)
         {
-            //this.Close();
+            NavigationService.GoBack();
         }
     }
 }

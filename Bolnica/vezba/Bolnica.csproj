@@ -994,9 +994,6 @@
     <Resource Include="ManagerImages\BackArrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ManagerGUI\BackArrow.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="PatientImages\bell.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1058,6 +1055,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+
   <ItemGroup>
     <Resource Include="DoctorImages\next.png" />
   </ItemGroup>
@@ -1072,6 +1070,30 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DoctorImages\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\building.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\health-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\hospital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\medical-kit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\medicine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\account.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

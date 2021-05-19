@@ -8,7 +8,7 @@
         Height="660" Width="750">
     <Grid>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Label x:Name="UpravnikLabel" Background="#FFFFDEB6" FontFamily="Yu Gothic UI Semibold" FontSize="20" Margin="0,0,0,10" Foreground="#FFCD4100">Upravnik</Label>
+            <TextBlock FontSize="22" FontFamily="Yu Gothic UI Semibold" Foreground="#FFCD4100" Background="#FFFFDEB6" Margin="10"  TextAlignment="Center" Width="116" Height="34" LineHeight="22"><Run Text="Upravnik"/></TextBlock>
         </StackPanel>
         <Frame x:Name ="MainManagerView" Margin="0,0,0,60" NavigationUIVisibility="Hidden"/>
     </Grid>

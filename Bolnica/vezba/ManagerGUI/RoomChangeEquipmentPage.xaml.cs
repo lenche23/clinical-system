@@ -52,12 +52,14 @@ namespace vezba.ManagerGUI
             RoomInventoryStorage ris = new RoomInventoryStorage();
             ris.Update(this.selected);
             wur.RoomInventoryBinding.Items.Refresh();
+            NavigationService.GoBack();
             //this.Close();
 
         }
 
         private void OdustaniIzmena_Button_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.GoBack();
             //this.Close();
         }
     }

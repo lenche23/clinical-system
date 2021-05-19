@@ -7,7 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RoomAddNewPage" Background="#FFFFF0F0">
-    <Grid Margin="0,0,7,6">
+    <Grid>
+        <Grid.Resources>
+
+        </Grid.Resources>
         <Label Content="Kreiranje nove prostorije"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="165,25,18,198"/>
         <Label Content="Broj prostorije:" Margin="168,53,120,172"/>
         <Label Content="Sprat:" Margin="168,135,491,374" />

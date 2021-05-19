@@ -7,17 +7,17 @@
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RoomExchangeStaticEquipmentPage" Background="#FFFFE1E1">
-    <Grid Margin="0,0,-22,-8">
-        <Label Content="Broj prostorije u koju prenosimo:" Margin="44,54,542,488"/>
-        <TextBox Name="BrojSobe" Text="{Binding RoomNumber, Mode=OneWay}" Margin="244,54,64,488"/>
+    <Grid>
+        <Label Content="Broj prostorije u koju prenosimo:" Margin="44,54,520,470"/>
+        <TextBox Name="BrojSobe" Text="{Binding RoomNumber, Mode=OneWay}" Margin="244,54,64,485"/>
 
-        <Label Content="Količina prenete opreme:" Margin="86,116,533,423"/>
+        <Label Content="Količina prenete opreme:" Margin="64,116,533,423"/>
         <TextBox Name="Količina" Text="{Binding RoomNumber, Mode=OneWay}" Margin="244,116,64,423"/>
 
-        <Label Content="Datum transfera:" Margin="100,171,557,382"/>
-        <DatePicker Name ="Date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,172,0,0" Width="137"/>
+        <Label Content="Datum transfera:" Margin="109,160,533,376"/>
+        <DatePicker Name ="Date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="253,160,0,0" Width="137" RenderTransformOrigin="0.766,0.75"/>
 
-        <Button Click="OkButtonClick" Margin="64,234,432,263">Potvrdi</Button>
-        <Button Click="CancelButtonClick" Margin="415,234,74,263">Odustani</Button>
+        <Button Click="OkButtonClick" Margin="162,249,435,279">Potvrdi</Button>
+        <Button Click="CancelButtonClick" Margin="409,249,180,279">Odustani</Button>
     </Grid>
 </Page>
