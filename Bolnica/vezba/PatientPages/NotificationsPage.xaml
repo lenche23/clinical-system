@@ -15,17 +15,33 @@
                 <GradientStop Color="AntiqueWhite" Offset="0.483"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="/Bolnica;component/PatientImages/bell (1).png" Width="Auto" Margin="22,36,343,505"/>
-        <Label Content="Obaveštenja" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Foreground="#FF2E421A" Margin="92,36,138,0" Height="59" Width="200"/>
-        <Grid HorizontalAlignment="Left" Height="179" Margin="10,109,0,0" VerticalAlignment="Top" Width="412">
-            <DataGrid x:Name="announcementsTable" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding Ans}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="412" Height="402" Margin="0,10,0,-233" Background="AntiqueWhite">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Obaveštenje" Binding="{Binding Title}"  Width="*"/>
-                    <DataGridTextColumn Header="Datum" Binding="{Binding FormatedDatePosted}" Width="100"/>
-                </DataGrid.Columns>
-            </DataGrid>
-        </Grid>
-        <Button x:Name="ButtonShowNotification" Content="Detaljnije"  FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,532,271,10" Click="ButtonShowNotification_Click">
+        <Image Source="/Bolnica;component/PatientImages/bell (1).png" Width="45" Margin="26,10,360,543"/>
+        <Label Content="Obaveštenja" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,154,0" Height="57" Width="200"/>
+        <ListBox x:Name="announcementsTable" ItemsSource="{Binding Ans, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="10,72,10,65" Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="50">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Width="380">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Title, Mode=TwoWay}" FontSize="16" FontWeight="Bold" Foreground="#FF2E421A"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Posted, StringFormat='{}{0: dd.MM.yyyy}', Mode=TwoWay}"  FontStyle="Italic"/>
+                        </Grid>
+                        <TextBlock Grid.Row="1" Text="{Binding Content, Mode=TwoWay}" FontSize="14" TextWrapping="Wrap" Width="380"/>
+                        <Separator Grid.Row="2"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="ButtonShowNotification" Content="Detaljnije"  FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,540,271,10" Click="ButtonShowNotification_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>

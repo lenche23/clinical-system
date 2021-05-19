@@ -33,7 +33,7 @@ namespace vezba.PatientPages
 
         private void ButtonShowNotification_Click(object sender, RoutedEventArgs e)
         {
-            if (announcementsTable.SelectedCells.Count > 0)
+            if (announcementsTable.SelectedItems.Count > 0)
             {
                 Announcement a = (Announcement)announcementsTable.SelectedItem;
                 this.NavigationService.Navigate(new ShowNotificationPage(a));
@@ -42,7 +42,7 @@ namespace vezba.PatientPages
             {
                 MessageBox.Show("Niste selektovali obavestenje!");
             }
-            
+
         }
     }
 }
