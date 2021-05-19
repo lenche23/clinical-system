@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Model
 {
-   public class DoctorStorage
+   public class DoctorFileRepository
    {
       public List<Doctor> GetAll()
       {

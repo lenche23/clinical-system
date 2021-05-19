@@ -27,7 +27,7 @@ namespace vezba.SecretaryGUI
         {
             InitializeComponent();
             this.DataContext = this;
-            AnnouncementStorage s = new AnnouncementStorage();
+            AnnouncementFileRepository s = new AnnouncementFileRepository();
             List<Announcement> announcements = s.GetByUser(UserType.secretary);
             Announcements = new ObservableCollection<Announcement>(announcements);
         }

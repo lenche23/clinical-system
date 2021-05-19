@@ -46,7 +46,7 @@ namespace vezba.ManagerGUI
                 Renovation renovation = (Renovation)RenovationsBinding.SelectedItem;
                 this.selected.renovation.Remove(renovation);
                 RenovationList.Remove(renovation);
-                RoomStorage rs = new RoomStorage();
+                RoomFileRepository rs = new RoomFileRepository();
                 rs.Update(this.selected);
             }
 

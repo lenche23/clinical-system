@@ -11,14 +11,14 @@ namespace vezba
     {
         public static ObservableCollection<Room> Rooms { get; set; }
         public static List<Room> rooms;
-        private RoomStorage storage;
+        private RoomFileRepository _fileRepository;
 
         public ManagerView()
         {
             InitializeComponent();
             this.DataContext = this;
-            storage = new RoomStorage();
-            rooms = storage.GetAll();
+            _fileRepository = new RoomFileRepository();
+            rooms = _fileRepository.GetAll();
             Rooms = new ObservableCollection<Room>(rooms);
             lvDataBinding.ItemsSource = Rooms;
         }
@@ -50,7 +50,7 @@ namespace vezba
             if(lvDataBinding.SelectedIndex>-1)
             {
                 Room r = (Room)lvDataBinding.SelectedItem;
-                RoomStorage rs = new RoomStorage();
+                RoomFileRepository rs = new RoomFileRepository();
                 rs.Delete(r.RoomNumber);
                 Rooms.Remove(r);  
             }

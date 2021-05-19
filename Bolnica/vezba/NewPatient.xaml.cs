@@ -80,7 +80,7 @@ namespace Bolnica
 
             Patient pat = new Patient(isGuest, name, surname, jmbg, date, sex, phoneNumber, adress, email, idNum, emContact, medRecord, username, password);
 
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             ps.Save(pat);
             SecretaryView.Patients.Add(pat);
             this.Close();

@@ -75,13 +75,13 @@ namespace vezba
             DateTime parsedTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
             DateTime movedDate = selectedDate.Date.Add(parsedTime.TimeOfDay);
 
-            PatientStorage patientStorage = new PatientStorage();
-            Patient patient = patientStorage.GetOne("1008985563244");
+            PatientFileRepository patientFileRepository = new PatientFileRepository();
+            Patient patient = patientFileRepository.GetOne("1008985563244");
 
             Appointment appointment = new Appointment(initDoctor, movedDate, patient);
             appointment.AppointentId = id;
-            AppointmentStorage appointmentStorage = new AppointmentStorage();
-            appointmentStorage.Update(appointment);
+            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+            appointmentFileRepository.Update(appointment);
 
             var appointment1 = ChangeAppointmentView.Appointments.FirstOrDefault(a => a.AppointentId.Equals(id));
             if (appointment1 != null)
@@ -94,8 +94,8 @@ namespace vezba
 
         private void AddLog(Appointment appointment)
         {
-            EventsLogStorage eventsLogStorage = new EventsLogStorage();
-            List<EventsLog> list = eventsLogStorage.Load();
+            EventsLogFileRepository eventsLogFileRepository = new EventsLogFileRepository();
+            List<EventsLog> list = eventsLogFileRepository.Load();
             String patientJMBG = appointment.Patient.Jmbg;
             List<DateTime> events = new List<DateTime>();
             DateTime log = DateTime.Now;
@@ -104,7 +104,7 @@ namespace vezba
                 if (elog.PatientJmbg.Equals(patientJMBG))
                 {
                     elog.EventDates.Add(log);
-                    eventsLogStorage.Update(elog);
+                    eventsLogFileRepository.Update(elog);
                 }
             }
         }

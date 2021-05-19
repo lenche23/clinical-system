@@ -24,9 +24,9 @@ namespace vezba
     {
         public Appointment Selected { get; set; }
         private DoctorView dw;
-        public PatientStorage storage;
-        public DoctorStorage docstorage;
-        public RoomStorage rs;
+        public PatientFileRepository fileRepository;
+        public DoctorFileRepository docstorage;
+        public RoomFileRepository rs;
         public List<Patient> Patients { get; set; }
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
@@ -38,11 +38,11 @@ namespace vezba
         public EditAppointmentPage(Appointment selected, DoctorView dw, Calendar calendar, Grid appointmentGrid)
         {
             InitializeComponent();
-            storage = new PatientStorage();
-            Patients = storage.GetAll();
-            docstorage = new DoctorStorage();
+            fileRepository = new PatientFileRepository();
+            Patients = fileRepository.GetAll();
+            docstorage = new DoctorFileRepository();
             Doctors = docstorage.GetAll();
-            rs = new RoomStorage();
+            rs = new RoomFileRepository();
             Rooms = rs.GetAll();
             Selected = selected;
             DataContext = this;
@@ -75,7 +75,7 @@ namespace vezba
             var IsEmergency = (Boolean)IsEmergencyCB.IsChecked;
             var appointment = new Appointment(AppointmentID, Patient, Doctor, Room, startDateTime, DurationInMinutes, ApointmentDescription, IsEmergency);
 
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             aps.Update(appointment);
             calendar.RemoveAppointment(appointmentGrid);
             calendar.AddAppointmentToCurrentView(appointment);

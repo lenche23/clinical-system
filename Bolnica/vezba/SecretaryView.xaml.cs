@@ -14,7 +14,7 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             List<Patient> temp = ps.GetAll();
             Patients = new ObservableCollection<Patient>(temp);
 
@@ -30,7 +30,7 @@ namespace vezba
         {
             if (patientsTable.SelectedCells.Count > 0)
             {
-                /*PatientStorage ps = new PatientStorage();
+                /*PatientFileRepository ps = new PatientFileRepository();
                 List<Patient> temp = ps.GetAll();
                 Patients = new ObservableCollection<Patient>(temp);*/
                 Patient p = (Patient)patientsTable.SelectedItem;
@@ -48,7 +48,7 @@ namespace vezba
         {
             if(patientsTable.SelectedCells.Count > 0)
             {
-                /*PatientStorage ps = new PatientStorage();
+                /*PatientFileRepository ps = new PatientFileRepository();
                 List<Patient> temp = ps.GetAll();
                 Patients = new ObservableCollection<Patient>(temp);*/
                 Patient p = (Patient) patientsTable.SelectedItem;
@@ -67,7 +67,7 @@ namespace vezba
             if (patientsTable.SelectedCells.Count > 0)
             {
                 Patient p = (Patient)patientsTable.SelectedItem;
-                PatientStorage ps = new PatientStorage();
+                PatientFileRepository ps = new PatientFileRepository();
                 ps.Delete(p.Jmbg);
                 Patients.Remove(p);
 

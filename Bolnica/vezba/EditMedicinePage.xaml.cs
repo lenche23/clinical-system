@@ -25,7 +25,7 @@ namespace vezba
 
         public List<Medicine> MedicineForReplacement { get; set; }
 
-        private MedicineStorage MedStorage;
+        private MedicineFileRepository _medFileRepository;
 
         public List<Ingridient> Ingredients { get; set; }
 
@@ -54,8 +54,8 @@ namespace vezba
             }
             Ingredients = new List<Ingridient>(medicine.Ingridient);
 
-            MedStorage = new MedicineStorage();
-            MedicineForReplacement = MedStorage.GetApproved();
+            _medFileRepository = new MedicineFileRepository();
+            MedicineForReplacement = _medFileRepository.GetApproved();
             foreach (var replacement in MedicineForReplacement)
             {
                 if (replacement.MedicineID == Medicine.MedicineID)
@@ -95,7 +95,7 @@ namespace vezba
             Medicine.Condition = Condition;
             Medicine.Ingridient = new List<Ingridient>(Ingredients);
             Medicine.ReplacementMedicine = ReplacementMedicine;
-            MedStorage.Update(Medicine);
+            _medFileRepository.Update(Medicine);
             mpw.approvedGrid.Items.Refresh();
             dw.Main.GoBack();
             dw.Main.GoBack();

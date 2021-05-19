@@ -21,7 +21,7 @@ namespace vezba.SecretaryGUI
         {
             InitializeComponent();
             this.DataContext = this;
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             List<Patient> patients = ps.GetAll();
             Patient.ItemsSource = patients;
             List<Speciality> specialities = new List<Speciality>();
@@ -30,7 +30,7 @@ namespace vezba.SecretaryGUI
             specialities.Add(new Speciality("Stomatolog"));
             specialities.Add(new Speciality("Oftalmolog"));
             Speciality.ItemsSource = specialities;
-            RoomStorage rs = new RoomStorage();
+            RoomFileRepository rs = new RoomFileRepository();
             List<Room> rooms = rs.GetAll();
             Room.ItemsSource = rooms;
             List<int> durations = new List<int> { 15, 30, 45, 60 };
@@ -61,8 +61,8 @@ namespace vezba.SecretaryGUI
             DateTime timeLimit = DateTime.Now.AddMinutes(15);
             if (emergencyAppointment.StartTime <= timeLimit)
             {
-                AppointmentStorage appointmentStorage = new AppointmentStorage();
-                Boolean isSuccess = appointmentStorage.Save(emergencyAppointment);
+                AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+                Boolean isSuccess = appointmentFileRepository.Save(emergencyAppointment);
                 if (isSuccess)
                 {
                     SecretaryAppointments.Appointments.Add(emergencyAppointment);
@@ -80,19 +80,19 @@ namespace vezba.SecretaryGUI
 
         private Appointment MakeEarliestEmergencyAppointment(Patient patient, Speciality speciality, Room room, int duration, string description)
         {
-            DoctorStorage doctorStorage = new DoctorStorage();
-            List<Doctor> doctors = doctorStorage.GetDoctorsWithSpeciality(speciality); // izmeniti tako da postoji funkcija koja vraca postojece specijalizacije
+            DoctorFileRepository doctorFileRepository = new DoctorFileRepository();
+            List<Doctor> doctors = doctorFileRepository.GetDoctorsWithSpeciality(speciality); // izmeniti tako da postoji funkcija koja vraca postojece specijalizacije
             if (doctors.Count == 0)
             {
                 MessageBox.Show("Nema doktora sa ovom specijalizacijom!");
                 return null;
             }
 
-            AppointmentStorage appointmentStorage = new AppointmentStorage();
+            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
             List<Appointment> appointments = new List<Appointment>();
             foreach (Doctor d in doctors)
             {
-                Appointment emergencyAppointment = new Appointment(appointmentStorage.generateNextId(), patient, d, room, DateTime.Now, duration, description);
+                Appointment emergencyAppointment = new Appointment(appointmentFileRepository.generateNextId(), patient, d, room, DateTime.Now, duration, description);
                 //emergencyAppointment = FindFirstFreeAppointment(emergencyAppointment);
                 emergencyAppointment.StartTime = FindNextFreeAppointmentStartTime(emergencyAppointment);
                 appointments.Add(emergencyAppointment);
@@ -142,8 +142,8 @@ namespace vezba.SecretaryGUI
 
         private DateTime FindNextFreeAppointmentStartTime(Appointment appointment)
         {
-            AppointmentStorage appointmentStorage = new AppointmentStorage();
-            List<Appointment> scheduledAppointments = appointmentStorage.GetAll();
+            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+            List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
             Boolean newTimeFound = false;
             while (!newTimeFound)
             {
@@ -163,8 +163,8 @@ namespace vezba.SecretaryGUI
 
         private Appointment FindFirstFreeAppointment(Appointment appointment)
         {
-            AppointmentStorage appointmentStorage = new AppointmentStorage();
-            List<Appointment> scheduledAppointments = appointmentStorage.GetAll();
+            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+            List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
             Boolean newTimeFound = false;
             while (!newTimeFound)
             {

@@ -48,7 +48,7 @@ namespace vezba
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AnnouncementStorage ast = new AnnouncementStorage();
+            AnnouncementFileRepository ast = new AnnouncementFileRepository();
             int id = this.announcement.Id;
             DateTime po = this.announcement.Posted;
             DateTime ed = DateTime.Today;
@@ -64,7 +64,7 @@ namespace vezba
                 vis = Model.Visibility.patients;
             }
             Announcement announcement = new Announcement(id, po, ed, tit, con, vis);
-            AnnouncementStorage s = new AnnouncementStorage();
+            AnnouncementFileRepository s = new AnnouncementFileRepository();
             s.Update(announcement);
 
             var an = Announcements.Ans.FirstOrDefault(a => a.Id == id);

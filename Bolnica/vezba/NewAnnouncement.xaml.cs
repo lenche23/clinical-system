@@ -35,7 +35,7 @@ namespace vezba
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AnnouncementStorage ast = new AnnouncementStorage();
+            AnnouncementFileRepository ast = new AnnouncementFileRepository();
             int id = ast.generateNextId();
             DateTime po = DateTime.Today;
             DateTime ed = DateTime.Today;
@@ -53,7 +53,7 @@ namespace vezba
             else if (Visibility.SelectedIndex == 5)
                 vis = Model.Visibility.secretaries;
             Announcement announcement = new Announcement(id, po, ed, tit, con, vis);
-            AnnouncementStorage s = new AnnouncementStorage();
+            AnnouncementFileRepository s = new AnnouncementFileRepository();
             s.Save(announcement);
             Announcements.Ans.Add(announcement);
 

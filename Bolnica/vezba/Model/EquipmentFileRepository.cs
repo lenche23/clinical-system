@@ -1,7 +1,7 @@
-// File:    EquipmentStorage.cs
+// File:    EquipmentFileRepository.cs
 // Author:  graho
 // Created: 16 April 2021 17:12:53
-// Purpose: Definition of Class EquipmentStorage
+// Purpose: Definition of Class EquipmentFileRepository
 
 using System;
 using System.Collections.Generic;
@@ -11,9 +11,9 @@ using Newtonsoft.Json;
 
 namespace Model
 {
-   public class EquipmentStorage
+   public class EquipmentFileRepository
    {
-        public EquipmentStorage()
+        public EquipmentFileRepository()
         {
             this.FileName = "../../oprema.json";
         }

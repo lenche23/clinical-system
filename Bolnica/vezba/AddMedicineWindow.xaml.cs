@@ -23,14 +23,14 @@ namespace vezba
     {
         public static ObservableCollection<Medicine> MedicineList { get; set; }
         public static List<Medicine> medicineList;
-        private MedicineStorage medicineStorage;
+        private MedicineFileRepository _medicineFileRepository;
 
         public AddMedicineWindow()
         {
             InitializeComponent();
             this.DataContext = this;
-            medicineStorage = new MedicineStorage();
-            medicineList = medicineStorage.GetAll();
+            _medicineFileRepository = new MedicineFileRepository();
+            medicineList = _medicineFileRepository.GetAll();
             MedicineList = new ObservableCollection<Medicine>(medicineList);
             MedicineBinding.ItemsSource = MedicineList;
         }
@@ -46,7 +46,7 @@ namespace vezba
             if (MedicineBinding.SelectedIndex > -1)
             {
                 Medicine m = (Medicine)MedicineBinding.SelectedItem;
-                MedicineStorage ms = new MedicineStorage();
+                MedicineFileRepository ms = new MedicineFileRepository();
                 ms.Delete(m.MedicineID);
                 MedicineList.Remove(m);
             }

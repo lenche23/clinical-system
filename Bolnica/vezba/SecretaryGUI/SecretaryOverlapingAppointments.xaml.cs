@@ -49,7 +49,7 @@ namespace vezba.SecretaryGUI
             if (overlapingAppointmentsTable.SelectedCells.Count > 0)
             {
                 AppointmentForReschedulingDTO ad = (AppointmentForReschedulingDTO)overlapingAppointmentsTable.SelectedItem;
-                AppointmentStorage aps = new AppointmentStorage();
+                AppointmentFileRepository aps = new AppointmentFileRepository();
                 List<Appointment> scheduledAppointments = aps.GetAll();
                 Appointment rescheduledAppointment = scheduledAppointments.FirstOrDefault(a => a.AppointentId.Equals(ad.AppointmentId));
                 if (rescheduledAppointment != null)
@@ -68,8 +68,8 @@ namespace vezba.SecretaryGUI
 
         private List<AppointmentForReschedulingDTO> TransformAppointmentsForRescheduling(List<Appointment> overlapingAppointments, Appointment emergencyAppointment)
         {
-            AppointmentStorage appointmentStorage = new AppointmentStorage();
-            List<Appointment> scheduledAppointments = appointmentStorage.GetAll();
+            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+            List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
             scheduledAppointments.Add(emergencyAppointment);
             //-------------------------------------------------------------S remove list from list
             foreach (Appointment oAppointment in overlapingAppointments)
@@ -104,8 +104,8 @@ namespace vezba.SecretaryGUI
 
         private List<Appointment> GetEmergencyOverlapingAppointments(Appointment appointment)
         {
-            AppointmentStorage appointmentStorage = new AppointmentStorage();
-            List<Appointment> scheduledAppointments = appointmentStorage.GetAll();
+            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+            List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
             List<Appointment> overlapingAppointments = new List<Appointment>();
             for (int i = 0; i < scheduledAppointments.Count; i++)
             {

@@ -1,14 +1,14 @@
-// File:    PrescriptionStorage.cs
+// File:    PrescriptionFileRepository.cs
 // Author:  graho
 // Created: 16 April 2021 17:13:01
-// Purpose: Definition of Class PrescriptionStorage
+// Purpose: Definition of Class PrescriptionFileRepository
 
 using System;
 using System.Collections.Generic;
 
 namespace Model
 {
-   public class PrescriptionStorage
+   public class PrescriptionFileRepository
    {
       public List<Prescription> GetAll()
       {

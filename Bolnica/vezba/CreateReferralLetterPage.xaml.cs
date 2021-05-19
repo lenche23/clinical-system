@@ -23,7 +23,7 @@ namespace vezba
     public partial class CreateReferralLetterPage : Page
     {
 
-        public DoctorStorage docstorage;
+        public DoctorFileRepository docstorage;
         public List<Doctor> Doctors { get; set; }
 
         public Patient patient;
@@ -34,7 +34,7 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = patient;
-            docstorage = new DoctorStorage();
+            docstorage = new DoctorFileRepository();
             Doctors = docstorage.GetAll();
             cmbDoctors.DataContext = this;
             cmbDoctors.SelectedIndex = 0;
@@ -49,10 +49,10 @@ namespace vezba
             var Doctor = cmbDoctors.SelectedItem;
             var ReferralLtter = new ReferralLetter((DateTime)StartDate, DurationPeriodInDays, (Doctor)Doctor);
             patient.MedicalRecord.AddReferralLetter(ReferralLtter);
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             ps.Update(patient);
 
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             List<Appointment> appointments = aps.GetAll();
             foreach (Appointment appointment in appointments)
             {

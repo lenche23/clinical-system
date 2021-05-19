@@ -81,8 +81,8 @@ namespace vezba
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
-                AppointmentStorage appointmentStorage = new AppointmentStorage();
-                appointmentStorage.Delete(Selected.AppointentId);
+                AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+                appointmentFileRepository.Delete(Selected.AppointentId);
                 calendar.RemoveAppointment(appointmentGrid);
                 calendar.SetScrollViewerToFirstAppointment();
                 dw.Main.GoBack();

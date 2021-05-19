@@ -6,10 +6,10 @@ using System.Windows;
 
 namespace Model
 {
-   public class MedicineStorage
+   public class MedicineFileRepository
    {
 
-        public MedicineStorage()
+        public MedicineFileRepository()
         {
             this.FileName = "../../lekovi.json";
         }

@@ -18,14 +18,14 @@ namespace vezba
 {
     public partial class DeclinedMedicineWindow : Window
     {
-        private DeclinedMedicineStorage declinedMedicineStorage;
+        private DeclinedMedicineFileRepository _declinedMedicineFileRepository;
         private List<DeclinedMedicine> declinedMedicineList;
         private ObservableCollection<DeclinedMedicine> DeclinedMedicineList { get; set; }
         public DeclinedMedicineWindow()
         {
             InitializeComponent();
-            declinedMedicineStorage = new DeclinedMedicineStorage();
-            declinedMedicineList = declinedMedicineStorage.GetAll();
+            _declinedMedicineFileRepository = new DeclinedMedicineFileRepository();
+            declinedMedicineList = _declinedMedicineFileRepository.GetAll();
             DeclinedMedicineList = new ObservableCollection<DeclinedMedicine>(declinedMedicineList);
             DeclinedMedicineBinding.ItemsSource = DeclinedMedicineList;
         }

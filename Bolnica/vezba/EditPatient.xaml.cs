@@ -120,7 +120,7 @@ namespace Bolnica
             string password = Password.Text;
 
             Patient pat = new Patient(isGuest, name, surname, jmbg, date, sex, phoneNumber, adress, email, idNum, emContact, medRecord, username, password);
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             ps.Update(pat);
 
             var pa = SecretaryView.Patients.FirstOrDefault(p => p.Jmbg.Equals(jmbg));

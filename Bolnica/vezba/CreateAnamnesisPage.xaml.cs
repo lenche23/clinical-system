@@ -42,9 +42,9 @@ namespace vezba
             var Time = DateTime.Now;
             var Anamnesis = new Anamnesis { Comment = Comment, Patient = Patient, Doctor = Doctor, Time = Time };
             appointment.Patient.MedicalRecord.AddAnamnesis(Anamnesis);
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             ps.Update(appointment.Patient);
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             List<Appointment> appointments = aps.GetAll();
             foreach (Appointment appointment1 in appointments)
             {

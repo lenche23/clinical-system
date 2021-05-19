@@ -25,11 +25,11 @@ namespace vezba.PatientPages
         {
             InitializeComponent();
             this.DataContext = this;
-            AppointmentStorage storage = new AppointmentStorage();
-            List<Appointment> apps = storage.GetAll();
+            AppointmentFileRepository fileRepository = new AppointmentFileRepository();
+            List<Appointment> apps = fileRepository.GetAll();
             Apps = new ObservableCollection<Appointment>(apps);
 
-            PatientStorage pps = new PatientStorage();
+            PatientFileRepository pps = new PatientFileRepository();
             Patient patient = pps.GetOne("1008985563244");  //ja
             Patient = patient;
         }

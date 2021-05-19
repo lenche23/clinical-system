@@ -38,7 +38,7 @@ namespace vezba
             var endTime = startTime.AddDays(durationInDays);
             var id = selected.renovation.Count + 1;
 
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             List<Appointment> appointments = aps.GetAll();
 
             if (DateTime.Compare(startTime, DateTime.Now) < 0)
@@ -55,7 +55,7 @@ namespace vezba
 
             var newRenovation = new Renovation(startTime, durationInDays, id);
             selected.AddRenovation(newRenovation);
-            RoomStorage rs = new RoomStorage();
+            RoomFileRepository rs = new RoomFileRepository();
             rs.Update(this.selected);
             WindowRenovations.RenovationList.Add(newRenovation);
             this.Close();

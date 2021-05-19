@@ -23,7 +23,7 @@ namespace vezba.ManagerGUI
         {
             InitializeComponent();
             this.DataContext = this;
-            AnnouncementStorage s = new AnnouncementStorage();
+            AnnouncementFileRepository s = new AnnouncementFileRepository();
             List<Announcement> temp = s.GetAll();
             Ans = new ObservableCollection<Announcement>(temp);
         }
@@ -67,7 +67,7 @@ namespace vezba.ManagerGUI
             if (announcementTable.SelectedCells.Count > 0)
             {
                 Announcement a = (Announcement)announcementTable.SelectedItem;
-                AnnouncementStorage s = new AnnouncementStorage();
+                AnnouncementFileRepository s = new AnnouncementFileRepository();
                 s.Delete(a.Id);
                 Ans.Remove(a);
 

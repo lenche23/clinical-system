@@ -26,7 +26,7 @@ namespace vezba
 
         private DoctorView dw;
 
-        public MedicineStorage medStorage;
+        public MedicineFileRepository medFileRepository;
 
         private MedicinePageView mpw;
 
@@ -42,8 +42,8 @@ namespace vezba
         private void ApproveClick(object sender, RoutedEventArgs e)
         {
             Medicine.Status = MedicineStatus.approved;
-            medStorage = new MedicineStorage();
-            medStorage.Update(Medicine);
+            medFileRepository = new MedicineFileRepository();
+            medFileRepository.Update(Medicine);
             MedicinePageView.MedicineToApprove.Remove(Medicine);
             MedicinePageView.ApprovedMedicine.Add(Medicine);
             mpw.revisionGrid.Items.Refresh();

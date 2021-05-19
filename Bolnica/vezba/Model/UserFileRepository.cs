@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Model
 {
-    public class UserStorage
+    public class UserFileRepository
     {
         public List<User> users = new List<User>();
-        public UserStorage()
+        public UserFileRepository()
         {
             
         }

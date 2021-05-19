@@ -23,7 +23,7 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
-            AppointmentStorage ps = new AppointmentStorage();
+            AppointmentFileRepository ps = new AppointmentFileRepository();
             List<Appointment> temp = new List<Appointment>();
             foreach (Appointment appointment in ps.GetAll())
             {
@@ -41,8 +41,8 @@ namespace vezba
             if (cancelTable.SelectedItems.Count > 0)
             {
                 Appointment a = (Appointment)cancelTable.SelectedItem;
-                AppointmentStorage storage = new AppointmentStorage();
-                Boolean bla =  storage.Delete(a.AppointentId);
+                AppointmentFileRepository fileRepository = new AppointmentFileRepository();
+                Boolean bla =  fileRepository.Delete(a.AppointentId);
                 Appointments.Remove(a);
                 MessageBox.Show("Your appointment has been canceled.");
                 this.Close();

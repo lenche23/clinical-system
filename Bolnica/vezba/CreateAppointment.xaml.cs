@@ -25,9 +25,9 @@ namespace vezba
         public List<Patient> Patients { get; set; }
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
-        public PatientStorage storage;
-        public DoctorStorage docstorage;
-        public RoomStorage rs;
+        public PatientFileRepository fileRepository;
+        public DoctorFileRepository docstorage;
+        public RoomFileRepository rs;
 
         private DoctorView dw;
 
@@ -36,11 +36,11 @@ namespace vezba
         public CreateAppointment(DoctorView dw, Calendar calendar, Doctor doctor)
         {
             InitializeComponent();
-            storage = new PatientStorage();
-            Patients = storage.GetAll();
-            docstorage = new DoctorStorage();
+            fileRepository = new PatientFileRepository();
+            Patients = fileRepository.GetAll();
+            docstorage = new DoctorFileRepository();
             Doctors = docstorage.GetAll();
-            rs = new RoomStorage();
+            rs = new RoomFileRepository();
             Rooms = rs.GetAll();
             DataContext = this;
             cmbPatients.SelectedIndex = 0;
@@ -54,11 +54,11 @@ namespace vezba
         public CreateAppointment(DoctorView dw, Calendar calendar, DateTime generatedStartTime, Doctor doctor)
         {
             InitializeComponent();
-            storage = new PatientStorage();
-            Patients = storage.GetAll();
-            docstorage = new DoctorStorage();
+            fileRepository = new PatientFileRepository();
+            Patients = fileRepository.GetAll();
+            docstorage = new DoctorFileRepository();
             Doctors = docstorage.GetAll();
-            rs = new RoomStorage();
+            rs = new RoomFileRepository();
             Rooms = rs.GetAll();
             DataContext = this;
             cmbPatients.SelectedIndex = 0;
@@ -74,7 +74,7 @@ namespace vezba
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             var AppointmentID = aps.generateNextId();
             var startDate = StartDatePicker.SelectedDate;
             var hour = int.Parse(TimeTB.Text.Split(':')[0]);

@@ -23,7 +23,7 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
-            AppointmentStorage s = new AppointmentStorage();
+            AppointmentFileRepository s = new AppointmentFileRepository();
             List<Appointment> temp = s.GetAll();
             Appointments = new ObservableCollection<Appointment>(temp);
         }
@@ -66,7 +66,7 @@ namespace vezba
             if (appointmentsTable.SelectedCells.Count > 0)
             {
                 Appointment a = (Appointment) appointmentsTable.SelectedItem;
-                AppointmentStorage aps = new AppointmentStorage();
+                AppointmentFileRepository aps = new AppointmentFileRepository();
                 aps.Delete(a.AppointentId);
                 Appointments.Remove(a);
             }

@@ -24,7 +24,7 @@ namespace vezba.SecretaryGUI
         {
             InitializeComponent();
             this.DataContext = this;
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             List<Patient> temp = ps.GetAll();
             Patients = new ObservableCollection<Patient>(temp);
         }
@@ -70,7 +70,7 @@ namespace vezba.SecretaryGUI
             if (patientsTable.SelectedCells.Count > 0)
             {
                 Patient p = (Patient)patientsTable.SelectedItem;
-                PatientStorage ps = new PatientStorage();
+                PatientFileRepository ps = new PatientFileRepository();
                 ps.Delete(p.Jmbg);
                 Patients.Remove(p);
             }

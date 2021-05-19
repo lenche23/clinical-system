@@ -64,8 +64,8 @@ namespace vezba.ManagerGUI
 
             var newRoom = new Room(int.Parse(BrojSobe.Text), floor, type) { };
 
-            RoomStorage storage = new RoomStorage();
-            storage.Save(newRoom);
+            RoomFileRepository fileRepository = new RoomFileRepository();
+            fileRepository.Save(newRoom);
             RoomsPage.Rooms.Add(newRoom);
             NavigationService.GoBack();
         }

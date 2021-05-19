@@ -52,7 +52,7 @@ namespace vezba.ManagerGUI
             }
 
             inventary.InventaryBinding.Items.Refresh();
-            EquipmentStorage es = new EquipmentStorage();
+            EquipmentFileRepository es = new EquipmentFileRepository();
             es.Update(equipment);
             NavigationService.GoBack();
         }

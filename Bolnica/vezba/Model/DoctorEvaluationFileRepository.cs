@@ -6,18 +6,18 @@ using System.Windows;
 
 namespace Model
 {
-   public class HospitalEvaluationStorage
+   public class DoctorEvaluationFileRepository
    {
         public String FileName { get; set; }
 
-        public HospitalEvaluationStorage()
+        public DoctorEvaluationFileRepository()
         {
-            this.FileName = "../../hospital_evaluation.json";
+            this.FileName = "../../doctor_evaluation.json";
         }
 
-        public List<HospitalEvaluation> GetAll()
+        public List<DoctorEvaluation> GetAll()
         {
-            List<HospitalEvaluation> hospitalEvaluations = new List<HospitalEvaluation>();
+            List<DoctorEvaluation> doctorEvaluations = new List<DoctorEvaluation>();
             try
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
@@ -27,22 +27,22 @@ namespace Model
                 {
                     if (evaluations[i].IsDeleted == false)
                     {
-                        hospitalEvaluations.Add(hospitalEvaluations[i]);
+                        doctorEvaluations.Add(evaluations[i]);
                     }
                 }
-                return hospitalEvaluations;
+                return doctorEvaluations;
             }
             catch
             {
 
             }
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return hospitalEvaluations;
+            return doctorEvaluations;
         }
       
-        public Boolean Save(HospitalEvaluation evaluation)
+        public Boolean Save(DoctorEvaluation evaluation)
         {
-            List<HospitalEvaluation> evaluations = Load();
+            List<DoctorEvaluation> evaluations = Load();
 
             for (int i = 0; i < evaluations.Count; i++)
             {
@@ -67,9 +67,9 @@ namespace Model
             return true;
         }
       
-        public Boolean Update(HospitalEvaluation evaluation)
+        public Boolean Update(DoctorEvaluation evaluation)
         {
-            List<HospitalEvaluation> evaluations = Load();
+            List<DoctorEvaluation> evaluations = Load();
             for (int i = 0; i < evaluations.Count; i++)
             {
                 if (evaluations[i].Id.Equals(evaluation.Id))
@@ -96,9 +96,9 @@ namespace Model
             return false;
         }
       
-        public HospitalEvaluation GetOne(int id)
+        public DoctorEvaluation GetOne(int id)
         {
-            List<HospitalEvaluation> evaluations = GetAll();
+            List<DoctorEvaluation> evaluations = GetAll();
             for (int i = 0; i < evaluations.Count; i++)
             {
                 if (evaluations[i].Id.Equals(id))
@@ -111,7 +111,7 @@ namespace Model
       
         public Boolean Delete(int id)
         {
-            List<HospitalEvaluation> evaluations = Load();
+            List<DoctorEvaluation> evaluations = Load();
             for (int i = 0; i < evaluations.Count; i++)
             {
                 if (evaluations[i].Id.Equals(id))
@@ -136,26 +136,26 @@ namespace Model
             return false;
         }
       
-        public List<HospitalEvaluation> Load()
+        public List<DoctorEvaluation> Load()
         {
-            List<HospitalEvaluation> hospitalEvaluations = new List<HospitalEvaluation>();
+            List<DoctorEvaluation> doctorEvaluations = new List<DoctorEvaluation>();
             try
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
-                List<HospitalEvaluation> evaluations = JsonConvert.DeserializeObject<List<HospitalEvaluation>>(jsonFromFile);
+                List<DoctorEvaluation> evaluations = JsonConvert.DeserializeObject<List<DoctorEvaluation>>(jsonFromFile);
                 return evaluations;
             }
-            catch
+            catch (Exception e)
             {
 
             }
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return hospitalEvaluations;
+            return doctorEvaluations;
         }
       
         public int GenerateNextId()
         {
-            List<HospitalEvaluation> list = Load();
+            List<DoctorEvaluation> list = Load();
             return list.Count;
         }
     }

@@ -23,7 +23,7 @@ namespace vezba
     public partial class CreatePrescriptionPage : Page
     {
         private readonly Patient _patient;
-        private readonly MedicineStorage _medicineStorage;
+        private readonly MedicineFileRepository _medicineFileRepository;
         private readonly DoctorView _doctorView;
         private Prescription _newPrescription;
         public List<Medicine> ValidMedicine { get; set; }
@@ -33,7 +33,7 @@ namespace vezba
             InitializeComponent();
             this._patient = patient;
             this._doctorView = doctorView;
-            _medicineStorage = new MedicineStorage();
+            _medicineFileRepository = new MedicineFileRepository();
             DataContext = this;
             GenerateValidMedicine();
         }
@@ -41,7 +41,7 @@ namespace vezba
         private void GenerateValidMedicine()
         {
             ValidMedicine = new List<Medicine>();
-            foreach (var medicine in _medicineStorage.GetApproved())
+            foreach (var medicine in _medicineFileRepository.GetApproved())
             {
                 if (!AllergenMatchFound(medicine))
                     ValidMedicine.Add(medicine);
@@ -85,7 +85,7 @@ namespace vezba
 
         private void AddPrescriptionToAppointments()
         {
-            var appointmentStorage = new AppointmentStorage();
+            var appointmentStorage = new AppointmentFileRepository();
             foreach (var appointment in appointmentStorage.GetAll())
             {
                 if (!appointment.Patient.Jmbg.Equals(_patient.Jmbg)) continue;
@@ -98,7 +98,7 @@ namespace vezba
         private void AddPrescriptionToPatient()
         {
             _patient.MedicalRecord.AddPrescription(_newPrescription);
-            var patientStorage = new PatientStorage();
+            var patientStorage = new PatientFileRepository();
             patientStorage.Update(_patient);
         }
 

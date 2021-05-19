@@ -24,14 +24,14 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             List<Patient> patients = ps.GetAll();
             Patient.ItemsSource = patients;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AnnouncementStorage ast = new AnnouncementStorage();
+            AnnouncementFileRepository ast = new AnnouncementFileRepository();
             int id = ast.generateNextId();
             DateTime po = DateTime.Today;
             DateTime ed = DateTime.Today;
@@ -46,7 +46,7 @@ namespace vezba
             Patient patient = (Patient)Patient.SelectedItem;
             Announcement announcement = new Announcement(id, po, ed, tit, con, vis);
             announcement.AddRecipient(patient.Jmbg);
-            AnnouncementStorage s = new AnnouncementStorage();
+            AnnouncementFileRepository s = new AnnouncementFileRepository();
             s.Save(announcement);
             Announcements.Ans.Add(announcement);
 

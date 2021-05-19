@@ -1,7 +1,7 @@
-// File:    UserStorage.cs
+// File:    UserFileRepository.cs
 // Author:  bogdana
 // Created: četvrtak, 25. mart 2021. 19.13.50
-// Purpose: Definition of Class UserStorage
+// Purpose: Definition of Class UserFileRepository
 
 using System;
 using System.Collections.Generic;

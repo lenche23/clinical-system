@@ -23,14 +23,14 @@ namespace vezba
     {
         public static ObservableCollection<Equipment> EquipmentList { get; set; }
         public static List<Equipment> equipmentList;
-        private EquipmentStorage storage;
+        private EquipmentFileRepository _fileRepository;
 
         public Inventary()
         {
             InitializeComponent();
             this.DataContext = this;
-            storage = new EquipmentStorage();
-            equipmentList = storage.GetAll();
+            _fileRepository = new EquipmentFileRepository();
+            equipmentList = _fileRepository.GetAll();
             EquipmentList = new ObservableCollection<Equipment>(equipmentList);
             InventaryBinding.ItemsSource = EquipmentList;
 
@@ -44,7 +44,7 @@ namespace vezba
         {
             var s = new InventaryAddEquipment();
             s.Show();
-            equipmentList = storage.GetAll();
+            equipmentList = _fileRepository.GetAll();
         }
 
         private void Remove_Equipment_Button_Click(object sender, RoutedEventArgs e)
@@ -52,8 +52,8 @@ namespace vezba
             if (InventaryBinding.SelectedIndex > -1)
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
-                storage.Delete(equipment.Id);
-                equipmentList = storage.GetAll();
+                _fileRepository.Delete(equipment.Id);
+                equipmentList = _fileRepository.GetAll();
                 EquipmentList.Remove(equipment);
             }
 
@@ -85,7 +85,7 @@ namespace vezba
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
                 var s = new InventaryChangeEquipment(equipment, this);
                 s.Show();
-                equipmentList = storage.GetAll();
+                equipmentList = _fileRepository.GetAll();
             }
 
             else

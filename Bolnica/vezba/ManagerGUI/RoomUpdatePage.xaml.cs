@@ -16,7 +16,7 @@ namespace vezba.ManagerGUI
         private RoomsPage rp;
 
         public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
-        private RoomInventoryStorage roomInventoryStorage;
+        private RoomInventoryFileRepository _roomInventoryFileRepository;
         private MainManagerWindow mainManagerWindow;
 
         public RoomUpdatePage(Room selected, RoomsPage rp, MainManagerWindow mainManagerWindow)
@@ -54,10 +54,10 @@ namespace vezba.ManagerGUI
             }
 
 
-            roomInventoryStorage = new RoomInventoryStorage();
+            _roomInventoryFileRepository = new RoomInventoryFileRepository();
 
             List<RoomInventory> roomInventoryList = new List<RoomInventory>();
-            foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
+            foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetAll())
             {
                 if (roomInventory.room.RoomNumber == selected.RoomNumber)
                     if (DateTime.Compare(roomInventory.StartTime, DateTime.Now) <= 0 && DateTime.Compare(roomInventory.EndTime, DateTime.Now) >= 0)
@@ -137,7 +137,7 @@ namespace vezba.ManagerGUI
             if (RoomInventoryBinding.SelectedIndex > -1)
             {
                 RoomInventory ri = (RoomInventory)RoomInventoryBinding.SelectedItem;
-                roomInventoryStorage.Delete(ri.Id);
+                _roomInventoryFileRepository.Delete(ri.Id);
                 RoomInventoryList.Remove(ri);
             }
 

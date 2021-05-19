@@ -9,10 +9,10 @@ using System.Windows;
 
 namespace Model
 {
-    public class DeclinedMedicineStorage
+    public class DeclinedMedicineFileRepository
     {
 
-        public DeclinedMedicineStorage()
+        public DeclinedMedicineFileRepository()
         {
             this.FileName = "../../odbijenilekovi.json";
         }

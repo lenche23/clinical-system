@@ -41,7 +41,7 @@ namespace vezba
                 type = EquipmentType.dinamical;
             }
 
-            EquipmentStorage es = new EquipmentStorage();
+            EquipmentFileRepository es = new EquipmentFileRepository();
             int equipmentID = es.generateNextId();
             var newEquipment = new Equipment(equipmentID, NazivOpreme.Text, type);
             

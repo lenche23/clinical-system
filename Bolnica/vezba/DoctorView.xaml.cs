@@ -19,7 +19,7 @@ namespace vezba
         public DoctorView()
         {
             InitializeComponent();
-            DoctorStorage ds = new DoctorStorage();
+            DoctorFileRepository ds = new DoctorFileRepository();
             DoctorUser = ds.GetOne("1708962324890");
             Main.Content = new Calendar(this);
         }

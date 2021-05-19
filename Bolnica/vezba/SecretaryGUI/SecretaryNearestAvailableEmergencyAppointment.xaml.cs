@@ -28,7 +28,7 @@ namespace vezba.SecretaryGUI
 
         private void ScheduleButton_Click(object sender, RoutedEventArgs e)
         {
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             Boolean b = aps.Save(EmergencyAppointment);
             if (b)
             {

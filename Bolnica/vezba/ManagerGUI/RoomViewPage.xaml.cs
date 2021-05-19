@@ -22,7 +22,7 @@ namespace vezba.ManagerGUI
         private Room selected;
         private RoomsPage mv;
         public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
-        private RoomInventoryStorage roomInventoryStorage;
+        private RoomInventoryFileRepository _roomInventoryFileRepository;
         public RoomViewPage(Room selected, RoomsPage mv)
         {
             InitializeComponent();
@@ -59,10 +59,10 @@ namespace vezba.ManagerGUI
                 TipLabel.Content = TipLabel.Content + " Prostorija za odmor";
             }
 
-            roomInventoryStorage = new RoomInventoryStorage();
+            _roomInventoryFileRepository = new RoomInventoryFileRepository();
 
             List<RoomInventory> roomInventoryList = new List<RoomInventory>();
-            foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
+            foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetAll())
             {
                 if (roomInventory.room.RoomNumber == selected.RoomNumber)
                 {

@@ -22,7 +22,7 @@ namespace vezba
     public partial class EditMedicineWindow : Window
     {
         private Medicine selected;
-        private MedicineStorage medicineStorage;
+        private MedicineFileRepository _medicineFileRepository;
         private AddMedicineWindow addMedicineWindow;
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
         public List<Ingridient> ingredientTemporaryList { get; set; }
@@ -33,8 +33,8 @@ namespace vezba
             this.DataContext = selected;
             this.addMedicineWindow = addMedicineWindow;
 
-            medicineStorage = new MedicineStorage();
-            List<Medicine> medicineList = medicineStorage.GetAll();
+            _medicineFileRepository = new MedicineFileRepository();
+            List<Medicine> medicineList = _medicineFileRepository.GetAll();
             List<Medicine> temporary = new List<Medicine>();
             for (int i = 0; i < medicineList.Count; i++)
             {
@@ -111,7 +111,7 @@ namespace vezba
             selected.ReplacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
 
             
-            medicineStorage.Update(selected);
+            _medicineFileRepository.Update(selected);
             addMedicineWindow.MedicineBinding.Items.Refresh();
 
             this.Close();

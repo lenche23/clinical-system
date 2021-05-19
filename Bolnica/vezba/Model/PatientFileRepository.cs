@@ -6,11 +6,11 @@ using System.Windows;
 
 namespace Model
 {
-    public class PatientStorage
+    public class PatientFileRepository
     {
         public String FileName { get; set; }
 
-        public PatientStorage()
+        public PatientFileRepository()
         {
             this.FileName = "../../pacijenti.json";
         }

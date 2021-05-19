@@ -25,7 +25,7 @@ namespace vezba.PatientPages
 
         private void ButtonConfirmGradeHospital_Click(object sender, RoutedEventArgs e)
         {
-            HospitalEvaluationStorage storage = new HospitalEvaluationStorage();
+            HospitalEvaluationFileRepository fileRepository = new HospitalEvaluationFileRepository();
             int gradeHospital = grade.SelectedIndex;
             int rating = 0;
             switch (gradeHospital)
@@ -50,10 +50,10 @@ namespace vezba.PatientPages
                     break;
             }
             String comm = comment.Text;
-            int id = storage.GenerateNextId();
+            int id = fileRepository.GenerateNextId();
             Boolean deleted = false;
             HospitalEvaluation hospitalEvaluation = new HospitalEvaluation(rating, comm, id, deleted);
-            storage.Save(hospitalEvaluation);
+            fileRepository.Save(hospitalEvaluation);
             var s = new SuccessfulGradeHospital();
             s.Show();
         }

@@ -22,13 +22,13 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             List<Patient> patients = ps.GetAll();
             Patient.ItemsSource = patients;
-            DoctorStorage ds = new DoctorStorage();
+            DoctorFileRepository ds = new DoctorFileRepository();
             List<Doctor> doctors = ds.GetAll();
             Doctor.ItemsSource = doctors;
-            RoomStorage rs = new RoomStorage();
+            RoomFileRepository rs = new RoomFileRepository();
             List<Room> rooms = rs.GetAll();
             Room.ItemsSource = rooms;
             List<int> durations = new List<int> { 15, 30, 45, 60 };
@@ -51,7 +51,7 @@ namespace vezba
             int duration = (int)Duration.SelectedItem;
             string apDesc = Description.Text;
 
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             int id = aps.generateNextId();
 
             Appointment appointment = new Appointment(id, patient, doctor, room, startTime, duration, apDesc);
@@ -133,7 +133,7 @@ namespace vezba
 
         private List<Appointment> GetOverlapingAppoinments(Appointment appointment)
         {
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             List<Appointment> appointments = aps.GetAll();
             List<Appointment> overlaping = new List<Appointment>();
             for (int i = 0; i < appointments.Count; i++)
@@ -163,7 +163,7 @@ namespace vezba
 
         private DateTime FindNextFreeAppointment(Appointment appointment)
         {
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             List<Appointment> appointments = aps.GetAll();
             Boolean newTimeFound = false;
             while (!newTimeFound)

@@ -45,7 +45,7 @@ namespace Model
         }
 
         public Appointment(Doctor doctor, DateTime startTime, Patient patient) {
-            RoomStorage rs = new RoomStorage();
+            RoomFileRepository rs = new RoomFileRepository();
             List<Room> rooms = rs.GetAll();
             Room room = rooms[0];
             if (rooms.Count == 0)

@@ -26,7 +26,7 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             this.selected = selected;
             Title.Content = Title.Content + " " + selected.RoomNumber;
-            EquipmentStorage es = new EquipmentStorage();
+            EquipmentFileRepository es = new EquipmentFileRepository();
             List<Equipment> equipmentList = es.GetAll();
             comboEquipmentName.ItemsSource = equipmentList;
         }
@@ -36,7 +36,7 @@ namespace vezba.ManagerGUI
             Equipment comboEquipment = (Equipment)comboEquipmentName.SelectedItem;
             var Quantity = int.Parse(Količina.Text);
             var endTime = new DateTime(2999, 1, 1, 0, 0, 0);
-            RoomInventoryStorage ris = new RoomInventoryStorage();
+            RoomInventoryFileRepository ris = new RoomInventoryFileRepository();
             var id = ris.GenerateNextId();
             RoomInventory newRoomInventory = new RoomInventory(DateTime.Now, endTime, Quantity, id, comboEquipment, this.selected);
             ris.Save(newRoomInventory);

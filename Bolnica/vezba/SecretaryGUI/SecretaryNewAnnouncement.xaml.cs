@@ -22,7 +22,7 @@ namespace vezba.SecretaryGUI
             InitializeComponent();
 
             this.DataContext = this;
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             List<Patient> patients = ps.GetAll();
             RecipientComboBox.ItemsSource = patients;
 
@@ -57,7 +57,7 @@ namespace vezba.SecretaryGUI
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            AnnouncementStorage ast = new AnnouncementStorage();
+            AnnouncementFileRepository ast = new AnnouncementFileRepository();
             int id = ast.generateNextId();
             DateTime po = DateTime.Today;
             DateTime ed = DateTime.Today;
@@ -88,7 +88,7 @@ namespace vezba.SecretaryGUI
             Announcement announcement = new Announcement(id, po, ed, tit, con, vis);
             if(vis == Model.Visibility.individual)
                 announcement.AddRecipient(recipient.Jmbg);
-            AnnouncementStorage s = new AnnouncementStorage();
+            AnnouncementFileRepository s = new AnnouncementFileRepository();
             s.Save(announcement);
             SecretaryAnnouncements.Announcements.Add(announcement);
 

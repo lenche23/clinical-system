@@ -25,7 +25,7 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
-            DoctorStorage ps = new DoctorStorage();
+            DoctorFileRepository ps = new DoctorFileRepository();
             List<Doctor> temp = ps.GetAll();
             Doctors = new ObservableCollection<Doctor>(temp);
 
@@ -35,23 +35,23 @@ namespace vezba
         {
             if (datePicker.SelectedDate != null && (comboBox.Text != null && !comboBox.Text.Equals("")))
             {
-                DoctorStorage ds = new DoctorStorage();
+                DoctorFileRepository ds = new DoctorFileRepository();
                 Doctor doctor = ds.GetOne("1708962324890");
                 DateTime selectedDate = datePicker.SelectedDate.Value.Date;
                 selectedDate.ToString("MM/dd/yyyy");
                 String selectedTime = comboBox.Text;
                 DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
                 DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
-                PatientStorage pps = new PatientStorage();
+                PatientFileRepository pps = new PatientFileRepository();
                 Patient patient = pps.GetOne("1008985563244");//5406504526555//1008985563244
 
-                AppointmentStorage storage = new AppointmentStorage();
-                int id = storage.generateNextId();
+                AppointmentFileRepository fileRepository = new AppointmentFileRepository();
+                int id = fileRepository.generateNextId();
                 Appointment a = new Appointment(doctor, dateTimeFinal, patient);
                 a.AppointentId = id;
 
-                EventsLogStorage eventsLogStorage = new EventsLogStorage();
-                List<EventsLog> list = eventsLogStorage.Load();
+                EventsLogFileRepository eventsLogFileRepository = new EventsLogFileRepository();
+                List<EventsLog> list = eventsLogFileRepository.Load();
                 String patientJMBG = patient.Jmbg;
                 List<DateTime> events = new List<DateTime>();
                 DateTime log = DateTime.Now;
@@ -67,7 +67,7 @@ namespace vezba
                 {
                     if (GetOverlapingAppoinments(a).Count == 0)
                     {
-                        Boolean b = storage.Save(a);
+                        Boolean b = fileRepository.Save(a);
                         if (b)
                         {
                             PatientView.Apps.Add(a);
@@ -78,7 +78,7 @@ namespace vezba
                             if (elog.PatientJmbg.Equals(patientJMBG))
                             {
                                 elog.EventDates.Add(log);
-                                eventsLogStorage.Update(elog);
+                                eventsLogFileRepository.Update(elog);
                             }
                         }
                         MessageBox.Show("Uspešno ste zakazali pregled.");
@@ -91,7 +91,7 @@ namespace vezba
                 }
                 
                 //EventsLog eventsLog = new EventsLog(patientJMBG, events);
-                //eventsLogStorage.Save(eventsLog);
+                //eventsLogFileRepository.Save(eventsLog);
             }
             else
             {
@@ -101,7 +101,7 @@ namespace vezba
 
         private List<Appointment> GetOverlapingAppoinments(Appointment appointment)
         {
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             List<Appointment> appointments = aps.GetAll();
             List<Appointment> overlaping = new List<Appointment>();
             for (int i = 0; i < appointments.Count; i++)

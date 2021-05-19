@@ -21,13 +21,13 @@ namespace vezba.SecretaryGUI
         {
             InitializeComponent();
             this.DataContext = this;
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             List<Patient> patients = ps.GetAll();
             Patient.ItemsSource = patients;
-            DoctorStorage ds = new DoctorStorage();
+            DoctorFileRepository ds = new DoctorFileRepository();
             List<Doctor> doctors = ds.GetAll();
             Doctor.ItemsSource = doctors;
-            RoomStorage rs = new RoomStorage();
+            RoomFileRepository rs = new RoomFileRepository();
             List<Room> rooms = rs.GetAll();
             Room.ItemsSource = rooms;
             List<int> durations = new List<int> { 15, 30, 45, 60 };
@@ -48,12 +48,12 @@ namespace vezba.SecretaryGUI
         {
             if (ValidateEntries() == false)
                 return;
-            AppointmentStorage appointmentStorage = new AppointmentStorage();
-            Appointment appointment = new Appointment(appointmentStorage.generateNextId(), (Patient)Patient.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
+            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+            Appointment appointment = new Appointment(appointmentFileRepository.generateNextId(), (Patient)Patient.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
 
             if (GetOverlapingAppoinments(appointment).Count == 0)
             {
-                Boolean isSuccess = appointmentStorage.Save(appointment);
+                Boolean isSuccess = appointmentFileRepository.Save(appointment);
                 if (isSuccess)
                     SecretaryAppointments.Appointments.Add(appointment);
                 this.Close();
@@ -65,8 +65,8 @@ namespace vezba.SecretaryGUI
 
         private List<Appointment> GetOverlapingAppoinments(Appointment appointment)
         {
-            AppointmentStorage appointmentStorage = new AppointmentStorage();
-            List<Appointment> scheduledAppointments = appointmentStorage.GetAll();
+            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+            List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
             List<Appointment> overlapingAppointments = new List<Appointment>();
             for (int i = 0; i < scheduledAppointments.Count; i++)
             {
@@ -110,8 +110,8 @@ namespace vezba.SecretaryGUI
 
         private DateTime FindNextFreeAppointmentStartTime(Appointment appointment)
         {
-            AppointmentStorage appointmentStorage = new AppointmentStorage();
-            List<Appointment> scheduledAppointments = appointmentStorage.GetAll();
+            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+            List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
             Boolean newTimeFound = false;
             while (!newTimeFound)
             {

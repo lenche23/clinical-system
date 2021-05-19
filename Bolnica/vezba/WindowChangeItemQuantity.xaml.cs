@@ -49,9 +49,9 @@ namespace vezba
             var Quantity = int.Parse(Količina.Text);
             selected.Quantity = Quantity;
 
-            //RoomStorage rs = new RoomStorage();
+            //RoomFileRepository rs = new RoomFileRepository();
             //rs.Update(this.r_selected);
-            RoomInventoryStorage ris = new RoomInventoryStorage();
+            RoomInventoryFileRepository ris = new RoomInventoryFileRepository();
             ris.Update(this.selected);
             wur.RoomInventoryBinding.Items.Refresh();
             this.Close();

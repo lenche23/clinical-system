@@ -25,7 +25,7 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
-            AppointmentStorage s = new AppointmentStorage();
+            AppointmentFileRepository s = new AppointmentFileRepository();
             List<Appointment> temp = s.GetAll();
             Appointments = new ObservableCollection<AppointmentForReschedulingDTO>();
             
@@ -38,8 +38,8 @@ namespace vezba
 
         private List<AppointmentForReschedulingDTO> TransformAppointmentsForRescheduling(List<Appointment> overlapingAppointments, Appointment emergencyAppointment)
         {
-            AppointmentStorage apStorage = new AppointmentStorage();
-            List<Appointment> allScheduledAppoinments = apStorage.GetAll();
+            AppointmentFileRepository apFileRepository = new AppointmentFileRepository();
+            List<Appointment> allScheduledAppoinments = apFileRepository.GetAll();
             allScheduledAppoinments.Add(emergencyAppointment);
             foreach(Appointment oAppointment in overlapingAppointments)
             {
@@ -69,7 +69,7 @@ namespace vezba
 
         private List<Appointment> GetOverlapingAppoinments(Appointment appointment)
         {
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             List<Appointment> appointments = aps.GetAll();
             List<Appointment> overlaping = new List<Appointment>();
             for (int i = 0; i < appointments.Count; i++)
@@ -141,7 +141,7 @@ namespace vezba
             if (overlapingAppointmentsTable.SelectedCells.Count > 0)
             {
                 AppointmentForReschedulingDTO ad = (AppointmentForReschedulingDTO)overlapingAppointmentsTable.SelectedItem;
-                AppointmentStorage aps = new AppointmentStorage();
+                AppointmentFileRepository aps = new AppointmentFileRepository();
                 List<Appointment> scheduledAppointments = aps.GetAll();
                 Appointment rescheduledAppointment = scheduledAppointments.FirstOrDefault(a => a.AppointentId.Equals(ad.AppointmentId));
                 if (rescheduledAppointment != null)

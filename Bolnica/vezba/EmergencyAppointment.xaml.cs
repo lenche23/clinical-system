@@ -25,7 +25,7 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
-            PatientStorage ps = new PatientStorage();
+            PatientFileRepository ps = new PatientFileRepository();
             List<Patient> patients = ps.GetAll();
             Patient.ItemsSource = patients;
             List<Speciality> specialities = new List<Speciality>();
@@ -34,7 +34,7 @@ namespace vezba
             specialities.Add(new Speciality("Stomatolog"));
             specialities.Add(new Speciality("Oftalmolog"));
             Speciality.ItemsSource = specialities;
-            RoomStorage rs = new RoomStorage();
+            RoomFileRepository rs = new RoomFileRepository();
             List<Room> rooms = rs.GetAll();
             Room.ItemsSource = rooms;
             List<int> durations = new List<int> { 15, 30, 45, 60 };
@@ -55,7 +55,7 @@ namespace vezba
                 DateTime timeLimit = DateTime.Now.AddMinutes(15);
                 if(emergencyAppointment.StartTime <= timeLimit)
                 {
-                    AppointmentStorage aps = new AppointmentStorage();
+                    AppointmentFileRepository aps = new AppointmentFileRepository();
                     Boolean b = aps.Save(emergencyAppointment);
                     if (b)
                     {
@@ -78,14 +78,14 @@ namespace vezba
 
         private Appointment MakeEmergencyAppointment(Patient patient, Speciality speciality, Room room, int duration, string description)
         {
-            DoctorStorage ds = new DoctorStorage();
+            DoctorFileRepository ds = new DoctorFileRepository();
             List<Doctor> doctors = ds.GetDoctorsWithSpeciality(speciality);
             if (doctors.Count == 0)
             {
                 MessageBox.Show("Nema doktora sa ovom specijalizacijom!"); 
                 return null;
             }
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             List<Appointment> appointments = new List<Appointment>();
             foreach(Doctor d in doctors)
             {
@@ -124,7 +124,7 @@ namespace vezba
 
         private Appointment FindFirstFreeAppointment(Appointment appointment)
         {
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             List<Appointment> appointments = aps.GetAll();
             //DateTime startTimeLimit = appointment.StartTime.AddHours(1);
             Boolean newTimeFound = false;

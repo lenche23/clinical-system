@@ -20,14 +20,14 @@ namespace vezba.PatientPages
     {
         public static Patient Patient { get; set; }
         public List<EventsLog> list;
-        public PatientStorage pps;
-        public EventsLogStorage storage;
+        public PatientFileRepository pps;
+        public EventsLogFileRepository fileRepository;
         public AppointmentsPage()
         {
             InitializeComponent();
-            /*storage = new EventsLogStorage();
-            list = storage.Load();
-            pps = new PatientStorage();
+            /*fileRepository = new EventsLogFileRepository();
+            list = fileRepository.Load();
+            pps = new PatientFileRepository();
             Patient patient = pps.GetOne("1008985563244");
             Patient = patient;
             Patient.IsBlocked = false;*/
@@ -53,7 +53,7 @@ namespace vezba.PatientPages
                             Patient.IsBlocked = true;
                             pps.Update(Patient);
                             events.Clear();
-                            storage.Update(log);
+                            fileRepository.Update(log);
                         }
                     }
                 }
@@ -62,9 +62,9 @@ namespace vezba.PatientPages
 
         private void ButtonOrderAppointment_Click(object sender, RoutedEventArgs e)
         {
-            storage = new EventsLogStorage();
-            list = storage.Load();
-            pps = new PatientStorage();
+            fileRepository = new EventsLogFileRepository();
+            list = fileRepository.Load();
+            pps = new PatientFileRepository();
             Patient patient = pps.GetOne("1008985563244");
             Patient = patient;
             Patient.IsBlocked = false;
@@ -90,7 +90,7 @@ namespace vezba.PatientPages
                             Patient.IsBlocked = true;
                             pps.Update(Patient);
                             events.Clear();
-                            storage.Update(log);
+                            fileRepository.Update(log);
                         }
                     }
                 }
@@ -108,9 +108,9 @@ namespace vezba.PatientPages
 
         private void ButtonChangeAppointment_Click(object sender, RoutedEventArgs e)
         {
-            storage = new EventsLogStorage();
-            list = storage.Load();
-            pps = new PatientStorage();
+            fileRepository = new EventsLogFileRepository();
+            list = fileRepository.Load();
+            pps = new PatientFileRepository();
             Patient patient = pps.GetOne("1008985563244");
             Patient = patient;
             Patient.IsBlocked = false;
@@ -136,7 +136,7 @@ namespace vezba.PatientPages
                             Patient.IsBlocked = true;
                             pps.Update(Patient);
                             events.Clear();
-                            storage.Update(log);
+                            fileRepository.Update(log);
                         }
                     }
                 }

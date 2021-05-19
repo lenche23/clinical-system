@@ -50,8 +50,8 @@ namespace vezba.SecretaryGUI
                     RecipientLabel.Visibility = System.Windows.Visibility.Visible;
                     RecipientTitleLabel.Visibility = System.Windows.Visibility.Visible;
                     //Patient recipient = patientsStorage.GetOne(a.Recipients[0]);
-                    PatientStorage patientStorage = new PatientStorage();
-                    RecipientLabel.Content = patientStorage.GetOne(a.Recipients[0]).NameAndSurname;
+                    PatientFileRepository patientFileRepository = new PatientFileRepository();
+                    RecipientLabel.Content = patientFileRepository.GetOne(a.Recipients[0]).NameAndSurname;
                     break;
             }
 
@@ -61,7 +61,7 @@ namespace vezba.SecretaryGUI
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            AnnouncementStorage ast = new AnnouncementStorage();
+            AnnouncementFileRepository ast = new AnnouncementFileRepository();
             int id = this.announcement.Id;
             DateTime po = this.announcement.Posted;
             DateTime ed = DateTime.Today;
@@ -72,7 +72,7 @@ namespace vezba.SecretaryGUI
             if (vis == Model.Visibility.individual)
                 announcement.AddRecipient(this.announcement.Recipients[0]);
 
-            AnnouncementStorage s = new AnnouncementStorage();
+            AnnouncementFileRepository s = new AnnouncementFileRepository();
             s.Update(announcement);
 
             var an = SecretaryAnnouncements.Announcements.FirstOrDefault(a => a.Id == id);

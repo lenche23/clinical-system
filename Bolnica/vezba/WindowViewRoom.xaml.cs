@@ -25,7 +25,7 @@ namespace Bolnica
         private Room selected;
         private ManagerView mv;
         public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
-        private RoomInventoryStorage roomInventoryStorage;
+        private RoomInventoryFileRepository _roomInventoryFileRepository;
         public WindowViewRoom(Room selected, ManagerView mv)
         {
             InitializeComponent();
@@ -62,10 +62,10 @@ namespace Bolnica
                 TipLabel.Content = TipLabel.Content + " Prostorija za odmor";
             }
 
-            roomInventoryStorage = new RoomInventoryStorage();
+            _roomInventoryFileRepository = new RoomInventoryFileRepository();
 
             List<RoomInventory> roomInventoryList = new List<RoomInventory>();
-            foreach (RoomInventory roomInventory in roomInventoryStorage.GetAll())
+            foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetAll())
             {
                 if (roomInventory.room.RoomNumber == selected.RoomNumber)
                 {

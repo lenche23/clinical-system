@@ -6,9 +6,9 @@ using Newtonsoft.Json;
 
 namespace Model
 {
-    public class RoomStorage
+    public class RoomFileRepository
     {
-        public RoomStorage()
+        public RoomFileRepository()
         {
             this.FileName = "../../sobe.json";
         }

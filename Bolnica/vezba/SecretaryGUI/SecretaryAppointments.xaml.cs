@@ -25,7 +25,7 @@ namespace vezba.SecretaryGUI
             InitializeComponent();
             InitializeComponent();
             this.DataContext = this;
-            AppointmentStorage s = new AppointmentStorage();
+            AppointmentFileRepository s = new AppointmentFileRepository();
             List<Appointment> allAppointments = s.GetAll();
             Appointments = new ObservableCollection<Appointment>(allAppointments);
         }
@@ -74,8 +74,8 @@ namespace vezba.SecretaryGUI
             if (appointmentsTable.SelectedCells.Count > 0)
             {
                 Appointment selectedAppointment = (Appointment)appointmentsTable.SelectedItem;
-                AppointmentStorage appointmentStorage = new AppointmentStorage();
-                appointmentStorage.Delete(selectedAppointment.AppointentId);
+                AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+                appointmentFileRepository.Delete(selectedAppointment.AppointentId);
                 Appointments.Remove(selectedAppointment);
             }
             else

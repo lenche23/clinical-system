@@ -6,11 +6,11 @@ using System.Windows;
 
 namespace Model
 {
-   public class EventsLogStorage
+   public class EventsLogFileRepository
    {
         public String FileName { get; set; }
 
-        public EventsLogStorage()
+        public EventsLogFileRepository()
         {
             this.FileName = "../../events_log.json";
         }

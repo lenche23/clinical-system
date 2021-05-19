@@ -34,14 +34,14 @@ namespace vezba
         public MedicinePageView(DoctorView dw)
         {
             InitializeComponent();
-            MedicineStorage ms = new MedicineStorage();
+            MedicineFileRepository ms = new MedicineFileRepository();
             List<Medicine> medicineToApprove = ms.GetAwaiting();
             MedicineToApprove = new ObservableCollection<Medicine>(medicineToApprove);
 
             List<Medicine> approvedMedicine = ms.GetApproved();
             ApprovedMedicine = new ObservableCollection<Medicine>(approvedMedicine);
 
-            DeclinedMedicineStorage dms = new DeclinedMedicineStorage();
+            DeclinedMedicineFileRepository dms = new DeclinedMedicineFileRepository();
             List<DeclinedMedicine> declinedMedicine = dms.GetAll();
             DeclinedMedicine = new ObservableCollection<DeclinedMedicine>(declinedMedicine);
 

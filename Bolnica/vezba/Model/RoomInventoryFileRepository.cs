@@ -1,7 +1,7 @@
-// File:    RoomInventoryStorage.cs
+// File:    RoomInventoryFileRepository.cs
 // Author:  graho
 // Created: 26 April 2021 15:31:43
-// Purpose: Definition of Class RoomInventoryStorage
+// Purpose: Definition of Class RoomInventoryFileRepository
 
 using Newtonsoft.Json;
 using System;
@@ -11,10 +11,10 @@ using System.Windows;
 
 namespace Model
 {
-   public class RoomInventoryStorage
+   public class RoomInventoryFileRepository
    {
 
-        public RoomInventoryStorage()
+        public RoomInventoryFileRepository()
         {
             this.FileName = "../../room_inventory.json";
         }

@@ -6,9 +6,9 @@ using System.Windows;
 
 namespace Model
 {
-    public class AnnouncementStorage
+    public class AnnouncementFileRepository
     {
-        public AnnouncementStorage()
+        public AnnouncementFileRepository()
         {
             this.FileName = "../../obavestenja.json";
         }

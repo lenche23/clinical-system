@@ -25,7 +25,7 @@ namespace vezba.PatientPages
         public MorePage()
         {
             InitializeComponent();
-            AppointmentStorage ps = new AppointmentStorage();
+            AppointmentFileRepository ps = new AppointmentFileRepository();
             List<Appointment> temp = new List<Appointment>();
             foreach (Appointment appointment in ps.GetAll())
             {

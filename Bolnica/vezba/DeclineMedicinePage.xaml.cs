@@ -26,9 +26,9 @@ namespace vezba
 
         private DoctorView dw;
 
-        public DeclinedMedicineStorage Storage;
+        public DeclinedMedicineFileRepository fileRepository;
 
-        public MedicineStorage MedStorage;
+        public MedicineFileRepository medFileRepository;
 
         private MedicinePageView mpw;
         public DeclineMedicinePage(Medicine medicine, DoctorView dw, MedicinePageView mpw)
@@ -38,17 +38,17 @@ namespace vezba
             DataContext = Medicine;
             this.dw = dw;
             this.mpw = mpw;
-            Storage = new DeclinedMedicineStorage();
-            MedStorage = new MedicineStorage();
+            fileRepository = new DeclinedMedicineFileRepository();
+            medFileRepository = new MedicineFileRepository();
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            MedStorage.Delete(Medicine.MedicineID);
-            var id = Storage.generateNextId();
+            medFileRepository.Delete(Medicine.MedicineID);
+            var id = fileRepository.generateNextId();
             var Description = DescriptionTB.Text;
             var declinedMedicine = new DeclinedMedicine(id, Medicine, Description);
-            Storage.Save(declinedMedicine);
+            fileRepository.Save(declinedMedicine);
             MedicinePageView.MedicineToApprove.Remove(Medicine);
             MedicinePageView.DeclinedMedicine.Add(declinedMedicine);
             mpw.revisionGrid.Items.Refresh();

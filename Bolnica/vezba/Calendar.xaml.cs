@@ -42,8 +42,8 @@ namespace vezba
         {
             InitializeComponent();
             this.doctorView = doctorView;
-            DoctorStorage doctorStorage = new DoctorStorage();
-            Doctors = doctorStorage.GetAll();
+            DoctorFileRepository doctorFileRepository = new DoctorFileRepository();
+            Doctors = doctorFileRepository.GetAll();
             DataContext = this;
 
             var dayOfWeekToday = (6 + (int) DateTime.Today.DayOfWeek) % 7;
@@ -258,10 +258,10 @@ namespace vezba
 
         private void GenerateAppointmentsForSelectedWeek()
         {
-            AppointmentStorage appointmentStorage = new AppointmentStorage();
+            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
             appointments = new List<Appointment>();
 
-            foreach (var appointment in appointmentStorage.GetAll())
+            foreach (var appointment in appointmentFileRepository.GetAll())
             {
                 if (DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
                     DateTime.Compare(appointment.StartTime, endOfWeek) < 0 && appointment.Doctor.Jmbg.Equals(selectedDoctor.Jmbg))

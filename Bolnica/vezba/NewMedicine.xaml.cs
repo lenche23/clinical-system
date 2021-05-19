@@ -22,7 +22,7 @@ namespace vezba
     public partial class NewMedicine : Window
     {
         public List<Medicine> MedicineList { get; set; }
-        public MedicineStorage storage;
+        public MedicineFileRepository fileRepository;
         private Medicine newMedicine;
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
         public List<Ingridient> ingredientTemporaryList { get; set; }
@@ -31,7 +31,7 @@ namespace vezba
         {
             InitializeComponent();
             this.DataContext = this;
-            MedicineStorage ms = new MedicineStorage();
+            MedicineFileRepository ms = new MedicineFileRepository();
             List<Medicine> medicineList = ms.GetAll();
             List<Medicine> temporary = new List<Medicine>();
             for (int i = 0; i < medicineList.Count; i++)
@@ -84,15 +84,15 @@ namespace vezba
 
             Medicine replacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
 
-            MedicineStorage storage = new MedicineStorage();
-            int MedicineID = storage.GenerateNextId();
+            MedicineFileRepository fileRepository = new MedicineFileRepository();
+            int MedicineID = fileRepository.GenerateNextId();
 
             
             newMedicine = new Medicine(Name, Manufacturer, Packaging, MedicineID, Condition) { ReplacementMedicine = replacementMedicine };
 
             AddMedicineWindow.MedicineList.Add(newMedicine);
             newMedicine.ingridient = ingredientTemporaryList;
-            storage.Save(newMedicine);
+            fileRepository.Save(newMedicine);
             this.Close();
 
         }

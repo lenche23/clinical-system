@@ -14,7 +14,7 @@ namespace vezba
         private int maximumQuantity;
         private int itemQuantity;
         private DateTime infiniteTime = new DateTime(2999, 12, 31);
-        private RoomInventoryStorage roomInventoryStorage;
+        private RoomInventoryFileRepository _roomInventoryFileRepository;
 
         public WindowExchangeEquipment(RoomInventory roomInventory, WindowUpdateRoom windowUpdateRoom, Room room)
         {
@@ -30,13 +30,13 @@ namespace vezba
             itemQuantity = int.Parse(ItemQuantity.Text);
             maximumQuantity = roomInventory.Quantity;
 
-            RoomStorage roomStorage = new RoomStorage();
-            Room roomEntry = roomStorage.GetOne(roomNumber);
+            RoomFileRepository roomFileRepository = new RoomFileRepository();
+            Room roomEntry = roomFileRepository.GetOne(roomNumber);
 
             if (Validate(roomEntry) == false)
                 return;
 
-            roomInventoryStorage = new RoomInventoryStorage();
+            _roomInventoryFileRepository = new RoomInventoryFileRepository();
 
             RemoveQuantityFromCurrentRoom();
 
@@ -49,27 +49,27 @@ namespace vezba
 
         private void CreateRoomInventory(Room roomEntry)
         {
-            var id = roomInventoryStorage.GenerateNextId();
+            var id = _roomInventoryFileRepository.GenerateNextId();
             RoomInventory ri = new RoomInventory(DateTime.Now, infiniteTime, itemQuantity, id, roomInventory.equipment, roomEntry);
-            roomInventoryStorage.Save(ri);
+            _roomInventoryFileRepository.Save(ri);
         }
 
         private void RemoveQuantityFromCurrentRoom()
         {
             roomInventory.Quantity -= itemQuantity;
-            roomInventoryStorage.Update(this.roomInventory);
+            _roomInventoryFileRepository.Update(this.roomInventory);
             windowUpdateRoom.RoomInventoryBinding.Items.Refresh();
         }
 
         private bool AddQuantityToDesiredRoom(int roomNumber)
         {
             var itemFound = false;
-            foreach (RoomInventory inventory in roomInventoryStorage.GetAll())
+            foreach (RoomInventory inventory in _roomInventoryFileRepository.GetAll())
             {
                 if (inventory.room.RoomNumber == roomNumber && inventory.equipment.Id == roomInventory.equipment.Id)
                 {
                         inventory.Quantity += itemQuantity;
-                        roomInventoryStorage.Update(inventory);
+                        _roomInventoryFileRepository.Update(inventory);
                         itemFound = true;
                 }
             } 

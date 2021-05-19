@@ -55,7 +55,7 @@ namespace vezba
                 return;
             }
 
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             Appointment appo = new Appointment(appointment.AppointentId, appointment.Patient, appointment.Doctor, appointment.Room, startTime, appointment.DurationInMunutes, appointment.ApointmentDescription);
             
 
@@ -107,7 +107,7 @@ namespace vezba
 
         private List<Appointment> GetOverlapingAppoinments(Appointment appointment)
         {
-            AppointmentStorage aps = new AppointmentStorage();
+            AppointmentFileRepository aps = new AppointmentFileRepository();
             List<Appointment> appointments = aps.GetAll();
             List<Appointment> overlaping = new List<Appointment>();
             for (int i = 0; i < appointments.Count; i++)
