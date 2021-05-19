@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Bolnica;
 using System.Collections.ObjectModel;
 using System.Windows;
+using vezba.Repository;
 
 namespace vezba
 {

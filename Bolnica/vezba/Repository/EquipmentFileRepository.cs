@@ -7,9 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
+using Model;
 using Newtonsoft.Json;
 
-namespace Model
+namespace vezba.Repository
 {
    public class EquipmentFileRepository
    {

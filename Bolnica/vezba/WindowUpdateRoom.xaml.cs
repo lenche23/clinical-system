@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Data;
 using vezba;
+using vezba.Repository;
 
 namespace Bolnica
 {

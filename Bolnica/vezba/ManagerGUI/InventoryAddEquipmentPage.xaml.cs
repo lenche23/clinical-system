@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Model;
+using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {

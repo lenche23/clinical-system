@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Timers;
 using System.Threading;
+using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {

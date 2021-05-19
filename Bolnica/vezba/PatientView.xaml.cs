@@ -6,6 +6,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Navigation;
 using vezba.PatientPages;
+using vezba.Repository;
 
 namespace vezba
 {

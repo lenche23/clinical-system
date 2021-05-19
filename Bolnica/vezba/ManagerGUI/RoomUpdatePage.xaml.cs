@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using vezba;
+using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {

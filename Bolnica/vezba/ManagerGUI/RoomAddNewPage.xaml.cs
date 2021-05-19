@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Model;
 using vezba;
+using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {

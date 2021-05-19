@@ -245,51 +245,51 @@
       <DependentUpon>MedicineRevisionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DeclinedMedicine.cs" />
-    <Compile Include="Model\DeclinedMedicineFileRepository.cs" />
+    <Compile Include="Repository\DeclinedMedicineFileRepository.cs" />
     <Compile Include="Model\DoctorEvaluation.cs" />
-    <Compile Include="Model\DoctorEvaluationFileRepository.cs" />
+    <Compile Include="Repository\DoctorEvaluationFileRepository.cs" />
     <Compile Include="Model\EventsLog.cs" />
-    <Compile Include="Model\EventsLogFileRepository.cs" />
+    <Compile Include="Repository\EventsLogFileRepository.cs" />
     <Compile Include="Model\HospitalEvaluation.cs" />
-    <Compile Include="Model\HospitalEvaluationFileRepository.cs" />
+    <Compile Include="Repository\HospitalEvaluationFileRepository.cs" />
     <Compile Include="Model\HospitalTreatment.cs" />
     <Compile Include="Model\Ingridient.cs" />
     <Compile Include="Model\Anamnesis.cs" />
     <Compile Include="Model\Announcement.cs" />
-    <Compile Include="Model\AnnouncementFileRepository.cs" />
+    <Compile Include="Repository\AnnouncementFileRepository.cs" />
     <Compile Include="Model\Appointment.cs" />
-    <Compile Include="Model\AppointmentFileRepository.cs" />
+    <Compile Include="Repository\AppointmentFileRepository.cs" />
     <Compile Include="Model\Doctor.cs" />
-    <Compile Include="Model\DoctorFileRepository.cs" />
+    <Compile Include="Repository\DoctorFileRepository.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Equipment.cs" />
-    <Compile Include="Model\EquipmentFileRepository.cs" />
+    <Compile Include="Repository\EquipmentFileRepository.cs" />
     <Compile Include="Model\EquipmentType.cs" />
     <Compile Include="Model\Floor.cs" />
     <Compile Include="Model\MedicalRecord.cs" />
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\MedicineCondition.cs" />
     <Compile Include="Model\MedicineStatus.cs" />
-    <Compile Include="Model\MedicineFileRepository.cs" />
+    <Compile Include="Repository\MedicineFileRepository.cs" />
     <Compile Include="Model\Menager.cs" />
     <Compile Include="Model\Patient.cs" />
-    <Compile Include="Model\PatientFileRepository.cs" />
+    <Compile Include="Repository\PatientFileRepository.cs" />
     <Compile Include="Model\Period.cs" />
     <Compile Include="Model\Prescription.cs" />
-    <Compile Include="Model\PrescriptionFileRepository.cs" />
+    <Compile Include="Repository\PrescriptionFileRepository.cs" />
     <Compile Include="Model\ReferralLetter.cs" />
     <Compile Include="Model\Renovation.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\RoomInventory.cs" />
-    <Compile Include="Model\RoomInventoryFileRepository.cs" />
-    <Compile Include="Model\RoomFileRepository.cs" />
+    <Compile Include="Repository\RoomInventoryFileRepository.cs" />
+    <Compile Include="Repository\RoomFileRepository.cs" />
     <Compile Include="Model\RoomType.cs" />
     <Compile Include="Model\Secretary.cs" />
     <Compile Include="Model\Sex.cs" />
     <Compile Include="Model\Shift.cs" />
     <Compile Include="Model\Speciality.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\UserFileRepository.cs" />
+    <Compile Include="Repository\UserFileRepository.cs" />
     <Compile Include="Model\UserType.cs" />
     <Compile Include="Model\VacationDays.cs" />
     <Compile Include="Model\Visibility.cs" />
@@ -357,7 +357,6 @@
     <Compile Include="PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Repository\UserStorage.cs" />
     <Compile Include="ScheduleEmergencyAppointment.xaml.cs">
       <DependentUpon>ScheduleEmergencyAppointment.xaml</DependentUpon>
     </Compile>

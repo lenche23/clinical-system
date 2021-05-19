@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Model;
 using vezba;
 using vezba.ManagerGUI;
+using vezba.Repository;
 
 namespace Bolnica
 {

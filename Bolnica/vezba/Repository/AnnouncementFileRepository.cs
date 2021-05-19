@@ -1,10 +1,12 @@
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
+using Model;
+using Newtonsoft.Json;
+using Visibility = Model.Visibility;
 
-namespace Model
+namespace vezba.Repository
 {
     public class AnnouncementFileRepository
     {
