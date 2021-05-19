@@ -26,8 +26,6 @@
       "IsDeleted": false
     },
     "Room": {
-      "Capacity": 0,
-      "equipment": [],
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -44,7 +42,6 @@
       "RoomNumber": 1,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -132,8 +129,6 @@
       "IsDeleted": false
     },
     "Room": {
-      "Capacity": 0,
-      "equipment": [],
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -150,7 +145,6 @@
       "RoomNumber": 1,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -312,7 +306,7 @@
       "IsDeleted": false
     },
     "IsEmergency": false,
-    "EndTime": "2021-05-14T10:45:00",
+    "EndTime": "2021-05-09T10:45:00",
     "PatientName": "Petar Ilic",
     "RoomName": "1",
     "DoctorName": "Darko Torbica"
@@ -344,8 +338,6 @@
       "IsDeleted": false
     },
     "Room": {
-      "Capacity": 0,
-      "equipment": [],
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -362,7 +354,6 @@
       "RoomNumber": 1,
       "RoomFloor": 0,
       "IsDeleted": false,
-      "Equipment": [],
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
@@ -428,5 +419,1319 @@
     "PatientName": "Mira Torbica",
     "RoomName": "1",
     "DoctorName": "Dana Dimitrijevic"
+  },
+  {
+    "StartTime": "2021-05-21T13:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 3,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-19T17:33:06.5788066+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "anamnesis": [],
+        "prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "referralLetter": [],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-05-21T13:15:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-31T14:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 4,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-19T17:33:17.0625368+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "anamnesis": [],
+        "prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "referralLetter": [],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-05-31T14:45:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-20T10:30:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 5,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-19T17:33:24.5063591+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "anamnesis": [],
+        "prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "referralLetter": [],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-05-20T10:45:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-22T00:01:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 6,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-19T17:33:33.7501359+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "anamnesis": [],
+        "prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "referralLetter": [],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-05-22T00:16:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-29T08:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 7,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-19T17:33:46.18432+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "anamnesis": [],
+        "prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "referralLetter": [],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-05-29T08:15:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
+  },
+  {
+    "StartTime": "2021-05-19T08:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 8,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-19T17:33:53.0283952+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        },
+        {
+          "StartTime": "2021-05-19T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 3
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "anamnesis": [],
+        "prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "referralLetter": [],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-05-25T08:15:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica"
   }
 ]
