@@ -8,6 +8,17 @@
       d:DesignHeight="600" d:DesignWidth="430"
       Title="CalendarPage">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Blue.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -15,8 +26,21 @@
                 <GradientStop Color="AntiqueWhite" Offset="0.483"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="/Bolnica;component/PatientImages/calendar (1).png" Width="Auto" Margin="22,36,343,505"/>
-        <Label Content="Događaji" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Foreground="#FF2E421A" Margin="92,36,138,0" Height="59" Width="200"/>
+        <Image Source="/Bolnica;component/PatientImages/calendar (1).png" Width="40" Margin="22,10,343,531"/>
+        <Label Content="Događaji" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Foreground="#FF2E421A" Margin="80,10,150,0" Height="59" Width="200"/>
 
+        <StackPanel Background="Transparent" Margin="0,86,0,56">
+            <Grid Height="40">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 0">
+                    <Button Width="135" Uid="0" Content="Današnji" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E421A" Click="Button_Click"/>
+                    <Button Width="135" Uid="1" Content="Nedeljni" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E421A" Click="Button_Click"/>
+                    <Button Width="135" Uid="2" Content="Mesečni" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E421A" Click="Button_Click"/>
+                </StackPanel>
+                <Grid x:Name="GridCursor" Width="135" Height="5" Background="#FF2E421A" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Bottom"/>
+            </Grid>
+            <Grid x:Name="GridTable" Height="418" Width="410">
+
+            </Grid>
+        </StackPanel>
     </Grid>
 </Page>

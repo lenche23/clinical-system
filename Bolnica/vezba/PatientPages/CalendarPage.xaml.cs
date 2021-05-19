@@ -15,14 +15,31 @@ using System.Windows.Shapes;
 
 namespace vezba.PatientPages
 {
-    /// <summary>
-    /// Interaction logic for CalendarPage.xaml
-    /// </summary>
     public partial class CalendarPage : Page
     {
         public CalendarPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int index = int.Parse(((Button)e.Source).Uid);
+
+            GridCursor.Margin = new Thickness(10 + (135 * index), 0, 0, 0);
+
+            switch (index)
+            {
+                case 0:
+                    GridTable.Background = Brushes.Aqua;
+                    break;
+                case 1:
+                    GridTable.Background = Brushes.Blue;
+                    break;
+                case 2:
+                    GridTable.Background = Brushes.Violet;
+                    break;
+            }
         }
     }
 }
