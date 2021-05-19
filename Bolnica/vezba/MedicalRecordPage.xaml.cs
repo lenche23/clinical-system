@@ -29,9 +29,6 @@ namespace vezba
             DataContext = Patient;
             if (Patient.MedicalRecord != null)
             {
-                //listViewAnamnesis.ItemsSource = Patient.MedicalRecord.Anamnesis;
-                //listViewPrescriptions.ItemsSource = Patient.MedicalRecord.Prescription;
-                listViewReferralLetters.ItemsSource = Patient.MedicalRecord.ReferralLetter;
                 this.dw = dw;
             }
         }

@@ -11,54 +11,48 @@
         <TabControl Name="MedicineTabs">
             <TabItem Header="Revizija Lekova">
                 <DockPanel>
-                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
-                        <Button Margin="5" Padding="5" Click="RevisionClick" Width="100">Revizija</Button>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Margin="5, 5, 30, 5" Padding="5" Click="RevisionClick" Width="100" Height="30" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Revizija</Button>
                     </StackPanel>
-                    <ListView Margin="10" Name="listViewMedicineRevision" >
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Naziv leka" Width="180" DisplayMemberBinding="{Binding Name, Mode=OneWay}" />
-                                <GridViewColumn Header="Pakovanje" Width="180" DisplayMemberBinding="{Binding Packaging, Mode=OneWay}"/>
-                                <GridViewColumn Header="Proizvođač" Width="180" DisplayMemberBinding="{Binding Manufacturer, Mode=OneWay}"/>
-                                <GridViewColumn Header="Oblik" Width="180" DisplayMemberBinding="{Binding Condition, Mode=OneWay}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <DataGrid x:Name="revisionGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicineToApprove}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv leka" Binding="{Binding Name}"  Width="*"/>
+                            <DataGridTextColumn Header="Pakovanje" Binding="{Binding Packaging}"  Width="*"/>
+                            <DataGridTextColumn Header="Proizvođač" Binding="{Binding Manufacturer}"  Width="*"/>
+                            <DataGridTextColumn Header="Oblik" Binding="{Binding ConditionSerbian}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </DockPanel>
             </TabItem>
             <TabItem Header="Odobreni Lekovi">
                 <DockPanel>
-                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
-                        <Button Margin="5" Padding="5" Click="ViewClick" Width="100">Prikaz</Button>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Margin="5, 5, 30, 5" Padding="5" Click="ViewClick" Width="100" Height="30" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Prikaz</Button>
                     </StackPanel>
-                    <ListView Margin="10" Name="listViewMedicine" >
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Naziv leka" Width="180" DisplayMemberBinding="{Binding Name, Mode=OneWay}" />
-                                <GridViewColumn Header="Pakovanje" Width="180" DisplayMemberBinding="{Binding Packaging, Mode=OneWay}"/>
-                                <GridViewColumn Header="Proizvođač" Width="180" DisplayMemberBinding="{Binding Manufacturer, Mode=OneWay}"/>
-                                <GridViewColumn Header="Oblik" Width="180" DisplayMemberBinding="{Binding Condition, Mode=OneWay}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <DataGrid x:Name="approvedGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding ApprovedMedicine}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv leka" Binding="{Binding Name}"  Width="*"/>
+                            <DataGridTextColumn Header="Pakovanje" Binding="{Binding Packaging}"  Width="*"/>
+                            <DataGridTextColumn Header="Proizvođač" Binding="{Binding Manufacturer}"  Width="*"/>
+                            <DataGridTextColumn Header="Oblik" Binding="{Binding ConditionSerbian}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </DockPanel>
             </TabItem>
             <TabItem Header="Odbijeni Lekovi">
                 <DockPanel>
-                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
-                        <Button Margin="5" Padding="5" Click="ViewDeclinedClick" Width="100">Prikaz</Button>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Margin="5, 5, 30, 5" Padding="5" Click="ViewDeclinedClick" Width="100" Height="30" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Prikaz</Button>
                     </StackPanel>
-                    <ListView Margin="10" Name="listViewDeclinedMedicine" >
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Naziv leka" Width="150" DisplayMemberBinding="{Binding Medicine.Name, Mode=OneWay}" />
-                                <GridViewColumn Header="Pakovanje" Width="150" DisplayMemberBinding="{Binding Medicine.Packaging, Mode=OneWay}"/>
-                                <GridViewColumn Header="Proizvođač" Width="150" DisplayMemberBinding="{Binding Medicine.Manufacturer, Mode=OneWay}"/>
-                                <GridViewColumn Header="Oblik" Width="150" DisplayMemberBinding="{Binding Medicine.Condition, Mode=OneWay}"/>
-                                <GridViewColumn Header="Komentar" Width="150" DisplayMemberBinding="{Binding Description, Mode=OneWay}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <DataGrid x:Name="declinedGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding DeclinedMedicine}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv leka" Binding="{Binding Medicine.Name}"  Width="*"/>
+                            <DataGridTextColumn Header="Pakovanje" Binding="{Binding Medicine.Packaging}"  Width="*"/>
+                            <DataGridTextColumn Header="Proizvođač" Binding="{Binding Medicine.Manufacturer}"  Width="*"/>
+                            <DataGridTextColumn Header="Oblik" Binding="{Binding Medicine.ConditionSerbian}"  Width="*"/>
+                            <DataGridTextColumn Header="Komentar" Binding="{Binding Description}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </DockPanel>
             </TabItem>
         </TabControl>

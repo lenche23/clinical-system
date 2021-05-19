@@ -31,8 +31,7 @@ namespace vezba
         public ViewMedicinePage(Medicine medicine, DoctorView dw, MedicinePageView mpw)
         {
             InitializeComponent();
-            this.DataContext = medicine;
-            listViewAlergens.ItemsSource = medicine.Ingridient;
+            DataContext = medicine;
             this.dw = dw;
             this.mpw = mpw;
             Medicine = medicine;

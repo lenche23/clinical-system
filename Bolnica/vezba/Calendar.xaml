@@ -8,7 +8,7 @@
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="Calendar">
 
-    <Grid Background ="White">
+    <Grid Background="White">
         <Grid.Resources>
             <Style TargetType="{x:Type TextBlock}">
                 <Setter Property="FontFamily" Value="Verdana"/>
@@ -19,8 +19,8 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 0, 15, 0">
-            <Button Height="30" Width="120" Margin="5" Padding="5" Click="NewAppointmentClick" FontSize="14" FontWeight="Bold" Content="+ Nov termin" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 5, 20, 5">
+            <Button Height="30" Width="120" Padding="5" Click="NewAppointmentClick" FontSize="14" FontWeight="Bold" Content="+ Nov termin" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
             </Button>
         </StackPanel>
         <Grid Grid.Row="1">
@@ -28,18 +28,18 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <StackPanel Margin="20, 5, 5, 5" Grid.Column="0" Orientation="Horizontal">
-                <StackPanel Height="25" Width="25" MouseLeftButtonDown="PreviousWeekClick">
+            <StackPanel Margin="20, 0, 0, 0" Grid.Column="0" Orientation="Horizontal">
+                <Button Height="25" Width="25" Margin="0, 0, 5, 0" Click="PreviousWeekClick" Style="{StaticResource ResourceKey = ArrowButton}">
                     <Image Source="DoctorImages/prev.png" Width="10" Height="10" Margin="5"/>
-                </StackPanel>
-                <StackPanel Height="25" Width="25" MouseLeftButtonDown="NextWeekClick">
+                </Button>
+                <Button Height="25" Width="25" Click="NextWeekClick" Style="{StaticResource ResourceKey = ArrowButton}">
                     <Image Source="DoctorImages/next.png" Width="10" Height="10" Margin="5"/>
-                </StackPanel>
-                <TextBlock Height="25" Name="MonthYearBlock" VerticalAlignment="Bottom" FontWeight="Bold">some text</TextBlock>
+                </Button>
+                <TextBlock Height="25" x:Name="MonthYearBlock" VerticalAlignment="Center" Padding="5" FontWeight="Bold"><Run Text="some text"/></TextBlock>
             </StackPanel>
-            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Height="25" VerticalAlignment="Bottom">Lekar:</TextBlock>
-                <ComboBox Height="20" Width="120" Margin="5, 5, 20, 5" Name="DoctorsComboBox" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" SelectedValuePath="Jmbg" SelectionChanged="SelectedDoctorChanged"></ComboBox>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 0, 20, 0">
+                <TextBlock Height="25" VerticalAlignment="Center" Padding="5">Lekar:</TextBlock>
+                <ComboBox Height="20" Width="120" Name="DoctorsComboBox" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" SelectedValuePath="Jmbg" SelectionChanged="SelectedDoctorChanged"></ComboBox>
             </StackPanel>
         </Grid>
         <Border Grid.Row="2" BorderBrush="Gray" BorderThickness="1"  Margin="20, 0,20, 20">

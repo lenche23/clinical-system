@@ -37,7 +37,6 @@ namespace vezba
             DataContext = Medicine;
             this.dw = dw;
             this.mpw = mpw;
-            listViewAlergens.ItemsSource = medicine.Ingridient;
         }
 
         private void ApproveClick(object sender, RoutedEventArgs e)
@@ -47,8 +46,8 @@ namespace vezba
             medStorage.Update(Medicine);
             MedicinePageView.MedicineToApprove.Remove(Medicine);
             MedicinePageView.ApprovedMedicine.Add(Medicine);
-            mpw.listViewMedicineRevision.Items.Refresh();
-            mpw.listViewMedicine.Items.Refresh();
+            mpw.revisionGrid.Items.Refresh();
+            mpw.approvedGrid.Items.Refresh();
             dw.Main.GoBack();
         }
 

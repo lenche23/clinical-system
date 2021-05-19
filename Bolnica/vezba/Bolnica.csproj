@@ -428,6 +428,9 @@
     <Compile Include="ViewAnnouncement.xaml.cs">
       <DependentUpon>ViewAnnouncement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewAnnouncementPage.xaml.cs">
+      <DependentUpon>ViewAnnouncementPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewAppointment.xaml.cs">
       <DependentUpon>ViewAppointment.xaml</DependentUpon>
     </Compile>
@@ -888,6 +891,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewAnnouncementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1056,6 +1063,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DoctorImages\prev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DoctorImages\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DoctorImages\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DoctorImages\apple.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
