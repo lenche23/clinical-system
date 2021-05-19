@@ -252,6 +252,7 @@
     <Compile Include="Model\EventsLogStorage.cs" />
     <Compile Include="Model\HospitalEvaluation.cs" />
     <Compile Include="Model\HospitalEvaluationStorage.cs" />
+    <Compile Include="Model\HospitalTreatment.cs" />
     <Compile Include="Model\Ingridient.cs" />
     <Compile Include="Model\Anamnesis.cs" />
     <Compile Include="Model\Announcement.cs" />
@@ -285,11 +286,14 @@
     <Compile Include="Model\RoomType.cs" />
     <Compile Include="Model\Secretary.cs" />
     <Compile Include="Model\Sex.cs" />
+    <Compile Include="Model\Shift.cs" />
     <Compile Include="Model\Speciality.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserStorage.cs" />
     <Compile Include="Model\UserType.cs" />
+    <Compile Include="Model\VacationDays.cs" />
     <Compile Include="Model\Visibility.cs" />
+    <Compile Include="Model\WorkingHours.cs" />
     <Compile Include="NewAnnouncement.xaml.cs">
       <DependentUpon>NewAnnouncement.xaml</DependentUpon>
     </Compile>
@@ -353,6 +357,7 @@
     <Compile Include="PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Repository\UserStorage.cs" />
     <Compile Include="ScheduleEmergencyAppointment.xaml.cs">
       <DependentUpon>ScheduleEmergencyAppointment.xaml</DependentUpon>
     </Compile>
@@ -416,6 +421,18 @@
     <Compile Include="SecretaryView.xaml.cs">
       <DependentUpon>SecretaryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service\AnnouncementService.cs" />
+    <Compile Include="Service\AppointmentService.cs" />
+    <Compile Include="Service\DeclinedMedicineService.cs" />
+    <Compile Include="Service\DoctorEvaluationService.cs" />
+    <Compile Include="Service\DoctorService.cs" />
+    <Compile Include="Service\EquipmentService.cs" />
+    <Compile Include="Service\EventsLogService.cs" />
+    <Compile Include="Service\HospitalEvaluationService.cs" />
+    <Compile Include="Service\MedicineService.cs" />
+    <Compile Include="Service\PatientService.cs" />
+    <Compile Include="Service\RoomInventoryService.cs" />
+    <Compile Include="Service\RoomService.cs" />
     <Compile Include="SuccessfulGradeDoctor.xaml.cs">
       <DependentUpon>SuccessfulGradeDoctor.xaml</DependentUpon>
     </Compile>
@@ -1096,6 +1113,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DoctorImages\PillsDoctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
