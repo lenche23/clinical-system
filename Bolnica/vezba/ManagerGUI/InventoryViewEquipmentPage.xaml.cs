@@ -36,5 +36,10 @@ namespace vezba.ManagerGUI
             }
 
         }
+
+        private void ButtonBackClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

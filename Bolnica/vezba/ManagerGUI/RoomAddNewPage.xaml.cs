@@ -66,14 +66,14 @@ namespace vezba.ManagerGUI
 
             RoomStorage storage = new RoomStorage();
             storage.Save(newRoom);
-            ManagerView.Rooms.Add(newRoom);
-           // this.Close();
+            RoomsPage.Rooms.Add(newRoom);
+            NavigationService.GoBack();
         }
 
         private void Odustani_Button_Click(object sender, RoutedEventArgs e)
         {
 
-            //this.Close();
+            NavigationService.GoBack();
         }
     }
 }

@@ -40,8 +40,7 @@ namespace vezba.ManagerGUI
 
         private void New_Room_Button_Click(object sender, RoutedEventArgs e)
         {
-            var s = new WindowNewRoom();
-            s.Show();
+            mainManagerWindow.MainManagerView.Content = new RoomAddNewPage();
         }
 
         private void Edit_Room_Button_Click(object sender, RoutedEventArgs e)
@@ -50,6 +49,7 @@ namespace vezba.ManagerGUI
             if (lvDataBinding.SelectedIndex > -1)
             {
                 Room selected = (Room)lvDataBinding.SelectedItems[0];
+                mainManagerWindow.MainManagerView.Content = new RoomUpdatePage(selected, this, mainManagerWindow);
                 //var s = new WindowUpdateRoom(selected, this);
                 //s.Show();
             }
@@ -83,7 +83,7 @@ namespace vezba.ManagerGUI
             if (lvDataBinding.SelectedIndex > -1)
             {
                 Room selected = (Room)lvDataBinding.SelectedItem;
-
+                mainManagerWindow.MainManagerView.Content = new RoomViewPage(selected,this);
                 //var s = new WindowViewRoom(selected, this);
                 //s.Show();
             }
@@ -98,14 +98,29 @@ namespace vezba.ManagerGUI
             if (lvDataBinding.SelectedIndex > -1)
             {
                 Room selected = (Room)lvDataBinding.SelectedItems[0];
-                var s = new WindowRenovations(selected);
-                s.Show();
+               // var s = new WindowRenovations(selected);
+               // s.Show();
             }
 
             else
             {
                 MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
+        }
+
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
+        }
+
+        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
         }
     }
 }

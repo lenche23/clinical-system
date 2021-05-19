@@ -7,6 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="MainManagerPage">
+
     <Grid Background="#FFFFC99C">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
@@ -26,15 +27,47 @@
         <Rectangle Grid.Column="2" Grid.Row="2"  Fill="#FFFFF5EB" Margin="50,10,50,40"></Rectangle>
 
         <Rectangle Grid.Column="1" Grid.Row="0"  Fill="#FFFFF5EB" Margin="10,5"></Rectangle>
-        <Button Grid.Column="1" Grid.Row="0" Margin="20,10,145,10" Click="ButtonAnnouncementsClick">Obaveštenja</Button>
-        <Button Grid.Column="1" Grid.Row="0" Margin="145,10,20,10">Profil</Button>
+        <Button BorderBrush="{x:Null}" Grid.Column="1" Grid.Row="0" Margin="30,10,155,10" Click="ButtonAnnouncementsClick">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/bell.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button BorderBrush="{x:Null}" Grid.Column="1" Grid.Row="0" Margin="155,10,30,10">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/account.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
 
-        <Button Grid.Column="0" Grid.Row="1" Background="White" BorderBrush="#FFFFA55A" Margin="60,20,60,90" Click="ButtonRoomsClick"/>
-        <Button Grid.Column="0" Grid.Row="2" Background="White" BorderBrush="#FFFFA55A" Margin="60,20,60,90" Click="ButtonStaffClick"/>
-        <Button Grid.Column="1" Grid.Row="1" Background="White" BorderBrush="#FFFFA55A" Margin="60,20,60,90" Click="ButtonInventoryClick"/>
-        <Button Grid.Column="1" Grid.Row="2" Background="White" BorderBrush="#FFFFA55A" Margin="60,20,60,90" Click="ButtonSurveyClick"/>
-        <Button Grid.Column="2" Grid.Row="1" Background="White" BorderBrush="#FFFFA55A" Margin="60,20,60,90" Click="ButtonMedicineClick"/>
-        <Button Grid.Column="2" Grid.Row="2" Background="White" BorderBrush="#FFFFA55A" Margin="60,20,60,90" Click="ButtonSupplyClick"/>
+        <Button Grid.Column="0" Grid.Row="1" BorderBrush="{x:Null}" Margin="60,20,60,90" Click="ButtonRoomsClick">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/hospital.png"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="0" Grid.Row="2" BorderBrush="{x:Null}" Margin="60,20,60,90" Click="ButtonStaffClick">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/doctor.png"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="1" BorderBrush="{x:Null}" Margin="60,20,60,90" Click="ButtonInventoryClick">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/building.png"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" BorderBrush="{x:Null}" Margin="60,20,60,90" Click="ButtonSurveyClick">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/health-check.png"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="1" BorderBrush="{x:Null}" Margin="60,20,60,90" Click="ButtonMedicineClick">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/medicine.png"/>
+            </Button.Background>
+        </Button>
+        <Button Grid.Column="2" Grid.Row="2" BorderBrush="{x:Null}" Margin="60,20,60,90" Click="ButtonSupplyClick">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/medical-kit.png"/>
+            </Button.Background>
+        </Button>
 
         <TextBlock Grid.Column="0" Grid.Row="1" Margin="50,165,50,50" FontSize="20" TextAlignment="Center">Prostorije</TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="1" Margin="50,165,50,50" FontSize="20" TextAlignment="Center">Inventar</TextBlock>
@@ -43,7 +76,6 @@
         <TextBlock Grid.Column="1" Grid.Row="2" Margin="50,165,50,50" FontSize="20" TextAlignment="Center">Ankete</TextBlock>
         <TextBlock Grid.Column="2" Grid.Row="2" Margin="50,165,50,50" FontSize="20" TextAlignment="Center">Snabdevanje</TextBlock>
 
-
-
+      
     </Grid>
 </Page>

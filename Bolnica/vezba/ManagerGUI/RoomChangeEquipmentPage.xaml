@@ -13,7 +13,7 @@
         <Label Name="TipOpreme" Content="Tip opreme:" Margin="104,172,132,352" />
         <Label Name ="Id" Content="ID:" Margin="145,128,132,397"/>
         <Label Content="ItemQuantity:" Margin="118,212,536,314"/>
-        <TextBox Name="Količina"  Text="{Binding Quantity, Mode=OneWay}" Height ="24" RenderTransformOrigin="0.491,0.484" Margin="212,218,132,322" />
+        <TextBox Name="Količina"  Text="{Binding Quantity, Mode=OneWay}" RenderTransformOrigin="0.491,0.484" Margin="212,212,132,322" />
         <Button Click="PotvrdiIzmenu_Button_Click" Margin="185,290,408,204">Potvrdi</Button>
         <Button Click="OdustaniIzmena_Button_Click" Margin="420,290,173,204">Odustani</Button>
     </Grid>

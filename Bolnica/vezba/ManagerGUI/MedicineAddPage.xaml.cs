@@ -79,16 +79,16 @@ namespace vezba.ManagerGUI
 
             newMedicine = new Medicine(Name, Manufacturer, Packaging, MedicineID, Condition) { ReplacementMedicine = replacementMedicine };
 
-            AddMedicineWindow.MedicineList.Add(newMedicine);
+            MedicinePage.MedicineList.Add(newMedicine);
             newMedicine.ingridient = ingredientTemporaryList;
             storage.Save(newMedicine);
-            //this.Close();
+            NavigationService.GoBack();
 
         }
 
         private void Odustani_Button_Click(object sender, RoutedEventArgs e)
         {
-            //this.Close();
+            NavigationService.GoBack();
         }
 
         private void ButtonMinus_Click(object sender, RoutedEventArgs e)

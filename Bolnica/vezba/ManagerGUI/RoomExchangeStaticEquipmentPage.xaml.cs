@@ -60,6 +60,7 @@ namespace vezba.ManagerGUI
             SaveNewRoomInventory(currentRoomItemQuantity, room);
             SaveNewRoomInventory(desiredRoomItemQuantity, roomEntry);
 
+            NavigationService.GoBack();
             //this.Close();
         }
 
@@ -95,6 +96,7 @@ namespace vezba.ManagerGUI
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
+            NavigationService.GoBack();
             //this.Close();
         }
 

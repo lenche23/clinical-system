@@ -20,10 +20,10 @@ namespace vezba.ManagerGUI
     public partial class RoomViewPage : Page
 {
         private Room selected;
-        private ManagerView mv;
+        private RoomsPage mv;
         public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
         private RoomInventoryStorage roomInventoryStorage;
-        public RoomViewPage(Room selected, ManagerView mv)
+        public RoomViewPage(Room selected, RoomsPage mv)
         {
             InitializeComponent();
             this.selected = selected;
@@ -76,6 +76,11 @@ namespace vezba.ManagerGUI
 
             RoomInventoryList = new ObservableCollection<RoomInventory>(roomInventoryList);
             RoomInventoryBinding.ItemsSource = RoomInventoryList;
+        }
+
+        private void ButtonBackClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

@@ -8,10 +8,10 @@
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RoomUpdatePage" Background="#FFFFF0F0">
     <Grid Margin="0,0,2,-21">
-        <Label Content="Izmena prostorije" Margin="21,18,505,371" FontSize="18" FontFamily="Myriad Pro Cond"/>
-        <Label Content="Broj prostorije:" Margin="10,68,601,325"/>
+        <Label Content="Izmena prostorije" Margin="21,18,554,528" FontSize="18" FontFamily="Myriad Pro Cond"/>
+        <Label Content="Broj prostorije:" Margin="10,68,606,487"/>
         <Label Content="Sprat:" Margin="10,152,606,228"/>
-        <Label Content="Tip prostorije:" Width="100" Margin="10,109,618,279"/>
+        <Label Content="Tip prostorije:" Margin="20,109,643,444"/>
         <TextBox Name="BrojSobe" Text="{Binding RoomNumber, Mode=OneWay}" Margin="110,68,485,487"/>
         <Button Width ="100" Height="30" Margin="266,380,363,32" Click="Potvrda_Button_Click">Potvrdi</Button>
         <Button Width ="100" Height="30" Margin="390,380,239,32" Click="Odustanak_Button_Click">Odustani</Button>
@@ -20,21 +20,18 @@
         <RadioButton Name ="Drugi" GroupName="Sprat" Content="Drugi" Margin="194,159,442,229"></RadioButton>
         <RadioButton Name ="Treci" GroupName="Sprat" Content="Treci" Margin="278,159,352,234"></RadioButton>
 
-        <RadioButton Name ="Pregled" GroupName="TipProstorije" Content="Pregled" Margin="110,116,492,279"></RadioButton>
-        <RadioButton Name ="Operacija" GroupName="TipProstorije" Content="Operacija" Margin="278,116,332,282"></RadioButton>
-        <RadioButton Name ="Odmor" GroupName="TipProstorije" Content="Odmor" Margin="194,116,420,279"></RadioButton>
-        <RadioButton Name ="Magacin" GroupName="TipProstorije" Content="Magacin" Margin="374,116,217,288"></RadioButton>
+        <RadioButton Name ="Pregled" GroupName="TipProstorije" Content="Pregled" Margin="110,116,554,444"></RadioButton>
+        <RadioButton Name ="Operacija" GroupName="TipProstorije" Content="Operacija" Margin="278,116,379,444"></RadioButton>
+        <RadioButton Name ="Odmor" GroupName="TipProstorije" Content="Odmor" Margin="194,116,470,444"></RadioButton>
+        <RadioButton Name ="Magacin" GroupName="TipProstorije" Content="Magacin" Margin="374,116,248,437"></RadioButton>
 
         <Button Click="Dodaj_Button_Click" Margin="55,204,575,344" BorderThickness="2" Background="#FFD9ECC9">Dodaj proizvod</Button>
         <Button Click="Izmeni_Količinu_Button_Click" Margin="55,252,575,293" BorderThickness="2" Background="#FFD9ECC9">Izmeni količinu</Button>
         <Button Click="Izbriši_Button_Click" Margin="55,420,577,135" BorderThickness="2" Background="#FFC5C5C5">Izbriši</Button>
         <Button Click="Razmena_Button_Click" Margin="55,303,575,244" BorderThickness="2" Background="#FFD9ECC9">Razmena</Button>
-        <CheckBox Name ="CheckedBoxStatic" Margin="600,303,31,117" IsChecked ="True" Unchecked ="StaticCheckBox_Unchecked" Checked="StaticCheckBox_Checked">Statička</CheckBox>
-        <CheckBox Name ="CheckedBoxDinamic" Margin="600,326,31,94" IsChecked ="True" Unchecked ="DinamicCheckBox_Unchecked" Checked="DinamicCheckBox_Checked">Dinamička</CheckBox>
         <Label Margin="576,202,-2,210" Content="Pretraga opreme po nazivu"/>
-        <Label Margin="576,269,91,135" Content="Filter:" FontSize="14"/>
         <TextBox Margin="583,232,10,327" Name="txtFilter" TextChanged="txtFilter_TextChanged" />
-        <ListView Margin="204,204,188,81" Name="RoomInventoryBinding">
+        <ListView Margin="204,204,188,161" Name="RoomInventoryBinding">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding EquipmentId}" />

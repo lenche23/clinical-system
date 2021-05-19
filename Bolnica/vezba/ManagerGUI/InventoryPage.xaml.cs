@@ -43,8 +43,8 @@ namespace vezba.ManagerGUI
 
         private void Add_Equipment_Button_Click(object sender, RoutedEventArgs e)
         {
-            //mainManagerWindow.MainManagerView.Content = new InventoryAddEquipmentPage();
-            //equipmentList = storage.GetAll();
+            mainManagerWindow.MainManagerView.Content = new InventoryAddEquipmentPage();
+            equipmentList = storage.GetAll();
         }
 
         private void Remove_Equipment_Button_Click(object sender, RoutedEventArgs e)
@@ -68,9 +68,9 @@ namespace vezba.ManagerGUI
             if (InventaryBinding.SelectedIndex > -1)
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
-                //mainManagerWindow.MainManagerView.Content = new InventoryViewEquipmentPage(equipment);
-                var s = new InventaryViewEquipment(equipment);
-                s.Show();
+                mainManagerWindow.MainManagerView.Content = new InventoryViewEquipmentPage(equipment);
+                //var s = new InventaryViewEquipment(equipment);
+                //s.Show();
             }
 
             else
@@ -84,7 +84,7 @@ namespace vezba.ManagerGUI
             if (InventaryBinding.SelectedIndex > -1)
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
-                //mainManagerWindow.MainManagerView.Content = new InventoryViewEquipmentPage(equipment);
+                mainManagerWindow.MainManagerView.Content = new InventoryChangeEquipmentPage(equipment, this);
                 //var s = new InventaryChangeEquipment(equipment, this);
                 //s.Show();
             }
@@ -200,12 +200,22 @@ namespace vezba.ManagerGUI
             }
         }
 
-        private void ButtonBackClick(object sender, RoutedEventArgs e)
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
 
-        private void ButtonMainClick(object sender, RoutedEventArgs e)
+        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
+        }
+
+        private void ButtonRoomsClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
+        }
+
+        private void ButtonBackClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }

@@ -8,7 +8,7 @@ namespace vezba.ManagerGUI
 {
     public partial class RoomExchangeEquipmentPage : Page
     {
-        private WindowUpdateRoom windowUpdateRoom;
+        private RoomUpdatePage windowUpdateRoom;
         private Room room;
         private RoomInventory roomInventory;
         private int maximumQuantity;
@@ -16,7 +16,7 @@ namespace vezba.ManagerGUI
         private DateTime infiniteTime = new DateTime(2999, 12, 31);
         private RoomInventoryStorage roomInventoryStorage;
 
-        public RoomExchangeEquipmentPage(RoomInventory roomInventory, WindowUpdateRoom windowUpdateRoom, Room room)
+        public RoomExchangeEquipmentPage(RoomInventory roomInventory, RoomUpdatePage windowUpdateRoom, Room room)
         {
             InitializeComponent();
             this.windowUpdateRoom = windowUpdateRoom;
@@ -45,6 +45,7 @@ namespace vezba.ManagerGUI
                 CreateRoomInventory(roomEntry);
             }
             //this.Close();
+            NavigationService.GoBack();
         }
 
         private void CreateRoomInventory(Room roomEntry)
@@ -78,7 +79,7 @@ namespace vezba.ManagerGUI
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            //this.Close();
+            NavigationService.GoBack();
         }
 
         public Boolean Validate(Room roomEntry)

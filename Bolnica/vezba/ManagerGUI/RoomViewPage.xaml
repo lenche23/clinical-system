@@ -23,5 +23,12 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
+
+        <Button Click ="ButtonBackClick" Margin="10,483,648,10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

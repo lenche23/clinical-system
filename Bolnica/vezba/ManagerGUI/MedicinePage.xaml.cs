@@ -39,8 +39,7 @@ namespace vezba.ManagerGUI
 
         private void Add_Medicine_Button_Click(object sender, RoutedEventArgs e)
         {
-            var s = new NewMedicine();
-            s.Show();
+            mainManagerWindow.MainManagerView.Content = new MedicineAddPage();
         }
 
         private void Remove_Medicine_Button_Click(object sender, RoutedEventArgs e)
@@ -76,7 +75,17 @@ namespace vezba.ManagerGUI
 
         private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
+        }
+
+        private void ButtonRoomsClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
         }
     }
 }
