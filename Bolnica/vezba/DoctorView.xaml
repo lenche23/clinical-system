@@ -16,7 +16,7 @@
             </Button>
             <Button Click="MedicineClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="DoctorImages/apple.png" Width="25" Height="25" Margin="5"/>
+                    <Image Source="DoctorImages/PillsDoctor.png" Width="25" Height="25" Margin="5"/>
                     <TextBlock FontFamily="verdana" FontSize="10">Lekovi</TextBlock>
                 </StackPanel>
             </Button>
