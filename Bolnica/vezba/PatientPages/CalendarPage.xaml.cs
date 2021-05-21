@@ -30,7 +30,7 @@ namespace vezba.PatientPages
             this.DataContext = this;
             AppointmentStorage storage = new AppointmentStorage();
 
-            DateTime startOfWeek = DateTime.Today.AddDays((int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek -(int)DateTime.Today.DayOfWeek);
+            DateTime startOfWeek = DateTime.Today.AddDays((int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - (int)DateTime.Today.DayOfWeek);
             DateTime endOfWeek = startOfWeek.AddDays(6);
            
 
@@ -53,7 +53,7 @@ namespace vezba.PatientPages
                     tempMonth.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
                     tempMonth.Reverse();
                 }
-                Appointments = new ObservableCollection<Appointment>(tempMonth);
+                Appointments = new ObservableCollection<Appointment>(tempToday);
             }
         }
 

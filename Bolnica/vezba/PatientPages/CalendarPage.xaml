@@ -38,7 +38,7 @@
                 <Grid x:Name="GridCursor" Width="135" Height="5" Background="#FF2E421A" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Bottom"/>
             </Grid>
             <Grid x:Name="GridTable" Height="418" Width="410">
-                <ListBox x:Name="appointmentsTodayTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" Height="418" Width="410" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="Transparent">
+                <ListBox x:Name="appointmentsTodayTable" ItemsSource="{Binding Appointments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="418" Width="410" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="Transparent">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Height="50">
@@ -53,10 +53,10 @@
                                         <ColumnDefinition/>
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Text="{Binding StartTime, StringFormat='{}{0: dd.MM.yyyy HH:mm}', Mode=TwoWay}" FontSize="16" FontWeight="Bold" Foreground="#FF2E421A"/>
-                                    <TextBlock Grid.Column="2" Text="{Binding Doctor, StringFormat='{}{0: }', Mode=TwoWay}"  FontStyle="Italic" Foreground="Black"/>
+                                    <TextBlock Text="{Binding StartTime, StringFormat='{}{0: dd.MM.yyyy HH:mm}', Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="16" FontWeight="Bold" Foreground="#FF2E421A"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding Doctor, StringFormat='{}{0: }', Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontStyle="Italic" Foreground="Black"/>
                                 </Grid>
-                                <TextBlock Grid.Row="1" Text="{Binding ApointmentDescription, Mode=TwoWay}" FontSize="14" TextWrapping="Wrap" Width="380" Foreground="black"/>
+                                <TextBlock Grid.Row="1" Text="{Binding ApointmentDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" TextWrapping="Wrap" Width="380" Foreground="black"/>
                                 <Separator Grid.Row="2"/>
                             </Grid>
                         </DataTemplate>
