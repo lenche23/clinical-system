@@ -14,14 +14,14 @@ using System.Windows.Shapes;
 
 namespace vezba
 {
-    public partial class PatientTherapyNotification : Window
+    public partial class PatientNotification : Window
     {
-        public String TherapyContent { get; set; }
-        public PatientTherapyNotification(String content)
+        public String NotificationContent { get; set; }
+        public PatientNotification(String content)
         {
             InitializeComponent();
             this.DataContext = this;
-            TherapyContent = content;
+            NotificationContent = content;
             Focus();
         }
 

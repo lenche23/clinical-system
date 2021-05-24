@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace vezba.PatientPages
 {
-    /// <summary>
-    /// Interaction logic for TherapiesPage.xaml
-    /// </summary>
     public partial class TherapiesPage : Page
     {
         public TherapiesPage()

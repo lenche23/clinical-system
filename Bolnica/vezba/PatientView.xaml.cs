@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Navigation;
 using vezba.PatientPages;
 using vezba.Repository;
@@ -35,6 +36,7 @@ namespace vezba
 
         private void SetPatientLoggedIn()
         {
+            Service = new PatientService();
             Patient = Service.LoadPatient();
         }
 

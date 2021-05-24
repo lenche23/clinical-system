@@ -245,8 +245,8 @@
       <DependentUpon>MedicineRevisionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DeclinedMedicine.cs" />
-    <Compile Include="PatientTherapyNotification.xaml.cs">
-      <DependentUpon>PatientTherapyNotification.xaml</DependentUpon>
+    <Compile Include="PatientNotification.xaml.cs">
+      <DependentUpon>PatientNotification.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repository\DeclinedMedicineFileRepository.cs" />
     <Compile Include="Model\DoctorEvaluation.cs" />
@@ -806,7 +806,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PatientTherapyNotification.xaml">
+    <Page Include="PatientNotification.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

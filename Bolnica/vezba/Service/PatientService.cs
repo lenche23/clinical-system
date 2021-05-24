@@ -62,7 +62,7 @@ namespace Service
             {
                 if (CanShowNotification(dt))
                 {
-                    PatientTherapyNotification noti = new PatientTherapyNotification("Podsetnik da lek " + prescription.Medicine.Name + "trebate popiti u " + dt.ToString("HH:mm"));
+                    PatientNotification noti = new PatientNotification("Podsetnik da lek " + prescription.Medicine.Name + "trebate popiti u " + dt.ToString("HH:mm"));
                     noti.Show();
                 }
             }

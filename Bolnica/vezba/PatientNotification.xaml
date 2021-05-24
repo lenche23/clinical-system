@@ -1,11 +1,11 @@
-﻿<Window x:Class="vezba.PatientTherapyNotification"
+﻿<Window x:Class="vezba.PatientNotification"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vezba"
         mc:Ignorable="d"  
-        Title="PatientTherapyNotification" Height="200" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+        Title="PatientNotification" Height="200" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
     <Border CornerRadius="52" BorderThickness="10" BorderBrush="#FF7BC1A1">
 
@@ -37,7 +37,7 @@
                         </RadialGradientBrush>
                     </Button.Background>
                 </Button>
-                <Label Content="{Binding TherapyContent}"  HorizontalAlignment="Center" Margin="0,32,0,64" FontSize="13" Width="240" HorizontalContentAlignment="Center" Foreground="#FF2E421A"/>
+                <Label Content="{Binding NotificationContent}"  HorizontalAlignment="Center" Margin="0,32,0,64" FontSize="10" Width="240" HorizontalContentAlignment="Center" Foreground="#FF2E421A"/>
             </Grid>
         </Border>
     </Border>
