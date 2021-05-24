@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -19,11 +20,17 @@ namespace vezba
 {
     public partial class PatientEditAppointment : Window
     {
-        public Appointment Appointment { get; set; }
-
+        private Appointment Appointment { get; set; }
+        private EventsLogService Service { get; set; }
         public PatientEditAppointment(Appointment appointment)
         {
             InitializeComponent();
+            AppointmentDetails(appointment);
+            Appointment = appointment;
+        }
+
+        private void AppointmentDetails(Appointment appointment)
+        {
             ID.Text = appointment.AppointentId.ToString();
             Datum.Text = appointment.StartTime.ToString("dd.MM.yyyy.");
             Opis.Text = appointment.ApointmentDescription;
@@ -38,15 +45,14 @@ namespace vezba
             {
                 Soba.Text = appointment.Room.RoomNumber.ToString();
             }
-            Appointment = appointment;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             if (MoveableAppointment()) 
             {
-                Appointment appointment = ChangeAppointment();
-                AddLog(appointment);
+                ChangeAppointment();
+                Service.AddLog();
                 this.Close();
             }
             else
@@ -66,7 +72,7 @@ namespace vezba
             return true;
         }
 
-        private Appointment ChangeAppointment()
+        private void ChangeAppointment()
         {
             int id = Appointment.AppointentId;
             DateTime selectedDate = Datum.SelectedDate.Value.Date;
@@ -88,25 +94,6 @@ namespace vezba
             if (appointment1 != null)
             {
                 ChangeAppointmentView.Appointments[ChangeAppointmentView.Appointments.IndexOf(appointment1)] = appointment;
-            }
-
-            return appointment1;
-        }
-
-        private void AddLog(Appointment appointment)
-        {
-            EventsLogFileRepository eventsLogFileRepository = new EventsLogFileRepository();
-            List<EventsLog> list = eventsLogFileRepository.Load();
-            String patientJMBG = appointment.Patient.Jmbg;
-            List<DateTime> events = new List<DateTime>();
-            DateTime log = DateTime.Now;
-            foreach (EventsLog elog in list)
-            {
-                if (elog.PatientJmbg.Equals(patientJMBG))
-                {
-                    elog.EventDates.Add(log);
-                    eventsLogFileRepository.Update(elog);
-                }
             }
         }
     }
