@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:vezba.PatientPages"
+      xmlns:local="clr-namespace:vezba.PatientPages" xmlns:model="clr-namespace:Model"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="430"
       Title="CalendarPage">
@@ -31,9 +31,9 @@
         <StackPanel Background="Transparent" Margin="0,72,0,56">
             <Grid Height="40">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 0">
-                    <Button Width="135" Uid="0" Content="Današnji" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E421A" Click="Button_Click"/>
-                    <Button Width="135" Uid="1" Content="Nedeljni" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E421A" Click="Button_Click"/>
-                    <Button Width="135" Uid="2" Content="Mesečni" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E421A" Click="Button_Click"/>
+                    <Button Width="135" Uid="0" Content="Današnji" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E421A" Click="TodayClick" />
+                    <Button Width="135" Uid="1" Content="Nedeljni" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E421A" Click="WeekClick" />
+                    <Button Width="135" Uid="2" Content="Mesečni" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2E421A" Click="MonthClick" />
                 </StackPanel>
                 <Grid x:Name="GridCursor" Width="135" Height="5" Background="#FF2E421A" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Bottom"/>
             </Grid>

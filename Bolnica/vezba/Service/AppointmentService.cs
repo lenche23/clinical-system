@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows;
 using vezba;
+using vezba.PatientPages;
 using vezba.Repository;
 
 namespace Service
@@ -53,10 +54,10 @@ namespace Service
             changedAppointment.AppointentId = id;
             Update(changedAppointment);
 
-            Appointment idAppointment = ChangeAppointmentView.Appointments.FirstOrDefault(a => a.AppointentId.Equals(id));
+            Appointment idAppointment = ChangeAppointmentPage.Appointments.FirstOrDefault(a => a.AppointentId.Equals(id));
             if (idAppointment != null)
             {
-                ChangeAppointmentView.Appointments[ChangeAppointmentView.Appointments.IndexOf(idAppointment)] = changedAppointment;
+                ChangeAppointmentPage.Appointments[ChangeAppointmentPage.Appointments.IndexOf(idAppointment)] = changedAppointment;
             }
         }
         // PacijentKraj***************************************************************************

@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vezba.Repository;
 
 namespace vezba.PatientPages
 {
@@ -28,55 +29,66 @@ namespace vezba.PatientPages
         {
             InitializeComponent();
             this.DataContext = this;
-            AppointmentStorage storage = new AppointmentStorage();
-
-            DateTime startOfWeek = DateTime.Today.AddDays((int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - (int)DateTime.Today.DayOfWeek);
-            DateTime endOfWeek = startOfWeek.AddDays(6);
-           
+            AppointmentFileRepository storage = new AppointmentFileRepository();
 
             foreach (Appointment appointment in storage.GetAll())
             {
                 if (appointment.StartTime.Date == DateTime.Today && appointment.Patient.Jmbg.Equals("1008985563244"))
                 {
                     tempToday.Add(appointment);
-
-                }
-                if (appointment.StartTime.Date >= DateTime.Today && appointment.StartTime.Date <= endOfWeek && appointment.Patient.Jmbg.Equals("1008985563244"))
-                {
-                    tempWeek.Add(appointment);
-                    tempWeek.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
-                    tempWeek.Reverse();
-                }
-                if (appointment.StartTime.Date >= DateTime.Today && appointment.StartTime.Month == DateTime.Now.Month && appointment.Patient.Jmbg.Equals("1008985563244"))
-                {
-                    tempMonth.Add(appointment);
-                    tempMonth.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
-                    tempMonth.Reverse();
+                    tempToday.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
+                    tempToday.Reverse();
                 }
                 Appointments = new ObservableCollection<Appointment>(tempToday);
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void TodayClick(object sender, RoutedEventArgs e)
         {
-            int index = int.Parse(((Button)e.Source).Uid);
+            GridCursor.Margin = new Thickness(10 + (135 * 0), 0, 0, 0);
+            Appointments.Clear();
+            AppointmentFileRepository storage = new AppointmentFileRepository();
 
-            GridCursor.Margin = new Thickness(10 + (135 * index), 0, 0, 0);
-
-            switch (index)
+            foreach (Appointment appointment in storage.GetAll())
             {
-                case 0:
-                    GridTable.Background = Brushes.Transparent;
-                    Appointments = new ObservableCollection<Appointment>(tempToday);
-                    break;
-                case 1:
-                    GridTable.Background = Brushes.Transparent;
-                    Appointments = new ObservableCollection<Appointment>(tempWeek);
-                    break;
-                case 2:
-                    GridTable.Background = Brushes.Transparent;
-                    Appointments = new ObservableCollection<Appointment>(tempMonth);
-                    break;
+                if (appointment.StartTime.Date == DateTime.Today && appointment.Patient.Jmbg.Equals("1008985563244"))
+                {
+                    Appointments.Add(appointment);
+                }
+            }
+        }
+
+        private void WeekClick(object sender, RoutedEventArgs e)
+        {
+            GridCursor.Margin = new Thickness(10 + (135 * 1), 0, 0, 0);
+            Appointments.Clear();
+            AppointmentFileRepository storage = new AppointmentFileRepository();
+
+            DateTime startOfWeek = DateTime.Today.AddDays((int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - (int)DateTime.Today.DayOfWeek);
+            DateTime endOfWeek = startOfWeek.AddDays(6);
+
+
+            foreach (Appointment appointment in storage.GetAll())
+            {
+                if (appointment.StartTime.Date >= DateTime.Today && appointment.StartTime.Date <= endOfWeek && appointment.Patient.Jmbg.Equals("1008985563244"))
+                {
+                    Appointments.Add(appointment);
+                }
+            }
+        }
+
+        private void MonthClick(object sender, RoutedEventArgs e)
+        {
+            GridCursor.Margin = new Thickness(10 + (135 * 2), 0, 0, 0);
+            Appointments.Clear();
+            AppointmentFileRepository storage = new AppointmentFileRepository();
+
+            foreach (Appointment appointment in storage.GetAll())
+            {
+                if (appointment.StartTime.Date >= DateTime.Today && appointment.StartTime.Month == DateTime.Now.Month && appointment.Patient.Jmbg.Equals("1008985563244"))
+                {
+                    Appointments.Add(appointment);
+                }
             }
         }
     }

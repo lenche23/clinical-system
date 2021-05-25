@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vezba.Repository;
 
 namespace vezba.PatientPages
 {
@@ -24,7 +25,7 @@ namespace vezba.PatientPages
         {
             InitializeComponent();
             this.DataContext = this;
-            AppointmentStorage ps = new AppointmentStorage();
+            AppointmentFileRepository ps = new AppointmentFileRepository();
             List<Appointment> temp = new List<Appointment>();
             foreach (Appointment appointment in ps.GetAll())
             {
