@@ -333,6 +333,12 @@
     <Compile Include="PatientPages\CalendarPage.xaml.cs">
       <DependentUpon>CalendarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PatientPages\ChangeAppointmentPage.xaml.cs">
+      <DependentUpon>ChangeAppointmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\EditAppointmentPage.xaml.cs">
+      <DependentUpon>EditAppointmentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PatientPages\GradeDoctorPage.xaml.cs">
       <DependentUpon>GradeDoctorPage.xaml</DependentUpon>
     </Compile>
@@ -771,6 +777,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PatientPages\CalendarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\ChangeAppointmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\EditAppointmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

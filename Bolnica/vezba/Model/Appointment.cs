@@ -1,35 +1,20 @@
 using System;
 using System.Collections.Generic;
 using vezba.Repository;
+using System.ComponentModel;
 
 namespace Model
 {
-    public class Appointment
+    public class Appointment : INotifyPropertyChanged
     {
-        /*public Appointment(DateTime StartTime, int DurationInMinutes, String AppointmentDescription, int AppointmentId, Doctor Doctor, Room Room, Patient Patient)
-        {
-            this.StartTime = StartTime;
-            this.DurationInMunutes = DurationInMinutes;
-            this.ApointmentDescription = AppointmentDescription;
-            this.AppointentId = AppointmentId;
-            this.Doctor = Doctor;
-            this.Room = Room;
-            this.Patient = Patient;
-
-            this.IsDeleted = false;
-        }*/
-
         public DateTime StartTime { get; set; }
         public int DurationInMunutes { get; set; }
         public String ApointmentDescription { get; set; }
         public int AppointentId { get; set; }
         public Boolean IsDeleted { get; set; }
-
         public Doctor Doctor { get; set; }
         public Room Room { get; set; }
-
         public Patient Patient { get; set; }
-
         public Boolean IsEmergency { get; set; }
 
         public Appointment(int id, Patient patient, Doctor doctor, Room room, DateTime startTime, int duration, string apDesc, Boolean IsEmergency = false)
@@ -89,6 +74,10 @@ namespace Model
                 else
                     return "";
             }
+            set
+            {
+                OnPropertyChanged("RoomName");
+            }
         }
         public String DoctorName
         {
@@ -98,11 +87,44 @@ namespace Model
                     return (Doctor.Name + " " + Doctor.Surname);
                 else
                     return "";
-
-
+            }
+            set
+            {
+                OnPropertyChanged("DoctorName");
             }
         }
 
+        public String AppointmentDescription
+        {
+            get => ApointmentDescription;
+            set
+            {
+                ApointmentDescription = value;
+                OnPropertyChanged("AppointmentDescription");
+            }
+        }
+
+        public DateTime StartTimee
+        {
+            get => StartTime;
+            set
+            {
+                StartTime = value;
+                OnPropertyChanged("StartTimee");
+            }
+
+        }
+
         public Appointment() { }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
     }
 }
