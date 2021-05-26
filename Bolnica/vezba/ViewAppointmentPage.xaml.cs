@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Service;
 using vezba.Repository;
 
 namespace vezba
@@ -24,32 +25,30 @@ namespace vezba
     {
 
         private Appointment Selected { get; set; }
-
-
-        private DoctorView dw;
+        private DoctorView doctorView;
         private Calendar calendar;
         private Grid appointmentGrid;
 
-        public ViewAppointmentPage(Appointment selected, DoctorView dw, Calendar calendar, Grid appointmentGrid)
+        public ViewAppointmentPage(Appointment selected, DoctorView doctorView, Calendar calendar, Grid appointmentGrid)
         {
             InitializeComponent();
             DataContext = selected;
             Selected = selected;
-            this.dw = dw;
+            this.doctorView = doctorView;
             this.calendar = calendar;
             this.appointmentGrid = appointmentGrid;
         }
 
-        private void ZdravstveniKartonClick(object sender, RoutedEventArgs e)
+        private void MedicalRecordClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new MedicalRecordPage(Selected.Patient, dw);
+            doctorView.Main.Content = new MedicalRecordPage(Selected.Patient, doctorView);
         }
 
-        private void NovaAnamnezaClick(object sender, RoutedEventArgs e)
+        private void NewAnamnesisClick(object sender, RoutedEventArgs e)
         {
             if (DateTime.Compare(DateTime.Now, Selected.StartTime) >= 0)
             {
-                dw.Main.Content = new CreateAnamnesisPage(Selected, dw);
+                doctorView.Main.Content = new CreateAnamnesisPage(Selected, doctorView);
             }
             else
             {
@@ -57,24 +56,24 @@ namespace vezba
             }
         }
 
-        private void NovReceptClick(object sender, RoutedEventArgs e)
+        private void NewPrescriptionClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new CreatePrescriptionPage(Selected.Patient, dw);
+            doctorView.Main.Content = new CreatePrescriptionPage(Selected.Patient, doctorView);
         }
 
-        private void IzdavanjeUputaClick(object sender, RoutedEventArgs e)
+        private void NewReferralLetterClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new CreateReferralLetterPage(Selected.Patient, dw);
+            doctorView.Main.Content = new CreateReferralLetterPage(Selected.Patient, doctorView);
         }
 
-        private void PovratakClick(object sender, RoutedEventArgs e)
+        private void ReturnClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.GoBack();
+            doctorView.Main.GoBack();
         }
 
         private void EditClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new EditAppointmentPage(Selected, dw, calendar, appointmentGrid);
+            doctorView.Main.Content = new EditAppointmentPage(Selected, doctorView, calendar, appointmentGrid);
         }
 
         private void DeleteClick(object sender, RoutedEventArgs e)
@@ -82,11 +81,11 @@ namespace vezba
             MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
-                AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
-                appointmentFileRepository.Delete(Selected.AppointentId);
+                AppointmentService appointmentService = new AppointmentService();
+                appointmentService.Delete(Selected.AppointentId);
                 calendar.RemoveAppointment(appointmentGrid);
                 calendar.SetScrollViewerToFirstAppointment();
-                dw.Main.GoBack();
+                doctorView.Main.GoBack();
             }
         }
     }
