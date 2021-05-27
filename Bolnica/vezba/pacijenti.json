@@ -494,8 +494,41 @@
     "PhoneNumber": "0627792221",
     "Adress": "Hajduk Veljkova 42, Novi Sad",
     "Email": "mira94@gmail.com",
-    "IdCard": "008621493",
+    "IdCard": "0086214934",
     "Type": 3,
     "IsDeleted": false
+  },
+  {
+    "appointment": null,
+    "IsBlocked": false,
+    "IsGuest": true,
+    "EmergencyContact": "",
+    "MedicalRecord": {
+      "allergen": null,
+      "anamnesis": null,
+      "prescription": null,
+      "referralLetter": null,
+      "HealthInsuranceNumber": "",
+      "MedicalIdNumber": "",
+      "Allergen": [],
+      "Anamnesis": [],
+      "Prescription": [],
+      "ReferralLetter": []
+    },
+    "NameAndSurname": "sdfghj dfghjk",
+    "Appointment": [],
+    "Username": "",
+    "Password": "",
+    "Name": "sdfghj",
+    "Surname": "dfghjk",
+    "Jmbg": "12463247862",
+    "DateOfBirth": "1980-06-11T00:00:00",
+    "Sex": 1,
+    "PhoneNumber": "",
+    "Adress": "",
+    "Email": "",
+    "IdCard": "",
+    "Type": 3,
+    "IsDeleted": true
   }
 ]

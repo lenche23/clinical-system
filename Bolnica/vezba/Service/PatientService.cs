@@ -24,7 +24,7 @@ namespace Service
             return PatientRepository.GetAll();
         }
 
-        public Boolean SaveAnnouncement(Patient newPatient)
+        public Boolean SavePatient(Patient newPatient)
         {
             return PatientRepository.Save(newPatient);
         }

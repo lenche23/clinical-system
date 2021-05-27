@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,7 +15,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.SecretaryGUI
 {
@@ -25,25 +25,23 @@ namespace vezba.SecretaryGUI
         {
             InitializeComponent();
             this.DataContext = this;
-            PatientFileRepository ps = new PatientFileRepository();
-            List<Patient> temp = ps.GetAll();
-            Patients = new ObservableCollection<Patient>(temp);
+            PatientService ps = new PatientService();
+            Patients = new ObservableCollection<Patient>(ps.GetAllPatients());
         }
 
         private void NewPatientButton_Click(object sender, RoutedEventArgs e)
         {
-            SecretaryNewPatient s = new SecretaryNewPatient();
-            s.Show();
+            SecretaryNewPatient w = new SecretaryNewPatient();
+            w.Show();
         }
 
         private void ViewPatientButton_Click(object sender, RoutedEventArgs e)
         {
             if (patientsTable.SelectedCells.Count > 0)
             {
-                Patient p = (Patient)patientsTable.SelectedItem;
-                //var s = new ViewPatient(p);
-                SecretaryViewPatient s = new SecretaryViewPatient(p);
-                s.Show();
+                Patient selectedPatient = (Patient)patientsTable.SelectedItem;
+                SecretaryViewPatient w = new SecretaryViewPatient(selectedPatient);
+                w.Show();
             }
             else
             {
@@ -55,10 +53,9 @@ namespace vezba.SecretaryGUI
         {
             if (patientsTable.SelectedCells.Count > 0)
             {
-                Patient p = (Patient)patientsTable.SelectedItem;
-                SecretaryEditPatient s = new SecretaryEditPatient(p);
-                //var s = new EditPatient(p);
-                s.Show();
+                Patient selectedPatient = (Patient)patientsTable.SelectedItem;
+                SecretaryEditPatient w = new SecretaryEditPatient(selectedPatient);
+                w.Show();
             }
             else
             {
@@ -70,10 +67,10 @@ namespace vezba.SecretaryGUI
         {
             if (patientsTable.SelectedCells.Count > 0)
             {
-                Patient p = (Patient)patientsTable.SelectedItem;
-                PatientFileRepository ps = new PatientFileRepository();
-                ps.Delete(p.Jmbg);
-                Patients.Remove(p);
+                Patient selectedPatient = (Patient)patientsTable.SelectedItem;
+                PatientService ps = new PatientService();
+                ps.DeletePatient(selectedPatient.Jmbg);
+                Patients.Remove(selectedPatient);
             }
             else
             {

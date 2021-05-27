@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.SecretaryGUI
 {
@@ -23,7 +23,7 @@ namespace vezba.SecretaryGUI
     public partial class SecretaryEditPatient : Window
     {
         public static ObservableCollection<Ingridient> Allergens { get; set; }
-        public SecretaryEditPatient(Patient p)
+        public SecretaryEditPatient(Patient selectedPatient)
         {
             InitializeComponent();
             Allergens = new ObservableCollection<Ingridient>();
@@ -33,16 +33,16 @@ namespace vezba.SecretaryGUI
             sexes.Add("Žensko");
             Sex.ItemsSource = sexes;
 
-            if (p.IsGuest)
+            if (selectedPatient.IsGuest)
             {
                 IsGuest.IsChecked = true;
             }
-            Name.Text = p.Name;
-            Surname.Text = p.Surname;
-            Jmbg.Text = p.Jmbg;
+            Name.Text = selectedPatient.Name;
+            Surname.Text = selectedPatient.Surname;
+            Jmbg.Text = selectedPatient.Jmbg;
             Jmbg.IsReadOnly = true;
-            DateOfBirth.SelectedDate = p.DateOfBirth;
-            if (p.Sex == Model.Sex.male)
+            DateOfBirth.SelectedDate = selectedPatient.DateOfBirth;
+            if (selectedPatient.Sex == Model.Sex.male)
             {
                 Sex.SelectedIndex = 0;
             }
@@ -50,28 +50,27 @@ namespace vezba.SecretaryGUI
             {
                 Sex.SelectedIndex = 1;
             }
-            PhoneNumber.Text = p.PhoneNumber;
-            IdNumber.Text = p.IdCard;
-            Adress.Text = p.Adress;
-            Email.Text = p.Email;
-            EmergencyContact.Text = p.EmergencyContact;
-            if (p.MedicalRecord != null)
+            PhoneNumber.Text = selectedPatient.PhoneNumber;
+            IdNumber.Text = selectedPatient.IdCard;
+            Adress.Text = selectedPatient.Adress;
+            Email.Text = selectedPatient.Email;
+            EmergencyContact.Text = selectedPatient.EmergencyContact;
+            if (selectedPatient.MedicalRecord != null)
             {
-                HealthEnsuranceNumber.Text = p.MedicalRecord.HealthInsuranceNumber;
-                MedicalIdNumber.Text = p.MedicalRecord.MedicalIdNumber;
+                HealthEnsuranceNumber.Text = selectedPatient.MedicalRecord.HealthInsuranceNumber;
+                MedicalIdNumber.Text = selectedPatient.MedicalRecord.MedicalIdNumber;
                 
-                StringBuilder sb = new StringBuilder();
-                if (p.MedicalRecord.Allergen != null && p.MedicalRecord.Allergen.Count != 0)
+                if (selectedPatient.MedicalRecord.Allergen != null && selectedPatient.MedicalRecord.Allergen.Count != 0)
                 {
-                    foreach(Ingridient allergen in p.MedicalRecord.Allergen)
+                    foreach(Ingridient allergen in selectedPatient.MedicalRecord.Allergen)
                     {
                         Allergens.Add(allergen);
                     }
                 }
             }
 
-            Username.Text = p.Username;
-            Password.Text = p.Password;
+            Username.Text = selectedPatient.Username;
+            Password.Text = selectedPatient.Password;
         }
 
         private void NewAlergenButton_Click(object sender, RoutedEventArgs e)
@@ -139,14 +138,14 @@ namespace vezba.SecretaryGUI
             string username = Username.Text;
             string password = Password.Text;
 
-            Patient pat = new Patient(isGuest, name, surname, jmbg, selectedDate, sex, phoneNumber, adress, email, idNum, emContact, medRecord, username, password);
-            PatientFileRepository ps = new PatientFileRepository();
-            ps.Update(pat);
+            Patient editedPatient = new Patient(isGuest, name, surname, jmbg, selectedDate, sex, phoneNumber, adress, email, idNum, emContact, medRecord, username, password);
+            PatientService ps = new PatientService();
+            ps.EditPatient(editedPatient);
 
-            var pa = SecretaryPatients.Patients.FirstOrDefault(p => p.Jmbg.Equals(jmbg));
-            if (pa != null)
+            var previousPatient = SecretaryPatients.Patients.FirstOrDefault(p => p.Jmbg.Equals(jmbg));
+            if (previousPatient != null)
             {
-                SecretaryPatients.Patients[SecretaryPatients.Patients.IndexOf(pa)] = pat;
+                SecretaryPatients.Patients[SecretaryPatients.Patients.IndexOf(previousPatient)] = editedPatient;
             }
 
             this.Close();

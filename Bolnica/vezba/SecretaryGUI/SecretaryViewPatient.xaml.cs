@@ -20,22 +20,22 @@ namespace vezba.SecretaryGUI
     public partial class SecretaryViewPatient : Window
     {
         public ObservableCollection<Ingridient> Allergens { get; set; }
-        public SecretaryViewPatient(Patient p)
+        public SecretaryViewPatient(Patient patient)
         {
             InitializeComponent();
             Allergens = new ObservableCollection<Ingridient>();
             this.DataContext = this;
 
             
-            NameSurname.Content = p.Name + " " + p.Surname;
-            if (p.IsGuest)
+            NameSurname.Content = patient.Name + " " + patient.Surname;
+            if (patient.IsGuest)
             {
                 NameSurname.Content += " (gost)";
             }
-            Jmbg.Content = p.Jmbg;
-            DateOfBirth.Content = p.DateOfBirth.ToString("dd.MM.yyyy.");
+            Jmbg.Content = patient.Jmbg;
+            DateOfBirth.Content = patient.DateOfBirth.ToString("dd.MM.yyyy.");
 
-            if (p.Sex == Model.Sex.male)
+            if (patient.Sex == Model.Sex.male)
             {
                 Sex.Content = "Muški";
             }
@@ -43,18 +43,18 @@ namespace vezba.SecretaryGUI
             {
                 Sex.Content = "Ženski";
             }
-            PhoneNumber.Content = p.PhoneNumber;
-            IdNumber.Content = p.IdCard;
-            Adress.Content =  p.Adress;
-            Email.Content =  p.Email;
-            EmergencyContact.Content =  p.EmergencyContact;
-            if (p.MedicalRecord != null)
+            PhoneNumber.Content = patient.PhoneNumber;
+            IdNumber.Content = patient.IdCard;
+            Adress.Content =  patient.Adress;
+            Email.Content =  patient.Email;
+            EmergencyContact.Content =  patient.EmergencyContact;
+            if (patient.MedicalRecord != null)
             {
-                HealthEnsuranceNumber.Content = p.MedicalRecord.HealthInsuranceNumber;
-                MedicalIdNumber.Content = p.MedicalRecord.MedicalIdNumber;
-                if (p.MedicalRecord.Allergen != null)
+                HealthEnsuranceNumber.Content = patient.MedicalRecord.HealthInsuranceNumber;
+                MedicalIdNumber.Content = patient.MedicalRecord.MedicalIdNumber;
+                if (patient.MedicalRecord.Allergen != null)
                 {
-                    foreach(Ingridient allergen in p.MedicalRecord.Allergen)
+                    foreach(Ingridient allergen in patient.MedicalRecord.Allergen)
                     {
                         Allergens.Add(allergen);
                     }
@@ -63,8 +63,8 @@ namespace vezba.SecretaryGUI
 
             }
 
-            Username.Content = p.Username;
-            Password.Content = p.Password;
+            Username.Content = patient.Username;
+            Password.Content = patient.Password;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

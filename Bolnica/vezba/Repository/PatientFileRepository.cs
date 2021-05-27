@@ -15,34 +15,91 @@ namespace vezba.Repository
         {
             this.FileName = "../../pacijenti.json";
         }
+
         public List<Patient> GetAll()
         {
-            List<Patient> ps = new List<Patient>();
-            try 
-            { 
-                String jsonFromFile = File.ReadAllText(this.FileName);
-                List<Patient> patients = JsonConvert.DeserializeObject<List<Patient>>(jsonFromFile);
-                
-                for (int i = 0; i < patients.Count; i++)
-                {
-                    if (patients[i].IsDeleted == false)
-                    {
-                        ps.Add(patients[i]);
-                    }
-                }
-                return ps;
-            }
-            catch
+            List<Patient> storedPatients = ReadFromFile();
+            List<Patient> patients = new List<Patient>();
+            foreach(Patient patient in storedPatients)
             {
-
+                if(patient.IsDeleted == false)
+                    patients.Add(patient);
             }
-            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return ps;
+            return patients;
         }
 
-        public List<Patient> Load()
+
+        public Boolean Save(Patient newPatient)
         {
-            List<Patient> ps = new List<Patient>();
+            List<Patient> storedPatients = ReadFromFile();
+
+            foreach (Patient patient in storedPatients)
+            {
+                if (patient.Jmbg.Equals(newPatient.Jmbg) && patient.IsDeleted == false)
+                    return false;
+            }
+            storedPatients.Add(newPatient);
+            WriteToFile(storedPatients);
+            return true;
+        }
+
+        public Boolean Update(Patient editedPatient)
+        {
+            List<Patient> storedPatients = ReadFromFile();
+            foreach (Patient patient in storedPatients)
+            {
+                if (patient.Jmbg.Equals(editedPatient.Jmbg))
+                {
+                    patient.Name = editedPatient.Name;
+                    patient.Surname = editedPatient.Surname;
+                    patient.DateOfBirth = editedPatient.DateOfBirth;
+                    patient.Sex = editedPatient.Sex;
+                    patient.PhoneNumber = editedPatient.PhoneNumber;
+                    patient.Adress = editedPatient.Adress;
+                    patient.IdCard = editedPatient.IdCard;
+                    patient.Email = editedPatient.Email;
+                    patient.EmergencyContact = editedPatient.EmergencyContact;
+                    patient.MedicalRecord = editedPatient.MedicalRecord;
+                    patient.Username = editedPatient.Username;
+                    patient.IsGuest = editedPatient.IsGuest;
+                    patient.Password = editedPatient.Password;
+                    patient.IsBlocked = editedPatient.IsBlocked;
+
+                    WriteToFile(storedPatients);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Patient GetOne(String jmbg)
+        {
+            List<Patient> storedPatients = GetAll();
+            foreach (Patient patient in storedPatients)
+            {
+                if (patient.Jmbg.Equals(jmbg))
+                    return patient;
+            }
+            return null;
+        }
+
+        public Boolean Delete(string jmbg)
+        {
+            List<Patient> storedPatients = ReadFromFile();
+            foreach (Patient patient in storedPatients)
+            {
+                if (patient.Jmbg.Equals(jmbg))
+                {
+                    patient.IsDeleted = true;
+                    WriteToFile(storedPatients);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private List<Patient> ReadFromFile()
+        {
             try
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
@@ -50,25 +107,13 @@ namespace vezba.Repository
                 return patients;
             }
             catch
-            {
-
-            }
+            { }
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return ps;
+            return new List<Patient>();
         }
 
-        public Boolean Save(Patient p)
+        private void WriteToFile(List<Patient> patients)
         {
-            List<Patient> patients = Load();
-            
-            for (int i = 0; i < patients.Count; i++)
-            {
-                if (patients[i].Jmbg.Equals(p.Jmbg) && patients[i].IsDeleted == false)
-                {
-                    return false;
-                }
-            }
-            patients.Add(p);
             try
             {
                 var jsonToFile = JsonConvert.SerializeObject(patients, Formatting.Indented);
@@ -77,91 +122,10 @@ namespace vezba.Repository
                     writer.Write(jsonToFile);
                 }
             }
-            catch (Exception e)
+            catch
             {
-
+                MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
             }
-            return true;
         }
-
-        public Boolean Update(Patient p)
-        {
-            List<Patient> patients = Load();
-            for (int i = 0; i < patients.Count; i++)
-            {
-                if (patients[i].Jmbg.Equals(p.Jmbg))
-                {
-                    patients[i].Name = p.Name;
-                    patients[i].Surname = p.Surname;
-                    patients[i].DateOfBirth = p.DateOfBirth;
-                    patients[i].Sex = p.Sex;
-                    patients[i].PhoneNumber = p.PhoneNumber;
-                    patients[i].Adress = p.Adress;
-                    patients[i].IdCard = p.IdCard;
-                    patients[i].Email = p.Email;
-                    patients[i].EmergencyContact = p.EmergencyContact;
-                    patients[i].MedicalRecord = p.MedicalRecord;
-                    patients[i].Username = p.Username;
-                    patients[i].IsGuest = p.IsGuest;
-                    patients[i].Password = p.Password;
-                    patients[i].IsBlocked = p.IsBlocked;
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(patients, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-
-                    }
-                }
-            }
-            return false;
-        }
-
-        public Patient GetOne(String jmbg)
-        {
-            List<Patient> patients = GetAll();
-            for (int i = 0; i < patients.Count; i++)
-            {
-                if (patients[i].Jmbg.Equals(jmbg))
-                {
-                    return patients[i];
-                }
-            }
-            return null;
-        }
-
-        public Boolean Delete(string jmbg)
-        {
-            List<Patient> patients = Load();
-            for (int i = 0; i < patients.Count; i++)
-            {
-                if (patients[i].Jmbg.Equals(jmbg))
-                {
-                    patients[i].IsDeleted = true;
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(patients, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-
-                    }
-                    return true;
-                }
-            }
-            return false;
-        }
-
-
     }
 }

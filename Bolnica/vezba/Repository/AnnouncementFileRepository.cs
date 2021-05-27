@@ -73,6 +73,7 @@ namespace vezba.Repository
                     storedAnnouncements[i].Visibility = editedAnnouncement.Visibility;
 
                     WriteToFile(storedAnnouncements);
+                    return true;
                 }
             }
             return false;
@@ -145,7 +146,6 @@ namespace vezba.Repository
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
                 List<Announcement> announcements = JsonConvert.DeserializeObject<List<Announcement>>(jsonFromFile);
-
                 return announcements;
             }
             catch {}

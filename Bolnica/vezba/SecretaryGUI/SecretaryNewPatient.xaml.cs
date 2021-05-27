@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -70,19 +71,7 @@ namespace vezba.SecretaryGUI
             string mid = MedicalIdNumber.Text;
             string hin = HealthEnsuranceNumber.Text;
             MedicalRecord medRecord = new MedicalRecord(hin, mid);
-            /*
-            string text = Allergenss.Text.Trim();
-            if (!text.Equals(""))
-            {
-                string[] alls = text.Split(',');
-                for (int i = 0; i < alls.Length; i++)
-                {
-                    Ingridient a = new Ingridient(alls[i].Trim()); //?
-                    medRecord.AddAllergen(a);
-                    MessageBox.Show(Convert.ToString(i));
-                }
-            }
-            */
+            
             foreach(Ingridient allergen in Allergens)
             {
                 medRecord.AddAllergen(allergen);
@@ -91,12 +80,6 @@ namespace vezba.SecretaryGUI
             string name = Name.Text;
             string surname = Surname.Text;
             string jmbg = Jmbg.Text;
-            /*DateTime date = new DateTime(1900, 1, 1);
-            try
-            {
-                date = DateTime.ParseExact(DateOfBirth.Text, "dd.MM.yyyy.", null);
-            }
-            catch { }*/
             DateTime selectedDate = new DateTime(1900, 1, 1);
             try
             {
@@ -118,11 +101,11 @@ namespace vezba.SecretaryGUI
             string username = Username.Text;
             string password = Password.Text;
 
-            Patient pat = new Patient(isGuest, name, surname, jmbg, selectedDate, sex, phoneNumber, adress, email, idNum, emContact, medRecord, username, password);
+            Patient registeredPatient = new Patient(isGuest, name, surname, jmbg, selectedDate, sex, phoneNumber, adress, email, idNum, emContact, medRecord, username, password);
 
-            PatientFileRepository ps = new PatientFileRepository();
-            ps.Save(pat);
-            SecretaryPatients.Patients.Add(pat);
+            PatientService ps = new PatientService();
+            ps.SavePatient(registeredPatient);
+            SecretaryPatients.Patients.Add(registeredPatient);
             this.Close();
             return;
         }
