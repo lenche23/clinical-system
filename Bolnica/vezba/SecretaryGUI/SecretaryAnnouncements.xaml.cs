@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,7 +15,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.SecretaryGUI
 {
@@ -25,8 +25,8 @@ namespace vezba.SecretaryGUI
         {
             InitializeComponent();
             this.DataContext = this;
-            AnnouncementFileRepository s = new AnnouncementFileRepository();
-            List<Announcement> temp = s.GetAll();
+            AnnouncementService announcementService = new AnnouncementService();
+            List<Announcement> temp = announcementService.GetAllAnnouncements();
             Announcements = new ObservableCollection<Announcement>(temp);
         }
 
@@ -40,8 +40,8 @@ namespace vezba.SecretaryGUI
         {
             if (announcementTable.SelectedCells.Count > 0)
             {
-                Announcement a = (Announcement)announcementTable.SelectedItem;
-                SecretaryViewAnnouncement w = new SecretaryViewAnnouncement(a);
+                Announcement announcement = (Announcement)announcementTable.SelectedItem;
+                SecretaryViewAnnouncement w = new SecretaryViewAnnouncement(announcement);
                 w.Show();
             }
             else
@@ -52,8 +52,8 @@ namespace vezba.SecretaryGUI
         {
             if (announcementTable.SelectedCells.Count > 0)
             {
-                Announcement a = (Announcement)announcementTable.SelectedItem;
-                SecretaryEditAnnouncement w = new SecretaryEditAnnouncement(a);
+                Announcement announcement = (Announcement) announcementTable.SelectedItem;
+                SecretaryEditAnnouncement w = new SecretaryEditAnnouncement(announcement);
                 w.Show();
             }
             else
@@ -64,10 +64,10 @@ namespace vezba.SecretaryGUI
         {
             if (announcementTable.SelectedCells.Count > 0)
             {
-                Announcement a = (Announcement)announcementTable.SelectedItem;
-                AnnouncementFileRepository s = new AnnouncementFileRepository();
-                s.Delete(a.Id);
-                Announcements.Remove(a);
+                Announcement selecetedAnnouncement = (Announcement)announcementTable.SelectedItem;
+                AnnouncementService announcementService = new AnnouncementService();
+                announcementService.DeleteAnnouncement(selecetedAnnouncement.Id);
+                Announcements.Remove(selecetedAnnouncement);
 
             }
             else

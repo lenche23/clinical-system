@@ -25,7 +25,7 @@ namespace vezba
             InitializeComponent();
             this.DataContext = this;
             AnnouncementFileRepository s = new AnnouncementFileRepository();
-            List<Announcement> announcements = s.GetByUser(ut);
+            List<Announcement> announcements = s.GetByUserType(ut);
             Ans = new ObservableCollection<Announcement>(announcements);
         }
 
@@ -36,8 +36,8 @@ namespace vezba
             AnnouncementFileRepository s = new AnnouncementFileRepository();
             /*List<Announcement> announcementsForUserType = s.GetByUser(ut);
             List<Announcement> individualAnnouncements = s.getIndividualAnnouncements(jmbg);*/
-            List<Announcement> announcements = s.GetByUser(ut);
-            announcements.AddRange(s.getIndividualAnnouncements(jmbg));
+            List<Announcement> announcements = s.GetByUserType(ut);
+            announcements.AddRange(s.GetIndividualAnnouncements(jmbg));
 
             Ans = new ObservableCollection<Announcement>(announcements);
         }

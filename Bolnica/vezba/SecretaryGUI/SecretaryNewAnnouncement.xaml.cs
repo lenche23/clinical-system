@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.SecretaryGUI
 {
@@ -23,8 +23,8 @@ namespace vezba.SecretaryGUI
             InitializeComponent();
 
             this.DataContext = this;
-            PatientFileRepository ps = new PatientFileRepository();
-            List<Patient> patients = ps.GetAll();
+            PatientService patientService = new PatientService();
+            List<Patient> patients = patientService.GetAllPatients();
             RecipientComboBox.ItemsSource = patients;
 
             VisibilityComboBox.Items.Add("Svi");
@@ -33,7 +33,6 @@ namespace vezba.SecretaryGUI
             VisibilityComboBox.Items.Add("Lekari");
             VisibilityComboBox.Items.Add("Upravnik");
             VisibilityComboBox.Items.Add("Sekretari");
-
             VisibilityComboBox.Items.Add("Individualno");
             VisibilityComboBox.SelectedIndex = -1;
 
@@ -58,8 +57,7 @@ namespace vezba.SecretaryGUI
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            AnnouncementFileRepository ast = new AnnouncementFileRepository();
-            int id = ast.generateNextId();
+            int id = 0;
             DateTime po = DateTime.Today;
             DateTime ed = DateTime.Today;
             String con = Content.Text;
@@ -89,8 +87,8 @@ namespace vezba.SecretaryGUI
             Announcement announcement = new Announcement(id, po, ed, tit, con, vis);
             if(vis == Model.Visibility.individual)
                 announcement.AddRecipient(recipient.Jmbg);
-            AnnouncementFileRepository s = new AnnouncementFileRepository();
-            s.Save(announcement);
+            AnnouncementService announcementService = new AnnouncementService();
+            announcementService.SaveAnnouncement(announcement);
             SecretaryAnnouncements.Announcements.Add(announcement);
 
             this.Close();

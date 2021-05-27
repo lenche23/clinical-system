@@ -32,7 +32,7 @@ namespace vezba
             InitializeComponent();
             this.DataContext = this;
             AnnouncementFileRepository s = new AnnouncementFileRepository();
-            List<Announcement> announcements = s.GetByUser(ut);
+            List<Announcement> announcements = s.GetByUserType(ut);
             Ans = new ObservableCollection<Announcement>(announcements);
             this.dw = dw;
         }

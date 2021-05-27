@@ -37,7 +37,7 @@ namespace vezba
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AnnouncementFileRepository ast = new AnnouncementFileRepository();
-            int id = ast.generateNextId();
+            int id = 0;
             DateTime po = DateTime.Today;
             DateTime ed = DateTime.Today;
             String con = ContentTextBox.Text;

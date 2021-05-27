@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,13 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.SecretaryGUI
 {
-    /// <summary>
-    /// Interaction logic for SecretaryNotifications.xaml
-    /// </summary>
     public partial class SecretaryNotifications : Page
     {
         public ObservableCollection<Announcement> Announcements { get; set; }
@@ -28,8 +25,8 @@ namespace vezba.SecretaryGUI
         {
             InitializeComponent();
             this.DataContext = this;
-            AnnouncementFileRepository s = new AnnouncementFileRepository();
-            List<Announcement> announcements = s.GetByUser(UserType.secretary);
+            AnnouncementService s = new AnnouncementService();
+            List<Announcement> announcements = s.GetAnnouncementsByUserType(UserType.secretary);
             Announcements = new ObservableCollection<Announcement>(announcements);
         }
 

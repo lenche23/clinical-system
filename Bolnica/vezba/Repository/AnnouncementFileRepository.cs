@@ -10,78 +10,25 @@ namespace vezba.Repository
 {
     public class AnnouncementFileRepository
     {
+        public String FileName { get; }
+
         public AnnouncementFileRepository()
         {
             this.FileName = "../../obavestenja.json";
         }
+
         public List<Announcement> GetAll()
         {
-            List<Announcement> ans = this.Load();
+            List<Announcement> storedAnnouncements = this.ReadFromFile();
             List<Announcement> announcements = new List<Announcement>();
-            for (int i = 0; i < ans.Count; i++)
+            for (int i = 0; i < storedAnnouncements.Count; i++)
             {
-                if (ans[i].IsDeleted == false)
+                if (storedAnnouncements[i].IsDeleted == false)
                 {
-                    announcements.Add(ans[i]);
+                    announcements.Add(storedAnnouncements[i]);
                 }
             }
             return announcements;
-        }
-
-        public Boolean Save(Announcement a)
-        {
-            List<Announcement> announcements = Load();
-
-            for (int i = 0; i < announcements.Count; i++)
-            {
-                if (announcements[i].Id == a.Id)
-                {
-                    return false;
-                }
-            }
-            announcements.Add(a);
-            try
-            {
-                var jsonToFile = JsonConvert.SerializeObject(announcements, Formatting.Indented);
-                using (StreamWriter writer = new StreamWriter(this.FileName))
-                {
-                    writer.Write(jsonToFile);
-                }
-            }
-            catch (Exception e)
-            {
-
-            }
-            return true;
-        }
-
-        public Boolean Update(Announcement a)
-        {
-            List<Announcement> announcements = Load();
-            for (int i = 0; i < announcements.Count; i++)
-            {
-                if (announcements[i].Id == a.Id && announcements[i].IsDeleted == false)
-                {
-                    announcements[i].Edited = a.Edited;
-                    announcements[i].Title = a.Title;
-                    announcements[i].Content = a.Content;
-                    announcements[i].Visibility = a.Visibility;
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(announcements, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-
-                    }
-                }
-            }
-            return false;
         }
 
         public Announcement GetOne(int id)
@@ -97,27 +44,49 @@ namespace vezba.Repository
             return null;
         }
 
+        public Boolean Save(Announcement newAnnouncement)
+        {
+            List<Announcement> storedAnnouncements = ReadFromFile();
+            newAnnouncement.Id = GenerateNextId();
+
+            for (int i = 0; i < storedAnnouncements.Count; i++)
+            {
+                if (storedAnnouncements[i].Id == newAnnouncement.Id)
+                    return false;
+            }
+            storedAnnouncements.Add(newAnnouncement);
+
+            WriteToFile(storedAnnouncements);
+            return true;
+        }
+
+        public Boolean Update(Announcement editedAnnouncement)
+        {
+            List<Announcement> storedAnnouncements = ReadFromFile();
+            for (int i = 0; i < storedAnnouncements.Count; i++)
+            {
+                if (storedAnnouncements[i].Id == editedAnnouncement.Id && storedAnnouncements[i].IsDeleted == false)
+                {
+                    storedAnnouncements[i].Edited = editedAnnouncement.Edited;
+                    storedAnnouncements[i].Title = editedAnnouncement.Title;
+                    storedAnnouncements[i].Content = editedAnnouncement.Content;
+                    storedAnnouncements[i].Visibility = editedAnnouncement.Visibility;
+
+                    WriteToFile(storedAnnouncements);
+                }
+            }
+            return false;
+        }
+
         public Boolean Delete(int id)
         {
-            List<Announcement> announcements = Load();
-            for (int i = 0; i < announcements.Count; i++)
+            List<Announcement> storedAnnouncements = ReadFromFile();
+            for (int i = 0; i < storedAnnouncements.Count; i++)
             {
-                if (announcements[i].Id == id && announcements[i].IsDeleted == false)
+                if (storedAnnouncements[i].Id == id && storedAnnouncements[i].IsDeleted == false)
                 {
-                    announcements[i].IsDeleted = true;
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(announcements, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-
-                    }
+                    storedAnnouncements[i].IsDeleted = true;
+                    WriteToFile(storedAnnouncements);
                     return true;
 
                 }
@@ -125,9 +94,53 @@ namespace vezba.Repository
             return false;
         }
 
-        public List<Announcement> Load()
+        public List<Announcement> GetByUserType(UserType userType)
         {
-            List<Announcement> ans = new List<Announcement>();
+            List<Announcement> allAnouncements = GetAll();
+            List<Announcement> announcementsForUserType = new List<Announcement>();
+
+            foreach (Announcement announcement in allAnouncements)
+            {
+                if (DoesUserTypeSeeAnnouncement(userType, announcement.Visibility))
+                    announcementsForUserType.Add(announcement);
+            }
+            return announcementsForUserType;
+        }
+
+        public List<Announcement> GetIndividualAnnouncements(String userId)
+        {
+            List<Announcement> allAnnouncements = GetAll();
+            List<Announcement> individualAnnouncements = new List<Announcement>();
+            foreach (Announcement announcement in allAnnouncements)
+            {
+                if (announcement.Visibility == Visibility.individual)
+                {
+                    foreach (String recipient in announcement.Recipients)
+                    {
+                        if (recipient.Equals(userId))
+                            individualAnnouncements.Add(announcement);
+                    }
+                }
+            }
+            return individualAnnouncements;
+        }
+
+        private Boolean DoesUserTypeSeeAnnouncement(UserType userType, Visibility visibility)
+        {
+            if (userType == UserType.menager && (visibility == Visibility.all || visibility == Visibility.staff || visibility == Visibility.menagers))
+                return true;
+            else if (userType == UserType.secretary && (visibility == Visibility.all || visibility == Visibility.staff || visibility == Visibility.secretaries))
+                return true;
+            else if (userType == UserType.doctor && (visibility == Visibility.all || visibility == Visibility.staff || visibility == Visibility.doctors))
+                return true;
+            else if (userType == UserType.patient && (visibility == Visibility.all || visibility == Visibility.patients))
+                return true;
+            else
+                return false;
+        }
+
+        private List<Announcement> ReadFromFile()
+        {
             try
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
@@ -135,66 +148,32 @@ namespace vezba.Repository
 
                 return announcements;
             }
-            catch
-            {
-
-            }
+            catch {}
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return ans;
+            return new List<Announcement>();
         }
 
-        public List<Announcement> GetByUser(UserType ut)
+        private void WriteToFile(List<Announcement> announcements)
         {
-            List<Announcement> allAnouncements = GetAll();
-            List<Announcement> announcementsForUserType = new List<Announcement>();
-            
-            foreach(Announcement a in allAnouncements)
+            try
             {
-                if (DoesUserTypeSeeAnnouncement(ut, a.Visibility))
-                    announcementsForUserType.Add(a);
-            }
-            return announcementsForUserType;
-        }
-
-        public List<Announcement> getIndividualAnnouncements(String userId)
-        {
-            List<Announcement> allAnouncements = GetAll();
-            List<Announcement> individualAnnouncements = new List<Announcement>();
-            foreach(Announcement a in allAnouncements)
-            {
-                if(a.Visibility == Visibility.individual)
+                var jsonToFile = JsonConvert.SerializeObject(announcements, Formatting.Indented);
+                using (StreamWriter writer = new StreamWriter(this.FileName))
                 {
-                    foreach(String recipient in a.Recipients)
-                    {
-                        if (recipient.Equals(userId))
-                            individualAnnouncements.Add(a);
-                    }
+                    writer.Write(jsonToFile);
                 }
             }
-
-            return individualAnnouncements;
-        }
-        
-        private Boolean DoesUserTypeSeeAnnouncement(UserType userType, Model.Visibility visibility)
-        {
-            if (userType == UserType.menager && (visibility == Model.Visibility.all || visibility == Model.Visibility.staff || visibility == Model.Visibility.menagers))
-                return true;
-            else if (userType == UserType.secretary && (visibility == Model.Visibility.all || visibility == Model.Visibility.staff || visibility == Model.Visibility.secretaries))
-                return true;
-            else if (userType == UserType.doctor && (visibility == Model.Visibility.all || visibility == Model.Visibility.staff || visibility == Model.Visibility.doctors))
-                return true;
-            else if (userType == UserType.patient && (visibility == Model.Visibility.all || visibility == Model.Visibility.patients))
-                return true;
-            else 
-                return false;
-        }
-        public int generateNextId()
-        {
-            List<Announcement> list = Load();
-            return list.Count;
+            catch
+            {
+                MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
+            }
         }
 
-        public String FileName { get; set; }
+        private int GenerateNextId()
+        {
+            List<Announcement> storedAnnouncements = ReadFromFile();
+            return storedAnnouncements.Count;
+        }
    
    }
 }

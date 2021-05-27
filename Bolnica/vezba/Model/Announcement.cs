@@ -17,18 +17,6 @@ namespace Model
             Recipients = new List<String>();
         }
 
-        /*public Announcement(int id, DateTime po, DateTime ed, string tit, string con, Visibility vis, List<String> recipients)
-        {
-            Id = id;
-            Posted = po;
-            Edited = ed;
-            Title = tit;
-            Content = con;
-            Visibility = vis;
-            IsDeleted = false;
-            Recipients = recipients;
-        }*/
-
         public int Id { get; set; }
         public DateTime Posted { get; set; }
         public DateTime Edited { get; set; }

@@ -11,11 +11,10 @@ namespace vezba
         {
             InitializeComponent();
             //var s = new SecretaryView();
-            //var s = new SecretaryGUI.SecretaryMainWindow();
-            //var s = new PatientView();
-            //s.Show();
+            var s = new SecretaryGUI.SecretaryMainWindow();
+            s.Show();
 
-            //this.Close();
+            this.Close();
 
         }
 

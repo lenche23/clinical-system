@@ -26,8 +26,8 @@ namespace vezba.PatientPages
             InitializeComponent();
             this.DataContext = this;
             AnnouncementFileRepository s = new AnnouncementFileRepository();
-            List<Announcement> announcements = s.GetByUser(ut);
-            announcements.AddRange(s.getIndividualAnnouncements(jmbg));
+            List<Announcement> announcements = s.GetByUserType(ut);
+            announcements.AddRange(s.GetIndividualAnnouncements(jmbg));
 
             Ans = new ObservableCollection<Announcement>(announcements);
         }

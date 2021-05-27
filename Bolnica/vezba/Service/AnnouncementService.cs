@@ -1,40 +1,73 @@
+using Model;
 using System;
+using System.Collections.Generic;
+using vezba.Repository;
 
 namespace Service
 {
    public class AnnouncementService
    {
-   }
+        public AnnouncementFileRepository AnnouncementRepository { get; }
 
-   // Sekretar*******************************************************************************
+        public AnnouncementService()
+        {
+            AnnouncementRepository = new AnnouncementFileRepository();
+        }
+        // Sekretar*******************************************************************************
+
+        public List<Announcement> GetAllAnnouncements()
+        {
+            return AnnouncementRepository.GetAll();
+        }
+
+        public Boolean SaveAnnouncement(Announcement newAnnouncement)
+        {
+            return AnnouncementRepository.Save(newAnnouncement);
+        }
+
+        public Boolean EditAnnouncement(Announcement editedAnnouncement)
+        {
+            return AnnouncementRepository.Update(editedAnnouncement);
+        }
+
+        public Boolean DeleteAnnouncement(int announcementId)
+        {
+            return AnnouncementRepository.Delete(announcementId);
+        }
+
+        public List<Announcement> GetAnnouncementsByUserType(UserType userType)
+        {
+            return AnnouncementRepository.GetByUserType(userType);
+        }
 
 
 
 
 
-   // SekretarKraj***************************************************************************
+        // SekretarKraj***************************************************************************
 
-   // Pacijent*******************************************************************************
-
-
-
-
-
-   // PacijentKraj***************************************************************************
-
-   // Lekar**********************************************************************************
+        // Pacijent*******************************************************************************
 
 
 
 
 
-   // LekarKraj******************************************************************************
+        // PacijentKraj***************************************************************************
 
-   // Upravnik*******************************************************************************
-
-
+        // Lekar**********************************************************************************
 
 
 
-   // UpravnikKraj***************************************************************************
+
+
+        // LekarKraj******************************************************************************
+
+        // Upravnik*******************************************************************************
+
+
+
+
+
+        // UpravnikKraj***************************************************************************
+    }
 }
