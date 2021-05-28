@@ -99,8 +99,9 @@ namespace vezba.ManagerGUI
             if (lvDataBinding.SelectedIndex > -1)
             {
                 Room selected = (Room)lvDataBinding.SelectedItems[0];
-               // var s = new WindowRenovations(selected);
-               // s.Show();
+                mainManagerWindow.MainManagerView.Content = new RenovationsPage(mainManagerWindow, selected);
+                // var s = new WindowRenovations(selected);
+                // s.Show();
             }
 
             else

@@ -22,10 +22,12 @@ namespace vezba.ManagerGUI
     public partial class RoomAddEquipmentPage : Page
     {
         private Room selected;
-        public RoomAddEquipmentPage(Room selected)
+        private MainManagerWindow mainManagerWindow;
+        public RoomAddEquipmentPage(MainManagerWindow mainManagerWindow, Room selected)
         {
             InitializeComponent();
             this.selected = selected;
+            this.mainManagerWindow = mainManagerWindow;
             Title.Content = Title.Content + " " + selected.RoomNumber;
             EquipmentFileRepository es = new EquipmentFileRepository();
             List<Equipment> equipmentList = es.GetAll();

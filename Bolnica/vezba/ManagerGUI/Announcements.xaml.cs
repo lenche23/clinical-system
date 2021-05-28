@@ -16,62 +16,43 @@ using System.Windows.Shapes;
 using vezba.Repository;
 
 namespace vezba.ManagerGUI
-    {
+{
     public partial class Announcements : Page
     {
+
         public static ObservableCollection<Announcement> Ans { get; set; }
-        public Announcements()
+        private MainManagerWindow mainManagerWindow;
+        public Announcements(MainManagerWindow mainManagerWindow, UserType ut)
+        {
+            InitializeComponent();
+            this.DataContext = this;
+            this.mainManagerWindow = mainManagerWindow;
+            AnnouncementFileRepository s = new AnnouncementFileRepository();
+            List<Announcement> announcements = s.GetByUser(ut);
+            Ans = new ObservableCollection<Announcement>(announcements);
+        }
+
+        public Announcements(UserType ut, String jmbg)
         {
             InitializeComponent();
             this.DataContext = this;
             AnnouncementFileRepository s = new AnnouncementFileRepository();
-            List<Announcement> temp = s.GetAll();
-            Ans = new ObservableCollection<Announcement>(temp);
-        }
+            /*List<Announcement> announcementsForUserType = s.GetByUser(ut);
+            List<Announcement> individualAnnouncements = s.getIndividualAnnouncements(jmbg);*/
+            List<Announcement> announcements = s.GetByUser(ut);
+            announcements.AddRange(s.getIndividualAnnouncements(jmbg));
 
-        private void New_Button_Click(object sender, RoutedEventArgs e)
-        {
-            var w = new ChooseAnouncementType();
-            w.Show();
+            Ans = new ObservableCollection<Announcement>(announcements);
         }
 
         private void View_Button_Click(object sender, RoutedEventArgs e)
         {
             if (announcementTable.SelectedCells.Count > 0)
             {
-                Announcement a = (Announcement)announcementTable.SelectedItem;
-                var w = new ViewAnnouncement(a);
-                w.Show();
-            }
-            else
-            {
-                MessageBox.Show("Niste selektovali obavestenje!");
-            }
-        }
-
-        private void Edit_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (announcementTable.SelectedCells.Count > 0)
-            {
-                Announcement a = (Announcement)announcementTable.SelectedItem;
-                var w = new EditAnnouncement(a);
-                w.Show();
-            }
-            else
-            {
-                MessageBox.Show("Niste selektovali obavestenje!");
-            }
-        }
-
-        private void Delete_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (announcementTable.SelectedCells.Count > 0)
-            {
-                Announcement a = (Announcement)announcementTable.SelectedItem;
-                AnnouncementFileRepository s = new AnnouncementFileRepository();
-                s.Delete(a.Id);
-                Ans.Remove(a);
-
+                Announcement a = (Announcement) announcementTable.SelectedItem;
+                mainManagerWindow.MainManagerView.Content = new ViewAnnouncementManagerPage(a);
+                //var w = new ViewAnnouncement(a);
+                //w.Show();
             }
             else
             {
@@ -80,4 +61,3 @@ namespace vezba.ManagerGUI
         }
     }
 }
-

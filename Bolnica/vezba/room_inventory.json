@@ -247,62 +247,6 @@
   },
   {
     "equipment": {
-      "Id": 0,
-      "Name": "Hanzaplast",
-      "Type": 1,
-      "IsDeleted": false
-    },
-    "room": {
-      "renovation": [
-        {
-          "StartTime": "2021-10-10T10:00:00",
-          "DurationInDays": 2,
-          "RenovationID": 1
-        },
-        {
-          "StartTime": "2021-05-25T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 2
-        },
-        {
-          "StartTime": "2021-05-19T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 3
-        }
-      ],
-      "RoomType": 0,
-      "RoomNumber": 1,
-      "RoomFloor": 0,
-      "IsDeleted": false,
-      "Renovation": [
-        {
-          "StartTime": "2021-10-10T10:00:00",
-          "DurationInDays": 2,
-          "RenovationID": 1
-        },
-        {
-          "StartTime": "2021-05-25T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 2
-        },
-        {
-          "StartTime": "2021-05-19T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 3
-        }
-      ]
-    },
-    "StartTime": "2021-05-10T21:28:57.2546012+02:00",
-    "EndTime": "2999-01-01T00:00:00",
-    "Quantity": 0,
-    "Id": 9,
-    "IsDeleted": true,
-    "EquipmentName": "Hanzaplast",
-    "EquipmentId": "0",
-    "EquipmentType": "dinamical"
-  },
-  {
-    "equipment": {
       "Id": 2,
       "Name": "Krevet",
       "Type": 0,
@@ -406,11 +350,47 @@
     },
     "StartTime": "2021-05-10T21:32:51.166174+02:00",
     "EndTime": "2999-12-31T00:00:00",
-    "Quantity": 0,
+    "Quantity": 9,
     "Id": 8,
     "IsDeleted": false,
     "EquipmentName": "Krevet",
     "EquipmentId": "2",
+    "EquipmentType": "statical"
+  },
+  {
+    "equipment": {
+      "Id": 5,
+      "Name": "Rendgen aparat",
+      "Type": 0,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "StartTime": "2021-05-28T19:56:14.0002426+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 6,
+    "Id": 10,
+    "IsDeleted": false,
+    "EquipmentName": "Rendgen aparat",
+    "EquipmentId": "5",
     "EquipmentType": "statical"
   },
   {
@@ -426,16 +406,6 @@
           "StartTime": "2021-10-10T10:00:00",
           "DurationInDays": 2,
           "RenovationID": 1
-        },
-        {
-          "StartTime": "2021-05-25T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 2
-        },
-        {
-          "StartTime": "2021-05-19T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 3
         }
       ],
       "RoomType": 0,
@@ -447,24 +417,14 @@
           "StartTime": "2021-10-10T10:00:00",
           "DurationInDays": 2,
           "RenovationID": 1
-        },
-        {
-          "StartTime": "2021-05-25T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 2
-        },
-        {
-          "StartTime": "2021-05-19T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 3
         }
       ]
     },
-    "StartTime": "2021-05-10T21:28:57.2546012+02:00",
+    "StartTime": "2021-05-28T20:43:12.118514+02:00",
     "EndTime": "2999-01-01T00:00:00",
     "Quantity": 0,
     "Id": 9,
-    "IsDeleted": true,
+    "IsDeleted": false,
     "EquipmentName": "Hanzaplast",
     "EquipmentId": "0",
     "EquipmentType": "dinamical"
@@ -496,9 +456,9 @@
         }
       ]
     },
-    "StartTime": "2021-05-10T21:33:12.3079912+02:00",
+    "StartTime": "2021-05-28T20:43:23.4857634+02:00",
     "EndTime": "2999-12-31T00:00:00",
-    "Quantity": 5,
+    "Quantity": 4,
     "Id": 10,
     "IsDeleted": false,
     "EquipmentName": "Hanzaplast",

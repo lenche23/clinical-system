@@ -86,9 +86,11 @@
             </ListView.View>
         </ListView>
 
-        <Button Grid.Row="3" Click="Add_Medicine_Button_Click" Background="#FFBBEAB6" Margin="70,16,495,62">Dodaj nov lek</Button>
-        <Button Grid.Row="3" Click="Remove_Medicine_Button_Click" Background="#FFBBEAB6" Margin="293,16,285,62">Ukloni lek</Button>
-        <Button Grid.Row="3" Click="Detail_Medicine_Button_Click" Background="#FFBBEAB6" Margin="515,16,70,62">Detaljan prikaz</Button>
+        <Button Grid.Row="3" Click="Add_Medicine_Button_Click" Background="#FFBBEAB6" Margin="70,16,565,62">Dodaj nov lek</Button>
+        <Button Grid.Row="3" Click="Remove_Medicine_Button_Click" Background="#FFBBEAB6" Margin="578,16,70,62">Ukloni lek</Button>
+        <Button Grid.Row="3" Click="Detail_Medicine_Button_Click" Background="#FFBBEAB6" Margin="225,16,395,62">Detaljan prikaz</Button>
+        <Button Grid.Row="1" Click="Declined_Medicine_Button_Click" Background="#FFBBEAB6" Margin="578,36,33,14">Odbijeni lekovi</Button>
+        <Button Grid.Row="3" Click="Edit_Medicine_Button_Click" Background="#FFBBEAB6" Margin="398,16,215,62">Izmeni lek</Button>
 
     </Grid>
 </Page>

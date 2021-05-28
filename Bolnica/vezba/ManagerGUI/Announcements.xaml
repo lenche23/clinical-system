@@ -8,7 +8,7 @@
       d:DesignHeight="570" d:DesignWidth="750"
       Title="Announcements">
     <Grid>
-        <Label Content="Obaveštenja:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,50,0,0" FontSize="20" Height="41" Width="127" FontFamily="HP Simplified Hans" />
+        <Label Content="Obaveštenja:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,50,0,0" FontSize="20" Height="41" Width="127" FontFamily="HP Simplified Hans" />
         <Grid HorizontalAlignment="Left" Height="180" Margin="40,110,0,0" VerticalAlignment="Top" Width="400">
             <DataGrid x:Name="announcementTable" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding Ans}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="180" >
                 <DataGrid.Columns>
@@ -16,10 +16,7 @@
                     <DataGridTextColumn Header="Datum" Binding="{Binding FormatedDatePosted}" Width="100"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Content="Novo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Margin="434,0,-117,0" Height="29" Click="New_Button_Click"/>
-            <Button Content="Prikaz" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Margin="434,34,-117,0" Height="29" Click="View_Button_Click"/>
-            <Button Content="Izmena" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Margin="434,68,-117,0" Height="29" Click="Edit_Button_Click"/>
-            <Button Content="Brisanje" HorizontalAlignment="Left" VerticalAlignment="Top" Width="83" Margin="434,102,-117,0" Height="29" Click="Delete_Button_Click"/>
         </Grid>
+        <Button Content="Prikaži" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="365,59,0,0" Click="View_Button_Click"/>
     </Grid>
 </Page>

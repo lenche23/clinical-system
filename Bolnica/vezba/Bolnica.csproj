@@ -162,6 +162,12 @@
     <Compile Include="ManagerGUI\Announcements.xaml.cs">
       <DependentUpon>Announcements.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerGUI\DeclinedMedicineManagerPage.xaml.cs">
+      <DependentUpon>DeclinedMedicineManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerGUI\DetailDeclinedMedicinePage.xaml.cs">
+      <DependentUpon>DetailDeclinedMedicinePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerGUI\InventoryAddEquipmentPage.xaml.cs">
       <DependentUpon>InventoryAddEquipmentPage.xaml</DependentUpon>
     </Compile>
@@ -188,6 +194,12 @@
     </Compile>
     <Compile Include="ManagerGUI\MedicinePage.xaml.cs">
       <DependentUpon>MedicinePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerGUI\RenovationsPage.xaml.cs">
+      <DependentUpon>RenovationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerGUI\RenovationViewPage.xaml.cs">
+      <DependentUpon>RenovationViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerGUI\RoomAddEquipmentPage.xaml.cs">
       <DependentUpon>RoomAddEquipmentPage.xaml</DependentUpon>
@@ -218,6 +230,9 @@
     </Compile>
     <Compile Include="ManagerGUI\RoomViewRenovationsPage.xaml.cs">
       <DependentUpon>RoomViewRenovationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerGUI\ViewAnnouncementManagerPage.xaml.cs">
+      <DependentUpon>ViewAnnouncementManagerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerMainView.xaml.cs">
       <DependentUpon>ManagerMainView.xaml</DependentUpon>
@@ -627,6 +642,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ManagerGUI\DeclinedMedicineManagerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\DetailDeclinedMedicinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerGUI\InventoryAddEquipmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -660,6 +683,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerGUI\MedicinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\RenovationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\RenovationViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -700,6 +731,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerGUI\RoomViewRenovationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\ViewAnnouncementManagerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

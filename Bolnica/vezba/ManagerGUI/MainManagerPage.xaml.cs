@@ -30,8 +30,7 @@ namespace vezba.ManagerGUI
 
         private void ButtonAnnouncementsClick(object sender, RoutedEventArgs e)
         {
-            var s = new ViewMyAnnouncements(UserType.menager);
-            s.Show();
+            mainManagerWindow.MainManagerView.Content = new Announcements(mainManagerWindow, UserType.menager);
         }
 
         private void ButtonMedicineClick(object sender, RoutedEventArgs e)

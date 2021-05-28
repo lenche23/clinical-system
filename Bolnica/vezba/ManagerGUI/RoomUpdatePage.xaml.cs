@@ -128,7 +128,7 @@ namespace vezba.ManagerGUI
 
         private void Dodaj_Button_Click(object sender, RoutedEventArgs e)
         {
-            //mainManagerWindow.MainManagerView.Content = new RoomAddEquipmentPage(selected);
+            mainManagerWindow.MainManagerView.Content = new RoomAddEquipmentPage(mainManagerWindow, selected);
             //var s = new WindowAddRoomEquipment(this.selected);
             //s.Show();
         }
@@ -155,7 +155,7 @@ namespace vezba.ManagerGUI
             {
 
                 RoomInventory selectedRoomInventory = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
-                //mainManagerWindow.MainManagerView.Content = new RoomChangeEquipmentPage(selectedRoomInventory, this, selected);
+                mainManagerWindow.MainManagerView.Content = new RoomChangeEquipmentPage(mainManagerWindow, selectedRoomInventory, this, selected);
             }
 
             else
@@ -171,11 +171,11 @@ namespace vezba.ManagerGUI
                 RoomInventory roomInventorySelected = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
                 if (roomInventorySelected.equipment.Type == EquipmentType.dinamical)
                 {
-                   // mainManagerWindow.MainManagerView.Content = new RoomExchangeEquipmentPage(roomInventorySelected, this, selected);
+                    mainManagerWindow.MainManagerView.Content = new RoomExchangeEquipmentPage(mainManagerWindow, roomInventorySelected, this, selected);
                 }
                 else if (roomInventorySelected.equipment.Type == EquipmentType.statical)
                 {
-                   // mainManagerWindow.MainManagerView.Content = new RoomExchangeStaticEquipmentPage(roomInventorySelected, selected);
+                    mainManagerWindow.MainManagerView.Content = new RoomExchangeStaticEquipmentPage(mainManagerWindow, roomInventorySelected, selected);
                 }
 
             }

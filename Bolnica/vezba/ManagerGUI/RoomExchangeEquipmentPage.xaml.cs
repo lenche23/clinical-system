@@ -15,11 +15,13 @@ namespace vezba.ManagerGUI
         private int maximumQuantity;
         private int itemQuantity;
         private DateTime infiniteTime = new DateTime(2999, 12, 31);
+        private MainManagerWindow mainManagerWindow;
         private RoomInventoryFileRepository _roomInventoryFileRepository;
 
-        public RoomExchangeEquipmentPage(RoomInventory roomInventory, RoomUpdatePage windowUpdateRoom, Room room)
+        public RoomExchangeEquipmentPage(MainManagerWindow mainManagerWindow, RoomInventory roomInventory, RoomUpdatePage windowUpdateRoom, Room room)
         {
             InitializeComponent();
+            this.mainManagerWindow = mainManagerWindow;
             this.windowUpdateRoom = windowUpdateRoom;
             this.roomInventory = roomInventory;
             this.room = room;

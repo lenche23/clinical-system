@@ -23,10 +23,12 @@ namespace vezba.ManagerGUI
         private RoomInventory selected;
         private RoomUpdatePage wur;
         private Room r_selected;
-        public RoomChangeEquipmentPage(RoomInventory selected, RoomUpdatePage wur, Room r_selected)
+        private MainManagerWindow mainManagerWindow;
+        public RoomChangeEquipmentPage(MainManagerWindow mainManagerWindow, RoomInventory selected, RoomUpdatePage wur, Room r_selected)
         {
             InitializeComponent();
             this.DataContext = selected;
+            this.mainManagerWindow = mainManagerWindow;
             this.selected = selected;
             this.wur = wur;
             this.r_selected = r_selected;
@@ -54,14 +56,12 @@ namespace vezba.ManagerGUI
             ris.Update(this.selected);
             wur.RoomInventoryBinding.Items.Refresh();
             NavigationService.GoBack();
-            //this.Close();
 
         }
 
         private void OdustaniIzmena_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
-            //this.Close();
         }
     }
 }

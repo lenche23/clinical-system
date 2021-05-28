@@ -18,9 +18,6 @@ using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {
-    /// <summary>
-    /// Interaction logic for MedicinePage.xaml
-    /// </summary>
     public partial class MedicinePage : Page
     {
         public static ObservableCollection<Medicine> MedicineList { get; set; }
@@ -64,8 +61,7 @@ namespace vezba.ManagerGUI
             if (MedicineBinding.SelectedIndex > -1)
             {
                 Medicine medicine = (Medicine)MedicineBinding.SelectedItems[0];
-                var s = new WindowMedicineDetail(medicine);
-                s.Show();
+                mainManagerWindow.MainManagerView.Content = new MedicineDetailPage(mainManagerWindow, medicine);
             }
 
             else
@@ -87,6 +83,16 @@ namespace vezba.ManagerGUI
         private void ButtonRoomsClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
+        }
+
+        private void Declined_Medicine_Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new DeclinedMedicineManagerPage(mainManagerWindow);
+        }
+
+        private void Edit_Medicine_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

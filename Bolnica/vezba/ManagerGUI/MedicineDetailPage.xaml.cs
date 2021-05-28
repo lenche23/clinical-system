@@ -21,10 +21,12 @@ namespace vezba.ManagerGUI
     {
         private Medicine medicine;
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
-        public MedicineDetailPage(Medicine medicine)
+        private MainManagerWindow mainManagerWindow;
+        public MedicineDetailPage(MainManagerWindow mainManagerWindow, Medicine medicine)
         {
             InitializeComponent();
             this.medicine = medicine;
+            this.mainManagerWindow = mainManagerWindow;
             idText.Content = idText.Content + " " + medicine.MedicineID;
             nazivText.Content = nazivText.Content + " " + medicine.Name;
             proizvodjacText.Content = proizvodjacText.Content + " " + medicine.Manufacturer;
