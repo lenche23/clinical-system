@@ -1,20 +1,9 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using vezba.Repository;
+using Service;
 
 namespace vezba
 {
@@ -24,7 +13,6 @@ namespace vezba
     public partial class CreatePrescriptionPage : Page
     {
         private readonly Patient _patient;
-        private readonly MedicineFileRepository _medicineFileRepository;
         private readonly DoctorView _doctorView;
         private Prescription _newPrescription;
         public List<Medicine> ValidMedicine { get; set; }
@@ -32,45 +20,23 @@ namespace vezba
         public CreatePrescriptionPage(Patient patient, DoctorView doctorView)
         {
             InitializeComponent();
-            this._patient = patient;
-            this._doctorView = doctorView;
-            _medicineFileRepository = new MedicineFileRepository();
+            _patient = patient;
+            _doctorView = doctorView;
             DataContext = this;
-            GenerateValidMedicine();
-        }
-
-        private void GenerateValidMedicine()
-        {
-            ValidMedicine = new List<Medicine>();
-            foreach (var medicine in _medicineFileRepository.GetApproved())
-            {
-                if (!AllergenMatchFound(medicine))
-                    ValidMedicine.Add(medicine);
-            }
-        }
-
-        private bool AllergenMatchFound(Medicine medicine)
-        {
-            var allergenMatchFound = false;
-            foreach (var ingredient in medicine.ingridient)
-            {
-                foreach (var allergen in _patient.MedicalRecord.Allergen)
-                {
-                    if (ingredient.Name.Equals(allergen.Name))
-                    {
-                        allergenMatchFound = true;
-                    }
-                }
-            }
-
-            return allergenMatchFound;
+            MedicineService medicineService = new MedicineService();
+            ValidMedicine = medicineService.GenerateValidMedicineForPatient(_patient.MedicalRecord);
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            NewPrescription();
-            AddPrescriptionToPatient();
-            AddPrescriptionToAppointments();
+            _newPrescription = NewPrescription();
+
+            PatientService patientService = new PatientService();
+            patientService.AddPrescriptionToPatient(_patient, _newPrescription);
+
+            AppointmentService appointmentService = new AppointmentService();
+            appointmentService.AddPrescriptionToAppointments(_patient, _newPrescription);
+
             UpdateAppointmentsView();
             _doctorView.Main.GoBack();
         }
@@ -83,38 +49,14 @@ namespace vezba
                     appointment.Patient.MedicalRecord.AddPrescription(_newPrescription);
             }
         }
-
-        private void AddPrescriptionToAppointments()
+        private Prescription NewPrescription()
         {
-            var appointmentStorage = new AppointmentFileRepository();
-            foreach (var appointment in appointmentStorage.GetAll())
-            {
-                if (!appointment.Patient.Jmbg.Equals(_patient.Jmbg)) continue;
-
-                appointment.Patient.MedicalRecord.AddPrescription(_newPrescription);
-                appointmentStorage.Update(appointment);
-            }
-        }
-
-        private void AddPrescriptionToPatient()
-        {
-            _patient.MedicalRecord.AddPrescription(_newPrescription);
-            var patientStorage = new PatientFileRepository();
-            patientStorage.Update(_patient);
-        }
-
-        private void NewPrescription()
-        {
-            //var id = int.Parse(TbId.Text);
-            //DELETE ID
-            var id = 0;
             var startDate = (DateTime) DpStartDate.SelectedDate;
             var durationInDays = int.Parse(TbDuration.Text);
             var referencePeriod = (CmbPeriod.SelectedIndex == 0) ? Period.daily : Period.weekly;
             var number = int.Parse(TbNumber.Text);
             var selectedMedicine = (Medicine) CmbMedicine.SelectedItem;
-            _newPrescription =
-                new Prescription(startDate, durationInDays, referencePeriod, number, id, true, selectedMedicine);
+            return new Prescription(startDate, durationInDays, referencePeriod, number, 0, true, selectedMedicine);
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)

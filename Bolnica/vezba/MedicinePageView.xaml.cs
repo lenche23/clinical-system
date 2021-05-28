@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Model;
+using Service;
 using vezba.Repository;
 
 namespace vezba
@@ -30,24 +31,25 @@ namespace vezba
 
         public static ObservableCollection<DeclinedMedicine> DeclinedMedicine { get; set; }
 
-        private DoctorView dw;
+        private readonly DoctorView _doctorView;
 
-        public MedicinePageView(DoctorView dw)
+        public MedicinePageView(DoctorView doctorView)
         {
             InitializeComponent();
-            MedicineFileRepository ms = new MedicineFileRepository();
-            List<Medicine> medicineToApprove = ms.GetAwaiting();
+
+            MedicineService medicineService = new MedicineService();
+            List<Medicine> medicineToApprove = medicineService.GetAwaiting();
             MedicineToApprove = new ObservableCollection<Medicine>(medicineToApprove);
 
-            List<Medicine> approvedMedicine = ms.GetApproved();
+            List<Medicine> approvedMedicine = medicineService.GetApproved();
             ApprovedMedicine = new ObservableCollection<Medicine>(approvedMedicine);
 
-            DeclinedMedicineFileRepository dms = new DeclinedMedicineFileRepository();
-            List<DeclinedMedicine> declinedMedicine = dms.GetAll();
+            DeclinedMedicineService declinedMedicineService = new DeclinedMedicineService();
+            List<DeclinedMedicine> declinedMedicine = declinedMedicineService.GetAll();
             DeclinedMedicine = new ObservableCollection<DeclinedMedicine>(declinedMedicine);
 
             DataContext = this;
-            this.dw = dw;
+            _doctorView = doctorView;
         }
 
         private void ViewClick(object sender, RoutedEventArgs e)
@@ -55,7 +57,7 @@ namespace vezba
             if (approvedGrid.SelectedItems.Count > 0)
             {
                 Medicine medicine = (Medicine)approvedGrid.SelectedItem;
-                dw.Main.Content = new ViewMedicinePage(medicine, dw, this);
+                _doctorView.Main.Content = new ViewMedicinePage(medicine, _doctorView, this);
             }
         }
 
@@ -64,7 +66,7 @@ namespace vezba
             if (revisionGrid.SelectedItems.Count > 0)
             {
                 Medicine medicine = (Medicine)revisionGrid.SelectedItem;
-                dw.Main.Content = new MedicineRevisionPage(medicine, dw, this);
+                _doctorView.Main.Content = new MedicineRevisionPage(medicine, _doctorView, this);
             }
         }
 
@@ -73,7 +75,7 @@ namespace vezba
             if(declinedGrid.SelectedItems.Count > 0)
             {
                 DeclinedMedicine declinedMedicine = (DeclinedMedicine)declinedGrid.SelectedItem;
-                dw.Main.Content = new ViewDeclinedMedicine(declinedMedicine, dw);
+                _doctorView.Main.Content = new ViewDeclinedMedicine(declinedMedicine, _doctorView);
             }
         }
     }

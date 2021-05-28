@@ -1,19 +1,9 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Service;
 using vezba.Repository;
 
 namespace vezba
@@ -23,64 +13,65 @@ namespace vezba
     /// </summary>
     public partial class CreateReferralLetterPage : Page
     {
-
-        public DoctorFileRepository docstorage;
         public List<Doctor> Doctors { get; set; }
 
-        public Patient patient;
+        private readonly Patient _patient;
 
-        private DoctorView dw;
+        private readonly DoctorView _doctorView;
 
-        public CreateReferralLetterPage(Patient patient, DoctorView dw)
+        private ReferralLetter _newReferralLetter;
+
+        public CreateReferralLetterPage(Patient patient, DoctorView doctorView)
         {
             InitializeComponent();
-            this.DataContext = patient;
-            docstorage = new DoctorFileRepository();
-            Doctors = docstorage.GetAll();
+            DataContext = patient;
+
+            DoctorService doctorService = new DoctorService();
+            Doctors = doctorService.GetAll();
+
             cmbDoctors.DataContext = this;
             cmbDoctors.SelectedIndex = 0;
-            this.patient = patient;
-            this.dw = dw;
+            _patient = patient;
+            _doctorView = doctorView;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
-        {
-            var StartDate = DpStartDate.SelectedDate;
-            var DurationPeriodInDays = int.Parse(TbDuration.Text);
-            var Doctor = cmbDoctors.SelectedItem;
-            var ReferralLtter = new ReferralLetter((DateTime)StartDate, DurationPeriodInDays, (Doctor)Doctor);
-            patient.MedicalRecord.AddReferralLetter(ReferralLtter);
-            PatientFileRepository ps = new PatientFileRepository();
-            ps.Update(patient);
+        { 
+            _newReferralLetter = NewReferralLetter();
 
-            AppointmentFileRepository aps = new AppointmentFileRepository();
-            List<Appointment> appointments = aps.GetAll();
-            foreach (Appointment appointment in appointments)
-            {
-                if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
-                {
-                    appointment.Patient.MedicalRecord.AddReferralLetter(ReferralLtter);
-                    aps.Update(appointment);
-                }
-            }
+            PatientService patientService = new PatientService();
+            patientService.AddReferralLetterToPatient(_patient, _newReferralLetter);
+
+            AppointmentService appointmentService = new AppointmentService();
+            appointmentService.AddReferralLetterToAppointments(_patient, _newReferralLetter);
+
+            UpdateAppointmentsView();
+            _doctorView.Main.GoBack();
+        }
+
+        private void UpdateAppointmentsView()
+        {
             foreach (Appointment appointment in Calendar.appointments)
             {
-                if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
+                if (appointment.Patient.Jmbg.Equals(_patient.Jmbg))
                 {
-                    appointment.Patient.MedicalRecord.AddReferralLetter(ReferralLtter);
+                    appointment.Patient.MedicalRecord.AddReferralLetter(_newReferralLetter);
                 }
             }
-            dw.Main.GoBack();
+        }
+
+        private ReferralLetter NewReferralLetter()
+        {
+            var startDate = (DateTime) DpStartDate.SelectedDate;
+            var durationPeriodInDays = int.Parse(TbDuration.Text);
+            var doctor = (Doctor) cmbDoctors.SelectedItem;
+            var newReferralLetter = new ReferralLetter(startDate, durationPeriodInDays, doctor);
+            return newReferralLetter;
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.GoBack();
-        }
-
-        private void ValidateEntries()
-        {
-
+            _doctorView.Main.GoBack();
         }
     }
 }

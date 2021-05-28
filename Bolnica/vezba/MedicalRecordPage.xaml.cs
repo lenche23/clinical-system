@@ -21,21 +21,21 @@ namespace vezba
     /// </summary>
     public partial class MedicalRecordPage : Page
     {
-        private DoctorView dw;
+        private DoctorView doctorView;
 
-        public MedicalRecordPage(Patient Patient, DoctorView dw)
+        public MedicalRecordPage(Patient patient, DoctorView doctorView)
         {
             InitializeComponent();
-            DataContext = Patient;
-            if (Patient.MedicalRecord != null)
+            DataContext = patient;
+            if (patient.MedicalRecord != null)
             {
-                this.dw = dw;
+                this.doctorView = doctorView;
             }
         }
 
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.GoBack();
+            doctorView.Main.GoBack();
         }
     }
 }

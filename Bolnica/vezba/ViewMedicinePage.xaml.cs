@@ -22,29 +22,29 @@ namespace vezba
     public partial class ViewMedicinePage : Page
     {
 
-        private DoctorView dw;
+        private readonly DoctorView _doctorView;
 
         private Medicine Medicine { get; set; }
 
-        private MedicinePageView mpw;
+        private readonly MedicinePageView _medicinePageView;
 
-        public ViewMedicinePage(Medicine medicine, DoctorView dw, MedicinePageView mpw)
+        public ViewMedicinePage(Medicine medicine, DoctorView doctorView, MedicinePageView medicinePageView)
         {
             InitializeComponent();
             DataContext = medicine;
-            this.dw = dw;
-            this.mpw = mpw;
+            _doctorView = doctorView;
+            _medicinePageView = medicinePageView;
             Medicine = medicine;
         }
 
         private void EditClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.Content = new EditMedicinePage(Medicine, dw, mpw);
+            _doctorView.Main.Content = new EditMedicinePage(Medicine, _doctorView, _medicinePageView);
         }
 
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.GoBack();
+            _doctorView.Main.GoBack();
         }
     }
 }

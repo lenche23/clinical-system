@@ -1,19 +1,9 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Service;
 using vezba.Repository;
 
 namespace vezba
@@ -23,51 +13,56 @@ namespace vezba
     /// </summary>
     public partial class CreateAnamnesisPage : Page
     {
-        public Appointment appointment;
+        private readonly Patient _patient;
 
-        private DoctorView dw;
+        private readonly DoctorView _doctorView;
 
-        public CreateAnamnesisPage(Appointment appointment, DoctorView dw)
+        private Anamnesis _newAnamnesis;
+
+        public CreateAnamnesisPage(Appointment appointment, DoctorView doctorView)
         {
             InitializeComponent();
             DataContext = appointment;
-            this.appointment = appointment;
-            this.dw = dw;
+            _patient = appointment.Patient;
+            _doctorView = doctorView;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            var Comment = TbComment.Text;
-            var Patient = PatientNameSurname.Text;
-            var Doctor = DoctorNameSurname.Text;
-            var Time = DateTime.Now;
-            var Anamnesis = new Anamnesis { Comment = Comment, Patient = Patient, Doctor = Doctor, Time = Time };
-            appointment.Patient.MedicalRecord.AddAnamnesis(Anamnesis);
-            PatientFileRepository ps = new PatientFileRepository();
-            ps.Update(appointment.Patient);
-            AppointmentFileRepository aps = new AppointmentFileRepository();
-            List<Appointment> appointments = aps.GetAll();
-            foreach (Appointment appointment1 in appointments)
+            _newAnamnesis = NewAnamnesis();
+
+            PatientService patientService = new PatientService();
+            patientService.AddAnamnesisToPatient(_patient, _newAnamnesis);
+
+            AppointmentService appointmentService = new AppointmentService();
+            appointmentService.AddAnamnesisToAppointments(_patient, _newAnamnesis);
+
+            UpdateAppointmentsView();
+            _doctorView.Main.GoBack();
+        }
+
+        private void UpdateAppointmentsView()
+        {
+            foreach (Appointment appointment in Calendar.appointments)
             {
-                if (appointment1.Patient.Jmbg.Equals(appointment.Patient.Jmbg))
-                {
-                    appointment1.Patient.MedicalRecord.AddAnamnesis(Anamnesis);
-                    aps.Update(appointment1);
-                }
+                if (appointment.Patient.Jmbg.Equals(_patient.Jmbg))
+                    appointment.Patient.MedicalRecord.AddAnamnesis(_newAnamnesis);
             }
-            foreach (Appointment appointment1 in Calendar.appointments)
-            {
-                if (appointment1.Patient.Jmbg.Equals(appointment.Patient.Jmbg))
-                {
-                    appointment1.Patient.MedicalRecord.AddAnamnesis(Anamnesis);
-                }
-            }
-            dw.Main.GoBack();
+        }
+
+        private Anamnesis NewAnamnesis()
+        {
+            var comment = TbComment.Text;
+            var patient = PatientNameSurname.Text;
+            var doctor = DoctorNameSurname.Text;
+            var time = DateTime.Now;
+            var newAnamnesis = new Anamnesis(time, comment, patient, doctor);
+            return newAnamnesis;
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.GoBack();
+            _doctorView.Main.GoBack();
         }
     }
 }

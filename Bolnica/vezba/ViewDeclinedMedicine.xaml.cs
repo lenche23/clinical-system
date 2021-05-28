@@ -21,21 +21,21 @@ namespace vezba
     /// </summary>
     public partial class ViewDeclinedMedicine : Page
     {
-        private DoctorView dw;
+        private readonly DoctorView _doctorView;
 
         public DeclinedMedicine DeclinedMedicine { get; set; }
 
-        public ViewDeclinedMedicine(DeclinedMedicine DeclinedMedicine, DoctorView dw)
+        public ViewDeclinedMedicine(DeclinedMedicine declinedMedicine, DoctorView doctorView)
         {
             InitializeComponent();
-            this.DeclinedMedicine = DeclinedMedicine;
-            this.dw = dw;
-            DataContext = DeclinedMedicine;
+            DeclinedMedicine = declinedMedicine;
+            _doctorView = doctorView;
+            DataContext = declinedMedicine;
         }
 
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.GoBack();
+            _doctorView.Main.GoBack();
         }
     }
 }

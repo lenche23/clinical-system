@@ -36,6 +36,30 @@ namespace Service
         {
             return FileRepository.GetAll();
         }
+
+        public Boolean Update(Patient updatedPatient)
+        {
+            return FileRepository.Update(updatedPatient);
+        }
+
+        public void AddPrescriptionToPatient(Patient patient, Prescription newPrescription)
+        {
+            patient.MedicalRecord.AddPrescription(newPrescription);
+            Update(patient);
+        }
+
+        public void AddAnamnesisToPatient(Patient patient, Anamnesis newAnamnesis)
+        {
+            patient.MedicalRecord.AddAnamnesis(newAnamnesis);
+            Update(patient);
+        }
+
+        public void AddReferralLetterToPatient(Patient patient, ReferralLetter newReferralLetter)
+        {
+            patient.MedicalRecord.AddReferralLetter(newReferralLetter);
+            Update(patient);
+        }
+
         // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************

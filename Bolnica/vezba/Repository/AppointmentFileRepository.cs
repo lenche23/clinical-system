@@ -10,6 +10,7 @@ namespace vezba.Repository
     public class AppointmentFileRepository
     {
         public String FileName { get; set; }
+        private PatientFileRepository patientFileRepository { get; set; }
 
         public AppointmentFileRepository()
         {

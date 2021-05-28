@@ -1,19 +1,8 @@
 ﻿using Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using vezba.Repository;
+using Service;
 
 namespace vezba
 {
@@ -26,21 +15,21 @@ namespace vezba
 
         public List<Medicine> MedicineForReplacement { get; set; }
 
-        private MedicineFileRepository _medFileRepository;
+        private readonly MedicineService _medicineService;
 
         public List<Ingridient> Ingredients { get; set; }
 
-        private DoctorView dw;
+        private readonly DoctorView _doctorView;
 
-        private MedicinePageView mpw;
+        private readonly MedicinePageView _medicinePageView;
 
-        public EditMedicinePage(Medicine medicine, DoctorView dw, MedicinePageView mpw)
+        public EditMedicinePage(Medicine medicine, DoctorView doctorView, MedicinePageView medicinePageView)
         {
             InitializeComponent();
             DataContext = this;
             Medicine = medicine;
-            this.dw = dw;
-            this.mpw = mpw;
+            _doctorView = doctorView;
+            _medicinePageView = medicinePageView;
             switch (medicine.Condition)
             {
                 case MedicineCondition.pill:
@@ -55,16 +44,8 @@ namespace vezba
             }
             Ingredients = new List<Ingridient>(medicine.Ingridient);
 
-            _medFileRepository = new MedicineFileRepository();
-            MedicineForReplacement = _medFileRepository.GetApproved();
-            foreach (var replacement in MedicineForReplacement)
-            {
-                if (replacement.MedicineID == Medicine.MedicineID)
-                {
-                    MedicineForReplacement.Remove(replacement);
-                    break;
-                }
-            }
+            _medicineService = new MedicineService();
+            MedicineForReplacement = _medicineService.GetPossibleReplacements(Medicine);
 
             if (medicine.ReplacementMedicine != null)
                 ReplacementMedicineCB.SelectedValue = medicine.ReplacementMedicine.MedicineID;
@@ -72,46 +53,46 @@ namespace vezba
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            var Name = NameTB.Text;
-            var Manufacturer = ManufacturerTB.Text;
-            var Packaging = PackagingTB.Text;
-            MedicineCondition Condition;
+            var medicineName = NameTB.Text;
+            var manufacturer = ManufacturerTB.Text;
+            var packaging = PackagingTB.Text;
+            MedicineCondition condition;
             switch (ConditionCMB.SelectedIndex)
             {
                 case 0:
-                    Condition = MedicineCondition.pill;
+                    condition = MedicineCondition.pill;
                     break;
                 case 1:
-                    Condition = MedicineCondition.capsule;
+                    condition = MedicineCondition.capsule;
                     break;
                 default:
-                    Condition = MedicineCondition.syrup;
+                    condition = MedicineCondition.syrup;
                     break;
             }
 
-            var ReplacementMedicine = (Medicine)ReplacementMedicineCB.SelectedItem;
-            Medicine.Name = Name;
-            Medicine.Manufacturer = Manufacturer;
-            Medicine.Packaging = Packaging;
-            Medicine.Condition = Condition;
+            var replacementMedicine = (Medicine)ReplacementMedicineCB.SelectedItem;
+            Medicine.Name = medicineName;
+            Medicine.Manufacturer = manufacturer;
+            Medicine.Packaging = packaging;
+            Medicine.Condition = condition;
             Medicine.Ingridient = new List<Ingridient>(Ingredients);
-            Medicine.ReplacementMedicine = ReplacementMedicine;
-            _medFileRepository.Update(Medicine);
-            mpw.approvedGrid.Items.Refresh();
-            dw.Main.GoBack();
-            dw.Main.GoBack();
+            Medicine.ReplacementMedicine = replacementMedicine;
+            _medicineService.Update(Medicine);
+            _medicinePageView.approvedGrid.Items.Refresh();
+            _doctorView.Main.GoBack();
+            _doctorView.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.GoBack();
+            _doctorView.Main.GoBack();
         }
 
         private void PlusButtonClick(object sender, RoutedEventArgs e)
         {
-            var Name = TbAllergen.Text;
-            var Allergen = new Ingridient(Name);
-            Ingredients.Add(Allergen);
+            var ingredientName = TbAllergen.Text;
+            var ingredient = new Ingridient(ingredientName);
+            Ingredients.Add(ingredient);
             ingredientGrid.ItemsSource = null;
             ingredientGrid.ItemsSource = Ingredients;
             TbAllergen.Clear();
@@ -121,8 +102,8 @@ namespace vezba
         {
             if (ingredientGrid.SelectedItems.Count > 0)
             {
-                Ingridient Allergen = (Ingridient)ingredientGrid.SelectedItem;
-                Ingredients.Remove(Allergen);
+                var ingredient = (Ingridient)ingredientGrid.SelectedItem;
+                Ingredients.Remove(ingredient);
                 ingredientGrid.ItemsSource = null;
                 ingredientGrid.ItemsSource = Ingredients;
             }

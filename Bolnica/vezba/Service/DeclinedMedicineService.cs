@@ -1,40 +1,54 @@
 using System;
+using System.Collections.Generic;
+using Model;
+using vezba.Repository;
 
 namespace Service
 {
    public class DeclinedMedicineService
    {
-   }
-
-   // Sekretar*******************************************************************************
+        // Sekretar*******************************************************************************
 
 
 
 
 
-   // SekretarKraj***************************************************************************
+        // SekretarKraj***************************************************************************
 
-   // Pacijent*******************************************************************************
-
-
-
-
-
-   // PacijentKraj***************************************************************************
-
-   // Lekar**********************************************************************************
+        // Pacijent*******************************************************************************
 
 
 
 
 
-   // LekarKraj******************************************************************************
+        // PacijentKraj***************************************************************************
 
-   // Upravnik*******************************************************************************
+        // Lekar**********************************************************************************
+        private DeclinedMedicineFileRepository FileRepository { get; set; }
+
+        public DeclinedMedicineService()
+        {
+            FileRepository = new DeclinedMedicineFileRepository();
+        }
+
+        public List<DeclinedMedicine> GetAll()
+        {
+            return FileRepository.GetAll();
+        }
+
+        public Boolean Save(DeclinedMedicine declinedMedicine)
+        {
+            declinedMedicine.DeclinedMedicineID = FileRepository.generateNextId();
+            return FileRepository.Save(declinedMedicine);
+        }
+        // LekarKraj******************************************************************************
+
+        // Upravnik*******************************************************************************
 
 
 
 
 
-   // UpravnikKraj***************************************************************************
+        // UpravnikKraj***************************************************************************
+    }
 }
