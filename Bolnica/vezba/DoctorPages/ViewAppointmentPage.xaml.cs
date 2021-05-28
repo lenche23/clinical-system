@@ -71,7 +71,7 @@ namespace vezba.DoctorPages
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 AppointmentService appointmentService = new AppointmentService();
-                appointmentService.Delete(Selected.AppointentId);
+                appointmentService.DeleteAppointment(Selected.AppointentId);
                 calendar.RemoveAppointment(appointmentGrid);
                 calendar.SetScrollViewerToFirstAppointment();
                 doctorView.Main.GoBack();

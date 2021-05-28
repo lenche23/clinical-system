@@ -71,11 +71,12 @@ namespace vezba.DoctorPages
             var newAppointment = NewAppointment();
 
             AppointmentService appointmentService = new AppointmentService();
-            appointmentService.Save(newAppointment);
-
-            doctorView.Main.GoBack();
-
-            calendar.AddAppointmentToCurrentView(newAppointment);
+            //appointmentService.Save(newAppointment);
+            if (appointmentService.ScheduleAppointment(newAppointment))
+            {
+                calendar.AddAppointmentToCurrentView(newAppointment);
+                doctorView.Main.GoBack();
+            }
         }
         private Appointment NewAppointment()
         {

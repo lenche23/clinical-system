@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Model;
@@ -56,13 +57,15 @@ namespace vezba.DoctorPages
             var updatedAppointment = UpdatedAppointment();
 
             AppointmentService appointmentService = new AppointmentService();
-            appointmentService.Update(updatedAppointment);
+            //appointmentService.Update(updatedAppointment);
+            if (appointmentService.RescheduleAppointment(updatedAppointment))
+            {
+                calendar.RemoveAppointment(appointmentGrid);
+                calendar.AddAppointmentToCurrentView(updatedAppointment);
 
-            calendar.RemoveAppointment(appointmentGrid);
-            calendar.AddAppointmentToCurrentView(updatedAppointment);
-
-            _doctorView.Main.GoBack();
-            _doctorView.Main.GoBack();
+                _doctorView.Main.GoBack();
+                _doctorView.Main.GoBack();
+            }
         }
 
         private Appointment UpdatedAppointment()
