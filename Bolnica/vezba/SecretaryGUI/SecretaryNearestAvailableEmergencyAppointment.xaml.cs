@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.SecretaryGUI
 {
@@ -29,22 +29,23 @@ namespace vezba.SecretaryGUI
 
         private void ScheduleButton_Click(object sender, RoutedEventArgs e)
         {
-            AppointmentFileRepository aps = new AppointmentFileRepository();
-            Boolean b = aps.Save(EmergencyAppointment);
+            AppointmentService aps = new AppointmentService();
+            Boolean b = aps.SaveAppointment(EmergencyAppointment);
             if (b)
             {
                 SecretaryAppointments.Appointments.Add(EmergencyAppointment);
                 MessageBox.Show("Zakazan je hitan termin za " + EmergencyAppointment.StartTime.ToString("dd.MM.yyyy. HH:mm") + " kod lekara " + EmergencyAppointment.DoctorName);
+
+                this.Close();
             }
             else
                 MessageBox.Show("Neuspesno zakazivanje");
-            this.Close();
         }
 
         private void ShowOverlapingAppointmentsButton_Click(object sender, RoutedEventArgs e)
         {
-            SecretaryOverlapingAppointments s = new SecretaryOverlapingAppointments(EmergencyAppointment);
-            s.Show();
+            SecretaryOverlapingAppointments w = new SecretaryOverlapingAppointments(EmergencyAppointment);
+            w.Show();
             this.Close();
         }
     }

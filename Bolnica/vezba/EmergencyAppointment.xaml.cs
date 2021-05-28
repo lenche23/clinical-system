@@ -90,7 +90,7 @@ namespace vezba
             List<Appointment> appointments = new List<Appointment>();
             foreach(Doctor d in doctors)
             {
-                Appointment emergencyAppointment = new Appointment(aps.generateNextId(), patient, d, room, DateTime.Now, duration, description);
+                Appointment emergencyAppointment = new Appointment(aps.GenerateNextId(), patient, d, room, DateTime.Now, duration, description);
                 emergencyAppointment = FindFirstFreeAppointment(emergencyAppointment);
                     appointments.Add(emergencyAppointment);
             }

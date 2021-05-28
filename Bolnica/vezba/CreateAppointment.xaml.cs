@@ -76,7 +76,7 @@ namespace vezba
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             AppointmentFileRepository aps = new AppointmentFileRepository();
-            var AppointmentID = aps.generateNextId();
+            var AppointmentID = aps.GenerateNextId();
             var startDate = StartDatePicker.SelectedDate;
             var hour = int.Parse(TimeTB.Text.Split(':')[0]);
             var minute = int.Parse(TimeTB.Text.Split(':')[1]);

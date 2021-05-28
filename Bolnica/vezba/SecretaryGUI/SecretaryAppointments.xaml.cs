@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,7 +15,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.SecretaryGUI
 {
@@ -24,24 +24,21 @@ namespace vezba.SecretaryGUI
         public SecretaryAppointments()
         {
             InitializeComponent();
-            InitializeComponent();
             this.DataContext = this;
-            AppointmentFileRepository s = new AppointmentFileRepository();
-            List<Appointment> allAppointments = s.GetAll();
-            Appointments = new ObservableCollection<Appointment>(allAppointments);
+            AppointmentService s = new AppointmentService();
+            Appointments = new ObservableCollection<Appointment>(s.GetAllAppointments());
         }
 
         private void NewAppointmentButton_Click(object sender, RoutedEventArgs e)
         {
-            SecretaryNewAppointment s = new SecretaryNewAppointment();
-            s.Show();
+            SecretaryNewAppointment w = new SecretaryNewAppointment();
+            w.Show();
         }
 
         private void NewEmergencyAppointmentButton_Click(object sender, RoutedEventArgs e)
         {
-            SecretaryNewEmergencyAppointment s = new SecretaryNewEmergencyAppointment();
-            //var s = new EmergencyAppointment();
-            s.Show();
+            SecretaryNewEmergencyAppointment w = new SecretaryNewEmergencyAppointment();
+            w.Show();
         }
 
         private void ViewAppointmentButton_Click(object sender, RoutedEventArgs e)
@@ -49,9 +46,8 @@ namespace vezba.SecretaryGUI
             if (appointmentsTable.SelectedCells.Count > 0)
             {
                 Appointment selectedAppointment = (Appointment)appointmentsTable.SelectedItem;
-                //var s = new ViewAppointment(selectedAppointment);
-                SecretaryViewAppointment s = new SecretaryViewAppointment(selectedAppointment);
-                s.Show();
+                SecretaryViewAppointment w = new SecretaryViewAppointment(selectedAppointment);
+                w.Show();
             }
             else
                 MessageBox.Show("Niste selektovali termin!");
@@ -62,9 +58,8 @@ namespace vezba.SecretaryGUI
             if (appointmentsTable.SelectedCells.Count > 0)
             {
                 Appointment selectedAppointment = (Appointment)appointmentsTable.SelectedItem;
-                //var s = new EditAppointment(selectedAppointment);
-                SecretaryEditAppointment s = new SecretaryEditAppointment(selectedAppointment);
-                s.Show();
+                SecretaryEditAppointment w = new SecretaryEditAppointment(selectedAppointment);
+                w.Show();
             }
             else
                 MessageBox.Show("Niste selektovali termin!");
@@ -75,8 +70,8 @@ namespace vezba.SecretaryGUI
             if (appointmentsTable.SelectedCells.Count > 0)
             {
                 Appointment selectedAppointment = (Appointment)appointmentsTable.SelectedItem;
-                AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
-                appointmentFileRepository.Delete(selectedAppointment.AppointentId);
+                AppointmentService appointmentService = new AppointmentService();
+                appointmentService.DeleteAppointment(selectedAppointment.AppointentId);
                 Appointments.Remove(selectedAppointment);
             }
             else

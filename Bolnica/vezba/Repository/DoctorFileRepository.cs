@@ -4,43 +4,41 @@ using Model;
 
 namespace vezba.Repository
 {
-   public class DoctorFileRepository
-   {
-      public List<Doctor> GetAll()
-      {
+    public class DoctorFileRepository
+    {
+        public String FileName { get; set; }
+
+        public List<Doctor> GetAll()
+        {
             return Load();
-      }
-      
-      public Boolean Save(Doctor d)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Boolean Update(Doctor d)
-      {
-         throw new NotImplementedException();
-      }
-      
-      public Doctor GetOne(String jmbg)
-      {
+        }
+
+        public List<Doctor> GetDoctorsWithSpeciality(Speciality speciality)
+        {
             List<Doctor> doctors = GetAll();
-            for (int i = 0; i < doctors.Count; i++)
+            List<Doctor> doctorsWithSpeciality = new List<Doctor>();
+            foreach (Doctor d in doctors)
             {
-                if (doctors[i].Jmbg.Equals(jmbg))
-                {
-                    return doctors[i];
-                }
+                if (d.Speciality.Name.Equals(speciality.Name))
+                    doctorsWithSpeciality.Add(d);
+            }
+            return doctorsWithSpeciality;
+        }
+
+        public Doctor GetOne(String jmbg)
+        {
+            List<Doctor> doctors = GetAll();
+            foreach (Doctor doctor in doctors)
+            {
+                if (doctor.Jmbg.Equals(jmbg))
+                    return doctor;
             }
             return null;
         }
       
-      public Boolean Delete(String jmbg)
-      {
-         throw new NotImplementedException();
-      }
       
-      public List<Doctor> Load()
-      {
+        private List<Doctor> Load()
+        {
             List<Doctor> doctors = new List<Doctor>();
             Speciality s1 = new Speciality("Oftalmolog");
             Doctor d1 = new Doctor("Pera", "Peric", "1541546542644", DateTime.Now, Sex.male, "0621846712", "neka ulica 45, Novi Sad", "pera@gmail.com", "007123352", 90000, s1, "pera", "perica");
@@ -59,21 +57,22 @@ namespace vezba.Repository
 
             return doctors;
 
-      }
-
-        public List<Doctor> GetDoctorsWithSpeciality(Speciality speciality)
-        {
-            List<Doctor> doctors = GetAll();
-            List<Doctor> doctorsWithSpeciality = new List<Doctor>();
-            foreach(Doctor d in doctors)
-            {
-                if (d.Speciality.Name.Equals(speciality.Name))
-                    doctorsWithSpeciality.Add(d);
-            }
-            return doctorsWithSpeciality;
         }
-      
-      public String FileName { get; set; }
+
+        public Boolean Save(Doctor d)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Boolean Update(Doctor d)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Boolean Delete(String jmbg)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

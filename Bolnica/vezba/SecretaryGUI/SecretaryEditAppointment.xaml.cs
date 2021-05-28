@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.SecretaryGUI
 {
-    /// <summary>
-    /// Interaction logic for SecretaryEditAppointment.xaml
-    /// </summary>
     public partial class SecretaryEditAppointment : Window
     {
         private Appointment appointment;
@@ -59,25 +56,23 @@ namespace vezba.SecretaryGUI
                 return;
             }
 
-            AppointmentFileRepository aps = new AppointmentFileRepository();
-            Appointment appo = new Appointment(appointment.AppointentId, appointment.Patient, appointment.Doctor, appointment.Room, startTime, appointment.DurationInMunutes, appointment.ApointmentDescription);
-
-
-            if (GetOverlapingAppoinments(appointment).Count == 0)
+            
+            Appointment newAppointment = new Appointment(appointment.AppointentId, appointment.Patient, appointment.Doctor, appointment.Room, startTime, appointment.DurationInMunutes, appointment.ApointmentDescription);
+            
+            AppointmentService appointmentService = new AppointmentService();
+            Boolean success = appointmentService.RescheduleAppointment(newAppointment);
+            if (success)
             {
-                aps.Update(this.appointment);
-                var ap = SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(this.appointment.AppointentId));
-                if (ap != null)
-                {
-                    SecretaryAppointments.Appointments[SecretaryAppointments.Appointments.IndexOf(ap)] = appo;
-                }
+                var previousAppointment = SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(this.appointment.AppointentId));
+                if (previousAppointment != null)
+                    SecretaryAppointments.Appointments[SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = newAppointment;
+
                 this.Close();
             }
-            else
-            {
-                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.");
-            }
+            
         }
+
+
 
         private Boolean ValidateTime()
         {
@@ -107,46 +102,5 @@ namespace vezba.SecretaryGUI
             DateTime startTime = selectedDate.Date.Add(time.TimeOfDay);
             return startTime;
         }
-
-        private List<Appointment> GetOverlapingAppoinments(Appointment appointment)
-        {
-            AppointmentFileRepository aps = new AppointmentFileRepository();
-            List<Appointment> appointments = aps.GetAll();
-            List<Appointment> overlaping = new List<Appointment>();
-            for (int i = 0; i < appointments.Count; i++)
-            {
-                if (this.DoShareResources(appointment, appointments[i]))
-                {
-                    overlaping.Add(appointments[i]);
-                }
-            }
-            return overlaping;
-        }
-
-        private Boolean DoShareResources(Appointment a1, Appointment a2)
-        {
-            if (a1.Doctor.Jmbg.Equals(a2.Doctor.Jmbg) || a1.Patient.Jmbg.Equals(a2.Patient.Jmbg) || a1.Room.RoomNumber == a2.Room.RoomNumber)
-            {
-                DateTime beginning1 = a1.StartTime;
-                DateTime end1 = a1.StartTime.AddMinutes(a1.DurationInMunutes);
-                DateTime beginning2 = a2.StartTime;
-                DateTime end2 = a2.StartTime.AddMinutes(a2.DurationInMunutes);
-                if (DateTime.Compare(end2, beginning1) <= 0) //drugi zavrsava pre pocetka prvog
-                {
-                    return false;
-                }
-                else if (DateTime.Compare(end1, beginning2) <= 0) //prvi zavrsava pre pocetka drugog
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            return false;
-
-        }
-
     }
 }

@@ -1,9 +1,9 @@
+using Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
-using Model;
-using Newtonsoft.Json;
 
 namespace vezba.Repository
 {
@@ -16,45 +16,96 @@ namespace vezba.Repository
             this.FileName = "../../appointments.json";
         }
 
-        public List<Appointment> Load()
+        
+        public List<Appointment> GetAll()
+        {          
+            List<Appointment> appointments = new List<Appointment>();
+            List<Appointment> storedAppointments = ReadFromFile();
+            for (int i = 0; i < storedAppointments.Count; i++)
+            {
+                if (storedAppointments[i].IsDeleted == false)
+                {
+                    appointments.Add(storedAppointments[i]);
+                }
+            }
+            return appointments;
+        }
+        
+        public Boolean Save(Appointment newAppointment)
         {
-            List<Appointment> ps = new List<Appointment>();
+            newAppointment.AppointentId = GenerateNextId();
+            List<Appointment> storedAppointments = ReadFromFile();
+            for (int i = 0; i < storedAppointments.Count; i++)
+            {
+                if (storedAppointments[i].AppointentId.Equals(newAppointment.AppointentId))
+                    return false;
+            }
+            storedAppointments.Add(newAppointment);
+            WriteToFile(storedAppointments);
+            return true;
+        }
+
+        public Boolean Update(Appointment editedAppointment)
+        {
+            List<Appointment> storedAppointments = ReadFromFile();
+            foreach (Appointment appointment in storedAppointments)
+            {
+                if (appointment.AppointentId.Equals(editedAppointment.AppointentId) && appointment.IsDeleted == false)
+                {
+                    appointment.StartTime = editedAppointment.StartTime;
+                    appointment.DurationInMunutes = editedAppointment.DurationInMunutes;
+                    appointment.ApointmentDescription = editedAppointment.ApointmentDescription;
+                    appointment.Patient = editedAppointment.Patient;
+                    appointment.Room = editedAppointment.Room;
+                    appointment.Doctor = editedAppointment.Doctor;
+                    appointment.IsEmergency = editedAppointment.IsEmergency;
+                    WriteToFile(storedAppointments);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Appointment GetOne(int id)
+        {
+            List<Appointment> appointments = GetAll();
+            for (int i = 0; i < appointments.Count; i++)
+            {
+                if (appointments[i].AppointentId == id)
+                    return appointments[i];
+            }
+            return null;
+        }
+
+        public Boolean Delete(int id)
+        {
+            List<Appointment> storedAppointments = ReadFromFile();
+            for (int i = 0; i < storedAppointments.Count; i++) 
+            {
+                if (storedAppointments[i].AppointentId == id && storedAppointments[i].IsDeleted == false)
+                {
+                    storedAppointments[i].IsDeleted = true;
+                    WriteToFile(storedAppointments);
+                    return true;
+                }
+            }
+            return false;
+        }
+        private List<Appointment> ReadFromFile()
+        {
             try
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
                 List<Appointment> appointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonFromFile);
                 return appointments;
             }
-            catch {}
+            catch { }
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return ps;
-        }
-        public List<Appointment> GetAll()
-        {          
-            List<Appointment> appointments = new List<Appointment>();
-            List<Appointment> appointments1 = Load();
-            for (int i = 0; i < appointments1.Count; i++)
-            {
-                if (appointments1[i].IsDeleted == false)
-                {
-                    appointments.Add(appointments1[i]);
-                }
-            }
-            return appointments;
+            return new List<Appointment>();
         }
 
-        public Boolean Save(Appointment appointment)
+        private void WriteToFile(List<Appointment> appointments)
         {
-
-            List<Appointment> appointments = Load();
-            for (int i = 0; i < appointments.Count; i++)
-            {
-                if (appointments[i].AppointentId.Equals(appointment.AppointentId))
-                {
-                    return false;
-                }
-            }
-            appointments.Add(appointment);
             try
             {
                 var jsonToFile = JsonConvert.SerializeObject(appointments, Formatting.Indented);
@@ -63,78 +114,15 @@ namespace vezba.Repository
                     writer.Write(jsonToFile);
                 }
             }
-            catch (Exception e) {}
-
-            return true;
-        }
-
-        public Boolean Update(Appointment appointment)
-        {
-            List<Appointment> appointments = Load();
-            for (int i = 0; i < appointments.Count; i++)
+            catch
             {
-                if (appointments[i].AppointentId.Equals(appointment.AppointentId) && appointments[i].IsDeleted == false)
-                {
-                    appointments[i].StartTime = appointment.StartTime;
-                    appointments[i].DurationInMunutes = appointment.DurationInMunutes;
-                    appointments[i].ApointmentDescription = appointment.ApointmentDescription;
-                    appointments[i].Patient = appointment.Patient;
-                    appointments[i].Room = appointment.Room;
-                    appointments[i].Doctor = appointment.Doctor;
-                    appointments[i].IsEmergency = appointment.IsEmergency;
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(appointments, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e) {}
-                }
+                MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
             }
-            return false;
         }
 
-        public Appointment GetOne(int id)
+        public int GenerateNextId()
         {
-            List<Appointment> appointments = Load();
-            for (int i = 0; i < appointments.Count; i++)
-            {
-                if (appointments[i].AppointentId == id && appointments[i].IsDeleted == false)
-                {
-                    return appointments[i];
-                }
-            }
-            return null;
-        }
-
-        public Boolean Delete(int id)
-        {
-            List<Appointment> list = Load();
-            for (int i = 0; i < list.Count; i++) 
-            {
-                if (list[i].AppointentId == id && list[i].IsDeleted == false)
-                {
-                    list[i].IsDeleted = true;
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(list, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                            writer.Write(jsonToFile);                  
-                    }
-                    catch (Exception e) {}
-
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public int generateNextId()
-        {
-            List<Appointment> list = Load();
+            List<Appointment> list = ReadFromFile();
             return list.Count;
         }
 

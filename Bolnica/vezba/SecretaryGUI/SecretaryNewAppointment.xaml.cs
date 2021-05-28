@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.SecretaryGUI
 {
@@ -22,14 +22,14 @@ namespace vezba.SecretaryGUI
         {
             InitializeComponent();
             this.DataContext = this;
-            PatientFileRepository ps = new PatientFileRepository();
-            List<Patient> patients = ps.GetAll();
+            PatientService ps = new PatientService();
+            List<Patient> patients = ps.GetAllPatients();
             Patient.ItemsSource = patients;
-            DoctorFileRepository ds = new DoctorFileRepository();
-            List<Doctor> doctors = ds.GetAll();
+            DoctorService ds = new DoctorService();
+            List<Doctor> doctors = ds.GetAllDoctors();
             Doctor.ItemsSource = doctors;
-            RoomFileRepository rs = new RoomFileRepository();
-            List<Room> rooms = rs.GetAll();
+            RoomService rs = new RoomService();
+            List<Room> rooms = rs.GetAllRooms();
             Room.ItemsSource = rooms;
             List<int> durations = new List<int> { 15, 30, 45, 60 };
             Duration.ItemsSource = durations;
@@ -49,105 +49,15 @@ namespace vezba.SecretaryGUI
         {
             if (ValidateEntries() == false)
                 return;
-            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
-            Appointment appointment = new Appointment(appointmentFileRepository.generateNextId(), (Patient)Patient.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
-
-            if (GetOverlapingAppoinments(appointment).Count == 0)
+            AppointmentService appointmentService = new AppointmentService();
+            Appointment newAppointment = new Appointment(0, (Patient)Patient.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
+            Boolean isSuccess = appointmentService.ScheduleAppointment(newAppointment);
+            if (isSuccess)
             {
-                Boolean isSuccess = appointmentFileRepository.Save(appointment);
-                if (isSuccess)
-                    SecretaryAppointments.Appointments.Add(appointment);
+                SecretaryAppointments.Appointments.Add(newAppointment);
                 this.Close();
             }
-            else
-                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(appointment).ToString("dd.MM.yyyy. HH:mm"));
-            
-        }
-
-        private List<Appointment> GetOverlapingAppoinments(Appointment appointment)
-        {
-            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
-            List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
-            List<Appointment> overlapingAppointments = new List<Appointment>();
-            for (int i = 0; i < scheduledAppointments.Count; i++)
-            {
-                if (AppointmentsOverlap(appointment, scheduledAppointments[i]))
-                {
-                    overlapingAppointments.Add(scheduledAppointments[i]);
-                }
-            }
-            return overlapingAppointments;
-        }
-
-        private Boolean AppointmentsOverlap(Appointment appointment1, Appointment appointment2)
-        {
-            if (AppointmentsShareDoctor(appointment1, appointment2) || AppointmentsSharePatient(appointment1, appointment2) || AppointmentsShareRoom(appointment1, appointment2))
-            {
-                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <= 0) //drugi zavrsava pre pocetka prvog
-                    return false;
-                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <= 0) //prvi zavrsava pre pocetka drugog
-                    return false;
-                else
-                    return true;
-            }
-            return false;
-        }
-
-        private Boolean AppointmentsSharePatient(Appointment appointment1, Appointment appointment2)
-        {
-            return appointment1.Patient.Jmbg.Equals(appointment2.Patient.Jmbg);
-        }
-
-        private Boolean AppointmentsShareDoctor(Appointment appointment1, Appointment appointment2)
-        {
-            return appointment1.Doctor.Jmbg.Equals(appointment2.Doctor.Jmbg);
-        }
-
-        private Boolean AppointmentsShareRoom(Appointment appointment1, Appointment appointment2)
-        {
-            return appointment1.Room.RoomNumber == appointment2.Room.RoomNumber;
-        }
-
-
-        private DateTime FindNextFreeAppointmentStartTime(Appointment appointment)
-        {
-            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
-            List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
-            Boolean newTimeFound = false;
-            while (!newTimeFound)
-            {
-                newTimeFound = true;
-                foreach (Appointment a in scheduledAppointments)
-                {
-                    if (AppointmentsOverlap(a, appointment))
-                    {
-                        appointment.StartTime = CalculateNewStartTime(a.EndTime);
-                        newTimeFound = false;
-                        break;
-                    }
-                }
-            }
-            return appointment.StartTime;
-        }
-
-        private DateTime CalculateNewStartTime(DateTime overlapingAppointmentEndTime)
-        {
-            DateTime newStartTime = overlapingAppointmentEndTime;
-            if (IsAfterWorkingHours(newStartTime))
-            {
-                newStartTime = new DateTime(newStartTime.Year, newStartTime.Month, newStartTime.Day, 8, 0, 0);
-                newStartTime = newStartTime.AddDays(1);
-            }
-            return newStartTime;
-        }
-
-        private Boolean IsAfterWorkingHours(DateTime time)
-        {
-            DateTime endOfDay = new DateTime(time.Year, time.Month, time.Day, 19, 45, 0);
-            if (time >= endOfDay)
-                return true;
-
-            return false;
+                
         }
 
         //HCI deo
