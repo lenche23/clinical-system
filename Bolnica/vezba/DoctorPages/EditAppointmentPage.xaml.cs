@@ -14,7 +14,7 @@ namespace vezba.DoctorPages
     public partial class EditAppointmentPage : Page
     {
         public Appointment Selected { get; set; }
-        private DoctorView doctorView;
+        private readonly DoctorView _doctorView;
         public List<Patient> Patients { get; set; }
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
@@ -35,7 +35,7 @@ namespace vezba.DoctorPages
 
             Selected = selected;
             DataContext = this;
-            this.doctorView = doctorView;
+            _doctorView = doctorView;
 
             if (Selected.Patient != null && Selected.Patient.Jmbg != null)
                 cmbPatients.SelectedValue = Selected.Patient.Jmbg;
@@ -53,6 +53,20 @@ namespace vezba.DoctorPages
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
+            var updatedAppointment = UpdatedAppointment();
+
+            AppointmentService appointmentService = new AppointmentService();
+            appointmentService.Update(updatedAppointment);
+
+            calendar.RemoveAppointment(appointmentGrid);
+            calendar.AddAppointmentToCurrentView(updatedAppointment);
+
+            _doctorView.Main.GoBack();
+            _doctorView.Main.GoBack();
+        }
+
+        private Appointment UpdatedAppointment()
+        {
             var appointmentId = Selected.AppointentId;
             var startDate = StartDatePicker.SelectedDate;
             var hour = int.Parse(TimeTB.Text.Split(':')[0]);
@@ -61,25 +75,18 @@ namespace vezba.DoctorPages
             var durationInMinutes = int.Parse(DurationTB.Text);
             var appointmentDescription = DescriptionTB.Text;
 
-            var patient = (Patient)cmbPatients.SelectedItem;
-            var room = (Room)cmbRooms.SelectedItem;
-            var doctor = (Doctor)cmbDoctors.SelectedItem;
-            var isEmergency = (Boolean)IsEmergencyCB.IsChecked;
-            var updatedAppointment = new Appointment(appointmentId, patient, doctor, room, startDateTime, durationInMinutes, appointmentDescription, isEmergency);
-
-            AppointmentService appointmentService = new AppointmentService();
-            appointmentService.Update(updatedAppointment);
-
-            calendar.RemoveAppointment(appointmentGrid);
-            calendar.AddAppointmentToCurrentView(updatedAppointment);
-
-            doctorView.Main.GoBack();
-            doctorView.Main.GoBack();
+            var patient = (Patient) cmbPatients.SelectedItem;
+            var room = (Room) cmbRooms.SelectedItem;
+            var doctor = (Doctor) cmbDoctors.SelectedItem;
+            var isEmergency = (Boolean) IsEmergencyCB.IsChecked;
+            var updatedAppointment = new Appointment(appointmentId, patient, doctor, room, startDateTime, durationInMinutes,
+                appointmentDescription, isEmergency);
+            return updatedAppointment;
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            doctorView.Main.GoBack();
+            _doctorView.Main.GoBack();
         }
     }
 }
