@@ -53,6 +53,15 @@ namespace vezba.DoctorPages
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
+            EditMedicine();
+            _medicineService.UpdateMedicine(Medicine);
+            _medicinePageView.approvedGrid.Items.Refresh();
+            _doctorView.Main.GoBack();
+            _doctorView.Main.GoBack();
+        }
+
+        private void EditMedicine()
+        {
             var medicineName = NameTB.Text;
             var manufacturer = ManufacturerTB.Text;
             var packaging = PackagingTB.Text;
@@ -70,17 +79,13 @@ namespace vezba.DoctorPages
                     break;
             }
 
-            var replacementMedicine = (Medicine)ReplacementMedicineCB.SelectedItem;
+            var replacementMedicine = (Medicine) ReplacementMedicineCB.SelectedItem;
             Medicine.Name = medicineName;
             Medicine.Manufacturer = manufacturer;
             Medicine.Packaging = packaging;
             Medicine.Condition = condition;
             Medicine.Ingridient = new List<Ingridient>(Ingredients);
             Medicine.ReplacementMedicine = replacementMedicine;
-            _medicineService.Update(Medicine);
-            _medicinePageView.approvedGrid.Items.Refresh();
-            _doctorView.Main.GoBack();
-            _doctorView.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)

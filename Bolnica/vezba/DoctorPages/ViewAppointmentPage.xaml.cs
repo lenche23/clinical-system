@@ -14,7 +14,7 @@ namespace vezba.DoctorPages
     {
 
         private Appointment Selected { get; set; }
-        private DoctorView doctorView;
+        private readonly DoctorView _doctorView;
         private Calendar calendar;
         private Grid appointmentGrid;
 
@@ -23,21 +23,21 @@ namespace vezba.DoctorPages
             InitializeComponent();
             DataContext = selected;
             Selected = selected;
-            this.doctorView = doctorView;
+            _doctorView = doctorView;
             this.calendar = calendar;
             this.appointmentGrid = appointmentGrid;
         }
 
         private void MedicalRecordClick(object sender, RoutedEventArgs e)
         {
-            doctorView.Main.Content = new MedicalRecordPage(Selected.Patient, doctorView);
+            _doctorView.Main.Content = new MedicalRecordPage(Selected.Patient, _doctorView);
         }
 
         private void NewAnamnesisClick(object sender, RoutedEventArgs e)
         {
             if (DateTime.Compare(DateTime.Now, Selected.StartTime) >= 0)
             {
-                doctorView.Main.Content = new CreateAnamnesisPage(Selected, doctorView);
+                _doctorView.Main.Content = new CreateAnamnesisPage(Selected, _doctorView);
             }
             else
             {
@@ -47,34 +47,34 @@ namespace vezba.DoctorPages
 
         private void NewPrescriptionClick(object sender, RoutedEventArgs e)
         {
-            doctorView.Main.Content = new CreatePrescriptionPage(Selected.Patient, doctorView);
+            _doctorView.Main.Content = new CreatePrescriptionPage(Selected.Patient, _doctorView);
         }
 
         private void NewReferralLetterClick(object sender, RoutedEventArgs e)
         {
-            doctorView.Main.Content = new CreateReferralLetterPage(Selected.Patient, doctorView);
+            _doctorView.Main.Content = new CreateReferralLetterPage(Selected.Patient, _doctorView);
         }
 
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
-            doctorView.Main.GoBack();
+            _doctorView.Main.GoBack();
         }
 
         private void EditClick(object sender, RoutedEventArgs e)
         {
-            doctorView.Main.Content = new EditAppointmentPage(Selected, doctorView, calendar, appointmentGrid);
+            _doctorView.Main.Content = new EditAppointmentPage(Selected, _doctorView, calendar, appointmentGrid);
         }
 
         private void DeleteClick(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "Delete Confirmation", System.Windows.MessageBoxButton.YesNo);
+            var messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "DeleteMedicine Confirmation", System.Windows.MessageBoxButton.YesNo);
             if (messageBoxResult == MessageBoxResult.Yes)
             {
-                AppointmentService appointmentService = new AppointmentService();
+                var appointmentService = new AppointmentService();
                 appointmentService.DeleteAppointment(Selected.AppointentId);
                 calendar.RemoveAppointment(appointmentGrid);
                 calendar.SetScrollViewerToFirstAppointment();
-                doctorView.Main.GoBack();
+                _doctorView.Main.GoBack();
             }
         }
     }

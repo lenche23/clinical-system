@@ -25,39 +25,39 @@ namespace Service
         // PacijentKraj***************************************************************************
 
         // Lekar**********************************************************************************
-        private PatientFileRepository FileRepository { get; set; }
+        private PatientFileRepository PatientRepository { get; }
 
         public PatientService()
         {
-            FileRepository = new PatientFileRepository();
+            PatientRepository = new PatientFileRepository();
         }
 
-        public List<Patient> GetAll()
+        public List<Patient> GetAllPatients()
         {
-            return FileRepository.GetAll();
+            return PatientRepository.GetAll();
         }
 
-        public Boolean Update(Patient updatedPatient)
+        public Boolean UpdatePatient(Patient updatedPatient)
         {
-            return FileRepository.Update(updatedPatient);
+            return PatientRepository.Update(updatedPatient);
         }
 
         public void AddPrescriptionToPatient(Patient patient, Prescription newPrescription)
         {
             patient.MedicalRecord.AddPrescription(newPrescription);
-            Update(patient);
+            UpdatePatient(patient);
         }
 
         public void AddAnamnesisToPatient(Patient patient, Anamnesis newAnamnesis)
         {
             patient.MedicalRecord.AddAnamnesis(newAnamnesis);
-            Update(patient);
+            UpdatePatient(patient);
         }
 
         public void AddReferralLetterToPatient(Patient patient, ReferralLetter newReferralLetter)
         {
             patient.MedicalRecord.AddReferralLetter(newReferralLetter);
-            Update(patient);
+            UpdatePatient(patient);
         }
 
         // LekarKraj******************************************************************************

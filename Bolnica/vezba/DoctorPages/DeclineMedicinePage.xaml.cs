@@ -26,14 +26,10 @@ namespace vezba.DoctorPages
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            MedicineService medicineService = new MedicineService();
-            medicineService.Delete(Medicine.MedicineID);
+            var medicineService = new MedicineService();
 
             var description = DescriptionTB.Text;
-            var declinedMedicine = new DeclinedMedicine(0, Medicine, description);
-
-            DeclinedMedicineService declinedMedicineService = new DeclinedMedicineService();
-            declinedMedicineService.Save(declinedMedicine);
+            var declinedMedicine = medicineService.DeclineMedicine(Medicine, description);
 
             UpdateMedicineView(declinedMedicine);
             _doctorView.Main.GoBack();

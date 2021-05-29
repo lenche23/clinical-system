@@ -26,8 +26,8 @@ namespace vezba.DoctorPages
             InitializeComponent();
             DataContext = patient;
 
-            DoctorService doctorService = new DoctorService();
-            Doctors = doctorService.GetAll();
+            var doctorService = new DoctorService();
+            Doctors = doctorService.GetAllDoctors();
 
             cmbDoctors.DataContext = this;
             cmbDoctors.SelectedIndex = 0;
@@ -39,10 +39,10 @@ namespace vezba.DoctorPages
         { 
             _newReferralLetter = NewReferralLetter();
 
-            PatientService patientService = new PatientService();
+            var patientService = new PatientService();
             patientService.AddReferralLetterToPatient(_patient, _newReferralLetter);
 
-            AppointmentService appointmentService = new AppointmentService();
+            var appointmentService = new AppointmentService();
             appointmentService.AddReferralLetterToAppointments(_patient, _newReferralLetter);
 
             UpdateAppointmentsView();

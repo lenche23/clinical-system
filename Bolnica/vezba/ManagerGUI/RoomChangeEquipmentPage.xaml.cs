@@ -49,7 +49,7 @@ namespace vezba.ManagerGUI
             selected.Quantity = Quantity;
 
             //RoomFileRepository rs = new RoomFileRepository();
-            //rs.Update(this.r_selected);
+            //rs.UpdateMedicine(this.r_selected);
             RoomInventoryFileRepository ris = new RoomInventoryFileRepository();
             ris.Update(this.selected);
             wur.RoomInventoryBinding.Items.Refresh();

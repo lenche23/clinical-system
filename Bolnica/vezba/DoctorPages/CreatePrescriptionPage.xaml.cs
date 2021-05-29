@@ -24,7 +24,7 @@ namespace vezba.DoctorPages
             _patient = patient;
             _doctorView = doctorView;
             DataContext = this;
-            MedicineService medicineService = new MedicineService();
+            var medicineService = new MedicineService();
             ValidMedicine = medicineService.GenerateValidMedicineForPatient(_patient.MedicalRecord);
         }
 
@@ -32,10 +32,10 @@ namespace vezba.DoctorPages
         {
             _newPrescription = NewPrescription();
 
-            PatientService patientService = new PatientService();
+            var patientService = new PatientService();
             patientService.AddPrescriptionToPatient(_patient, _newPrescription);
 
-            AppointmentService appointmentService = new AppointmentService();
+            var appointmentService = new AppointmentService();
             appointmentService.AddPrescriptionToAppointments(_patient, _newPrescription);
 
             UpdateAppointmentsView();

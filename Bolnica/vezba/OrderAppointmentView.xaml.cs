@@ -92,7 +92,7 @@ namespace vezba
                 }
                 
                 //EventsLog eventsLog = new EventsLog(patientJMBG, events);
-                //eventsLogFileRepository.Save(eventsLog);
+                //eventsLogFileRepository.SaveDeclinedMedicine(eventsLog);
             }
             else
             {

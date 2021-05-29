@@ -30,10 +30,10 @@ namespace vezba.DoctorPages
         {
             _newAnamnesis = NewAnamnesis();
 
-            PatientService patientService = new PatientService();
+            var patientService = new PatientService();
             patientService.AddAnamnesisToPatient(_patient, _newAnamnesis);
 
-            AppointmentService appointmentService = new AppointmentService();
+            var appointmentService = new AppointmentService();
             appointmentService.AddAnamnesisToAppointments(_patient, _newAnamnesis);
 
             UpdateAppointmentsView();

@@ -12,7 +12,7 @@ namespace vezba.DoctorPages
 
         private readonly DoctorView _doctorView;
 
-        private Medicine Medicine { get; set; }
+        public Medicine Medicine { get; set; }
 
         private readonly MedicinePageView _medicinePageView;
 

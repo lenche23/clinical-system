@@ -23,13 +23,13 @@ namespace vezba.DoctorPages
         {
             InitializeComponent();
 
-            PatientService patientService = new PatientService();
-            Patients = patientService.GetAll();
+            var patientService = new PatientService();
+            Patients = patientService.GetAllPatients();
 
-            DoctorService doctorService = new DoctorService();
-            Doctors = doctorService.GetAll();
+            var doctorService = new DoctorService();
+            Doctors = doctorService.GetAllDoctors();
 
-            RoomService roomService = new RoomService();
+            var roomService = new RoomService();
             Rooms = roomService.GetAll();
 
             DataContext = this;
@@ -45,13 +45,13 @@ namespace vezba.DoctorPages
         {
             InitializeComponent();
 
-            PatientService patientService = new PatientService();
-            Patients = patientService.GetAll();
+            var patientService = new PatientService();
+            Patients = patientService.GetAllPatients();
 
-            DoctorService doctorService = new DoctorService();
-            Doctors = doctorService.GetAll();
+            var doctorService = new DoctorService();
+            Doctors = doctorService.GetAllDoctors();
 
-            RoomService roomService = new RoomService();
+            var roomService = new RoomService();
             Rooms = roomService.GetAll();
 
             DataContext = this;
@@ -70,8 +70,7 @@ namespace vezba.DoctorPages
         {
             var newAppointment = NewAppointment();
 
-            AppointmentService appointmentService = new AppointmentService();
-            //appointmentService.Save(newAppointment);
+            var appointmentService = new AppointmentService();
             if (appointmentService.ScheduleAppointment(newAppointment))
             {
                 calendar.AddAppointmentToCurrentView(newAppointment);
@@ -90,7 +89,7 @@ namespace vezba.DoctorPages
             var room = (Room) cmbRooms.SelectedItem;
             var doctor = (Doctor) cmbDoctors.SelectedItem;
             var isEmergency = (Boolean) IsEmergencyCB.IsChecked;
-            Appointment newAppointment = new Appointment(0, patient, doctor, room, startDateTime, durationInMinutes,
+            var newAppointment = new Appointment(0, patient, doctor, room, startDateTime, durationInMinutes,
                 appointmentDescription, isEmergency);
             return newAppointment;
         }

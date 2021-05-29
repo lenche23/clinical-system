@@ -25,13 +25,13 @@ namespace vezba.DoctorPages
         {
             InitializeComponent();
 
-            PatientService patientService = new PatientService();
-            Patients = patientService.GetAll();
+            var patientService = new PatientService();
+            Patients = patientService.GetAllPatients();
 
-            DoctorService doctorService = new DoctorService();
-            Doctors = doctorService.GetAll();
+            var doctorService = new DoctorService();
+            Doctors = doctorService.GetAllDoctors();
 
-            RoomService roomService = new RoomService();
+            var roomService = new RoomService();
             Rooms = roomService.GetAll();
 
             Selected = selected;
@@ -56,8 +56,7 @@ namespace vezba.DoctorPages
         {
             var updatedAppointment = UpdatedAppointment();
 
-            AppointmentService appointmentService = new AppointmentService();
-            //appointmentService.Update(updatedAppointment);
+            var appointmentService = new AppointmentService();
             if (appointmentService.RescheduleAppointment(updatedAppointment))
             {
                 calendar.RemoveAppointment(appointmentGrid);

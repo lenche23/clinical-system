@@ -28,7 +28,7 @@ namespace vezba.DoctorPages
 
         private void ApproveClick(object sender, RoutedEventArgs e)
         {
-            MedicineService medicineService = new MedicineService();
+            var medicineService = new MedicineService();
             medicineService.ApproveMedicine(Medicine);
             UpdateMedicineView();
             _doctorView.Main.GoBack();

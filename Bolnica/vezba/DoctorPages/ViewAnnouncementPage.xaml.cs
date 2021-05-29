@@ -9,9 +9,9 @@ namespace vezba.DoctorPages
     /// </summary>
     public partial class ViewAnnouncementPage : Page
     {
-        private DoctorView dw;
+        private readonly DoctorView _doctorView;
 
-        public ViewAnnouncementPage(Announcement a, DoctorView dw)
+        public ViewAnnouncementPage(Announcement a, DoctorView doctorView)
         {
             InitializeComponent();
             Posted.Content += a.FormatedDatePosted;
@@ -22,12 +22,12 @@ namespace vezba.DoctorPages
             }
             Content.Text = a.Content;
             Title.Text = a.Title;
-            this.dw = dw;
+            _doctorView = doctorView;
         }
 
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
-            dw.Main.GoBack();
+            _doctorView.Main.GoBack();
         }
     }
 }

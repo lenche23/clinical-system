@@ -52,9 +52,9 @@ namespace vezba.PatientPages
                         if (count == 10)
                         {
                             Patient.IsBlocked = true;
-                            pps.Update(Patient);
+                            pps.UpdateMedicine(Patient);
                             events.Clear();
-                            fileRepository.Update(log);
+                            fileRepository.UpdateMedicine(log);
                         }
                     }
                 }

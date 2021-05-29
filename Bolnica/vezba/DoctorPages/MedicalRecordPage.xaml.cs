@@ -9,7 +9,7 @@ namespace vezba.DoctorPages
     /// </summary>
     public partial class MedicalRecordPage : Page
     {
-        private DoctorView doctorView;
+        private readonly DoctorView _doctorView;
 
         public MedicalRecordPage(Patient patient, DoctorView doctorView)
         {
@@ -17,13 +17,13 @@ namespace vezba.DoctorPages
             DataContext = patient;
             if (patient.MedicalRecord != null)
             {
-                this.doctorView = doctorView;
+                _doctorView = doctorView;
             }
         }
 
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
-            doctorView.Main.GoBack();
+            _doctorView.Main.GoBack();
         }
     }
 }

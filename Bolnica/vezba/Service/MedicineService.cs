@@ -25,21 +25,24 @@ namespace Service
         // PacijentKraj***************************************************************************
 
         // Lekar**********************************************************************************
-        private MedicineFileRepository FileRepository { get; set; }
+        private MedicineFileRepository MedicineRepository { get; }
+        private DeclinedMedicineFileRepository DeclinedMedicineRepository { get; }
+
 
         public MedicineService()
         {
-            FileRepository = new MedicineFileRepository();
+            MedicineRepository = new MedicineFileRepository();
+            DeclinedMedicineRepository = new DeclinedMedicineFileRepository();
         }
 
         public List<Medicine> GetApproved()
         {
-            return FileRepository.GetApproved();
+            return MedicineRepository.GetApproved();
         }
 
         public List<Medicine> GetAwaiting()
         {
-            return FileRepository.GetAwaiting();
+            return MedicineRepository.GetAwaiting();
         }
 
         public List<Medicine> GetPossibleReplacements(Medicine medicine)
@@ -57,20 +60,20 @@ namespace Service
             return medicineForReplacement;
         }
 
-        public Boolean Update(Medicine updatedMedicine)
+        public Boolean UpdateMedicine(Medicine updatedMedicine)
         {
-            return FileRepository.Update(updatedMedicine);
+            return MedicineRepository.Update(updatedMedicine);
         }
 
-        public Boolean Delete(int medicineID)
+        public Boolean DeleteMedicine(int medicineID)
         {
-            return FileRepository.Delete(medicineID);
+            return MedicineRepository.Delete(medicineID);
         }
 
         public List<Medicine> GenerateValidMedicineForPatient(MedicalRecord medicalRecord)
         {
             List<Medicine>validMedicine = new List<Medicine>();
-            foreach (var medicine in FileRepository.GetApproved())
+            foreach (var medicine in MedicineRepository.GetApproved())
             {
                 if (!AllergenMatchFound(medicine, medicalRecord))
                     validMedicine.Add(medicine);
@@ -99,7 +102,26 @@ namespace Service
         public void ApproveMedicine(Medicine medicineToApprove)
         {
             medicineToApprove.Status = MedicineStatus.approved;
-            Update(medicineToApprove);
+            UpdateMedicine(medicineToApprove);
+        }
+
+        public List<DeclinedMedicine> GetDeclined()
+        {
+            return DeclinedMedicineRepository.GetAll();
+        }
+
+        public Boolean SaveDeclinedMedicine(DeclinedMedicine declinedMedicine)
+        {
+            declinedMedicine.DeclinedMedicineID = DeclinedMedicineRepository.GenerateNextId();
+            return DeclinedMedicineRepository.Save(declinedMedicine);
+        }
+
+        public DeclinedMedicine DeclineMedicine(Medicine medicineToDecline, String description)
+        {
+            var declinedMedicine = new DeclinedMedicine(0, medicineToDecline, description);
+            DeleteMedicine(medicineToDecline.MedicineID);
+            SaveDeclinedMedicine(declinedMedicine);
+            return declinedMedicine;
         }
         // LekarKraj******************************************************************************
 

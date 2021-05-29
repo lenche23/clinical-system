@@ -26,15 +26,15 @@ namespace Service
        // PacijentKraj***************************************************************************
 
        // Lekar**********************************************************************************
-       private DoctorFileRepository FileRepository { get; set; }
+       private DoctorFileRepository DoctorRepository { get; }
        public DoctorService()
        {
-           FileRepository = new DoctorFileRepository();
+           DoctorRepository = new DoctorFileRepository();
        }
 
-       public List<Doctor> GetAll()
+       public List<Doctor> GetAllDoctors()
        {
-           return FileRepository.GetAll();
+           return DoctorRepository.GetAll();
        }
        // LekarKraj******************************************************************************
 

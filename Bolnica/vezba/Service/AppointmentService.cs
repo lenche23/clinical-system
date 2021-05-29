@@ -307,9 +307,10 @@ namespace Service
            List<Appointment> allAppointments = GetAllAppointments();
            foreach (var appointment in allAppointments)
            {
-               if (!appointment.Patient.Jmbg.Equals(patient.Jmbg)) continue;
+               var appointmentPatient = appointment.Patient;
+               if (!IsSamePatient(appointmentPatient, patient)) continue;
 
-               appointment.Patient.MedicalRecord.AddPrescription(newPrescription);
+               appointmentPatient.MedicalRecord.AddPrescription(newPrescription);
                UpdateAppointment(appointment);
            }
        }
@@ -319,11 +320,11 @@ namespace Service
            List<Appointment> allAppointments = GetAllAppointments();
            foreach (Appointment appointment in allAppointments)
            {
-               if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
-               {
-                   appointment.Patient.MedicalRecord.AddAnamnesis(newAnamnesis);
-                   UpdateAppointment(appointment);
-               }
+               var appointmentPatient = appointment.Patient;
+               if (!IsSamePatient(appointmentPatient, patient)) continue;
+
+               appointmentPatient.MedicalRecord.AddAnamnesis(newAnamnesis);
+               UpdateAppointment(appointment);
            }
        }
 
@@ -332,12 +333,17 @@ namespace Service
            List<Appointment> allAppointments = GetAllAppointments();
            foreach (Appointment appointment in allAppointments)
            {
-               if (appointment.Patient.Jmbg.Equals(patient.Jmbg))
-               {
-                   appointment.Patient.MedicalRecord.AddReferralLetter(newReferralLetter);
-                   UpdateAppointment(appointment);
-               }
+               var appointmentPatient = appointment.Patient;
+               if (!IsSamePatient(appointmentPatient, patient)) continue;
+
+               appointmentPatient.MedicalRecord.AddReferralLetter(newReferralLetter);
+               UpdateAppointment(appointment);
            }
+       }
+
+       private Boolean IsSamePatient(Patient firstPatient, Patient secondPatient)
+       {
+           return firstPatient.Jmbg.Equals(secondPatient.Jmbg);
        }
        // LekarKraj******************************************************************************
 
