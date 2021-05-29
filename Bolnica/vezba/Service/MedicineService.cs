@@ -1,40 +1,79 @@
 using System;
+using System.Collections.Generic;
+using Model;
+using vezba.Repository;
 
 namespace Service
 {
-   public class MedicineService
-   {
-   }
+    public class MedicineService
+    {
 
-   // Sekretar*******************************************************************************
+        public MedicineFileRepository MedicineRepository { get; }
+        public DeclinedMedicineFileRepository DeclinedMedicineRepository { get; }
 
-
-
-
-
-   // SekretarKraj***************************************************************************
-
-   // Pacijent*******************************************************************************
+        public MedicineService()
+        {
+            MedicineRepository = new MedicineFileRepository();
+            DeclinedMedicineRepository = new DeclinedMedicineFileRepository();
+        }
 
 
-
-
-
-   // PacijentKraj***************************************************************************
-
-   // Lekar**********************************************************************************
+        // Sekretar*******************************************************************************
 
 
 
 
 
-   // LekarKraj******************************************************************************
+        // SekretarKraj***************************************************************************
 
-   // Upravnik*******************************************************************************
-
-
+        // Pacijent*******************************************************************************
 
 
 
-   // UpravnikKraj***************************************************************************
+
+
+        // PacijentKraj***************************************************************************
+
+        // Lekar**********************************************************************************
+
+
+
+
+
+        // LekarKraj******************************************************************************
+
+        // Upravnik*******************************************************************************
+
+        public List<Medicine> GetAllMedicine()
+        {
+            return MedicineRepository.GetAll();
+        }
+
+        public Boolean SaveMedicine(Medicine newMedicine)
+        {
+            return MedicineRepository.Save(newMedicine);
+        }
+
+        public Boolean UpdateMedicine(Medicine updatedMedicine)
+        {
+            return MedicineRepository.Update(updatedMedicine);
+        }
+
+        public Boolean DeleteMedicine(int medicineId)
+        {
+            return MedicineRepository.Delete(medicineId);
+        }
+
+        public int GenerateNextMedicineId()
+        {
+            return MedicineRepository.GenerateNextId();
+        }
+
+        public List<DeclinedMedicine> GetAllDeclinedMedicine()
+        {
+            return DeclinedMedicineRepository.GetAll();
+        }
+
+        // UpravnikKraj***************************************************************************
+    }
 }

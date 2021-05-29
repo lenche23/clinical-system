@@ -1,21 +1,8 @@
-﻿using Bolnica;
-using Model;
+﻿using Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Timers;
-using System.Threading;
-using vezba.Repository;
+using Service;
 
 namespace vezba.ManagerGUI
 {
@@ -29,7 +16,6 @@ namespace vezba.ManagerGUI
         private int currentRoomItemQuantity;
         private int desiredRoomItemQuantity;
         private MainManagerWindow mainManagerWindow;
-        private RoomInventoryFileRepository _roomInventoryFileRepository;
 
         public RoomExchangeStaticEquipmentPage(MainManagerWindow mainManagerWindow, RoomInventory roomInventory, Room room)
         {
@@ -47,15 +33,16 @@ namespace vezba.ManagerGUI
             //pickedDate = Date.SelectedDate.Value.Date;
             pickedDate = DateTime.Now.AddSeconds(5);
 
-            RoomFileRepository roomFileRepository = new RoomFileRepository();
-            Room roomEntry = roomFileRepository.GetOne(roomNumber);
-            _roomInventoryFileRepository = new RoomInventoryFileRepository();
+            RoomService roomService = new RoomService();
+            Room roomEntry = roomService.GetOneRoom(roomNumber);
+            RoomInventoryService roomInventoryService = new RoomInventoryService();
 
             if (Validate(roomEntry) == false)
                 return;
 
             roomInventory.EndTime = pickedDate;
-            _roomInventoryFileRepository.Update(this.roomInventory);
+            
+            roomInventoryService.UpdateRoomInventory(this.roomInventory);
 
             currentRoomItemQuantity = roomInventory.Quantity - inputItemQuantity;
             desiredRoomItemQuantity = NewDesiredRoomItemQuantity(roomNumber);
@@ -68,21 +55,23 @@ namespace vezba.ManagerGUI
 
         private void SaveNewRoomInventory(int newItemQuantity, Room roomEntry)
         {
-            var id = _roomInventoryFileRepository.GenerateNextId();
+            RoomInventoryService roomInventoryService = new RoomInventoryService();
+            var id = roomInventoryService.GenerateNextRoomInventoryId();
             RoomInventory ri = new RoomInventory(pickedDate, infiniteTime, newItemQuantity, id, roomInventory.equipment, roomEntry);
-            _roomInventoryFileRepository.Save(ri);
+            roomInventoryService.SaveRoomInventory(ri);
         }
 
         private int NewDesiredRoomItemQuantity(int roomNumber)
         {
             var itemFound = false;
+            RoomInventoryService roomInventoryService = new RoomInventoryService();
 
-            foreach (RoomInventory inventory in _roomInventoryFileRepository.GetAll())
+            foreach (RoomInventory inventory in roomInventoryService.GetAllRoomInventories())
             {
                 if (inventory.room.RoomNumber == roomNumber && DateTime.Compare(inventory.StartTime, DateTime.Now) <= 0 && DateTime.Compare(inventory.EndTime, DateTime.Now) >= 0 && inventory.equipment.Id == roomInventory.equipment.Id)
                 {
                     inventory.EndTime = pickedDate;
-                    _roomInventoryFileRepository.Update(inventory);
+                    roomInventoryService.UpdateRoomInventory(inventory);
                     desiredRoomItemQuantity = inventory.Quantity + inputItemQuantity;
                     itemFound = true;
                 }

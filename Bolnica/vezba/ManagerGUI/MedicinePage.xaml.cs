@@ -1,19 +1,9 @@
 ﻿using Model;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Service;
 using vezba.Repository;
 
 namespace vezba.ManagerGUI
@@ -22,15 +12,14 @@ namespace vezba.ManagerGUI
     {
         public static ObservableCollection<Medicine> MedicineList { get; set; }
         public static List<Medicine> medicineList;
-        private MedicineFileRepository _medicineFileRepository;
         private MainManagerWindow mainManagerWindow;
         public MedicinePage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
             this.DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
-            _medicineFileRepository = new MedicineFileRepository();
-            medicineList = _medicineFileRepository.GetAll();
+            MedicineService medicineService = new MedicineService();
+            medicineList = medicineService.GetAllMedicine();
             MedicineList = new ObservableCollection<Medicine>(medicineList);
             MedicineBinding.ItemsSource = MedicineList;
         }
@@ -45,8 +34,8 @@ namespace vezba.ManagerGUI
             if (MedicineBinding.SelectedIndex > -1)
             {
                 Medicine m = (Medicine)MedicineBinding.SelectedItem;
-                MedicineFileRepository ms = new MedicineFileRepository();
-                ms.Delete(m.MedicineID);
+                MedicineService medicineService = new MedicineService();
+                medicineService.DeleteMedicine(m.MedicineID);
                 MedicineList.Remove(m);
             }
 
@@ -92,7 +81,16 @@ namespace vezba.ManagerGUI
 
         private void Edit_Medicine_Button_Click(object sender, RoutedEventArgs e)
         {
+            if (MedicineBinding.SelectedIndex > -1)
+            {
+                Medicine medicine = (Medicine)MedicineBinding.SelectedItems[0];
+                mainManagerWindow.MainManagerView.Content = new MedicineUpdatePage(medicine, this);
+            }
 
+            else
+            {
+                MessageBox.Show("Ni jedan lek nije selektovan!");
+            }
         }
     }
 }

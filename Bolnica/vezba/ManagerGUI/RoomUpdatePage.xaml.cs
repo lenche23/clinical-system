@@ -5,19 +5,16 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using vezba;
+using Service;
 using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {
-
     public partial class RoomUpdatePage : Page
     {
         private Room selected;
         private RoomsPage rp;
-
         public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
-        private RoomInventoryFileRepository _roomInventoryFileRepository;
         private MainManagerWindow mainManagerWindow;
 
         public RoomUpdatePage(Room selected, RoomsPage rp, MainManagerWindow mainManagerWindow)
@@ -54,11 +51,10 @@ namespace vezba.ManagerGUI
                 Odmor.IsChecked = true;
             }
 
-
-            _roomInventoryFileRepository = new RoomInventoryFileRepository();
+            RoomInventoryService roomInventoryService = new RoomInventoryService();
 
             List<RoomInventory> roomInventoryList = new List<RoomInventory>();
-            foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetAll())
+            foreach (RoomInventory roomInventory in roomInventoryService.GetAllRoomInventories())
             {
                 if (roomInventory.room.RoomNumber == selected.RoomNumber)
                     if (DateTime.Compare(roomInventory.StartTime, DateTime.Now) <= 0 && DateTime.Compare(roomInventory.EndTime, DateTime.Now) >= 0)
@@ -117,20 +113,16 @@ namespace vezba.ManagerGUI
             }
             rp.lvDataBinding.Items.Refresh();
             NavigationService.GoBack();
-            //this.Close();
         }
 
         private void Odustanak_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
-            //this.Close();
         }
 
         private void Dodaj_Button_Click(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new RoomAddEquipmentPage(mainManagerWindow, selected);
-            //var s = new WindowAddRoomEquipment(this.selected);
-            //s.Show();
         }
 
         private void Izbriši_Button_Click(object sender, RoutedEventArgs e)
@@ -138,26 +130,23 @@ namespace vezba.ManagerGUI
             if (RoomInventoryBinding.SelectedIndex > -1)
             {
                 RoomInventory ri = (RoomInventory)RoomInventoryBinding.SelectedItem;
-                _roomInventoryFileRepository.Delete(ri.Id);
+                RoomInventoryService roomInventoryService = new RoomInventoryService();
+                roomInventoryService.DeleteRoomInventory(ri.Id);
                 RoomInventoryList.Remove(ri);
             }
-
             else
             {
                 MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
-
         }
 
         private void Izmeni_Količinu_Button_Click(object sender, RoutedEventArgs e)
         {
             if (RoomInventoryBinding.SelectedIndex > -1)
             {
-
                 RoomInventory selectedRoomInventory = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
                 mainManagerWindow.MainManagerView.Content = new RoomChangeEquipmentPage(mainManagerWindow, selectedRoomInventory, this, selected);
             }
-
             else
             {
                 MessageBox.Show("Ni jedan proizvod nije selektovan!");
@@ -190,7 +179,7 @@ namespace vezba.ManagerGUI
         {
             if (String.IsNullOrEmpty(txtFilter.Text))
                 return true;
-            else
+            else 
                 return ((item as RoomInventory).equipment.Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
 
         }
@@ -200,8 +189,6 @@ namespace vezba.ManagerGUI
             CollectionViewSource.GetDefaultView(RoomInventoryBinding.ItemsSource).Refresh();
 
         }
-
-        
     }
 }
 

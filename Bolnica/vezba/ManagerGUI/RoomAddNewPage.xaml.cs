@@ -1,26 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Model;
-using vezba;
-using vezba.Repository;
+using Service;
 
 namespace vezba.ManagerGUI
 {
     public partial class RoomAddNewPage : Page
     {
-
         public RoomAddNewPage()
         {
             InitializeComponent();
@@ -63,10 +50,10 @@ namespace vezba.ManagerGUI
                 type = RoomType.recoveryRoom;
             }
 
-            var newRoom = new Room(int.Parse(BrojSobe.Text), floor, type) { };
+            var newRoom = new Room(int.Parse(BrojSobe.Text), floor, type);
 
-            RoomFileRepository fileRepository = new RoomFileRepository();
-            fileRepository.Save(newRoom);
+            RoomService roomService = new RoomService();
+            roomService.SaveRoom(newRoom);
             RoomsPage.Rooms.Add(newRoom);
             NavigationService.GoBack();
         }

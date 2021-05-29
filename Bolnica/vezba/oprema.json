@@ -30,21 +30,9 @@
     "IsDeleted": false
   },
   {
-    "Id": 5,
-    "Name": "Rendgen aparat",
-    "Type": 0,
-    "IsDeleted": false
-  },
-  {
-    "Id": 6,
-    "Name": "Plombe pakovanje",
-    "Type": 1,
-    "IsDeleted": false
-  },
-  {
     "Id": 8,
-    "Name": "Oprema1",
-    "Type": 1,
+    "Name": "Oprema",
+    "Type": 0,
     "IsDeleted": true
   }
 ]

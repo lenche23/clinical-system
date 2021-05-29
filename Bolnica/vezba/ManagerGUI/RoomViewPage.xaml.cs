@@ -2,18 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using vezba;
+using Service;
 using vezba.Repository;
 
 namespace vezba.ManagerGUI
@@ -23,13 +14,11 @@ namespace vezba.ManagerGUI
         private Room selected;
         private RoomsPage mv;
         public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
-        private RoomInventoryFileRepository _roomInventoryFileRepository;
         public RoomViewPage(Room selected, RoomsPage mv)
         {
             InitializeComponent();
             this.selected = selected;
             this.mv = mv;
-
 
             BrProstorijeLabel.Content = BrProstorijeLabel.Content + " " + selected.RoomNumber;
 
@@ -60,10 +49,10 @@ namespace vezba.ManagerGUI
                 TipLabel.Content = TipLabel.Content + " Prostorija za odmor";
             }
 
-            _roomInventoryFileRepository = new RoomInventoryFileRepository();
+            RoomInventoryService roomInventoryService = new RoomInventoryService();
 
             List<RoomInventory> roomInventoryList = new List<RoomInventory>();
-            foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetAll())
+            foreach (RoomInventory roomInventory in roomInventoryService.GetAllRoomInventories())
             {
                 if (roomInventory.room.RoomNumber == selected.RoomNumber)
                 {
@@ -74,11 +63,9 @@ namespace vezba.ManagerGUI
                     }
                 }
             }
-
             RoomInventoryList = new ObservableCollection<RoomInventory>(roomInventoryList);
             RoomInventoryBinding.ItemsSource = RoomInventoryList;
         }
-
         private void ButtonBackClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();

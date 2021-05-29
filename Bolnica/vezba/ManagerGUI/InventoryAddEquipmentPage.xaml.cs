@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Model;
+using Service;
 using vezba.Repository;
 
 namespace vezba.ManagerGUI
@@ -38,11 +28,12 @@ namespace vezba.ManagerGUI
                 type = EquipmentType.dinamical;
             }
 
-            EquipmentFileRepository es = new EquipmentFileRepository();
-            int equipmentID = es.generateNextId();
+
+            EquipmentService equipmentService = new EquipmentService();
+            int equipmentID = equipmentService.generateNextEquipmentId();
             var newEquipment = new Equipment(equipmentID, NazivOpreme.Text, type);
 
-            es.Save(newEquipment);
+            equipmentService.SaveEquipment(newEquipment);
             InventoryPage.EquipmentList.Add(newEquipment);
             NavigationService.GoBack();
 
@@ -51,7 +42,6 @@ namespace vezba.ManagerGUI
         private void Cancel_Add_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
-            //this.Close();
         }
     }
 }

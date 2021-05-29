@@ -2,18 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using vezba.Repository;
+using Service;
 
 namespace vezba.ManagerGUI
 {
@@ -38,8 +29,8 @@ namespace vezba.ManagerGUI
             var endTime = startTime.AddDays(durationInDays);
             var id = selected.renovation.Count + 1;
 
-            AppointmentFileRepository aps = new AppointmentFileRepository();
-            List<Appointment> appointments = aps.GetAll();
+            AppointmentService appointmentService = new AppointmentService();
+            List<Appointment> appointments = appointmentService.GetAllAppointments();
 
             if (DateTime.Compare(startTime, DateTime.Now) < 0)
             {
@@ -55,11 +46,10 @@ namespace vezba.ManagerGUI
 
             var newRenovation = new Renovation(startTime, durationInDays, id);
             selected.AddRenovation(newRenovation);
-            RoomFileRepository rs = new RoomFileRepository();
-            rs.Update(this.selected);
-            WindowRenovations.RenovationList.Add(newRenovation);
-            
-
+            RoomService roomService = new RoomService();
+            roomService.UpdateRoom(this.selected);
+            RenovationsPage.RenovationList.Add(newRenovation);
+            NavigationService.GoBack();
         }
 
         private bool Overlap(List<Appointment> appointments, DateTime StartTime, DateTime EndTime)
@@ -83,7 +73,7 @@ namespace vezba.ManagerGUI
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
-            //this.Close();
+            NavigationService.GoBack();
         }
     }
 }

@@ -1,18 +1,9 @@
 ﻿using Model;
-using System;
+using Service;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using vezba.Repository;
 
 namespace vezba.ManagerGUI
@@ -21,8 +12,8 @@ namespace vezba.ManagerGUI
     public partial class MedicineAddPage : Page
     {
         public List<Medicine> MedicineList { get; set; }
-        public MedicineFileRepository fileRepository;
         private Medicine newMedicine;
+
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
         public List<Ingridient> ingredientTemporaryList { get; set; }
 
@@ -30,8 +21,8 @@ namespace vezba.ManagerGUI
         {
             InitializeComponent();
             this.DataContext = this;
-            MedicineFileRepository ms = new MedicineFileRepository();
-            List<Medicine> medicineList = ms.GetAll();
+            MedicineService medicineService = new MedicineService();
+            List<Medicine> medicineList = medicineService.GetAllMedicine();
             comboReplacementMedicine.ItemsSource = medicineList;
             List<string> condition = new List<string> { "Kapsula", "Pilula", "Sirup" };
             comboCondition.ItemsSource = condition;
@@ -75,14 +66,15 @@ namespace vezba.ManagerGUI
 
             Medicine replacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
 
-            MedicineFileRepository fileRepository = new MedicineFileRepository();
-            int MedicineID = fileRepository.GenerateNextId();
+            MedicineService medicineService = new MedicineService();
+
+            int MedicineID = medicineService.GenerateNextMedicineId();
 
             newMedicine = new Medicine(Name, Manufacturer, Packaging, MedicineID, Condition) { ReplacementMedicine = replacementMedicine };
 
             MedicinePage.MedicineList.Add(newMedicine);
             newMedicine.ingridient = ingredientTemporaryList;
-            fileRepository.Save(newMedicine);
+            medicineService.SaveMedicine(newMedicine);
             NavigationService.GoBack();
 
         }

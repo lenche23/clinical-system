@@ -1,40 +1,72 @@
 using System;
+using System.Collections.Generic;
+using Model;
+using vezba.Repository;
 
 namespace Service
 {
-   public class RoomInventoryService
-   {
-   }
+    public class RoomInventoryService
+    {
 
-   // Sekretar*******************************************************************************
+        public RoomInventoryFileRepository RoomInventoryRepository { get; }
 
-
-
-
-
-   // SekretarKraj***************************************************************************
-
-   // Pacijent*******************************************************************************
+        public RoomInventoryService()
+        {
+            RoomInventoryRepository = new RoomInventoryFileRepository();
+        }
 
 
-
-
-
-   // PacijentKraj***************************************************************************
-
-   // Lekar**********************************************************************************
+        // Sekretar*******************************************************************************
 
 
 
 
 
-   // LekarKraj******************************************************************************
+        // SekretarKraj***************************************************************************
 
-   // Upravnik*******************************************************************************
-
-
+        // Pacijent*******************************************************************************
 
 
 
-   // UpravnikKraj***************************************************************************
+
+
+        // PacijentKraj***************************************************************************
+
+        // Lekar**********************************************************************************
+
+
+
+
+
+        // LekarKraj******************************************************************************
+
+        // Upravnik*******************************************************************************
+
+        public List<RoomInventory> GetAllRoomInventories()
+        {
+            return RoomInventoryRepository.GetAll();
+        }
+
+        public Boolean SaveRoomInventory(RoomInventory newRoomInventory)
+        {
+            return RoomInventoryRepository.Save(newRoomInventory);
+        }
+
+        public Boolean UpdateRoomInventory(RoomInventory updatedRoomInventory)
+        {
+            return RoomInventoryRepository.Update(updatedRoomInventory);
+        }
+
+        public Boolean DeleteRoomInventory(int roomInventoryId)
+        {
+            return RoomInventoryRepository.Delete(roomInventoryId);
+        }
+
+        public int GenerateNextRoomInventoryId()
+        {
+            return RoomInventoryRepository.GenerateNextId();
+        }
+
+        // UpravnikKraj***************************************************************************
+    }
 }

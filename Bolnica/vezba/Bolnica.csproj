@@ -195,6 +195,9 @@
     <Compile Include="ManagerGUI\MedicinePage.xaml.cs">
       <DependentUpon>MedicinePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerGUI\MedicineUpdatePage.xaml.cs">
+      <DependentUpon>MedicineUpdatePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerGUI\RenovationsPage.xaml.cs">
       <DependentUpon>RenovationsPage.xaml</DependentUpon>
     </Compile>
@@ -683,6 +686,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerGUI\MedicinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\MedicineUpdatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

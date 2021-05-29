@@ -5,6 +5,11 @@
         "StartTime": "2021-10-10T10:00:00",
         "DurationInDays": 2,
         "RenovationID": 1
+      },
+      {
+        "StartTime": "2021-11-10T20:00:00",
+        "DurationInDays": 3,
+        "RenovationID": 2
       }
     ],
     "RoomType": 0,
@@ -16,6 +21,11 @@
         "StartTime": "2021-10-10T10:00:00",
         "DurationInDays": 2,
         "RenovationID": 1
+      },
+      {
+        "StartTime": "2021-11-10T20:00:00",
+        "DurationInDays": 3,
+        "RenovationID": 2
       }
     ]
   },

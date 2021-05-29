@@ -1,31 +1,18 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {
-    /// <summary>
-    /// Interaction logic for InventoryPage.xaml
-    /// </summary>
     public partial class InventoryPage : Page
     {
         public static ObservableCollection<Equipment> EquipmentList { get; set; }
         public static List<Equipment> equipmentList;
-        private EquipmentFileRepository _fileRepository;
         private MainManagerWindow mainManagerWindow;
 
         public InventoryPage(MainManagerWindow mainManagerWindow)
@@ -33,8 +20,8 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             this.DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
-            _fileRepository = new EquipmentFileRepository();
-            equipmentList = _fileRepository.GetAll();
+            EquipmentService equipmentService = new EquipmentService();
+            equipmentList = equipmentService.GetAllEquipment();
             EquipmentList = new ObservableCollection<Equipment>(equipmentList);
             InventaryBinding.ItemsSource = EquipmentList;
 
@@ -45,7 +32,8 @@ namespace vezba.ManagerGUI
         private void Add_Equipment_Button_Click(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new InventoryAddEquipmentPage();
-            equipmentList = _fileRepository.GetAll();
+            EquipmentService equipmentService = new EquipmentService();
+            equipmentList = equipmentService.GetAllEquipment();
         }
 
         private void Remove_Equipment_Button_Click(object sender, RoutedEventArgs e)
@@ -53,8 +41,9 @@ namespace vezba.ManagerGUI
             if (InventaryBinding.SelectedIndex > -1)
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
-                _fileRepository.Delete(equipment.Id);
-                equipmentList = _fileRepository.GetAll();
+                EquipmentService equipmentService = new EquipmentService();
+                equipmentService.DeleteEquipment(equipment.Id);
+                equipmentList = equipmentService.GetAllEquipment();
                 EquipmentList.Remove(equipment);
             }
 
@@ -70,8 +59,6 @@ namespace vezba.ManagerGUI
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
                 mainManagerWindow.MainManagerView.Content = new InventoryViewEquipmentPage(equipment);
-                //var s = new InventaryViewEquipment(equipment);
-                //s.Show();
             }
 
             else
@@ -86,8 +73,6 @@ namespace vezba.ManagerGUI
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
                 mainManagerWindow.MainManagerView.Content = new InventoryChangeEquipmentPage(equipment, this);
-                //var s = new InventaryChangeEquipment(equipment, this);
-                //s.Show();
             }
 
             else

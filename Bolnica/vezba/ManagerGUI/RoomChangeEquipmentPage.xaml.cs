@@ -1,18 +1,7 @@
-﻿using Bolnica;
-using Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Model;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Service;
 using vezba.Repository;
 
 namespace vezba.ManagerGUI
@@ -50,10 +39,8 @@ namespace vezba.ManagerGUI
             var Quantity = int.Parse(Količina.Text);
             selected.Quantity = Quantity;
 
-            //RoomFileRepository rs = new RoomFileRepository();
-            //rs.Update(this.r_selected);
-            RoomInventoryFileRepository ris = new RoomInventoryFileRepository();
-            ris.Update(this.selected);
+            RoomInventoryService roomInventoryService = new RoomInventoryService();
+            roomInventoryService.UpdateRoomInventory(this.selected);
             wur.RoomInventoryBinding.Items.Refresh();
             NavigationService.GoBack();
 

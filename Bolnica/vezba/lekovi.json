@@ -22,28 +22,9 @@
     "Packaging": "30 x 400 mg",
     "MedicineID": 0,
     "Status": 0,
-    "Condition": 0,
+    "Condition": 2,
     "IsDeleted": false,
-    "ReplacementMedicine": {
-      "ingridient": [
-        {
-          "Name": "Trifolium pratense extractum siccum standardisatum"
-        }
-      ],
-      "Name": "Oestrofact",
-      "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-      "Packaging": "50 x 70 mg",
-      "MedicineID": 3,
-      "Status": 0,
-      "Condition": 1,
-      "IsDeleted": false,
-      "ReplacementMedicine": null,
-      "Ingridient": [
-        {
-          "Name": "Trifolium pratense extractum siccum standardisatum"
-        }
-      ]
-    },
+    "ReplacementMedicine": null,
     "Ingridient": [
       {
         "Name": "SilicijumDioksid"
@@ -73,7 +54,7 @@
     "Packaging": "Pakovanje",
     "MedicineID": 2,
     "Status": 1,
-    "Condition": 1,
+    "Condition": 2,
     "IsDeleted": false,
     "ReplacementMedicine": {
       "ingridient": [
