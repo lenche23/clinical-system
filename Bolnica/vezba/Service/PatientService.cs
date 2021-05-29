@@ -39,6 +39,12 @@ namespace Service
             return PatientRepository.Delete(jmbg);
         }
 
+        public void UnblockPatient(string jmbg)
+        {
+            Patient blockedPatient = PatientRepository.GetOne(jmbg);
+            blockedPatient.IsBlocked = false;
+            PatientRepository.Update(blockedPatient);
+        }
 
 
         // SekretarKraj***************************************************************************
