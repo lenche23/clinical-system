@@ -369,6 +369,8 @@ namespace Service
                     appointments.Add(appointment);
                 }
             }
+            appointments.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
+            appointments.Reverse();
             return appointments;
         }
 
@@ -382,6 +384,8 @@ namespace Service
                     appointments.Add(appointment);
                 }
             }
+            appointments.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
+            appointments.Reverse();
             return appointments;
         }
         // PacijentKraj***************************************************************************
