@@ -5695,5 +5695,184 @@
     "DoctorName": "Darko Torbica",
     "AppointmentDescription": "Pregled kod lekara opste prakse.",
     "StartTimee": "2021-06-06T08:00:00"
+  },
+  {
+    "StartTime": "2021-06-01T10:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 23,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Opsti"
+      },
+      "NameAndSurname": "Jana Jankovic",
+      "SalaryInRsd": 100000,
+      "Username": "jana",
+      "Password": "jaca",
+      "Name": "Jana",
+      "Surname": "Jankovic",
+      "Jmbg": "0611985621455",
+      "DateOfBirth": "2021-05-30T00:13:07.5186875+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06355589110",
+      "Adress": "neka ulica 12, Novi Sad",
+      "Email": "jana@gmail.com",
+      "IdCard": "007521352",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": null,
+        "anamnesis": null,
+        "prescription": [
+          {
+            "StartDate": "2021-05-30T00:13:04.5851208+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 1,
+            "Id": 0,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Vitamin C",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-05-30T00:13:04.5851208+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Brufen",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "12345",
+        "MedicalIdNumber": "12345",
+        "Allergen": [],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-30T00:13:04.5851208+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 1,
+            "Id": 0,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Vitamin C",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-05-30T00:13:04.5851208+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Brufen",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-06-01T10:15:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Jana Jankovic",
+    "AppointmentDescription": "Pregled kod lekara opste prakse.",
+    "StartTimee": "2021-06-01T10:00:00"
   }
 ]

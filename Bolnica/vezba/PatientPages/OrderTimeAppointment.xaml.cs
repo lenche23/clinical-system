@@ -16,22 +16,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using vezba.Repository;
 
 namespace vezba.PatientPages
 {
-    public partial class OrderDoctorAppointment : Page
+    public partial class OrderTimeAppointment : Page
     {
+        public static ObservableCollection<Doctor> Doctors { get; set; }
         private DoctorService DoctorService { get; set; }
         private AppointmentService AppointmentService { get; set; }
-        public Doctor Doctor{ get; set; }
-        public OrderDoctorAppointment()
+        public OrderTimeAppointment()
         {
             InitializeComponent();
-            this.DataContext = this;
             DoctorService = new DoctorService();
             AppointmentService = new AppointmentService();
-            Doctor = DoctorService.LoadDoctor();
+            List<Doctor> doctors = DoctorService.GetAllDoctors();
+            Doctors = new ObservableCollection<Doctor>(doctors);
+            doctorsTable.ItemsSource = Doctors;
         }
 
         private void OrderAppointment_Click(object sender, RoutedEventArgs e)
@@ -41,9 +41,10 @@ namespace vezba.PatientPages
 
             if (HasAllInfo())
             {
-                DateTime dateTimeFinal = AppointmentService.ParseTime(selectedDate, selectedTime);
-                Appointment a = new Appointment(Doctor, dateTimeFinal, PatientView.Patient);
-               
+                Doctor selectedDoctor = (Doctor)doctorsTable.SelectedItem;
+                DateTime dateTimeFinal = AppointmentService.ParseTime(selectedDate,selectedTime);
+                Appointment a = new Appointment(selectedDoctor, dateTimeFinal, PatientView.Patient);
+
                 if (AppointmentService.CanSchedule(selectedDate))
                 {
                     AppointmentService.PatientCanScheduleAppointment(a);
@@ -63,7 +64,7 @@ namespace vezba.PatientPages
 
         private Boolean HasAllInfo()
         {
-            if (calendar.SelectedDate != null && (comboBox.Text != null && !comboBox.Text.Equals("")))
+            if (calendar.SelectedDate != null && (comboBox.Text != null && !comboBox.Text.Equals("")) && doctorsTable.SelectedItems.Count > 0)
             {
                 return true;
             }

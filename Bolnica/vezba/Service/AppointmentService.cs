@@ -337,6 +337,27 @@ namespace Service
                 return false;
             }
         }
+
+        public DateTime ParseTime(DateTime selectedDate, String selectedTime)
+        {
+            selectedDate.ToString("MM/dd/yyyy");
+            DateTime dateTime = DateTime.ParseExact(selectedTime, "HH:mm", CultureInfo.InvariantCulture);
+            DateTime dateTimeFinal = selectedDate.Date.Add(dateTime.TimeOfDay);
+            return dateTimeFinal;
+        }
+
+        public Boolean CanSchedule(DateTime selectedDate)
+        {
+            int diff = (selectedDate - DateTime.Now.Date).Days;
+            if (diff <= 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         // PacijentKraj***************************************************************************
 
         // Lekar**********************************************************************************

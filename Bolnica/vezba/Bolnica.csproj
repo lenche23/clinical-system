@@ -254,6 +254,9 @@
     <Compile Include="PatientPages\OrderDoctorAppointment.xaml.cs">
       <DependentUpon>OrderDoctorAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PatientPages\OrderTimeAppointment.xaml.cs">
+      <DependentUpon>OrderTimeAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repository\DeclinedMedicineFileRepository.cs" />
     <Compile Include="Model\DoctorEvaluation.cs" />
     <Compile Include="Repository\DoctorEvaluationFileRepository.cs" />
@@ -823,6 +826,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PatientPages\OrderDoctorAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\OrderTimeAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
