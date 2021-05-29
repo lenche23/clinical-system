@@ -371,6 +371,19 @@ namespace Service
             }
             return appointments;
         }
+
+        public List<Appointment> GetPatientPastAppointments()
+        {
+            List<Appointment> appointments = new List<Appointment>();
+            foreach (Appointment appointment in GetAllAppointments())
+            {
+                if (appointment.StartTime.Date < DateTime.Now && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
+                {
+                    appointments.Add(appointment);
+                }
+            }
+            return appointments;
+        }
         // PacijentKraj***************************************************************************
 
         // Lekar**********************************************************************************

@@ -158,8 +158,7 @@ namespace vezba.PatientPages
 
         private void ButtonHistoryAppointment_Click(object sender, RoutedEventArgs e)
         {
-            var istorijaPregleda = new AppointmentHistory();
-            istorijaPregleda.Show();
+            this.NavigationService.Navigate(new AppointmentHistoryPage());
         }
     }
 }
