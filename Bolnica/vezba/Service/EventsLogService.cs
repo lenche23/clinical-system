@@ -20,7 +20,7 @@ namespace Service
         // Pacijent*******************************************************************************
         public List<EventsLog> LoadEvents()
         {
-           return repository.Load();
+           return repository.ReadFromFile();
         }
 
         private Boolean Update(EventsLog log)

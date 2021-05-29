@@ -18,54 +18,36 @@ namespace vezba.Repository
 
         public List<EventsLog> GetAll()
         {
-            List<EventsLog> logs = new List<EventsLog>();
-            List<EventsLog> logs1 = Load();
-            /*for (int i = 0; i < logs1.Count; i++)
-            {
-                if (logs1[i].IsDeleted == false)
-                {
-                    logs.Add(logs1[i]);
-                }
-            }*/
+            List<EventsLog> logs1 = ReadFromFile();
             return logs1;
         }
       
         public Boolean Save(EventsLog log)
         {
-            List<EventsLog> logs = new List<EventsLog>();
-            logs = Load();
-            logs.Add(log);
-            try
+            List<EventsLog> storedElogs = new List<EventsLog>();
+            storedElogs = ReadFromFile();
+            for (int i = 0; i < storedElogs.Count; i++)
             {
-                var jsonToFile = JsonConvert.SerializeObject(logs, Formatting.Indented);
-                using (StreamWriter writer = new StreamWriter(this.FileName))
-                {
-                    writer.Write(jsonToFile);
-                }
+                if (storedElogs[i].PatientJmbg.Equals(log.PatientJmbg))
+                    return false;
             }
-            catch (Exception e) { }
+            storedElogs.Add(log);
+            WriteToFile(storedElogs);
 
             return true;
         }
       
         public Boolean Update(EventsLog log)
         {
-            List<EventsLog> logs = Load();
-            for (int i = 0; i < logs.Count; i++)
+            List<EventsLog> storegElogs = ReadFromFile();
+            for (int i = 0; i < storegElogs.Count; i++)
             {
-                if (logs[i].PatientJmbg.Equals(log.PatientJmbg))
+                if (storegElogs[i].PatientJmbg.Equals(log.PatientJmbg))
                 {
-                    logs[i].PatientJmbg = log.PatientJmbg;
-                    logs[i].EventDates = log.EventDates;
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(logs, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e) { }
+                    storegElogs[i].PatientJmbg = log.PatientJmbg;
+                    storegElogs[i].EventDates = log.EventDates;
+                    WriteToFile(storegElogs);
+                    return true;
                 }
             }
             return false;
@@ -73,7 +55,7 @@ namespace vezba.Repository
       
         public EventsLog GetOne(String patientJmbg)
         {
-            List<EventsLog> logs = Load();
+            List<EventsLog> logs = ReadFromFile();
             for (int i = 0; i < logs.Count; i++)
             {
                 if (logs[i].PatientJmbg == patientJmbg)
@@ -83,27 +65,39 @@ namespace vezba.Repository
             }
             return null;
         }
-      
+
         public Boolean Delete(String patientJmbg)
         {
             throw new NotImplementedException();
         }
-      
-        public List<EventsLog> Load()
+
+        public List<EventsLog> ReadFromFile()
         {
-            List<EventsLog> logs = new List<EventsLog>();
             try
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
-                List<EventsLog> logs1 = new List<EventsLog>();
-                logs1 = JsonConvert.DeserializeObject<List<EventsLog>>(jsonFromFile);
-                if (logs1 == null)
-                    return new List<EventsLog>();
-                return logs1;
+                List<EventsLog> elogs = JsonConvert.DeserializeObject<List<EventsLog>>(jsonFromFile);
+                return elogs;
             }
             catch { }
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return logs;
+            return new List<EventsLog>();
+        }
+
+        private void WriteToFile(List<EventsLog> elogs)
+        {
+            try
+            {
+                var jsonToFile = JsonConvert.SerializeObject(elogs, Formatting.Indented);
+                using (StreamWriter writer = new StreamWriter(this.FileName))
+                {
+                    writer.Write(jsonToFile);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
+            }
         }
     }
 }

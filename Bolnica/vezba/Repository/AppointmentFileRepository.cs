@@ -122,8 +122,8 @@ namespace vezba.Repository
 
         public int GenerateNextId()
         {
-            List<Appointment> list = ReadFromFile();
-            return list.Count;
+            List<Appointment> appointments = ReadFromFile();
+            return appointments.Count;
         }
 
     }

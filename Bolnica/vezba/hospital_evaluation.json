@@ -16,5 +16,11 @@
     "Comment": "ocajno",
     "Id": 2,
     "IsDeleted": false
+  },
+  {
+    "Rating": 5,
+    "Comment": "Extra ful HD",
+    "Id": 3,
+    "IsDeleted": false
   }
 ]

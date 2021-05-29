@@ -64,7 +64,7 @@ namespace vezba.PatientPages
         private void ButtonOrderAppointment_Click(object sender, RoutedEventArgs e)
         {
             fileRepository = new EventsLogFileRepository();
-            list = fileRepository.Load();
+            list = fileRepository.ReadFromFile();
             pps = new PatientFileRepository();
             Patient patient = pps.GetOne("1008985563244");
             Patient = patient;
@@ -110,7 +110,7 @@ namespace vezba.PatientPages
         private void ButtonChangeAppointment_Click(object sender, RoutedEventArgs e)
         {
             fileRepository = new EventsLogFileRepository();
-            list = fileRepository.Load();
+            list = fileRepository.ReadFromFile();
             pps = new PatientFileRepository();
             Patient patient = pps.GetOne("1008985563244");
             Patient = patient;
