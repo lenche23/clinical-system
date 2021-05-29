@@ -43,6 +43,23 @@ namespace vezba.SecretaryGUI
             SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
             AppointmentsButton.Background = b;
         }
+
+        private void DoctorsButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowContent.Content = new SecretaryDoctors();
+            ResetButtonColors();
+            SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
+            DoctorsButton.Background = b;
+        }
+
+        private void RoomsButton_Click(object sender, RoutedEventArgs e)
+        {
+            //WindowContent.Content = new SecretaryRooms();
+            ResetButtonColors();
+            SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
+            RoomsButton.Background = b;
+        }
+
         private void AnnouncementsButton_Click(object sender, RoutedEventArgs e)
         {
             WindowContent.Content = new SecretaryAnnouncements();
@@ -58,7 +75,7 @@ namespace vezba.SecretaryGUI
             DoctorsButton.Background = Brushes.Transparent;
             RoomsButton.Background = Brushes.Transparent;
             AnnouncementsButton.Background = Brushes.Transparent;
-            PriceListButton.Background = Brushes.Transparent;
+            //PriceListButton.Background = Brushes.Transparent;
             NotificationButton.Background = Brushes.Transparent;
         }
 

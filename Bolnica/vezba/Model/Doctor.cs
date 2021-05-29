@@ -34,6 +34,13 @@ namespace Model
                 return Name + " " + Surname;
             }
         }
+        public string SpecialityName
+        {
+            get
+            {
+                return Speciality.Name;
+            }
+        }
 
         public override string ToString()
         {

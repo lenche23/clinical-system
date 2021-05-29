@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using vezba.Repository;
+using vezba.SecretaryGUI;
 
 namespace Service
 {
@@ -282,6 +283,20 @@ namespace Service
                 var appointment = appointments.FirstOrDefault(a => a.AppointentId.Equals(oAppointment.AppointentId));
                 if (appointment != null)
                     appointments.Remove(appointment);
+            }
+        }
+
+        public void RescheduleAppointmentForRescheduling(AppointmentForReschedulingDTO appointmentForRescheduling)
+        {
+            List<Appointment> scheduledAppointments = GetAllAppointments();
+            Appointment rescheduledAppointment = scheduledAppointments.FirstOrDefault(a => a.AppointentId.Equals(appointmentForRescheduling.AppointmentId));
+            if (rescheduledAppointment != null)
+            {
+                rescheduledAppointment.StartTime = appointmentForRescheduling.SuggestedTime;
+                EditAppointment(rescheduledAppointment);
+                Appointment previousAppointment = SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(rescheduledAppointment.AppointentId));
+                if (previousAppointment != null)
+                    SecretaryAppointments.Appointments[SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = rescheduledAppointment;
             }
         }
 
