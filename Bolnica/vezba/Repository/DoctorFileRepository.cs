@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Windows;
 using Model;
+using Newtonsoft.Json;
 
 namespace vezba.Repository
 {
@@ -8,9 +11,21 @@ namespace vezba.Repository
     {
         public String FileName { get; set; }
 
+        public DoctorFileRepository()
+        {
+            this.FileName = "../../doctors.json";
+        }
+
         public List<Doctor> GetAll()
         {
-            return Load();
+            List<Doctor> storedDoctors = ReadFromFile();
+            List<Doctor> doctors = new List<Doctor>();
+            for (int i = 0; i < storedDoctors.Count; i++)
+            {
+                if (storedDoctors[i].IsDeleted == false)
+                    doctors.Add(storedDoctors[i]);
+            }
+            return doctors;
         }
 
         public List<Doctor> GetDoctorsWithSpeciality(Speciality speciality)
@@ -37,9 +52,19 @@ namespace vezba.Repository
         }
       
       
-        private List<Doctor> Load()
+        private List<Doctor> ReadFromFile()
         {
-            List<Doctor> doctors = new List<Doctor>();
+            try
+            {
+                String jsonFromFile = File.ReadAllText(this.FileName);
+                List<Doctor> doctors = JsonConvert.DeserializeObject<List<Doctor>>(jsonFromFile);
+                return doctors;
+            }
+            catch { }
+            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
+            return new List<Doctor>();
+
+            /*List<Doctor> doctors = new List<Doctor>();
             Speciality s1 = new Speciality("Oftalmolog");
             Doctor d1 = new Doctor("Pera", "Peric", "1541546542644", DateTime.Now, Sex.male, "0621846712", "neka ulica 45, Novi Sad", "pera@gmail.com", "007123352", 90000, s1, "pera", "perica");
             doctors.Add(d1); 
@@ -54,24 +79,87 @@ namespace vezba.Repository
             Speciality s5 = new Speciality("Opsti");
             Doctor d5 = new Doctor("Jana", "Jankovic", "0611985621455", DateTime.Now, Sex.female, "06355589110", "neka ulica 12, Novi Sad", "jana@gmail.com", "007521352", 100000, s5, "jana", "jaca");
             doctors.Add(d5);
+            WorkingHours wh1 = new WorkingHours(new DateTime(2021, 5, 24), Shift.firstShift);
+            WorkingHours wh2 = new WorkingHours(new DateTime(2021, 5, 24), Shift.secondShift);
+            WorkingHours wh3 = new WorkingHours(new DateTime(2021, 5, 17), Shift.secondShift);
 
-            return doctors;
+            d1.WorkingSchedule.Add(wh2);
+            d2.WorkingSchedule.Add(wh1);
+            d3.WorkingSchedule.Add(wh1);
+            d4.WorkingSchedule.Add(wh2);
+            d5.WorkingSchedule.Add(wh1);
+
+            d1.WorkingSchedule.Add(wh3);
+
+            WriteToFile(doctors);*/
+
+            //return doctors;
 
         }
 
-        public Boolean Save(Doctor d)
+        public Boolean Save(Doctor newDoctor)
         {
-            throw new NotImplementedException();
+            List<Doctor> storedDoctors = ReadFromFile();
+
+            foreach (Doctor doctor in storedDoctors)
+            {
+                if (doctor.Jmbg == newDoctor.Jmbg)
+                    return false;
+            }
+            storedDoctors.Add(newDoctor);
+
+            WriteToFile(storedDoctors);
+            return true;
         }
 
-        public Boolean Update(Doctor d)
+        public Boolean Update(Doctor editedDoctor)
         {
-            throw new NotImplementedException();
+            List<Doctor> storedDoctors = ReadFromFile();
+            foreach (Doctor doctor in storedDoctors)
+            {
+                if (doctor.Jmbg == editedDoctor.Jmbg && doctor.IsDeleted == false)
+                {
+                    doctor.VacationDays = editedDoctor.VacationDays;
+                    doctor.WorkingSchedule = editedDoctor.WorkingSchedule;
+                    doctor.AvailableDaysOff = editedDoctor.AvailableDaysOff;
+
+                    WriteToFile(storedDoctors);
+                    return true;
+                }
+            }
+            return false;
         }
 
         public Boolean Delete(String jmbg)
         {
-            throw new NotImplementedException();
+            List<Doctor> storedDoctors = ReadFromFile();
+            foreach (Doctor doctor in storedDoctors)
+            {
+                if (doctor.Jmbg == jmbg && doctor.IsDeleted == false)
+                {
+                    doctor.IsDeleted = true;
+                    WriteToFile(storedDoctors);
+                    return true;
+
+                }
+            }
+            return false;
+        }
+
+        private void WriteToFile(List<Doctor> doctors)
+        {
+            try
+            {
+                var jsonToFile = JsonConvert.SerializeObject(doctors, Formatting.Indented);
+                using (StreamWriter writer = new StreamWriter(this.FileName))
+                {
+                    writer.Write(jsonToFile);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
+            }
         }
 
     }

@@ -1,0 +1,225 @@
+[
+  {
+    "Speciality": {
+      "Name": "Oftalmolog"
+    },
+    "WorkingSchedule": [
+      {
+        "BeginningDate": "2021-05-17T00:00:00",
+        "EndDate": "2021-05-24T00:00:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "17.05.2021.",
+        "FormatedEndDate": "24.05.2021."
+      },
+      {
+        "BeginningDate": "2021-05-24T00:00:00",
+        "EndDate": "2021-05-31T00:00:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "24.05.2021.",
+        "FormatedEndDate": "31.05.2021."
+      },
+      {
+        "BeginningDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-06-07T00:00:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "31.05.2021.",
+        "FormatedEndDate": "07.06.2021."
+      },
+      {
+        "BeginningDate": "2021-06-07T00:00:00",
+        "EndDate": "2021-06-14T00:00:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "07.06.2021.",
+        "FormatedEndDate": "14.06.2021."
+      },
+      {
+        "BeginningDate": "2021-06-14T00:00:00",
+        "EndDate": "2021-06-21T00:00:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "14.06.2021.",
+        "FormatedEndDate": "21.06.2021."
+      },
+      {
+        "BeginningDate": "2021-06-21T00:00:00",
+        "EndDate": "2021-06-28T00:00:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "21.06.2021.",
+        "FormatedEndDate": "28.06.2021."
+      }
+    ],
+    "AvailableDaysOff": 20,
+    "VacationDays": [],
+    "NameAndSurname": "Pera Peric",
+    "SpecialityName": "Oftalmolog",
+    "SalaryInRsd": 90000,
+    "Username": "pera",
+    "Password": "perica",
+    "Name": "Pera",
+    "Surname": "Peric",
+    "Jmbg": "1541546542644",
+    "DateOfBirth": "2021-05-29T23:39:58.470643+02:00",
+    "Sex": 0,
+    "PhoneNumber": "0621846712",
+    "Adress": "neka ulica 45, Novi Sad",
+    "Email": "pera@gmail.com",
+    "IdCard": "007123352",
+    "Type": 2,
+    "IsDeleted": false
+  },
+  {
+    "Speciality": {
+      "Name": "Kardiolog"
+    },
+    "WorkingSchedule": [
+      {
+        "BeginningDate": "2021-05-24T00:00:00",
+        "EndDate": "2021-05-31T00:00:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "24.05.2021.",
+        "FormatedEndDate": "31.05.2021."
+      },
+      {
+        "BeginningDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-06-07T00:00:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "31.05.2021.",
+        "FormatedEndDate": "07.06.2021."
+      }
+    ],
+    "AvailableDaysOff": 20,
+    "VacationDays": [],
+    "NameAndSurname": "Dana Dimitrijevic",
+    "SpecialityName": "Kardiolog",
+    "SalaryInRsd": 120000,
+    "Username": "dana",
+    "Password": "danica",
+    "Name": "Dana",
+    "Surname": "Dimitrijevic",
+    "Jmbg": "0104998253658",
+    "DateOfBirth": "2021-05-29T23:39:58.470643+02:00",
+    "Sex": 1,
+    "PhoneNumber": "0621975732",
+    "Adress": "neka ulica 62, Novi Sad",
+    "Email": "dana@gmail.com",
+    "IdCard": "008996452",
+    "Type": 2,
+    "IsDeleted": false
+  },
+  {
+    "Speciality": {
+      "Name": "Kardiolog"
+    },
+    "WorkingSchedule": [
+      {
+        "BeginningDate": "2021-05-24T00:00:00",
+        "EndDate": "2021-05-31T00:00:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "24.05.2021.",
+        "FormatedEndDate": "31.05.2021."
+      },
+      {
+        "BeginningDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-06-07T00:00:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "31.05.2021.",
+        "FormatedEndDate": "07.06.2021."
+      }
+    ],
+    "AvailableDaysOff": 20,
+    "VacationDays": [],
+    "NameAndSurname": "Darko Torbica",
+    "SpecialityName": "Kardiolog",
+    "SalaryInRsd": 70000,
+    "Username": "darko",
+    "Password": "dare",
+    "Name": "Darko",
+    "Surname": "Torbica",
+    "Jmbg": "1708962324890",
+    "DateOfBirth": "2021-05-29T23:39:58.470643+02:00",
+    "Sex": 0,
+    "PhoneNumber": "0665813272",
+    "Adress": "neka ulica 38, Novi Sad",
+    "Email": "darko@gmail.com",
+    "IdCard": "007155721",
+    "Type": 2,
+    "IsDeleted": false
+  },
+  {
+    "Speciality": {
+      "Name": "Stomatolog"
+    },
+    "WorkingSchedule": [
+      {
+        "BeginningDate": "2021-05-24T00:00:00",
+        "EndDate": "2021-05-31T00:00:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "24.05.2021.",
+        "FormatedEndDate": "31.05.2021."
+      },
+      {
+        "BeginningDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-06-07T00:00:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "31.05.2021.",
+        "FormatedEndDate": "07.06.2021."
+      }
+    ],
+    "AvailableDaysOff": 20,
+    "VacationDays": [],
+    "NameAndSurname": "Milica Milicevic",
+    "SpecialityName": "Stomatolog",
+    "SalaryInRsd": 100000,
+    "Username": "milica",
+    "Password": "mica",
+    "Name": "Milica",
+    "Surname": "Milicevic",
+    "Jmbg": "2205972659017",
+    "DateOfBirth": "2021-05-29T23:39:58.470643+02:00",
+    "Sex": 1,
+    "PhoneNumber": "06364789110",
+    "Adress": "neka ulica 98, Novi Sad",
+    "Email": "milica@gmail.com",
+    "IdCard": "008100252",
+    "Type": 2,
+    "IsDeleted": false
+  },
+  {
+    "Speciality": {
+      "Name": "Opsti"
+    },
+    "WorkingSchedule": [
+      {
+        "BeginningDate": "2021-05-24T00:00:00",
+        "EndDate": "2021-05-31T00:00:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "24.05.2021.",
+        "FormatedEndDate": "31.05.2021."
+      },
+      {
+        "BeginningDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-06-07T00:00:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "31.05.2021.",
+        "FormatedEndDate": "07.06.2021."
+      }
+    ],
+    "AvailableDaysOff": 20,
+    "VacationDays": [],
+    "NameAndSurname": "Jana Jankovic",
+    "SpecialityName": "Opsti",
+    "SalaryInRsd": 100000,
+    "Username": "jana",
+    "Password": "jaca",
+    "Name": "Jana",
+    "Surname": "Jankovic",
+    "Jmbg": "0611985621455",
+    "DateOfBirth": "2021-05-29T23:39:58.470643+02:00",
+    "Sex": 1,
+    "PhoneNumber": "06355589110",
+    "Adress": "neka ulica 12, Novi Sad",
+    "Email": "jana@gmail.com",
+    "IdCard": "007521352",
+    "Type": 2,
+    "IsDeleted": false
+  }
+]

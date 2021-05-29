@@ -1,10 +1,14 @@
 using System;
+using System.Collections.Generic;
 
 namespace Model
 {
     public class Doctor : Employee
     {
         public Speciality Speciality { get; set; }
+        public List<WorkingHours> WorkingSchedule { get; set; }
+        public int AvailableDaysOff { get; set; }
+        public List<VacationDays> VacationDays { get; set; }
 
         public Doctor(string name, string surname, string jmbg, DateTime date, Sex sex, string phoneNumber, string adress, string email, string idNum, int salary, Speciality speciality, string username, string password)
         {
@@ -24,8 +28,11 @@ namespace Model
             this.Type = UserType.doctor;
             this.SalaryInRsd = salary;
             this.Speciality = speciality;
+            WorkingSchedule = new List<WorkingHours>();
+            VacationDays = new List<VacationDays>();
+            AvailableDaysOff = 20;
 
-        }
+    }
 
         public string NameAndSurname
         {

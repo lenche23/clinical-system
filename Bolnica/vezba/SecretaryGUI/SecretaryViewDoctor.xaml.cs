@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,15 +22,17 @@ namespace vezba.SecretaryGUI
     /// </summary>
     public partial class SecretaryViewDoctor : Window
     {
-        public ObservableCollection<WorkingHours> WorkingHours { get; set; }
-        public ObservableCollection<VacationDays> VacationDays { get; set; }
+        public static ObservableCollection<WorkingHours> WorkingHours { get; set; }
+        public static ObservableCollection<VacationDays> VacationDays { get; set; }
         private Doctor Doctor { get; }
         public SecretaryViewDoctor(Doctor selectedDoctor)
         {
             InitializeComponent();
             Doctor = selectedDoctor;
+            DoctorService doctorService = new DoctorService();
+            
 
-            WorkingHours = new ObservableCollection<WorkingHours>();
+            WorkingHours = new ObservableCollection<WorkingHours>(doctorService.GetFutureWorkingHoursForDoctor(Doctor.Jmbg));
             VacationDays = new ObservableCollection<VacationDays>();
             this.DataContext = this;
 
@@ -50,17 +53,26 @@ namespace vezba.SecretaryGUI
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void AddWorkingHoursButton_Click(object sender, RoutedEventArgs e)
         {
-
+            SecretaryNewWorkingHours w = new SecretaryNewWorkingHours(Doctor);
+            w.Show();
         }
 
         private void RemoveWorkingHoursButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (workingScheduleTable.SelectedCells.Count > 0)
+            {
+                WorkingHours selectedWorkingHours = (WorkingHours)workingScheduleTable.SelectedItem;
+                DoctorService doctorService = new DoctorService();
+                doctorService.RemoveWorkingHoursFromDoctor(Doctor.Jmbg, selectedWorkingHours);
+                WorkingHours.Remove(selectedWorkingHours);
+            }
+            else
+                MessageBox.Show("Niste selektovali radno vreme!");
         }
 
         private void AddVacationDaysButton_Click(object sender, RoutedEventArgs e)
