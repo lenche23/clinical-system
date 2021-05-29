@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Model;
+using Service;
 using vezba.Repository;
 
 namespace vezba.DoctorPages
@@ -34,8 +35,8 @@ namespace vezba.DoctorPages
         {
             InitializeComponent();
             this.doctorView = doctorView;
-            DoctorFileRepository doctorFileRepository = new DoctorFileRepository();
-            Doctors = doctorFileRepository.GetAll();
+            DoctorService doctorService = new DoctorService();
+            Doctors = doctorService.GetAllDoctors();
             DataContext = this;
 
             var dayOfWeekToday = (6 + (int) DateTime.Today.DayOfWeek) % 7;
@@ -43,13 +44,6 @@ namespace vezba.DoctorPages
             endOfWeek = startOfWeek.AddDays(7);
 
             CreateSchedule();
-
-            /*GenerateAppointmentsForSelectedWeek();
-
-            foreach (var appointment in appointments)
-            {
-                ShowAppointment(appointment);
-            }*/
 
             var timeGrid = CreateTimeGrid();
 
@@ -60,7 +54,6 @@ namespace vezba.DoctorPages
 
             scrollViewer = new ScrollViewer();
             scrollViewer.Content = timeDockPanel;
-            //SetScrollViewerToFirstAppointment();
 
             var daysOfWeekBorder = CreateDaysOfWeekBorder();
 
@@ -239,21 +232,14 @@ namespace vezba.DoctorPages
                     dynamicGrid.Children.Add(innerGridBorder);
                 }
             }
-
-            /*GenerateAppointmentsForSelectedWeek();
-
-            foreach (var appointment in appointments)
-            {
-                ShowAppointment(appointment);
-            }*/
         }
 
         private void GenerateAppointmentsForSelectedWeek()
         {
-            AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
+            AppointmentService appointmentService = new AppointmentService();
             appointments = new List<Appointment>();
 
-            foreach (var appointment in appointmentFileRepository.GetAll())
+            foreach (var appointment in appointmentService.GetAllAppointments())
             {
                 if (DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
                     DateTime.Compare(appointment.StartTime, endOfWeek) < 0 && appointment.Doctor.Jmbg.Equals(selectedDoctor.Jmbg))
@@ -265,76 +251,78 @@ namespace vezba.DoctorPages
 
         public void ShowAppointment(Appointment appointment)
         {
+            var appointmentService = new AppointmentService();
             var row = appointment.StartTime.Hour;
-                var rowSpan = (appointment.StartTime.Minute + appointment.DurationInMunutes) / (int)60 + 1;
-                var topMargin = appointment.StartTime.Minute * dynamicGrid.Height / 1440 + 1;
-                var bottomMargin = rowSpan * dynamicGrid.Height / 24 - topMargin - appointment.DurationInMunutes * dynamicGrid.Height / 1440 + 1;
-                var col = (6 + (int)appointment.StartTime.DayOfWeek) % 7;
-                Grid appointmentGrid = new Grid();
-                appointmentGrid.Margin = new Thickness(1, topMargin, 1, bottomMargin);
+            var rowSpan = (appointment.StartTime.Minute + appointment.DurationInMunutes) / (int)60 + 1;
+            var topMargin = appointment.StartTime.Minute * dynamicGrid.Height / 1440 + 1;
+            var bottomMargin = rowSpan * dynamicGrid.Height / 24 - topMargin - appointment.DurationInMunutes * dynamicGrid.Height / 1440 + 1;
+            var col = (6 + (int)appointment.StartTime.DayOfWeek) % 7;
+            Grid appointmentGrid = new Grid();
+            appointmentGrid.Margin = new Thickness(1, topMargin, 1, bottomMargin);
+            appointmentGrid.Background = Brushes.CornflowerBlue;
+            appointmentGrid.MouseEnter += (sen, evg) =>
+            {
+                var bc = new BrushConverter();
+                appointmentGrid.Background = (Brush)bc.ConvertFrom("#FF3075F0");
+
+            };
+            appointmentGrid.MouseLeave += (sen, evg) =>
+            {
                 appointmentGrid.Background = Brushes.CornflowerBlue;
-                appointmentGrid.MouseEnter += (sen, evg) =>
-                {
-                    var bc = new BrushConverter(); 
-                    appointmentGrid.Background = (Brush)bc.ConvertFrom("#FF3075F0");
-                    
-                };
-                appointmentGrid.MouseLeave += (sen, evg) =>
-                {
-                    appointmentGrid.Background = Brushes.CornflowerBlue;
-                };
-                    appointmentGrid.MouseLeftButtonDown += (sen, evg) =>
-                {
-                    doctorView.Main.Content = new ViewAppointmentPage(appointment, doctorView, this,appointmentGrid);
-                };
-                Grid.SetRow(appointmentGrid, row);
-                Grid.SetColumn(appointmentGrid, col);
-                Grid.SetRowSpan(appointmentGrid, rowSpan);
+            };
+            appointmentGrid.MouseLeftButtonDown += (sen, evg) =>
+            {
+                appointment = appointmentService.GetAppointmentById(appointment.AppointentId);
+                doctorView.Main.Content = new ViewAppointmentPage(appointment, doctorView, this, appointmentGrid);
+            };
+            Grid.SetRow(appointmentGrid, row);
+            Grid.SetColumn(appointmentGrid, col);
+            Grid.SetRowSpan(appointmentGrid, rowSpan);
 
-                appointmentGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-                appointmentGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-                appointmentGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-                appointmentGrid.RowDefinitions.Add(new RowDefinition());
+            appointmentGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            appointmentGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            appointmentGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            appointmentGrid.RowDefinitions.Add(new RowDefinition());
 
-                TextBlock appointmentDescriptionBlock = new TextBlock();
-                appointmentDescriptionBlock.Text = appointment.ApointmentDescription;
-                appointmentDescriptionBlock.Foreground = Brushes.White;
-                appointmentDescriptionBlock.FontSize = 10;
-                appointmentDescriptionBlock.FontWeight = FontWeights.Bold;
-                appointmentDescriptionBlock.TextWrapping = TextWrapping.WrapWithOverflow;
-                appointmentDescriptionBlock.Margin = new Thickness(5, 5, 5, 0);
-                Grid.SetRow(appointmentDescriptionBlock, 0);
-                appointmentGrid.Children.Add(appointmentDescriptionBlock);
+            TextBlock appointmentDescriptionBlock = new TextBlock();
+            appointmentDescriptionBlock.Text = appointment.ApointmentDescription;
+            appointmentDescriptionBlock.Foreground = Brushes.White;
+            appointmentDescriptionBlock.FontSize = 10;
+            appointmentDescriptionBlock.FontWeight = FontWeights.Bold;
+            appointmentDescriptionBlock.TextWrapping = TextWrapping.WrapWithOverflow;
+            appointmentDescriptionBlock.Margin = new Thickness(5, 5, 5, 0);
+            Grid.SetRow(appointmentDescriptionBlock, 0);
+            appointmentGrid.Children.Add(appointmentDescriptionBlock);
 
-                TextBlock doctorBlock = new TextBlock();
-                doctorBlock.Text = "Lekar: " + appointment.Doctor.NameAndSurname;
-                doctorBlock.Foreground = Brushes.White;
-                doctorBlock.FontSize = 10;
-                doctorBlock.TextWrapping = TextWrapping.WrapWithOverflow;
-                doctorBlock.Margin = new Thickness(5, 0, 5, 0);
-                Grid.SetRow(doctorBlock, 1);
-                appointmentGrid.Children.Add(doctorBlock);
+            TextBlock doctorBlock = new TextBlock();
+            doctorBlock.Text = "Lekar: " + appointment.Doctor.NameAndSurname;
+            doctorBlock.Foreground = Brushes.White;
+            doctorBlock.FontSize = 10;
+            doctorBlock.TextWrapping = TextWrapping.WrapWithOverflow;
+            doctorBlock.Margin = new Thickness(5, 0, 5, 0);
+            Grid.SetRow(doctorBlock, 1);
+            appointmentGrid.Children.Add(doctorBlock);
 
 
-                TextBlock patientBlock = new TextBlock();
-                patientBlock.Text = "Pacijent: " + appointment.Patient.NameAndSurname;
-                patientBlock.Foreground = Brushes.White;
-                patientBlock.FontSize = 10;
-                patientBlock.TextWrapping = TextWrapping.WrapWithOverflow;
-                patientBlock.Margin = new Thickness(5, 0, 5, 0);
-                Grid.SetRow(patientBlock, 2);
-                appointmentGrid.Children.Add(patientBlock);
+            TextBlock patientBlock = new TextBlock();
+            patientBlock.Text = "Pacijent: " + appointment.Patient.NameAndSurname;
+            patientBlock.Foreground = Brushes.White;
+            patientBlock.FontSize = 10;
+            patientBlock.TextWrapping = TextWrapping.WrapWithOverflow;
+            patientBlock.Margin = new Thickness(5, 0, 5, 0);
+            Grid.SetRow(patientBlock, 2);
+            appointmentGrid.Children.Add(patientBlock);
 
-                TextBlock roomBlock = new TextBlock();
-                roomBlock.Text = "Soba: " + appointment.Room.RoomNumber;
-                roomBlock.Foreground = Brushes.White;
-                roomBlock.FontSize = 10;
-                roomBlock.TextWrapping = TextWrapping.WrapWithOverflow;
-                roomBlock.Margin = new Thickness(5, 0, 5, 5);
-                Grid.SetRow(roomBlock, 3);
-                appointmentGrid.Children.Add(roomBlock);
+            TextBlock roomBlock = new TextBlock();
+            roomBlock.Text = "Soba: " + appointment.Room.RoomNumber;
+            roomBlock.Foreground = Brushes.White;
+            roomBlock.FontSize = 10;
+            roomBlock.TextWrapping = TextWrapping.WrapWithOverflow;
+            roomBlock.Margin = new Thickness(5, 0, 5, 5);
+            Grid.SetRow(roomBlock, 3);
+            appointmentGrid.Children.Add(roomBlock);
 
-                dynamicGrid.Children.Add(appointmentGrid);
+            dynamicGrid.Children.Add(appointmentGrid);
         }
 
         public void RemoveAppointment(Grid appointmentGrid)

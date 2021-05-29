@@ -97,7 +97,7 @@
                     <DataGrid x:Name="anamnesisGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.Anamnesis}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Vreme" Binding="{Binding Time, StringFormat=dd/MM/yyyy HH:mm}"  Width="*"/>
-                            <DataGridTextColumn Header="Lekar" Binding="{Binding Doctor.NameAndSurname}"  Width="*"/>
+                            <DataGridTextColumn Header="Lekar" Binding="{Binding Doctor}"  Width="*"/>
                             <DataGridTextColumn Header="Komentar" Binding="{Binding Comment}"  Width="*"/>
                         </DataGrid.Columns>
                     </DataGrid>

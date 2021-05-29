@@ -13,16 +13,16 @@ namespace vezba.DoctorPages
     public partial class ViewAppointmentPage : Page
     {
 
-        private Appointment Selected { get; set; }
+        private Appointment Appointment { get; set; }
         private readonly DoctorView _doctorView;
         private Calendar calendar;
         private Grid appointmentGrid;
 
-        public ViewAppointmentPage(Appointment selected, DoctorView doctorView, Calendar calendar, Grid appointmentGrid)
+        public ViewAppointmentPage(Appointment appointment, DoctorView doctorView, Calendar calendar, Grid appointmentGrid)
         {
             InitializeComponent();
-            DataContext = selected;
-            Selected = selected;
+            DataContext = appointment;
+            Appointment = appointment;
             _doctorView = doctorView;
             this.calendar = calendar;
             this.appointmentGrid = appointmentGrid;
@@ -30,14 +30,14 @@ namespace vezba.DoctorPages
 
         private void MedicalRecordClick(object sender, RoutedEventArgs e)
         {
-            _doctorView.Main.Content = new MedicalRecordPage(Selected.Patient, _doctorView);
+            _doctorView.Main.Content = new MedicalRecordPage(Appointment.Patient, _doctorView);
         }
 
         private void NewAnamnesisClick(object sender, RoutedEventArgs e)
         {
-            if (DateTime.Compare(DateTime.Now, Selected.StartTime) >= 0)
+            if (DateTime.Compare(DateTime.Now, Appointment.StartTime) >= 0)
             {
-                _doctorView.Main.Content = new CreateAnamnesisPage(Selected, _doctorView);
+                _doctorView.Main.Content = new CreateAnamnesisPage(Appointment, _doctorView);
             }
             else
             {
@@ -47,12 +47,12 @@ namespace vezba.DoctorPages
 
         private void NewPrescriptionClick(object sender, RoutedEventArgs e)
         {
-            _doctorView.Main.Content = new CreatePrescriptionPage(Selected.Patient, _doctorView);
+            _doctorView.Main.Content = new CreatePrescriptionPage(Appointment.Patient, _doctorView);
         }
 
         private void NewReferralLetterClick(object sender, RoutedEventArgs e)
         {
-            _doctorView.Main.Content = new CreateReferralLetterPage(Selected.Patient, _doctorView);
+            _doctorView.Main.Content = new CreateReferralLetterPage(Appointment.Patient, _doctorView);
         }
 
         private void ReturnClick(object sender, RoutedEventArgs e)
@@ -62,7 +62,7 @@ namespace vezba.DoctorPages
 
         private void EditClick(object sender, RoutedEventArgs e)
         {
-            _doctorView.Main.Content = new EditAppointmentPage(Selected, _doctorView, calendar, appointmentGrid);
+            _doctorView.Main.Content = new EditAppointmentPage(Appointment, _doctorView, calendar, appointmentGrid);
         }
 
         private void DeleteClick(object sender, RoutedEventArgs e)
@@ -71,7 +71,7 @@ namespace vezba.DoctorPages
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 var appointmentService = new AppointmentService();
-                appointmentService.DeleteAppointment(Selected.AppointentId);
+                appointmentService.DeleteAppointment(Appointment.AppointentId);
                 calendar.RemoveAppointment(appointmentGrid);
                 calendar.SetScrollViewerToFirstAppointment();
                 _doctorView.Main.GoBack();

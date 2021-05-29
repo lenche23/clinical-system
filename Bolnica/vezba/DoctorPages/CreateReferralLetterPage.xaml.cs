@@ -42,19 +42,7 @@ namespace vezba.DoctorPages
             var patientService = new PatientService();
             patientService.AddReferralLetterToPatient(_patient, _newReferralLetter);
 
-            UpdateAppointmentsView();
             _doctorView.Main.GoBack();
-        }
-
-        private void UpdateAppointmentsView()
-        {
-            foreach (Appointment appointment in Calendar.appointments)
-            {
-                if (appointment.Patient.Jmbg.Equals(_patient.Jmbg))
-                {
-                    appointment.Patient.MedicalRecord.AddReferralLetter(_newReferralLetter);
-                }
-            }
         }
 
         private ReferralLetter NewReferralLetter()

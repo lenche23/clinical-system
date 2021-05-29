@@ -35,17 +35,7 @@ namespace vezba.DoctorPages
             var patientService = new PatientService();
             patientService.AddPrescriptionToPatient(_patient, _newPrescription);
 
-            UpdateAppointmentsView();
             _doctorView.Main.GoBack();
-        }
-
-        private void UpdateAppointmentsView()
-        {
-            foreach (var appointment in Calendar.appointments)
-            {
-                if (appointment.Patient.Jmbg.Equals(_patient.Jmbg))
-                    appointment.Patient.MedicalRecord.AddPrescription(_newPrescription);
-            }
         }
         private Prescription NewPrescription()
         {

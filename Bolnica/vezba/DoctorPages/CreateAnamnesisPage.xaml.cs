@@ -33,17 +33,7 @@ namespace vezba.DoctorPages
             var patientService = new PatientService();
             patientService.AddAnamnesisToPatient(_patient, _newAnamnesis);
 
-            UpdateAppointmentsView();
             _doctorView.Main.GoBack();
-        }
-
-        private void UpdateAppointmentsView()
-        {
-            foreach (Appointment appointment in Calendar.appointments)
-            {
-                if (appointment.Patient.Jmbg.Equals(_patient.Jmbg))
-                    appointment.Patient.MedicalRecord.AddAnamnesis(_newAnamnesis);
-            }
         }
 
         private Anamnesis NewAnamnesis()
