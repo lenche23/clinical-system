@@ -11,17 +11,17 @@ namespace vezba.DoctorPages
     {
         private readonly DoctorView _doctorView;
 
-        public ViewAnnouncementPage(Announcement a, DoctorView doctorView)
+        public ViewAnnouncementPage(Announcement announcement, DoctorView doctorView)
         {
             InitializeComponent();
-            Posted.Content += a.FormatedDatePosted;
-            Edited.Content += a.FormatedDateEdited;
+            Posted.Content += announcement.FormatedDatePosted;
+            Edited.Content += announcement.FormatedDateEdited;
             if (Posted.Content.Equals(Edited.Content))
             {
                 Edited.Visibility = System.Windows.Visibility.Collapsed;
             }
-            Content.Text = a.Content;
-            Title.Text = a.Title;
+            Content.Text = announcement.Content;
+            Title.Text = announcement.Title;
             _doctorView = doctorView;
         }
 

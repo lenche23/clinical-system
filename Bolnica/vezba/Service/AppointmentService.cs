@@ -323,7 +323,43 @@ namespace Service
             }
         }
 
+        public TimeSpan GetEarliestTime(List<Appointment> appointments)
+        {
+            var earliestTime = appointments[0].StartTime.TimeOfDay;
+            foreach (var appointment in appointments)
+            {
+                if (TimeSpan.Compare(appointment.StartTime.TimeOfDay, earliestTime) < 0)
+                {
+                    earliestTime = appointment.StartTime.TimeOfDay;
+                }
+            }
 
+            return earliestTime;
+        }
+
+        public List<Appointment>GenerateAppointmentsForWeekAndDoctor(DateTime startOfWeek, DateTime endOfWeek, Doctor selectedDoctor)
+        {
+            List<Appointment> appointments = new List<Appointment>();
+            List<Appointment> allAppointments = GetAllAppointments();
+
+            foreach (var appointment in allAppointments)
+            {
+                if (appointment.Doctor == null)
+                    continue;
+                if(IsAppointmentInCurrentView(appointment, startOfWeek, endOfWeek, selectedDoctor))
+                {
+                    appointments.Add(appointment);
+                }
+            }
+            return appointments;
+        }
+
+        public Boolean IsAppointmentInCurrentView(Appointment appointment, DateTime startOfWeek, DateTime endOfWeek, Doctor selectedDoctor)
+        {
+            return DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
+                   DateTime.Compare(appointment.StartTime, endOfWeek) < 0 &&
+                   appointment.Doctor.Jmbg.Equals(selectedDoctor.Jmbg);
+        }
         // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************

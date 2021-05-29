@@ -14,14 +14,14 @@ namespace vezba.DoctorPages
     /// </summary>
     public partial class EditAppointmentPage : Page
     {
-        public Appointment Selected { get; set; }
+        public Appointment Appointment { get; set; }
         private readonly DoctorView _doctorView;
         public List<Patient> Patients { get; set; }
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
         private Calendar calendar;
         private Grid appointmentGrid;
-        public EditAppointmentPage(Appointment selected, DoctorView doctorView, Calendar calendar, Grid appointmentGrid)
+        public EditAppointmentPage(Appointment appointment, DoctorView doctorView, Calendar calendar, Grid appointmentGrid)
         {
             InitializeComponent();
 
@@ -34,22 +34,22 @@ namespace vezba.DoctorPages
             var roomService = new RoomService();
             Rooms = roomService.GetAll();
 
-            Selected = selected;
+            Appointment = appointment;
             DataContext = this;
             _doctorView = doctorView;
 
-            if (Selected.Patient != null && Selected.Patient.Jmbg != null)
-                cmbPatients.SelectedValue = Selected.Patient.Jmbg;
-            if (Selected.Room != null)
-                cmbRooms.SelectedValue = selected.Room.RoomNumber;
-            if (Selected.Doctor != null && Selected.Doctor.Jmbg != null)
-                cmbDoctors.SelectedValue = Selected.Doctor.Jmbg;
+            if (Appointment.Patient != null && Appointment.Patient.Jmbg != null)
+                cmbPatients.SelectedValue = Appointment.Patient.Jmbg;
+            if (Appointment.Room != null)
+                cmbRooms.SelectedValue = appointment.Room.RoomNumber;
+            if (Appointment.Doctor != null && Appointment.Doctor.Jmbg != null)
+                cmbDoctors.SelectedValue = Appointment.Doctor.Jmbg;
 
             this.calendar = calendar;
             this.appointmentGrid = appointmentGrid;
 
-            StartDatePicker.SelectedDate = selected.StartTime.Date;
-            TimeTB.Text = Selected.StartTime.ToString("t");
+            StartDatePicker.SelectedDate = appointment.StartTime.Date;
+            TimeTB.Text = Appointment.StartTime.ToString("t");
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -75,7 +75,7 @@ namespace vezba.DoctorPages
 
         private Appointment UpdatedAppointment()
         {
-            var appointmentId = Selected.AppointentId;
+            var appointmentId = Appointment.AppointentId;
             var startDate = StartDatePicker.SelectedDate;
             var hour = int.Parse(TimeTB.Text.Split(':')[0]);
             var minute = int.Parse(TimeTB.Text.Split(':')[1]);

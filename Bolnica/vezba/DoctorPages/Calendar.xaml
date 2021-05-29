@@ -30,10 +30,10 @@
             </Grid.ColumnDefinitions>
             <StackPanel Margin="20, 0, 0, 0" Grid.Column="0" Orientation="Horizontal">
                 <Button Height="25" Width="25" Margin="0, 0, 5, 0" Click="PreviousWeekClick" Style="{StaticResource ResourceKey = ArrowButton}">
-                    <Image Source="DoctorImages/prev.png" Width="10" Height="10" Margin="5"/>
+                    <Image Source="/Bolnica;component/DoctorImages/prev.png" Width="10" Height="10" Margin="5"/>
                 </Button>
                 <Button Height="25" Width="25" Click="NextWeekClick" Style="{StaticResource ResourceKey = ArrowButton}">
-                    <Image Source="DoctorImages/next.png" Width="10" Height="10" Margin="5"/>
+                    <Image Source="/Bolnica;component/DoctorImages/next.png" Width="10" Height="10" Margin="5"/>
                 </Button>
                 <TextBlock Height="25" x:Name="MonthYearBlock" VerticalAlignment="Center" Padding="5" FontWeight="Bold"><Run Text="some text"/></TextBlock>
             </StackPanel>

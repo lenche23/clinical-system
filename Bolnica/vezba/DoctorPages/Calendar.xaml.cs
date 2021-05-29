@@ -30,10 +30,12 @@ namespace vezba.DoctorPages
         private TextBlock fridayBlock;
         private TextBlock saturdayBlock;
         private TextBlock sundayBlock;
+        private AppointmentService appointmentService;
 
         public Calendar(DoctorView doctorView)
         {
             InitializeComponent();
+            appointmentService = new AppointmentService();
             this.doctorView = doctorView;
             DoctorService doctorService = new DoctorService();
             Doctors = doctorService.GetAllDoctors();
@@ -174,15 +176,7 @@ namespace vezba.DoctorPages
         {
             if(appointments.Count == 0)
                 return;
-            var earliestTime = appointments[0].StartTime.TimeOfDay;
-            foreach (var appointment in appointments)
-            {
-                if (TimeSpan.Compare(appointment.StartTime.TimeOfDay, earliestTime) < 0)
-                {
-                    earliestTime = appointment.StartTime.TimeOfDay;
-                }
-            }
-
+            var earliestTime = appointmentService.GetEarliestTime(appointments);
             var scrollOffset = (earliestTime.Hours + earliestTime.Minutes / 60) * dynamicGrid.Height / 24;
             scrollViewer.ScrollToVerticalOffset(scrollOffset);
         }
@@ -234,24 +228,13 @@ namespace vezba.DoctorPages
             }
         }
 
-        private void GenerateAppointmentsForSelectedWeek()
+        private void GenerateAppointmentsForWeekAndDoctor()
         {
-            AppointmentService appointmentService = new AppointmentService();
-            appointments = new List<Appointment>();
-
-            foreach (var appointment in appointmentService.GetAllAppointments())
-            {
-                if (DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
-                    DateTime.Compare(appointment.StartTime, endOfWeek) < 0 && appointment.Doctor.Jmbg.Equals(selectedDoctor.Jmbg))
-                {
-                    appointments.Add(appointment);
-                }
-            }
+            appointments = appointmentService.GenerateAppointmentsForWeekAndDoctor(startOfWeek, endOfWeek, selectedDoctor);
         }
 
         public void ShowAppointment(Appointment appointment)
         {
-            var appointmentService = new AppointmentService();
             var row = appointment.StartTime.Hour;
             var rowSpan = (appointment.StartTime.Minute + appointment.DurationInMunutes) / (int)60 + 1;
             var topMargin = appointment.StartTime.Minute * dynamicGrid.Height / 1440 + 1;
@@ -341,7 +324,7 @@ namespace vezba.DoctorPages
             startOfWeek = startOfWeek.AddDays(-7);
             endOfWeek = endOfWeek.AddDays(-7);
             UpdateDateIndicators();
-            GenerateAppointmentsForSelectedWeek();
+            GenerateAppointmentsForWeekAndDoctor();
             CreateSchedule();
             foreach (var appointment in appointments)
             {
@@ -376,7 +359,7 @@ namespace vezba.DoctorPages
             startOfWeek = startOfWeek.AddDays(7);
             endOfWeek = endOfWeek.AddDays(7);
             UpdateDateIndicators();
-            GenerateAppointmentsForSelectedWeek();
+            GenerateAppointmentsForWeekAndDoctor();
             CreateSchedule();
             foreach (var appointment in appointments)
             {
@@ -391,7 +374,7 @@ namespace vezba.DoctorPages
         {
             timeDockPanel.Children.Remove(dynamicGrid);
             selectedDoctor = (Doctor)DoctorsComboBox.SelectedItem;
-            GenerateAppointmentsForSelectedWeek();
+            GenerateAppointmentsForWeekAndDoctor();
             CreateSchedule();
             foreach (var appointment in appointments)
             {
@@ -403,8 +386,7 @@ namespace vezba.DoctorPages
         
         public void AddAppointmentToCurrentView(Appointment appointment)
         {
-            if (DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
-                DateTime.Compare(appointment.StartTime, endOfWeek) < 0 && appointment.Doctor.Jmbg.Equals(selectedDoctor.Jmbg))
+            if (appointmentService.IsAppointmentInCurrentView(appointment, startOfWeek, endOfWeek, selectedDoctor))
             {
                 appointments.Add(appointment);
                 ShowAppointment(appointment);

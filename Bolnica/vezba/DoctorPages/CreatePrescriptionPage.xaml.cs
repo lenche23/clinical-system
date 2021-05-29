@@ -4,7 +4,6 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
-using Calendar = vezba.DoctorPages.Calendar;
 
 namespace vezba.DoctorPages
 {
