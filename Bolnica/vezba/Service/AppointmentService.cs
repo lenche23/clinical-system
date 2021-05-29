@@ -358,6 +358,19 @@ namespace Service
                 return true;
             }
         }
+
+        public List<Appointment> GetPatientFutureAppointments()
+        {
+            List<Appointment> appointments = new List<Appointment>();
+            foreach (Appointment appointment in GetAllAppointments())
+            {
+                if (appointment.StartTime.Date > DateTime.Today && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
+                {
+                    appointments.Add(appointment);
+                }
+            }
+            return appointments;
+        }
         // PacijentKraj***************************************************************************
 
         // Lekar**********************************************************************************

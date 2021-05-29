@@ -153,8 +153,7 @@ namespace vezba.PatientPages
 
         private void ButtonCancelAppointment_Click(object sender, RoutedEventArgs e)
         {
-            var otkaziPregled = new CancelAppointmentView();
-            otkaziPregled.Show();
+            this.NavigationService.Navigate(new CancelAppointmentPage());
         }
 
         private void ButtonHistoryAppointment_Click(object sender, RoutedEventArgs e)

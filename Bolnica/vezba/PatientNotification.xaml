@@ -37,7 +37,7 @@
                         </RadialGradientBrush>
                     </Button.Background>
                 </Button>
-                <Label Content="{Binding NotificationContent}"  HorizontalAlignment="Center" Margin="0,32,0,64" FontSize="10" Width="240" HorizontalContentAlignment="Center" Foreground="#FF2E421A"/>
+                <Label Content="{Binding NotificationContent}"  HorizontalAlignment="Center" Margin="0,32,0,64" FontSize="15" Width="240" HorizontalContentAlignment="Center" Foreground="#FF2E421A"/>
             </Grid>
         </Border>
     </Border>

@@ -248,6 +248,9 @@
     <Compile Include="PatientNotification.xaml.cs">
       <DependentUpon>PatientNotification.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PatientPages\CancelAppointmentPage.xaml.cs">
+      <DependentUpon>CancelAppointmentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PatientPages\DoctorOrTimePage.xaml.cs">
       <DependentUpon>DoctorOrTimePage.xaml</DependentUpon>
     </Compile>
@@ -789,6 +792,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PatientPages\CancelAppointmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientPages\ChangeAppointmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1163,6 +1170,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="PatientImages\ambulance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\cancel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
