@@ -15,9 +15,9 @@
                 <GradientStop Color="AntiqueWhite" Offset="0.483"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock Name="Title" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Foreground="#FF2E421A" Margin="10,36,10,0" Height="59" Width="410"/>
-        <TextBlock Name="Content" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,112,0,0" Height="420" Width="410" FontSize="20"/>
-        <Label Name="Posted" Content="Postavljeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="237,532,0,0" Width="183" FontSize="15" Foreground="#FF2E421A"/>
-        <Label Name="Edited" Content="Izmenjeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="237,560,0,0" Width="183" FontSize="15" Foreground="#FF2E421A"/>
+        <TextBlock Name="Title" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="10,10,10,0" Height="59" Width="410"/>
+        <TextBlock Name="Content" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,74,0,0" Height="458" Width="410" FontSize="18"/>
+        <Label Name="Posted" Content="Postavljeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="237,532,0,0" Width="183" FontSize="15" Foreground="#FF2E421A" FontStyle="Italic"/>
+        <Label Name="Edited" Content="Izmenjeno:   " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="237,560,0,0" Width="183" FontSize="15" Foreground="#FF2E421A" FontStyle="Italic"/>
     </Grid>
 </Page>

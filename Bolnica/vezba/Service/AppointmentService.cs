@@ -1,8 +1,11 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Windows;
+using vezba;
+using vezba.PatientPages;
 using vezba.Repository;
 
 namespace Service
@@ -10,10 +13,11 @@ namespace Service
    public class AppointmentService
     {
         public AppointmentFileRepository AppointmentRepository { get; }
-
+        private Appointment ChangingAppointment { get; set; }
         public AppointmentService()
         {
             AppointmentRepository = new AppointmentFileRepository();
+            ChangingAppointment = new Appointment();
         }
         // Sekretar*******************************************************************************
 
@@ -284,16 +288,36 @@ namespace Service
                     appointments.Remove(appointment);
             }
         }
-
-
         // SekretarKraj***************************************************************************
 
         // Pacijent*******************************************************************************
+        public Boolean MoveableAppointment(DateTime initDate, DateTime pickedDate)
+        {
+            int diff = (pickedDate - initDate).Days;
+            if (diff > 2)
+                return false;
 
+            return true;
+        }
 
+        public void ChangeAppointment(Appointment initAppointment, DateTime pickedDate, String pickedTime)
+        {
+            int id = initAppointment.AppointentId;
+            pickedDate.ToString("MM/dd/yyyy");
+            Doctor initDoctor = initAppointment.Doctor;
+            DateTime parsedTime = DateTime.ParseExact(pickedTime, "HH:mm", CultureInfo.InvariantCulture);
+            DateTime movedDate = pickedDate.Date.Add(parsedTime.TimeOfDay);
 
+            Appointment changedAppointment = new Appointment(initDoctor, movedDate, PatientView.Patient);
+            changedAppointment.AppointentId = id;
+            EditAppointment(changedAppointment);
 
-
+            Appointment idAppointment = ChangeAppointmentPage.Appointments.FirstOrDefault(a => a.AppointentId.Equals(id));
+            if (idAppointment != null)
+            {
+                ChangeAppointmentPage.Appointments[ChangeAppointmentPage.Appointments.IndexOf(idAppointment)] = changedAppointment;
+            }
+        }
         // PacijentKraj***************************************************************************
 
         // Lekar**********************************************************************************

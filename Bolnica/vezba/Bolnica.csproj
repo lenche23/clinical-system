@@ -245,6 +245,9 @@
       <DependentUpon>MedicineRevisionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DeclinedMedicine.cs" />
+    <Compile Include="PatientNotification.xaml.cs">
+      <DependentUpon>PatientNotification.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repository\DeclinedMedicineFileRepository.cs" />
     <Compile Include="Model\DoctorEvaluation.cs" />
     <Compile Include="Repository\DoctorEvaluationFileRepository.cs" />
@@ -329,6 +332,12 @@
     </Compile>
     <Compile Include="PatientPages\CalendarPage.xaml.cs">
       <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\ChangeAppointmentPage.xaml.cs">
+      <DependentUpon>ChangeAppointmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\EditAppointmentPage.xaml.cs">
+      <DependentUpon>EditAppointmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientPages\GradeDoctorPage.xaml.cs">
       <DependentUpon>GradeDoctorPage.xaml</DependentUpon>
@@ -771,6 +780,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PatientPages\ChangeAppointmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\EditAppointmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientPages\GradeDoctorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -800,6 +817,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PatientPages\TherapiesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientNotification.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

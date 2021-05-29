@@ -148,8 +148,7 @@ namespace vezba.PatientPages
             }
             else
             {
-                var izmeniPregled = new ChangeAppointmentView();
-                izmeniPregled.Show();
+                this.NavigationService.Navigate(new ChangeAppointmentPage());
             }
         }
 

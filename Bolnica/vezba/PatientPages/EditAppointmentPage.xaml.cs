@@ -13,17 +13,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using vezba.Repository;
 
-namespace vezba
+namespace vezba.PatientPages
 {
-    public partial class PatientEditAppointment : Window
+    public partial class EditAppointmentPage : Page
     {
         private Appointment Appointment { get; set; }
         private EventsLogService LogService { get; set; }
         private AppointmentService AppointmentService { get; set; }
-        public PatientEditAppointment(Appointment appointment)
+        public EditAppointmentPage(Appointment appointment)
         {
             InitializeComponent();
             ShowAppointmentDetails(appointment);
@@ -54,19 +55,18 @@ namespace vezba
             DateTime initDate = Appointment.StartTime.Date;
             DateTime pickedDate = Datum.SelectedDate.Value.Date;
             String pickedTime = Vreme.Text;
-            if (AppointmentService.MoveableAppointment(initDate, pickedDate)) 
+            if (AppointmentService.MoveableAppointment(initDate, pickedDate))
             {
                 LogService = new EventsLogService();
                 AppointmentService.ChangeAppointment(Appointment, pickedDate, pickedTime);
                 LogService.AddLog();
-                this.Close();
             }
             else
             {
                 //MessageBox.Show("Pregled možete pomeriti maksimalno za dva dana.");
                 PatientNotification noti = new PatientNotification("Pregled možete pomeriti maksimalno za dva dana.");
                 noti.ShowDialog();
-            }           
+            }
         }
     }
 }
