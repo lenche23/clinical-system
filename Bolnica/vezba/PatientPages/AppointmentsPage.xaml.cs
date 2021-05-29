@@ -27,7 +27,7 @@ namespace vezba.PatientPages
         {
             InitializeComponent();
             /*fileRepository = new EventsLogFileRepository();
-            list = fileRepository.Load();
+            list = fileRepository.ReadFromFile();
             pps = new PatientFileRepository();
             Patient patient = pps.GetOne("1008985563244");
             Patient = patient;

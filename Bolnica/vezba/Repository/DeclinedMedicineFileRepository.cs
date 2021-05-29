@@ -9,82 +9,53 @@ namespace vezba.Repository
 {
     public class DeclinedMedicineFileRepository
     {
+        public String FileName { get; set; }
 
         public DeclinedMedicineFileRepository()
         {
-            this.FileName = "../../odbijenilekovi.json";
+            FileName = "../../odbijenilekovi.json";
         }
 
         public List<DeclinedMedicine> GetAll()
         {
-            List<DeclinedMedicine> ms = new List<DeclinedMedicine>();
-
-            try
+            var allDeclinedMedicine = new List<DeclinedMedicine>();
+            var declinedMedicineFromFile = ReadFromFile();
+            foreach (var declinedMedicine in declinedMedicineFromFile)
             {
-                String jsonFromFile = File.ReadAllText(this.FileName);
-                List<DeclinedMedicine> declinedMedicineList = JsonConvert.DeserializeObject<List<DeclinedMedicine>>(jsonFromFile);
-
-                for (int i = 0; i < declinedMedicineList.Count; i++)
+                if (declinedMedicine.IsDeleted == false)
                 {
-                    if (declinedMedicineList[i].IsDeleted == false)
-                    {
-                        ms.Add(declinedMedicineList[i]);
-                    }
+                    allDeclinedMedicine.Add(declinedMedicine);
                 }
-                return ms;
             }
-            catch
-            {
-
-            }
-
-            MessageBox.Show("Neuspesno ucitavanje iz fajla" + this.FileName + "!");
-            return ms;
+            return allDeclinedMedicine;
         }
 
-        public Boolean Save(DeclinedMedicine declinedMedicine)
+        public Boolean Save(DeclinedMedicine newDeclinedMedicine)
         {
-            List<DeclinedMedicine> declinedMedicineList = GetAll();
-            declinedMedicineList.Add(declinedMedicine);
-
-            try
+            var storedDeclinedMedicine = ReadFromFile();
+            foreach (var declinedMedicine in storedDeclinedMedicine)
             {
-                var jsonToFile = JsonConvert.SerializeObject(declinedMedicineList, Formatting.Indented);
-                using (StreamWriter writer = new StreamWriter(this.FileName))
+                if (declinedMedicine.DeclinedMedicineID == newDeclinedMedicine.DeclinedMedicineID)
                 {
-                    writer.Write(jsonToFile);
+                    return false;
                 }
             }
-            catch (Exception e)
-            {
-
-            }
-
+            storedDeclinedMedicine.Add(newDeclinedMedicine);
+            WriteToFile(storedDeclinedMedicine);
             return true;
         }
 
-        public Boolean Update(DeclinedMedicine declinedMedicine)
+        public Boolean Update(DeclinedMedicine editedDeclinedMedicine)
         {
-            List<DeclinedMedicine> declinedMedicineList = GetAll();
-            for (int i = 0; i < declinedMedicineList.Count; i++)
+            var storedDeclinedMedicine = ReadFromFile();
+            foreach (var declinedMedicine in storedDeclinedMedicine)
             {
-                if (declinedMedicineList[i].DeclinedMedicineID.Equals(declinedMedicine.DeclinedMedicineID))
+                if (declinedMedicine.DeclinedMedicineID == editedDeclinedMedicine.DeclinedMedicineID)
                 {
-                    declinedMedicineList[i].Medicine = declinedMedicine.Medicine;
-                    declinedMedicineList[i].Description = declinedMedicine.Description;
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(declinedMedicineList, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-
-                    catch (Exception e)
-                    {
-
-                    }
+                    declinedMedicine.Medicine = editedDeclinedMedicine.Medicine;
+                    declinedMedicine.Description = editedDeclinedMedicine.Description;
+                    WriteToFile(storedDeclinedMedicine);
+                    return true;
                 }
             }
             return false;
@@ -92,12 +63,12 @@ namespace vezba.Repository
 
         public DeclinedMedicine GetOne(int id)
         {
-            List<DeclinedMedicine> declinedMedicineList = GetAll();
-            for (int i = 0; i < declinedMedicineList.Count; i++)
+            var allDeclinedMedicine = GetAll();
+            foreach (var declinedMedicine in allDeclinedMedicine)
             {
-                if (declinedMedicineList[i].DeclinedMedicineID.Equals(id))
+                if (declinedMedicine.DeclinedMedicineID.Equals(id))
                 {
-                    return declinedMedicineList[i];
+                    return declinedMedicine;
                 }
             }
             return null;
@@ -105,55 +76,54 @@ namespace vezba.Repository
 
         public Boolean Delete(int id)
         {
-            List<DeclinedMedicine> declinedMedicineList = GetAll();
-            for (int i = 0; i < declinedMedicineList.Count; i++)
+            var storedDeclinedMedicine = ReadFromFile();
+            foreach (var declinedMedicine in storedDeclinedMedicine)
             {
-                if (declinedMedicineList[i].DeclinedMedicineID.Equals(id))
+                if (declinedMedicine.DeclinedMedicineID == id && declinedMedicine.IsDeleted == false)
                 {
-                    declinedMedicineList[i].IsDeleted = true;
-
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(declinedMedicineList, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-
-                    catch (Exception e)
-                    {
-
-                    }
+                    declinedMedicine.IsDeleted = true;
+                    WriteToFile(storedDeclinedMedicine);
+                    return true;
                 }
             }
             return false;
         }
 
-        public List<DeclinedMedicine> Load()
+        public List<DeclinedMedicine> ReadFromFile()
         {
             List<DeclinedMedicine> dm = new List<DeclinedMedicine>();
             try
             {
-                String jsonFromFile = File.ReadAllText(this.FileName);
-                List<DeclinedMedicine> declinedMedicineList = JsonConvert.DeserializeObject<List<DeclinedMedicine>>(jsonFromFile);
-                return declinedMedicineList;
+                var jsonFromFile = File.ReadAllText(this.FileName);
+                List<DeclinedMedicine> allDeclinedMedicine = JsonConvert.DeserializeObject<List<DeclinedMedicine>>(jsonFromFile);
+                return allDeclinedMedicine;
             }
-            catch
-            {
-
-            }
+            catch { }
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
             return dm;
         }
 
-        public int generateNextId()
+        private void WriteToFile(List<DeclinedMedicine> declinedMedicine)
         {
-            List<DeclinedMedicine> list = Load();
-            return list.Count;
+            try
+            {
+                var jsonToFile = JsonConvert.SerializeObject(declinedMedicine, Formatting.Indented);
+                using (StreamWriter writer = new StreamWriter(FileName))
+                {
+                    writer.Write(jsonToFile);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
+            }
         }
 
-        public String FileName { get; set; }
+        public int GenerateNextId()
+        {
+            List<DeclinedMedicine> storedDeclinedMedicine = ReadFromFile();
+            return storedDeclinedMedicine.Count;
+        }
+
     }
 }

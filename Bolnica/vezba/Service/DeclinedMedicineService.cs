@@ -38,7 +38,7 @@ namespace Service
 
         public Boolean Save(DeclinedMedicine declinedMedicine)
         {
-            declinedMedicine.DeclinedMedicineID = FileRepository.generateNextId();
+            declinedMedicine.DeclinedMedicineID = FileRepository.GenerateNextId();
             return FileRepository.Save(declinedMedicine);
         }
         // LekarKraj******************************************************************************
