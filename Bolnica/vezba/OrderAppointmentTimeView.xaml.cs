@@ -46,7 +46,7 @@ namespace vezba
                 Patient patient = pps.GetOne("1008985563244");
 
                 AppointmentFileRepository fileRepository = new AppointmentFileRepository();
-                int id = fileRepository.generateNextId();
+                int id = fileRepository.GenerateNextId();
                 Appointment a = new Appointment(selectedDoctor, dateTimeFinal, patient);
                 a.AppointentId = id;
 

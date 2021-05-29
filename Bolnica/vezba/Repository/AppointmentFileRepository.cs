@@ -1,97 +1,68 @@
+using Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
-using Model;
-using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Service;
 
 namespace vezba.Repository
 {
     public class AppointmentFileRepository
     {
         public String FileName { get; set; }
-        private PatientFileRepository patientFileRepository { get; set; }
 
         public AppointmentFileRepository()
         {
             this.FileName = "../../appointments.json";
         }
 
-        public List<Appointment> Load()
-        {
-            List<Appointment> ps = new List<Appointment>();
-            try
-            {
-                String jsonFromFile = File.ReadAllText(this.FileName);
-                List<Appointment> appointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonFromFile);
-                return appointments;
-            }
-            catch {}
-            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return ps;
-        }
+
         public List<Appointment> GetAll()
-        {          
+        {
             List<Appointment> appointments = new List<Appointment>();
-            List<Appointment> appointments1 = Load();
-            for (int i = 0; i < appointments1.Count; i++)
+            List<Appointment> storedAppointments = ReadFromFile();
+            for (int i = 0; i < storedAppointments.Count; i++)
             {
-                if (appointments1[i].IsDeleted == false)
+                if (storedAppointments[i].IsDeleted == false)
                 {
-                    appointments.Add(appointments1[i]);
+                    appointments.Add(storedAppointments[i]);
                 }
             }
             return appointments;
         }
 
-        public Boolean Save(Appointment appointment)
+        public Boolean Save(Appointment newAppointment)
         {
-
-            List<Appointment> appointments = Load();
-            for (int i = 0; i < appointments.Count; i++)
+            newAppointment.AppointentId = GenerateNextId();
+            List<Appointment> storedAppointments = ReadFromFile();
+            for (int i = 0; i < storedAppointments.Count; i++)
             {
-                if (appointments[i].AppointentId.Equals(appointment.AppointentId))
-                {
+                if (storedAppointments[i].AppointentId.Equals(newAppointment.AppointentId))
                     return false;
-                }
             }
-            appointments.Add(appointment);
-            try
-            {
-                var jsonToFile = JsonConvert.SerializeObject(appointments, Formatting.Indented);
-                using (StreamWriter writer = new StreamWriter(this.FileName))
-                {
-                    writer.Write(jsonToFile);
-                }
-            }
-            catch (Exception e) {}
-
+            storedAppointments.Add(newAppointment);
+            WriteToFile(storedAppointments);
             return true;
         }
 
-        public Boolean Update(Appointment appointment)
+        public Boolean Update(Appointment editedAppointment)
         {
-            List<Appointment> appointments = Load();
-            for (int i = 0; i < appointments.Count; i++)
+            List<Appointment> storedAppointments = ReadFromFile();
+            foreach (Appointment appointment in storedAppointments)
             {
-                if (appointments[i].AppointentId.Equals(appointment.AppointentId) && appointments[i].IsDeleted == false)
+                if (appointment.AppointentId.Equals(editedAppointment.AppointentId) && appointment.IsDeleted == false)
                 {
-                    appointments[i].StartTime = appointment.StartTime;
-                    appointments[i].DurationInMunutes = appointment.DurationInMunutes;
-                    appointments[i].ApointmentDescription = appointment.ApointmentDescription;
-                    appointments[i].Patient = appointment.Patient;
-                    appointments[i].Room = appointment.Room;
-                    appointments[i].Doctor = appointment.Doctor;
-                    appointments[i].IsEmergency = appointment.IsEmergency;
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(appointments, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e) {}
+                    appointment.StartTime = editedAppointment.StartTime;
+                    appointment.DurationInMunutes = editedAppointment.DurationInMunutes;
+                    appointment.ApointmentDescription = editedAppointment.ApointmentDescription;
+                    appointment.Patient = editedAppointment.Patient;
+                    appointment.Room = editedAppointment.Room;
+                    appointment.Doctor = editedAppointment.Doctor;
+                    appointment.IsEmergency = editedAppointment.IsEmergency;
+                    WriteToFile(storedAppointments);
+                    return true;
                 }
             }
             return false;
@@ -99,43 +70,94 @@ namespace vezba.Repository
 
         public Appointment GetOne(int id)
         {
-            List<Appointment> appointments = Load();
+            List<Appointment> appointments = GetAll();
             for (int i = 0; i < appointments.Count; i++)
             {
-                if (appointments[i].AppointentId == id && appointments[i].IsDeleted == false)
-                {
+                if (appointments[i].AppointentId == id)
                     return appointments[i];
-                }
             }
             return null;
         }
 
         public Boolean Delete(int id)
         {
-            List<Appointment> list = Load();
-            for (int i = 0; i < list.Count; i++) 
+            List<Appointment> storedAppointments = ReadFromFile();
+            for (int i = 0; i < storedAppointments.Count; i++)
             {
-                if (list[i].AppointentId == id && list[i].IsDeleted == false)
+                if (storedAppointments[i].AppointentId == id && storedAppointments[i].IsDeleted == false)
                 {
-                    list[i].IsDeleted = true;
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(list, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                            writer.Write(jsonToFile);                  
-                    }
-                    catch (Exception e) {}
-
+                    storedAppointments[i].IsDeleted = true;
+                    WriteToFile(storedAppointments);
                     return true;
                 }
             }
             return false;
         }
-
-        public int generateNextId()
+        private List<Appointment> ReadFromFile()
         {
-            List<Appointment> list = Load();
+            try
+            {
+                String jsonFromFile = File.ReadAllText(this.FileName);
+                var appointmentsForDeserialization = JsonConvert.DeserializeObject<List<JObject>>(jsonFromFile);
+                var appointments = new List<Appointment>();
+                PatientFileRepository patientRepository = new PatientFileRepository();
+                RoomFileRepository roomRepository = new RoomFileRepository();
+                DoctorFileRepository doctorRepository = new DoctorFileRepository();
+                foreach (var appointmentForDeserialization in appointmentsForDeserialization)
+                {
+                    var patientId = (String) appointmentForDeserialization["patientId"];
+                    appointmentForDeserialization.Remove("patientId");
+
+                    var roomId = (int) appointmentForDeserialization["roomId"];
+                    appointmentForDeserialization.Remove("roomId");
+
+                    var doctorId = (String) appointmentForDeserialization["doctorId"];
+                    appointmentForDeserialization.Remove("doctorId");
+
+                    var appointment = appointmentForDeserialization.ToObject<Appointment>();
+                    appointment.Patient = patientRepository.GetOne(patientId);
+                    appointment.Room = roomRepository.GetOne(roomId);
+                    appointment.Doctor = doctorRepository.GetOne(doctorId);
+
+                    appointments.Add(appointment);
+                }
+                return appointments;
+            }
+            catch { }
+            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
+            return new List<Appointment>();
+        }
+
+        private void WriteToFile(List<Appointment> appointments)
+        {
+            try
+            {
+                var appointmentsForSerialization = new List<JObject>();
+                foreach (var appointment in appointments)
+                {
+                    JObject appointmentForSerialization = JObject.FromObject(appointment);
+
+                    appointmentForSerialization.Add("patientId", appointment.Patient.Jmbg);
+                    appointmentForSerialization.Add("roomId", appointment.Room.RoomNumber);
+                    appointmentForSerialization.Add("doctorId", appointment.Doctor.Jmbg);
+
+                    appointmentsForSerialization.Add(appointmentForSerialization);
+                }
+                var jsonToFile = JsonConvert.SerializeObject(appointmentsForSerialization, Formatting.Indented);
+                using (StreamWriter writer = new StreamWriter(this.FileName))
+                {
+                    writer.Write(jsonToFile);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
+            }
+        }
+
+        public int GenerateNextId()
+        {
+            List<Appointment> list = ReadFromFile();
             return list.Count;
         }
 

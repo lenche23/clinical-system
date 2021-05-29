@@ -33,9 +33,6 @@ namespace vezba.DoctorPages
             var patientService = new PatientService();
             patientService.AddAnamnesisToPatient(_patient, _newAnamnesis);
 
-            var appointmentService = new AppointmentService();
-            appointmentService.AddAnamnesisToAppointments(_patient, _newAnamnesis);
-
             UpdateAppointmentsView();
             _doctorView.Main.GoBack();
         }

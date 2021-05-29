@@ -35,9 +35,6 @@ namespace vezba.DoctorPages
             var patientService = new PatientService();
             patientService.AddPrescriptionToPatient(_patient, _newPrescription);
 
-            var appointmentService = new AppointmentService();
-            appointmentService.AddPrescriptionToAppointments(_patient, _newPrescription);
-
             UpdateAppointmentsView();
             _doctorView.Main.GoBack();
         }

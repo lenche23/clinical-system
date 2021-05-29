@@ -297,54 +297,11 @@ namespace Service
         // PacijentKraj***************************************************************************
 
         // Lekar**********************************************************************************
-        public Boolean UpdateAppointment(Appointment updatedAppointment)
-       {
-           return AppointmentRepository.Update(updatedAppointment);
-       }
 
-       public void AddPrescriptionToAppointments(Patient patient, Prescription newPrescription)
-       {
-           List<Appointment> allAppointments = GetAllAppointments();
-           foreach (var appointment in allAppointments)
-           {
-               var appointmentPatient = appointment.Patient;
-               if (!IsSamePatient(appointmentPatient, patient)) continue;
 
-               appointmentPatient.MedicalRecord.AddPrescription(newPrescription);
-               UpdateAppointment(appointment);
-           }
-       }
 
-       public void AddAnamnesisToAppointments(Patient patient, Anamnesis newAnamnesis)
-       {
-           List<Appointment> allAppointments = GetAllAppointments();
-           foreach (Appointment appointment in allAppointments)
-           {
-               var appointmentPatient = appointment.Patient;
-               if (!IsSamePatient(appointmentPatient, patient)) continue;
 
-               appointmentPatient.MedicalRecord.AddAnamnesis(newAnamnesis);
-               UpdateAppointment(appointment);
-           }
-       }
 
-       public void AddReferralLetterToAppointments(Patient patient, ReferralLetter newReferralLetter)
-       {
-           List<Appointment> allAppointments = GetAllAppointments();
-           foreach (Appointment appointment in allAppointments)
-           {
-               var appointmentPatient = appointment.Patient;
-               if (!IsSamePatient(appointmentPatient, patient)) continue;
-
-               appointmentPatient.MedicalRecord.AddReferralLetter(newReferralLetter);
-               UpdateAppointment(appointment);
-           }
-       }
-
-       private Boolean IsSamePatient(Patient firstPatient, Patient secondPatient)
-       {
-           return firstPatient.Jmbg.Equals(secondPatient.Jmbg);
-       }
        // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************

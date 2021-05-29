@@ -50,7 +50,7 @@ namespace vezba.SecretaryGUI
             if (ValidateEntries() == false)
                 return;
             AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
-            Appointment appointment = new Appointment(appointmentFileRepository.generateNextId(), (Patient)Patient.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
+            Appointment appointment = new Appointment(appointmentFileRepository.GenerateNextId(), (Patient)Patient.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
 
             if (GetOverlapingAppoinments(appointment).Count == 0)
             {

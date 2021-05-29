@@ -53,7 +53,7 @@ namespace vezba
             string apDesc = Description.Text;
 
             AppointmentFileRepository aps = new AppointmentFileRepository();
-            int id = aps.generateNextId();
+            int id = aps.GenerateNextId();
 
             Appointment appointment = new Appointment(id, patient, doctor, room, startTime, duration, apDesc);
 

@@ -92,6 +92,77 @@
               }
             ]
           }
+        },
+        {
+          "StartDate": "2021-05-30T00:00:00",
+          "DurationInDays": 7,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ],
+            "Name": "Ibuprofen",
+            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+            "Packaging": "30 x 400 mg",
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            },
+            "Ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ]
+          }
         }
       ],
       "referralLetter": [
@@ -141,6 +212,77 @@
       "Prescription": [
         {
           "StartDate": "2021-05-10T00:00:00",
+          "DurationInDays": 7,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ],
+            "Name": "Ibuprofen",
+            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+            "Packaging": "30 x 400 mg",
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            },
+            "Ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-05-30T00:00:00",
           "DurationInDays": 7,
           "ReferencePeriod": 0,
           "Number": 3,

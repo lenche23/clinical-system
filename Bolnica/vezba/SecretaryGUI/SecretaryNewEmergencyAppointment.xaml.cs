@@ -93,7 +93,7 @@ namespace vezba.SecretaryGUI
             List<Appointment> appointments = new List<Appointment>();
             foreach (Doctor d in doctors)
             {
-                Appointment emergencyAppointment = new Appointment(appointmentFileRepository.generateNextId(), patient, d, room, DateTime.Now, duration, description);
+                Appointment emergencyAppointment = new Appointment(appointmentFileRepository.GenerateNextId(), patient, d, room, DateTime.Now, duration, description);
                 //emergencyAppointment = FindFirstFreeAppointment(emergencyAppointment);
                 emergencyAppointment.StartTime = FindNextFreeAppointmentStartTime(emergencyAppointment);
                 appointments.Add(emergencyAppointment);
