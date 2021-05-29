@@ -5076,5 +5076,624 @@
     "DoctorName": "Darko Torbica",
     "AppointmentDescription": "Pregled kod lekara opste prakse.",
     "StartTimee": "2021-05-30T08:00:00"
+  },
+  {
+    "StartTime": "2021-06-03T00:01:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 20,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-29T20:55:01.9348171+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "anamnesis": [],
+        "prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "referralLetter": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationPeriodInDays": 7,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-10T14:36:14.9409495+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "ReferralLetter": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationPeriodInDays": 7,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-10T14:36:14.9409495+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ]
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-06-03T00:16:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica",
+    "AppointmentDescription": "Pregled kod lekara opste prakse.",
+    "StartTimee": "2021-06-03T00:01:00"
+  },
+  {
+    "StartTime": "2021-05-30T18:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 21,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-29T23:11:25.6510927+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": null,
+        "anamnesis": null,
+        "prescription": [
+          {
+            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 1,
+            "Id": 0,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Vitamin C",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Brufen",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": null,
+        "HealthInsuranceNumber": "12345",
+        "MedicalIdNumber": "12345",
+        "Allergen": [],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 1,
+            "Id": 0,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Vitamin C",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Brufen",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-05-30T18:15:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica",
+    "AppointmentDescription": "Pregled kod lekara opste prakse.",
+    "StartTimee": "2021-05-30T18:00:00"
+  },
+  {
+    "StartTime": "2021-06-06T08:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "AppointentId": 22,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-29T23:11:40.3437004+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        }
+      ],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        },
+        {
+          "StartTime": "2021-05-25T10:00:00",
+          "DurationInDays": 3,
+          "RenovationID": 2
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": [],
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": [],
+        "anamnesis": [],
+        "prescription": [
+          {
+            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 1,
+            "Id": 0,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Vitamin C",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Brufen",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "referralLetter": [],
+        "HealthInsuranceNumber": "12345",
+        "MedicalIdNumber": "12345",
+        "Allergen": [],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 1,
+            "Id": 0,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Vitamin C",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          },
+          {
+            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
+            "DurationInDays": 21,
+            "ReferencePeriod": 0,
+            "Number": 2,
+            "Id": 1,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [],
+              "Name": "Brufen",
+              "Manufacturer": "nesto",
+              "Packaging": "nesto",
+              "MedicineID": 0,
+              "Status": 1,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": []
+            }
+          }
+        ],
+        "ReferralLetter": []
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": false,
+    "EndTime": "2021-06-06T08:15:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "1",
+    "DoctorName": "Darko Torbica",
+    "AppointmentDescription": "Pregled kod lekara opste prakse.",
+    "StartTimee": "2021-06-06T08:00:00"
   }
 ]

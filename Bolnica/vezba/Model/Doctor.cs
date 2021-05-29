@@ -27,6 +27,8 @@ namespace Model
 
         }
 
+        public Doctor() { }
+
         public string NameAndSurname
         {
             get

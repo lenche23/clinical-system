@@ -7,7 +7,7 @@ namespace Service
 {
    public class DoctorService
     {
-        public DoctorFileRepository DoctorRepository { get; }
+        public DoctorFileRepository DoctorRepository { get; set; }
 
         public DoctorService()
         {
@@ -50,7 +50,10 @@ namespace Service
         // SekretarKraj***************************************************************************
 
         // Pacijent*******************************************************************************
-
+        public Doctor LoadDoctor()
+        {
+            return DoctorRepository.GetOne("1708962324890");
+        }
 
 
 

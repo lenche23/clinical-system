@@ -14,9 +14,11 @@ namespace Service
     {
         public AppointmentFileRepository AppointmentRepository { get; }
         private Appointment ChangingAppointment { get; set; }
+        private EventsLogService EventsLogService { get; set; }
         public AppointmentService()
         {
             AppointmentRepository = new AppointmentFileRepository();
+            EventsLogService = new EventsLogService();
             ChangingAppointment = new Appointment();
         }
         // Sekretar*******************************************************************************
@@ -70,7 +72,7 @@ namespace Service
             return AppointmentRepository.Delete(id);
         }
 
-        private List<Appointment> GetOverlapingAppointments(Appointment appointment)
+        public List<Appointment> GetOverlapingAppointments(Appointment appointment)
         {
             AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
             List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
@@ -316,6 +318,23 @@ namespace Service
             if (idAppointment != null)
             {
                 ChangeAppointmentPage.Appointments[ChangeAppointmentPage.Appointments.IndexOf(idAppointment)] = changedAppointment;
+            }
+        }
+
+        public Boolean PatientCanScheduleAppointment(Appointment newAppointment)
+        {
+            if (GetOverlapingAppointments(newAppointment).Count == 0)
+            {
+                EventsLogService.AddLog();
+                PatientNotification noti = new PatientNotification("Uspešno ste zakazali pregled.");
+                noti.ShowDialog();
+                return AppointmentRepository.Save(newAppointment);
+            }
+            else
+            {
+                PatientNotification noti = new PatientNotification("Termin je zauzet! Izaberite drugo vreme.");
+                noti.ShowDialog();
+                return false;
             }
         }
         // PacijentKraj***************************************************************************

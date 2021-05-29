@@ -248,6 +248,12 @@
     <Compile Include="PatientNotification.xaml.cs">
       <DependentUpon>PatientNotification.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PatientPages\DoctorOrTimePage.xaml.cs">
+      <DependentUpon>DoctorOrTimePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\OrderDoctorAppointment.xaml.cs">
+      <DependentUpon>OrderDoctorAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repository\DeclinedMedicineFileRepository.cs" />
     <Compile Include="Model\DoctorEvaluation.cs" />
     <Compile Include="Repository\DoctorEvaluationFileRepository.cs" />
@@ -784,6 +790,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PatientPages\DoctorOrTimePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientPages\EditAppointmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -809,6 +819,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PatientPages\NotificationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\OrderDoctorAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1136,6 +1150,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\zdravobolnica.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\ambulance.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

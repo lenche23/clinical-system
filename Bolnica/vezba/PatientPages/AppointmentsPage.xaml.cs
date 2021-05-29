@@ -102,8 +102,7 @@ namespace vezba.PatientPages
             }
             else
             {
-                var zakaziPegled = new OrderAppointmentPopup();
-                zakaziPegled.Show();
+                this.NavigationService.Navigate(new DoctorOrTimePage());
             }
         }
 
