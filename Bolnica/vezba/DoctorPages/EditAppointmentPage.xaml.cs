@@ -57,13 +57,19 @@ namespace vezba.DoctorPages
             var updatedAppointment = UpdatedAppointment();
 
             var appointmentService = new AppointmentService();
-            if (appointmentService.RescheduleAppointment(updatedAppointment))
+            if (appointmentService.DoctorRescheduleAppointment(updatedAppointment))
             {
                 calendar.RemoveAppointment(appointmentGrid);
                 calendar.AddAppointmentToCurrentView(updatedAppointment);
 
                 _doctorView.Main.GoBack();
                 _doctorView.Main.GoBack();
+            }
+            else
+            {
+                var newStartTime = appointmentService.FindNextFreeAppointmentStartTime(updatedAppointment);
+                StartDatePicker.SelectedDate = newStartTime.Date;
+                TimeTB.Text = newStartTime.ToString("t");
             }
         }
 

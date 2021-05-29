@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using Model;
+using vezba;
 using vezba.Repository;
 
 namespace Service
@@ -115,7 +116,7 @@ namespace Service
             return appointment1.Room.RoomNumber == appointment2.Room.RoomNumber;
         }
 
-        private DateTime FindNextFreeAppointmentStartTime(Appointment appointment)
+        public DateTime FindNextFreeAppointmentStartTime(Appointment appointment)
         {
             AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
             List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
@@ -297,12 +298,33 @@ namespace Service
         // PacijentKraj***************************************************************************
 
         // Lekar**********************************************************************************
+        public Boolean DoctorRescheduleAppointment(Appointment editedAppointment)
+        {
+            List<Appointment> overlappingAppointments = GetOverlapingAppointments(editedAppointment);
+            RemoveAppointment(editedAppointment, overlappingAppointments);
+            if (overlappingAppointments.Count == 0)
+                return AppointmentRepository.Update(editedAppointment);
+            else
+            {
+                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.\nPrvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(editedAppointment).ToString("dd.MM.yyyy. HH:mm"));
+                return false;
+            }
+        }
+
+        private static void RemoveAppointment(Appointment appointmentToRemove, List<Appointment> appointments)
+        {
+            foreach (var appointment in appointments)
+            {
+                if (appointment.AppointentId == appointmentToRemove.AppointentId)
+                {
+                    appointments.Remove(appointment);
+                    break;
+                }
+            }
+        }
 
 
-
-
-
-       // LekarKraj******************************************************************************
+        // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************
 
