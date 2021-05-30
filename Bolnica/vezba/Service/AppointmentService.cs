@@ -388,6 +388,23 @@ namespace Service
             appointments.Reverse();
             return appointments;
         }
+
+        public List<Appointment> GetPatientTodayAppointments() 
+        {
+            List<Appointment> appointments = new List<Appointment>();
+            foreach (Appointment appointment in GetAllAppointments())
+            {
+                if (appointment.StartTime.Date == DateTime.Today && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
+                {
+                    appointments.Add(appointment);
+                }
+            }
+            appointments.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
+            appointments.Reverse();
+            return appointments;
+        }
+
+        
         // PacijentKraj***************************************************************************
 
         // Lekar**********************************************************************************

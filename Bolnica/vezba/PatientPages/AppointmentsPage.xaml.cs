@@ -26,39 +26,6 @@ namespace vezba.PatientPages
         public AppointmentsPage()
         {
             InitializeComponent();
-            /*fileRepository = new EventsLogFileRepository();
-            list = fileRepository.Load();
-            pps = new PatientFileRepository();
-            Patient patient = pps.GetOne("1008985563244");
-            Patient = patient;
-            Patient.IsBlocked = false;*/
-            /*for (int i = 0; i < list.Count; i++)//kroz pacijente
-            {
-                if (list[i].PatientJmbg.Equals(Patient.Jmbg))
-                {
-                    if (!Patient.IsBlocked)
-                    {
-                        EventsLog log = list[i];
-                        List<DateTime> events = log.EventDates;
-                        DateTime reff = DateTime.Now.Date.AddDays(-5);
-                        int count = 0;
-                        foreach (DateTime event1 in events)
-                        {
-                            if (event1.Date >= reff)
-                            {
-                                count++;
-                            }
-                        }
-                        if (count == 10)
-                        {
-                            Patient.IsBlocked = true;
-                            pps.Update(Patient);
-                            events.Clear();
-                            fileRepository.Update(log);
-                        }
-                    }
-                }
-            }*/
         }
 
         private void ButtonOrderAppointment_Click(object sender, RoutedEventArgs e)
