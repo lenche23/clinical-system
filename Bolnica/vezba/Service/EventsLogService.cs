@@ -27,11 +27,6 @@ namespace Service
            return EventsLogRepository.ReadFromFile();
         }
 
-        private Boolean Update(EventsLog log)
-        {
-            return EventsLogRepository.Update(log);
-        }
-
         public void AddLog()
         {
             List<EventsLog> list = LoadEvents();
@@ -42,7 +37,7 @@ namespace Service
                 if (elog.PatientJmbg.Equals(patientJMBG))
                 {
                     elog.EventDates.Add(log);
-                    this.Update(elog);
+                    this.EditLog(elog);
                 }
             }
         }

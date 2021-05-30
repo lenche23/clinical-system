@@ -134,9 +134,9 @@ namespace Service
             return notifications;
         }
 
-        private Boolean PeriodDaily(Prescription p)
+        private Boolean PeriodDaily(Prescription prescription)
         {
-            if (p.ReferencePeriod == Period.daily)
+            if (prescription.ReferencePeriod == Period.daily)
                 return true;
             return false;
         }

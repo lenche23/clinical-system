@@ -63,7 +63,6 @@ namespace vezba.PatientPages
             }
             else
             {
-                //MessageBox.Show("Pregled možete pomeriti maksimalno za dva dana.");
                 PatientNotification noti = new PatientNotification("Pregled možete pomeriti za maksimalno dva dana.");
                 noti.ShowDialog();
             }
