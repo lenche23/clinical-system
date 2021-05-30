@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace vezba.Repository
 {
-   public class EventsLogFileRepository
+   public class EventsLogFileRepository : IEventsLogRepository
    {
         public String FileName { get; set; }
 

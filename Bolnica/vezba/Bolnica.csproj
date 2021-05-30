@@ -290,8 +290,11 @@
     <Compile Include="Model\MedicineStatus.cs" />
     <Compile Include="Repository\IAnnouncementRepository.cs" />
     <Compile Include="Repository\IAppointmentRepository.cs" />
+    <Compile Include="Repository\IDoctorEvaluationRepository.cs" />
     <Compile Include="Repository\IDoctorRepository.cs" />
+    <Compile Include="Repository\IEventsLogRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
+    <Compile Include="Repository\IHospitalEvaluationRepository.cs" />
     <Compile Include="Repository\IPatientRepository.cs" />
     <Compile Include="Repository\MedicineFileRepository.cs" />
     <Compile Include="Model\Menager.cs" />
