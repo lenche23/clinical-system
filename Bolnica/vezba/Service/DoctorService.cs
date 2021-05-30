@@ -33,7 +33,7 @@ namespace Service
         public Boolean EditDoctor(Doctor editedDoctor)
         {
             Doctor doctor = SortWorkingHoursForDoctor(editedDoctor);
-            //doctor = SortVacationDaysForDoctor(doctor);
+            doctor = SortVacationDaysForDoctor(doctor);
             return DoctorRepository.Update(doctor);
         }
 
@@ -61,12 +61,12 @@ namespace Service
             return futureVacationDays;
         }
 
-        public Doctor SortWorkingHoursForDoctor(Doctor doctor)
+        private Doctor SortWorkingHoursForDoctor(Doctor doctor)
         {
             doctor.WorkingSchedule.Sort((wh1, wh2) => wh1.BeginningDate.CompareTo(wh2.BeginningDate));
             return doctor;
         }
-        public Doctor SortVacationDaysForDoctor(Doctor doctor)
+        private Doctor SortVacationDaysForDoctor(Doctor doctor)
         {
             doctor.VacationDays.Sort((vd1, vd2) => vd1.StartDate.CompareTo(vd2.StartDate));
             return doctor;
@@ -103,7 +103,7 @@ namespace Service
             return false;
         }
 
-        public Boolean VacationDaysOverlap(string jmbg, VacationDays newVacationDays)
+        private Boolean VacationDaysOverlap(string jmbg, VacationDays newVacationDays)
         {
             Doctor doctor = DoctorRepository.GetOne(jmbg);
             foreach (VacationDays vd in doctor.VacationDays)
@@ -143,20 +143,6 @@ namespace Service
             }
             EditDoctor(doctor);
         }
-
-
-
-
-        /*public Boolean SaveDoctor(Doctor newDoctor)
-        {
-            return DoctorRepository.Save(newDoctor);
-        }
-
-        public Boolean DeleteDoctor(string jmbg)
-        {
-            return DoctorRepository.Delete(jmbg);
-        }*/
-
 
 
         // SekretarKraj***************************************************************************
