@@ -33,7 +33,7 @@ namespace vezba.DoctorPages
             _doctorView = doctorView;
             DataContext = this;
             var roomService = new RoomService();
-            Rooms = roomService.GetAll();
+            Rooms = roomService.GetAllRooms();
             CmbRooms.SelectedIndex = 0;
         }
 

@@ -122,7 +122,7 @@ namespace vezba.Repository
           }
       }
 
-      public int GenerateNextId()
+      private int GenerateNextId()
       {
           var storedMedicine = ReadFromFile();
           return storedMedicine.Count;

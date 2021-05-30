@@ -109,7 +109,7 @@ namespace vezba.Repository
             return new List<Appointment>();
         }
 
-        private static List<Appointment> CreateAppointments(List<JObject> deserializedAppointments)
+        private List<Appointment> CreateAppointments(List<JObject> deserializedAppointments)
         {
             var appointments = new List<Appointment>();
             PatientFileRepository patientRepository = new PatientFileRepository();
@@ -155,13 +155,13 @@ namespace vezba.Repository
             }
         }
 
-        public int GenerateNextId()
+        private int GenerateNextId()
         {
             List<Appointment> appointments = ReadFromFile();
             return appointments.Count;
 		}
 
-        private static List<JObject> PrepareForSerialization(List<Appointment> appointments)
+        private List<JObject> PrepareForSerialization(List<Appointment> appointments)
         {
             var appointmentsForSerialization = new List<JObject>();
             foreach (var appointment in appointments)

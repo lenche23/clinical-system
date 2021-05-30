@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using Model;
-using vezba.Repository;
+using Service;
 
 namespace vezba.DoctorPages
 {
@@ -20,8 +20,8 @@ namespace vezba.DoctorPages
         {
             InitializeComponent();
             DataContext = this;
-            var announcementFileRepository = new AnnouncementFileRepository();
-            var announcements = announcementFileRepository.GetByUser(userType);
+            var announcementService = new AnnouncementService();
+            var announcements = announcementService.GetAnnouncementsByUserType(userType);
             Announcements = new ObservableCollection<Announcement>(announcements);
             _doctorView = doctorView;
         }

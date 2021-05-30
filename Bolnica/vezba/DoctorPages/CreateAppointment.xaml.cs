@@ -30,7 +30,7 @@ namespace vezba.DoctorPages
             Doctors = doctorService.GetAllDoctors();
 
             var roomService = new RoomService();
-            Rooms = roomService.GetAll();
+            Rooms = roomService.GetAllRooms();
 
             DataContext = this;
             cmbPatients.SelectedIndex = 0;
@@ -52,7 +52,7 @@ namespace vezba.DoctorPages
             Doctors = doctorService.GetAllDoctors();
 
             var roomService = new RoomService();
-            Rooms = roomService.GetAll();
+            Rooms = roomService.GetAllRooms();
 
             DataContext = this;
             cmbPatients.SelectedIndex = 0;

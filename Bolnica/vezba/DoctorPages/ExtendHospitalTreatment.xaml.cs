@@ -43,7 +43,7 @@ namespace vezba.DoctorPages
         {
             HospitalTreatment.DurationInDays = int.Parse(TbDuration.Text);
             PatientService patientService = new PatientService();
-            patientService.UpdatePatient(_patient);
+            patientService.EditPatient(_patient);
             _medicalRecordPage.hospitalTreatmentGrid.Items.Refresh();
             _doctorView.Main.GoBack();
         }

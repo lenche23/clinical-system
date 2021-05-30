@@ -32,7 +32,7 @@ namespace vezba.DoctorPages
             Doctors = doctorService.GetAllDoctors();
 
             var roomService = new RoomService();
-            Rooms = roomService.GetAll();
+            Rooms = roomService.GetAllRooms();
 
             Appointment = appointment;
             DataContext = this;

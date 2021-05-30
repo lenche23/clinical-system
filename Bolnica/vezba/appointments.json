@@ -6,6 +6,8 @@
     "AppointentId": 0,
     "IsDeleted": false,
     "IsEmergency": false,
+    "AppointmentDescription": "Sistematski",
+    "StartTimee": "2021-05-26T07:00:00",
     "patientId": "1706971459311",
     "roomId": 1,
     "doctorId": "1708962324890"
@@ -17,6 +19,8 @@
     "AppointentId": 1,
     "IsDeleted": false,
     "IsEmergency": false,
+    "AppointmentDescription": "Dvoboj",
+    "StartTimee": "2021-05-26T08:00:00",
     "patientId": "1706971459311",
     "roomId": 1,
     "doctorId": "1708962324890"
@@ -28,6 +32,8 @@
     "AppointentId": 2,
     "IsDeleted": true,
     "IsEmergency": false,
+    "AppointmentDescription": "Sistematski",
+    "StartTimee": "2021-05-26T07:00:00",
     "patientId": "0902994143189",
     "roomId": 2,
     "doctorId": "0104998253658"
@@ -39,6 +45,8 @@
     "AppointentId": 3,
     "IsDeleted": true,
     "IsEmergency": false,
+    "AppointmentDescription": "Sistematski",
+    "StartTimee": "2021-06-03T07:00:00",
     "patientId": "1706971459311",
     "roomId": 1,
     "doctorId": "1708962324890"
@@ -50,6 +58,8 @@
     "AppointentId": 4,
     "IsDeleted": true,
     "IsEmergency": false,
+    "AppointmentDescription": "sis",
+    "StartTimee": "2021-05-27T07:00:00",
     "patientId": "1706971459311",
     "roomId": 1,
     "doctorId": "1708962324890"
@@ -61,8 +71,23 @@
     "AppointentId": 5,
     "IsDeleted": true,
     "IsEmergency": false,
+    "AppointmentDescription": "sis",
+    "StartTimee": "2021-05-27T07:00:00",
     "patientId": "1706971459311",
     "roomId": 1,
     "doctorId": "0104998253658"
+  },
+  {
+    "StartTime": "2021-05-30T16:38:29.8357999+02:00",
+    "DurationInMunutes": 45,
+    "ApointmentDescription": "dvoboj",
+    "AppointentId": 6,
+    "IsDeleted": false,
+    "IsEmergency": true,
+    "AppointmentDescription": "dvoboj",
+    "StartTimee": "2021-05-30T16:38:29.8357999+02:00",
+    "patientId": "1706971459311",
+    "roomId": 2,
+    "doctorId": "0611985621455"
   }
 ]

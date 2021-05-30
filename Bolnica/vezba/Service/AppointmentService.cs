@@ -11,11 +11,12 @@ using vezba.SecretaryGUI;
 
 namespace Service
 {
-   public class AppointmentService
+    public class AppointmentService
     {
         public AppointmentFileRepository AppointmentRepository { get; }
         private Appointment ChangingAppointment { get; set; }
         private EventsLogService EventsLogService { get; set; }
+
         public AppointmentService()
         {
             AppointmentRepository = new AppointmentFileRepository();
@@ -52,7 +53,9 @@ namespace Service
             }
             else
             {
-                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(newAppointment).ToString("dd.MM.yyyy. HH:mm"));
+                MessageBox.Show(
+                    "Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " +
+                    FindNextFreeAppointmentStartTime(newAppointment).ToString("dd.MM.yyyy. HH:mm"));
                 return false;
             }
         }
@@ -63,7 +66,9 @@ namespace Service
                 return AppointmentRepository.Update(editedAppointment);
             else
             {
-                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.\nPrvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(editedAppointment).ToString("dd.MM.yyyy. HH:mm"));
+                MessageBox.Show(
+                    "Termin je zauzet! Izaberite drugo vreme.\nPrvi sledeci dostupan termin za unete kriterijume je " +
+                    FindNextFreeAppointmentStartTime(editedAppointment).ToString("dd.MM.yyyy. HH:mm"));
                 return false;
             }
         }
@@ -85,20 +90,26 @@ namespace Service
                     overlapingAppointments.Add(scheduledAppointments[i]);
                 }
             }
+
             return overlapingAppointments;
         }
 
         private Boolean AppointmentsOverlap(Appointment appointment1, Appointment appointment2)
         {
-            if (AppointmentsShareDoctor(appointment1, appointment2) || AppointmentsSharePatient(appointment1, appointment2) || AppointmentsShareRoom(appointment1, appointment2))
+            if (AppointmentsShareDoctor(appointment1, appointment2) ||
+                AppointmentsSharePatient(appointment1, appointment2) ||
+                AppointmentsShareRoom(appointment1, appointment2))
             {
-                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <= 0) //drugi zavrsava pre pocetka prvog
+                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <=
+                    0) //drugi zavrsava pre pocetka prvog
                     return false;
-                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <= 0) //prvi zavrsava pre pocetka drugog
+                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <=
+                         0) //prvi zavrsava pre pocetka drugog
                     return false;
                 else
                     return true;
             }
+
             return false;
         }
 
@@ -140,6 +151,7 @@ namespace Service
                     }
                 }
             }
+
             return appointment.StartTime;
         }
 
@@ -151,6 +163,7 @@ namespace Service
                 newStartTime = new DateTime(newStartTime.Year, newStartTime.Month, newStartTime.Day, 8, 0, 0);
                 newStartTime = newStartTime.AddDays(1);
             }
+
             return newStartTime;
         }
 
@@ -162,6 +175,7 @@ namespace Service
 
             return false;
         }
+
         public Boolean ScheduleEmergencyAppointment(Appointment emergencyAppointment)
         {
             if (emergencyAppointment == null)
@@ -172,8 +186,10 @@ namespace Service
                 AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
                 return appointmentFileRepository.Save(emergencyAppointment);
             }
+
             return false;
         }
+
         public Appointment FindEarliestEmergencyAppointment(Appointment modelAppointment, Speciality speciality)
         {
             DoctorFileRepository doctorFileRepository = new DoctorFileRepository();
@@ -182,11 +198,14 @@ namespace Service
             List<Appointment> appointments = new List<Appointment>();
             foreach (Doctor d in doctors)
             {
-                Appointment emergencyAppointment = new Appointment(0, modelAppointment.Patient, d, modelAppointment.Room, DateTime.Now, modelAppointment.DurationInMunutes, modelAppointment.ApointmentDescription, true);
+                Appointment emergencyAppointment = new Appointment(0, modelAppointment.Patient, d,
+                    modelAppointment.Room, DateTime.Now, modelAppointment.DurationInMunutes,
+                    modelAppointment.ApointmentDescription, true);
 
                 emergencyAppointment.StartTime = FindNextFreeAppointmentStartTime(emergencyAppointment);
                 appointments.Add(emergencyAppointment);
             }
+
             return FindEarliestOfAppointments(appointments);
         }
 
@@ -200,8 +219,10 @@ namespace Service
                 if (a.StartTime < earliestAppoinment.StartTime)
                     earliestAppoinment = a;
             }
+
             return earliestAppoinment;
         }
+
         //******************************************
         private List<Appointment> SortAppointmentsByStartTime(List<Appointment> appointments)
         {
@@ -221,10 +242,12 @@ namespace Service
                     overlapingAppointments.Add(scheduledAppointments[i]);
                 }
             }
+
             return overlapingAppointments;
         }
 
-        private DateTime FindNextFreeAppointmentStartTimeInAppointments(Appointment appointment, List<Appointment> scheduledAppointments)
+        private DateTime FindNextFreeAppointmentStartTimeInAppointments(Appointment appointment,
+            List<Appointment> scheduledAppointments)
         {
             Boolean newTimeFound = false;
             while (!newTimeFound)
@@ -240,23 +263,29 @@ namespace Service
                     }
                 }
             }
+
             return appointment.StartTime;
         }
-		
+
         private Boolean EmergencyAppointmentsOverlap(Appointment appointment1, Appointment appointment2)
         {
-            if (AppointmentsShareDoctorSpeciality(appointment1, appointment2) || AppointmentsSharePatient(appointment1, appointment2) || AppointmentsShareRoom(appointment1, appointment2))
+            if (AppointmentsShareDoctorSpeciality(appointment1, appointment2) ||
+                AppointmentsSharePatient(appointment1, appointment2) ||
+                AppointmentsShareRoom(appointment1, appointment2))
             {
-                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <= 0) //drugi zavrsava pre pocetka prvog
+                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <=
+                    0) //drugi zavrsava pre pocetka prvog
                     return false;
-                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <= 0) //prvi zavrsava pre pocetka drugog
+                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <=
+                         0) //prvi zavrsava pre pocetka drugog
                     return false;
                 else
                     return true;
             }
+
             return false;
         }
-		
+
         public List<AppointmentForReschedulingDTO> CreateAppointmentsForRescheduling(Appointment emergencyAppointment)
         {
             List<Appointment> overlapingAppointments = GetEmergencyOverlapingAppointments(emergencyAppointment);
@@ -268,7 +297,9 @@ namespace Service
             return TransformAppointmentsInAppointmentsForRescheduling(overlapingAppointments, scheduledAppointments);
 
         }
-        private List<AppointmentForReschedulingDTO> TransformAppointmentsInAppointmentsForRescheduling(List<Appointment> overlapingAppointments, List<Appointment> scheduledAppointments)
+
+        private List<AppointmentForReschedulingDTO> TransformAppointmentsInAppointmentsForRescheduling(
+            List<Appointment> overlapingAppointments, List<Appointment> scheduledAppointments)
         {
             List<AppointmentForReschedulingDTO> appointmentsForRescheduling = new List<AppointmentForReschedulingDTO>();
             foreach (Appointment appointment in overlapingAppointments)
@@ -283,7 +314,8 @@ namespace Service
             return appointmentsForRescheduling;
         }
 
-        private void RemoveAppointmentsFromAppointentList(List<Appointment> appointmentsForRemoval, List<Appointment> appointments)
+        private void RemoveAppointmentsFromAppointentList(List<Appointment> appointmentsForRemoval,
+            List<Appointment> appointments)
         {
             foreach (Appointment oAppointment in appointmentsForRemoval)
             {
@@ -296,14 +328,20 @@ namespace Service
         public void RescheduleAppointmentForRescheduling(AppointmentForReschedulingDTO appointmentForRescheduling)
         {
             List<Appointment> scheduledAppointments = GetAllAppointments();
-            Appointment rescheduledAppointment = scheduledAppointments.FirstOrDefault(a => a.AppointentId.Equals(appointmentForRescheduling.AppointmentId));
+            Appointment rescheduledAppointment =
+                scheduledAppointments.FirstOrDefault(a =>
+                    a.AppointentId.Equals(appointmentForRescheduling.AppointmentId));
             if (rescheduledAppointment != null)
             {
                 rescheduledAppointment.StartTime = appointmentForRescheduling.SuggestedTime;
                 EditAppointment(rescheduledAppointment);
-                Appointment previousAppointment = vezba.SecretaryGUI.SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(rescheduledAppointment.AppointentId));
+                Appointment previousAppointment =
+                    vezba.SecretaryGUI.SecretaryAppointments.Appointments.FirstOrDefault(a =>
+                        a.AppointentId.Equals(rescheduledAppointment.AppointentId));
                 if (previousAppointment != null)
-                    vezba.SecretaryGUI.SecretaryAppointments.Appointments[vezba.SecretaryGUI.SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = rescheduledAppointment;
+                    vezba.SecretaryGUI.SecretaryAppointments.Appointments[
+                            vezba.SecretaryGUI.SecretaryAppointments.Appointments.IndexOf(previousAppointment)] =
+                        rescheduledAppointment;
             }
         }
 
@@ -331,10 +369,12 @@ namespace Service
             changedAppointment.AppointentId = id;
             EditAppointment(changedAppointment);
 
-            Appointment idAppointment = ChangeAppointmentPage.Appointments.FirstOrDefault(a => a.AppointentId.Equals(id));
+            Appointment idAppointment =
+                ChangeAppointmentPage.Appointments.FirstOrDefault(a => a.AppointentId.Equals(id));
             if (idAppointment != null)
             {
-                ChangeAppointmentPage.Appointments[ChangeAppointmentPage.Appointments.IndexOf(idAppointment)] = changedAppointment;
+                ChangeAppointmentPage.Appointments[ChangeAppointmentPage.Appointments.IndexOf(idAppointment)] =
+                    changedAppointment;
             }
         }
 
@@ -381,11 +421,13 @@ namespace Service
             List<Appointment> appointments = new List<Appointment>();
             foreach (Appointment appointment in GetAllAppointments())
             {
-                if (appointment.StartTime.Date > DateTime.Today && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
+                if (appointment.StartTime.Date > DateTime.Today &&
+                    appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
                 {
                     appointments.Add(appointment);
                 }
             }
+
             appointments.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
             appointments.Reverse();
             return appointments;
@@ -396,30 +438,34 @@ namespace Service
             List<Appointment> appointments = new List<Appointment>();
             foreach (Appointment appointment in GetAllAppointments())
             {
-                if (appointment.StartTime.Date < DateTime.Now && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
+                if (appointment.StartTime.Date < DateTime.Now &&
+                    appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
                 {
                     appointments.Add(appointment);
                 }
             }
+
             appointments.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
             appointments.Reverse();
             return appointments;
         }
 
-        public List<Appointment> GetPatientTodayAppointments() 
+        public List<Appointment> GetPatientTodayAppointments()
         {
             List<Appointment> appointments = new List<Appointment>();
             foreach (Appointment appointment in GetAllAppointments())
             {
-                if (appointment.StartTime.Date == DateTime.Today && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
-				{
+                if (appointment.StartTime.Date == DateTime.Today &&
+                    appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
+                {
                     appointments.Add(appointment);
                 }
             }
-			appointments.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
+
+            appointments.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
             appointments.Reverse();
             return appointments;
-		}
+        }
 
         // PacijentKraj***************************************************************************
 
@@ -432,7 +478,9 @@ namespace Service
                 return AppointmentRepository.Update(editedAppointment);
             else
             {
-                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.\nPrvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(editedAppointment).ToString("dd.MM.yyyy. HH:mm"));
+                MessageBox.Show(
+                    "Termin je zauzet! Izaberite drugo vreme.\nPrvi sledeci dostupan termin za unete kriterijume je " +
+                    FindNextFreeAppointmentStartTime(editedAppointment).ToString("dd.MM.yyyy. HH:mm"));
                 return false;
             }
         }
@@ -463,7 +511,8 @@ namespace Service
             return earliestTime;
         }
 
-        public List<Appointment>GenerateAppointmentsForWeekAndDoctor(DateTime startOfWeek, DateTime endOfWeek, Doctor selectedDoctor)
+        public List<Appointment> GenerateAppointmentsForWeekAndDoctor(DateTime startOfWeek, DateTime endOfWeek,
+            Doctor selectedDoctor)
         {
             List<Appointment> appointments = new List<Appointment>();
             List<Appointment> allAppointments = GetAllAppointments();
@@ -472,21 +521,23 @@ namespace Service
             {
                 if (appointment.Doctor == null)
                     continue;
-                if(IsAppointmentInCurrentView(appointment, startOfWeek, endOfWeek, selectedDoctor))
+                if (IsAppointmentInCurrentView(appointment, startOfWeek, endOfWeek, selectedDoctor))
                 {
                     appointments.Add(appointment);
                 }
             }
-			return appointments;
+
+            return appointments;
         }
 
-        public Boolean IsAppointmentInCurrentView(Appointment appointment, DateTime startOfWeek, DateTime endOfWeek, Doctor selectedDoctor)
+        public Boolean IsAppointmentInCurrentView(Appointment appointment, DateTime startOfWeek, DateTime endOfWeek,
+            Doctor selectedDoctor)
         {
             return DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
                    DateTime.Compare(appointment.StartTime, endOfWeek) < 0 &&
                    appointment.Doctor.Jmbg.Equals(selectedDoctor.Jmbg);
         }
-		
+
         // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************
@@ -497,3 +548,4 @@ namespace Service
 
         // UpravnikKraj***************************************************************************
     }
+}
