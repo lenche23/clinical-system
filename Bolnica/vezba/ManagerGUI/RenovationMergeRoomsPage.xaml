@@ -1,0 +1,22 @@
+﻿<Page x:Class="vezba.ManagerGUI.RenovationMergeRoomsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba.ManagerGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="570" d:DesignWidth="750"
+      Title="RenovationMergeRoomsPage">
+    <Grid>
+        <Label Content="Zakazivanje renoviranja"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="283,20,240,499"/>
+        <Label Name="BrojProstorije" Content="Prostorija: " Margin="147,102,488,417" FontSize="14"></Label>
+        <Label Content="Početni datum:" Margin="127,153,498,380"/>
+        <Label Content="Predviđeno trajanje:" Margin="107,210,498,323" />
+        <TextBox Name="PocetniDatum" Margin="262,153,145,380" RenderTransformOrigin="0.491,0.484" />
+        <TextBox Name="Trajanje" RenderTransformOrigin="0.491,0.484" Margin="262,200,145,323" />
+        <Button Click="OkButtonClick" Margin="190,425,407,85">Potvrdi</Button>
+        <Button Click="CancelButtonClick" Margin="405,425,172,85">Odustani</Button>
+        <Label Content="Soba sa kojom se spaja:" Margin="95,286,510,247" />
+        <ComboBox ItemsSource="{Binding roomList}" DisplayMemberPath="RoomNumber" Name="RoomToMerge" Margin="262,280,325,247"/>
+    </Grid>
+</Page>

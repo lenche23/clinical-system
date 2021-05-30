@@ -20,7 +20,7 @@ namespace vezba.ManagerGUI
             this.DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
             AnnouncementService announcementService = new AnnouncementService();
-            List<Announcement> announcements = announcementService.GetManagerAnnouncementsByUser(ut);
+            List<Announcement> announcements = announcementService.GetAnnouncementsByUserType(ut);
             Ans = new ObservableCollection<Announcement>(announcements);
         }
 

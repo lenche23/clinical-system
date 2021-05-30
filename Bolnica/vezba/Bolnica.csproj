@@ -207,6 +207,9 @@
     <Compile Include="ManagerGUI\MedicineUpdatePage.xaml.cs">
       <DependentUpon>MedicineUpdatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerGUI\RenovationMergeRoomsPage.xaml.cs">
+      <DependentUpon>RenovationMergeRoomsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerGUI\RenovationsPage.xaml.cs">
       <DependentUpon>RenovationsPage.xaml</DependentUpon>
     </Compile>
@@ -230,9 +233,6 @@
     </Compile>
     <Compile Include="ManagerGUI\RoomExchangeStaticEquipmentPage.xaml.cs">
       <DependentUpon>RoomExchangeStaticEquipmentPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerGUI\RoomNewRenovationPage.xaml.cs">
-      <DependentUpon>RoomNewRenovationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerGUI\RoomsPage.xaml.cs">
       <DependentUpon>RoomsPage.xaml</DependentUpon>
@@ -763,6 +763,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ManagerGUI\RenovationMergeRoomsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerGUI\RenovationsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -792,10 +796,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerGUI\RoomExchangeStaticEquipmentPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManagerGUI\RoomNewRenovationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

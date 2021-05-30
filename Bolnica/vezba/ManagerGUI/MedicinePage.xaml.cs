@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using Service;
-using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {

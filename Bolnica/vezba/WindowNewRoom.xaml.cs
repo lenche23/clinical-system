@@ -67,7 +67,7 @@ namespace Bolnica
                 type = RoomType.recoveryRoom;
             }
 
-            var newRoom = new Room(int.Parse(BrojSobe.Text), floor, type) {};
+            var newRoom = new Room(DateTime.Now, int.Parse(BrojSobe.Text), floor, type) {};
 
             RoomFileRepository fileRepository = new RoomFileRepository();
             fileRepository.Save(newRoom);

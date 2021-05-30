@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using System;
+using Model;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -19,7 +20,15 @@ namespace vezba.ManagerGUI
             this.mainManagerWindow = mainManagerWindow;
             RoomService roomService = new RoomService();
             rooms = roomService.GetAllRooms();
-            Rooms = new ObservableCollection<Room>(rooms);
+            Rooms = new ObservableCollection<Room>();
+
+            foreach (Room room in rooms)
+            {
+                if (DateTime.Compare(room.StartDateTime, DateTime.Now) <= 0 && DateTime.Compare(room.EndDateTime, DateTime.Now) >= 0)
+                {
+                    Rooms.Add(room);
+                }
+            }
             lvDataBinding.ItemsSource = Rooms;
         }
 

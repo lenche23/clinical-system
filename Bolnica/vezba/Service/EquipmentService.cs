@@ -60,11 +60,6 @@ namespace Service
         {
             return EquipmentRepository.Delete(equipmentId);
         }
-
-        public int generateNextEquipmentId()
-        {
-            return EquipmentRepository.GenerateNextId();
-        }
         // UpravnikKraj***************************************************************************
     }
 }

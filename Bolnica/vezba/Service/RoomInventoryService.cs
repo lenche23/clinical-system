@@ -105,7 +105,6 @@ namespace Service
         }
         public void SaveNewRoomInventory(DateTime pickedDate, DateTime infiniteTime, int newItemQuantity, Room roomEntry, Equipment equipment)
         {
-            //var id = GenerateNextRoomInventoryId();
             RoomInventory ri = new RoomInventory(pickedDate, infiniteTime, newItemQuantity, 0, equipment, roomEntry);
             SaveRoomInventory(ri);
         }

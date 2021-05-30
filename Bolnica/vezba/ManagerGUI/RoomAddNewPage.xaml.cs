@@ -51,8 +51,8 @@ namespace vezba.ManagerGUI
             }
 
             RoomService roomService = new RoomService();
-            var BrojSobe = roomService.GenerateNextRoomId();
-            var newRoom = new Room(BrojSobe, floor, type);
+            var BrojSobe = int.Parse(BrojSobeTB.Text);
+            var newRoom = new Room(DateTime.Now, BrojSobe, floor, type);
             roomService.SaveRoom(newRoom);
             RoomsPage.Rooms.Add(newRoom);
             NavigationService.GoBack();

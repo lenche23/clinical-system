@@ -30,7 +30,6 @@ namespace vezba.ManagerGUI
             var id = selected.renovation.Count + 1;
 
             AppointmentService appointmentService = new AppointmentService();
-            List<Appointment> appointments = appointmentService.GetAllAppointments();
 
             if (DateTime.Compare(startTime, DateTime.Now) < 0)
             {
@@ -38,7 +37,7 @@ namespace vezba.ManagerGUI
                 return;
             }
 
-            if (Overlap(appointments, startTime, endTime))
+            if (appointmentService.Overlap(selected, startTime, endTime))
             {
                 MessageBox.Show("Datum renovacije se poklapa sa već zakazanim pregledima");
                 return;
@@ -50,25 +49,6 @@ namespace vezba.ManagerGUI
             roomService.UpdateRoom(this.selected);
             RenovationsPage.RenovationList.Add(newRenovation);
             NavigationService.GoBack();
-        }
-
-        private bool Overlap(List<Appointment> appointments, DateTime StartTime, DateTime EndTime)
-        {
-            var overlap = false;
-
-            for (int i = 0; i < appointments.Count; i++)
-            {
-                if (appointments[i].Room.RoomNumber == selected.RoomNumber)
-                {
-                    DateTime appointmentStart = appointments[i].StartTime;
-                    if (DateTime.Compare(appointmentStart, StartTime) > 0 && DateTime.Compare(appointmentStart, EndTime) < 0)
-                    {
-                        overlap = true;
-                    }
-                }
-            }
-
-            return overlap;
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)

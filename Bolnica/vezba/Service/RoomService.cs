@@ -38,10 +38,5 @@ namespace Service
         {
             return RoomRepository.GetOne(roomId);
         }
-
-        public int GenerateNextRoomId()
-        {
-            return RoomRepository.GenerateNextId();
-        }
     }
 }

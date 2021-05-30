@@ -18,7 +18,7 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             this.DataContext = this;
             MedicineService medicineService = new MedicineService();
-            medicineList = medicineService.GetAllMedicine();
+            medicineList = medicineService.GetApproved();
             comboReplacementMedicine.ItemsSource = medicineList;
             List<string> condition = new List<string> { "Kapsula", "Pilula", "Sirup" };
             comboCondition.ItemsSource = condition;
@@ -27,7 +27,7 @@ namespace vezba.ManagerGUI
         }
         private void AddIngredientButtonClick(object sender, RoutedEventArgs e)
         {
-            var ingredientName = NoviSastojak.Text;
+            var ingredientName = NewIngredientTextBox.Text;
             var newIngredient = new Ingridient(ingredientName);
             ingredientTemporaryList.Add(newIngredient);
             IngredientList = new ObservableCollection<Ingridient>(ingredientTemporaryList);
@@ -51,30 +51,18 @@ namespace vezba.ManagerGUI
         }
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            var Name = nazivTB.Text;
-            var Manufacturer = proizvodjacTB.Text;
-            var Packaging = pakovanjeTB.Text;
+            var Name = NameTextBox.Text;
+            var Manufacturer = ManufacturerTextBox.Text;
+            var Packaging = PackagingTextBox.Text;
             var Condition = MedicineCondition.pill;
 
-            if (comboCondition.SelectedIndex == 1)
-            {
-                Condition = MedicineCondition.pill;
-            }
-            else if (comboCondition.SelectedIndex == 0)
-            {
-                Condition = MedicineCondition.capsule;
-            }
-            else if (comboCondition.SelectedIndex == 2)
-            {
-                Condition = MedicineCondition.syrup;
-            }
-
+            if (comboCondition.SelectedIndex == 1) Condition = MedicineCondition.pill;
+            else if (comboCondition.SelectedIndex == 0) Condition = MedicineCondition.capsule;
+            else if (comboCondition.SelectedIndex == 2) Condition = MedicineCondition.syrup;
+            
             Medicine replacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
             MedicineService medicineService = new MedicineService();
-            //int MedicineID = fileRepository.GenerateNextId();
-
             newMedicine = new Medicine(Name, Manufacturer, Packaging, 0, Condition) { ReplacementMedicine = replacementMedicine };
-
             MedicinePage.MedicineList.Add(newMedicine);
             newMedicine.ingridient = ingredientTemporaryList;
             medicineService.SaveMedicine(newMedicine);

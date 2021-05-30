@@ -26,9 +26,9 @@
         <TextBlock Grid.Column="0" Grid.Row="2" Padding="2" FontSize="14" Margin="41,17,29,61" Grid.RowSpan="2">Pakovanje:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="3" Padding="2" FontSize="14" Margin="23,24,38,56" Grid.RowSpan="2">Zamenski lek:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="4" Padding="2" FontSize="14" Margin="69,7,38,10">Oblik:</TextBlock>
-        <TextBox Margin="7,7,109,7" Grid.Column="1" Grid.Row="0" Name="nazivTB"></TextBox>
-        <TextBox Margin="7,10,109,12" Grid.Column="1" Grid.Row="1" Name="proizvodjacTB"></TextBox>
-        <TextBox Margin="7,10,109,10" Grid.Column="1" Grid.Row="2" Name="pakovanjeTB"></TextBox>
+        <TextBox Margin="7,7,109,7" Grid.Column="1" Grid.Row="0" Name="NameTextBox"></TextBox>
+        <TextBox Margin="7,10,109,12" Grid.Column="1" Grid.Row="1" Name="ManufacturerTextBox"></TextBox>
+        <TextBox Margin="7,10,109,10" Grid.Column="1" Grid.Row="2" Name="PackagingTextBox"></TextBox>
         <ComboBox  Grid.Column="1" Grid.Row="4" Name="comboCondition" Margin="7,7,109,27"></ComboBox>
         <ComboBox ItemsSource="{Binding medicineList}" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="3" Name="comboReplacementMedicine" Margin="7,16,109,10"></ComboBox>
         <ListView Margin="20,54,33,-153" Name="IngredientsBinding" RenderTransformOrigin="0.5,0.5" Grid.Row="5" Grid.ColumnSpan="2">

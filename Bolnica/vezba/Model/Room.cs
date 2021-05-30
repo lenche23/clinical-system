@@ -8,15 +8,18 @@ namespace Model
         public int RoomNumber { get; set; }
         public Floor RoomFloor { get; set; }
         public Boolean IsDeleted { get; set; }
+        public DateTime StartDateTime { get; set; }
+        public DateTime EndDateTime { get; set; }
 
-        public Room(int roomNumber, Floor roomFloor, RoomType roomType)
+        public Room(DateTime startDateTime, int roomNumber, Floor roomFloor, RoomType roomType)
         {
             this.RoomType = roomType;
             this.RoomNumber = roomNumber;
             this.RoomFloor = roomFloor;
             this.IsDeleted = false;
+            this.EndDateTime = new DateTime(2999, 12, 31);
+            this.StartDateTime = startDateTime;
             this.renovation = new System.Collections.Generic.List<Renovation>();
-
         }
 
         

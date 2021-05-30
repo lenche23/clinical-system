@@ -55,6 +55,8 @@ namespace vezba.Repository
                     room.RoomFloor = editedRoom.RoomFloor;
                     room.RoomType = editedRoom.RoomType;
                     room.renovation = editedRoom.renovation;
+                    room.EndDateTime = editedRoom.EndDateTime;
+                    room.StartDateTime = editedRoom.StartDateTime;
                     WriteToFile(storedRooms);
                     return true;
                 }
@@ -117,7 +119,7 @@ namespace vezba.Repository
                 MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
             }
         }
-        public int GenerateNextId()
+        private int GenerateNextId()
         {
             List<Room> list = ReadFromFile();
             return list.Count;
