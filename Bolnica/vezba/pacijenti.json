@@ -250,7 +250,11 @@
             "Speciality": {
               "Name": "Kardiolog"
             },
+            "WorkingSchedule": null,
+            "AvailableDaysOff": 0,
+            "VacationDays": null,
             "NameAndSurname": "Dana Dimitrijevic",
+            "SpecialityName": "Kardiolog",
             "SalaryInRsd": 120000,
             "Username": "dana",
             "Password": "danica",
@@ -274,7 +278,11 @@
             "Speciality": {
               "Name": "Kardiolog"
             },
+            "WorkingSchedule": null,
+            "AvailableDaysOff": 0,
+            "VacationDays": null,
             "NameAndSurname": "Dana Dimitrijevic",
+            "SpecialityName": "Kardiolog",
             "SalaryInRsd": 120000,
             "Username": "dana",
             "Password": "danica",
@@ -565,7 +573,11 @@
             "Speciality": {
               "Name": "Kardiolog"
             },
+            "WorkingSchedule": null,
+            "AvailableDaysOff": 0,
+            "VacationDays": null,
             "NameAndSurname": "Dana Dimitrijevic",
+            "SpecialityName": "Kardiolog",
             "SalaryInRsd": 120000,
             "Username": "dana",
             "Password": "danica",
@@ -589,7 +601,11 @@
             "Speciality": {
               "Name": "Kardiolog"
             },
+            "WorkingSchedule": null,
+            "AvailableDaysOff": 0,
+            "VacationDays": null,
             "NameAndSurname": "Dana Dimitrijevic",
+            "SpecialityName": "Kardiolog",
             "SalaryInRsd": 120000,
             "Username": "dana",
             "Password": "danica",
@@ -724,7 +740,11 @@
             "Speciality": {
               "Name": "Kardiolog"
             },
+            "WorkingSchedule": null,
+            "AvailableDaysOff": 0,
+            "VacationDays": null,
             "NameAndSurname": "Dana Dimitrijevic",
+            "SpecialityName": "Kardiolog",
             "SalaryInRsd": 120000,
             "Username": "dana",
             "Password": "danica",
@@ -813,7 +833,11 @@
             "Speciality": {
               "Name": "Kardiolog"
             },
+            "WorkingSchedule": null,
+            "AvailableDaysOff": 0,
+            "VacationDays": null,
             "NameAndSurname": "Dana Dimitrijevic",
+            "SpecialityName": "Kardiolog",
             "SalaryInRsd": 120000,
             "Username": "dana",
             "Password": "danica",
@@ -908,12 +932,14 @@
       "anamnesis": null,
       "prescription": null,
       "referralLetter": null,
+      "hospitalTreatment": null,
       "HealthInsuranceNumber": "",
       "MedicalIdNumber": "",
       "Allergen": [],
       "Anamnesis": [],
       "Prescription": [],
-      "ReferralLetter": []
+      "ReferralLetter": [],
+      "HospitalTreatment": []
     },
     "NameAndSurname": "sdfghj dfghjk",
     "Appointment": [],

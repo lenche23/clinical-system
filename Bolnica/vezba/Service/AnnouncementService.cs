@@ -86,7 +86,7 @@ namespace Service
 
         public List<Announcement> GetManagerAnnouncementsByUser(UserType userType)
         {
-            return AnnouncementRepository.GetByUser(userType);
+            return AnnouncementRepository.GetByUserType(userType);
         }
 
         // UpravnikKraj***************************************************************************

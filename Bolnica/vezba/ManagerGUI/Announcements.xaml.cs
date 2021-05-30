@@ -24,17 +24,6 @@ namespace vezba.ManagerGUI
             Ans = new ObservableCollection<Announcement>(announcements);
         }
 
-        public Announcements(UserType ut, String jmbg)
-        {
-            InitializeComponent();
-            this.DataContext = this;
-            AnnouncementFileRepository s = new AnnouncementFileRepository();
-            List<Announcement> announcements = s.GetByUser(ut);
-            announcements.AddRange(s.getIndividualAnnouncements(jmbg));
-
-            Ans = new ObservableCollection<Announcement>(announcements);
-        }
-
         private void View_Button_Click(object sender, RoutedEventArgs e)
         {
             if (announcementTable.SelectedCells.Count > 0)

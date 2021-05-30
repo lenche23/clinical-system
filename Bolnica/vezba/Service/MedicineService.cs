@@ -136,21 +136,6 @@ namespace Service
             return MedicineRepository.Save(newMedicine);
         }
 
-        public Boolean UpdateMedicine(Medicine updatedMedicine)
-        {
-            return MedicineRepository.Update(updatedMedicine);
-        }
-
-        public Boolean DeleteMedicine(int medicineId)
-        {
-            return MedicineRepository.Delete(medicineId);
-        }
-
-        public int GenerateNextMedicineId()
-        {
-            return MedicineRepository.GenerateNextId();
-        }
-
         public List<DeclinedMedicine> GetAllDeclinedMedicine()
         {
             return DeclinedMedicineRepository.GetAll();

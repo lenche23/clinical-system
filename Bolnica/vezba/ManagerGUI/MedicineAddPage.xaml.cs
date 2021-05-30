@@ -70,7 +70,7 @@ namespace vezba.ManagerGUI
             }
 
             Medicine replacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
-            MedicineFileRepository fileRepository = new MedicineFileRepository();
+            MedicineService medicineService = new MedicineService();
             //int MedicineID = fileRepository.GenerateNextId();
 
             newMedicine = new Medicine(Name, Manufacturer, Packaging, 0, Condition) { ReplacementMedicine = replacementMedicine };

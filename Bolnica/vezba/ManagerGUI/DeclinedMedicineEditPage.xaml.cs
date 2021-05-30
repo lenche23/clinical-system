@@ -94,7 +94,7 @@ namespace vezba.ManagerGUI
 
             declinedMedicine.Medicine.ReplacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
             MedicineService medicineService = new MedicineService();
-            declinedMedicine.Medicine.MedicineID = medicineService.GenerateNextMedicineId();
+            //declinedMedicine.Medicine.MedicineID = medicineService.GenerateNextMedicineId();
             medicineService.DeleteDeclinedMedicine(declinedMedicine.DeclinedMedicineID);
             medicineService.SaveMedicine(declinedMedicine.Medicine);
             medicinePage.MedicineBinding.Items.Refresh(); 
