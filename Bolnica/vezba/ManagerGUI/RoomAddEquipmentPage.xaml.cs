@@ -27,8 +27,7 @@ namespace vezba.ManagerGUI
             var Quantity = int.Parse(Količina.Text);
             var endTime = new DateTime(2999, 1, 1, 0, 0, 0);
             RoomInventoryService roomInventoryService = new RoomInventoryService();
-            var id = roomInventoryService.GenerateNextRoomInventoryId();
-            RoomInventory newRoomInventory = new RoomInventory(DateTime.Now, endTime, Quantity, id, comboEquipment, this.selected);
+            RoomInventory newRoomInventory = new RoomInventory(DateTime.Now, endTime, Quantity, 0, comboEquipment, this.selected);
             roomInventoryService.SaveRoomInventory(newRoomInventory);
             RoomUpdatePage.RoomInventoryList.Add(newRoomInventory);
             NavigationService.GoBack();

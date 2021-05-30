@@ -40,8 +40,8 @@ namespace vezba
             var Quantity = int.Parse(Količina.Text);
             var endTime = new DateTime(2999, 1, 1, 0, 0, 0);
             RoomInventoryFileRepository ris = new RoomInventoryFileRepository();
-            var id = ris.GenerateNextId();
-            RoomInventory newRoomInventory = new RoomInventory(DateTime.Now, endTime, Quantity, id, comboEquipment, this.selected);
+            //var id = ris.GenerateNextId();
+            RoomInventory newRoomInventory = new RoomInventory(DateTime.Now, endTime, Quantity, 0, comboEquipment, this.selected);
             ris.Save(newRoomInventory);
             WindowUpdateRoom.RoomInventoryList.Add(newRoomInventory);
             this.Close();

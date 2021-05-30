@@ -120,7 +120,7 @@ namespace vezba.Repository
           }
       }
 
-      public int GenerateNextId()
+      private int GenerateNextId()
       {
           List<RoomInventory> list = ReadFromFile();
           return list.Count;

@@ -62,11 +62,6 @@ namespace Service
             return RoomInventoryRepository.Delete(roomInventoryId);
         }
 
-        public int GenerateNextRoomInventoryId()
-        {
-            return RoomInventoryRepository.GenerateNextId();
-        }
-
         public List<RoomInventory> RoomInventories(Room selected)
         {
             List<RoomInventory> roomInventoryList = new List<RoomInventory>();
@@ -110,8 +105,8 @@ namespace Service
         }
         public void SaveNewRoomInventory(DateTime pickedDate, DateTime infiniteTime, int newItemQuantity, Room roomEntry, Equipment equipment)
         {
-            var id = GenerateNextRoomInventoryId();
-            RoomInventory ri = new RoomInventory(pickedDate, infiniteTime, newItemQuantity, id, equipment, roomEntry);
+            //var id = GenerateNextRoomInventoryId();
+            RoomInventory ri = new RoomInventory(pickedDate, infiniteTime, newItemQuantity, 0, equipment, roomEntry);
             SaveRoomInventory(ri);
         }
 

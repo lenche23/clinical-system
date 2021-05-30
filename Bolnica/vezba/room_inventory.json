@@ -870,5 +870,77 @@
     "EquipmentName": "Krevet",
     "EquipmentId": "2",
     "EquipmentType": "statical"
+  },
+  {
+    "equipment": {
+      "Id": 0,
+      "Name": "Hanzaplast",
+      "Type": 1,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [
+        {
+          "StartTime": "2021-12-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 2,
+      "RoomNumber": 5,
+      "RoomFloor": 1,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-12-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "StartTime": "2021-05-30T16:26:04.05959+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 22,
+    "Id": 27,
+    "IsDeleted": false,
+    "EquipmentName": "Hanzaplast",
+    "EquipmentId": "0",
+    "EquipmentType": "dinamical"
+  },
+  {
+    "equipment": {
+      "Id": 4,
+      "Name": "Trokanalni EKG 30",
+      "Type": 1,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [
+        {
+          "StartTime": "2021-12-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 2,
+      "RoomNumber": 5,
+      "RoomFloor": 1,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-12-10T10:00:00",
+          "DurationInDays": 2,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "StartTime": "2021-05-30T16:26:32.6509363+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 2,
+    "Id": 28,
+    "IsDeleted": false,
+    "EquipmentName": "Trokanalni EKG 30",
+    "EquipmentId": "4",
+    "EquipmentType": "dinamical"
   }
 ]
