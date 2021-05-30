@@ -334,7 +334,6 @@
     <Compile Include="Repository\PatientFileRepository.cs" />
     <Compile Include="Model\Period.cs" />
     <Compile Include="Model\Prescription.cs" />
-    <Compile Include="Repository\PrescriptionFileRepository.cs" />
     <Compile Include="Model\ReferralLetter.cs" />
     <Compile Include="Model\Renovation.cs" />
     <Compile Include="Model\Room.cs" />
@@ -347,7 +346,6 @@
     <Compile Include="Model\Shift.cs" />
     <Compile Include="Model\Speciality.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Repository\UserFileRepository.cs" />
     <Compile Include="Model\UserType.cs" />
     <Compile Include="Model\VacationDays.cs" />
     <Compile Include="Model\Visibility.cs" />

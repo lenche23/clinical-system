@@ -52,7 +52,7 @@ namespace vezba.ManagerGUI
 
             RoomInventoryService roomInventoryService = new RoomInventoryService();
 
-            var roomInventoryList = roomInventoryService.RoomInventories(selected);
+            var roomInventoryList = roomInventoryService.GetAllRoomInventories(selected);
 
             RoomInventoryList = new ObservableCollection<RoomInventory>(roomInventoryList);
             RoomInventoryBinding.ItemsSource = RoomInventoryList;

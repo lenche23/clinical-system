@@ -40,7 +40,7 @@ namespace vezba.ManagerGUI
                 TipLabel.Content = TipLabel.Content + " Prostorija za odmor";
             }
             RoomInventoryService roomInventoryService = new RoomInventoryService();
-            var roomInventoryList = roomInventoryService.RoomInventories(selected);
+            var roomInventoryList = roomInventoryService.GetAllRoomInventories(selected);
             RoomInventoryList = new ObservableCollection<RoomInventory>(roomInventoryList);
             RoomInventoryBinding.ItemsSource = RoomInventoryList;
         }

@@ -15,36 +15,22 @@ namespace Service
             RoomInventoryRepository = new RoomInventoryFileRepository();
         }
 
-
-        // Sekretar*******************************************************************************
-
-
-
-
-
-        // SekretarKraj***************************************************************************
-
-        // Pacijent*******************************************************************************
-
-
-
-
-
-        // PacijentKraj***************************************************************************
-
-        // Lekar**********************************************************************************
-
-
-
-
-
-        // LekarKraj******************************************************************************
-
-        // Upravnik*******************************************************************************
-
-        public List<RoomInventory> GetAllRoomInventories()
+        public List<RoomInventory> GetAllRoomInventories(Room selected)
         {
-            return RoomInventoryRepository.GetAll();
+            List<RoomInventory> roomInventoryList = new List<RoomInventory>();
+            foreach (RoomInventory roomInventory in RoomInventoryRepository.GetAll())
+            {
+                if (roomInventory.room.RoomNumber == selected.RoomNumber)
+                {
+                    if (DateTime.Compare(roomInventory.StartTime, DateTime.Now) <= 0 &&
+                        DateTime.Compare(roomInventory.EndTime, DateTime.Now) >= 0)
+                    {
+                        roomInventoryList.Add(roomInventory);
+                    }
+                }
+            }
+
+            return roomInventoryList;
         }
 
         public Boolean SaveRoomInventory(RoomInventory newRoomInventory)
@@ -62,30 +48,12 @@ namespace Service
             return RoomInventoryRepository.Delete(roomInventoryId);
         }
 
-        public List<RoomInventory> RoomInventories(Room selected)
-        {
-            List<RoomInventory> roomInventoryList = new List<RoomInventory>();
-            foreach (RoomInventory roomInventory in GetAllRoomInventories())
-            {
-                if (roomInventory.room.RoomNumber == selected.RoomNumber)
-                {
-                    if (DateTime.Compare(roomInventory.StartTime, DateTime.Now) <= 0 &&
-                        DateTime.Compare(roomInventory.EndTime, DateTime.Now) >= 0)
-                    {
-                        roomInventoryList.Add(roomInventory);
-                    }
-                }
-            }
-
-            return roomInventoryList;
-        }
-
         public int NewDesiredRoomItemQuantity(RoomInventory roomInventory, int roomNumber, int inputItemQuantity, DateTime pickedDate)
         {
             var itemFound = false;
             var desiredRoomItemQuantity = 0;
 
-            foreach (RoomInventory inventory in GetAllRoomInventories())
+            foreach (RoomInventory inventory in RoomInventoryRepository.GetAll())
             {
                 if (inventory.room.RoomNumber == roomNumber && DateTime.Compare(inventory.StartTime, DateTime.Now) <= 0 && DateTime.Compare(inventory.EndTime, DateTime.Now) >= 0 && inventory.equipment.Id == roomInventory.equipment.Id)
                 {
@@ -103,16 +71,11 @@ namespace Service
 
             return desiredRoomItemQuantity;
         }
-        public void SaveNewRoomInventory(DateTime pickedDate, DateTime infiniteTime, int newItemQuantity, Room roomEntry, Equipment equipment)
-        {
-            RoomInventory ri = new RoomInventory(pickedDate, infiniteTime, newItemQuantity, 0, equipment, roomEntry);
-            SaveRoomInventory(ri);
-        }
 
         public bool AddQuantityToDesiredRoom(int roomNumber, RoomInventory roomInventory, int itemQuantity)
         {
             var itemFound = false;
-            foreach (RoomInventory inventory in GetAllRoomInventories())
+            foreach (RoomInventory inventory in RoomInventoryRepository.GetAll())
             {
                 if (inventory.room.RoomNumber == roomNumber && inventory.equipment.Id == roomInventory.equipment.Id)
                 {

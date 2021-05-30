@@ -45,8 +45,10 @@ namespace vezba.ManagerGUI
 
             currentRoomItemQuantity = roomInventory.Quantity - inputItemQuantity;
             desiredRoomItemQuantity = roomInventoryService.NewDesiredRoomItemQuantity(roomInventory, roomNumber, inputItemQuantity, pickedDate);
-            roomInventoryService.SaveNewRoomInventory(pickedDate, infiniteTime, currentRoomItemQuantity, room, roomInventory.equipment);
-            roomInventoryService.SaveNewRoomInventory(pickedDate, infiniteTime, desiredRoomItemQuantity, roomEntry, roomInventory.equipment);
+            var ri1 = new RoomInventory(pickedDate, infiniteTime, currentRoomItemQuantity, 0, roomInventory.equipment, room);
+            roomInventoryService.SaveRoomInventory(ri1);
+            var ri2 = new RoomInventory(pickedDate, infiniteTime, desiredRoomItemQuantity, 0, roomInventory.equipment, roomEntry);
+            roomInventoryService.SaveRoomInventory(ri2);
 
             NavigationService.GoBack();
         }

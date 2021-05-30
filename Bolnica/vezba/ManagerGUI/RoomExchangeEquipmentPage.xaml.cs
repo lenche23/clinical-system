@@ -43,7 +43,8 @@ namespace vezba.ManagerGUI
 
             if (!roomInventoryService.AddQuantityToDesiredRoom(roomNumber, roomInventory, itemQuantity))
             {
-                roomInventoryService.SaveNewRoomInventory(DateTime.Now, infiniteTime, itemQuantity, roomEntry, roomInventory.equipment);
+                var ri = new RoomInventory(DateTime.Now, infiniteTime, itemQuantity, 0, roomInventory.equipment, roomEntry);
+                roomInventoryService.SaveRoomInventory(ri);
             }
             NavigationService.GoBack();
         }
