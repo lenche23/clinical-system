@@ -12,7 +12,7 @@
         <Label Content="Naziv opreme:" Margin="93,124,206,260"/>
         <Label Content="Tip opreme:" Margin="104,194,490,320" />
         <TextBox Name="NazivOpreme" Text="{Binding Name, Mode=OneWay}" Margin="190,124,95,405" RenderTransformOrigin="0.491,0.484" />
-        <Button Click="Okay_Button_Click" Margin="64,384,405,130">Potvrdi</Button>
+        <Button Click="OkButtonClick" Margin="64,384,405,130">Potvrdi</Button>
         <Button Click="Cancel_Change_Button_Click" Margin="435,384,61,130">Odustani</Button>
 
         <RadioButton Name ="Statička" GroupName="TipOpreme" Content="Statička" Margin="186,200,375,320"></RadioButton>

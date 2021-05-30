@@ -66,13 +66,12 @@ namespace Service
             return RoomRepository.GetOne(roomId);
         }
 
-        /*
-        public int generateNextRoomId()
+        
+        public int GenerateNextRoomId()
         {
-            return RoomRepository.generateNextId();
+            return RoomRepository.GenerateNextId();
         }
-        */
-
+        
         // UpravnikKraj***************************************************************************
     }
 }

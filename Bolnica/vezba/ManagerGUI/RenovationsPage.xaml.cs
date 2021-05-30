@@ -43,5 +43,15 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Ni jedna rezervacija nije selektovana!");
             }
         }
+
+        private void MergeRoomsButtonClick(object sender, RoutedEventArgs e)
+        {
+            //mainManagerWindow.MainManagerView.Content = new RenovationViewPage(mainManagerWindow, selected);
+        }
+
+        private void SplitRoomButtonClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RenovationSplitRoomPage(mainManagerWindow);
+        }
     }
 }

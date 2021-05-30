@@ -2,126 +2,206 @@
   {
     "ingridient": [
       {
-        "Name": "SilicijumDioksid"
-      },
-      {
-        "Name": "Kroskarmeloza-natrijum"
-      },
-      {
-        "Name": "Skrob, kukuruzni"
-      },
-      {
-        "Name": "Povidon (K25)"
-      },
-      {
-        "Name": "Eritrozin (E127)"
+        "Name": "111"
       }
     ],
-    "Name": "Ibuprofen",
-    "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-    "Packaging": "30 x 400 mg",
+    "Name": "Lek1",
+    "Manufacturer": "111111",
+    "Packaging": "111111",
     "MedicineID": 0,
-    "Status": 0,
-    "Condition": 2,
-    "IsDeleted": false,
+    "Status": 1,
+    "Condition": 1,
+    "IsDeleted": true,
     "ReplacementMedicine": null,
     "Ingridient": [
       {
-        "Name": "SilicijumDioksid"
+        "Name": "111"
+      }
+    ]
+  },
+  {
+    "ingridient": [],
+    "Name": "Lek2",
+    "Manufacturer": "22222222",
+    "Packaging": "22222",
+    "MedicineID": 1,
+    "Status": 0,
+    "Condition": 0,
+    "IsDeleted": false,
+    "ReplacementMedicine": null,
+    "Ingridient": []
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "111"
       },
       {
-        "Name": "Kroskarmeloza-natrijum"
+        "Name": "222"
+      }
+    ],
+    "Name": "Lek1",
+    "Manufacturer": "111111",
+    "Packaging": "111111",
+    "MedicineID": 2,
+    "Status": 1,
+    "Condition": 1,
+    "IsDeleted": true,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "111"
       },
       {
-        "Name": "Skrob, kukuruzni"
-      },
-      {
-        "Name": "Povidon (K25)"
-      },
-      {
-        "Name": "Eritrozin (E127)"
+        "Name": "222"
       }
     ]
   },
   {
     "ingridient": [
       {
-        "Name": "Sastojak"
+        "Name": "333"
+      },
+      {
+        "Name": "333"
+      }
+    ],
+    "Name": "Lek3",
+    "Manufacturer": "33333333",
+    "Packaging": "3333333",
+    "MedicineID": 3,
+    "Status": 1,
+    "Condition": 2,
+    "IsDeleted": true,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "333"
+      },
+      {
+        "Name": "333"
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "111"
+      },
+      {
+        "Name": "222"
       }
     ],
     "Name": "Lek1",
-    "Manufacturer": "Proizvodjac",
-    "Packaging": "Pakovanje",
-    "MedicineID": 2,
+    "Manufacturer": "111111",
+    "Packaging": "111111",
+    "MedicineID": 4,
+    "Status": 1,
+    "Condition": 2,
+    "IsDeleted": true,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "111"
+      },
+      {
+        "Name": "222"
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "333"
+      },
+      {
+        "Name": "333"
+      },
+      {
+        "Name": "88"
+      }
+    ],
+    "Name": "Lek3",
+    "Manufacturer": "33333333",
+    "Packaging": "3333333",
+    "MedicineID": 5,
+    "Status": 1,
+    "Condition": 2,
+    "IsDeleted": true,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "333"
+      },
+      {
+        "Name": "333"
+      },
+      {
+        "Name": "88"
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "111"
+      },
+      {
+        "Name": "222"
+      },
+      {
+        "Name": ""
+      }
+    ],
+    "Name": "Lek1",
+    "Manufacturer": "111111",
+    "Packaging": "111111",
+    "MedicineID": 6,
+    "Status": 1,
+    "Condition": 1,
+    "IsDeleted": false,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "111"
+      },
+      {
+        "Name": "222"
+      },
+      {
+        "Name": ""
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "333"
+      },
+      {
+        "Name": "333"
+      },
+      {
+        "Name": "88"
+      }
+    ],
+    "Name": "Lek3",
+    "Manufacturer": "33333333",
+    "Packaging": "3333333",
+    "MedicineID": 7,
     "Status": 1,
     "Condition": 2,
     "IsDeleted": false,
-    "ReplacementMedicine": {
-      "ingridient": [
-        {
-          "Name": "SilicijumDioksid"
-        },
-        {
-          "Name": "Kroskarmeloza-natrijum"
-        },
-        {
-          "Name": "Skrob, kukuruzni"
-        },
-        {
-          "Name": "Povidon (K25)"
-        },
-        {
-          "Name": "Eritrozin (E127)"
-        }
-      ],
-      "Name": "Ibuprofen",
-      "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-      "Packaging": "30 x 400 mg",
-      "MedicineID": 0,
-      "Status": 0,
-      "Condition": 0,
-      "IsDeleted": false,
-      "ReplacementMedicine": {
-        "ingridient": [
-          {
-            "Name": "Trifolium pratense extractum siccum standardisatum"
-          }
-        ],
-        "Name": "Oestrofact",
-        "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-        "Packaging": "50 x 70 mg",
-        "MedicineID": 3,
-        "Status": 0,
-        "Condition": 1,
-        "IsDeleted": false,
-        "ReplacementMedicine": null,
-        "Ingridient": [
-          {
-            "Name": "Trifolium pratense extractum siccum standardisatum"
-          }
-        ]
-      },
-      "Ingridient": [
-        {
-          "Name": "SilicijumDioksid"
-        },
-        {
-          "Name": "Kroskarmeloza-natrijum"
-        },
-        {
-          "Name": "Skrob, kukuruzni"
-        },
-        {
-          "Name": "Povidon (K25)"
-        },
-        {
-          "Name": "Eritrozin (E127)"
-        }
-      ]
-    },
+    "ReplacementMedicine": null,
     "Ingridient": [
       {
-        "Name": "Sastojak"
+        "Name": "333"
+      },
+      {
+        "Name": "333"
+      },
+      {
+        "Name": "88"
       }
     ]
   }

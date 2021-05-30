@@ -50,9 +50,9 @@ namespace vezba.ManagerGUI
                 type = RoomType.recoveryRoom;
             }
 
-            var newRoom = new Room(int.Parse(BrojSobe.Text), floor, type);
-
             RoomService roomService = new RoomService();
+            var BrojSobe = roomService.GenerateNextRoomId();
+            var newRoom = new Room(BrojSobe, floor, type);
             roomService.SaveRoom(newRoom);
             RoomsPage.Rooms.Add(newRoom);
             NavigationService.GoBack();
@@ -60,7 +60,6 @@ namespace vezba.ManagerGUI
 
         private void Odustani_Button_Click(object sender, RoutedEventArgs e)
         {
-
             NavigationService.GoBack();
         }
     }

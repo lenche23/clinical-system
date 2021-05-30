@@ -30,52 +30,22 @@ namespace vezba.ManagerGUI
             int roomNumber = int.Parse(RoomNumberTextBox.Text);
             itemQuantity = int.Parse(ItemQuantity.Text);
             maximumQuantity = roomInventory.Quantity;
-
+            RoomInventoryService roomInventoryService = new RoomInventoryService();
             RoomService roomService = new RoomService();
             Room roomEntry = roomService.GetOneRoom(roomNumber);
 
             if (Validate(roomEntry) == false)
                 return;
-            //_roomInventoryFileRepository = new RoomInventoryFileRepository();
-            RemoveQuantityFromCurrentRoom();
 
-            if (!AddQuantityToDesiredRoom(roomNumber))
-            {
-                CreateRoomInventory(roomEntry);
-            }
-            NavigationService.GoBack();
-        }
-
-        private void CreateRoomInventory(Room roomEntry)
-        {
-            RoomInventoryService roomInventoryService = new RoomInventoryService();
-            var id = roomInventoryService.GenerateNextRoomInventoryId();
-            RoomInventory ri = new RoomInventory(DateTime.Now, infiniteTime, itemQuantity, id, roomInventory.equipment, roomEntry);
-            roomInventoryService.SaveRoomInventory(ri);
-        }
-
-        private void RemoveQuantityFromCurrentRoom()
-        {
-            RoomInventoryService roomInventoryService = new RoomInventoryService();
             roomInventory.Quantity -= itemQuantity;
             roomInventoryService.UpdateRoomInventory(this.roomInventory);
             windowUpdateRoom.RoomInventoryBinding.Items.Refresh();
-        }
 
-        private bool AddQuantityToDesiredRoom(int roomNumber)
-        {
-            var itemFound = false;
-            RoomInventoryService roomInventoryService = new RoomInventoryService();
-            foreach (RoomInventory inventory in roomInventoryService.GetAllRoomInventories())
+            if (!roomInventoryService.AddQuantityToDesiredRoom(roomNumber, roomInventory, itemQuantity))
             {
-                if (inventory.room.RoomNumber == roomNumber && inventory.equipment.Id == roomInventory.equipment.Id)
-                {
-                    inventory.Quantity += itemQuantity;
-                    roomInventoryService.UpdateRoomInventory(inventory);
-                    itemFound = true;
-                }
+                roomInventoryService.SaveNewRoomInventory(DateTime.Now, infiniteTime, itemQuantity, roomEntry, roomInventory.equipment);
             }
-            return itemFound;
+            NavigationService.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)

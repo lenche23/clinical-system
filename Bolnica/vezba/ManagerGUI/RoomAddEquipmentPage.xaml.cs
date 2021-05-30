@@ -21,7 +21,6 @@ namespace vezba.ManagerGUI
             List<Equipment> equipmentList = equipmentService.GetAllEquipment();
             comboEquipmentName.ItemsSource = equipmentList;
         }
-
         private void PotvrdiDodavanje_Button_Click(object sender, RoutedEventArgs e)
         {
             Equipment comboEquipment = (Equipment)comboEquipmentName.SelectedItem;
@@ -34,7 +33,6 @@ namespace vezba.ManagerGUI
             RoomUpdatePage.RoomInventoryList.Add(newRoomInventory);
             NavigationService.GoBack();
         }
-
         private void OdustaniDodavanje_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();

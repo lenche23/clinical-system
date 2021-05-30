@@ -6,7 +6,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using Service;
-using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {
@@ -53,25 +52,13 @@ namespace vezba.ManagerGUI
 
             RoomInventoryService roomInventoryService = new RoomInventoryService();
 
-            List<RoomInventory> roomInventoryList = new List<RoomInventory>();
-            foreach (RoomInventory roomInventory in roomInventoryService.GetAllRoomInventories())
-            {
-                if (roomInventory.room.RoomNumber == selected.RoomNumber)
-                    if (DateTime.Compare(roomInventory.StartTime, DateTime.Now) <= 0 && DateTime.Compare(roomInventory.EndTime, DateTime.Now) >= 0)
-                    {
-                        {
-                            roomInventoryList.Add(roomInventory);
-                        }
-                    }
-            }
+            var roomInventoryList = roomInventoryService.RoomInventories(selected);
 
             RoomInventoryList = new ObservableCollection<RoomInventory>(roomInventoryList);
             RoomInventoryBinding.ItemsSource = RoomInventoryList;
-
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(RoomInventoryBinding.ItemsSource);
             RoomInventoryBinding.Items.Refresh();
             view.Filter = EquipmentFilter;
-
         }
 
         private void Potvrda_Button_Click(object sender, RoutedEventArgs e)
@@ -79,34 +66,27 @@ namespace vezba.ManagerGUI
             var roomNumber = int.Parse(BrojSobe.Text);
             selected.RoomNumber = roomNumber;
 
-
-
             if (Convert.ToBoolean(Prvi.IsChecked))
             {
                 selected.RoomFloor = Floor.first;
             }
-
             else if (Convert.ToBoolean(Drugi.IsChecked))
             {
                 selected.RoomFloor = Floor.second;
             }
-
             else if (Convert.ToBoolean(Treci.IsChecked))
             {
                 selected.RoomFloor = Floor.third;
             }
 
-
             if (Convert.ToBoolean(Pregled.IsChecked))
             {
                 selected.RoomType = RoomType.examinationRoom;
             }
-
             else if (Convert.ToBoolean(Operacija.IsChecked))
             {
                 selected.RoomType = RoomType.operatingRoom;
             }
-
             else if (Convert.ToBoolean(Odmor.IsChecked))
             {
                 selected.RoomType = RoomType.recoveryRoom;
@@ -139,20 +119,18 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
-
         private void Izmeni_Količinu_Button_Click(object sender, RoutedEventArgs e)
         {
             if (RoomInventoryBinding.SelectedIndex > -1)
             {
                 RoomInventory selectedRoomInventory = (RoomInventory)RoomInventoryBinding.SelectedItems[0];
-                mainManagerWindow.MainManagerView.Content = new RoomChangeEquipmentPage(mainManagerWindow, selectedRoomInventory, this, selected);
+                mainManagerWindow.MainManagerView.Content = new RoomChangeEquipmentPage(mainManagerWindow, selectedRoomInventory, this);
             }
             else
             {
                 MessageBox.Show("Ni jedan proizvod nije selektovan!");
             }
         }
-
         private void Razmena_Button_Click(object sender, RoutedEventArgs e)
         {
             if (RoomInventoryBinding.SelectedIndex > -1)
@@ -166,28 +144,22 @@ namespace vezba.ManagerGUI
                 {
                     mainManagerWindow.MainManagerView.Content = new RoomExchangeStaticEquipmentPage(mainManagerWindow, roomInventorySelected, selected);
                 }
-
             }
-
             else
             {
                 MessageBox.Show("Ni jedan proizvod nije selektovan!");
             }
         }
-
         private bool EquipmentFilter(object item)
         {
             if (String.IsNullOrEmpty(txtFilter.Text))
                 return true;
             else 
                 return ((item as RoomInventory).equipment.Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
-
         }
-
         private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(RoomInventoryBinding.ItemsSource).Refresh();
-
         }
     }
 }

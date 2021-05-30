@@ -63,7 +63,7 @@ namespace Service
 
         public int generateNextEquipmentId()
         {
-            return EquipmentRepository.generateNextId();
+            return EquipmentRepository.GenerateNextId();
         }
         // UpravnikKraj***************************************************************************
     }

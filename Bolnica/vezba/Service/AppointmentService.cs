@@ -45,7 +45,9 @@ namespace Service
             }
             else
             {
-                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(newAppointment).ToString("dd.MM.yyyy. HH:mm"));
+                MessageBox.Show(
+                    "Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " +
+                    FindNextFreeAppointmentStartTime(newAppointment).ToString("dd.MM.yyyy. HH:mm"));
                 return false;
             }
         }
@@ -56,7 +58,9 @@ namespace Service
                 return AppointmentRepository.Update(editedAppointment);
             else
             {
-                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.\nPrvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(editedAppointment).ToString("dd.MM.yyyy. HH:mm"));
+                MessageBox.Show(
+                    "Termin je zauzet! Izaberite drugo vreme.\nPrvi sledeci dostupan termin za unete kriterijume je " +
+                    FindNextFreeAppointmentStartTime(editedAppointment).ToString("dd.MM.yyyy. HH:mm"));
                 return false;
             }
         }
@@ -78,20 +82,26 @@ namespace Service
                     overlapingAppointments.Add(scheduledAppointments[i]);
                 }
             }
+
             return overlapingAppointments;
         }
 
         private Boolean AppointmentsOverlap(Appointment appointment1, Appointment appointment2)
         {
-            if (AppointmentsShareDoctor(appointment1, appointment2) || AppointmentsSharePatient(appointment1, appointment2) || AppointmentsShareRoom(appointment1, appointment2))
+            if (AppointmentsShareDoctor(appointment1, appointment2) ||
+                AppointmentsSharePatient(appointment1, appointment2) ||
+                AppointmentsShareRoom(appointment1, appointment2))
             {
-                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <= 0) //drugi zavrsava pre pocetka prvog
+                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <=
+                    0) //drugi zavrsava pre pocetka prvog
                     return false;
-                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <= 0) //prvi zavrsava pre pocetka drugog
+                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <=
+                         0) //prvi zavrsava pre pocetka drugog
                     return false;
                 else
                     return true;
             }
+
             return false;
         }
 
@@ -133,6 +143,7 @@ namespace Service
                     }
                 }
             }
+
             return appointment.StartTime;
         }
 
@@ -144,6 +155,7 @@ namespace Service
                 newStartTime = new DateTime(newStartTime.Year, newStartTime.Month, newStartTime.Day, 8, 0, 0);
                 newStartTime = newStartTime.AddDays(1);
             }
+
             return newStartTime;
         }
 
@@ -155,6 +167,7 @@ namespace Service
 
             return false;
         }
+
         public Boolean ScheduleEmergencyAppointment(Appointment emergencyAppointment)
         {
             if (emergencyAppointment == null)
@@ -165,8 +178,10 @@ namespace Service
                 AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
                 return appointmentFileRepository.Save(emergencyAppointment);
             }
+
             return false;
         }
+
         public Appointment FindEarliestEmergencyAppointment(Appointment modelAppointment, Speciality speciality)
         {
             DoctorFileRepository doctorFileRepository = new DoctorFileRepository();
@@ -175,11 +190,14 @@ namespace Service
             List<Appointment> appointments = new List<Appointment>();
             foreach (Doctor d in doctors)
             {
-                Appointment emergencyAppointment = new Appointment(0, modelAppointment.Patient, d, modelAppointment.Room, DateTime.Now, modelAppointment.DurationInMunutes, modelAppointment.ApointmentDescription, true);
+                Appointment emergencyAppointment = new Appointment(0, modelAppointment.Patient, d,
+                    modelAppointment.Room, DateTime.Now, modelAppointment.DurationInMunutes,
+                    modelAppointment.ApointmentDescription, true);
 
                 emergencyAppointment.StartTime = FindNextFreeAppointmentStartTime(emergencyAppointment);
                 appointments.Add(emergencyAppointment);
             }
+
             return FindEarliestOfAppointments(appointments);
         }
 
@@ -193,8 +211,10 @@ namespace Service
                 if (a.StartTime < earliestAppoinment.StartTime)
                     earliestAppoinment = a;
             }
+
             return earliestAppoinment;
         }
+
         //******************************************
         private List<Appointment> SortAppointmentsByStartTime(List<Appointment> appointments)
         {
@@ -214,10 +234,12 @@ namespace Service
                     overlapingAppointments.Add(scheduledAppointments[i]);
                 }
             }
+
             return overlapingAppointments;
         }
 
-        private DateTime FindNextFreeAppointmentStartTimeInAppointments(Appointment appointment, List<Appointment> scheduledAppointments)
+        private DateTime FindNextFreeAppointmentStartTimeInAppointments(Appointment appointment,
+            List<Appointment> scheduledAppointments)
         {
             Boolean newTimeFound = false;
             while (!newTimeFound)
@@ -233,22 +255,30 @@ namespace Service
                     }
                 }
             }
+
             return appointment.StartTime;
         }
+
         private Boolean EmergencyAppointmentsOverlap(Appointment appointment1, Appointment appointment2)
         {
-            if (AppointmentsShareDoctorSpeciality(appointment1, appointment2) || AppointmentsSharePatient(appointment1, appointment2) || AppointmentsShareRoom(appointment1, appointment2))
+            if (AppointmentsShareDoctorSpeciality(appointment1, appointment2) ||
+                AppointmentsSharePatient(appointment1, appointment2) ||
+                AppointmentsShareRoom(appointment1, appointment2))
             {
-                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <= 0) //drugi zavrsava pre pocetka prvog
+                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <=
+                    0) //drugi zavrsava pre pocetka prvog
                     return false;
-                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <= 0) //prvi zavrsava pre pocetka drugog
+                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <=
+                         0) //prvi zavrsava pre pocetka drugog
                     return false;
                 else
                     return true;
             }
+
             return false;
 
         }
+
         public List<AppointmentForReschedulingDTO> CreateAppointmentsForRescheduling(Appointment emergencyAppointment)
         {
             List<Appointment> overlapingAppointments = GetEmergencyOverlapingAppointments(emergencyAppointment);
@@ -260,7 +290,9 @@ namespace Service
             return TransformAppointmentsInAppointmentsForRescheduling(overlapingAppointments, scheduledAppointments);
 
         }
-        private List<AppointmentForReschedulingDTO> TransformAppointmentsInAppointmentsForRescheduling(List<Appointment> overlapingAppointments, List<Appointment> scheduledAppointments)
+
+        private List<AppointmentForReschedulingDTO> TransformAppointmentsInAppointmentsForRescheduling(
+            List<Appointment> overlapingAppointments, List<Appointment> scheduledAppointments)
         {
             List<AppointmentForReschedulingDTO> appointmentsForRescheduling = new List<AppointmentForReschedulingDTO>();
             foreach (Appointment appointment in overlapingAppointments)
@@ -275,7 +307,8 @@ namespace Service
             return appointmentsForRescheduling;
         }
 
-        private void RemoveAppointmentsFromAppointentList(List<Appointment> appointmentsForRemoval, List<Appointment> appointments)
+        private void RemoveAppointmentsFromAppointentList(List<Appointment> appointmentsForRemoval,
+            List<Appointment> appointments)
         {
             foreach (Appointment oAppointment in appointmentsForRemoval)
             {
@@ -307,9 +340,27 @@ namespace Service
         // Upravnik*******************************************************************************
 
 
+        public bool RenovationAppointmentOverlapping(DateTime StartTime, DateTime EndTime, Room selected)
+        {
+            var overlap = false;
+            List<Appointment> appointments = GetAllAppointments();
 
+            for (int i = 0; i < appointments.Count; i++)
+            {
+                if (appointments[i].Room.RoomNumber == selected.RoomNumber)
+                {
+                    DateTime appointmentStart = appointments[i].StartTime;
+                    if (DateTime.Compare(appointmentStart, StartTime) > 0 &&
+                        DateTime.Compare(appointmentStart, EndTime) < 0)
+                    {
+                        overlap = true;
+                    }
+                }
+            }
 
+            return overlap;
 
-        // UpravnikKraj***************************************************************************
+            // UpravnikKraj***************************************************************************
+        }
     }
 }

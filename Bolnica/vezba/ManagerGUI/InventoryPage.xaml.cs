@@ -46,7 +46,6 @@ namespace vezba.ManagerGUI
                 equipmentList = equipmentService.GetAllEquipment();
                 EquipmentList.Remove(equipment);
             }
-
             else
             {
                 MessageBox.Show("Ni jedan artikal nije selektovan!");
@@ -84,18 +83,47 @@ namespace vezba.ManagerGUI
 
         private void StaticCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            if (EquipmentList != null)
+            if (EquipmentList != null && CheckedBoxStatic.IsChecked == true && equipmentList != null)
             {
-                if (CheckedBoxStatic.IsChecked == true)
-
+                foreach (Equipment equipment in equipmentList)
                 {
-                    if (equipmentList != null)
+                    if (equipment.Type == EquipmentType.statical)
                     {
-                        foreach (Equipment equipment in equipmentList)
+                        EquipmentList.Add(equipment);
+                        InventaryBinding.Items.Refresh();
+                    }
+                }
+            }
+        }
+
+        private void DinamicCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (EquipmentList != null && CheckedBoxDinamic.IsChecked == true && equipmentList != null)
+            {
+                foreach (Equipment equipment in equipmentList)
+                {
+                    if (equipment.Type == EquipmentType.dinamical)
+                    {
+                        EquipmentList.Add(equipment);
+                        InventaryBinding.Items.Refresh();
+                    }
+                }
+            }
+        }
+
+        private void StaticCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (EquipmentList != null && CheckedBoxStatic.IsChecked == false)
+            {
+                foreach (Equipment equipment in equipmentList)
+                {
+                    if (equipment.Type == EquipmentType.statical)
+                    {
+                        for (int i = 0; i < EquipmentList.Count; i++) 
                         {
-                            if (equipment.Type == EquipmentType.statical)
+                            if (EquipmentList[i].Id == equipment.Id)
                             {
-                                EquipmentList.Add(equipment);
+                                EquipmentList.Remove(EquipmentList[i]);
                                 InventaryBinding.Items.Refresh();
                             }
                         }
@@ -104,19 +132,21 @@ namespace vezba.ManagerGUI
             }
         }
 
-        private void DinamicCheckBox_Checked(object sender, RoutedEventArgs e)
+        private void DinamicCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            if (EquipmentList != null)
+            if (EquipmentList != null && CheckedBoxDinamic.IsChecked == false)
             {
-                if (CheckedBoxDinamic.IsChecked == true)
+                foreach (Equipment equipment in equipmentList)
                 {
-
-                    foreach (Equipment equipment in equipmentList)
+                    if (equipment.Type == EquipmentType.dinamical)
                     {
-                        if (equipment.Type == EquipmentType.dinamical)
+                        for (int i = 0; i < EquipmentList.Count; i++)
                         {
-                            EquipmentList.Add(equipment);
-                            InventaryBinding.Items.Refresh();
+                            if (EquipmentList[i].Id == equipment.Id)
+                            {
+                                    EquipmentList.Remove(EquipmentList[i]);
+                                    InventaryBinding.Items.Refresh();
+                            }
                         }
                     }
                 }
@@ -136,54 +166,6 @@ namespace vezba.ManagerGUI
         {
             CollectionViewSource.GetDefaultView(InventaryBinding.ItemsSource).Refresh();
 
-        }
-
-        private void StaticCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            if (EquipmentList != null)
-            {
-                if (CheckedBoxStatic.IsChecked == false)
-                {
-                    foreach (Equipment equipment in equipmentList)
-                    {
-                        if (equipment.Type == EquipmentType.statical)
-                        {
-                            for (int i = 0; i < EquipmentList.Count; i++)
-                            {
-                                if (EquipmentList[i].Id == equipment.Id)
-                                {
-                                    EquipmentList.Remove(EquipmentList[i]);
-                                    InventaryBinding.Items.Refresh();
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        private void DinamicCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            if (EquipmentList != null)
-            {
-                if (CheckedBoxDinamic.IsChecked == false)
-                {
-                    foreach (Equipment equipment in equipmentList)
-                    {
-                        if (equipment.Type == EquipmentType.dinamical)
-                        {
-                            for (int i = 0; i < EquipmentList.Count; i++)
-                            {
-                                if (EquipmentList[i].Id == equipment.Id)
-                                {
-                                    EquipmentList.Remove(EquipmentList[i]);
-                                    InventaryBinding.Items.Refresh();
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
 
         private void ButtonMainClick(object sender, RoutedEventArgs e)

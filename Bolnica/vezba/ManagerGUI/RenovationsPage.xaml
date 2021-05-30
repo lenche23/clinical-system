@@ -20,8 +20,9 @@
             </ListView.View>
         </ListView>
 
-        <Button Margin="200,440,409,90" Background="#FFFFD6C2" Click="Renovation_Button_Click">Zakaži renoviranje</Button>
-        <Button Margin="416,440,189,90" Background="#FFFFD6C2" Click="Discard_Button_Click">Otkaži renoviranje</Button>
-
+        <Button Margin="85,440,545,90" Background="#FFFFD6C2" Click="Renovation_Button_Click" RenderTransformOrigin="-0.125,0.625">Zakaži renoviranje</Button>
+        <Button Margin="556,440,75,90" Background="#FFFFD6C2" Click="Discard_Button_Click">Otkaži renoviranje</Button>
+        <Button Margin="246,440,385,90" Background="#FFFFD6C2" Click="MergeRoomsButtonClick">Spajanje prostorija</Button>
+        <Button Margin="401,440,230,90" Background="#FFFFD6C2" Click="SplitRoomButtonClick">Deljenje prostorije</Button>
     </Grid>
 </Page>

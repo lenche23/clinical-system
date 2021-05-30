@@ -22,9 +22,7 @@ namespace vezba.ManagerGUI
             {
                 TipOpreme.Content = TipOpreme.Content + " Statička";
             }
-
         }
-
         private void ButtonBackClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();

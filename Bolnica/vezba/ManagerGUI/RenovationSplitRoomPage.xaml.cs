@@ -10,16 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace vezba.ManagerGUI
 {
-    public partial class MainManagerWindow : Window
+    public partial class RenovationSplitRoomPage : Page
     {
-        public MainManagerWindow()
+        public RenovationSplitRoomPage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
-            MainManagerView.Content = new MainManagerPage(this);
+        }
+
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void OkButtonClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

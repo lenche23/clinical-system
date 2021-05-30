@@ -20,5 +20,12 @@
             </ListView.View>
         </ListView>
         <Button Click="ViewDetailButton" Margin="308,385,317,131">Detaljnije</Button>
+
+
+        <Button Click ="ButtonBackClick" Margin="10,425,623,10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

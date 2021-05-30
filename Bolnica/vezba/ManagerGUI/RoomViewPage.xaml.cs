@@ -1,25 +1,17 @@
 ﻿using Model;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using Service;
-using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {
     public partial class RoomViewPage : Page
 {
-        private Room selected;
-        private RoomsPage mv;
-        public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
+    public static ObservableCollection<RoomInventory> RoomInventoryList { get; set; }
         public RoomViewPage(Room selected, RoomsPage mv)
         {
             InitializeComponent();
-            this.selected = selected;
-            this.mv = mv;
-
             BrProstorijeLabel.Content = BrProstorijeLabel.Content + " " + selected.RoomNumber;
 
             if (selected.RoomFloor == Floor.first)
@@ -35,7 +27,6 @@ namespace vezba.ManagerGUI
                 SpratLabel.Content = SpratLabel.Content + " Treci";
             }
 
-
             if (selected.RoomType == RoomType.examinationRoom)
             {
                 TipLabel.Content = TipLabel.Content + " Prostorija za pregled";
@@ -48,21 +39,8 @@ namespace vezba.ManagerGUI
             {
                 TipLabel.Content = TipLabel.Content + " Prostorija za odmor";
             }
-
             RoomInventoryService roomInventoryService = new RoomInventoryService();
-
-            List<RoomInventory> roomInventoryList = new List<RoomInventory>();
-            foreach (RoomInventory roomInventory in roomInventoryService.GetAllRoomInventories())
-            {
-                if (roomInventory.room.RoomNumber == selected.RoomNumber)
-                {
-                    if (DateTime.Compare(roomInventory.StartTime, DateTime.Now) <= 0 &&
-                        DateTime.Compare(roomInventory.EndTime, DateTime.Now) >= 0)
-                    {
-                        roomInventoryList.Add(roomInventory);
-                    }
-                }
-            }
+            var roomInventoryList = roomInventoryService.RoomInventories(selected);
             RoomInventoryList = new ObservableCollection<RoomInventory>(roomInventoryList);
             RoomInventoryBinding.ItemsSource = RoomInventoryList;
         }

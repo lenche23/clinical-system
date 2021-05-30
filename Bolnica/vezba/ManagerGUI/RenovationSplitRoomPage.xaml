@@ -1,0 +1,45 @@
+﻿<Page x:Class="vezba.ManagerGUI.RenovationSplitRoomPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba.ManagerGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="570" d:DesignWidth="750"
+      Title="RenovationSplitRoomPage">
+    <Grid>
+        <Label Content="Zakazivanje renoviranja"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="283,20,240,499"/>
+        <Label Name="BrojProstorije" Content="Prostorija: " Margin="198,60,330,477" FontSize="14"></Label>
+        <Label Content="Početni datum:" Margin="182,98,465,435"/>
+        <Label Content="Predviđeno trajanje:" Margin="160,140,467,393" />
+        <TextBox Name="PocetniDatum" Margin="304,98,103,435" RenderTransformOrigin="0.491,0.484" />
+        <TextBox Name="Trajanje" RenderTransformOrigin="0.491,0.484" Margin="304,140,103,393" />
+        <Button Click="OkButtonClick" Margin="198,490,389,30">Potvrdi</Button>
+        <Button Click="CancelButtonClick" Margin="387,490,195,30">Odustani</Button>
+
+        <Label Margin="187,197,443,338">Nova prostorija 1</Label>
+        <Label Margin="187,329,455,210">Nova prostorija 2</Label>
+        <Label Content="Sprat prostorije 1:" Margin="127,274,512,235" />
+        <Label Content="Tip prostorije 1:" Margin="137,231,512,296"/>
+
+
+        <RadioButton Name ="Prvi1" GroupName="Sprat1" Content="Prvi" Margin="254,280,385,235"></RadioButton>
+        <RadioButton Name ="Drugi1" GroupName="Sprat1" Content="Drugi" Margin="316,280,285,225"></RadioButton>
+        <RadioButton Name ="Treci1" GroupName="Sprat1" Content="Treci" Margin="387,280,180,225"></RadioButton>
+
+        <RadioButton Name ="Pregled1" GroupName="TipProstorije1" Content="Pregled" Margin="255,237,413,295"></RadioButton>
+        <RadioButton Name ="Operacija1" GroupName="TipProstorije1" Content="Operacija" Margin="398,237,268,296"></RadioButton>
+        <RadioButton Name ="Odmor1" GroupName="TipProstorije1" Content="Odmor" Margin="327,237,338,295"></RadioButton>
+        <RadioButton Name ="Magacin1" GroupName="TipProstorije1" Content="Magacin" Margin="475,237,158,296"></RadioButton>
+        <Label Content="Sprat prostorije 1:" Margin="127,397,512,112" />
+        <Label Content="Tip prostorije 1:" Margin="137,354,512,173"/>
+
+        <RadioButton x:Name ="Prvi2" GroupName="Sprat2" Content="Prvi" Margin="254,403,385,112"/>
+        <RadioButton x:Name ="Drugi2" GroupName="Sprat2" Content="Drugi" Margin="316,403,285,102"/>
+        <RadioButton x:Name ="Treci2" GroupName="Sprat2" Content="Treci" Margin="387,403,180,102"/>
+        <RadioButton x:Name ="Pregled2" GroupName="TipProstorije2" Content="Pregled" Margin="255,360,413,172"/>
+        <RadioButton x:Name ="Operacija2" GroupName="TipProstorije2" Content="Operacija" Margin="398,360,268,173"/>
+        <RadioButton x:Name ="Odmor2" GroupName="TipProstorije2" Content="Odmor" Margin="327,360,338,172"/>
+        <RadioButton x:Name ="Magacin2" GroupName="TipProstorije2" Content="Magacin" Margin="475,360,158,173"/>
+    </Grid>
+</Page>

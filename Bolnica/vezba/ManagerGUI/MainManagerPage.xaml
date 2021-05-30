@@ -72,7 +72,7 @@
         <TextBlock Grid.Column="0" Grid.Row="1" Margin="50,165,50,50" FontSize="20" TextAlignment="Center">Prostorije</TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="1" Margin="50,165,50,50" FontSize="20" TextAlignment="Center">Inventar</TextBlock>
         <TextBlock Grid.Column="2" Grid.Row="1" Margin="50,165,50,50" FontSize="20" TextAlignment="Center">Lekovi</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="2" Margin="50,165,50,50" FontSize="20" TextAlignment="Center">Zaposleni</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2" Margin="60,165,60,50" FontSize="20" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">Zaposleni</TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="2" Margin="50,165,50,50" FontSize="20" TextAlignment="Center">Ankete</TextBlock>
         <TextBlock Grid.Column="2" Grid.Row="2" Margin="50,165,50,50" FontSize="20" TextAlignment="Center">Snabdevanje</TextBlock>
 

@@ -76,7 +76,7 @@ namespace vezba.ManagerGUI
 
         private void Declined_Medicine_Button_Click(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new DeclinedMedicineManagerPage(mainManagerWindow);
+            mainManagerWindow.MainManagerView.Content = new DeclinedMedicineManagerPage(mainManagerWindow, this);
         }
 
         private void Edit_Medicine_Button_Click(object sender, RoutedEventArgs e)

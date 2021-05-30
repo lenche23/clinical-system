@@ -74,6 +74,11 @@ namespace Service
             return DeclinedMedicineRepository.GetAll();
         }
 
+        public Boolean DeleteDeclinedMedicine(int medicineId)
+        {
+            return DeclinedMedicineRepository.Delete(medicineId);
+        }
+
         // UpravnikKraj***************************************************************************
     }
 }

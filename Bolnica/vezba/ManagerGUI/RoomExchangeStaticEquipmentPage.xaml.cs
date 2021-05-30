@@ -41,50 +41,15 @@ namespace vezba.ManagerGUI
                 return;
 
             roomInventory.EndTime = pickedDate;
-            
             roomInventoryService.UpdateRoomInventory(this.roomInventory);
 
             currentRoomItemQuantity = roomInventory.Quantity - inputItemQuantity;
-            desiredRoomItemQuantity = NewDesiredRoomItemQuantity(roomNumber);
-
-            SaveNewRoomInventory(currentRoomItemQuantity, room);
-            SaveNewRoomInventory(desiredRoomItemQuantity, roomEntry);
+            desiredRoomItemQuantity = roomInventoryService.NewDesiredRoomItemQuantity(roomInventory, roomNumber, inputItemQuantity, pickedDate);
+            roomInventoryService.SaveNewRoomInventory(pickedDate, infiniteTime, currentRoomItemQuantity, room, roomInventory.equipment);
+            roomInventoryService.SaveNewRoomInventory(pickedDate, infiniteTime, desiredRoomItemQuantity, roomEntry, roomInventory.equipment);
 
             NavigationService.GoBack();
         }
-
-        private void SaveNewRoomInventory(int newItemQuantity, Room roomEntry)
-        {
-            RoomInventoryService roomInventoryService = new RoomInventoryService();
-            var id = roomInventoryService.GenerateNextRoomInventoryId();
-            RoomInventory ri = new RoomInventory(pickedDate, infiniteTime, newItemQuantity, id, roomInventory.equipment, roomEntry);
-            roomInventoryService.SaveRoomInventory(ri);
-        }
-
-        private int NewDesiredRoomItemQuantity(int roomNumber)
-        {
-            var itemFound = false;
-            RoomInventoryService roomInventoryService = new RoomInventoryService();
-
-            foreach (RoomInventory inventory in roomInventoryService.GetAllRoomInventories())
-            {
-                if (inventory.room.RoomNumber == roomNumber && DateTime.Compare(inventory.StartTime, DateTime.Now) <= 0 && DateTime.Compare(inventory.EndTime, DateTime.Now) >= 0 && inventory.equipment.Id == roomInventory.equipment.Id)
-                {
-                    inventory.EndTime = pickedDate;
-                    roomInventoryService.UpdateRoomInventory(inventory);
-                    desiredRoomItemQuantity = inventory.Quantity + inputItemQuantity;
-                    itemFound = true;
-                }
-            }
-
-            if (!itemFound)
-            {
-                desiredRoomItemQuantity = inputItemQuantity;
-            }
-
-            return desiredRoomItemQuantity;
-        }
-
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
@@ -115,7 +80,6 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Izabrani datum je već prošao!");
                 return false;
             }
-
             return true;
         }
     }

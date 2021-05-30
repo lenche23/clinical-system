@@ -3,7 +3,6 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
-using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {
@@ -13,8 +12,7 @@ namespace vezba.ManagerGUI
         {
             InitializeComponent();
         }
-
-        private void Approve_Add_Button_Click(object sender, RoutedEventArgs e)
+        private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             EquipmentType type = EquipmentType.statical;
 
@@ -27,18 +25,13 @@ namespace vezba.ManagerGUI
             {
                 type = EquipmentType.dinamical;
             }
-
-
             EquipmentService equipmentService = new EquipmentService();
-            int equipmentID = equipmentService.generateNextEquipmentId();
-            var newEquipment = new Equipment(equipmentID, NazivOpreme.Text, type);
-
+            var equipmentId = equipmentService.generateNextEquipmentId();
+            var newEquipment = new Equipment(equipmentId, NazivOpreme.Text, type);
             equipmentService.SaveEquipment(newEquipment);
             InventoryPage.EquipmentList.Add(newEquipment);
             NavigationService.GoBack();
-
         }
-
         private void Cancel_Add_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();

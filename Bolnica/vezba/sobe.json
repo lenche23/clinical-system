@@ -1,50 +1,60 @@
 [
   {
-    "renovation": [
-      {
-        "StartTime": "2021-10-10T10:00:00",
-        "DurationInDays": 2,
-        "RenovationID": 1
-      },
-      {
-        "StartTime": "2021-11-10T20:00:00",
-        "DurationInDays": 3,
-        "RenovationID": 2
-      }
-    ],
+    "renovation": [],
     "RoomType": 0,
-    "RoomNumber": 1,
+    "RoomNumber": 0,
     "RoomFloor": 0,
-    "IsDeleted": false,
-    "Renovation": [
-      {
-        "StartTime": "2021-10-10T10:00:00",
-        "DurationInDays": 2,
-        "RenovationID": 1
-      },
-      {
-        "StartTime": "2021-11-10T20:00:00",
-        "DurationInDays": 3,
-        "RenovationID": 2
-      }
-    ]
+    "IsDeleted": true,
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 2,
+    "RoomNumber": 1,
+    "RoomFloor": 1,
+    "IsDeleted": true,
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 1,
+    "RoomNumber": 2,
+    "RoomFloor": 2,
+    "IsDeleted": true,
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 1,
+    "RoomNumber": 3,
+    "RoomFloor": 2,
+    "IsDeleted": true,
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 2,
+    "RoomNumber": 4,
+    "RoomFloor": 1,
+    "IsDeleted": true,
+    "Renovation": []
   },
   {
     "renovation": [
       {
-        "StartTime": "2021-10-10T10:00:00",
-        "DurationInDays": 4,
+        "StartTime": "2021-12-10T10:00:00",
+        "DurationInDays": 2,
         "RenovationID": 1
       }
     ],
     "RoomType": 2,
-    "RoomNumber": 2,
+    "RoomNumber": 5,
     "RoomFloor": 1,
     "IsDeleted": false,
     "Renovation": [
       {
-        "StartTime": "2021-10-10T10:00:00",
-        "DurationInDays": 4,
+        "StartTime": "2021-12-10T10:00:00",
+        "DurationInDays": 2,
         "RenovationID": 1
       }
     ]
@@ -52,9 +62,17 @@
   {
     "renovation": [],
     "RoomType": 0,
-    "RoomNumber": 3,
+    "RoomNumber": 6,
     "RoomFloor": 0,
     "IsDeleted": false,
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 1,
+    "RoomNumber": 7,
+    "RoomFloor": 2,
+    "IsDeleted": true,
     "Renovation": []
   }
 ]

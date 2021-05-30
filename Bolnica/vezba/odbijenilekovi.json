@@ -4,79 +4,164 @@
     "Medicine": {
       "ingridient": [
         {
-          "Name": "Celuloza, mikrokristalna"
-        },
-        {
-          "Name": "Hipromeloza (E464)"
-        },
-        {
-          "Name": "Titan-dioksid (E171)"
-        },
-        {
-          "Name": "Makrogol 400"
+          "Name": "111"
         }
       ],
-      "Name": "Xyzal",
-      "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
-      "Packaging": "30 x 5 mg",
-      "MedicineID": 1,
+      "Name": "Lek1",
+      "Manufacturer": "111111",
+      "Packaging": "111111",
+      "MedicineID": 0,
       "Status": 1,
-      "Condition": 0,
+      "Condition": 1,
       "IsDeleted": false,
       "ReplacementMedicine": null,
       "Ingridient": [
         {
-          "Name": "Celuloza, mikrokristalna"
-        },
-        {
-          "Name": "Hipromeloza (E464)"
-        },
-        {
-          "Name": "Titan-dioksid (E171)"
-        },
-        {
-          "Name": "Makrogol 400"
+          "Name": "111"
         }
       ]
     },
-    "Description": "Neka poruka",
-    "IsDeleted": false
+    "Description": "",
+    "IsDeleted": true,
+    "MedicineName": "Lek1",
+    "MedicineManufacturer": "111111"
   },
   {
     "DeclinedMedicineID": 1,
     "Medicine": {
       "ingridient": [
         {
-          "Name": "Acetilsalicilna kiselina"
+          "Name": "111"
         },
         {
-          "Name": "Skrob, kukuruzni"
-        },
-        {
-          "Name": "Trietil-citrat"
+          "Name": "222"
         }
       ],
-      "Name": "Aspirin",
-      "Manufacturer": "Bayer Bitterfeld GmbH ",
-      "Packaging": "30 x 100mg",
+      "Name": "Lek1",
+      "Manufacturer": "111111",
+      "Packaging": "111111",
       "MedicineID": 2,
       "Status": 1,
-      "Condition": 0,
+      "Condition": 1,
       "IsDeleted": false,
       "ReplacementMedicine": null,
       "Ingridient": [
         {
-          "Name": "Acetilsalicilna kiselina"
+          "Name": "111"
         },
         {
-          "Name": "Skrob, kukuruzni"
-        },
-        {
-          "Name": "Trietil-citrat"
+          "Name": "222"
         }
       ]
     },
-    "Description": "Neka poruka",
-    "IsDeleted": false
+    "Description": "",
+    "IsDeleted": true,
+    "MedicineName": "Lek1",
+    "MedicineManufacturer": "111111"
+  },
+  {
+    "DeclinedMedicineID": 2,
+    "Medicine": {
+      "ingridient": [
+        {
+          "Name": "333"
+        },
+        {
+          "Name": "333"
+        }
+      ],
+      "Name": "Lek3",
+      "Manufacturer": "33333333",
+      "Packaging": "3333333",
+      "MedicineID": 3,
+      "Status": 1,
+      "Condition": 2,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "333"
+        },
+        {
+          "Name": "333"
+        }
+      ]
+    },
+    "Description": "",
+    "IsDeleted": true,
+    "MedicineName": "Lek3",
+    "MedicineManufacturer": "33333333"
+  },
+  {
+    "DeclinedMedicineID": 3,
+    "Medicine": {
+      "ingridient": [
+        {
+          "Name": "111"
+        },
+        {
+          "Name": "222"
+        }
+      ],
+      "Name": "Lek1",
+      "Manufacturer": "111111",
+      "Packaging": "111111",
+      "MedicineID": 4,
+      "Status": 1,
+      "Condition": 2,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "111"
+        },
+        {
+          "Name": "222"
+        }
+      ]
+    },
+    "Description": "",
+    "IsDeleted": true,
+    "MedicineName": "Lek1",
+    "MedicineManufacturer": "111111"
+  },
+  {
+    "DeclinedMedicineID": 4,
+    "Medicine": {
+      "ingridient": [
+        {
+          "Name": "333"
+        },
+        {
+          "Name": "333"
+        },
+        {
+          "Name": "88"
+        }
+      ],
+      "Name": "Lek3",
+      "Manufacturer": "33333333",
+      "Packaging": "3333333",
+      "MedicineID": 5,
+      "Status": 1,
+      "Condition": 2,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "333"
+        },
+        {
+          "Name": "333"
+        },
+        {
+          "Name": "88"
+        }
+      ]
+    },
+    "Description": "",
+    "IsDeleted": true,
+    "MedicineName": "Lek3",
+    "MedicineManufacturer": "33333333"
   }
 ]

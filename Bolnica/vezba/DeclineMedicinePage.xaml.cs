@@ -46,7 +46,7 @@ namespace vezba
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             medFileRepository.Delete(Medicine.MedicineID);
-            var id = fileRepository.generateNextId();
+            var id = fileRepository.GenerateNextId();
             var Description = DescriptionTB.Text;
             var declinedMedicine = new DeclinedMedicine(id, Medicine, Description);
             fileRepository.Save(declinedMedicine);
