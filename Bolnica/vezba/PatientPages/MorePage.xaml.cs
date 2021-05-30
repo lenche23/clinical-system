@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,21 +23,14 @@ namespace vezba.PatientPages
     {
         public static ObservableCollection<Appointment> Appointments { get; set; }
         public static int currentAppointments = 0;
+        private AppointmentService AppointmentService { get; set; }
 
         public MorePage()
         {
             InitializeComponent();
-            AppointmentFileRepository ps = new AppointmentFileRepository();
-            List<Appointment> temp = new List<Appointment>();
-            foreach (Appointment appointment in ps.GetAll())
-            {
-                if (appointment.StartTime.Date < DateTime.Now && appointment.Patient.Jmbg.Equals("1008985563244"))
-                {
-                    temp.Add(appointment);
-
-                }
-            }
-            Appointments = new ObservableCollection<Appointment>(temp);
+            AppointmentService = new AppointmentService();
+            List<Appointment> appointments = AppointmentService.GetPatientPastAppointments();
+            Appointments = new ObservableCollection<Appointment>(appointments);
             currentAppointments = Appointments.Count();
         }
 
@@ -52,7 +46,6 @@ namespace vezba.PatientPages
 
         private void BtnOcenaBolnice_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("aaaa", "nesto" + currentAppointments);
             if (currentAppointments % 5 == 0)
             {
                 this.NavigationService.Navigate(new GradeHospitalPage());

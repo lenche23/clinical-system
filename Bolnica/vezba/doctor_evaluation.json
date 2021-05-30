@@ -106,7 +106,7 @@
   {
     "Rating": 4,
     "Comment": "extra",
-    "Id": 4,
+    "Id": 0,
     "IsDeleted": false,
     "Doctor": {
       "Speciality": {
@@ -125,6 +125,32 @@
       "Adress": "neka ulica 62, Novi Sad",
       "Email": "dana@gmail.com",
       "IdCard": "008996452",
+      "Type": 2,
+      "IsDeleted": false
+    }
+  },
+  {
+    "Rating": 4,
+    "Comment": "asASa",
+    "Id": 5,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Kardiolog"
+      },
+      "NameAndSurname": "Darko Torbica",
+      "SalaryInRsd": 70000,
+      "Username": "darko",
+      "Password": "dare",
+      "Name": "Darko",
+      "Surname": "Torbica",
+      "Jmbg": "1708962324890",
+      "DateOfBirth": "2021-05-27T21:34:21.4640254+02:00",
+      "Sex": 0,
+      "PhoneNumber": "0665813272",
+      "Adress": "neka ulica 38, Novi Sad",
+      "Email": "darko@gmail.com",
+      "IdCard": "007155721",
       "Type": 2,
       "IsDeleted": false
     }

@@ -18,41 +18,91 @@ namespace vezba.Repository
 
         public List<DoctorEvaluation> GetAll()
         {
-            List<DoctorEvaluation> doctorEvaluations = new List<DoctorEvaluation>();
+            List<DoctorEvaluation> evaluations = new List<DoctorEvaluation>();
+            List<DoctorEvaluation> storedEvaluations = ReadFromFile();
+            for (int i = 0; i < storedEvaluations.Count; i++)
+            {
+                if (storedEvaluations[i].IsDeleted == false)
+                {
+                    evaluations.Add(storedEvaluations[i]);
+                }
+            }
+            return evaluations;
+        }
+
+        public Boolean Save(DoctorEvaluation newEvaluation)
+        {
+            newEvaluation.Id = GenerateNextId();
+            List<DoctorEvaluation> storedEvaluations = ReadFromFile();
+            for (int i = 0; i < storedEvaluations.Count; i++)
+            {
+                if (storedEvaluations[i].Id.Equals(newEvaluation.Id))
+                    return false;
+            }
+            storedEvaluations.Add(newEvaluation);
+            WriteToFile(storedEvaluations);
+            return true;
+        }
+
+        public Boolean Update(DoctorEvaluation editedEvaluation)
+        {
+            List<DoctorEvaluation> storedEvaluations = ReadFromFile();
+            foreach (DoctorEvaluation evaluation in storedEvaluations)
+            {
+                if (evaluation.Id.Equals(editedEvaluation.Id) && evaluation.IsDeleted == false)
+                {
+                    evaluation.Comment = editedEvaluation.Comment;
+                    evaluation.Id = editedEvaluation.Id;
+                    evaluation.IsDeleted = editedEvaluation.IsDeleted;
+                    evaluation.Rating = editedEvaluation.Rating;
+                    WriteToFile(storedEvaluations);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public DoctorEvaluation GetOne(int id)
+        {
+            List<DoctorEvaluation> evaluations = GetAll();
+            for (int i = 0; i < evaluations.Count; i++)
+            {
+                if (evaluations[i].Id == id)
+                    return evaluations[i];
+            }
+            return null;
+        }
+
+        public Boolean Delete(int id)
+        {
+            List<DoctorEvaluation> storedEvaluations = ReadFromFile();
+            for (int i = 0; i < storedEvaluations.Count; i++)
+            {
+                if (storedEvaluations[i].Id == id && storedEvaluations[i].IsDeleted == false)
+                {
+                    storedEvaluations[i].IsDeleted = true;
+                    WriteToFile(storedEvaluations);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private List<DoctorEvaluation> ReadFromFile()
+        {
             try
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
                 List<DoctorEvaluation> evaluations = JsonConvert.DeserializeObject<List<DoctorEvaluation>>(jsonFromFile);
-
-                for (int i = 0; i < evaluations.Count; i++)
-                {
-                    if (evaluations[i].IsDeleted == false)
-                    {
-                        doctorEvaluations.Add(evaluations[i]);
-                    }
-                }
-                return doctorEvaluations;
+                return evaluations;
             }
-            catch
-            {
-
-            }
+            catch { }
             MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return doctorEvaluations;
+            return new List<DoctorEvaluation>();
         }
-      
-        public Boolean Save(DoctorEvaluation evaluation)
-        {
-            List<DoctorEvaluation> evaluations = Load();
 
-            for (int i = 0; i < evaluations.Count; i++)
-            {
-                if (evaluations[i].Id.Equals(evaluation.Id) && evaluations[i].IsDeleted == false)
-                {
-                    return false;
-                }
-            }
-            evaluations.Add(evaluation);
+        private void WriteToFile(List<DoctorEvaluation> evaluations)
+        {
             try
             {
                 var jsonToFile = JsonConvert.SerializeObject(evaluations, Formatting.Indented);
@@ -61,103 +111,16 @@ namespace vezba.Repository
                     writer.Write(jsonToFile);
                 }
             }
-            catch (Exception e)
+            catch
             {
-
+                MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
             }
-            return true;
         }
-      
-        public Boolean Update(DoctorEvaluation evaluation)
-        {
-            List<DoctorEvaluation> evaluations = Load();
-            for (int i = 0; i < evaluations.Count; i++)
-            {
-                if (evaluations[i].Id.Equals(evaluation.Id))
-                {
-                    evaluations[i].Comment = evaluation.Comment;
-                    evaluations[i].Id = evaluation.Id;
-                    evaluations[i].IsDeleted = evaluation.IsDeleted;
-                    evaluations[i].Rating = evaluation.Rating;
 
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(evaluations, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-
-                    }
-                }
-            }
-            return false;
-        }
-      
-        public DoctorEvaluation GetOne(int id)
-        {
-            List<DoctorEvaluation> evaluations = GetAll();
-            for (int i = 0; i < evaluations.Count; i++)
-            {
-                if (evaluations[i].Id.Equals(id))
-                {
-                    return evaluations[i];
-                }
-            }
-            return null;
-        }
-      
-        public Boolean Delete(int id)
-        {
-            List<DoctorEvaluation> evaluations = Load();
-            for (int i = 0; i < evaluations.Count; i++)
-            {
-                if (evaluations[i].Id.Equals(id))
-                {
-                    evaluations[i].IsDeleted = true;
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(evaluations, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-
-                    }
-                    return true;
-                }
-            }
-            return false;
-        }
-      
-        public List<DoctorEvaluation> Load()
-        {
-            List<DoctorEvaluation> doctorEvaluations = new List<DoctorEvaluation>();
-            try
-            {
-                String jsonFromFile = File.ReadAllText(this.FileName);
-                List<DoctorEvaluation> evaluations = JsonConvert.DeserializeObject<List<DoctorEvaluation>>(jsonFromFile);
-                return evaluations;
-            }
-            catch (Exception e)
-            {
-
-            }
-            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return doctorEvaluations;
-        }
-      
         public int GenerateNextId()
         {
-            List<DoctorEvaluation> list = Load();
-            return list.Count;
+            List<DoctorEvaluation> evaluations = ReadFromFile();
+            return evaluations.Count;
         }
     }
 }

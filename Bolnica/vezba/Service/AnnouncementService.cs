@@ -40,10 +40,10 @@ namespace Service
             return AnnouncementRepository.GetByUserType(userType);
         }
 
-
-
-
-
+        public List<Announcement> GetUserIndividualAnnouncements(String userId)
+        {
+            return AnnouncementRepository.GetIndividualAnnouncements(userId);
+        }
         // SekretarKraj***************************************************************************
 
         // Pacijent*******************************************************************************
