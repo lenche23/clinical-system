@@ -26,8 +26,7 @@ namespace vezba.ManagerGUI
                 type = EquipmentType.dinamical;
             }
             EquipmentService equipmentService = new EquipmentService();
-            var equipmentId = equipmentService.generateNextEquipmentId();
-            var newEquipment = new Equipment(equipmentId, NazivOpreme.Text, type);
+            var newEquipment = new Equipment(0, NazivOpreme.Text, type);
             equipmentService.SaveEquipment(newEquipment);
             InventoryPage.EquipmentList.Add(newEquipment);
             NavigationService.GoBack();

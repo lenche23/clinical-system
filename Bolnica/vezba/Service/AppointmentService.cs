@@ -579,7 +579,7 @@ namespace Service
 
         // Upravnik*******************************************************************************
 
-        public bool RenovationAppointmentOverlapping(DateTime StartTime, DateTime EndTime, Room selected)
+        public bool Overlap(Room selected, DateTime StartTime, DateTime EndTime)
         {
             var overlap = false;
             List<Appointment> appointments = GetAllAppointments();
@@ -589,8 +589,7 @@ namespace Service
                 if (appointments[i].Room.RoomNumber == selected.RoomNumber)
                 {
                     DateTime appointmentStart = appointments[i].StartTime;
-                    if (DateTime.Compare(appointmentStart, StartTime) > 0 &&
-                        DateTime.Compare(appointmentStart, EndTime) < 0)
+                    if (DateTime.Compare(appointmentStart, StartTime) > 0 && DateTime.Compare(appointmentStart, EndTime) < 0)
                     {
                         overlap = true;
                     }
@@ -598,10 +597,9 @@ namespace Service
             }
 
             return overlap;
-
-
-
-            // UpravnikKraj***************************************************************************
         }
+
+        // UpravnikKraj***************************************************************************
     }
 }
+

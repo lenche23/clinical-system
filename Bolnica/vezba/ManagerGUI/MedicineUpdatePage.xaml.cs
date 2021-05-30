@@ -23,6 +23,7 @@ namespace vezba.ManagerGUI
             MedicineService medicineService = new MedicineService();
             List<Medicine> medicineList = medicineService.GetAllMedicine();
             List<Medicine> temporary = new List<Medicine>();
+
             for (int i = 0; i < medicineList.Count; i++)
             {
                 if (medicineList[i].Status == MedicineStatus.approved && medicineList[i].Name != medicine.Name)

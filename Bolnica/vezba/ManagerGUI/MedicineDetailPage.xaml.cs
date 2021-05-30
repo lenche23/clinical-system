@@ -15,32 +15,18 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             this.medicine = medicine;
             this.mainManagerWindow = mainManagerWindow;
-            idText.Content = idText.Content + " " + medicine.MedicineID;
-            nazivText.Content = nazivText.Content + " " + medicine.Name;
-            proizvodjacText.Content = proizvodjacText.Content + " " + medicine.Manufacturer;
-            pakovanjeText.Content = pakovanjeText.Content + " " + medicine.Packaging;
-            if (medicine.Condition == MedicineCondition.capsule)
-            {
-                oblikText.Content = oblikText.Content + " Kapsula";
-            }
-            else if (medicine.Condition == MedicineCondition.pill)
-            {
-                oblikText.Content = oblikText.Content + " Pilula";
-            }
-            else if (medicine.Condition == MedicineCondition.syrup)
-            {
-                oblikText.Content = oblikText.Content + " Sirup";
-            }
+            IdLabel.Content = IdLabel.Content + " " + medicine.MedicineID;
+            NameLabel.Content = NameLabel.Content + " " + medicine.Name;
+            ManufacturerLabel.Content = ManufacturerLabel.Content + " " + medicine.Manufacturer;
+            PackagingLabel.Content = PackagingLabel.Content + " " + medicine.Packaging;
 
-            if (medicine.ReplacementMedicine == null)
-            {
-                zamenskiText.Content = " ";
-            }
-            else
-            {
-                zamenskiText.Content = zamenskiText.Content + " " + medicine.ReplacementMedicine.Name;
-            }
+            if (medicine.Condition == MedicineCondition.capsule) ConditionLabel.Content = ConditionLabel.Content + " Kapsula";
+            else if (medicine.Condition == MedicineCondition.pill) ConditionLabel.Content = ConditionLabel.Content + " Pilula";
+            else if (medicine.Condition == MedicineCondition.syrup) ConditionLabel.Content = ConditionLabel.Content + " Sirup";
 
+            if (medicine.ReplacementMedicine == null) ReplacementMedicineLabel.Content = " ";
+            else ReplacementMedicineLabel.Content = ReplacementMedicineLabel.Content + " " + medicine.ReplacementMedicine.Name;
+            
             List<Ingridient> ingredientList = medicine.ingridient;
             IngredientList = new ObservableCollection<Ingridient>(ingredientList);
             IngredientsBinding.ItemsSource = IngredientList;

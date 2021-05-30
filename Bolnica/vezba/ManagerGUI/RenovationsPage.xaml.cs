@@ -46,12 +46,12 @@ namespace vezba.ManagerGUI
 
         private void MergeRoomsButtonClick(object sender, RoutedEventArgs e)
         {
-            //mainManagerWindow.MainManagerView.Content = new RenovationViewPage(mainManagerWindow, selected);
+            mainManagerWindow.MainManagerView.Content = new RenovationMergeRoomsPage(mainManagerWindow, selected);
         }
 
         private void SplitRoomButtonClick(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new RenovationSplitRoomPage(mainManagerWindow);
+            mainManagerWindow.MainManagerView.Content = new RenovationSplitRoomPage(mainManagerWindow, selected);
         }
     }
 }

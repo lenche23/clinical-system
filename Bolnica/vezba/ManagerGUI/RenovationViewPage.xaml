@@ -10,11 +10,11 @@
     <Grid>
         <Label Content="Zakazivanje renoviranja"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="283,20,240,499"/>
         <Label Name="BrojProstorije" Content="Prostorija: " Margin="147,102,450,417" FontSize="14"></Label>
-        <Label Content="Početni datum:" Margin="127,153,498,380"/>
-        <Label Content="Predviđeno trajanje:" Margin="107,210,498,323" />
+        <Label Content="Početni datum:" Margin="132,158,493,375"/>
+        <Label Content="Predviđeno trajanje:" Margin="112,220,493,313" />
         <TextBox Name="PocetniDatum" Margin="262,153,145,380" RenderTransformOrigin="0.491,0.484" />
-        <TextBox Name="Trajanje" RenderTransformOrigin="0.491,0.484" Margin="262,200,145,323" />
-        <Button Click="OkButtonClick" Margin="189,320,408,190">Potvrdi</Button>
-        <Button Click="CancelButtonClick" Margin="422,320,155,190">Odustani</Button>
+        <TextBox Name="Trajanje" RenderTransformOrigin="0.491,0.484" Margin="262,210,145,313" />
+        <Button Click="OkButtonClick" Margin="190,430,407,80">Potvrdi</Button>
+        <Button Click="CancelButtonClick" Margin="382,430,195,80">Odustani</Button>
     </Grid>
 </Page>

@@ -22,45 +22,26 @@ namespace vezba.ManagerGUI
             this.declinedMedicine = declinedMedicine;
             this.mainManagerWindow = mainManagerWindow;
             MedicineService medicineService = new MedicineService();
-            List<Medicine> medicineList = medicineService.GetAllMedicine();
-            List<Medicine> temporary = new List<Medicine>();
-            for (int i = 0; i < medicineList.Count; i++)
-            {
-                if (medicineList[i].Status == MedicineStatus.approved)
-                {
-                    temporary.Add(medicineList[i]);
-                }
-            }
+            List<Medicine> replacementMedicineList = medicineService.GetApproved();
+            comboReplacementMedicine.ItemsSource = replacementMedicineList;
 
-            comboReplacementMedicine.ItemsSource = temporary;
             List<string> condition = new List<string> { "Kapsula", "Pilula", "Sirup" };
             comboCondition.ItemsSource = condition;
+
             ingredientTemporaryList = declinedMedicine.Medicine.ingridient;
+            NameTextBox.Text = declinedMedicine.MedicineName;
+            ManufacturerTextBox.Text = declinedMedicine.MedicineManufacturer;
+            PackagingTextBox.Text = declinedMedicine.Medicine.Packaging;
 
-            nazivTB.Text = declinedMedicine.MedicineName;
-            proizvodjacTB.Text = declinedMedicine.MedicineManufacturer;
-            pakovanjeTB.Text = declinedMedicine.Medicine.Packaging;
-
-            if (declinedMedicine.Medicine.Condition == MedicineCondition.capsule)
-            {
-                comboCondition.SelectedIndex = 0;
-            }
-            else if (declinedMedicine.Medicine.Condition == MedicineCondition.pill)
-            {
-                comboCondition.SelectedIndex = 1;
-            }
-            else if (declinedMedicine.Medicine.Condition == MedicineCondition.syrup)
-            {
-                comboCondition.SelectedIndex = 2;
-            }
-            if (declinedMedicine.Medicine.ReplacementMedicine == null)
-            {
-            }
+            if (declinedMedicine.Medicine.Condition == MedicineCondition.capsule) comboCondition.SelectedIndex = 0;
+            else if (declinedMedicine.Medicine.Condition == MedicineCondition.pill) comboCondition.SelectedIndex = 1;
+            else if (declinedMedicine.Medicine.Condition == MedicineCondition.syrup) comboCondition.SelectedIndex = 2;
+            if (declinedMedicine.Medicine.ReplacementMedicine == null) { }
             else
             {
-                for (int i = 0; i < temporary.Count; i++)
+                for (int i = 0; i < replacementMedicineList.Count; i++)
                 {
-                    if (temporary[i].Name == declinedMedicine.Medicine.ReplacementMedicine.Name)
+                    if (replacementMedicineList[i].Name == declinedMedicine.Medicine.ReplacementMedicine.Name)
                     {
                         comboReplacementMedicine.SelectedIndex = i;
                     }
@@ -73,9 +54,9 @@ namespace vezba.ManagerGUI
 
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
-            declinedMedicine.Medicine.Name = nazivTB.Text;
-            declinedMedicine.Medicine.Manufacturer = proizvodjacTB.Text;
-            declinedMedicine.Medicine.Packaging = pakovanjeTB.Text;
+            declinedMedicine.Medicine.Name = NameTextBox.Text;
+            declinedMedicine.Medicine.Manufacturer = ManufacturerTextBox.Text;
+            declinedMedicine.Medicine.Packaging = PackagingTextBox.Text;
 
             if (comboCondition.SelectedIndex == 1)
             {
@@ -94,12 +75,10 @@ namespace vezba.ManagerGUI
 
             declinedMedicine.Medicine.ReplacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
             MedicineService medicineService = new MedicineService();
-            //declinedMedicine.Medicine.MedicineID = medicineService.GenerateNextMedicineId();
             medicineService.DeleteDeclinedMedicine(declinedMedicine.DeclinedMedicineID);
             medicineService.SaveMedicine(declinedMedicine.Medicine);
             medicinePage.MedicineBinding.Items.Refresh(); 
             mainManagerWindow.MainManagerView.Content = new DeclinedMedicineManagerPage(mainManagerWindow, medicinePage);
-            
         }
 
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
@@ -122,12 +101,10 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Ni jedan sastojak nije selektovan!");
             }
         }
-
         private void AddIngredientButtonClick(object sender, RoutedEventArgs e)
         {
             var ingredientName = NoviSastojak.Text;
             var newIngredient = new Ingridient(ingredientName);
-
             ingredientTemporaryList.Add(newIngredient);
             IngredientList = new ObservableCollection<Ingridient>(ingredientTemporaryList);
             IngredientsBinding.ItemsSource = IngredientList;

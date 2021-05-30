@@ -31,12 +31,12 @@
         <TextBlock Grid.Column="0" Grid.Row="4" Padding="2" FontSize="14" Margin="21,10,18,0">Zamenski lek:</TextBlock>
 
 
-        <Label Margin="7,7,93,7" Grid.Column="1" Grid.Row="0" Name="idText"></Label>
-        <Label Margin="7" Grid.Column="1" Grid.Row="1" Name="nazivText"></Label>
-        <Label Margin="7" Grid.Column="1" Grid.Row="2" Name="proizvodjacText"></Label>
-        <Label Margin="7" Grid.Column="1" Grid.Row="3" Name="pakovanjeText"></Label>
-        <Label Margin="7" Grid.Column="1" Grid.Row="5" Name="oblikText"></Label>
-        <Label Margin="7" Grid.Column="1" Grid.Row="4" Name="zamenskiText"></Label>
+        <Label Margin="7,7,93,7" Grid.Column="1" Grid.Row="0" Name="IdLabel"></Label>
+        <Label Margin="7" Grid.Column="1" Grid.Row="1" Name="NameLabel"></Label>
+        <Label Margin="7" Grid.Column="1" Grid.Row="2" Name="ManufacturerLabel"></Label>
+        <Label Margin="7" Grid.Column="1" Grid.Row="3" Name="PackagingLabel"></Label>
+        <Label Margin="7" Grid.Column="1" Grid.Row="5" Name="ConditionLabel"></Label>
+        <Label Margin="7" Grid.Column="1" Grid.Row="4" Name="ReplacementMedicineLabel"></Label>
         <ListView Margin="20,42,69,-153" Name="IngredientsBinding" RenderTransformOrigin="0.5,0.5" Grid.Row="6" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView>

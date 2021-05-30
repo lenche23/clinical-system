@@ -126,7 +126,7 @@ namespace vezba.Repository
         }
     }
 
-    public int GenerateNextId()
+    private int GenerateNextId()
     {
         List<Equipment> list = ReadFromFile();
         return list.Count;
