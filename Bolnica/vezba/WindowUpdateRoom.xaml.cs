@@ -192,7 +192,7 @@ namespace Bolnica
              {
                  if (CheckedBoxStatic.IsChecked == true)
                  {
-                     foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetAll())
+                     foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetDeclined())
                      {
                          if (roomInventory.room.RoomNumber == selected.RoomNumber)
                          {
@@ -213,7 +213,7 @@ namespace Bolnica
             {
                 if (CheckedBoxDinamic.IsChecked == true)
                 {
-                    foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetAll())
+                    foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetDeclined())
                     {
                         if (roomInventory.room.RoomNumber == selected.RoomNumber)
                         {
@@ -249,7 +249,7 @@ namespace Bolnica
             {
                 if (CheckedBoxStatic.IsChecked == false)
                 {
-                    foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetAll())
+                    foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetDeclined())
                     {
                         if (roomInventory.room.RoomNumber == selected.RoomNumber)
                         {
@@ -276,7 +276,7 @@ namespace Bolnica
              {
                  if (CheckedBoxDinamic.IsChecked == false)
                  {
-                     foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetAll())
+                     foreach (RoomInventory roomInventory in _roomInventoryFileRepository.GetDeclined())
                      {
                          if (roomInventory.room.RoomNumber == selected.RoomNumber)
                          {

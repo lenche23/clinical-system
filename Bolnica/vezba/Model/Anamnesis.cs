@@ -14,5 +14,12 @@ namespace Model
         public String Patient { get; set; }
         public String Doctor { get; set; }
 
+        public Anamnesis(DateTime time, String comment, String patient, String doctor)
+        {
+            Time = time;
+            Comment = comment;
+            Patient = patient;
+            Doctor = doctor;
+        }
     }
 }

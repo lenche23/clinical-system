@@ -32,7 +32,7 @@ namespace vezba
             if (patientsTable.SelectedCells.Count > 0)
             {
                 /*PatientFileRepository ps = new PatientFileRepository();
-                List<Patient> temp = ps.GetAll();
+                List<Patient> temp = ps.GetDeclined();
                 Patients = new ObservableCollection<Patient>(temp);*/
                 Patient p = (Patient)patientsTable.SelectedItem;
                 var s = new ViewPatient(p);
@@ -50,7 +50,7 @@ namespace vezba
             if(patientsTable.SelectedCells.Count > 0)
             {
                 /*PatientFileRepository ps = new PatientFileRepository();
-                List<Patient> temp = ps.GetAll();
+                List<Patient> temp = ps.GetDeclined();
                 Patients = new ObservableCollection<Patient>(temp);*/
                 Patient p = (Patient) patientsTable.SelectedItem;
                 var s = new EditPatient(p);

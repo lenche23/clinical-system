@@ -1,0 +1,131 @@
+﻿<Page x:Class="vezba.DoctorPages.MedicalRecordPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1200"
+      Title="MedicalRecordPage">
+
+    <Grid Background="White">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                <Button Height="30" Width="100" Margin="5" Padding="5" Click="ReturnClick" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Povratak</Button>
+            </StackPanel>
+            <TabControl Margin="5">
+                <TabItem Header="Lične Informacije">
+                    <ScrollViewer>
+                        <Grid>
+                                <Grid.Resources>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Margin" Value="10"/>
+                                        <Setter Property="Height" Value="25"/>
+                                        <Setter Property="Padding" Value="3"></Setter>
+                                        <Setter Property="FontFamily" Value="Verdana"/>
+                                    </Style>
+                                </Grid.Resources>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right"> Pacijent:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">JMBG:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Datum rodjenja:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right">Pol:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Broj telefona:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right">Adresa:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right">Email:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right">Kontakt za hitne slučaleve:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right">Broj lične karte:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="9" HorizontalAlignment="Right">Broj zdravstvene knjižice:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right">Broj zdravstvenog osiguranja:</TextBlock>
+                                <TextBlock Grid.Column="0" Grid.Row="11" HorizontalAlignment="Right" VerticalAlignment="Top">Alergeni:</TextBlock>
+
+
+                                <TextBlock Grid.Column="1" Grid.Row="0" Name="NameSurname">
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1}">
+                                            <Binding Path="Name" />
+                                            <Binding Path="Surname" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock Grid.Column="1" Grid.Row="1" Name="JMBGInfo" Text="{Binding Jmbg, Mode=OneWay}"/>
+                                <TextBlock Grid.Column="1" Grid.Row="2" Name="DateOfBirthInfo" Text="{Binding DateOfBirth, Mode=OneWay}"/>
+                                <TextBlock Grid.Column="1" Grid.Row="3" Name="SexInfo" Text="{Binding Sex, Mode = OneWay}"/>
+                                <TextBlock Grid.Column="1" Grid.Row="4" Name="PhoneNumberInfo" Text="{Binding PhoneNumber, Mode=OneWay}"/>
+                                <TextBlock Grid.Column="1" Grid.Row="5" Name="AdressInfo" Text="{Binding Adress, Mode=OneWay}"/>
+                                <TextBlock Grid.Column="1" Grid.Row="6" Name="EmailInfo" Text="{Binding Email, Mode=OneWay}"/>
+                                <TextBlock Grid.Column="1" Grid.Row="7" Name="EmergencyContactInfo" Text="{Binding EmergencyContact, Mode=OneWay}"/>
+                                <TextBlock Grid.Column="1" Grid.Row="8" Name="IdNumberInfo" Text="{Binding IdCard, Mode=OneWay}"/>
+                                <TextBlock Grid.Column="1" Grid.Row="9" Name="MedicalNumberInfo" Text="{Binding MedicalRecord.MedicalIdNumber, Mode=OneWay}"/>
+                                <TextBlock Grid.Column="1" Grid.Row="10" Name="HealthInsuranceNumberInfo" Text="{Binding MedicalRecord.HealthInsuranceNumber, Mode=OneWay}"/>
+                                <DataGrid Grid.Column="1" Grid.Row="11" x:Name="allergenGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.Allergen}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 400, 10">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Naziv" Binding="{Binding Name}"  Width="*"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Terapije">
+                    <DataGrid x:Name="prescriptionGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.Prescription}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Lek" Binding="{Binding Medicine.Name}"  Width="*"/>
+                            <DataGridTextColumn Header="Početak terapije" Binding="{Binding StartDate, StringFormat=dd/MM/yyyy}"  Width="*"/>
+                            <DataGridTextColumn Header="Trajanje terapije" Binding="{Binding DurationInDays}"  Width="*"/>
+                            <DataGridTextColumn Header="Konzumiranje" Binding="{Binding Consumption}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="Izveštaji">
+                    <DataGrid x:Name="anamnesisGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.Anamnesis}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Vreme" Binding="{Binding Time, StringFormat=dd/MM/yyyy HH:mm}"  Width="*"/>
+                            <DataGridTextColumn Header="Lekar" Binding="{Binding Doctor}"  Width="*"/>
+                            <DataGridTextColumn Header="Komentar" Binding="{Binding Comment}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="Uputi">
+                    <DataGrid x:Name="referralLeterGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.ReferralLetter}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Početak važenja uputa" Binding="{Binding StartDate, StringFormat=dd/MM/yyyy}"  Width="*"/>
+                            <DataGridTextColumn Header="Trajanje uputa" Binding="{Binding DurationPeriodInDays}"  Width="*"/>
+                            <DataGridTextColumn Header="Lekar" Binding="{Binding Doctor.NameAndSurname}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="Bolnička lečenja">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 5, 25, 5">
+                            <Button Margin="5" Height="30" Width="100" Click="ExtendButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Produži boravak</Button>
+                        </StackPanel>
+                            <DataGrid x:Name="hospitalTreatmentGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.HospitalTreatment}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30, 0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Početak lečenja" Binding="{Binding StartDate, StringFormat=dd/MM/yyyy}"  Width="*"/>
+                                <DataGridTextColumn Header="Trajanje lečenja" Binding="{Binding DurationInDays}"  Width="*"/>
+                                <DataGridTextColumn Header="Soba" Binding="{Binding Room.RoomNumber}"  Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Page>

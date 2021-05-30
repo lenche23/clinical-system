@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using vezba.Repository;
 using System.ComponentModel;
 
@@ -12,8 +13,14 @@ namespace Model
         public String ApointmentDescription { get; set; }
         public int AppointentId { get; set; }
         public Boolean IsDeleted { get; set; }
+
+        [JsonIgnore]
         public Doctor Doctor { get; set; }
+        
+        [JsonIgnore]
         public Room Room { get; set; }
+
+        [JsonIgnore]
         public Patient Patient { get; set; }
         public Boolean IsEmergency { get; set; }
 
@@ -46,7 +53,7 @@ namespace Model
             this.Room = room;
             this.Patient = patient;
         }
-
+        [JsonIgnore]
         public DateTime EndTime
         {
             get
@@ -54,7 +61,7 @@ namespace Model
                 return StartTime.AddMinutes(DurationInMunutes);
             }
         }
-
+        [JsonIgnore]
         public String PatientName
         {
             get
@@ -65,6 +72,7 @@ namespace Model
                     return "";
             }
         }
+        [JsonIgnore]
         public String RoomName
         {
             get
@@ -79,6 +87,7 @@ namespace Model
                 OnPropertyChanged("RoomName");
             }
         }
+        [JsonIgnore]
         public String DoctorName
         {
             get

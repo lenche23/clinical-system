@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using Bolnica;
 using Model;
+using vezba.DoctorPages;
 using vezba.Repository;
 
 namespace vezba

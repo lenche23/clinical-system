@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:vezba"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="vezba.PatientView"
         mc:Ignorable="d"
-        Title="Patient" Height="750" Width="430" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="Black">
+        Title="patient" Height="750" Width="430" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="Black">
 
     <Window.Resources>
         <ResourceDictionary>

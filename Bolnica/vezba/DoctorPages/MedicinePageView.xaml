@@ -1,0 +1,60 @@
+﻿<Page x:Class="vezba.DoctorPages.MedicinePageView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MedicinePageView">
+    <Grid>
+        <TabControl Name="MedicineTabs">
+            <TabItem Header="Revizija Lekova">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Margin="5, 5, 30, 5" Padding="5" Click="RevisionClick" Width="100" Height="30" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Revizija</Button>
+                    </StackPanel>
+                    <DataGrid x:Name="revisionGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicineToApprove}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv leka" Binding="{Binding Name}"  Width="*"/>
+                            <DataGridTextColumn Header="Pakovanje" Binding="{Binding Packaging}"  Width="*"/>
+                            <DataGridTextColumn Header="Proizvođač" Binding="{Binding Manufacturer}"  Width="*"/>
+                            <DataGridTextColumn Header="Oblik" Binding="{Binding ConditionSerbian}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Odobreni Lekovi">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Margin="5, 5, 30, 5" Padding="5" Click="ViewClick" Width="100" Height="30" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Prikaz</Button>
+                    </StackPanel>
+                    <DataGrid x:Name="approvedGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding ApprovedMedicine}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv leka" Binding="{Binding Name}"  Width="*"/>
+                            <DataGridTextColumn Header="Pakovanje" Binding="{Binding Packaging}"  Width="*"/>
+                            <DataGridTextColumn Header="Proizvođač" Binding="{Binding Manufacturer}"  Width="*"/>
+                            <DataGridTextColumn Header="Oblik" Binding="{Binding ConditionSerbian}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Odbijeni Lekovi">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Margin="5, 5, 30, 5" Padding="5" Click="ViewDeclinedClick" Width="100" Height="30" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Prikaz</Button>
+                    </StackPanel>
+                    <DataGrid x:Name="declinedGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding DeclinedMedicine}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv leka" Binding="{Binding Medicine.Name}"  Width="*"/>
+                            <DataGridTextColumn Header="Pakovanje" Binding="{Binding Medicine.Packaging}"  Width="*"/>
+                            <DataGridTextColumn Header="Proizvođač" Binding="{Binding Medicine.Manufacturer}"  Width="*"/>
+                            <DataGridTextColumn Header="Oblik" Binding="{Binding Medicine.ConditionSerbian}"  Width="*"/>
+                            <DataGridTextColumn Header="Komentar" Binding="{Binding Description}"  Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
+using Newtonsoft.Json.Linq;
+using Service;
 
 namespace vezba.Repository
 {
@@ -16,9 +18,8 @@ namespace vezba.Repository
             this.FileName = "../../appointments.json";
         }
 
-        
         public List<Appointment> GetAll()
-        {          
+        {
             List<Appointment> appointments = new List<Appointment>();
             List<Appointment> storedAppointments = ReadFromFile();
             for (int i = 0; i < storedAppointments.Count; i++)
@@ -30,7 +31,7 @@ namespace vezba.Repository
             }
             return appointments;
         }
-        
+
         public Boolean Save(Appointment newAppointment)
         {
             newAppointment.AppointentId = GenerateNextId();
@@ -80,7 +81,8 @@ namespace vezba.Repository
         public Boolean Delete(int id)
         {
             List<Appointment> storedAppointments = ReadFromFile();
-            for (int i = 0; i < storedAppointments.Count; i++) 
+
+            for (int i = 0; i < storedAppointments.Count; i++)
             {
                 if (storedAppointments[i].AppointentId == id && storedAppointments[i].IsDeleted == false)
                 {
@@ -96,7 +98,10 @@ namespace vezba.Repository
             try
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
-                List<Appointment> appointments = JsonConvert.DeserializeObject<List<Appointment>>(jsonFromFile);
+
+                var deserializedAppointments = JsonConvert.DeserializeObject<List<JObject>>(jsonFromFile);
+                var appointments = CreateAppointments(deserializedAppointments);
+
                 return appointments;
             }
             catch { }
@@ -104,11 +109,41 @@ namespace vezba.Repository
             return new List<Appointment>();
         }
 
+        private static List<Appointment> CreateAppointments(List<JObject> deserializedAppointments)
+        {
+            var appointments = new List<Appointment>();
+            PatientFileRepository patientRepository = new PatientFileRepository();
+            RoomFileRepository roomRepository = new RoomFileRepository();
+            DoctorFileRepository doctorRepository = new DoctorFileRepository();
+            foreach (var deserializedAppointment in deserializedAppointments)
+            {
+                var patientId = (String) deserializedAppointment["patientId"];
+                deserializedAppointment.Remove("patientId");
+
+                var roomId = (int) deserializedAppointment["roomId"];
+                deserializedAppointment.Remove("roomId");
+
+                var doctorId = (String) deserializedAppointment["doctorId"];
+                deserializedAppointment.Remove("doctorId");
+
+                var appointment = deserializedAppointment.ToObject<Appointment>();
+                appointment.Patient = patientRepository.GetOne(patientId);
+                appointment.Room = roomRepository.GetOne(roomId);
+                appointment.Doctor = doctorRepository.GetOne(doctorId);
+
+                appointments.Add(appointment);
+            }
+
+            return appointments;
+        }
+
         private void WriteToFile(List<Appointment> appointments)
         {
             try
             {
-                var jsonToFile = JsonConvert.SerializeObject(appointments, Formatting.Indented);
+                var appointmentsForSerialization = PrepareForSerialization(appointments);
+                var jsonToFile = JsonConvert.SerializeObject(appointmentsForSerialization, Formatting.Indented);
+
                 using (StreamWriter writer = new StreamWriter(this.FileName))
                 {
                     writer.Write(jsonToFile);
@@ -124,6 +159,23 @@ namespace vezba.Repository
         {
             List<Appointment> appointments = ReadFromFile();
             return appointments.Count;
+		}
+
+        private static List<JObject> PrepareForSerialization(List<Appointment> appointments)
+        {
+            var appointmentsForSerialization = new List<JObject>();
+            foreach (var appointment in appointments)
+            {
+                JObject appointmentForSerialization = JObject.FromObject(appointment);
+
+                appointmentForSerialization.Add("patientId", appointment.Patient.Jmbg);
+                appointmentForSerialization.Add("roomId", appointment.Room.RoomNumber);
+                appointmentForSerialization.Add("doctorId", appointment.Doctor.Jmbg);
+
+                appointmentsForSerialization.Add(appointmentForSerialization);
+            }
+
+            return appointmentsForSerialization;
         }
 
     }

@@ -9,8 +9,16 @@ namespace Model
 {
    public class HospitalTreatment
    {
-      public DateTime startDate;
-      public int durationInDays;
-   
-   }
+      public DateTime StartDate { get; set; }
+      public int DurationInDays { get; set; }
+
+      public Room Room { get; set; }
+
+      public HospitalTreatment(DateTime startDate, int durationInDays, Room room)
+      {
+          StartDate = startDate;
+          DurationInDays = durationInDays;
+          Room = room;
+      }
+    }
 }

@@ -132,8 +132,8 @@ namespace Bolnica
 
 
 
-            //List<Patient> pl = ps.GetAll();
-            //ObservableCollection<Patient> t = new ObservableCollection<Patient>(ps.GetAll());
+            //List<Patient> pl = ps.GetDeclined();
+            //ObservableCollection<Patient> t = new ObservableCollection<Patient>(ps.GetDeclined());
             //SecretaryView.Patients = t;
             //MessageBox.Show(SecretaryView.Patients[0].EmergencyContact);
 

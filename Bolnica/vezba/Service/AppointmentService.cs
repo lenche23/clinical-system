@@ -122,7 +122,7 @@ namespace Service
             return appointment1.Room.RoomNumber == appointment2.Room.RoomNumber;
         }
 
-        private DateTime FindNextFreeAppointmentStartTime(Appointment appointment)
+        public DateTime FindNextFreeAppointmentStartTime(Appointment appointment)
         {
             AppointmentFileRepository appointmentFileRepository = new AppointmentFileRepository();
             List<Appointment> scheduledAppointments = appointmentFileRepository.GetAll();
@@ -242,6 +242,7 @@ namespace Service
             }
             return appointment.StartTime;
         }
+		
         private Boolean EmergencyAppointmentsOverlap(Appointment appointment1, Appointment appointment2)
         {
             if (AppointmentsShareDoctorSpeciality(appointment1, appointment2) || AppointmentsSharePatient(appointment1, appointment2) || AppointmentsShareRoom(appointment1, appointment2))
@@ -254,8 +255,8 @@ namespace Service
                     return true;
             }
             return false;
-
         }
+		
         public List<AppointmentForReschedulingDTO> CreateAppointmentsForRescheduling(Appointment emergencyAppointment)
         {
             List<Appointment> overlapingAppointments = GetEmergencyOverlapingAppointments(emergencyAppointment);
@@ -305,7 +306,6 @@ namespace Service
                     vezba.SecretaryGUI.SecretaryAppointments.Appointments[vezba.SecretaryGUI.SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = rescheduledAppointment;
             }
         }
-
 
         // SekretarKraj***************************************************************************
 
@@ -412,24 +412,81 @@ namespace Service
             foreach (Appointment appointment in GetAllAppointments())
             {
                 if (appointment.StartTime.Date == DateTime.Today && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
+				{
+                    appointments.Add(appointment);
+                }
+            }
+			appointments.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
+            appointments.Reverse();
+            return appointments;
+		}
+
+        // PacijentKraj***************************************************************************
+
+        // Lekar**********************************************************************************
+        public Boolean DoctorRescheduleAppointment(Appointment editedAppointment)
+        {
+            List<Appointment> overlappingAppointments = GetOverlapingAppointments(editedAppointment);
+            RemoveAppointment(editedAppointment, overlappingAppointments);
+            if (overlappingAppointments.Count == 0)
+                return AppointmentRepository.Update(editedAppointment);
+            else
+            {
+                MessageBox.Show("Termin je zauzet! Izaberite drugo vreme.\nPrvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(editedAppointment).ToString("dd.MM.yyyy. HH:mm"));
+                return false;
+            }
+        }
+
+        private static void RemoveAppointment(Appointment appointmentToRemove, List<Appointment> appointments)
+        {
+            foreach (var appointment in appointments)
+            {
+                if (appointment.AppointentId == appointmentToRemove.AppointentId)
+                {
+                    appointments.Remove(appointment);
+                    break;
+                }
+            }
+        }
+
+        public TimeSpan GetEarliestTime(List<Appointment> appointments)
+        {
+            var earliestTime = appointments[0].StartTime.TimeOfDay;
+            foreach (var appointment in appointments)
+            {
+                if (TimeSpan.Compare(appointment.StartTime.TimeOfDay, earliestTime) < 0)
+                {
+                    earliestTime = appointment.StartTime.TimeOfDay;
+                }
+            }
+
+            return earliestTime;
+        }
+
+        public List<Appointment>GenerateAppointmentsForWeekAndDoctor(DateTime startOfWeek, DateTime endOfWeek, Doctor selectedDoctor)
+        {
+            List<Appointment> appointments = new List<Appointment>();
+            List<Appointment> allAppointments = GetAllAppointments();
+
+            foreach (var appointment in allAppointments)
+            {
+                if (appointment.Doctor == null)
+                    continue;
+                if(IsAppointmentInCurrentView(appointment, startOfWeek, endOfWeek, selectedDoctor))
                 {
                     appointments.Add(appointment);
                 }
             }
-            appointments.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
-            appointments.Reverse();
-            return appointments;
+			return appointments;
         }
 
-        
-        // PacijentKraj***************************************************************************
-
-        // Lekar**********************************************************************************
-
-
-
-
-
+        public Boolean IsAppointmentInCurrentView(Appointment appointment, DateTime startOfWeek, DateTime endOfWeek, Doctor selectedDoctor)
+        {
+            return DateTime.Compare(appointment.StartTime, startOfWeek) > 0 &&
+                   DateTime.Compare(appointment.StartTime, endOfWeek) < 0 &&
+                   appointment.Doctor.Jmbg.Equals(selectedDoctor.Jmbg);
+        }
+		
         // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************
@@ -440,4 +497,3 @@ namespace Service
 
         // UpravnikKraj***************************************************************************
     }
-}

@@ -182,15 +182,15 @@ namespace vezba
                     if (maks_kolicina >= kolicina_robe)
                     {
                         this.roomInventory.EndTime = time;
-                        ris.Update(this.roomInventory);
+                        ris.UpdateMedicine(this.roomInventory);
 
-                        foreach (RoomInventory ri in ris.GetAll())
+                        foreach (RoomInventory ri in ris.GetDeclined())
                         {
                             if (ri.room.RoomNumber == id_sobe && DateTime.Compare(ri.StartTime, DateTime.Now) <= 0 && DateTime.Compare(ri.EndTime, DateTime.Now) >= 0 && ri.equipment.Id == roomInventory.equipment.Id) 
                             {
                                  ri.EndTime = time;
                                  newQuantity2 = ri.Quantity + kolicina_robe;
-                                 ris.Update(ri);
+                                 ris.UpdateMedicine(ri);
                                  exists = true;                   
                             }
                         }
@@ -204,10 +204,10 @@ namespace vezba
                     var endTime = new DateTime(2999, 12, 31);
                     var id1 = ris.GenerateNextId();
                     RoomInventory ri1 = new RoomInventory(time, endTime, newQuantity1, id1, roomInventory.equipment, room);
-                    ris.Save(ri1);
+                    ris.SaveDeclinedMedicine(ri1);
                     var id2 = ris.GenerateNextId();
                     RoomInventory ri2 = new RoomInventory(time, endTime, newQuantity2, id2, roomInventory.equipment, room1);
-                    ris.Save(ri2);
+                    ris.SaveDeclinedMedicine(ri2);
                     this.Close();
                 }
             }

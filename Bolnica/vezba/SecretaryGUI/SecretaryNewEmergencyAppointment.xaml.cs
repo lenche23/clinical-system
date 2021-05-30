@@ -74,7 +74,7 @@ namespace vezba.SecretaryGUI
                 SecretaryNearestAvailableEmergencyAppointment w = new SecretaryNearestAvailableEmergencyAppointment(emergencyAppointment);
                 w.Show();
             }
-
+			
             return;
             
         }
