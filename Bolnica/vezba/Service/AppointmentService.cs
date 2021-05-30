@@ -7,6 +7,7 @@ using System.Windows;
 using vezba;
 using vezba.PatientPages;
 using vezba.Repository;
+using vezba.SecretaryGUI;
 
 namespace Service
 {
@@ -290,6 +291,22 @@ namespace Service
                     appointments.Remove(appointment);
             }
         }
+
+        public void RescheduleAppointmentForRescheduling(AppointmentForReschedulingDTO appointmentForRescheduling)
+        {
+            List<Appointment> scheduledAppointments = GetAllAppointments();
+            Appointment rescheduledAppointment = scheduledAppointments.FirstOrDefault(a => a.AppointentId.Equals(appointmentForRescheduling.AppointmentId));
+            if (rescheduledAppointment != null)
+            {
+                rescheduledAppointment.StartTime = appointmentForRescheduling.SuggestedTime;
+                EditAppointment(rescheduledAppointment);
+                Appointment previousAppointment = SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(rescheduledAppointment.AppointentId));
+                if (previousAppointment != null)
+                    SecretaryAppointments.Appointments[SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = rescheduledAppointment;
+            }
+        }
+
+
         // SekretarKraj***************************************************************************
 
         // Pacijent*******************************************************************************
@@ -326,7 +343,7 @@ namespace Service
             if (GetOverlapingAppointments(newAppointment).Count == 0)
             {
                 EventsLogService.AddLog();
-                PatientNotification noti = new PatientNotification("Uspešno ste zakazali pregled.");
+                PatientNotification noti = new PatientNotification("Uspeï¿½no ste zakazali pregled.");
                 noti.ShowDialog();
                 return AppointmentRepository.Save(newAppointment);
             }

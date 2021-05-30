@@ -288,6 +288,11 @@
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\MedicineCondition.cs" />
     <Compile Include="Model\MedicineStatus.cs" />
+    <Compile Include="Repository\IAnnouncementRepository.cs" />
+    <Compile Include="Repository\IAppointmentRepository.cs" />
+    <Compile Include="Repository\IDoctorRepository.cs" />
+    <Compile Include="Repository\IGenericRepository.cs" />
+    <Compile Include="Repository\IPatientRepository.cs" />
     <Compile Include="Repository\MedicineFileRepository.cs" />
     <Compile Include="Model\Menager.cs" />
     <Compile Include="Model\Patient.cs" />
@@ -393,6 +398,9 @@
     <Compile Include="SecretaryGUI\SecretaryAppointments.xaml.cs">
       <DependentUpon>SecretaryAppointments.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\SecretaryDoctors.xaml.cs">
+      <DependentUpon>SecretaryDoctors.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecretaryGUI\SecretaryEditAnnouncement.xaml.cs">
       <DependentUpon>SecretaryEditAnnouncement.xaml</DependentUpon>
     </Compile>
@@ -423,6 +431,12 @@
     <Compile Include="SecretaryGUI\SecretaryNewPatient.xaml.cs">
       <DependentUpon>SecretaryNewPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNewVacationDays.xaml.cs">
+      <DependentUpon>SecretaryNewVacationDays.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNewWorkingHours.xaml.cs">
+      <DependentUpon>SecretaryNewWorkingHours.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecretaryGUI\SecretaryNotifications.xaml.cs">
       <DependentUpon>SecretaryNotifications.xaml</DependentUpon>
     </Compile>
@@ -437,6 +451,9 @@
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryViewAppointment.xaml.cs">
       <DependentUpon>SecretaryViewAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryViewDoctor.xaml.cs">
+      <DependentUpon>SecretaryViewDoctor.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryViewPatient.xaml.cs">
       <DependentUpon>SecretaryViewPatient.xaml</DependentUpon>
@@ -879,6 +896,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SecretaryGUI\SecretaryDoctors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SecretaryGUI\SecretaryEditAnnouncement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -919,6 +940,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SecretaryGUI\SecretaryNewVacationDays.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryNewWorkingHours.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SecretaryGUI\SecretaryNotifications.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -936,6 +965,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SecretaryGUI\SecretaryViewAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryViewDoctor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

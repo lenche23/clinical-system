@@ -9,7 +9,7 @@ namespace Model
 {
    public enum Shift
    {
-      firstShift,
-      secondShift
+      firstShift, //7-14h
+      secondShift //14-21h
    }
 }

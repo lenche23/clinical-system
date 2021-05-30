@@ -7,10 +7,30 @@ using System;
 
 namespace Model
 {
-   public class VacationDays
-   {
-      public DateTime startDate;
-      public DateTime endDate;
-   
-   }
+    public class VacationDays
+    {
+        
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public VacationDays(DateTime start, DateTime end)
+        {
+            StartDate = start;
+            EndDate = end;
+        }
+        public string FormatedStartDate
+        {
+            get
+            {
+                return StartDate.ToString("dd.MM.yyyy.");
+            }
+        }
+        public string FormatedEndDate
+        {
+            get
+            {
+                return EndDate.ToString("dd.MM.yyyy.");
+            }
+        }
+
+    }
 }

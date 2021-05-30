@@ -8,7 +8,7 @@ using Visibility = Model.Visibility;
 
 namespace vezba.Repository
 {
-    public class AnnouncementFileRepository
+    public class AnnouncementFileRepository : IAnnouncementRepository
     {
         public String FileName { get; }
 

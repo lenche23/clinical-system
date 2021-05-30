@@ -28,7 +28,7 @@ namespace vezba.SecretaryGUI
             Appointments = new ObservableCollection<AppointmentForReschedulingDTO>();
 
             Patient.Content = emergencyAppointment.PatientName;
-            Speciality.Content = emergencyAppointment.Doctor.Speciality;
+            Speciality.Content = emergencyAppointment.Doctor.SpecialityName;
             Room.Content = emergencyAppointment.RoomName;
             Duration.Content = emergencyAppointment.DurationInMunutes;
 
@@ -51,17 +51,8 @@ namespace vezba.SecretaryGUI
             {
                 AppointmentForReschedulingDTO selectedAppointmentForRescheduling = (AppointmentForReschedulingDTO)overlapingAppointmentsTable.SelectedItem;
                 AppointmentService appointmentService = new AppointmentService();
-                List<Appointment> scheduledAppointments = appointmentService.GetAllAppointments();
-                Appointment rescheduledAppointment = scheduledAppointments.FirstOrDefault(a => a.AppointentId.Equals(selectedAppointmentForRescheduling.AppointmentId));
-                if (rescheduledAppointment != null)
-                {
-                    rescheduledAppointment.StartTime = selectedAppointmentForRescheduling.SuggestedTime;
-                    appointmentService.EditAppointment(rescheduledAppointment);
-                    Appointment previousAppointment = SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(rescheduledAppointment.AppointentId));
-                    if (previousAppointment != null)
-                        SecretaryAppointments.Appointments[SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = rescheduledAppointment;
-                    Appointments.Remove(selectedAppointmentForRescheduling);
-                }
+                appointmentService.RescheduleAppointmentForRescheduling(selectedAppointmentForRescheduling);
+                Appointments.Remove(selectedAppointmentForRescheduling);
             }
             else
                 MessageBox.Show("Niste selektovali termin!");

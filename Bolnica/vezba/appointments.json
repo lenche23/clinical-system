@@ -10,6 +10,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Darko Torbica",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 70000,
       "Username": "darko",
       "Password": "dare",
@@ -100,9 +101,7 @@
     "EndTime": "2021-05-14T09:15:00",
     "PatientName": "Petar Ilic",
     "RoomName": "1",
-    "DoctorName": "Darko Torbica",
-    "AppointmentDescription": "Pregled kod lekara opste prakse.",
-    "StartTimee": "2021-05-14T09:00:00"
+    "DoctorName": "Darko Torbica"
   },
   {
     "StartTime": "2021-05-09T10:30:00",
@@ -115,6 +114,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Darko Torbica",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 70000,
       "Username": "darko",
       "Password": "dare",
@@ -235,6 +235,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -323,6 +324,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -361,9 +363,7 @@
     "EndTime": "2021-05-09T10:45:00",
     "PatientName": "Petar Ilic",
     "RoomName": "1",
-    "DoctorName": "Darko Torbica",
-    "AppointmentDescription": "Pregled kod lekara opste prakse.",
-    "StartTimee": "2021-05-09T10:30:00"
+    "DoctorName": "Darko Torbica"
   },
   {
     "StartTime": "2021-05-13T09:00:00",
@@ -376,6 +376,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Dana Dimitrijevic",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 120000,
       "Username": "dana",
       "Password": "danica",
@@ -472,9 +473,7 @@
     "EndTime": "2021-05-13T09:45:00",
     "PatientName": "Mira Torbica",
     "RoomName": "1",
-    "DoctorName": "Dana Dimitrijevic",
-    "AppointmentDescription": "kolonoskopija",
-    "StartTimee": "2021-05-13T09:00:00"
+    "DoctorName": "Dana Dimitrijevic"
   },
   {
     "StartTime": "2021-05-10T10:00:00",
@@ -487,6 +486,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Darko Torbica",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 70000,
       "Username": "darko",
       "Password": "dare",
@@ -636,6 +636,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -753,6 +754,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -791,9 +793,7 @@
     "EndTime": "2021-05-10T10:45:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "1",
-    "DoctorName": "Darko Torbica",
-    "AppointmentDescription": "Sistematski pregled",
-    "StartTimee": "2021-05-10T10:00:00"
+    "DoctorName": "Darko Torbica"
   },
   {
     "StartTime": "2021-05-28T10:00:00",
@@ -806,6 +806,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Dana Dimitrijevic",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 120000,
       "Username": "dana",
       "Password": "danica",
@@ -945,6 +946,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -1062,6 +1064,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -1100,9 +1103,7 @@
     "EndTime": "2021-05-28T10:15:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "2",
-    "DoctorName": "Dana Dimitrijevic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T10:00:00"
+    "DoctorName": "Dana Dimitrijevic"
   },
   {
     "StartTime": "2021-05-28T10:00:00",
@@ -1115,6 +1116,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Darko Torbica",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 70000,
       "Username": "darko",
       "Password": "dare",
@@ -1235,6 +1237,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -1323,6 +1326,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -1361,9 +1365,7 @@
     "EndTime": "2021-05-28T10:15:00",
     "PatientName": "Petar Ilic",
     "RoomName": "1",
-    "DoctorName": "Darko Torbica",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T10:00:00"
+    "DoctorName": "Darko Torbica"
   },
   {
     "StartTime": "2021-05-28T10:15:00",
@@ -1376,6 +1378,7 @@
         "Name": "Stomatolog"
       },
       "NameAndSurname": "Milica Milicevic",
+      "SpecialityName": "Stomatolog",
       "SalaryInRsd": 100000,
       "Username": "milica",
       "Password": "mica",
@@ -1525,6 +1528,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -1642,6 +1646,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -1680,9 +1685,7 @@
     "EndTime": "2021-05-28T10:45:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "1",
-    "DoctorName": "Milica Milicevic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T10:15:00"
+    "DoctorName": "Milica Milicevic"
   },
   {
     "StartTime": "2021-05-28T10:45:00",
@@ -1695,6 +1698,7 @@
         "Name": "Oftalmolog"
       },
       "NameAndSurname": "Pera Peric",
+      "SpecialityName": "Oftalmolog",
       "SalaryInRsd": 90000,
       "Username": "pera",
       "Password": "perica",
@@ -1834,6 +1838,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -1951,6 +1956,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -1989,9 +1995,7 @@
     "EndTime": "2021-05-28T11:15:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "2",
-    "DoctorName": "Pera Peric",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T10:45:00"
+    "DoctorName": "Pera Peric"
   },
   {
     "StartTime": "2021-05-28T11:30:00",
@@ -2004,6 +2008,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Dana Dimitrijevic",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 120000,
       "Username": "dana",
       "Password": "danica",
@@ -2153,6 +2158,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -2270,6 +2276,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -2308,9 +2315,7 @@
     "EndTime": "2021-05-28T11:45:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "1",
-    "DoctorName": "Dana Dimitrijevic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T11:30:00"
+    "DoctorName": "Dana Dimitrijevic"
   },
   {
     "StartTime": "2021-05-28T17:15:00",
@@ -2323,6 +2328,7 @@
         "Name": "Opsti"
       },
       "NameAndSurname": "Jana Jankovic",
+      "SpecialityName": "Opsti",
       "SalaryInRsd": 100000,
       "Username": "jana",
       "Password": "jaca",
@@ -2462,6 +2468,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -2579,6 +2586,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -2617,9 +2625,7 @@
     "EndTime": "2021-05-28T17:45:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "2",
-    "DoctorName": "Jana Jankovic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T17:15:00"
+    "DoctorName": "Jana Jankovic"
   },
   {
     "StartTime": "2021-05-29T09:15:00",
@@ -2632,6 +2638,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Dana Dimitrijevic",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 120000,
       "Username": "dana",
       "Password": "danica",
@@ -2742,6 +2749,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -2830,6 +2838,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -2868,9 +2877,7 @@
     "EndTime": "2021-05-29T09:45:00",
     "PatientName": "Petar Ilic",
     "RoomName": "2",
-    "DoctorName": "Dana Dimitrijevic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-29T09:15:00"
+    "DoctorName": "Dana Dimitrijevic"
   },
   {
     "StartTime": "2021-05-28T00:14:58.3550866+02:00",
@@ -2883,6 +2890,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Dana Dimitrijevic",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 120000,
       "Username": "dana",
       "Password": "danica",
@@ -2981,6 +2989,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -3069,6 +3078,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -3107,9 +3117,7 @@
     "EndTime": "2021-05-28T00:59:58.3550866+02:00",
     "PatientName": "Petar Ilic",
     "RoomName": "3",
-    "DoctorName": "Dana Dimitrijevic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T00:14:58.3550866+02:00"
+    "DoctorName": "Dana Dimitrijevic"
   },
   {
     "StartTime": "2021-05-28T02:40:29.9707826+02:00",
@@ -3122,6 +3130,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Dana Dimitrijevic",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 120000,
       "Username": "dana",
       "Password": "danica",
@@ -3242,6 +3251,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -3330,6 +3340,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -3368,9 +3379,7 @@
     "EndTime": "2021-05-28T02:55:29.9707826+02:00",
     "PatientName": "Petar Ilic",
     "RoomName": "1",
-    "DoctorName": "Dana Dimitrijevic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T02:40:29.9707826+02:00"
+    "DoctorName": "Dana Dimitrijevic"
   },
   {
     "StartTime": "2021-05-28T02:55:29.9707826+02:00",
@@ -3383,6 +3392,7 @@
         "Name": "Opsti"
       },
       "NameAndSurname": "Jana Jankovic",
+      "SpecialityName": "Opsti",
       "SalaryInRsd": 100000,
       "Username": "jana",
       "Password": "jaca",
@@ -3503,6 +3513,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -3591,6 +3602,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -3629,9 +3641,7 @@
     "EndTime": "2021-05-28T03:25:29.9707826+02:00",
     "PatientName": "Petar Ilic",
     "RoomName": "1",
-    "DoctorName": "Jana Jankovic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T02:55:29.9707826+02:00"
+    "DoctorName": "Jana Jankovic"
   },
   {
     "StartTime": "2021-05-28T03:25:29.9707826+02:00",
@@ -3644,6 +3654,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Dana Dimitrijevic",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 120000,
       "Username": "dana",
       "Password": "danica",
@@ -3754,6 +3765,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -3842,6 +3854,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -3880,9 +3893,7 @@
     "EndTime": "2021-05-28T03:55:29.9707826+02:00",
     "PatientName": "Petar Ilic",
     "RoomName": "2",
-    "DoctorName": "Dana Dimitrijevic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T03:25:29.9707826+02:00"
+    "DoctorName": "Dana Dimitrijevic"
   },
   {
     "StartTime": "2021-06-04T10:15:00",
@@ -3895,6 +3906,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Dana Dimitrijevic",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 120000,
       "Username": "dana",
       "Password": "danica",
@@ -4015,6 +4027,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -4103,6 +4116,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -4141,9 +4155,7 @@
     "EndTime": "2021-06-04T10:45:00",
     "PatientName": "Petar Ilic",
     "RoomName": "1",
-    "DoctorName": "Dana Dimitrijevic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-06-04T10:15:00"
+    "DoctorName": "Dana Dimitrijevic"
   },
   {
     "StartTime": "2021-05-28T03:25:29.9707826+02:00",
@@ -4156,6 +4168,7 @@
         "Name": "Opsti"
       },
       "NameAndSurname": "Jana Jankovic",
+      "SpecialityName": "Opsti",
       "SalaryInRsd": 100000,
       "Username": "jana",
       "Password": "jaca",
@@ -4252,9 +4265,7 @@
     "EndTime": "2021-05-28T03:55:29.9707826+02:00",
     "PatientName": "Mira Torbica",
     "RoomName": "1",
-    "DoctorName": "Jana Jankovic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T03:25:29.9707826+02:00"
+    "DoctorName": "Jana Jankovic"
   },
   {
     "StartTime": "2021-05-28T01:42:54.3582162+02:00",
@@ -4267,6 +4278,7 @@
         "Name": "Opsti"
       },
       "NameAndSurname": "Jana Jankovic",
+      "SpecialityName": "Opsti",
       "SalaryInRsd": 100000,
       "Username": "jana",
       "Password": "jaca",
@@ -4377,6 +4389,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -4465,6 +4478,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -4503,9 +4517,7 @@
     "EndTime": "2021-05-28T02:12:54.3582162+02:00",
     "PatientName": "Petar Ilic",
     "RoomName": "2",
-    "DoctorName": "Jana Jankovic",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-05-28T01:42:54.3582162+02:00"
+    "DoctorName": "Jana Jankovic"
   },
   {
     "StartTime": "2021-06-06T10:15:00",
@@ -4518,6 +4530,7 @@
         "Name": "Kardiolog"
       },
       "NameAndSurname": "Darko Torbica",
+      "SpecialityName": "Kardiolog",
       "SalaryInRsd": 70000,
       "Username": "darko",
       "Password": "dare",
@@ -4657,6 +4670,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -4774,6 +4788,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -4812,33 +4827,32 @@
     "EndTime": "2021-06-06T10:30:00",
     "PatientName": "Milena Jovanovic",
     "RoomName": "2",
-    "DoctorName": "Darko Torbica",
-    "AppointmentDescription": "",
-    "StartTimee": "2021-06-06T10:15:00"
+    "DoctorName": "Darko Torbica"
   },
   {
     "StartTime": "2021-05-30T08:00:00",
-    "DurationInMunutes": 15,
-    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "",
     "AppointentId": 19,
     "IsDeleted": false,
     "Doctor": {
       "Speciality": {
         "Name": "Kardiolog"
       },
-      "NameAndSurname": "Darko Torbica",
-      "SalaryInRsd": 70000,
-      "Username": "darko",
-      "Password": "dare",
-      "Name": "Darko",
-      "Surname": "Torbica",
-      "Jmbg": "1708962324890",
-      "DateOfBirth": "2021-05-29T16:20:35.1447745+02:00",
-      "Sex": 0,
-      "PhoneNumber": "0665813272",
-      "Adress": "neka ulica 38, Novi Sad",
-      "Email": "darko@gmail.com",
-      "IdCard": "007155721",
+      "NameAndSurname": "Dana Dimitrijevic",
+      "SpecialityName": "Kardiolog",
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-05-29T20:37:48.4285802+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
       "Type": 2,
       "IsDeleted": false
     },
@@ -4947,6 +4961,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -5035,6 +5050,7 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
@@ -5069,37 +5085,36 @@
       "Type": 3,
       "IsDeleted": false
     },
-    "IsEmergency": false,
-    "EndTime": "2021-05-30T08:15:00",
+    "IsEmergency": true,
+    "EndTime": "2021-05-30T08:30:00",
     "PatientName": "Petar Ilic",
     "RoomName": "1",
-    "DoctorName": "Darko Torbica",
-    "AppointmentDescription": "Pregled kod lekara opste prakse.",
-    "StartTimee": "2021-05-30T08:00:00"
+    "DoctorName": "Dana Dimitrijevic"
   },
   {
-    "StartTime": "2021-06-03T00:01:00",
-    "DurationInMunutes": 15,
-    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "StartTime": "2021-05-29T20:38:02.7955895+02:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "",
     "AppointentId": 20,
     "IsDeleted": false,
     "Doctor": {
       "Speciality": {
         "Name": "Kardiolog"
       },
-      "NameAndSurname": "Darko Torbica",
-      "SalaryInRsd": 70000,
-      "Username": "darko",
-      "Password": "dare",
-      "Name": "Darko",
-      "Surname": "Torbica",
-      "Jmbg": "1708962324890",
-      "DateOfBirth": "2021-05-29T20:55:01.9348171+02:00",
-      "Sex": 0,
-      "PhoneNumber": "0665813272",
-      "Adress": "neka ulica 38, Novi Sad",
-      "Email": "darko@gmail.com",
-      "IdCard": "007155721",
+      "NameAndSurname": "Dana Dimitrijevic",
+      "SpecialityName": "Kardiolog",
+      "SalaryInRsd": 120000,
+      "Username": "dana",
+      "Password": "danica",
+      "Name": "Dana",
+      "Surname": "Dimitrijevic",
+      "Jmbg": "0104998253658",
+      "DateOfBirth": "2021-05-29T20:38:02.7955895+02:00",
+      "Sex": 1,
+      "PhoneNumber": "0621975732",
+      "Adress": "neka ulica 62, Novi Sad",
+      "Email": "dana@gmail.com",
+      "IdCard": "008996452",
       "Type": 2,
       "IsDeleted": false
     },
@@ -5137,21 +5152,31 @@
       "appointment": null,
       "IsBlocked": true,
       "IsGuest": false,
-      "EmergencyContact": "0638756221",
+      "EmergencyContact": "0637899851",
       "MedicalRecord": {
         "allergen": [
           {
-            "Name": "Ambrozija"
+            "Name": "Prasina"
+          },
+          {
+            "Name": "Ibuprofen"
           }
         ],
-        "anamnesis": [],
+        "anamnesis": [
+          {
+            "Time": "2021-05-10T18:57:31.675675+02:00",
+            "Comment": "test",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Darko Torbica"
+          }
+        ],
         "prescription": [
           {
             "StartDate": "2021-05-10T00:00:00",
             "DurationInDays": 7,
             "ReferencePeriod": 0,
             "Number": 3,
-            "Id": 1234,
+            "Id": 0,
             "isActive": true,
             "Medicine": {
               "ingridient": [
@@ -5178,7 +5203,26 @@
               "Status": 0,
               "Condition": 0,
               "IsDeleted": false,
-              "ReplacementMedicine": null,
+              "ReplacementMedicine": {
+                "ingridient": [
+                  {
+                    "Name": "Trifolium pratense extractum siccum standardisatum"
+                  }
+                ],
+                "Name": "Oestrofact",
+                "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+                "Packaging": "50 x 70 mg",
+                "MedicineID": 3,
+                "Status": 0,
+                "Condition": 1,
+                "IsDeleted": false,
+                "ReplacementMedicine": null,
+                "Ingridient": [
+                  {
+                    "Name": "Trifolium pratense extractum siccum standardisatum"
+                  }
+                ]
+              },
               "Ingridient": [
                 {
                   "Name": "SilicijumDioksid"
@@ -5208,13 +5252,14 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
               "Name": "Dana",
               "Surname": "Dimitrijevic",
               "Jmbg": "0104998253658",
-              "DateOfBirth": "2021-05-10T14:36:14.9409495+02:00",
+              "DateOfBirth": "2021-05-10T18:57:51.916359+02:00",
               "Sex": 1,
               "PhoneNumber": "0621975732",
               "Adress": "neka ulica 62, Novi Sad",
@@ -5225,21 +5270,31 @@
             }
           }
         ],
-        "HealthInsuranceNumber": "",
-        "MedicalIdNumber": "",
+        "HealthInsuranceNumber": "65415616541",
+        "MedicalIdNumber": "4564156465",
         "Allergen": [
           {
-            "Name": "Ambrozija"
+            "Name": "Prasina"
+          },
+          {
+            "Name": "Ibuprofen"
           }
         ],
-        "Anamnesis": [],
+        "Anamnesis": [
+          {
+            "Time": "2021-05-10T18:57:31.675675+02:00",
+            "Comment": "test",
+            "Patient": "Milena Jovanovic",
+            "Doctor": "Darko Torbica"
+          }
+        ],
         "Prescription": [
           {
             "StartDate": "2021-05-10T00:00:00",
             "DurationInDays": 7,
             "ReferencePeriod": 0,
             "Number": 3,
-            "Id": 1234,
+            "Id": 0,
             "isActive": true,
             "Medicine": {
               "ingridient": [
@@ -5266,7 +5321,26 @@
               "Status": 0,
               "Condition": 0,
               "IsDeleted": false,
-              "ReplacementMedicine": null,
+              "ReplacementMedicine": {
+                "ingridient": [
+                  {
+                    "Name": "Trifolium pratense extractum siccum standardisatum"
+                  }
+                ],
+                "Name": "Oestrofact",
+                "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+                "Packaging": "50 x 70 mg",
+                "MedicineID": 3,
+                "Status": 0,
+                "Condition": 1,
+                "IsDeleted": false,
+                "ReplacementMedicine": null,
+                "Ingridient": [
+                  {
+                    "Name": "Trifolium pratense extractum siccum standardisatum"
+                  }
+                ]
+              },
               "Ingridient": [
                 {
                   "Name": "SilicijumDioksid"
@@ -5296,13 +5370,14 @@
                 "Name": "Kardiolog"
               },
               "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
               "SalaryInRsd": 120000,
               "Username": "dana",
               "Password": "danica",
               "Name": "Dana",
               "Surname": "Dimitrijevic",
               "Jmbg": "0104998253658",
-              "DateOfBirth": "2021-05-10T14:36:14.9409495+02:00",
+              "DateOfBirth": "2021-05-10T18:57:51.916359+02:00",
               "Sex": 1,
               "PhoneNumber": "0621975732",
               "Adress": "neka ulica 62, Novi Sad",
@@ -5314,406 +5389,47 @@
           }
         ]
       },
-      "NameAndSurname": "Petar Ilic",
+      "NameAndSurname": "Milena Jovanovic",
       "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
+      "Username": "milena",
+      "Password": "mila4",
+      "Name": "Milena",
+      "Surname": "Jovanovic",
+      "Jmbg": "1706971459311",
+      "DateOfBirth": "1971-06-17T00:00:00",
+      "Sex": 1,
+      "PhoneNumber": "0628462114",
+      "Adress": "Ulica neka 54, Novi Sad",
+      "Email": "mila@gmail.com",
+      "IdCard": "007963121",
       "Type": 3,
       "IsDeleted": false
     },
-    "IsEmergency": false,
-    "EndTime": "2021-06-03T00:16:00",
-    "PatientName": "Petar Ilic",
+    "IsEmergency": true,
+    "EndTime": "2021-05-29T21:08:02.7955895+02:00",
+    "PatientName": "Milena Jovanovic",
     "RoomName": "1",
-    "DoctorName": "Darko Torbica",
-    "AppointmentDescription": "Pregled kod lekara opste prakse.",
-    "StartTimee": "2021-06-03T00:01:00"
+    "DoctorName": "Dana Dimitrijevic"
   },
   {
-    "StartTime": "2021-05-30T18:00:00",
-    "DurationInMunutes": 15,
-    "ApointmentDescription": "Pregled kod lekara opste prakse.",
+    "StartTime": "2021-05-30T08:30:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "",
     "AppointentId": 21,
-    "IsDeleted": false,
-    "Doctor": {
-      "Speciality": {
-        "Name": "Kardiolog"
-      },
-      "NameAndSurname": "Darko Torbica",
-      "SalaryInRsd": 70000,
-      "Username": "darko",
-      "Password": "dare",
-      "Name": "Darko",
-      "Surname": "Torbica",
-      "Jmbg": "1708962324890",
-      "DateOfBirth": "2021-05-29T23:11:25.6510927+02:00",
-      "Sex": 0,
-      "PhoneNumber": "0665813272",
-      "Adress": "neka ulica 38, Novi Sad",
-      "Email": "darko@gmail.com",
-      "IdCard": "007155721",
-      "Type": 2,
-      "IsDeleted": false
-    },
-    "Room": {
-      "renovation": [
-        {
-          "StartTime": "2021-10-10T10:00:00",
-          "DurationInDays": 2,
-          "RenovationID": 1
-        },
-        {
-          "StartTime": "2021-05-25T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 2
-        }
-      ],
-      "RoomType": 0,
-      "RoomNumber": 1,
-      "RoomFloor": 0,
-      "IsDeleted": false,
-      "Renovation": [
-        {
-          "StartTime": "2021-10-10T10:00:00",
-          "DurationInDays": 2,
-          "RenovationID": 1
-        },
-        {
-          "StartTime": "2021-05-25T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 2
-        }
-      ]
-    },
-    "Patient": {
-      "appointment": null,
-      "IsBlocked": true,
-      "IsGuest": false,
-      "EmergencyContact": "0638756221",
-      "MedicalRecord": {
-        "allergen": null,
-        "anamnesis": null,
-        "prescription": [
-          {
-            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
-            "DurationInDays": 21,
-            "ReferencePeriod": 0,
-            "Number": 1,
-            "Id": 0,
-            "isActive": true,
-            "Medicine": {
-              "ingridient": [],
-              "Name": "Vitamin C",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
-              "MedicineID": 0,
-              "Status": 1,
-              "Condition": 0,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": []
-            }
-          },
-          {
-            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
-            "DurationInDays": 21,
-            "ReferencePeriod": 0,
-            "Number": 2,
-            "Id": 1,
-            "isActive": true,
-            "Medicine": {
-              "ingridient": [],
-              "Name": "Brufen",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
-              "MedicineID": 0,
-              "Status": 1,
-              "Condition": 0,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": []
-            }
-          }
-        ],
-        "referralLetter": null,
-        "HealthInsuranceNumber": "12345",
-        "MedicalIdNumber": "12345",
-        "Allergen": [],
-        "Anamnesis": [],
-        "Prescription": [
-          {
-            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
-            "DurationInDays": 21,
-            "ReferencePeriod": 0,
-            "Number": 1,
-            "Id": 0,
-            "isActive": true,
-            "Medicine": {
-              "ingridient": [],
-              "Name": "Vitamin C",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
-              "MedicineID": 0,
-              "Status": 1,
-              "Condition": 0,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": []
-            }
-          },
-          {
-            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
-            "DurationInDays": 21,
-            "ReferencePeriod": 0,
-            "Number": 2,
-            "Id": 1,
-            "isActive": true,
-            "Medicine": {
-              "ingridient": [],
-              "Name": "Brufen",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
-              "MedicineID": 0,
-              "Status": 1,
-              "Condition": 0,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": []
-            }
-          }
-        ],
-        "ReferralLetter": []
-      },
-      "NameAndSurname": "Petar Ilic",
-      "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
-      "Type": 3,
-      "IsDeleted": false
-    },
-    "IsEmergency": false,
-    "EndTime": "2021-05-30T18:15:00",
-    "PatientName": "Petar Ilic",
-    "RoomName": "1",
-    "DoctorName": "Darko Torbica",
-    "AppointmentDescription": "Pregled kod lekara opste prakse.",
-    "StartTimee": "2021-05-30T18:00:00"
-  },
-  {
-    "StartTime": "2021-06-06T08:00:00",
-    "DurationInMunutes": 15,
-    "ApointmentDescription": "Pregled kod lekara opste prakse.",
-    "AppointentId": 22,
-    "IsDeleted": false,
-    "Doctor": {
-      "Speciality": {
-        "Name": "Kardiolog"
-      },
-      "NameAndSurname": "Darko Torbica",
-      "SalaryInRsd": 70000,
-      "Username": "darko",
-      "Password": "dare",
-      "Name": "Darko",
-      "Surname": "Torbica",
-      "Jmbg": "1708962324890",
-      "DateOfBirth": "2021-05-29T23:11:40.3437004+02:00",
-      "Sex": 0,
-      "PhoneNumber": "0665813272",
-      "Adress": "neka ulica 38, Novi Sad",
-      "Email": "darko@gmail.com",
-      "IdCard": "007155721",
-      "Type": 2,
-      "IsDeleted": false
-    },
-    "Room": {
-      "renovation": [
-        {
-          "StartTime": "2021-10-10T10:00:00",
-          "DurationInDays": 2,
-          "RenovationID": 1
-        },
-        {
-          "StartTime": "2021-05-25T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 2
-        }
-      ],
-      "RoomType": 0,
-      "RoomNumber": 1,
-      "RoomFloor": 0,
-      "IsDeleted": false,
-      "Renovation": [
-        {
-          "StartTime": "2021-10-10T10:00:00",
-          "DurationInDays": 2,
-          "RenovationID": 1
-        },
-        {
-          "StartTime": "2021-05-25T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 2
-        }
-      ]
-    },
-    "Patient": {
-      "appointment": [],
-      "IsBlocked": true,
-      "IsGuest": false,
-      "EmergencyContact": "0638756221",
-      "MedicalRecord": {
-        "allergen": [],
-        "anamnesis": [],
-        "prescription": [
-          {
-            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
-            "DurationInDays": 21,
-            "ReferencePeriod": 0,
-            "Number": 1,
-            "Id": 0,
-            "isActive": true,
-            "Medicine": {
-              "ingridient": [],
-              "Name": "Vitamin C",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
-              "MedicineID": 0,
-              "Status": 1,
-              "Condition": 0,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": []
-            }
-          },
-          {
-            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
-            "DurationInDays": 21,
-            "ReferencePeriod": 0,
-            "Number": 2,
-            "Id": 1,
-            "isActive": true,
-            "Medicine": {
-              "ingridient": [],
-              "Name": "Brufen",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
-              "MedicineID": 0,
-              "Status": 1,
-              "Condition": 0,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": []
-            }
-          }
-        ],
-        "referralLetter": [],
-        "HealthInsuranceNumber": "12345",
-        "MedicalIdNumber": "12345",
-        "Allergen": [],
-        "Anamnesis": [],
-        "Prescription": [
-          {
-            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
-            "DurationInDays": 21,
-            "ReferencePeriod": 0,
-            "Number": 1,
-            "Id": 0,
-            "isActive": true,
-            "Medicine": {
-              "ingridient": [],
-              "Name": "Vitamin C",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
-              "MedicineID": 0,
-              "Status": 1,
-              "Condition": 0,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": []
-            }
-          },
-          {
-            "StartDate": "2021-05-29T23:11:22.4034609+02:00",
-            "DurationInDays": 21,
-            "ReferencePeriod": 0,
-            "Number": 2,
-            "Id": 1,
-            "isActive": true,
-            "Medicine": {
-              "ingridient": [],
-              "Name": "Brufen",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
-              "MedicineID": 0,
-              "Status": 1,
-              "Condition": 0,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": []
-            }
-          }
-        ],
-        "ReferralLetter": []
-      },
-      "NameAndSurname": "Petar Ilic",
-      "Appointment": [],
-      "Username": "pera85",
-      "Password": "p123",
-      "Name": "Petar",
-      "Surname": "Ilic",
-      "Jmbg": "1008985563244",
-      "DateOfBirth": "1985-08-10T00:00:00",
-      "Sex": 0,
-      "PhoneNumber": "0625564197",
-      "Adress": "Ulica Lipa 76, Beograd",
-      "Email": "pilic@gmail.com",
-      "IdCard": "007265981",
-      "Type": 3,
-      "IsDeleted": false
-    },
-    "IsEmergency": false,
-    "EndTime": "2021-06-06T08:15:00",
-    "PatientName": "Petar Ilic",
-    "RoomName": "1",
-    "DoctorName": "Darko Torbica",
-    "AppointmentDescription": "Pregled kod lekara opste prakse.",
-    "StartTimee": "2021-06-06T08:00:00"
-  },
-  {
-    "StartTime": "2021-06-01T10:00:00",
-    "DurationInMunutes": 15,
-    "ApointmentDescription": "Pregled kod lekara opste prakse.",
-    "AppointentId": 23,
     "IsDeleted": false,
     "Doctor": {
       "Speciality": {
         "Name": "Opsti"
       },
       "NameAndSurname": "Jana Jankovic",
+      "SpecialityName": "Opsti",
       "SalaryInRsd": 100000,
       "Username": "jana",
       "Password": "jaca",
       "Name": "Jana",
       "Surname": "Jankovic",
       "Jmbg": "0611985621455",
-      "DateOfBirth": "2021-05-30T00:13:07.5186875+02:00",
+      "DateOfBirth": "2021-05-29T20:38:21.9632777+02:00",
       "Sex": 1,
       "PhoneNumber": "06355589110",
       "Adress": "neka ulica 12, Novi Sad",
@@ -5726,29 +5442,19 @@
       "renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
-          "DurationInDays": 2,
+          "DurationInDays": 4,
           "RenovationID": 1
-        },
-        {
-          "StartTime": "2021-05-25T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 2
         }
       ],
-      "RoomType": 0,
-      "RoomNumber": 1,
-      "RoomFloor": 0,
+      "RoomType": 2,
+      "RoomNumber": 2,
+      "RoomFloor": 1,
       "IsDeleted": false,
       "Renovation": [
         {
           "StartTime": "2021-10-10T10:00:00",
-          "DurationInDays": 2,
+          "DurationInDays": 4,
           "RenovationID": 1
-        },
-        {
-          "StartTime": "2021-05-25T10:00:00",
-          "DurationInDays": 3,
-          "RenovationID": 2
         }
       ]
     },
@@ -5758,98 +5464,182 @@
       "IsGuest": false,
       "EmergencyContact": "0638756221",
       "MedicalRecord": {
-        "allergen": null,
-        "anamnesis": null,
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "anamnesis": [],
         "prescription": [
           {
-            "StartDate": "2021-05-30T00:13:04.5851208+02:00",
-            "DurationInDays": 21,
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
             "ReferencePeriod": 0,
-            "Number": 1,
-            "Id": 0,
+            "Number": 3,
+            "Id": 1234,
             "isActive": true,
             "Medicine": {
-              "ingridient": [],
-              "Name": "Vitamin C",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
               "MedicineID": 0,
-              "Status": 1,
+              "Status": 0,
               "Condition": 0,
               "IsDeleted": false,
               "ReplacementMedicine": null,
-              "Ingridient": []
-            }
-          },
-          {
-            "StartDate": "2021-05-30T00:13:04.5851208+02:00",
-            "DurationInDays": 21,
-            "ReferencePeriod": 0,
-            "Number": 2,
-            "Id": 1,
-            "isActive": true,
-            "Medicine": {
-              "ingridient": [],
-              "Name": "Brufen",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
-              "MedicineID": 0,
-              "Status": 1,
-              "Condition": 0,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": []
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
             }
           }
         ],
-        "referralLetter": null,
-        "HealthInsuranceNumber": "12345",
-        "MedicalIdNumber": "12345",
-        "Allergen": [],
+        "referralLetter": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationPeriodInDays": 7,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-10T14:36:14.9409495+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
         "Anamnesis": [],
         "Prescription": [
           {
-            "StartDate": "2021-05-30T00:13:04.5851208+02:00",
-            "DurationInDays": 21,
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
             "ReferencePeriod": 0,
-            "Number": 1,
-            "Id": 0,
+            "Number": 3,
+            "Id": 1234,
             "isActive": true,
             "Medicine": {
-              "ingridient": [],
-              "Name": "Vitamin C",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
               "MedicineID": 0,
-              "Status": 1,
+              "Status": 0,
               "Condition": 0,
               "IsDeleted": false,
               "ReplacementMedicine": null,
-              "Ingridient": []
-            }
-          },
-          {
-            "StartDate": "2021-05-30T00:13:04.5851208+02:00",
-            "DurationInDays": 21,
-            "ReferencePeriod": 0,
-            "Number": 2,
-            "Id": 1,
-            "isActive": true,
-            "Medicine": {
-              "ingridient": [],
-              "Name": "Brufen",
-              "Manufacturer": "nesto",
-              "Packaging": "nesto",
-              "MedicineID": 0,
-              "Status": 1,
-              "Condition": 0,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": []
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
             }
           }
         ],
-        "ReferralLetter": []
+        "ReferralLetter": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationPeriodInDays": 7,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-10T14:36:14.9409495+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ]
       },
       "NameAndSurname": "Petar Ilic",
       "Appointment": [],
@@ -5867,12 +5657,262 @@
       "Type": 3,
       "IsDeleted": false
     },
-    "IsEmergency": false,
-    "EndTime": "2021-06-01T10:15:00",
+    "IsEmergency": true,
+    "EndTime": "2021-05-30T09:00:00",
     "PatientName": "Petar Ilic",
-    "RoomName": "1",
-    "DoctorName": "Jana Jankovic",
-    "AppointmentDescription": "Pregled kod lekara opste prakse.",
-    "StartTimee": "2021-06-01T10:00:00"
+    "RoomName": "2",
+    "DoctorName": "Jana Jankovic"
+  },
+  {
+    "StartTime": "2021-05-29T20:38:59.1804191+02:00",
+    "DurationInMunutes": 45,
+    "ApointmentDescription": "",
+    "AppointentId": 22,
+    "IsDeleted": false,
+    "Doctor": {
+      "Speciality": {
+        "Name": "Opsti"
+      },
+      "NameAndSurname": "Jana Jankovic",
+      "SpecialityName": "Opsti",
+      "SalaryInRsd": 100000,
+      "Username": "jana",
+      "Password": "jaca",
+      "Name": "Jana",
+      "Surname": "Jankovic",
+      "Jmbg": "0611985621455",
+      "DateOfBirth": "2021-05-29T20:38:59.1804191+02:00",
+      "Sex": 1,
+      "PhoneNumber": "06355589110",
+      "Adress": "neka ulica 12, Novi Sad",
+      "Email": "jana@gmail.com",
+      "IdCard": "007521352",
+      "Type": 2,
+      "IsDeleted": false
+    },
+    "Room": {
+      "renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 4,
+          "RenovationID": 1
+        }
+      ],
+      "RoomType": 2,
+      "RoomNumber": 2,
+      "RoomFloor": 1,
+      "IsDeleted": false,
+      "Renovation": [
+        {
+          "StartTime": "2021-10-10T10:00:00",
+          "DurationInDays": 4,
+          "RenovationID": 1
+        }
+      ]
+    },
+    "Patient": {
+      "appointment": null,
+      "IsBlocked": true,
+      "IsGuest": false,
+      "EmergencyContact": "0638756221",
+      "MedicalRecord": {
+        "allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "anamnesis": [],
+        "prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "referralLetter": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationPeriodInDays": 7,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-10T14:36:14.9409495+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ],
+        "HealthInsuranceNumber": "",
+        "MedicalIdNumber": "",
+        "Allergen": [
+          {
+            "Name": "Ambrozija"
+          }
+        ],
+        "Anamnesis": [],
+        "Prescription": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationInDays": 7,
+            "ReferencePeriod": 0,
+            "Number": 3,
+            "Id": 1234,
+            "isActive": true,
+            "Medicine": {
+              "ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ],
+              "Name": "Ibuprofen",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "30 x 400 mg",
+              "MedicineID": 0,
+              "Status": 0,
+              "Condition": 0,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "SilicijumDioksid"
+                },
+                {
+                  "Name": "Kroskarmeloza-natrijum"
+                },
+                {
+                  "Name": "Skrob, kukuruzni"
+                },
+                {
+                  "Name": "Povidon (K25)"
+                },
+                {
+                  "Name": "Eritrozin (E127)"
+                }
+              ]
+            }
+          }
+        ],
+        "ReferralLetter": [
+          {
+            "StartDate": "2021-05-10T00:00:00",
+            "DurationPeriodInDays": 7,
+            "Doctor": {
+              "Speciality": {
+                "Name": "Kardiolog"
+              },
+              "NameAndSurname": "Dana Dimitrijevic",
+              "SpecialityName": "Kardiolog",
+              "SalaryInRsd": 120000,
+              "Username": "dana",
+              "Password": "danica",
+              "Name": "Dana",
+              "Surname": "Dimitrijevic",
+              "Jmbg": "0104998253658",
+              "DateOfBirth": "2021-05-10T14:36:14.9409495+02:00",
+              "Sex": 1,
+              "PhoneNumber": "0621975732",
+              "Adress": "neka ulica 62, Novi Sad",
+              "Email": "dana@gmail.com",
+              "IdCard": "008996452",
+              "Type": 2,
+              "IsDeleted": false
+            }
+          }
+        ]
+      },
+      "NameAndSurname": "Petar Ilic",
+      "Appointment": [],
+      "Username": "pera85",
+      "Password": "p123",
+      "Name": "Petar",
+      "Surname": "Ilic",
+      "Jmbg": "1008985563244",
+      "DateOfBirth": "1985-08-10T00:00:00",
+      "Sex": 0,
+      "PhoneNumber": "0625564197",
+      "Adress": "Ulica Lipa 76, Beograd",
+      "Email": "pilic@gmail.com",
+      "IdCard": "007265981",
+      "Type": 3,
+      "IsDeleted": false
+    },
+    "IsEmergency": true,
+    "EndTime": "2021-05-29T21:23:59.1804191+02:00",
+    "PatientName": "Petar Ilic",
+    "RoomName": "2",
+    "DoctorName": "Jana Jankovic"
   }
 ]

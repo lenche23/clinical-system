@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,41 +21,42 @@ namespace vezba.SecretaryGUI
     public partial class SecretaryViewPatient : Window
     {
         public ObservableCollection<Ingridient> Allergens { get; set; }
-        public SecretaryViewPatient(Patient patient)
+        private Patient Patient { get; }
+        public SecretaryViewPatient(Patient selectedPatient)
         {
             InitializeComponent();
+            Patient = selectedPatient;
             Allergens = new ObservableCollection<Ingridient>();
             this.DataContext = this;
 
-            
-            NameSurname.Content = patient.Name + " " + patient.Surname;
-            if (patient.IsGuest)
-            {
-                NameSurname.Content += " (gost)";
-            }
-            Jmbg.Content = patient.Jmbg;
-            DateOfBirth.Content = patient.DateOfBirth.ToString("dd.MM.yyyy.");
+            if(Patient.IsBlocked == false)
+                UnblockButton.Visibility = System.Windows.Visibility.Collapsed;
 
-            if (patient.Sex == Model.Sex.male)
-            {
+            
+            NameSurname.Content = Patient.Name + " " + Patient.Surname;
+            if (Patient.IsGuest)
+                NameSurname.Content += " (gost)";
+            if (Patient.IsBlocked)
+                NameSurname.Content += " - blokiran";
+            Jmbg.Content = Patient.Jmbg;
+            DateOfBirth.Content = Patient.DateOfBirth.ToString("dd.MM.yyyy.");
+
+            if (Patient.Sex == Model.Sex.male)
                 Sex.Content = "Muški";
-            }
             else
-            {
                 Sex.Content = "Ženski";
-            }
-            PhoneNumber.Content = patient.PhoneNumber;
-            IdNumber.Content = patient.IdCard;
-            Adress.Content =  patient.Adress;
-            Email.Content =  patient.Email;
-            EmergencyContact.Content =  patient.EmergencyContact;
-            if (patient.MedicalRecord != null)
+            PhoneNumber.Content = Patient.PhoneNumber;
+            IdNumber.Content = Patient.IdCard;
+            Adress.Content =  Patient.Adress;
+            Email.Content =  Patient.Email;
+            EmergencyContact.Content =  Patient.EmergencyContact;
+            if (Patient.MedicalRecord != null)
             {
-                HealthEnsuranceNumber.Content = patient.MedicalRecord.HealthInsuranceNumber;
-                MedicalIdNumber.Content = patient.MedicalRecord.MedicalIdNumber;
-                if (patient.MedicalRecord.Allergen != null)
+                HealthEnsuranceNumber.Content = Patient.MedicalRecord.HealthInsuranceNumber;
+                MedicalIdNumber.Content = Patient.MedicalRecord.MedicalIdNumber;
+                if (Patient.MedicalRecord.Allergen != null)
                 {
-                    foreach(Ingridient allergen in patient.MedicalRecord.Allergen)
+                    foreach(Ingridient allergen in Patient.MedicalRecord.Allergen)
                     {
                         Allergens.Add(allergen);
                     }
@@ -63,14 +65,30 @@ namespace vezba.SecretaryGUI
 
             }
 
-            Username.Content = patient.Username;
-            Password.Content = patient.Password;
+            Username.Content = Patient.Username;
+            Password.Content = Patient.Password;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             return;
+        }
+
+        private void UnblockButton_Click(object sender, RoutedEventArgs e)
+        {
+            PatientService patientService = new PatientService();
+            patientService.UnblockPatient(Patient.Jmbg);
+            Patient.IsBlocked = false;
+            var previousPatient = SecretaryPatients.Patients.FirstOrDefault(p => p.Jmbg.Equals(Patient.Jmbg));
+            if (previousPatient != null)
+            {
+                SecretaryPatients.Patients[SecretaryPatients.Patients.IndexOf(previousPatient)] = Patient;
+            }
+            UnblockButton.Visibility = System.Windows.Visibility.Collapsed;
+            NameSurname.Content = Patient.Name + " " + Patient.Surname;
+            if (Patient.IsGuest)
+                NameSurname.Content += " (gost)";
         }
     }
 
