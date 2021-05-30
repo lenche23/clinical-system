@@ -8,7 +8,11 @@ namespace Service
 {
    public class EventsLogService
    {
-        public EventsLogFileRepository repository = new EventsLogFileRepository();
+        public EventsLogFileRepository EventsLogRepository { get; set; }
+        public EventsLogService()
+        {
+            EventsLogRepository = new EventsLogFileRepository();
+        }
         // Sekretar*******************************************************************************
 
 
@@ -20,12 +24,12 @@ namespace Service
         // Pacijent*******************************************************************************
         public List<EventsLog> LoadEvents()
         {
-           return repository.ReadFromFile();
+           return EventsLogRepository.ReadFromFile();
         }
 
         private Boolean Update(EventsLog log)
         {
-            return repository.Update(log);
+            return EventsLogRepository.Update(log);
         }
 
         public void AddLog()
@@ -43,23 +47,32 @@ namespace Service
             }
         }
 
+        public List<EventsLog> GetAllLogs()
+        {
+            return EventsLogRepository.ReadFromFile();
+        }
 
-        // PacijentKraj***************************************************************************
+        public Boolean EditLog(EventsLog log)
+        {
+            return EventsLogRepository.Update(log);
+        }
+        
+            // PacijentKraj***************************************************************************
 
-        // Lekar**********************************************************************************
-
-
-
-
-
-        // LekarKraj******************************************************************************
-
-        // Upravnik*******************************************************************************
-
-
-
+            // Lekar**********************************************************************************
 
 
-        // UpravnikKraj***************************************************************************
-    }
+
+
+
+            // LekarKraj******************************************************************************
+
+            // Upravnik*******************************************************************************
+
+
+
+
+
+            // UpravnikKraj***************************************************************************
+        }
 }

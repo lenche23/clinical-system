@@ -37,45 +37,21 @@ namespace vezba.PatientPages
         {
             GridCursor.Margin = new Thickness(10 + (135 * 0), 0, 0, 0);
             Appointments.Clear();
-
-            foreach (Appointment appointment in AppointmentService.GetAllAppointments())
-            {
-                if (appointment.StartTime.Date == DateTime.Today && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
-                {
-                    Appointments.Add(appointment);
-                }
-            }
+            AppointmentService.GetTodaysAppointments(Appointments);
         }
 
         private void WeekClick(object sender, RoutedEventArgs e)
         {
             GridCursor.Margin = new Thickness(10 + (135 * 1), 0, 0, 0);
             Appointments.Clear();
-
-            DateTime startOfWeek = DateTime.Today.AddDays((int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - (int)DateTime.Today.DayOfWeek);
-            DateTime endOfWeek = startOfWeek.AddDays(6);
-
-            foreach (Appointment appointment in AppointmentService.GetAllAppointments())
-            {
-                if (appointment.StartTime.Date >= DateTime.Today && appointment.StartTime.Date <= endOfWeek && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
-                {
-                    Appointments.Add(appointment);
-                }
-            }
+            AppointmentService.GetThisWeeksAppointments(Appointments);
         }
 
         private void MonthClick(object sender, RoutedEventArgs e)
         {
             GridCursor.Margin = new Thickness(10 + (135 * 2), 0, 0, 0);
             Appointments.Clear();
-
-            foreach (Appointment appointment in AppointmentService.GetAllAppointments())
-            {
-                if (appointment.StartTime.Date >= DateTime.Today && appointment.StartTime.Month == DateTime.Now.Month && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
-                {
-                    Appointments.Add(appointment);
-                }
-            }
+            AppointmentService.GetThisMonthsAppointments(Appointments);
         }
     }
 }

@@ -1,6 +1,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Windows;
@@ -465,6 +466,42 @@ namespace Service
             appointments.Sort((x, y) => y.StartTime.CompareTo(x.StartTime));
             appointments.Reverse();
             return appointments;
+        }
+
+        public void GetTodaysAppointments(ObservableCollection<Appointment> appointments)
+        {
+            foreach (Appointment appointment in GetAllAppointments())
+            {
+                if (appointment.StartTime.Date == DateTime.Today && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
+                {
+                    appointments.Add(appointment);
+                }
+            }
+        }
+
+        public void GetThisWeeksAppointments(ObservableCollection<Appointment> appointments)
+        {
+            DateTime startOfWeek = DateTime.Today.AddDays((int)CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek - (int)DateTime.Today.DayOfWeek);
+            DateTime endOfWeek = startOfWeek.AddDays(6);
+
+            foreach (Appointment appointment in GetAllAppointments())
+            {
+                if (appointment.StartTime.Date >= DateTime.Today && appointment.StartTime.Date <= endOfWeek && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
+                {
+                    appointments.Add(appointment);
+                }
+            }
+        }
+
+        public void GetThisMonthsAppointments(ObservableCollection<Appointment> appointments)
+        {
+            foreach (Appointment appointment in GetAllAppointments())
+            {
+                if (appointment.StartTime.Date >= DateTime.Today && appointment.StartTime.Month == DateTime.Now.Month && appointment.Patient.Jmbg.Equals(PatientView.Patient.Jmbg))
+                {
+                    appointments.Add(appointment);
+                }
+            }
         }
 
         // PacijentKraj***************************************************************************
