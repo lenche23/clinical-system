@@ -152,11 +152,9 @@ namespace vezba.DoctorPages
                 return false;
             int r;
             var split = TimeTB.Text.Split(':');
-            if (split.Length != 2 || !int.TryParse(split[0], out r) || !int.TryParse(split[1], out r))
+            if (split.Length != 2 || !int.TryParse(split[0], out r) || !int.TryParse(split[1], out r) || int.Parse(split[0]) < 0 || int.Parse(split[0]) > 23 || int.Parse(split[1]) < 0 || int.Parse(split[1]) > 59)
                 return false;
-            if (!int.TryParse(DurationTB.Text, out r))
-                return false;
-            if (int.Parse(DurationTB.Text) < 10 || int.Parse(DurationTB.Text) > 120)
+            if (!int.TryParse(DurationTB.Text, out r) || int.Parse(DurationTB.Text) < 10 || int.Parse(DurationTB.Text) > 120)
                 return false;
             if (DescriptionTB.Text.Length == 0)
                 return false;
