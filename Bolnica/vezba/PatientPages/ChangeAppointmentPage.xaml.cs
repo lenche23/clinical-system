@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,22 +22,14 @@ namespace vezba.PatientPages
     public partial class ChangeAppointmentPage : Page
     {
         public static ObservableCollection<Appointment> Appointments { get; set; }
+        private AppointmentService AppointmentService { get; set; }
         public ChangeAppointmentPage()
         {
             InitializeComponent();
             this.DataContext = this;
-            AppointmentFileRepository ps = new AppointmentFileRepository();
-            List<Appointment> temp = new List<Appointment>();
-            foreach (Appointment appointment in ps.GetAll())
-            {
-                if (appointment.StartTime.Date > DateTime.Now && appointment.Patient.Jmbg.Equals("1008985563244"))
-                {
-                    temp.Add(appointment);
-
-                }
-            }
-            Appointments = new ObservableCollection<Appointment>(temp);
-
+            AppointmentService = new AppointmentService();
+            List<Appointment> appointments = AppointmentService.GetPatientFutureAppointments();
+            Appointments = new ObservableCollection<Appointment>(appointments);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -48,7 +41,8 @@ namespace vezba.PatientPages
             }
             else
             {
-                MessageBox.Show("Niste selektovali pregled koji želite da promenite!");
+                PatientNotification noti = new PatientNotification("Niste selektovali pregled koji želite da promenite!");
+                noti.ShowDialog();
             }
         }
     }

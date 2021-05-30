@@ -17,7 +17,7 @@
         </Grid.Background>
         <Image Source="/Bolnica;component/PatientImages/bell (1).png" Width="45" Margin="26,10,360,543"/>
         <Label Content="Obaveštenja" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,154,0" Height="57" Width="200"/>
-        <ListBox x:Name="announcementsTable" ItemsSource="{Binding Ans, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="10,72,10,65" Background="Transparent">
+        <ListBox x:Name="announcementsTable" ItemsSource="{Binding Announcements, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="10,72,10,65" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50">

@@ -15,9 +15,10 @@
                 <GradientStop Color="AntiqueWhite" Offset="0.483"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="/Bolnica;component/PatientImages/star (1).png" Width="Auto" Margin="22,36,343,505"/>
-        <Label Content="Oceni lekara" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Foreground="#FF2E421A" Margin="92,36,138,0" Height="59" Width="200"/>
-
+        <Image Source="/Bolnica;component/PatientImages/star (1).png" Width="45" Margin="26,10,359,543"/>
+        <Label Content="Oceni lekara" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,154,0" Height="57" Width="200"/>
+        
+        <!--
         <DataGrid x:Name="gradingTable" ItemsSource="{Binding Appointments}" GridLinesVisibility="None" Background="AntiqueWhite" FontSize="10" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="410" Height="378" Margin="10,149,0,0"  HorizontalScrollBarVisibility="Hidden">
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
@@ -48,7 +49,31 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Izaberite pregled kod doktora koga biste ocenili" FontSize="15" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top"/>
+        -->
+        <ListBox x:Name="gradingTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="10,116,10,73" Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="50">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Width="380">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Doctor, StringFormat='{}{0: dd.MM.yyyy}', Mode=TwoWay}" FontSize="16" Foreground="#FF2E421A"/>
+                            <TextBlock Grid.Column="2" Text="{Binding StartTime, StringFormat='{}{0: dd.MM.yyyy HH:mm}', Mode=TwoWay}"  FontStyle="Italic"/>
+                        </Grid>
+                        <TextBlock Grid.Row="1" Text="{Binding AppointmentDescription, Mode=TwoWay}" FontSize="14" TextWrapping="Wrap" Width="380"/>
+                        <Separator Grid.Row="2"/>
+                    </Grid>
+                </DataTemplate> 
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button x:Name="ButtonGradeDoctor" Content="Ocenite"  FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,532,271,10" Click="ButtonGradeDoctor_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -62,5 +87,6 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
+        <Label Margin="10,72,10,489" Content="Izaberite lekara kog želite da ocenite" FontSize="20"/>
     </Grid>
 </Page>

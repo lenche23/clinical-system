@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,28 +21,30 @@ namespace vezba.PatientPages
 {
     public partial class NotificationsPage : Page
     {
-        public static ObservableCollection<Announcement> Ans { get; set; }
+        public static ObservableCollection<Announcement> Announcements { get; set; }
+        private AnnouncementService AnnouncementService { get; set; }
         public NotificationsPage(UserType ut, String jmbg)
         {
             InitializeComponent();
             this.DataContext = this;
-            AnnouncementFileRepository s = new AnnouncementFileRepository();
-            List<Announcement> announcements = s.GetByUserType(ut);
-            announcements.AddRange(s.GetIndividualAnnouncements(jmbg));
+            AnnouncementService = new AnnouncementService();
+            List<Announcement> announcements = AnnouncementService.GetAnnouncementsByUserType(ut);
+            announcements.AddRange(AnnouncementService.GetUserIndividualAnnouncements(jmbg));
 
-            Ans = new ObservableCollection<Announcement>(announcements);
+            Announcements = new ObservableCollection<Announcement>(announcements);
         }
 
         private void ButtonShowNotification_Click(object sender, RoutedEventArgs e)
         {
             if (announcementsTable.SelectedItems.Count > 0)
             {
-                Announcement a = (Announcement)announcementsTable.SelectedItem;
-                this.NavigationService.Navigate(new ShowNotificationPage(a));
+                Announcement announcement = (Announcement)announcementsTable.SelectedItem;
+                this.NavigationService.Navigate(new ShowNotificationPage(announcement));
             }
             else
             {
-                MessageBox.Show("Niste selektovali obavestenje!");
+                PatientNotification noti = new PatientNotification("Niste selektovali obaveštenje!");
+                noti.ShowDialog();
             }
 
         }

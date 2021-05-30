@@ -1,40 +1,54 @@
+using Model;
 using System;
+using vezba.Repository;
 
 namespace Service
 {
    public class HospitalEvaluationService
    {
-   }
-
-   // Sekretar*******************************************************************************
-
-
-
-
-
-   // SekretarKraj***************************************************************************
-
-   // Pacijent*******************************************************************************
+        private HospitalEvaluationFileRepository HospitalEvaluationRepository { get; set; }
+        public HospitalEvaluationService()
+        {
+            HospitalEvaluationRepository = new HospitalEvaluationFileRepository();
+        }
+        // Sekretar*******************************************************************************
 
 
 
 
 
-   // PacijentKraj***************************************************************************
+        // SekretarKraj***************************************************************************
 
-   // Lekar**********************************************************************************
+        // Pacijent*******************************************************************************
+        public int EvaluationGenerateNextId()
+        {
+            return HospitalEvaluationRepository.GenerateNextId();
+        }
 
-
-
-
-
-   // LekarKraj******************************************************************************
-
-   // Upravnik*******************************************************************************
-
-
-
+        public Boolean SaveEvaluation(HospitalEvaluation newEvaluation)
+        {
+            return HospitalEvaluationRepository.Save(newEvaluation);
+        }
 
 
-   // UpravnikKraj***************************************************************************
+
+
+        // PacijentKraj***************************************************************************
+
+        // Lekar**********************************************************************************
+
+
+
+
+
+        // LekarKraj******************************************************************************
+
+        // Upravnik*******************************************************************************
+
+
+
+
+
+        // UpravnikKraj***************************************************************************
+        }
 }

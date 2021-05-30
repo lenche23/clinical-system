@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,38 +22,49 @@ namespace vezba.PatientPages
     public partial class GradeDoctorPage : Page
     {
         public static ObservableCollection<Appointment> Appointments { get; set; }
+        private AppointmentService AppointmentService { get; set; }
 
         public GradeDoctorPage()
         {
             InitializeComponent();
             this.DataContext = this;
-            AppointmentFileRepository ps = new AppointmentFileRepository();
-            List<Appointment> temp = new List<Appointment>();
-            foreach (Appointment appointment in ps.GetAll())
-            {
-                if (appointment.StartTime.Date < DateTime.Now && appointment.Patient.Jmbg.Equals("1008985563244"))
-                {
-                    temp.Add(appointment);
-
-                }
-            }
-            Appointments = new ObservableCollection<Appointment>(temp);
+            AppointmentService = new AppointmentService();
+            List<Appointment> appointments = AppointmentService.GetPatientPastAppointments();
+            Appointments = new ObservableCollection<Appointment>(appointments);
         }
 
         private void ButtonGradeDoctor_Click(object sender, RoutedEventArgs e)
         {
             if (gradingTable.SelectedItems.Count > 0)
             {
-                Appointment a = (Appointment)gradingTable.SelectedItem;
-                Doctor selectedDoctor = a.Doctor;
+                Appointment appointment = (Appointment)gradingTable.SelectedItem;
+                Doctor selectedDoctor = appointment.Doctor;
                 this.NavigationService.Navigate(new GradeSelectedDoctorPage(selectedDoctor));
             }
             else
             {
                 var s = new TableNote();
                 s.ShowDialog();
-            }
-            
+            }         
         }
+
+        /*private List<Appointment> AppointmentsToGradeDoctors()
+        {
+            List<Appointment> appointments = AppointmentService.GetPatientPastAppointments();
+            Doctor firstTimeDoctor = appointments[0].Doctor;
+            DateTime firstAppointmentDate = appointments[0].StartTime;
+            foreach (Appointment appointment in appointments)
+            {
+                Doctor appointmentDoctor = appointment.Doctor;
+                DateTime appointmentTime = appointment.StartTime;
+
+                if (firstTimeDoctor == doctor)
+                {
+
+                }
+            }
+
+            return appointments;
+        }*/
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Model;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,8 @@ namespace vezba.PatientPages
 {
     public partial class GradeSelectedDoctorPage : Page
     {
-        public static Doctor Doctor { get; set; }
+        public Doctor Doctor { get; set; }
+        private DoctorEvaluationService DoctorEvaluationService { get; set; }
         public GradeSelectedDoctorPage(Doctor doctor)
         {
             InitializeComponent();
@@ -29,7 +31,17 @@ namespace vezba.PatientPages
 
         private void ButtonConfirmGradeDoctor_Click(object sender, RoutedEventArgs e)
         {
-            DoctorEvaluationFileRepository fileRepository = new DoctorEvaluationFileRepository();
+            DoctorEvaluation doctorEvaluation = AddEvaluation();
+            Boolean saved = DoctorEvaluationService.SaveEvaluation(doctorEvaluation);
+            if (saved)
+            {
+                var s = new SuccessfulGradeDoctor();
+                s.Show();
+            }    
+        }
+
+        private DoctorEvaluation AddEvaluation()
+        {
             int gradeDoctor = grade.SelectedIndex;
             int rating = 0;
             switch (gradeDoctor)
@@ -54,13 +66,9 @@ namespace vezba.PatientPages
                     break;
             }
             String comm = comment.Text;
-            int id = fileRepository.GenerateNextId();
-            Boolean deleted = false;
-            Doctor doctor = Doctor;
-            DoctorEvaluation doctorEvaluation = new DoctorEvaluation(rating, comm, id, deleted, doctor);
-            fileRepository.Save(doctorEvaluation);
-            var s = new SuccessfulGradeDoctor();
-            s.Show();
+            int id = DoctorEvaluationService.EvaluationGenerateNextId();
+            DoctorEvaluation doctorEvaluation = new DoctorEvaluation(rating, comm, id, false, Doctor);
+            return doctorEvaluation;
         }
     }
 }
