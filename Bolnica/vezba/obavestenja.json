@@ -74,16 +74,16 @@
   {
     "Id": 6,
     "Posted": "2021-04-28T00:00:00+02:00",
-    "Edited": "2021-04-28T00:00:00+02:00",
+    "Edited": "2021-05-30T00:00:00+02:00",
     "Title": "Obavestenje za Petra",
-    "Content": "Nadam se da vidis ovo",
+    "Content": "Nadam se da vidis ovo. Jeej",
     "IsDeleted": false,
     "Visibility": 6,
     "Recipients": [
       "1008985563244"
     ],
     "FormatedDatePosted": "28.04.2021.",
-    "FormatedDateEdited": "28.04.2021."
+    "FormatedDateEdited": "30.05.2021."
   },
   {
     "Id": 7,

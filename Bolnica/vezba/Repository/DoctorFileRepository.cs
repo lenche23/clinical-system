@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace vezba.Repository
 {
-    public class DoctorFileRepository
+    public class DoctorFileRepository:IDoctorRepository
     {
         public String FileName { get; set; }
 
@@ -91,9 +91,9 @@ namespace vezba.Repository
 
             d1.WorkingSchedule.Add(wh3);
 
-            WriteToFile(doctors);*/
+            WriteToFile(doctors);
 
-            //return doctors;
+            //return doctors;*/
 
         }
 
@@ -130,7 +130,7 @@ namespace vezba.Repository
             return false;
         }
 
-        public Boolean Delete(String jmbg)
+        public Boolean Delete(string jmbg)
         {
             List<Doctor> storedDoctors = ReadFromFile();
             foreach (Doctor doctor in storedDoctors)
@@ -161,6 +161,5 @@ namespace vezba.Repository
                 MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
             }
         }
-
     }
 }

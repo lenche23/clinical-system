@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace vezba.Repository
 {
-    public class AppointmentFileRepository
+    public class AppointmentFileRepository: IAppointmentRepository
     {
         public String FileName { get; set; }
 
