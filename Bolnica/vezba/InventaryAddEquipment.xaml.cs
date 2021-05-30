@@ -43,7 +43,7 @@ namespace vezba
             }
 
             EquipmentFileRepository es = new EquipmentFileRepository();
-            int equipmentID = es.generateNextId();
+            int equipmentID = es.GenerateNextId();
             var newEquipment = new Equipment(equipmentID, NazivOpreme.Text, type);
             
             es.Save(newEquipment);

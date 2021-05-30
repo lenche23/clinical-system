@@ -13,34 +13,35 @@ namespace Service
         {
             RoomRepository = new RoomFileRepository();
         }
-        // Sekretar*******************************************************************************
 
         public List<Room> GetAllRooms()
         {
             return RoomRepository.GetAll();
         }
 
-        // SekretarKraj***************************************************************************
-        // Pacijent*******************************************************************************
+        public Boolean SaveRoom(Room newRoom)
+        {
+            return RoomRepository.Save(newRoom);
+        }
 
+        public Boolean UpdateRoom(Room updatedRoom)
+        {
+            return RoomRepository.Update(updatedRoom);
+        }
 
+        public Boolean DeleteRoom(int roomId)
+        {
+            return RoomRepository.Delete(roomId);
+        }
 
+        public Room GetOneRoom(int roomId)
+        {
+            return RoomRepository.GetOne(roomId);
+        }
 
-
-
-       // PacijentKraj***************************************************************************
-       // Lekar**********************************************************************************
-
-
-
-       // LekarKraj******************************************************************************
-       // Upravnik*******************************************************************************
-
-
-
-
-
-        // UpravnikKraj***************************************************************************
-
+        public int GenerateNextRoomId()
+        {
+            return RoomRepository.GenerateNextId();
+        }
     }
 }

@@ -1,8 +1,3 @@
-// File:    RoomInventoryFileRepository.cs
-// Author:  graho
-// Created: 26 April 2021 15:31:43
-// Purpose: Definition of Class RoomInventoryFileRepository
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,94 +7,61 @@ using Newtonsoft.Json;
 
 namespace vezba.Repository
 {
-   public class RoomInventoryFileRepository
+   public class RoomInventoryFileRepository:IRoomInventoryRepository
    {
+        public String FileName { get; set; }
 
         public RoomInventoryFileRepository()
         {
             this.FileName = "../../room_inventory.json";
         }
 
-        public String FileName { get; set; }
-
         public List<RoomInventory> GetAll()
-      {
-            List<RoomInventory> ris = new List<RoomInventory>();
-
-            try
+        {
+            List<RoomInventory> roomInventories = new List<RoomInventory>();
+            List<RoomInventory> storedRoomInventories = ReadFromFile();
+            for (int i = 0; i < storedRoomInventories.Count; i++)
             {
-                String jsonFromFile = File.ReadAllText(this.FileName);
-                List<RoomInventory> roomInventoryList = JsonConvert.DeserializeObject<List<RoomInventory>>(jsonFromFile);
-
-                for (int i = 0; i < roomInventoryList.Count; i++)
+                if (storedRoomInventories[i].IsDeleted == false)
                 {
-                   if (roomInventoryList[i].IsDeleted == false)
-                    {
-                        ris.Add(roomInventoryList[i]);
-                    }
+                    roomInventories.Add(storedRoomInventories[i]);
                 }
-                return ris;
             }
-            catch
-            {
-
-            }
-
-            MessageBox.Show("Neuspesno ucitavanje iz fajla" + this.FileName + "!");
-            return ris;
+            return roomInventories;
         }
       
       public Boolean Save(RoomInventory inventory)
       {
-            List<RoomInventory> roomInventoryList = GetAll();
-            roomInventoryList.Add(inventory);
-
-            try
-            {
-                var jsonToFile = JsonConvert.SerializeObject(roomInventoryList, Formatting.Indented);
-                using (StreamWriter writer = new StreamWriter(this.FileName))
-                {
-                    writer.Write(jsonToFile);
-                }
-            }
-            catch (Exception e)
-            {
-
-            }
-
-            return true;
-        }
+          inventory.Id = GenerateNextId();
+          List<RoomInventory> storedRoomInventories = ReadFromFile();
+          for (int i = 0; i < storedRoomInventories.Count; i++)
+          {
+              if (storedRoomInventories[i].Id.Equals(inventory.Id))
+                  return false;
+          }
+          storedRoomInventories.Add(inventory);
+          WriteToFile(storedRoomInventories);
+          return true;
+      }
       
       public Boolean Update(RoomInventory inventory)
       {
-            List<RoomInventory> roomInventoryList = GetAll();
-            for (int i = 0; i < roomInventoryList.Count; i++)
-            {
-                if (roomInventoryList[i].Id.Equals(inventory.Id))
-                {
-                    roomInventoryList[i].Quantity = inventory.Quantity;
-                    roomInventoryList[i].equipment = inventory.equipment;
-                    roomInventoryList[i].room = inventory.room;
-                    roomInventoryList[i].StartTime = inventory.StartTime;
-                    roomInventoryList[i].EndTime = inventory.EndTime;
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(roomInventoryList, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-
-                    catch (Exception e)
-                    {
-
-                    }
-                }
-            }
-            return false;
-        }
+          List<RoomInventory> storedRoomInventories = ReadFromFile();
+          foreach (RoomInventory roomInventory in storedRoomInventories)
+          {
+              if (roomInventory.Id.Equals(inventory.Id) && roomInventory.IsDeleted == false)
+              {
+                  roomInventory.Quantity = inventory.Quantity;
+                  roomInventory.equipment = inventory.equipment;
+                  roomInventory.room = inventory.room;
+                  roomInventory.StartTime = inventory.StartTime;
+                  roomInventory.EndTime = inventory.EndTime;
+                  WriteToFile(storedRoomInventories);
+                  return true;
+              }
+          }
+          return false;
+      }
       
       public RoomInventory GetOne(int id)
       {
@@ -116,53 +78,52 @@ namespace vezba.Repository
       
       public Boolean Delete(int id)
       {
-            List<RoomInventory> roomInventoryList = GetAll();
-            for (int i = 0; i < roomInventoryList.Count; i++)
-            {
-                if (roomInventoryList[i].Id.Equals(id))
-                {
-                    roomInventoryList[i].IsDeleted = true;
-
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(roomInventoryList, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-
-                    catch (Exception e)
-                    {
-
-                    }
-                }
-            }
-            return false;
-        }
+          List<RoomInventory> storedRoomInventories = ReadFromFile();
+          for (int i = 0; i < storedRoomInventories.Count; i++)
+          {
+              if (storedRoomInventories[i].Id == id && storedRoomInventories[i].IsDeleted == false)
+              {
+                  storedRoomInventories[i].IsDeleted = true;
+                  WriteToFile(storedRoomInventories);
+                  return true;
+              }
+          }
+          return false;
+      }
       
-      public List<RoomInventory> Load()
+      private List<RoomInventory> ReadFromFile()
       {
-            List<RoomInventory> ri = new List<RoomInventory>();
-            try
-            {
-                String jsonFromFile = File.ReadAllText(this.FileName);
-                List<RoomInventory> roomInventoryList = JsonConvert.DeserializeObject<List<RoomInventory>>(jsonFromFile);
-                return roomInventoryList;
-            }
-            catch
-            {
+          try
+          {
+              String jsonFromFile = File.ReadAllText(this.FileName);
+              List<RoomInventory> roomInventories = JsonConvert.DeserializeObject<List<RoomInventory>>(jsonFromFile);
+              return roomInventories;
+          }
+          catch { }
+          MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
+          return new List<RoomInventory>();
+      }
 
-            }
-            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return ri;
-        }
-      
-      public int GenerateNextId()
+      private void WriteToFile(List<RoomInventory> roomInventories)
       {
-            List<RoomInventory> list = Load();
-            return list.Count;
-        }
+          try
+          {
+              var jsonToFile = JsonConvert.SerializeObject(roomInventories, Formatting.Indented);
+              using (StreamWriter writer = new StreamWriter(this.FileName))
+              {
+                  writer.Write(jsonToFile);
+              }
+          }
+          catch
+          {
+              MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
+          }
+      }
+
+      private int GenerateNextId()
+      {
+          List<RoomInventory> list = ReadFromFile();
+          return list.Count;
+      }
     }
 }

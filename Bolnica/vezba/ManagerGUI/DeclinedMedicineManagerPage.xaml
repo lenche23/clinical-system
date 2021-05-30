@@ -1,0 +1,31 @@
+﻿<Page x:Class="vezba.ManagerGUI.DeclinedMedicineManagerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vezba.ManagerGUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="570" d:DesignWidth="750"
+      Title="DeclinedMedicineManagerPage">
+
+    <Grid>
+        <Label Margin="275,50,267,457" FontSize="28">Odbijeni lekovi</Label>
+        <ListView Name="DeclinedMedicineBinding" Margin="155,118,132,214">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding DeclinedMedicineID}" />
+                    <GridViewColumn Header="Naziv leka" Width="150" DisplayMemberBinding="{Binding MedicineName}" />
+                    <GridViewColumn Header="Proizvođač" Width="250" DisplayMemberBinding="{Binding MedicineManufacturer}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Click="ViewDetailButton" Margin="308,385,317,131">Detaljnije</Button>
+
+
+        <Button Click ="ButtonBackClick" Margin="10,425,623,10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

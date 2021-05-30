@@ -12,10 +12,8 @@
 
         </Grid.Resources>
         <Label Content="Kreiranje nove prostorije"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="165,25,18,198"/>
-        <Label Content="Broj prostorije:" Margin="168,53,120,172"/>
         <Label Content="Sprat:" Margin="168,135,491,374" />
         <Label Content="Tip prostorije:" Margin="168,98,491,429"/>
-        <TextBox Name="BrojSobe" Margin="266,55,273,479" />
         <Button Click="Potvrdi_Button_Click" Margin="150,213,428,289">Potvrdi</Button>
         <Button Click="Odustani_Button_Click" Margin="474,213,133,289">Odustani</Button>
 

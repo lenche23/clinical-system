@@ -1,30 +1,20 @@
 ﻿using Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using vezba.Repository;
+using Service;
 
 namespace vezba.ManagerGUI
 {
     public partial class InventoryChangeEquipmentPage : Page
     {
         private Equipment equipment;
-        private InventoryPage inventary;
-        public InventoryChangeEquipmentPage(Equipment equipment, InventoryPage inventary)
+        private InventoryPage inventoryPage;
+        public InventoryChangeEquipmentPage(Equipment equipment, InventoryPage inventoryPage)
         {
             InitializeComponent();
             this.equipment = equipment;
-            this.inventary = inventary;
+            this.inventoryPage = inventoryPage;
             DataContext = equipment;
 
             if (equipment.Type == EquipmentType.statical)
@@ -37,7 +27,7 @@ namespace vezba.ManagerGUI
             }
         }
 
-        private void Okay_Button_Click(object sender, RoutedEventArgs e)
+        private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             var name = NazivOpreme.Text;
             equipment.Name = name;
@@ -52,9 +42,9 @@ namespace vezba.ManagerGUI
                 equipment.Type = EquipmentType.dinamical;
             }
 
-            inventary.InventaryBinding.Items.Refresh();
-            EquipmentFileRepository es = new EquipmentFileRepository();
-            es.Update(equipment);
+            inventoryPage.InventaryBinding.Items.Refresh();
+            EquipmentService equipmentService = new EquipmentService();
+            equipmentService.UpdateEquipment(equipment);
             NavigationService.GoBack();
         }
 

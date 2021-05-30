@@ -1,4 +1,4 @@
-﻿<Page x:Class="vezba.ManagerGUI.RoomViewRenovationsPage"
+﻿<Page x:Class="vezba.ManagerGUI.RenovationsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,10 +6,11 @@
       xmlns:local="clr-namespace:vezba.ManagerGUI"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
-      Title="RoomViewRenovationsPage">
+      Title="RenovationsPage">
+
     <Grid>
-        <Label Margin="250,52,245,312" FontSize="18">Renovacije</Label>
-        <ListView Margin="115,105,115,90" Name="RenovationsBinding" >
+        <Label Margin="305,62,290,465" FontSize="18">Renovacije</Label>
+        <ListView Margin="200,122,189,185" Name="RenovationsBinding" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding RenovationID}" />
@@ -19,8 +20,9 @@
             </ListView.View>
         </ListView>
 
-        <Button Margin="159,380,312,25" Background="#FFFFD6C2" Click="Renovation_Button_Click">Zakaži renoviranje</Button>
-        <Button Margin="325,380,145,25" Background="#FFFFD6C2" Click="Discard_Button_Click">Otkaži renoviranje</Button>
-
+        <Button Margin="85,440,545,90" Background="#FFFFD6C2" Click="Renovation_Button_Click" RenderTransformOrigin="-0.125,0.625">Zakaži renoviranje</Button>
+        <Button Margin="556,440,75,90" Background="#FFFFD6C2" Click="Discard_Button_Click">Otkaži renoviranje</Button>
+        <Button Margin="246,440,385,90" Background="#FFFFD6C2" Click="MergeRoomsButtonClick">Spajanje prostorija</Button>
+        <Button Margin="401,440,230,90" Background="#FFFFD6C2" Click="SplitRoomButtonClick">Deljenje prostorije</Button>
     </Grid>
 </Page>

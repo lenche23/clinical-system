@@ -1,8 +1,3 @@
-// File:    EquipmentFileRepository.cs
-// Author:  graho
-// Created: 16 April 2021 17:12:53
-// Purpose: Definition of Class EquipmentFileRepository
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,150 +7,129 @@ using Newtonsoft.Json;
 
 namespace vezba.Repository
 {
-   public class EquipmentFileRepository
-   {
-        public EquipmentFileRepository()
+    public class EquipmentFileRepository:IEquipmentRepository
+
+    {
+    public String FileName { get; set; }
+
+    public EquipmentFileRepository()
+    {
+        this.FileName = "../../oprema.json";
+    }
+
+    public List<Equipment> GetAll()
+    {
+        List<Equipment> equipmentList = new List<Equipment>();
+        List<Equipment> storedEquipment = ReadFromFile();
+        for (int i = 0; i < storedEquipment.Count; i++)
         {
-            this.FileName = "../../oprema.json";
+            if (storedEquipment[i].IsDeleted == false)
+            {
+                equipmentList.Add(storedEquipment[i]);
+            }
         }
 
-        public String FileName { get; set; }
+        return equipmentList;
+    }
 
-        public List<Equipment> GetAll()
-      {
-            List<Equipment> es = new List<Equipment>();
-
-            try
-            {
-                String jsonFromFile = File.ReadAllText(this.FileName);
-                List<Equipment> equipmentList = JsonConvert.DeserializeObject<List<Equipment>>(jsonFromFile);
-
-                for (int i = 0; i < equipmentList.Count; i++)
-                {
-                    if (equipmentList[i].IsDeleted == false)
-                    {
-                        es.Add(equipmentList[i]);
-                    }
-                }
-                return es;
-            }
-            catch
-            {
-
-            }
-
-            MessageBox.Show("Neuspesno ucitavanje iz fajla" + this.FileName + "!");
-            return es;
-        }
-      
-      public Boolean Save(Equipment eq)
-      {
-            List<Equipment> equipmentList = GetAll();
-            equipmentList.Add(eq);
-
-            try
-            {
-                var jsonToFile = JsonConvert.SerializeObject(equipmentList, Formatting.Indented);
-                using (StreamWriter writer = new StreamWriter(this.FileName))
-                {
-                    writer.Write(jsonToFile);
-                }
-            }
-            catch (Exception e)
-            {
-
-            }
-
-            return true;
-        }
-
-        public List<Equipment> Load()
+    public Boolean Save(Equipment newEquipment)
+    {
+        newEquipment.Id = GenerateNextId();
+        List<Equipment> storedEquipment = ReadFromFile();
+        for (int i = 0; i < storedEquipment.Count; i++)
         {
-            List<Equipment> es = new List<Equipment>();
-            try
-            {
-                String jsonFromFile = File.ReadAllText(this.FileName);
-                List<Equipment> equipmentList = JsonConvert.DeserializeObject<List<Equipment>>(jsonFromFile);
-                return equipmentList;
-            }
-            catch
-            {
-
-            }
-            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return es;
+            if (storedEquipment[i].Id.Equals(newEquipment.Id))
+                return false;
         }
 
-        public Boolean Update(Equipment eq)
-      {
-            List<Equipment> equimentList = Load();
-            for (int i = 0; i < equimentList.Count; i++)
-            {
-                if (equimentList[i].Id.Equals(eq.Id))
-                {
-                    equimentList[i].Name = eq.Name;
-                    equimentList[i].Type = eq.Type;
+        storedEquipment.Add(newEquipment);
+        WriteToFile(storedEquipment);
+        return true;
+    }
 
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(equimentList, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-
-                    }
-                }
-            }
-            return false;
-        }
-      
-      public Equipment GetOne(int id)
-      {
-            List<Equipment> equipmentList = GetAll();
-            for (int i = 0; i < equipmentList.Count; i++)
-            {
-                if (equipmentList[i].Id.Equals(id))
-                {
-                    return equipmentList[i];
-                }
-            }
-            return null;
-        }
-      
-      public Boolean Delete(int id)
-      {
-            List<Equipment> equipmentList = Load();
-            for (int i = 0; i < equipmentList.Count; i++)
-            {
-                if (equipmentList[i].Id.Equals(id))
-                {
-                    equipmentList[i].IsDeleted = true;
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(equipmentList, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-
-                    }
-                    return true;
-                }
-            }
-            return false;
-        }
-        public int generateNextId()
+    public Boolean Update(Equipment editedEquipment)
+    {
+        List<Equipment> storedEquipment = ReadFromFile();
+        foreach (Equipment equipment in storedEquipment)
         {
-            List<Equipment> list = Load();
-            return list.Count;
+            if (equipment.Id.Equals(editedEquipment.Id) && equipment.IsDeleted == false)
+            {
+                equipment.Name = editedEquipment.Name;
+                equipment.Type = editedEquipment.Type;
+                WriteToFile(storedEquipment);
+                return true;
+            }
         }
+
+        return false;
+    }
+
+    public Equipment GetOne(int id)
+    {
+        List<Equipment> equipmentList = GetAll();
+        for (int i = 0; i < equipmentList.Count; i++)
+        {
+            if (equipmentList[i].Id.Equals(id))
+            {
+                return equipmentList[i];
+            }
+        }
+
+        return null;
+    }
+
+    public Boolean Delete(int id)
+    {
+        List<Equipment> storedEquipment = ReadFromFile();
+        for (int i = 0; i < storedEquipment.Count; i++)
+        {
+            if (storedEquipment[i].Id == id && storedEquipment[i].IsDeleted == false)
+            {
+                storedEquipment[i].IsDeleted = true;
+                WriteToFile(storedEquipment);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private List<Equipment> ReadFromFile()
+    {
+        try
+        {
+            String jsonFromFile = File.ReadAllText(this.FileName);
+            List<Equipment> equipmentList = JsonConvert.DeserializeObject<List<Equipment>>(jsonFromFile);
+            return equipmentList;
+        }
+        catch
+        {
+        }
+
+        MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
+        return new List<Equipment>();
+    }
+
+    private void WriteToFile(List<Equipment> equipmentList)
+    {
+        try
+        {
+            var jsonToFile = JsonConvert.SerializeObject(equipmentList, Formatting.Indented);
+            using (StreamWriter writer = new StreamWriter(this.FileName))
+            {
+                writer.Write(jsonToFile);
+            }
+        }
+        catch
+        {
+            MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
+        }
+    }
+
+    public int GenerateNextId()
+    {
+        List<Equipment> list = ReadFromFile();
+        return list.Count;
+    }
     }
 }

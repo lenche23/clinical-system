@@ -67,9 +67,9 @@ namespace vezba
 
         private void SaveNewRoomInventory(int newItemQuantity, Room roomEntry)
         {
-            var id = _roomInventoryFileRepository.GenerateNextId();
+            /*var id = _roomInventoryFileRepository.GenerateNextId();
             RoomInventory ri = new RoomInventory(pickedDate, infiniteTime, newItemQuantity, id, roomInventory.equipment, roomEntry);
-            _roomInventoryFileRepository.Save(ri);
+            _roomInventoryFileRepository.Save(ri);*/
         }
 
         private int NewDesiredRoomItemQuantity(int roomNumber)

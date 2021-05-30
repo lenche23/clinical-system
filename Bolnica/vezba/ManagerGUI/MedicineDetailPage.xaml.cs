@@ -1,19 +1,7 @@
 ﻿using Model;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
 
 namespace vezba.ManagerGUI
 {
@@ -21,10 +9,12 @@ namespace vezba.ManagerGUI
     {
         private Medicine medicine;
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
-        public MedicineDetailPage(Medicine medicine)
+        private MainManagerWindow mainManagerWindow;
+        public MedicineDetailPage(MainManagerWindow mainManagerWindow, Medicine medicine)
         {
             InitializeComponent();
             this.medicine = medicine;
+            this.mainManagerWindow = mainManagerWindow;
             idText.Content = idText.Content + " " + medicine.MedicineID;
             nazivText.Content = nazivText.Content + " " + medicine.Name;
             proizvodjacText.Content = proizvodjacText.Content + " " + medicine.Manufacturer;

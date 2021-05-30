@@ -7,8 +7,10 @@ using Newtonsoft.Json;
 
 namespace vezba.Repository
 {
-    public class RoomFileRepository
+    public class RoomFileRepository:IRoomRepository
     {
+        public String FileName { get; set; }
+
         public RoomFileRepository()
         {
             this.FileName = "../../sobe.json";
@@ -16,76 +18,45 @@ namespace vezba.Repository
 
         public List<Room> GetAll()
         {
-            List<Room> rs = new List<Room>();
-
-            try
+            List<Room> rooms = new List<Room>();
+            List<Room> storedRooms = ReadFromFile();
+            for (int i = 0; i < storedRooms.Count; i++)
             {
-                String jsonFromFile = File.ReadAllText(this.FileName);
-                List<Room> rooms = JsonConvert.DeserializeObject<List<Room>>(jsonFromFile);
-
-                for(int i=0; i<rooms.Count; i++)
+                if (storedRooms[i].IsDeleted == false)
                 {
-                    if(rooms[i].IsDeleted == false)
-                    {
-                        rs.Add(rooms[i]);
-                    }
+                    rooms.Add(storedRooms[i]);
                 }
-                return rs;
             }
-            catch
-            {
-
-            }
-
-            MessageBox.Show("Neuspesno ucitavanje iz fajla" + this.FileName + "!");
-            return rs;
+            return rooms;
         }
 
         public Boolean Save(Room room)
         {
-            List<Room> rooms = GetAll();
-            rooms.Add(room);
-
-            try
+            room.RoomNumber = GenerateNextId();
+            List<Room> storedRooms = ReadFromFile();
+            for (int i = 0; i < storedRooms.Count; i++)
             {
-                var jsonToFile = JsonConvert.SerializeObject(rooms, Formatting.Indented);
-                using (StreamWriter writer = new StreamWriter(this.FileName))
-                {
-                    writer.Write(jsonToFile);
-                }
+                if (storedRooms[i].RoomNumber.Equals(room.RoomNumber))
+                    return false;
             }
-            catch(Exception e)
-            {
-
-            }
-
+            storedRooms.Add(room);
+            WriteToFile(storedRooms);
             return true;
         }
 
-        public Boolean Update(Room room)
+        public Boolean Update(Room editedRoom)
         {
-            List<Room> rooms = GetAll();
-            for (int i = 0; i < rooms.Count; i++)
+
+            List<Room> storedRooms = ReadFromFile();
+            foreach (Room room in storedRooms)
             {
-                if (rooms[i].RoomNumber.Equals(room.RoomNumber))
+                if (room.RoomNumber.Equals(editedRoom.RoomNumber) && room.IsDeleted == false)
                 {
-                    rooms[i].RoomFloor = room.RoomFloor;
-                    rooms[i].RoomType = room.RoomType;
-                    rooms[i].renovation = room.renovation;
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(rooms, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-
-                    catch (Exception e)
-                    {
-
-                    }
+                    room.RoomFloor = editedRoom.RoomFloor;
+                    room.RoomType = editedRoom.RoomType;
+                    room.renovation = editedRoom.renovation;
+                    WriteToFile(storedRooms);
+                    return true;
                 }
             }
             return false;
@@ -106,52 +77,50 @@ namespace vezba.Repository
 
         public Boolean Delete(int number)
         {
-            List<Room> rooms = GetAll();
-            for (int i = 0; i < rooms.Count; i++)
+            List<Room> storedRooms = ReadFromFile();
+            for (int i = 0; i < storedRooms.Count; i++)
             {
-                if (rooms[i].RoomNumber.Equals(number))
+                if (storedRooms[i].RoomNumber == number && storedRooms[i].IsDeleted == false)
                 {
-                    rooms[i].IsDeleted = true;
-
-
-                    try
-                    {
-                        var jsonToFile = JsonConvert.SerializeObject(rooms, Formatting.Indented);
-                        using (StreamWriter writer = new StreamWriter(this.FileName))
-                        {
-                            writer.Write(jsonToFile);
-                        }
-                    }
-
-                    catch (Exception e)
-                    {
-
-                    }
+                    storedRooms[i].IsDeleted = true;
+                    WriteToFile(storedRooms);
+                    return true;
                 }
             }
             return false;
         }
 
-
-
-        public String FileName { get; set; }
-
-        public List<Room> Load()
+        private List<Room> ReadFromFile()
         {
-            List<Room> r = new List<Room>();
             try
             {
                 String jsonFromFile = File.ReadAllText(this.FileName);
                 List<Room> rooms = JsonConvert.DeserializeObject<List<Room>>(jsonFromFile);
                 return rooms;
             }
+            catch { }
+            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
+            return new List<Room>();
+        }
+        private void WriteToFile(List<Room> rooms)
+        {
+            try
+            {
+                var jsonToFile = JsonConvert.SerializeObject(rooms, Formatting.Indented);
+                using (StreamWriter writer = new StreamWriter(this.FileName))
+                {
+                    writer.Write(jsonToFile);
+                }
+            }
             catch
             {
-
+                MessageBox.Show("Neuspesno pisanje u fajl" + this.FileName + "!");
             }
-            MessageBox.Show("Neuspesno ucitavanje iz fajla " + this.FileName + "!");
-            return r;
         }
-
+        public int GenerateNextId()
+        {
+            List<Room> list = ReadFromFile();
+            return list.Count;
+        }
     }
 }

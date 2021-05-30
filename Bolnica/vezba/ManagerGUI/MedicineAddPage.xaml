@@ -40,10 +40,10 @@
             </ListView.View>
         </ListView>
         <TextBox Name="NoviSastojak" Margin="69,21,152,-49" Grid.Row="5" Grid.ColumnSpan="2"/>
-        <Button Margin="195,21,82,-49" Grid.Row="5" Click="Button_Click" FontSize="17" Content="+" Grid.Column="1"/>
-        <Button Margin="253,21,33,-49" Grid.Row="5" Click="ButtonMinus_Click" FontSize="17" Content="-" Grid.Column="1"/>
+        <Button Margin="195,21,82,-49" Grid.Row="5" Click="AddIngredientButtonClick" FontSize="17" Content="+" Grid.Column="1"/>
+        <Button Margin="253,21,33,-49" Grid.Row="5" Click="RemoveIngredientButtonClick" FontSize="17" Content="-" Grid.Column="1"/>
 
-        <Button Grid.ColumnSpan="2" Margin="69,168,230,-196" Grid.Row="5" Click="Odobravanje_Button_Click">Pošalji na odobravanje</Button>
-        <Button Grid.Column="1" Margin="133,168,46,-196" Grid.Row="5" Click="Odustani_Button_Click">Odustani</Button>
+        <Button Grid.ColumnSpan="2" Margin="69,168,230,-196" Grid.Row="5" Click="OkButtonClick">Pošalji na odobravanje</Button>
+        <Button Grid.Column="1" Margin="133,168,46,-196" Grid.Row="5" Click="CancelButtonClick">Odustani</Button>
     </Grid>
 </Page>
