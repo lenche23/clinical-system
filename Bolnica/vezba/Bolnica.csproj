@@ -276,6 +276,8 @@
     <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\MedicineCondition.cs" />
     <Compile Include="Model\MedicineStatus.cs" />
+    <Compile Include="Repository\IDeclinedMedicineRepository.cs" />
+    <Compile Include="Repository\IMedicineRepository.cs" />
     <Compile Include="Repository\MedicineFileRepository.cs" />
     <Compile Include="Model\Menager.cs" />
     <Compile Include="Model\Patient.cs" />

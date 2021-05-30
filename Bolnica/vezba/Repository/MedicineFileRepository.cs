@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace vezba.Repository
 {
-   public class MedicineFileRepository
+   public class MedicineFileRepository:IMedicineRepository
    {
        public String FileName { get; set; }
 
