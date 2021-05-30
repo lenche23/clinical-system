@@ -60,6 +60,16 @@ namespace Service
             UpdatePatient(patient);
         }
 
+        public void AddHospitalTreatmentToPatient(Patient patient, HospitalTreatment newHospitalTreatment)
+        {
+            patient.MedicalRecord.AddHospitalTreatment(newHospitalTreatment);
+            UpdatePatient(patient);
+        }
+
+        public void ExtendHospitalTreatment()
+        {
+
+        }
         // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************

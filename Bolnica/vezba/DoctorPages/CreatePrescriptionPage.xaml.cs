@@ -14,7 +14,6 @@ namespace vezba.DoctorPages
     {
         private readonly Patient _patient;
         private readonly DoctorView _doctorView;
-        private Prescription _newPrescription;
         public List<Medicine> ValidMedicine { get; set; }
 
         public CreatePrescriptionPage(Patient patient, DoctorView doctorView)
@@ -29,10 +28,10 @@ namespace vezba.DoctorPages
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            _newPrescription = NewPrescription();
+            var newPrescription = NewPrescription();
 
             var patientService = new PatientService();
-            patientService.AddPrescriptionToPatient(_patient, _newPrescription);
+            patientService.AddPrescriptionToPatient(_patient, newPrescription);
 
             _doctorView.Main.GoBack();
         }

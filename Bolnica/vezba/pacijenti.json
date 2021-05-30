@@ -292,6 +292,32 @@
           }
         }
       ],
+      "hospitalTreatment": [
+        {
+          "StartDate": "2021-05-30T00:00:00",
+          "DurationInDays": 8,
+          "Room": {
+            "renovation": [
+              {
+                "StartTime": "2021-10-10T10:00:00",
+                "DurationInDays": 4,
+                "RenovationID": 1
+              }
+            ],
+            "RoomType": 2,
+            "RoomNumber": 2,
+            "RoomFloor": 1,
+            "IsDeleted": false,
+            "Renovation": [
+              {
+                "StartTime": "2021-10-10T10:00:00",
+                "DurationInDays": 4,
+                "RenovationID": 1
+              }
+            ]
+          }
+        }
+      ],
       "HealthInsuranceNumber": "65415616541",
       "MedicalIdNumber": "4564156465",
       "Allergen": [
@@ -580,6 +606,32 @@
             "IsDeleted": false
           }
         }
+      ],
+      "HospitalTreatment": [
+        {
+          "StartDate": "2021-05-30T00:00:00",
+          "DurationInDays": 8,
+          "Room": {
+            "renovation": [
+              {
+                "StartTime": "2021-10-10T10:00:00",
+                "DurationInDays": 4,
+                "RenovationID": 1
+              }
+            ],
+            "RoomType": 2,
+            "RoomNumber": 2,
+            "RoomFloor": 1,
+            "IsDeleted": false,
+            "Renovation": [
+              {
+                "StartTime": "2021-10-10T10:00:00",
+                "DurationInDays": 4,
+                "RenovationID": 1
+              }
+            ]
+          }
+        }
       ]
     },
     "NameAndSurname": "Milena Jovanovic",
@@ -690,6 +742,7 @@
           }
         }
       ],
+      "hospitalTreatment": null,
       "HealthInsuranceNumber": "",
       "MedicalIdNumber": "",
       "Allergen": [
@@ -777,7 +830,8 @@
             "IsDeleted": false
           }
         }
-      ]
+      ],
+      "HospitalTreatment": []
     },
     "NameAndSurname": "Petar Ilic",
     "Appointment": [],
@@ -812,6 +866,7 @@
       "anamnesis": null,
       "prescription": null,
       "referralLetter": null,
+      "hospitalTreatment": null,
       "HealthInsuranceNumber": "926435596413",
       "MedicalIdNumber": "65415896541",
       "Allergen": [
@@ -824,7 +879,8 @@
       ],
       "Anamnesis": [],
       "Prescription": [],
-      "ReferralLetter": []
+      "ReferralLetter": [],
+      "HospitalTreatment": []
     },
     "NameAndSurname": "Mira Torbica",
     "Appointment": [],

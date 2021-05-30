@@ -4,7 +4,6 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
-using Calendar = vezba.DoctorPages.Calendar;
 
 namespace vezba.DoctorPages
 {
@@ -18,8 +17,6 @@ namespace vezba.DoctorPages
         private readonly Patient _patient;
 
         private readonly DoctorView _doctorView;
-
-        private ReferralLetter _newReferralLetter;
 
         public CreateReferralLetterPage(Patient patient, DoctorView doctorView)
         {
@@ -37,10 +34,10 @@ namespace vezba.DoctorPages
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         { 
-            _newReferralLetter = NewReferralLetter();
+            var newReferralLetter = NewReferralLetter();
 
             var patientService = new PatientService();
-            patientService.AddReferralLetterToPatient(_patient, _newReferralLetter);
+            patientService.AddReferralLetterToPatient(_patient, newReferralLetter);
 
             _doctorView.Main.GoBack();
         }

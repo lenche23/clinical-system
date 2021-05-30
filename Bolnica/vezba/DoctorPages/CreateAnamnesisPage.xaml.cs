@@ -3,7 +3,6 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
-using Calendar = vezba.DoctorPages.Calendar;
 
 namespace vezba.DoctorPages
 {
@@ -16,8 +15,6 @@ namespace vezba.DoctorPages
 
         private readonly DoctorView _doctorView;
 
-        private Anamnesis _newAnamnesis;
-
         public CreateAnamnesisPage(Appointment appointment, DoctorView doctorView)
         {
             InitializeComponent();
@@ -28,10 +25,10 @@ namespace vezba.DoctorPages
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            _newAnamnesis = NewAnamnesis();
+            var newAnamnesis = NewAnamnesis();
 
             var patientService = new PatientService();
-            patientService.AddAnamnesisToPatient(_patient, _newAnamnesis);
+            patientService.AddAnamnesisToPatient(_patient, newAnamnesis);
 
             _doctorView.Main.GoBack();
         }

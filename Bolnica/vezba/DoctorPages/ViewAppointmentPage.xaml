@@ -43,6 +43,7 @@
                 <Button Padding="5" Margin="5" Click="NewAnamnesisClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}">+ Nova anamneza</Button>
                 <Button Padding="5" Margin="5" Click="NewPrescriptionClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}">+ Nov recept</Button>
                 <Button Padding="5" Margin="5" Click="NewReferralLetterClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}">+ Izdavanje uputa</Button>
+                <Button Padding="5" Margin="5" Click="NewHospitalTreatmentClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}">+ Bolničko lečenje</Button>
                 <Button Padding="5" Margin="5" Click="ReturnClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold"> Povratak </Button>
                 <Button Padding="5" Margin="5" Click="EditClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Izmeni</Button>
                 <Button Padding="5" Margin="5" Click="DeleteClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Obriši</Button>

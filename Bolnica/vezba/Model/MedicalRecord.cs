@@ -196,5 +196,50 @@ namespace Model
                 referralLetter.Clear();
         }
 
+        public System.Collections.Generic.List<HospitalTreatment> hospitalTreatment;
+
+        public System.Collections.Generic.List<HospitalTreatment> HospitalTreatment
+        {
+            get
+            {
+                if (hospitalTreatment == null)
+                    hospitalTreatment = new System.Collections.Generic.List<HospitalTreatment>();
+                return hospitalTreatment;
+            }
+            set
+            {
+                RemoveAllHospitalTreatment();
+                if (value != null)
+                {
+                    foreach (HospitalTreatment oHospitalTreatment in value)
+                        AddHospitalTreatment(oHospitalTreatment);
+                }
+            }
+        }
+
+        public void AddHospitalTreatment(HospitalTreatment newHospitalTreatment)
+        {
+            if (newHospitalTreatment == null)
+                return;
+            if (this.hospitalTreatment == null)
+                this.hospitalTreatment = new System.Collections.Generic.List<HospitalTreatment>();
+            if (!this.hospitalTreatment.Contains(newHospitalTreatment))
+                this.HospitalTreatment.Add(newHospitalTreatment);
+        }
+
+        public void RemoveHospitalTreatment(HospitalTreatment oldHospitalTreatment)
+        {
+            if (oldHospitalTreatment == null)
+                return;
+            if (this.hospitalTreatment != null)
+                if (this.hospitalTreatment.Contains(oldHospitalTreatment))
+                    this.hospitalTreatment.Remove(oldHospitalTreatment);
+        }
+
+        public void RemoveAllHospitalTreatment()
+        {
+            if (hospitalTreatment != null)
+                hospitalTreatment.Clear();
+        }
     }
 }

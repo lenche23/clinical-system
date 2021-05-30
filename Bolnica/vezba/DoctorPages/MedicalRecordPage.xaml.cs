@@ -10,10 +10,12 @@ namespace vezba.DoctorPages
     public partial class MedicalRecordPage : Page
     {
         private readonly DoctorView _doctorView;
+        private readonly Patient _patient;
 
         public MedicalRecordPage(Patient patient, DoctorView doctorView)
         {
             InitializeComponent();
+            _patient = patient;
             DataContext = patient;
             if (patient.MedicalRecord != null)
             {
@@ -24,6 +26,15 @@ namespace vezba.DoctorPages
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
             _doctorView.Main.GoBack();
+        }
+
+        private void ExtendButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (hospitalTreatmentGrid.SelectedItems.Count > 0)
+            {
+                var hospitalTreatment = (HospitalTreatment) hospitalTreatmentGrid.SelectedItem;
+                _doctorView.Main.Content = new ExtendHospitalTreatment(_patient, hospitalTreatment, _doctorView, this);
+            }
         }
     }
 }

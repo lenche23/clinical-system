@@ -111,6 +111,20 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
+                <TabItem Header="Bolnička lečenja">
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 5, 25, 5">
+                            <Button Margin="5" Height="30" Width="100" Click="ExtendButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Produži boravak</Button>
+                        </StackPanel>
+                            <DataGrid x:Name="hospitalTreatmentGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.HospitalTreatment}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30, 0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Početak lečenja" Binding="{Binding StartDate, StringFormat=dd/MM/yyyy}"  Width="*"/>
+                                <DataGridTextColumn Header="Trajanje lečenja" Binding="{Binding DurationInDays}"  Width="*"/>
+                                <DataGridTextColumn Header="Soba" Binding="{Binding Room.RoomNumber}"  Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </TabItem>
             </TabControl>
         </DockPanel>
     </Grid>

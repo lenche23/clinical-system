@@ -111,6 +111,9 @@
     <Compile Include="DoctorPages\CreateAppointment.xaml.cs">
       <DependentUpon>CreateAppointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorPages\CreateHospitalTreatment.xaml.cs">
+      <DependentUpon>CreateHospitalTreatment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorPages\CreatePrescriptionPage.xaml.cs">
       <DependentUpon>CreatePrescriptionPage.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,9 @@
     </Compile>
     <Compile Include="DetailDeclinedMedicineWindow.xaml.cs">
       <DependentUpon>DetailDeclinedMedicineWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorPages\ExtendHospitalTreatment.xaml.cs">
+      <DependentUpon>ExtendHospitalTreatment.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
@@ -535,6 +541,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DoctorPages\CreateHospitalTreatment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DoctorPages\CreatePrescriptionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -552,6 +562,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DetailDeclinedMedicineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\ExtendHospitalTreatment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

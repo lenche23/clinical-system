@@ -77,5 +77,10 @@ namespace vezba.DoctorPages
                 _doctorView.Main.GoBack();
             }
         }
+
+        private void NewHospitalTreatmentClick(object sender, RoutedEventArgs e)
+        {
+            _doctorView.Main.Content = new CreateHospitalTreatment(Appointment.Patient, _doctorView);
+        }
     }
 }
