@@ -194,6 +194,14 @@
         "FormatedBeginnigDate": "31.05.2021.",
         "FormatedEndDate": "07.06.2021.",
         "FormatedShift": "14:00 - 21:00"
+      },
+      {
+        "BeginningDate": "2021-06-07T00:00:00",
+        "EndDate": "2021-06-14T00:00:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "07.06.2021.",
+        "FormatedEndDate": "14.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
       }
     ],
     "AvailableDaysOff": 20,
@@ -203,6 +211,12 @@
         "EndDate": "2021-06-04T00:00:00",
         "FormatedStartDate": "02.06.2021.",
         "FormatedEndDate": "04.06.2021."
+      },
+      {
+        "StartDate": "2021-07-06T00:00:00",
+        "EndDate": "2021-07-08T00:00:00",
+        "FormatedStartDate": "06.07.2021.",
+        "FormatedEndDate": "08.07.2021."
       }
     ],
     "NameAndSurname": "Milica Milicevic",

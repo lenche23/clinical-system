@@ -300,9 +300,9 @@ namespace Service
             {
                 rescheduledAppointment.StartTime = appointmentForRescheduling.SuggestedTime;
                 EditAppointment(rescheduledAppointment);
-                Appointment previousAppointment = SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(rescheduledAppointment.AppointentId));
+                Appointment previousAppointment = vezba.SecretaryGUI.SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(rescheduledAppointment.AppointentId));
                 if (previousAppointment != null)
-                    SecretaryAppointments.Appointments[SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = rescheduledAppointment;
+                    vezba.SecretaryGUI.SecretaryAppointments.Appointments[vezba.SecretaryGUI.SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = rescheduledAppointment;
             }
         }
 
