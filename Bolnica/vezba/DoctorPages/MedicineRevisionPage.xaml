@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="700" d:DesignWidth="1200"
       Title="MedicineRevisionPage">
 
     <ScrollViewer>
@@ -33,8 +33,8 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
                 <Button Margin="5" Height="30" Width="100" Click="ApproveClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Odobri</Button>
-                <Button Margin="5" Height="30" Width="100" Click="DeclineClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Odbij</Button>
-                <Button Margin="5" Height="30" Width="100" Click="ReturnClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Povratak</Button>
+                <Button Margin="5" Height="30" Width="100" Click="DeclineClick" Style="{StaticResource ResourceKey=DoctorCancelButton}" FontWeight="Bold">Odbij</Button>
+                <Button Margin="5" Height="30" Width="100" Click="ReturnClick" Style="{StaticResource ResourceKey=DoctorCancelButton}" FontWeight="Bold">Povratak</Button>
             </StackPanel>
             <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Naziv Leka:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Proizvođač:</TextBlock>

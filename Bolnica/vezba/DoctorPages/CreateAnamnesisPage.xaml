@@ -33,8 +33,8 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <StackPanel HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
-                <Button Padding="5" Margin="5" Width="70" Height="30" Click="OkButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Potvrdi</Button>
-                <Button Padding="5" Margin="5" Width="70" Height="30" Click="CancelButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Odustani</Button>
+                <Button Padding="5" Margin="5" Width="100" Height="30" Click="OkButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Potvrdi</Button>
+                <Button Padding="5" Margin="5" Width="100" Height="30" Click="CancelButtonClick" Style="{StaticResource ResourceKey=DoctorCancelButton}" FontWeight="Bold">Odustani</Button>
             </StackPanel>
             <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Pregled:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Vreme pregleda:</TextBlock>

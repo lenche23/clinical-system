@@ -11,7 +11,7 @@
     <Grid Background="White">
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
-                <Button Height="30" Width="100" Margin="5" Padding="5" Click="ReturnClick" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Povratak</Button>
+                <Button Height="30" Width="100" Margin="5" Padding="5" Click="ReturnClick" Style="{StaticResource ResourceKey = DoctorCancelButton}" FontWeight="Bold">Povratak</Button>
             </StackPanel>
             <TabControl Margin="5">
                 <TabItem Header="Lične Informacije">
@@ -84,14 +84,19 @@
                     </ScrollViewer>
                 </TabItem>
                 <TabItem Header="Terapije">
-                    <DataGrid x:Name="prescriptionGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.Prescription}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Lek" Binding="{Binding Medicine.Name}"  Width="*"/>
-                            <DataGridTextColumn Header="Početak terapije" Binding="{Binding StartDate, StringFormat=dd/MM/yyyy}"  Width="*"/>
-                            <DataGridTextColumn Header="Trajanje terapije" Binding="{Binding DurationInDays}"  Width="*"/>
-                            <DataGridTextColumn Header="Konzumiranje" Binding="{Binding Consumption}"  Width="*"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 5, 25, 5">
+                            <Button Padding="5" Margin="5" Click="NewPrescriptionClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">+ Nova terapija</Button>
+                        </StackPanel>
+                        <DataGrid x:Name="prescriptionGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.Prescription}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30, 0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Lek" Binding="{Binding Medicine.Name}"  Width="*"/>
+                                <DataGridTextColumn Header="Početak terapije" Binding="{Binding StartDate, StringFormat=dd/MM/yyyy}"  Width="*"/>
+                                <DataGridTextColumn Header="Trajanje terapije" Binding="{Binding DurationInDays}"  Width="*"/>
+                                <DataGridTextColumn Header="Konzumiranje" Binding="{Binding Consumption}"  Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
                 </TabItem>
                 <TabItem Header="Izveštaji">
                     <DataGrid x:Name="anamnesisGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.Anamnesis}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
@@ -103,17 +108,23 @@
                     </DataGrid>
                 </TabItem>
                 <TabItem Header="Uputi">
-                    <DataGrid x:Name="referralLeterGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.ReferralLetter}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Početak važenja uputa" Binding="{Binding StartDate, StringFormat=dd/MM/yyyy}"  Width="*"/>
-                            <DataGridTextColumn Header="Trajanje uputa" Binding="{Binding DurationPeriodInDays}"  Width="*"/>
-                            <DataGridTextColumn Header="Lekar" Binding="{Binding Doctor.NameAndSurname}"  Width="*"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <DockPanel>
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 5, 25, 5">
+                            <Button Padding="5" Margin="5" Click="NewReferralLetterClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">+ Nov uput</Button>
+                        </StackPanel>
+                        <DataGrid x:Name="referralLeterGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.ReferralLetter}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30, 0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Početak važenja uputa" Binding="{Binding StartDate, StringFormat=dd/MM/yyyy}"  Width="*"/>
+                                <DataGridTextColumn Header="Trajanje uputa" Binding="{Binding DurationPeriodInDays}"  Width="*"/>
+                                <DataGridTextColumn Header="Lekar" Binding="{Binding Doctor.NameAndSurname}"  Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
                 </TabItem>
                 <TabItem Header="Bolnička lečenja">
                     <DockPanel>
                         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 5, 25, 5">
+                            <Button Padding="5" Margin="5" Click="NewHospitalTreatmentClick" Height="30" Width="120"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">+ Bolničko lečenje</Button>
                             <Button Margin="5" Height="30" Width="100" Click="ExtendButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Produži boravak</Button>
                         </StackPanel>
                             <DataGrid x:Name="hospitalTreatmentGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.HospitalTreatment}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30, 0">

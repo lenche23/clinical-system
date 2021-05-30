@@ -45,16 +45,6 @@ namespace vezba.DoctorPages
             }
         }
 
-        private void NewPrescriptionClick(object sender, RoutedEventArgs e)
-        {
-            _doctorView.Main.Content = new CreatePrescriptionPage(Appointment.Patient, _doctorView);
-        }
-
-        private void NewReferralLetterClick(object sender, RoutedEventArgs e)
-        {
-            _doctorView.Main.Content = new CreateReferralLetterPage(Appointment.Patient, _doctorView);
-        }
-
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
             _doctorView.Main.GoBack();
@@ -78,9 +68,13 @@ namespace vezba.DoctorPages
             }
         }
 
-        private void NewHospitalTreatmentClick(object sender, RoutedEventArgs e)
+        private void AddPresetButton_Click(object sender, RoutedEventArgs e)
         {
-            _doctorView.Main.Content = new CreateHospitalTreatment(Appointment.Patient, _doctorView);
+            var addButton = sender as FrameworkElement;
+            if (addButton != null)
+            {
+                addButton.ContextMenu.IsOpen = true;
+            }
         }
     }
 }

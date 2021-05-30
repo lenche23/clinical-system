@@ -36,6 +36,21 @@ namespace vezba.DoctorPages
                 _doctorView.Main.Content = new ExtendHospitalTreatment(_patient, hospitalTreatment, _doctorView, this);
             }
         }
+
+        private void NewPrescriptionClick(object sender, RoutedEventArgs e)
+        {
+            _doctorView.Main.Content = new CreatePrescriptionPage(_patient, _doctorView, this);
+        }
+
+        private void NewReferralLetterClick(object sender, RoutedEventArgs e)
+        {
+            _doctorView.Main.Content = new CreateReferralLetterPage(_patient, _doctorView, this);
+        }
+
+        private void NewHospitalTreatmentClick(object sender, RoutedEventArgs e)
+        {
+            _doctorView.Main.Content = new CreateHospitalTreatment(_patient, _doctorView, this);
+        }
     }
 }
 

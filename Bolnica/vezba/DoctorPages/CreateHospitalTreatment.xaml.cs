@@ -25,8 +25,9 @@ namespace vezba.DoctorPages
         public List<Room> Rooms { get; set; }
         private readonly Patient _patient;
         private readonly DoctorView _doctorView;
+        private MedicalRecordPage medicalRecordPage;
 
-        public CreateHospitalTreatment(Patient patient, DoctorView doctorView)
+        public CreateHospitalTreatment(Patient patient, DoctorView doctorView, MedicalRecordPage medicalRecordPage)
         {
             InitializeComponent();
             _patient = patient;
@@ -35,6 +36,7 @@ namespace vezba.DoctorPages
             var roomService = new RoomService();
             Rooms = roomService.GetAllRooms();
             CmbRooms.SelectedIndex = 0;
+            this.medicalRecordPage = medicalRecordPage;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -42,6 +44,7 @@ namespace vezba.DoctorPages
             var newHospitalTreatment = NewHospitalTreatment();
             var patientService = new PatientService();
             patientService.AddHospitalTreatmentToPatient(_patient, newHospitalTreatment);
+            medicalRecordPage.hospitalTreatmentGrid.Items.Refresh();
             _doctorView.Main.GoBack();
         }
 

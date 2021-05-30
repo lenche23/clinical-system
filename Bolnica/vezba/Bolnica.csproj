@@ -132,6 +132,8 @@
     <Compile Include="DoctorPages\ExtendHospitalTreatment.xaml.cs">
       <DependentUpon>ExtendHospitalTreatment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorValidation\StringToIntValidationRule.cs" />
+    <Compile Include="DoctorValidation\TimeValidationRule.cs" />
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
     </Compile>

@@ -1,23 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
-using Calendar = vezba.DoctorPages.Calendar;
 
 namespace vezba.DoctorPages
 {
     /// <summary>
     /// Interaction logic for CreateAppointment.xaml
     /// </summary>
-    public partial class CreateAppointment : Page
+    public partial class CreateAppointment : Page, INotifyPropertyChanged
     {
         public List<Patient> Patients { get; set; }
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
         private DoctorView doctorView;
         private Calendar calendar;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        private String _duration;
+        public String Duration
+        {
+            get
+            {
+                return _duration;
+            }
+            set
+            {
+                if (value != _duration)
+                {
+                    _duration = value;
+                    OnPropertyChanged("Duration");
+                }
+            }
+        }
+
+        private String _startTime;
+
+        public String StartTime
+        {
+            get
+            {
+                return _startTime;
+            }
+            set
+            {
+                if (value != _startTime)
+                {
+                    _startTime = value;
+                    OnPropertyChanged("StartTime");
+                }
+            }
+        }
 
         public CreateAppointment(DoctorView doctorView, Calendar calendar, Doctor doctor)
         {
@@ -60,14 +105,16 @@ namespace vezba.DoctorPages
             this.doctorView = doctorView;
             this.calendar = calendar;
             StartDatePicker.SelectedDate = generatedStartTime.Date;
-            TimeTB.Text = generatedStartTime.ToString("t");
+            StartTime = generatedStartTime.ToString("t");
             if (doctor != null && doctor.Jmbg != null)
                 cmbDoctors.SelectedValue = doctor.Jmbg;
-            DurationTB.Text = "60";
+            Duration = "60";
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
+            if (!ValidateEntries())
+                return;
             var newAppointment = NewAppointment();
 
             var appointmentService = new AppointmentService();
@@ -83,20 +130,36 @@ namespace vezba.DoctorPages
             var hour = int.Parse(TimeTB.Text.Split(':')[0]);
             var minute = int.Parse(TimeTB.Text.Split(':')[1]);
             var startDateTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, hour, minute, 0);
-            var durationInMinutes = int.Parse(DurationTB.Text);
+            var durationInMinutes = int.Parse(Duration);
             var appointmentDescription = DescriptionTB.Text;
             var patient = (Patient) cmbPatients.SelectedItem;
             var room = (Room) cmbRooms.SelectedItem;
             var doctor = (Doctor) cmbDoctors.SelectedItem;
             var isEmergency = (Boolean) IsEmergencyCB.IsChecked;
-            var newAppointment = new Appointment(0, patient, doctor, room, startDateTime, durationInMinutes,
-                appointmentDescription, isEmergency);
+            var newAppointment = new Appointment(0, patient, doctor, room, startDateTime, durationInMinutes, appointmentDescription, isEmergency);
             return newAppointment;
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             doctorView.Main.GoBack();
+        }
+
+        private Boolean ValidateEntries()
+        {
+            if (StartDatePicker.SelectedDate == null)
+                return false;
+            int r;
+            var split = TimeTB.Text.Split(':');
+            if (split.Length != 2 || !int.TryParse(split[0], out r) || !int.TryParse(split[1], out r))
+                return false;
+            if (!int.TryParse(DurationTB.Text, out r))
+                return false;
+            if (int.Parse(DurationTB.Text) < 10 || int.Parse(DurationTB.Text) > 120)
+                return false;
+            if (DescriptionTB.Text.Length == 0)
+                return false;
+            return true;
         }
     }
 }

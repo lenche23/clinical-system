@@ -16,7 +16,9 @@ namespace vezba.DoctorPages
         private readonly DoctorView _doctorView;
         public List<Medicine> ValidMedicine { get; set; }
 
-        public CreatePrescriptionPage(Patient patient, DoctorView doctorView)
+        private MedicalRecordPage medicalRecordPage;
+
+        public CreatePrescriptionPage(Patient patient, DoctorView doctorView, MedicalRecordPage medicalRecordPage)
         {
             InitializeComponent();
             _patient = patient;
@@ -24,6 +26,7 @@ namespace vezba.DoctorPages
             DataContext = this;
             var medicineService = new MedicineService();
             ValidMedicine = medicineService.GenerateValidMedicineForPatient(_patient.MedicalRecord);
+            this.medicalRecordPage = medicalRecordPage;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -32,6 +35,7 @@ namespace vezba.DoctorPages
 
             var patientService = new PatientService();
             patientService.AddPrescriptionToPatient(_patient, newPrescription);
+            medicalRecordPage.prescriptionGrid.Items.Refresh();
 
             _doctorView.Main.GoBack();
         }

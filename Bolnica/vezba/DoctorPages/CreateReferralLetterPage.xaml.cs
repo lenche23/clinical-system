@@ -18,7 +18,9 @@ namespace vezba.DoctorPages
 
         private readonly DoctorView _doctorView;
 
-        public CreateReferralLetterPage(Patient patient, DoctorView doctorView)
+        private MedicalRecordPage medicalRecordPage;
+
+        public CreateReferralLetterPage(Patient patient, DoctorView doctorView, MedicalRecordPage medicalRecordPage)
         {
             InitializeComponent();
             DataContext = patient;
@@ -30,6 +32,7 @@ namespace vezba.DoctorPages
             cmbDoctors.SelectedIndex = 0;
             _patient = patient;
             _doctorView = doctorView;
+            this.medicalRecordPage = medicalRecordPage;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -38,6 +41,7 @@ namespace vezba.DoctorPages
 
             var patientService = new PatientService();
             patientService.AddReferralLetterToPatient(_patient, newReferralLetter);
+            medicalRecordPage.referralLeterGrid.Items.Refresh();
 
             _doctorView.Main.GoBack();
         }

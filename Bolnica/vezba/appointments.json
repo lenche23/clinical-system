@@ -89,5 +89,70 @@
     "patientId": "1706971459311",
     "roomId": 2,
     "doctorId": "0611985621455"
+  },
+  {
+    "StartTime": "2021-05-27T07:00:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "Test",
+    "AppointentId": 7,
+    "IsDeleted": true,
+    "IsEmergency": false,
+    "AppointmentDescription": "Test",
+    "StartTimee": "2021-05-27T07:00:00",
+    "patientId": "1706971459311",
+    "roomId": 0,
+    "doctorId": "1708962324890"
+  },
+  {
+    "StartTime": "2021-05-30T09:00:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "",
+    "AppointentId": 8,
+    "IsDeleted": true,
+    "IsEmergency": false,
+    "AppointmentDescription": "",
+    "StartTimee": "2021-05-30T09:00:00",
+    "patientId": "1706971459311",
+    "roomId": 0,
+    "doctorId": "1708962324890"
+  },
+  {
+    "StartTime": "2021-05-30T10:00:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "a",
+    "AppointentId": 9,
+    "IsDeleted": true,
+    "IsEmergency": false,
+    "AppointmentDescription": "a",
+    "StartTimee": "2021-05-30T10:00:00",
+    "patientId": "1706971459311",
+    "roomId": 0,
+    "doctorId": "1708962324890"
+  },
+  {
+    "StartTime": "2021-05-28T08:00:00",
+    "DurationInMunutes": 60,
+    "ApointmentDescription": "Kolonoskopija 2: The Reckoning",
+    "AppointentId": 10,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "Kolonoskopija 2: The Reckoning",
+    "StartTimee": "2021-05-28T08:00:00",
+    "patientId": "1706971459311",
+    "roomId": 0,
+    "doctorId": "1708962324890"
+  },
+  {
+    "StartTime": "2021-05-30T09:00:00",
+    "DurationInMunutes": 45,
+    "ApointmentDescription": "abrakadabra",
+    "AppointentId": 11,
+    "IsDeleted": true,
+    "IsEmergency": false,
+    "AppointmentDescription": "abrakadabra",
+    "StartTimee": "2021-05-30T09:00:00",
+    "patientId": "1706971459311",
+    "roomId": 0,
+    "doctorId": "1708962324890"
   }
 ]

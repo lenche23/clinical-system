@@ -4,6 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba"
+      xmlns:val="clr-namespace:vezba.DoctorValidation"
+      xmlns:doctorValidation="clr-namespace:vezba.DoctorValidation"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="CreateAppointment">
@@ -51,8 +53,8 @@
             <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right">Soba:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Top">Lekar:</TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
-                <Button Padding="5" Margin="5" Click="OkButtonClick" Height="30" Width="100" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Potvrdi</Button>
-                <Button Padding="5" Margin="5" Click="CancelButtonClick" Height="30" Width="100" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Odustani</Button>
+                <Button x:Name="OkButton" Padding="5" Margin="5" Click="OkButtonClick" Height="30" Width="100" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Potvrdi</Button>
+                <Button Padding="5" Margin="5" Click="CancelButtonClick" Height="30" Width="100" Style="{StaticResource ResourceKey = DoctorCancelButton}" FontWeight="Bold">Odustani</Button>
             </StackPanel>
 
             <CheckBox Grid.Column="1" Grid.Row="1" Name="IsEmergencyCB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
@@ -62,9 +64,52 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <DatePicker Grid.Column="0" Name="StartDatePicker" Height="25" Margin="0,0, 5, 0"></DatePicker>
-                <TextBox Grid.Column="1" Name="TimeTB" Margin="5, 0, 0, 0"></TextBox>
+                <TextBox Grid.Column="1" Name="TimeTB" Margin="5, 0, 0, 0">
+                    <TextBox.Text>
+                        <Binding Path="StartTime" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <val:TimeValidationRule ValidationStep="RawProposedValue"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                                <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red" Margin="5"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
             </Grid>
-            <TextBox Grid.Column="1" Grid.Row="3" Name="DurationTB"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="3" Name="DurationTB">
+                <TextBox.Text>
+                    <Binding Path="Duration" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <val:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                            <val:MinMaxValidationRule ValidationStep="ConvertedProposedValue" Min="10" Max="120"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red" Margin="5"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
             <TextBox Grid.Column="1" Grid.Row="4" Name="DescriptionTB"></TextBox>
             <ComboBox Grid.Column="1" Grid.Row="5" Name="cmbPatients" ItemsSource="{Binding Patients}">
                 <ComboBox.ItemTemplate>

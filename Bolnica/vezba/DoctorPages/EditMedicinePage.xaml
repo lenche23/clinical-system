@@ -45,7 +45,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
                 <Button Margin="5" Height="30" Width="100" Click="OkButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Potvrdi</Button>
-                <Button Margin="5" Height="30" Width="100" Click="CancelButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Odustani</Button>
+                <Button Margin="5" Height="30" Width="100" Click="CancelButtonClick" Style="{StaticResource ResourceKey=DoctorCancelButton}" FontWeight="Bold">Odustani</Button>
             </StackPanel>
             <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Naziv Leka:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Proizvođač:</TextBlock>
