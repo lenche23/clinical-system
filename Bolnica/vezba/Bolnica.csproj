@@ -402,6 +402,9 @@
     <Compile Include="SecretaryGUI\SecretaryNewPatient.xaml.cs">
       <DependentUpon>SecretaryNewPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\SecretaryNewVacationDays.xaml.cs">
+      <DependentUpon>SecretaryNewVacationDays.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecretaryGUI\SecretaryNewWorkingHours.xaml.cs">
       <DependentUpon>SecretaryNewWorkingHours.xaml</DependentUpon>
     </Compile>
@@ -873,6 +876,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SecretaryGUI\SecretaryNewPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryNewVacationDays.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

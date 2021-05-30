@@ -9,46 +9,59 @@
         "EndDate": "2021-05-24T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "17.05.2021.",
-        "FormatedEndDate": "24.05.2021."
+        "FormatedEndDate": "24.05.2021.",
+        "FormatedShift": "14:00 - 21:00"
       },
       {
         "BeginningDate": "2021-05-24T00:00:00",
         "EndDate": "2021-05-31T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "24.05.2021.",
-        "FormatedEndDate": "31.05.2021."
+        "FormatedEndDate": "31.05.2021.",
+        "FormatedShift": "14:00 - 21:00"
       },
       {
         "BeginningDate": "2021-05-31T00:00:00",
         "EndDate": "2021-06-07T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "31.05.2021.",
-        "FormatedEndDate": "07.06.2021."
+        "FormatedEndDate": "07.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
       },
       {
         "BeginningDate": "2021-06-07T00:00:00",
         "EndDate": "2021-06-14T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "07.06.2021.",
-        "FormatedEndDate": "14.06.2021."
-      },
-      {
-        "BeginningDate": "2021-06-14T00:00:00",
-        "EndDate": "2021-06-21T00:00:00",
-        "Shift": 1,
-        "FormatedBeginnigDate": "14.06.2021.",
-        "FormatedEndDate": "21.06.2021."
+        "FormatedEndDate": "14.06.2021.",
+        "FormatedShift": "14:00 - 21:00"
       },
       {
         "BeginningDate": "2021-06-21T00:00:00",
         "EndDate": "2021-06-28T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "21.06.2021.",
-        "FormatedEndDate": "28.06.2021."
+        "FormatedEndDate": "28.06.2021.",
+        "FormatedShift": "14:00 - 21:00"
+      },
+      {
+        "BeginningDate": "2021-06-28T00:00:00",
+        "EndDate": "2021-07-05T00:00:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "28.06.2021.",
+        "FormatedEndDate": "05.07.2021.",
+        "FormatedShift": "14:00 - 21:00"
       }
     ],
     "AvailableDaysOff": 20,
-    "VacationDays": [],
+    "VacationDays": [
+      {
+        "StartDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-06-01T00:00:00",
+        "FormatedStartDate": "31.05.2021.",
+        "FormatedEndDate": "01.06.2021."
+      }
+    ],
     "NameAndSurname": "Pera Peric",
     "SpecialityName": "Oftalmolog",
     "SalaryInRsd": 90000,
@@ -76,14 +89,16 @@
         "EndDate": "2021-05-31T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "24.05.2021.",
-        "FormatedEndDate": "31.05.2021."
+        "FormatedEndDate": "31.05.2021.",
+        "FormatedShift": "07:00 - 14:00"
       },
       {
         "BeginningDate": "2021-05-31T00:00:00",
         "EndDate": "2021-06-07T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "31.05.2021.",
-        "FormatedEndDate": "07.06.2021."
+        "FormatedEndDate": "07.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
       }
     ],
     "AvailableDaysOff": 20,
@@ -115,14 +130,16 @@
         "EndDate": "2021-05-31T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "24.05.2021.",
-        "FormatedEndDate": "31.05.2021."
+        "FormatedEndDate": "31.05.2021.",
+        "FormatedShift": "07:00 - 14:00"
       },
       {
         "BeginningDate": "2021-05-31T00:00:00",
         "EndDate": "2021-06-07T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "31.05.2021.",
-        "FormatedEndDate": "07.06.2021."
+        "FormatedEndDate": "07.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
       }
     ],
     "AvailableDaysOff": 20,
@@ -154,18 +171,27 @@
         "EndDate": "2021-05-31T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "24.05.2021.",
-        "FormatedEndDate": "31.05.2021."
+        "FormatedEndDate": "31.05.2021.",
+        "FormatedShift": "14:00 - 21:00"
       },
       {
         "BeginningDate": "2021-05-31T00:00:00",
         "EndDate": "2021-06-07T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "31.05.2021.",
-        "FormatedEndDate": "07.06.2021."
+        "FormatedEndDate": "07.06.2021.",
+        "FormatedShift": "14:00 - 21:00"
       }
     ],
     "AvailableDaysOff": 20,
-    "VacationDays": [],
+    "VacationDays": [
+      {
+        "StartDate": "2021-06-02T00:00:00",
+        "EndDate": "2021-06-04T00:00:00",
+        "FormatedStartDate": "02.06.2021.",
+        "FormatedEndDate": "04.06.2021."
+      }
+    ],
     "NameAndSurname": "Milica Milicevic",
     "SpecialityName": "Stomatolog",
     "SalaryInRsd": 100000,
@@ -193,18 +219,27 @@
         "EndDate": "2021-05-31T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "24.05.2021.",
-        "FormatedEndDate": "31.05.2021."
+        "FormatedEndDate": "31.05.2021.",
+        "FormatedShift": "07:00 - 14:00"
       },
       {
         "BeginningDate": "2021-05-31T00:00:00",
         "EndDate": "2021-06-07T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "31.05.2021.",
-        "FormatedEndDate": "07.06.2021."
+        "FormatedEndDate": "07.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
       }
     ],
     "AvailableDaysOff": 20,
-    "VacationDays": [],
+    "VacationDays": [
+      {
+        "StartDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-05-31T00:00:00",
+        "FormatedStartDate": "31.05.2021.",
+        "FormatedEndDate": "31.05.2021."
+      }
+    ],
     "NameAndSurname": "Jana Jankovic",
     "SpecialityName": "Opsti",
     "SalaryInRsd": 100000,

@@ -33,7 +33,7 @@ namespace vezba.SecretaryGUI
             
 
             WorkingHours = new ObservableCollection<WorkingHours>(doctorService.GetFutureWorkingHoursForDoctor(Doctor.Jmbg));
-            VacationDays = new ObservableCollection<VacationDays>();
+            VacationDays = new ObservableCollection<VacationDays>(doctorService.GetFutureVacationDaysForDoctor(Doctor.Jmbg));
             this.DataContext = this;
 
             NameSurname.Content = Doctor.Name + " " + Doctor.Surname;
@@ -77,12 +77,21 @@ namespace vezba.SecretaryGUI
 
         private void AddVacationDaysButton_Click(object sender, RoutedEventArgs e)
         {
-
+           SecretaryNewVacationDays w = new SecretaryNewVacationDays(Doctor);
+            w.Show();
         }
 
         private void RemoveVacationDaysButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (vacationTable.SelectedCells.Count > 0)
+            {
+                VacationDays selectedVacationDays = (VacationDays)vacationTable.SelectedItem;
+                DoctorService doctorService = new DoctorService();
+                doctorService.RemoveVacationDaysFromDoctor(Doctor.Jmbg, selectedVacationDays);
+                VacationDays.Remove(selectedVacationDays);
+            }
+            else
+                MessageBox.Show("Niste selektovali godisnji odmor!");
         }
     }
 }
