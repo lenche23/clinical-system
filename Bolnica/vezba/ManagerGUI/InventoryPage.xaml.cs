@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Input;
 
 namespace vezba.ManagerGUI
 {
@@ -52,21 +53,7 @@ namespace vezba.ManagerGUI
             }
         }
 
-        private void View_Equipment_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (InventaryBinding.SelectedIndex > -1)
-            {
-                Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
-                mainManagerWindow.MainManagerView.Content = new InventoryViewEquipmentPage(equipment);
-            }
-
-            else
-            {
-                MessageBox.Show("Ni jedan artikal nije selektovan!");
-            }
-        }
-
-        private void Change_Equipment_Button_Click(object sender, RoutedEventArgs e)
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (InventaryBinding.SelectedIndex > -1)
             {
@@ -79,6 +66,7 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Ni jedan artikal nije selektovan!");
             }
         }
+
 
 
         private void StaticCheckBox_Checked(object sender, RoutedEventArgs e)

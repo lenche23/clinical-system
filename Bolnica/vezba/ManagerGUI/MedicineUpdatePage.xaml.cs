@@ -11,14 +11,16 @@ namespace vezba.ManagerGUI
     {
         private Medicine selected;
         private MedicinePage addMedicineWindow;
+        private MainManagerWindow mainManagerWindow;
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
         public List<Ingridient> ingredientTemporaryList { get; set; }
-        public MedicineUpdatePage(Medicine medicine, MedicinePage addMedicineWindow)
+        public MedicineUpdatePage(MainManagerWindow mainManagerWindow, Medicine medicine, MedicinePage addMedicineWindow)
         {
             InitializeComponent();
             selected = medicine;
             this.DataContext = selected;
             this.addMedicineWindow = addMedicineWindow;
+            this.mainManagerWindow = mainManagerWindow;
 
             MedicineService medicineService = new MedicineService();
             List<Medicine> medicineList = medicineService.GetAllMedicine();
@@ -136,6 +138,14 @@ namespace vezba.ManagerGUI
             IngredientList = new ObservableCollection<Ingridient>(ingredientTemporaryList);
             IngredientsBinding.ItemsSource = IngredientList;
             IngredientsBinding.Items.Refresh();
+        }
+
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
+        {
+            MedicineService medicineService = new MedicineService();
+            medicineService.DeleteMedicine(selected.MedicineID);
+            MedicinePage.MedicineList.Remove(selected);
+            mainManagerWindow.MainManagerView.NavigationService.GoBack();
         }
     }
 }

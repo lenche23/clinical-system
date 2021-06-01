@@ -46,5 +46,6 @@
 
         <Button Grid.ColumnSpan="2" Margin="57,168,224,-196" Grid.Row="5" Click="Edit_Button_Click">Izmeni</Button>
         <Button Grid.Column="1" Margin="125,168,74,-196" Grid.Row="5" Click="Cancel_Button_Click">Odustani</Button>
+        <Button Margin="323,147,-53,-196" Grid.Column="1" Content="Kanta" Click="DeleteButtonClick" Grid.Row="5"/>
     </Grid>
 </Page>

@@ -16,7 +16,6 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             this.selected = selected;
             this.mainManagerWindow = mainManagerWindow;
-            Title.Content = Title.Content + " " + selected.RoomNumber;
             EquipmentService equipmentService = new EquipmentService();
             List<Equipment> equipmentList = equipmentService.GetAllEquipment();
             comboEquipmentName.ItemsSource = equipmentList;

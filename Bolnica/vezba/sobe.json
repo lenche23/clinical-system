@@ -10,7 +10,7 @@
     "RoomType": 0,
     "RoomNumber": 0,
     "RoomFloor": 0,
-    "IsDeleted": false,
+    "IsDeleted": true,
     "StartDateTime": "2021-05-30T21:33:51.9101054+02:00",
     "EndDateTime": "2021-10-12T10:00:00",
     "Renovation": [
@@ -64,7 +64,7 @@
     "RoomType": 0,
     "RoomNumber": 3,
     "RoomFloor": 0,
-    "IsDeleted": false,
+    "IsDeleted": true,
     "StartDateTime": "2021-05-30T21:34:01.9739182+02:00",
     "EndDateTime": "2999-12-31T00:00:00",
     "Renovation": [
@@ -80,7 +80,7 @@
     "RoomType": 0,
     "RoomNumber": 4,
     "RoomFloor": 0,
-    "IsDeleted": false,
+    "IsDeleted": true,
     "StartDateTime": "2021-05-30T21:34:05.8386541+02:00",
     "EndDateTime": "2999-12-31T00:00:00",
     "Renovation": []
@@ -122,6 +122,56 @@
     "RoomFloor": 0,
     "IsDeleted": false,
     "StartDateTime": "2021-10-12T10:00:00",
+    "EndDateTime": "2999-12-31T00:00:00",
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 1,
+    "RoomNumber": 9,
+    "RoomFloor": 0,
+    "IsDeleted": true,
+    "StartDateTime": "2021-05-31T03:03:07.6081823+02:00",
+    "EndDateTime": "2999-12-31T00:00:00",
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 0,
+    "RoomNumber": 10,
+    "RoomFloor": 1,
+    "IsDeleted": true,
+    "StartDateTime": "2021-05-31T03:03:16.1279204+02:00",
+    "EndDateTime": "2999-12-31T00:00:00",
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 0,
+    "RoomNumber": 11,
+    "RoomFloor": 1,
+    "IsDeleted": true,
+    "StartDateTime": "2021-05-31T03:05:27.0087061+02:00",
+    "EndDateTime": "2999-12-31T00:00:00",
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 0,
+    "RoomNumber": 12,
+    "RoomFloor": 1,
+    "IsDeleted": true,
+    "StartDateTime": "2021-05-31T06:19:43.7936868+02:00",
+    "EndDateTime": "2999-12-31T00:00:00",
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 2,
+    "RoomNumber": 13,
+    "RoomFloor": 0,
+    "IsDeleted": false,
+    "StartDateTime": "2021-05-31T10:46:18.7796329+02:00",
     "EndDateTime": "2999-12-31T00:00:00",
     "Renovation": []
   }

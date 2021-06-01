@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Service;
 using vezba.Repository;
 
@@ -29,6 +30,23 @@ namespace vezba.ManagerGUI
             if (announcementTable.SelectedCells.Count > 0)
             {
                 Announcement a = (Announcement) announcementTable.SelectedItem;
+                mainManagerWindow.MainManagerView.Content = new ViewAnnouncementManagerPage(a);
+            }
+            else
+            {
+                MessageBox.Show("Niste selektovali obavestenje!");
+            }
+        }
+        private void ButtonBackClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (announcementTable.SelectedCells.Count > 0)
+            {
+                Announcement a = (Announcement)announcementTable.SelectedItem;
                 mainManagerWindow.MainManagerView.Content = new ViewAnnouncementManagerPage(a);
             }
             else

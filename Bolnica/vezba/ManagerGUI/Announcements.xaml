@@ -7,16 +7,27 @@
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="Announcements">
+    <Page.Resources>
+        <Style TargetType="ListViewItem" x:Key="listViewDoubleClick">
+            <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
+        </Style>
+    </Page.Resources>
     <Grid>
-        <Label Content="Obaveštenja:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,50,0,0" FontSize="20" Height="41" Width="127" FontFamily="HP Simplified Hans" />
-        <Grid HorizontalAlignment="Left" Height="180" Margin="40,110,0,0" VerticalAlignment="Top" Width="400">
-            <DataGrid x:Name="announcementTable" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding Ans}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="180" >
+        <Label Content="Moja obaveštenja:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,50,0,0" FontSize="20" Height="41" Width="206" FontFamily="HP Simplified Hans" />
+        <Grid HorizontalAlignment="Left" Height="284" Margin="64,96,0,0" VerticalAlignment="Top" Width="596">
+            <DataGrid x:Name="announcementTable" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding Ans}" AutoGenerateColumns="False" Margin="56,10,49,10" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Obaveštenje" Binding="{Binding Title}"  Width="*"/>
                     <DataGridTextColumn Header="Datum" Binding="{Binding FormatedDatePosted}" Width="100"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        <Button Content="Prikaži" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="365,59,0,0" Click="View_Button_Click"/>
+        <Button Content="Prikaži" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="505,50,0,0" Click="View_Button_Click" Height="32"/>
+
+        <Button Click ="ButtonBackClick" Margin="15,455,610,10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>

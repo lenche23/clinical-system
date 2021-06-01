@@ -53,5 +53,10 @@ namespace vezba.ManagerGUI
         {
             mainManagerWindow.MainManagerView.Content = new RenovationSplitRoomPage(mainManagerWindow, selected);
         }
+
+        private void ButtonBackClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
+        }
     }
 }

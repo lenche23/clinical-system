@@ -23,74 +23,71 @@ namespace vezba.ManagerGUI
             this.rp = rp;
             this.mainManagerWindow = mainManagerWindow;
             this.DataContext = selected;
-            if (selected.RoomFloor == Floor.first)
-            {
-                Prvi.IsChecked = true;
-            }
-            else if (selected.RoomFloor == Floor.second)
-            {
-                Drugi.IsChecked = true;
-            }
-            else if (selected.RoomFloor == Floor.third)
-            {
-                Treci.IsChecked = true;
-            }
-
-
-            if (selected.RoomType == RoomType.examinationRoom)
-            {
-                Pregled.IsChecked = true;
-            }
-            else if (selected.RoomType == RoomType.operatingRoom)
-            {
-                Operacija.IsChecked = true;
-            }
-            else if (selected.RoomType == RoomType.recoveryRoom)
-            {
-                Odmor.IsChecked = true;
-            }
 
             RoomInventoryService roomInventoryService = new RoomInventoryService();
 
             var roomInventoryList = roomInventoryService.GetAllRoomInventories(selected);
 
+            RoomTextBlock.Text = RoomTextBlock.Text + " " + selected.RoomNumber;
+
+            List<string> floors = new List<string> { "Prvi", "Drugi", "Treći" };
+            comboFloor.ItemsSource = floors;
+
+            List<string> types = new List<string> { "Soba za preglede", "Soba za odmor", "Operaciona sala", "Magacin" };
+            comboRoomType.ItemsSource = types;
+
+            if (selected.RoomFloor == Floor.first)
+            {
+                comboFloor.SelectedIndex = 0;
+            }
+            else if (selected.RoomFloor == Floor.second)
+            {
+                comboFloor.SelectedIndex = 1;
+            }
+            else if (selected.RoomFloor == Floor.third)
+            {
+                comboFloor.SelectedIndex = 2;
+            }
+
+            if (selected.RoomType == RoomType.examinationRoom)
+            {
+                comboRoomType.SelectedIndex = 0;
+            }
+            else if (selected.RoomType == RoomType.recoveryRoom)
+            {
+                comboRoomType.SelectedIndex = 1;
+            }
+            else if (selected.RoomType == RoomType.operatingRoom)
+            {
+                comboRoomType.SelectedIndex = 2;
+            }
+            else if (selected.RoomType == RoomType.storageRoom)
+            {
+                comboRoomType.SelectedIndex = 3;
+            }
+
             RoomInventoryList = new ObservableCollection<RoomInventory>(roomInventoryList);
             RoomInventoryBinding.ItemsSource = RoomInventoryList;
             CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(RoomInventoryBinding.ItemsSource);
             RoomInventoryBinding.Items.Refresh();
-            view.Filter = EquipmentFilter;
         }
 
         private void Potvrda_Button_Click(object sender, RoutedEventArgs e)
         {
-            var roomNumber = int.Parse(BrojSobe.Text);
-            selected.RoomNumber = roomNumber;
+            //var roomNumber = int.Parse(BrojSobe.Text);
+            //selected.RoomNumber = roomNumber;
 
-            if (Convert.ToBoolean(Prvi.IsChecked))
-            {
-                selected.RoomFloor = Floor.first;
-            }
-            else if (Convert.ToBoolean(Drugi.IsChecked))
-            {
-                selected.RoomFloor = Floor.second;
-            }
-            else if (Convert.ToBoolean(Treci.IsChecked))
-            {
-                selected.RoomFloor = Floor.third;
-            }
+            if (comboFloor.SelectedIndex == 0) selected.RoomFloor = Floor.first;
+            else if (comboFloor.SelectedIndex == 1) selected.RoomFloor = Floor.second;
+            else if (comboFloor.SelectedIndex == 2) selected.RoomFloor = Floor.third;
 
-            if (Convert.ToBoolean(Pregled.IsChecked))
-            {
-                selected.RoomType = RoomType.examinationRoom;
-            }
-            else if (Convert.ToBoolean(Operacija.IsChecked))
-            {
-                selected.RoomType = RoomType.operatingRoom;
-            }
-            else if (Convert.ToBoolean(Odmor.IsChecked))
-            {
-                selected.RoomType = RoomType.recoveryRoom;
-            }
+            if (comboRoomType.SelectedIndex == 0) selected.RoomType = RoomType.examinationRoom;
+            else if (comboRoomType.SelectedIndex == 1) selected.RoomType = RoomType.recoveryRoom;
+            else if (comboRoomType.SelectedIndex == 2) selected.RoomType = RoomType.operatingRoom;
+            else if (comboRoomType.SelectedIndex == 3) selected.RoomType = RoomType.storageRoom;
+
+            RoomService roomService = new RoomService();
+            roomService.UpdateRoom(selected);
             rp.lvDataBinding.Items.Refresh();
             NavigationService.GoBack();
         }
@@ -105,20 +102,6 @@ namespace vezba.ManagerGUI
             mainManagerWindow.MainManagerView.Content = new RoomAddEquipmentPage(mainManagerWindow, selected);
         }
 
-        private void Izbriši_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (RoomInventoryBinding.SelectedIndex > -1)
-            {
-                RoomInventory ri = (RoomInventory)RoomInventoryBinding.SelectedItem;
-                RoomInventoryService roomInventoryService = new RoomInventoryService();
-                roomInventoryService.DeleteRoomInventory(ri.Id);
-                RoomInventoryList.Remove(ri);
-            }
-            else
-            {
-                MessageBox.Show("Ni jedna prostorija nije selektovana!");
-            }
-        }
         private void Izmeni_Količinu_Button_Click(object sender, RoutedEventArgs e)
         {
             if (RoomInventoryBinding.SelectedIndex > -1)
@@ -150,16 +133,28 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Ni jedan proizvod nije selektovan!");
             }
         }
-        private bool EquipmentFilter(object item)
+
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(txtFilter.Text))
-                return true;
-            else 
-                return ((item as RoomInventory).equipment.Name.IndexOf(txtFilter.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+            RoomService roomService = new RoomService();
+            roomService.DeleteRoom(selected.RoomNumber);
+            RoomsPage.Rooms.Remove(selected);
+            mainManagerWindow.MainManagerView.NavigationService.GoBack();
         }
-        private void txtFilter_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+
+        private void Izbriši_Button_Click(object sender, RoutedEventArgs e)
         {
-            CollectionViewSource.GetDefaultView(RoomInventoryBinding.ItemsSource).Refresh();
+            if (RoomInventoryBinding.SelectedIndex > -1)
+            {
+                RoomInventory ri = (RoomInventory)RoomInventoryBinding.SelectedItem;
+                RoomInventoryService roomInventoryService = new RoomInventoryService();
+                roomInventoryService.DeleteRoomInventory(ri.Id);
+                RoomInventoryList.Remove(ri);
+            }
+            else
+            {
+                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+            }
         }
     }
 }

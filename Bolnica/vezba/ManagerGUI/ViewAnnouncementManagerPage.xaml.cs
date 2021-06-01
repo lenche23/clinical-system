@@ -18,5 +18,10 @@ namespace vezba.ManagerGUI
             Title.Text = a.Title;
 
         }
+
+        private void ButtonBackClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

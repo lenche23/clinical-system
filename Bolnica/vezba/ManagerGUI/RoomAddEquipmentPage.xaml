@@ -6,14 +6,43 @@
       xmlns:local="clr-namespace:vezba.ManagerGUI"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
-      Title="RoomAddEquipmentPag" Background="#FFFFC1A4">
-    <Grid Margin="0,0,-8,-6">
-        <Label Name="Title" Content="Dodavanje nove opreme u prostoriju"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="40,35,30,370"/>
-        <Label Content="Naziv opreme:" Margin="84,96,579,446"/>
-        <Label Content="ItemQuantity:" Margin="115,152,543,400"/>
-        <TextBox Name="Količina" Height ="24" RenderTransformOrigin="0.491,0.484" Margin="220,152,458,400" />
-        <Button Click="PotvrdiDodavanje_Button_Click" Margin="65,305,433,212">Potvrdi</Button>
-        <Button Click="OdustaniDodavanje_Button_Click" Margin="405,305,55,212">Odustani</Button>
-        <ComboBox ItemsSource="{Binding equipmentList}" DisplayMemberPath="Name" Name="comboEquipmentName" Margin="184,96,313,446"></ComboBox>
+      Title="RoomAddEquipmentPag" Background="White">
+
+
+    <Grid Margin="130,80,130,80" Background="#FFFFC1A4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*">
+            </RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="25*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <TextBlock FontSize="28"  Margin="125,15,125,5" TextAlignment="Center">Nova oprema</TextBlock>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock  Grid.Column="0" FontSize="20"  Margin="45,25,30,25" TextAlignment="Right">Količina:</TextBlock>
+            <TextBox Grid.Column="1" FontSize="20"  Margin="0,25,155,40" TextAlignment="Center" Name="Količina" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontSize="20" Margin="45,25,30,25" TextAlignment="Right">Oprema:</TextBlock>
+            <ComboBox ItemsSource="{Binding equipmentList}" DisplayMemberPath="Name" Name="comboEquipmentName" Margin="0,10,24,41" Grid.Column="1"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button  FontSize="20" Click="PotvrdiDodavanje_Button_Click" Margin="80,40,25,24" Background="#FFB7C3A2">Potvrdi</Button>
+            <Button Grid.Column="1" FontSize="20" Click="OdustaniDodavanje_Button_Click" Margin="25,40,80,24">Odustani</Button>
+        </Grid>
     </Grid>
 </Page>

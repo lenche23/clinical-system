@@ -6,15 +6,25 @@
       xmlns:local="clr-namespace:vezba.ManagerGUI"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
-      Title="RoomChangeEquipmentPage" Background="#FFFFC1A4">
-    <Grid Margin="0,0,7,6">
-        <Label Content="Izmena količine opreme"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="118,0,104,421"/>
-        <Label Name="NazivOpreme" Content="Naziv opreme:" Margin="86,84,132,441"/>
-        <Label Name="TipOpreme" Content="Tip opreme:" Margin="104,172,132,352" />
-        <Label Name ="Id" Content="ID:" Margin="145,128,132,397"/>
-        <Label Content="ItemQuantity:" Margin="118,212,536,314"/>
-        <TextBox Name="Količina"  Text="{Binding Quantity, Mode=OneWay}" RenderTransformOrigin="0.491,0.484" Margin="212,212,132,322" />
-        <Button Click="PotvrdiIzmenu_Button_Click" Margin="185,290,408,204">Potvrdi</Button>
-        <Button Click="OdustaniIzmena_Button_Click" Margin="420,290,173,204">Odustani</Button>
+      Title="RoomChangeEquipmentPage" Background="White">
+    <Grid Margin="130,80,130,80" Background="#FFFFC1A4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="25*"></RowDefinition>
+            <RowDefinition Height="25*"></RowDefinition>
+            <RowDefinition Height="25*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <TextBlock FontSize="28"  Margin="110,15,110,0" TextAlignment="Center">Izmeni količinu</TextBlock>
+        </Grid>
+        <Label Grid.Row="1" Name="NazivOpreme" Content="Naziv opreme:" Margin="56,18,170,0"/>
+        <Label Name="TipOpreme" Content="Tip opreme:" Margin="56,25,270,65" Grid.Row="2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" />
+        <Label Name ="Id" Content="ID:" Margin="77,29,300,10" Grid.Row="3"/>
+        <Label Content="ItemQuantity:" Margin="45,25,350,10" Grid.Row="4"/>
+        <TextBox Name="Količina"  Text="{Binding Quantity, Mode=OneWay}" RenderTransformOrigin="0.491,0.484" Margin="144,25,155,20" Grid.Row="4" />
+        <Button Click="PotvrdiIzmenu_Button_Click" Margin="105,22,260,12" Grid.Row="5">Potvrdi</Button>
+        <Button Click="OdustaniIzmena_Button_Click" Margin="260,22,115,10" Grid.Row="5">Odustani</Button>
     </Grid>
 </Page>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Service;
 
 namespace vezba.ManagerGUI
@@ -28,36 +29,6 @@ namespace vezba.ManagerGUI
             mainManagerWindow.MainManagerView.Content = new MedicineAddPage();
         }
 
-        private void Remove_Medicine_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (MedicineBinding.SelectedIndex > -1)
-            {
-                Medicine m = (Medicine)MedicineBinding.SelectedItem;
-                MedicineService medicineService = new MedicineService();
-                medicineService.DeleteMedicine(m.MedicineID);
-                MedicineList.Remove(m);
-            }
-
-            else
-            {
-                MessageBox.Show("Ni jedan lek nije selektovan!");
-            }
-        }
-
-        private void Detail_Medicine_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (MedicineBinding.SelectedIndex > -1)
-            {
-                Medicine medicine = (Medicine)MedicineBinding.SelectedItems[0];
-                mainManagerWindow.MainManagerView.Content = new MedicineDetailPage(mainManagerWindow, medicine);
-            }
-
-            else
-            {
-                MessageBox.Show("Ni jedan lek nije selektovan!");
-            }
-        }
-
         private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
@@ -78,12 +49,12 @@ namespace vezba.ManagerGUI
             mainManagerWindow.MainManagerView.Content = new DeclinedMedicineManagerPage(mainManagerWindow, this);
         }
 
-        private void Edit_Medicine_Button_Click(object sender, RoutedEventArgs e)
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (MedicineBinding.SelectedIndex > -1)
             {
                 Medicine medicine = (Medicine)MedicineBinding.SelectedItems[0];
-                mainManagerWindow.MainManagerView.Content = new MedicineUpdatePage(medicine, this);
+                mainManagerWindow.MainManagerView.Content = new MedicineUpdatePage(mainManagerWindow, medicine, this);
             }
 
             else

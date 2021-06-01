@@ -186,9 +186,6 @@
     <Compile Include="ManagerGUI\InventoryPage.xaml.cs">
       <DependentUpon>InventoryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ManagerGUI\InventoryViewEquipmentPage.xaml.cs">
-      <DependentUpon>InventoryViewEquipmentPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ManagerGUI\MainManagerPage.xaml.cs">
       <DependentUpon>MainManagerPage.xaml</DependentUpon>
     </Compile>
@@ -197,9 +194,6 @@
     </Compile>
     <Compile Include="ManagerGUI\MedicineAddPage.xaml.cs">
       <DependentUpon>MedicineAddPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerGUI\MedicineDetailPage.xaml.cs">
-      <DependentUpon>MedicineDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerGUI\MedicinePage.xaml.cs">
       <DependentUpon>MedicinePage.xaml</DependentUpon>
@@ -239,9 +233,6 @@
     </Compile>
     <Compile Include="ManagerGUI\RoomUpdatePage.xaml.cs">
       <DependentUpon>RoomUpdatePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerGUI\RoomViewPage.xaml.cs">
-      <DependentUpon>RoomViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerGUI\ViewAnnouncementManagerPage.xaml.cs">
       <DependentUpon>ViewAnnouncementManagerPage.xaml</DependentUpon>
@@ -733,10 +724,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ManagerGUI\InventoryViewEquipmentPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ManagerGUI\MainManagerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -746,10 +733,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerGUI\MedicineAddPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManagerGUI\MedicineDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -802,10 +785,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerGUI\RoomUpdatePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManagerGUI\RoomViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

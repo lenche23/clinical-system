@@ -20,9 +20,15 @@
             </ListView.View>
         </ListView>
 
-        <Button Margin="85,440,545,90" Background="#FFFFD6C2" Click="Renovation_Button_Click" RenderTransformOrigin="-0.125,0.625">Zakaži renoviranje</Button>
-        <Button Margin="556,440,75,90" Background="#FFFFD6C2" Click="Discard_Button_Click">Otkaži renoviranje</Button>
-        <Button Margin="246,440,385,90" Background="#FFFFD6C2" Click="MergeRoomsButtonClick">Spajanje prostorija</Button>
-        <Button Margin="401,440,230,90" Background="#FFFFD6C2" Click="SplitRoomButtonClick">Deljenje prostorije</Button>
+        <Button Margin="85,400,545,130" Background="#FFFFD6C2" Click="Renovation_Button_Click" RenderTransformOrigin="-0.125,0.625">Zakaži renoviranje</Button>
+        <Button Margin="560,400,71,130" Background="#FFFFD6C2" Click="Discard_Button_Click">Otkaži renoviranje</Button>
+        <Button Margin="250,400,381,130" Background="#FFFFD6C2" Click="MergeRoomsButtonClick">Spajanje prostorija</Button>
+        <Button Margin="400,400,231,130" Background="#FFFFD6C2" Click="SplitRoomButtonClick">Deljenje prostorije</Button>
+
+        <Button Click ="ButtonBackClick" Margin="15,455,610,10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
+            <Button.Background>
+                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>
