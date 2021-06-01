@@ -82,7 +82,7 @@ namespace vezba.DoctorPages
 
             var patientService = new PatientService();
             patientService.AddPrescriptionToPatient(_patient, newPrescription);
-            medicalRecordPage.prescriptionGrid.Items.Refresh();
+            medicalRecordPage.PrescriptionListView.Items.Refresh();
 
             _doctorView.Main.GoBack();
         }

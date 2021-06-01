@@ -84,19 +84,67 @@
                     </ScrollViewer>
                 </TabItem>
                 <TabItem Header="Terapije">
-                    <DockPanel>
-                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 5, 25, 5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 5, 25, 5">
                             <Button Padding="5" Margin="5" Click="NewPrescriptionClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">+ Nova terapija</Button>
                         </StackPanel>
-                        <DataGrid x:Name="prescriptionGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.Prescription}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30, 0">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Lek" Binding="{Binding Medicine.Name}"  Width="*"/>
-                                <DataGridTextColumn Header="Početak terapije" Binding="{Binding StartDate, StringFormat=dd/MM/yyyy}"  Width="*"/>
-                                <DataGridTextColumn Header="Trajanje terapije" Binding="{Binding DurationInDays}"  Width="*"/>
-                                <DataGridTextColumn Header="Konzumiranje" Binding="{Binding Consumption}"  Width="*"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                    </DockPanel>
+                        <Grid Grid.Row="1" Margin="30, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Naziv leka</TextBlock>
+                            <TextBlock Grid.Column="1" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Početak terapije</TextBlock>
+                            <TextBlock Grid.Column="2" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Trajanje terapije</TextBlock>
+                            <TextBlock Grid.Column="3" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Konzumiranje</TextBlock>
+                        </Grid>
+                            <ListView Grid.Row="2"
+                                  x:Name="PrescriptionListView"
+                                  HorizontalContentAlignment="Stretch"
+                                  Background="White"
+                                  BorderThickness="0"
+                                  Margin="30, 0"
+                                  ItemsSource="{Binding MedicalRecord.Prescription}">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="{x:Type ListViewItem}">
+                                    <Setter Property="Focusable" Value="False"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                                <ContentPresenter/>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="0, 2">
+                                        <Grid Background="White" 
+                                              Focusable="False">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Text="{Binding Path=Medicine.Name}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding Path=StartDate, StringFormat=dd/MM/yyyy}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding Path=DurationInDays}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
+                                            <TextBlock Grid.Column="3" Text="{Binding Path=Consumption}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
                 </TabItem>
                 <TabItem Header="Izveštaji">
                     <DataGrid x:Name="anamnesisGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.Anamnesis}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
