@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba"
+      xmlns:val="clr-namespace:vezba.DoctorValidation"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="CreateReferralLetterPage">
@@ -50,10 +51,32 @@
             <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Trajanje uputa:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Top">Lekar:</TextBlock>
 
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding NameAndSurname, Mode=OneWay}"/>
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding MedicalRecord.HealthInsuranceNumber, Mode=OneWay}"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Patient.NameAndSurname, Mode=OneWay}"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Patient.MedicalRecord.HealthInsuranceNumber, Mode=OneWay}"/>
             <DatePicker Grid.Column="1" Grid.Row="3" Margin="10, 10, 400, 10" Name="DpStartDate" Height="25"/>
-            <TextBox Grid.Column="1" Grid.Row="4" Name="TbDuration"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="4" Name="TbDuration">
+                <TextBox.Text>
+                    <Binding Path="Duration" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <val:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                            <val:MinMaxValidationRule ValidationStep="ConvertedProposedValue" Min="1" Max="21"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red" Margin="5"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
             <ComboBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Top" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" Name="cmbDoctors"></ComboBox>
         </Grid>
     </ScrollViewer>
