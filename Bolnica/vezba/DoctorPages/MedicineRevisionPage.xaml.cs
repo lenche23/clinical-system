@@ -39,7 +39,7 @@ namespace vezba.DoctorPages
             MedicinePageView.MedicineToApprove.Remove(Medicine);
             MedicinePageView.ApprovedMedicine.Add(Medicine);
             _medicinePageView.RevisionListView.Items.Refresh();
-            _medicinePageView.approvedGrid.Items.Refresh();
+            _medicinePageView.ApprovedMedicineListView.Items.Refresh();
         }
 
         private void DeclineClick(object sender, RoutedEventArgs e)

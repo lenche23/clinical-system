@@ -55,7 +55,7 @@ namespace vezba.DoctorPages
         {
             EditMedicine();
             _medicineService.UpdateMedicine(Medicine);
-            _medicinePageView.approvedGrid.Items.Refresh();
+            _medicinePageView.ApprovedMedicineListView.Items.Refresh();
             _doctorView.Main.GoBack();
             _doctorView.Main.GoBack();
         }

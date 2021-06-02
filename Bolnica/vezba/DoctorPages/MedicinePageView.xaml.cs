@@ -40,11 +40,8 @@ namespace vezba.DoctorPages
 
         private void ViewClick(object sender, RoutedEventArgs e)
         {
-            if (approvedGrid.SelectedItems.Count > 0)
-            {
-                var medicine = (Medicine)approvedGrid.SelectedItem;
-                _doctorView.Main.Content = new ViewMedicinePage(medicine, _doctorView, this);
-            }
+            var medicine = (sender as Grid).DataContext as Medicine;
+            _doctorView.Main.Content = new ViewMedicinePage(medicine, _doctorView, this);
         }
 
         private void RevisionClick(object sender, RoutedEventArgs e)
