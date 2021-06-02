@@ -52,11 +52,8 @@ namespace vezba.DoctorPages
 
         private void ViewDeclinedClick(object sender, RoutedEventArgs e)
         {
-            if(declinedGrid.SelectedItems.Count > 0)
-            {
-                var declinedMedicine = (DeclinedMedicine)declinedGrid.SelectedItem;
-                _doctorView.Main.Content = new ViewDeclinedMedicine(declinedMedicine, _doctorView);
-            }
+            var declinedMedicine = (sender as Grid).DataContext as DeclinedMedicine;
+            _doctorView.Main.Content = new ViewDeclinedMedicine(declinedMedicine, _doctorView);
         }
     }
 }

@@ -124,20 +124,65 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Odbijeni Lekovi">
-                <DockPanel>
-                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Button Margin="5, 5, 30, 5" Padding="5" Click="ViewDeclinedClick" Width="100" Height="30" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Prikaz</Button>
-                    </StackPanel>
-                    <DataGrid x:Name="declinedGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding DeclinedMedicine}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Naziv leka" Binding="{Binding Medicine.Name}"  Width="*"/>
-                            <DataGridTextColumn Header="Pakovanje" Binding="{Binding Medicine.Packaging}"  Width="*"/>
-                            <DataGridTextColumn Header="Proizvođač" Binding="{Binding Medicine.Manufacturer}"  Width="*"/>
-                            <DataGridTextColumn Header="Oblik" Binding="{Binding Medicine.ConditionSerbian}"  Width="*"/>
-                            <DataGridTextColumn Header="Komentar" Binding="{Binding Description}"  Width="*"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </DockPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="30, 30, 30, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Naziv leka</TextBlock>
+                        <TextBlock Grid.Column="1" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Pakovanje</TextBlock>
+                        <TextBlock Grid.Column="2" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Proizvođač</TextBlock>
+                        <TextBlock Grid.Column="3" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Oblik</TextBlock>
+                        <TextBlock Grid.Column="4" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Komentar</TextBlock>
+                    </Grid>
+                    <ListView Grid.Row="1"
+                                  x:Name="DeclinedMedicineListView"
+                                  HorizontalContentAlignment="Stretch"
+                                  Background="White"
+                                  BorderThickness="0"
+                                  Margin="30, 0"
+                                  ItemsSource="{Binding DeclinedMedicine}">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                            <ContentPresenter/>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="0, 2">
+                                    <Grid Style="{StaticResource ResourceKey = GridHover}" MouseLeftButtonDown="ViewDeclinedClick">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding Path=Medicine.Name}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding Path=Medicine.Packaging}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding Path=Medicine.Manufacturer}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
+                                        <TextBlock Grid.Column="3" Text="{Binding Path=Medicine.ConditionSerbian}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
+                                        <TextBlock Grid.Column="4" Text="{Binding Path=Description}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
