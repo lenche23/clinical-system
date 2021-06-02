@@ -49,11 +49,8 @@ namespace vezba.DoctorPages
 
         private void RevisionClick(object sender, RoutedEventArgs e)
         {
-            if (revisionGrid.SelectedItems.Count > 0)
-            {
-                var medicine = (Medicine)revisionGrid.SelectedItem;
-                _doctorView.Main.Content = new MedicineRevisionPage(medicine, _doctorView, this);
-            }
+            var medicine = (sender as Grid).DataContext as Medicine;
+            _doctorView.Main.Content = new MedicineRevisionPage(medicine, _doctorView, this);
         }
 
         private void ViewDeclinedClick(object sender, RoutedEventArgs e)

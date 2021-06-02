@@ -38,7 +38,7 @@ namespace vezba.DoctorPages
         {
             MedicinePageView.MedicineToApprove.Remove(Medicine);
             MedicinePageView.ApprovedMedicine.Add(Medicine);
-            _medicinePageView.revisionGrid.Items.Refresh();
+            _medicinePageView.RevisionListView.Items.Refresh();
             _medicinePageView.approvedGrid.Items.Refresh();
         }
 

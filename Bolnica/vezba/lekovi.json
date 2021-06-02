@@ -21,7 +21,7 @@
     "Manufacturer": "Union-Medic D.O.O. Novi Sad",
     "Packaging": "30 x 400 mg",
     "MedicineID": 0,
-    "Status": 0,
+    "Status": 1,
     "Condition": 0,
     "IsDeleted": false,
     "ReplacementMedicine": {
