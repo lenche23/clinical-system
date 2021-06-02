@@ -65,6 +65,8 @@ namespace vezba.DoctorPages
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         { 
+            if(!ValidateEntries())
+                return;
             var newReferralLetter = NewReferralLetter();
 
             var patientService = new PatientService();
@@ -86,6 +88,16 @@ namespace vezba.DoctorPages
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             _doctorView.Main.GoBack();
+        }
+
+        private Boolean ValidateEntries()
+        {
+            if (DpStartDate.SelectedDate == null)
+                return false;
+            int r;
+            if (!int.TryParse(TbDuration.Text, out r) || int.Parse(TbDuration.Text) < 1 || int.Parse(TbDuration.Text) > 366)
+                return false;
+            return true;
         }
     }
 }

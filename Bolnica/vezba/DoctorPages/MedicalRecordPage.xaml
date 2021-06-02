@@ -114,7 +114,6 @@
                                   ItemsSource="{Binding MedicalRecord.Prescription}">
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListViewItem}">
-                                    <Setter Property="Focusable" Value="False"/>
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="{x:Type ListViewItem}">
@@ -127,8 +126,7 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="0, 2">
-                                        <Grid Background="White" 
-                                              Focusable="False">
+                                        <Grid Style="{StaticResource ResourceKey = GridHover}">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
@@ -171,7 +169,6 @@
                                   ItemsSource="{Binding MedicalRecord.Anamnesis}">
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListViewItem}">
-                                    <Setter Property="Focusable" Value="False"/>
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="{x:Type ListViewItem}">
@@ -184,8 +181,7 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="0, 2">
-                                        <Grid Background="White" 
-                                              Focusable="False">
+                                        <Grid Style="{StaticResource ResourceKey = GridHover}">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
@@ -230,7 +226,6 @@
                                   ItemsSource="{Binding MedicalRecord.ReferralLetter}">
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListViewItem}">
-                                    <Setter Property="Focusable" Value="False"/>
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="{x:Type ListViewItem}">
@@ -243,8 +238,7 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="0, 2">
-                                        <Grid Background="White" 
-                                              Focusable="False">
+                                        <Grid Style="{StaticResource ResourceKey = GridHover}">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
@@ -290,7 +284,6 @@
                                   ItemsSource="{Binding MedicalRecord.HospitalTreatment}">
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListViewItem}">
-                                    <Setter Property="Focusable" Value="False"/>
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="{x:Type ListViewItem}">
@@ -303,8 +296,7 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="0, 2">
-                                        <Grid Background="White" 
-                                              Focusable="False">
+                                        <Grid Style="{StaticResource ResourceKey = GridHover}">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
