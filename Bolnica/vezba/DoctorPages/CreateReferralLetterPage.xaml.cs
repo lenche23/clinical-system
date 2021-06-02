@@ -69,7 +69,7 @@ namespace vezba.DoctorPages
 
             var patientService = new PatientService();
             patientService.AddReferralLetterToPatient(Patient, newReferralLetter);
-            medicalRecordPage.referralLeterGrid.Items.Refresh();
+            medicalRecordPage.ReferralLetterListView.Items.Refresh();
 
             _doctorView.Main.GoBack();
         }
