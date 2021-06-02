@@ -30,9 +30,9 @@ namespace vezba.DoctorPages
 
         private void ExtendButtonClick(object sender, RoutedEventArgs e)
         {
-            if (hospitalTreatmentGrid.SelectedItems.Count > 0)
+            if (HospitalTreatmentListView.SelectedItems.Count > 0)
             {
-                var hospitalTreatment = (HospitalTreatment) hospitalTreatmentGrid.SelectedItem;
+                var hospitalTreatment = (HospitalTreatment) HospitalTreatmentListView.SelectedItem;
                 _doctorView.Main.Content = new ExtendHospitalTreatment(_patient, hospitalTreatment, _doctorView, this);
             }
         }

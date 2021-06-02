@@ -44,7 +44,7 @@ namespace vezba.DoctorPages
             HospitalTreatment.DurationInDays = int.Parse(TbDuration.Text);
             PatientService patientService = new PatientService();
             patientService.EditPatient(_patient);
-            _medicalRecordPage.hospitalTreatmentGrid.Items.Refresh();
+            _medicalRecordPage.HospitalTreatmentListView.Items.Refresh();
             _doctorView.Main.GoBack();
         }
 

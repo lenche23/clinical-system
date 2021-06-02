@@ -44,7 +44,7 @@ namespace vezba.DoctorPages
             var newHospitalTreatment = NewHospitalTreatment();
             var patientService = new PatientService();
             patientService.AddHospitalTreatmentToPatient(_patient, newHospitalTreatment);
-            medicalRecordPage.hospitalTreatmentGrid.Items.Refresh();
+            medicalRecordPage.HospitalTreatmentListView.Items.Refresh();
             _doctorView.Main.GoBack();
         }
 
