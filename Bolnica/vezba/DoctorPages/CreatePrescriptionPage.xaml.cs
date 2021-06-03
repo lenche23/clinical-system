@@ -17,7 +17,7 @@ namespace vezba.DoctorPages
         private readonly DoctorView _doctorView;
         public List<Medicine> ValidMedicine { get; set; }
 
-        private MedicalRecordPage medicalRecordPage;
+        private readonly MedicalRecordPage _medicalRecordPage;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -71,7 +71,7 @@ namespace vezba.DoctorPages
             DataContext = this;
             var medicineService = new MedicineService();
             ValidMedicine = medicineService.GenerateValidMedicineForPatient(_patient.MedicalRecord);
-            this.medicalRecordPage = medicalRecordPage;
+            this._medicalRecordPage = medicalRecordPage;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -82,7 +82,7 @@ namespace vezba.DoctorPages
 
             var patientService = new PatientService();
             patientService.AddPrescriptionToPatient(_patient, newPrescription);
-            medicalRecordPage.PrescriptionListView.Items.Refresh();
+            _medicalRecordPage.PrescriptionListView.Items.Refresh();
 
             _doctorView.Main.GoBack();
         }

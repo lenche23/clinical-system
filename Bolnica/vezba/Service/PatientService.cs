@@ -167,6 +167,12 @@ namespace Service
             EditPatient(patient);
         }
 
+        public void RemovePrescriptionFromPatient(Patient patient, Prescription prescription)
+        {
+            patient.MedicalRecord.RemovePrescription(prescription);
+            EditPatient(patient);
+        }
+
         // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************

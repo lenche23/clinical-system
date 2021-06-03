@@ -55,7 +55,7 @@ namespace vezba.DoctorPages
         private void ViewPrescriptionClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             var prescription = (sender as Grid).DataContext as Prescription;
-            _doctorView.Main.Content = new ViewPrescription(prescription, _doctorView);
+            _doctorView.Main.Content = new ViewPrescription(prescription, _doctorView, _patient, this);
         }
 
         private void ViewAnamnesisClick(object sender, System.Windows.Input.MouseButtonEventArgs e)

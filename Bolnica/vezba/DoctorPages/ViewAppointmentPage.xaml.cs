@@ -57,15 +57,11 @@ namespace vezba.DoctorPages
 
         private void DeleteClick(object sender, RoutedEventArgs e)
         {
-            var messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "DeleteMedicine Confirmation", System.Windows.MessageBoxButton.YesNo);
-            if (messageBoxResult == MessageBoxResult.Yes)
-            {
                 var appointmentService = new AppointmentService();
                 appointmentService.DeleteAppointment(Appointment.AppointentId);
                 calendar.RemoveAppointment(appointmentGrid);
                 calendar.SetScrollViewerToFirstAppointment();
                 _doctorView.Main.GoBack();
-            }
         }
 
         private void AddPresetButton_Click(object sender, RoutedEventArgs e)
