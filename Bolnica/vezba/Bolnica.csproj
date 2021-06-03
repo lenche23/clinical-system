@@ -132,6 +132,9 @@
     <Compile Include="DoctorPages\ExtendHospitalTreatment.xaml.cs">
       <DependentUpon>ExtendHospitalTreatment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorPages\ViewAnamnesis.xaml.cs">
+      <DependentUpon>ViewAnamnesis.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorPages\ViewPrescription.xaml.cs">
       <DependentUpon>ViewPrescription.xaml</DependentUpon>
     </Compile>
@@ -641,6 +644,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DoctorPages\ExtendHospitalTreatment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\ViewAnamnesis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

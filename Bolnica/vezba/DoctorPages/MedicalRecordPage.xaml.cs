@@ -57,6 +57,12 @@ namespace vezba.DoctorPages
             var prescription = (sender as Grid).DataContext as Prescription;
             _doctorView.Main.Content = new ViewPrescription(prescription, _doctorView);
         }
+
+        private void ViewAnamnesisClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var anamnesis = (sender as Grid).DataContext as Anamnesis;
+            _doctorView.Main.Content = new ViewAnamnesis(anamnesis, _doctorView);
+        }
     }
 }
 
