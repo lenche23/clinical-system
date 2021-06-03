@@ -13,7 +13,6 @@
             <Grid.Resources>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Margin" Value="10"/>
-                    <Setter Property="Height" Value="25"/>
                     <Setter Property="Padding" Value="3"></Setter>
                     <Setter Property="FontFamily" Value="Verdana"/>
                 </Style>
@@ -40,7 +39,7 @@
             <TextBlock Grid.Column="1" Grid.Row="1" Text="{ Binding Time, StringFormat=dd/MM/yyyy HH:mm, Mode=OneWay}"/>
             <TextBlock Text="{Binding Patient}" Grid.Column="1" Grid.Row="2" Name="PatientNameSurname"/>
             <TextBlock Text="{Binding Doctor}" Grid.Column="1" Grid.Row="3" Name="DoctorNameSurname"/>
-            <TextBlock Text="{Binding Comment}" Grid.Column="1" Grid.Row="4" Name="TbComment" TextWrapping="Wrap" Height="200" Margin="10, 10, 400, 10" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Comment}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Top" TextWrapping="Wrap"/>
         </Grid>
     </ScrollViewer>
 </Page>
