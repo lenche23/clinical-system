@@ -651,7 +651,7 @@
       "hospitalTreatment": [
         {
           "StartDate": "2021-05-30T00:00:00",
-          "DurationInDays": 8,
+          "DurationInDays": 10,
           "Room": {
             "renovation": [
               {
@@ -1322,7 +1322,7 @@
       "HospitalTreatment": [
         {
           "StartDate": "2021-05-30T00:00:00",
-          "DurationInDays": 8,
+          "DurationInDays": 10,
           "Room": {
             "renovation": [
               {

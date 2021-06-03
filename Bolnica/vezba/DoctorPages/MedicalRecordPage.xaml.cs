@@ -28,15 +28,6 @@ namespace vezba.DoctorPages
             _doctorView.Main.GoBack();
         }
 
-        private void ExtendButtonClick(object sender, RoutedEventArgs e)
-        {
-            if (HospitalTreatmentListView.SelectedItems.Count > 0)
-            {
-                var hospitalTreatment = (HospitalTreatment) HospitalTreatmentListView.SelectedItem;
-                _doctorView.Main.Content = new ExtendHospitalTreatment(_patient, hospitalTreatment, _doctorView, this);
-            }
-        }
-
         private void NewPrescriptionClick(object sender, RoutedEventArgs e)
         {
             _doctorView.Main.Content = new CreatePrescriptionPage(_patient, _doctorView, this);

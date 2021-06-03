@@ -47,6 +47,12 @@ namespace vezba.DoctorPages
             patientService.RemoveHospitalTreatmentFromPatient(_patient, _hospitalTreatment);
             _medicalRecordPage.HospitalTreatmentListView.Items.Refresh();
             _doctorView.Main.GoBack();
+            _doctorView.Main.GoBack();
+        }
+
+        private void ExtendButtonClick(object sender, RoutedEventArgs e)
+        {
+            _doctorView.Main.Content = new ExtendHospitalTreatment(_patient, _hospitalTreatment, _doctorView, _medicalRecordPage);
         }
     }
 }

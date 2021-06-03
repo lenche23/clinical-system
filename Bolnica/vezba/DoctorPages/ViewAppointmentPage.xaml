@@ -39,8 +39,8 @@
             <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right">Soba:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Top">Lekar:</TextBlock>
             <StackPanel HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
-                <Button Padding="5" Margin="5" Click="MedicalRecordClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}">Zdravstveni karton</Button>
-                <Button Padding="5" Margin="5" Click="NewAnamnesisClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}">Kreiraj izveštaj</Button>
+                <Button Padding="5" Margin="5" Click="MedicalRecordClick" Height="30" Width="120"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Zdravstveni karton</Button>
+                <Button Padding="5" Margin="5" Click="NewAnamnesisClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Kreiraj izveštaj</Button>
                 <Button Padding="5" Margin="5" Click="EditClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Izmeni</Button>
                 <Button Padding="5" Margin="5" Click="DeleteClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorCancelButton}" FontWeight="Bold">Obriši</Button>
                 <Button Padding="5" Margin="5" Click="ReturnClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorCancelButton}" FontWeight="Bold">Povratak</Button>
