@@ -138,6 +138,9 @@
     <Compile Include="DoctorPages\ViewPrescription.xaml.cs">
       <DependentUpon>ViewPrescription.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorPages\ViewReferralLetter.xaml.cs">
+      <DependentUpon>ViewReferralLetter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorValidation\StringToIntValidationRule.cs" />
     <Compile Include="DoctorValidation\TimeValidationRule.cs" />
     <Compile Include="DoctorView.xaml.cs">
@@ -652,6 +655,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DoctorPages\ViewPrescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\ViewReferralLetter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

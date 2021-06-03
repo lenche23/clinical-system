@@ -63,6 +63,12 @@ namespace vezba.DoctorPages
             var anamnesis = (sender as Grid).DataContext as Anamnesis;
             _doctorView.Main.Content = new ViewAnamnesis(anamnesis, _doctorView);
         }
+
+        private void ViewReferralLetterClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var referralLetter = (sender as Grid).DataContext as ReferralLetter;
+            _doctorView.Main.Content = new ViewReferralLetter(referralLetter, _doctorView);
+        }
     }
 }
 
