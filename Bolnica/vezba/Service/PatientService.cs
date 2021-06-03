@@ -173,6 +173,11 @@ namespace Service
             EditPatient(patient);
         }
 
+        public void RemoveReferralLetterFromPatient(Patient patient, ReferralLetter referralLetter)
+        {
+            patient.MedicalRecord.RemoveReferralLetter(referralLetter);
+            EditPatient(patient);
+        }
         // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************
