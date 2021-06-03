@@ -184,6 +184,12 @@ namespace Service
             patient.MedicalRecord.RemoveHospitalTreatment(hospitalTreatment);
             EditPatient(patient);
         }
+
+        public void RemoveAnamnesisFromPatient(Patient patient, Anamnesis anamnesis)
+        {
+            patient.MedicalRecord.RemoveAnamnesis(anamnesis);
+            EditPatient(patient);
+        }
         // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************

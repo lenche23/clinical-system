@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Model;
+using Service;
 
 namespace vezba.DoctorPages
 {
@@ -22,16 +23,30 @@ namespace vezba.DoctorPages
     public partial class ViewAnamnesis : Page
     {
         private readonly DoctorView _doctorView;
+        private readonly Patient _patient;
+        private readonly Anamnesis _anamnesis;
+        private readonly MedicalRecordPage _medicalRecordPage;
 
-        public ViewAnamnesis(Anamnesis anamnesis, DoctorView doctorView)
+        public ViewAnamnesis(Anamnesis anamnesis, DoctorView doctorView, Patient patient, MedicalRecordPage medicalRecordPage)
         {
             InitializeComponent();
             _doctorView = doctorView;
-            DataContext = anamnesis;
+            _patient = patient;
+            _anamnesis = anamnesis;
+            _medicalRecordPage = medicalRecordPage;
+            DataContext = _anamnesis;
         }
 
         private void ReturnButtonClick(object sender, RoutedEventArgs e)
         {
+            _doctorView.Main.GoBack();
+        }
+
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
+        {
+            var patientService = new PatientService();
+            patientService.RemoveAnamnesisFromPatient(_patient, _anamnesis);
+            _medicalRecordPage.AnamnesisListView.Items.Refresh();
             _doctorView.Main.GoBack();
         }
     }
