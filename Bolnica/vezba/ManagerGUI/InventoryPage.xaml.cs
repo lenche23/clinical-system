@@ -32,7 +32,7 @@ namespace vezba.ManagerGUI
 
         private void Add_Equipment_Button_Click(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new InventoryAddEquipmentPage();
+            mainManagerWindow.MainManagerView.Content = new InventoryAddEquipmentPage(mainManagerWindow);
             EquipmentService equipmentService = new EquipmentService();
             equipmentList = equipmentService.GetAllEquipment();
         }
@@ -58,7 +58,7 @@ namespace vezba.ManagerGUI
             if (InventaryBinding.SelectedIndex > -1)
             {
                 Equipment equipment = (Equipment)InventaryBinding.SelectedItem;
-                mainManagerWindow.MainManagerView.Content = new InventoryChangeEquipmentPage(equipment, this);
+                mainManagerWindow.MainManagerView.Content = new InventoryChangeEquipmentPage(mainManagerWindow, equipment, this);
             }
 
             else

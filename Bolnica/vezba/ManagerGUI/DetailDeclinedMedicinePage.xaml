@@ -7,58 +7,131 @@
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="DetailDeclinedMedicinePage">
-    <Grid Background="White">
-        <DockPanel>
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
-            </StackPanel>
-            <Grid Margin="10,10,10,90" DockPanel.Dock="Left" Width="150">
-                <Grid.Resources>
-                    <Style TargetType="{x:Type TextBlock}">
-                        <Setter Property="Margin" Value="10"/>
-                        <Setter Property="Height" Value="20"/>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFE5F0"/>
+                <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
+                <GradientStop Color="#FFFFF9EA" Offset="0.529"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="23*" ></ColumnDefinition>
+                <ColumnDefinition Width="21*" ></ColumnDefinition>
+                <ColumnDefinition Width="28*" ></ColumnDefinition>
+                <ColumnDefinition Width="22*" ></ColumnDefinition>
+                <ColumnDefinition Width="18*" ></ColumnDefinition>
+                <ColumnDefinition Width="18*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="5,15" FontSize="20" Foreground="#FFB05555" Background="White" Click="ButtonMainClick" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Početna
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
                     </Style>
-                </Grid.Resources>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <TextBlock Name="Naziv"  Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right">Naziv Leka:</TextBlock>
-                <TextBlock Name="Proizvodjac" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Proizvođač:</TextBlock>
-                <TextBlock Name="Pakovanje"  Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Pakovanje:</TextBlock>
-                <TextBlock Name="Oblik"  Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right">Oblik:</TextBlock>
-                <TextBlock Name="Zamenski"  Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Zamenski lek:</TextBlock>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="1" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonRoomsClick">Prostorije
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="2" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonInventoryClick">Inventar
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="3" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Snabdevanje
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="4" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Zaposleni
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="5" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Ankete
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="6" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonMedicineClick">Lekovi
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid Background="White" Margin="10,10,10,0" Grid.Row="1">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                </StackPanel>
+                <Grid Margin="10,10,10,90" DockPanel.Dock="Left" Width="150">
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Margin" Value="10"/>
+                            <Setter Property="Height" Value="20"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Name="Naziv"  Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right">Naziv Leka:</TextBlock>
+                    <TextBlock Name="Proizvodjac" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Proizvođač:</TextBlock>
+                    <TextBlock Name="Pakovanje"  Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Pakovanje:</TextBlock>
+                    <TextBlock Name="Oblik"  Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right">Oblik:</TextBlock>
+                    <TextBlock Name="Zamenski"  Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Zamenski lek:</TextBlock>
 
-                <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Text="{ Binding Name, Mode=OneWay}"/>
-                <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Text="{ Binding Manufacturer, Mode=OneWay}"/>
-                <TextBlock Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Text="{Binding Packaging, Mode=OneWay}"/>
-                <TextBlock Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Text="{Binding Condition, Mode=OneWay}"/>
-                <TextBlock Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Text="{Binding ReplacementMedicine.Name, Mode=OneWay}"/>
-            </Grid>
-            <StackPanel Width="300" Margin="0,130,0,30">
-                <TextBlock Margin="5" HorizontalAlignment="Left">Alergeni:</TextBlock>
-                <ListView Margin="5" Height="100" x:Name="listViewAlergens">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Alergen" Width="290" DisplayMemberBinding="{Binding Name}" />
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-                <TextBlock Name="Komentar" Margin="5,5,10,5" Height="159">Komentar:</TextBlock>
-                <Button Height="50" Margin="50,0,70,0" Content="Izmeni odbijeni lek" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="180" Click="EditButtonClick"/>
-            </StackPanel>
-        </DockPanel>
+                    <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Text="{ Binding Name, Mode=OneWay}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Text="{ Binding Manufacturer, Mode=OneWay}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Text="{Binding Packaging, Mode=OneWay}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Text="{Binding Condition, Mode=OneWay}"/>
+                    <TextBlock Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Text="{Binding ReplacementMedicine.Name, Mode=OneWay}"/>
+                </Grid>
+                <StackPanel Width="300" Margin="0,60,0,30">
+                    <TextBlock Margin="5" HorizontalAlignment="Left">Alergeni:</TextBlock>
+                    <ListView Margin="5" Height="100" x:Name="listViewAlergens">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Alergen" Width="290" DisplayMemberBinding="{Binding Name}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <TextBlock Name="Komentar" Margin="5,5,10,5" Height="159">Komentar:</TextBlock>
+                    <Button Height="49" Margin="50,0,90,0" Content="Izmeni odbijeni lek" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="160" Click="EditButtonClick"/>
+                </StackPanel>
+            </DockPanel>
 
-        <Button Click ="ButtonBackClick" Margin="10,470,655,10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
-            <Button.Background>
-                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
-            </Button.Background>
-        </Button>
+            <Button Click ="ButtonBackClick" Margin="10,425,615,10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

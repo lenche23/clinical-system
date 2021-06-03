@@ -147,5 +147,25 @@ namespace vezba.ManagerGUI
             MedicinePage.MedicineList.Remove(selected);
             mainManagerWindow.MainManagerView.NavigationService.GoBack();
         }
+
+        private void ButtonRoomsClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
+        }
+
+        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
+        }
+
+        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
+        }
+
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
     }
 }

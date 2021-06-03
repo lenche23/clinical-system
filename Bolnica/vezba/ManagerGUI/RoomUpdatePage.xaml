@@ -7,50 +7,134 @@
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RoomUpdatePage" Background="#FFFFF0F0">
-
-    <Grid Margin="130,50,130,30" Background="#FFFFE1E1">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="15*">
+            <RowDefinition Height="70"/>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="23*" ></ColumnDefinition>
+                <ColumnDefinition Width="21*" ></ColumnDefinition>
+                <ColumnDefinition Width="28*" ></ColumnDefinition>
+                <ColumnDefinition Width="22*" ></ColumnDefinition>
+                <ColumnDefinition Width="18*" ></ColumnDefinition>
+                <ColumnDefinition Width="18*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="5,15" FontSize="20" Foreground="#FFB05555" Background="White" Click="ButtonMainClick" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Početna
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="1" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonRoomsClick">Prostorije
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="2" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonInventoryClick">Inventar
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="3" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Snabdevanje
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="4" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Zaposleni
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="5" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Ankete
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="6" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonMedicineClick">Lekovi
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1" Margin="135,20,135,80" Background="#FFFFE1E1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="67*">
             </RowDefinition>
-            <RowDefinition Height="14*"></RowDefinition>
-            <RowDefinition Height="14*"></RowDefinition>
-            <RowDefinition Height="14*"></RowDefinition>
-            <RowDefinition Height="27*"></RowDefinition>
-            <RowDefinition Height="14*"></RowDefinition>
+            <RowDefinition Height="62*"></RowDefinition>
+            <RowDefinition Height="62*"></RowDefinition>
+            <RowDefinition Height="39*"></RowDefinition>
+            <RowDefinition Height="143*"></RowDefinition>
+            <RowDefinition Height="62*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid>
-            <TextBlock Name="RoomTextBlock" FontSize="28" Margin="55,11,120,10" TextAlignment="Center">Prostorija</TextBlock>
-            <Button Margin="425,10,10,15" Click="DeleteButtonClick"> Kanta </Button>
+            <TextBlock Name="RoomTextBlock" FontSize="28" Margin="60,10,75,11" TextAlignment="Center">Prostorija</TextBlock>
+            <Button Margin="425,10,10,15" Click="DeleteButtonClick">Kanta</Button>
         </Grid>
         <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Button Click="Dodaj_Button_Click" Margin="10,40,125,0" BorderThickness="2" Background="#FFD9ECC9" Grid.Column="1">Dodaj proizvod</Button>
-            <Button Click="Izmeni_Količinu_Button_Click" Margin="0,40,0,0" BorderThickness="2" Background="#FFD9ECC9" HorizontalAlignment="Left" Width="110">Izmeni količinu</Button>
-            <Button Click="Izbriši_Button_Click" Margin="135,40,30,0" BorderThickness="2" Background="#FFC5C5C5" Grid.Column="1">Izbriši</Button>
-            <Button Click="Razmena_Button_Click" Margin="125,40,10,0" BorderThickness="2" Background="#FFD9ECC9">Razmena</Button>
+            <Button Click="Dodaj_Button_Click" Margin="10,0,120,10" BorderThickness="2" Background="#FFD9ECC9" Grid.Column="1" Grid.RowSpan="2">Dodaj proizvod</Button>
+            <Button Click="Izmeni_Količinu_Button_Click" BorderThickness="2" Background="#FFD9ECC9" HorizontalAlignment="Left" Width="105">Izmeni količinu</Button>
+            <Button Click="Izbriši_Button_Click" Margin="135,0,10,10" BorderThickness="2" Background="#FFC5C5C5" Grid.Column="1" Grid.RowSpan="2">Izbriši</Button>
+            <Button Click="Razmena_Button_Click" Margin="125,0,10,0" BorderThickness="2" Background="#FFD9ECC9">Razmena</Button>
         </Grid>
         <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="43*"/>
+                <RowDefinition Height="19*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20*" ></ColumnDefinition>
                 <ColumnDefinition Width="20*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" FontSize="20" Margin="45,25,30,10" TextAlignment="Right">Sprat:</TextBlock>
-            <ComboBox Grid.Column="1" FontSize="20" Name="comboFloor" Margin="0,25,105,10"></ComboBox>
+            <TextBlock Grid.Column="0" FontSize="20" Margin="45,10,25,0" TextAlignment="Right">Sprat:</TextBlock>
+            <ComboBox Grid.Column="1" FontSize="20" Name="comboFloor" Margin="0,10,100,0"></ComboBox>
         </Grid>
         <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="21*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="49*" ></ColumnDefinition>
                 <ColumnDefinition Width="13*" ></ColumnDefinition>
                 <ColumnDefinition Width="36*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" FontSize="20" Margin="45,25,30,10" TextAlignment="Right">Tip prostorije:</TextBlock>
-            <ComboBox Grid.Column="1" FontSize="20" Name="comboRoomType" Margin="0,25,35,10" Grid.ColumnSpan="2"></ComboBox>
+            <TextBlock Grid.Column="0" FontSize="20" Margin="50,3,25,10" TextAlignment="Right">Tip prostorije:</TextBlock>
+            <ComboBox Grid.Column="1" FontSize="20" Name="comboRoomType" Margin="0,0,35,10" Grid.ColumnSpan="2"></ComboBox>
         </Grid>
-        <Grid Grid.Row="4">
-            <ListView Margin="65,10,59,24" Name="RoomInventoryBinding" RenderTransformOrigin="0.5,0.5">
+        <Grid Grid.Row="4" Margin="0,0,0,45" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0*"/>
+            </Grid.RowDefinitions>
+            <ListView Margin="65,0,59,0" Name="RoomInventoryBinding" RenderTransformOrigin="0.5,0.5">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding EquipmentId}" />
@@ -62,12 +146,17 @@
             </ListView>
         </Grid>
         <Grid Grid.Row="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="17*"/>
+                <RowDefinition Height="45*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20*" ></ColumnDefinition>
                 <ColumnDefinition Width="20*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button  FontSize="20" Click="Potvrda_Button_Click" Margin="80,20,25,14" Background="#FFB7C3A2">Potvrdi</Button>
-            <Button FontSize="20" Click="Odustanak_Button_Click" Margin="25,20,80,14" Grid.Column="1">Odustani</Button>
+            <Button  FontSize="20" Click="Potvrda_Button_Click" Margin="70,7,20,7" Background="#FFB7C3A2" Grid.Row="1">Potvrdi</Button>
+            <Button FontSize="20" Click="Odustanak_Button_Click" Margin="20,7,70,7" Grid.Column="1" Grid.Row="1">Odustani</Button>
         </Grid>
+    </Grid>
     </Grid>
 </Page>

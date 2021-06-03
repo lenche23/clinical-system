@@ -8,13 +8,86 @@
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RenovationViewPage">
     <Grid>
-        <Label Content="Zakazivanje renoviranja"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="283,20,240,499"/>
-        <Label Name="BrojProstorije" Content="Prostorija: " Margin="147,102,450,417" FontSize="14"></Label>
-        <Label Content="Početni datum:" Margin="132,158,493,375"/>
-        <Label Content="Predviđeno trajanje:" Margin="112,220,493,313" />
-        <TextBox Name="PocetniDatum" Margin="262,153,145,380" RenderTransformOrigin="0.491,0.484" />
-        <TextBox Name="Trajanje" RenderTransformOrigin="0.491,0.484" Margin="262,210,145,313" />
-        <Button Click="OkButtonClick" Margin="190,430,407,80">Potvrdi</Button>
-        <Button Click="CancelButtonClick" Margin="382,430,195,80">Odustani</Button>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFE5F0"/>
+                <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
+                <GradientStop Color="#FFFFF9EA" Offset="0.529"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="23*" ></ColumnDefinition>
+                <ColumnDefinition Width="21*" ></ColumnDefinition>
+                <ColumnDefinition Width="28*" ></ColumnDefinition>
+                <ColumnDefinition Width="22*" ></ColumnDefinition>
+                <ColumnDefinition Width="18*" ></ColumnDefinition>
+                <ColumnDefinition Width="18*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="5,15" FontSize="20" Foreground="#FFB05555" Background="White" Click="ButtonMainClick" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Početna
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="1" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonRoomsClick">Prostorije
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="2" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonInventoryClick">Inventar
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="3" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Snabdevanje
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="4" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Zaposleni
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="5" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Ankete
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="6" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonMedicineClick">Lekovi
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid Row="1">
+        <Label Content="Zakazivanje renoviranja"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="283,20,240,440"/>
+        <Label Name="BrojProstorije" Content="Prostorija: " Margin="147,102,450,352" FontSize="14"></Label>
+        <Label Content="Početni datum:" Margin="132,158,493,310"/>
+        <Label Content="Predviđeno trajanje:" Margin="112,220,493,240" />
+        <TextBox Name="PocetniDatum" Margin="262,153,145,310" RenderTransformOrigin="0.491,0.484" />
+        <TextBox Name="Trajanje" RenderTransformOrigin="0.491,0.484" Margin="262,210,145,240" />
+        <Button Click="OkButtonClick" Margin="192,405,415,55">Potvrdi</Button>
+        <Button Click="CancelButtonClick" Margin="372,405,240,55">Odustani</Button>
+    </Grid>
     </Grid>
 </Page>

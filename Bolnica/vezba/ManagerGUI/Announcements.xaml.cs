@@ -23,31 +23,40 @@ namespace vezba.ManagerGUI
             AnnouncementService announcementService = new AnnouncementService();
             List<Announcement> announcements = announcementService.GetAnnouncementsByUserType(ut);
             Ans = new ObservableCollection<Announcement>(announcements);
+            AnnouncementsList.ItemsSource = Ans;
         }
 
-        private void View_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (announcementTable.SelectedCells.Count > 0)
-            {
-                Announcement a = (Announcement) announcementTable.SelectedItem;
-                mainManagerWindow.MainManagerView.Content = new ViewAnnouncementManagerPage(a);
-            }
-            else
-            {
-                MessageBox.Show("Niste selektovali obavestenje!");
-            }
-        }
         private void ButtonBackClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void ButtonRoomsClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
+        }
+
+        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
+        }
+
+        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
+        }
+
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
 
         private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (announcementTable.SelectedCells.Count > 0)
+            if (AnnouncementsList.SelectedIndex > -1)
             {
-                Announcement a = (Announcement)announcementTable.SelectedItem;
-                mainManagerWindow.MainManagerView.Content = new ViewAnnouncementManagerPage(a);
+                Announcement a = (Announcement)AnnouncementsList.SelectedItems[0];
+                mainManagerWindow.MainManagerView.Content = new ViewAnnouncementManagerPage(mainManagerWindow, a);
             }
             else
             {

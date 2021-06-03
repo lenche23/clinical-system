@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using Model;
@@ -8,9 +9,11 @@ namespace vezba.ManagerGUI
 {
     public partial class InventoryAddEquipmentPage : Page
     {
-        public InventoryAddEquipmentPage()
+        private MainManagerWindow mainManagerWindow;
+        public InventoryAddEquipmentPage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
+            this.mainManagerWindow = mainManagerWindow;
         }
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
@@ -34,6 +37,26 @@ namespace vezba.ManagerGUI
         private void Cancel_Add_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void ButtonRoomsClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
+        }
+
+        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
+        }
+
+        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
+        }
+
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
     }
 }

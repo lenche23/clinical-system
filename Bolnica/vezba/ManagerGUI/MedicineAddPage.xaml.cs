@@ -13,10 +13,12 @@ namespace vezba.ManagerGUI
         private Medicine newMedicine;
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
         public List<Ingridient> ingredientTemporaryList { get; set; }
-        public MedicineAddPage()
+        private MainManagerWindow mainManagerWindow;
+        public MedicineAddPage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
             this.DataContext = this;
+            this.mainManagerWindow = mainManagerWindow;
             MedicineService medicineService = new MedicineService();
             medicineList = medicineService.GetApproved();
             comboReplacementMedicine.ItemsSource = medicineList;
@@ -71,6 +73,25 @@ namespace vezba.ManagerGUI
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+        private void ButtonRoomsClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
+        }
+
+        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
+        }
+
+        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
+        }
+
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
     }
 }

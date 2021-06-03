@@ -26,7 +26,7 @@ namespace vezba.ManagerGUI
 
         private void Add_Medicine_Button_Click(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new MedicineAddPage();
+            mainManagerWindow.MainManagerView.Content = new MedicineAddPage(mainManagerWindow);
         }
 
         private void ButtonMainClick(object sender, RoutedEventArgs e)

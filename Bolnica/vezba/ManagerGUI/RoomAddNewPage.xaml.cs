@@ -9,9 +9,11 @@ namespace vezba.ManagerGUI
 {
     public partial class RoomAddNewPage : Page
     {
-        public RoomAddNewPage()
+        private MainManagerWindow mainManagerWindow;
+        public RoomAddNewPage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
+            this.mainManagerWindow = mainManagerWindow;
             List<string> floor = new List<string> { "Prvi", "Drugi", "Treći" };
             comboFloor.ItemsSource = floor;
             List<string> type = new List<string> {"Soba za preglede", "Soba za odmor", "Operaciona sala", "Magacin" };
@@ -43,6 +45,26 @@ namespace vezba.ManagerGUI
         private void Odustani_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void ButtonRoomsClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
+        }
+
+        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
+        }
+
+        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
+        }
+
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
     }
 }

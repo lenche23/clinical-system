@@ -45,5 +45,5 @@ namespace Model
         {
             Recipients.Add(recipient);
         }
-    }
+   }
 }

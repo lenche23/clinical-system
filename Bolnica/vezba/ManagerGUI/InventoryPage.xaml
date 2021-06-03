@@ -115,7 +115,6 @@
         <CheckBox FontSize="18" Name ="CheckedBoxStatic" Margin="45,92,586,18" IsChecked ="True" Unchecked ="StaticCheckBox_Unchecked" Checked="StaticCheckBox_Checked" Grid.Row="1">Statička</CheckBox>
         <CheckBox FontSize="18" Name ="CheckedBoxDinamic" Margin="45,65,586,39" IsChecked ="True" Unchecked ="DinamicCheckBox_Unchecked" Checked="DinamicCheckBox_Checked" Grid.Row="1">Dinamička</CheckBox>
         <Label FontSize="18" Margin="510,23,15,39" Content="Pretraga opreme po nazivu" Grid.Row="1"/>
-        <Label Margin="10,18,650,65" Content="Filter:" FontSize="20" Grid.Row="1"/>
         <TextBox FontSize="20" Margin="536,65,45,20" Name="txtFilter" TextChanged="txtFilter_TextChanged" Grid.Row="1" BorderThickness="1">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">

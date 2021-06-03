@@ -21,5 +21,25 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             MainManagerView.Content = new MainManagerPage(this);
         }
+
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonRoomsClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

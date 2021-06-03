@@ -36,7 +36,7 @@ namespace vezba.ManagerGUI
 
         private void New_Room_Button_Click(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new RoomAddNewPage();
+            mainManagerWindow.MainManagerView.Content = new RoomAddNewPage(mainManagerWindow);
         }
 
         private void Delete_Room_Button_Click(object sender, RoutedEventArgs e)
