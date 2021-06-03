@@ -75,11 +75,9 @@
                                 <TextBlock Grid.Column="1" Grid.Row="8" Name="IdNumberInfo" Text="{Binding IdCard, Mode=OneWay}"/>
                                 <TextBlock Grid.Column="1" Grid.Row="9" Name="MedicalNumberInfo" Text="{Binding MedicalRecord.MedicalIdNumber, Mode=OneWay}"/>
                                 <TextBlock Grid.Column="1" Grid.Row="10" Name="HealthInsuranceNumberInfo" Text="{Binding MedicalRecord.HealthInsuranceNumber, Mode=OneWay}"/>
-                                <DataGrid Grid.Column="1" Grid.Row="11" x:Name="allergenGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding MedicalRecord.Allergen}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 400, 10">
-                                    <DataGrid.Columns>
-                                        <DataGridTextColumn Header="Naziv" Binding="{Binding Name}"  Width="*"/>
-                                    </DataGrid.Columns>
-                                </DataGrid>
+                                <ScrollViewer HorizontalAlignment="Left" Grid.Column="1" Grid.Row="11" Margin="10" VerticalScrollBarVisibility="Auto">
+                                    <ItemsControl Background="White" x:Name="AllergenItemsControl" ItemsSource="{Binding MedicalRecord.Allergen}" DisplayMemberPath="Name" HorizontalAlignment="Left"></ItemsControl>
+                                </ScrollViewer>
                         </Grid>
                     </ScrollViewer>
                 </TabItem>
@@ -126,7 +124,7 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="0, 2">
-                                        <Grid Style="{StaticResource ResourceKey = GridHover}">
+                                        <Grid Style="{StaticResource ResourceKey = GridHover}" MouseLeftButtonDown="ViewPrescriptionClick">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>

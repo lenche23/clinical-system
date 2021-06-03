@@ -51,6 +51,12 @@ namespace vezba.DoctorPages
         {
             _doctorView.Main.Content = new CreateHospitalTreatment(_patient, _doctorView, this);
         }
+
+        private void ViewPrescriptionClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var prescription = (sender as Grid).DataContext as Prescription;
+            _doctorView.Main.Content = new ViewPrescription(prescription, _doctorView);
+        }
     }
 }
 

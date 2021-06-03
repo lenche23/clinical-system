@@ -33,5 +33,14 @@ namespace Model
                 return Number + " " + ((ReferencePeriod == Period.daily) ? "dnevno" : "meseèno");
             }
         }
-    }
+
+        [JsonIgnore]
+        public String ReferencePeriodSerbian
+        {
+            get
+            {
+                return ((ReferencePeriod == Period.daily) ? "dnevno" : "meseèno");
+            }
+        }
+   }
 }
