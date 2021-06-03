@@ -73,7 +73,7 @@ namespace vezba.DoctorPages
         private void ViewHospitalTreatmentClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             var hospitalTreatment = (sender as Grid).DataContext as HospitalTreatment;
-            _doctorView.Main.Content = new ViewHospitalTreatment(hospitalTreatment, _doctorView);
+            _doctorView.Main.Content = new ViewHospitalTreatment(hospitalTreatment, _doctorView, _patient, this);
         }
     }
 }

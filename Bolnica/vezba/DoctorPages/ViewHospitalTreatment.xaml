@@ -29,6 +29,7 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <StackPanel HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <Button HorizontalAlignment="Right" Padding="5" Margin="5" Width="100" Height ="30" Click="DeleteButtonClick" Style="{StaticResource ResourceKey = DoctorCancelButton}" FontWeight="Bold">Obriši</Button>
                 <Button HorizontalAlignment="Right" Padding="5" Margin="5" Width="100" Height ="30" Click="ReturnButtonClick" Style="{StaticResource ResourceKey = DoctorCancelButton}" FontWeight="Bold">Povratak</Button>
             </StackPanel>
             <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Početak lečenja:</TextBlock>
