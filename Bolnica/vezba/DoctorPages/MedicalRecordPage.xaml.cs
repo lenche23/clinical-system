@@ -69,6 +69,12 @@ namespace vezba.DoctorPages
             var referralLetter = (sender as Grid).DataContext as ReferralLetter;
             _doctorView.Main.Content = new ViewReferralLetter(referralLetter, _doctorView);
         }
+
+        private void ViewHospitalTreatmentClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var hospitalTreatment = (sender as Grid).DataContext as HospitalTreatment;
+            _doctorView.Main.Content = new ViewHospitalTreatment(hospitalTreatment, _doctorView);
+        }
     }
 }
 

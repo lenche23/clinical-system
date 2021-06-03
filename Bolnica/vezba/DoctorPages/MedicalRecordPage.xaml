@@ -294,7 +294,7 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="0, 2">
-                                        <Grid Style="{StaticResource ResourceKey = GridHover}">
+                                        <Grid Style="{StaticResource ResourceKey = GridHover}" MouseLeftButtonDown="ViewHospitalTreatmentClick">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
