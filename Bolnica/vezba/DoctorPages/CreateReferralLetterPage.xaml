@@ -58,6 +58,7 @@
                 <TextBox.Text>
                     <Binding Path="Duration" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
+                            <val:NonNullValidationRule ValidationStep="RawProposedValue"/>
                             <val:StringToIntValidationRule ValidationStep="RawProposedValue"/>
                             <val:NonZeroValidationRule ValidationStep="ConvertedProposedValue"/>
                         </Binding.ValidationRules>

@@ -71,7 +71,8 @@ namespace vezba.DoctorPages
             DataContext = this;
             var medicineService = new MedicineService();
             ValidMedicine = medicineService.GenerateValidMedicineForPatient(_patient.MedicalRecord);
-            this._medicalRecordPage = medicalRecordPage;
+            _medicalRecordPage = medicalRecordPage;
+            DpStartDate.SelectedDate = DateTime.Now.Date;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -103,14 +104,14 @@ namespace vezba.DoctorPages
 
         private Boolean ValidateEntries()
         {
-            if (DpStartDate.SelectedDate == null)
-                return false;
-            int r;
-            if (!int.TryParse(TbDuration.Text, out r) || int.Parse(TbDuration.Text) == 0)
-                return false;
-            if (!int.TryParse(TbNumber.Text, out r) || int.Parse(TbNumber.Text) == 0)
-                return false;
-            return true;
+            Boolean ret = true;
+            TbDuration.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(TbDuration))
+                ret = false;
+            TbNumber.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(TbNumber))
+                ret = false;
+            return ret;
         }
     }
 }

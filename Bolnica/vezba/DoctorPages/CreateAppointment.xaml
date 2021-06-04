@@ -92,7 +92,7 @@
                 <TextBox.Text>
                     <Binding Path="Duration" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
-                            <val:NonNullValidationRule ValidationStep="RawProposedValue"></val:NonNullValidationRule>
+                            <val:NonNullValidationRule ValidationStep="RawProposedValue"/>
                             <val:StringToIntValidationRule ValidationStep="RawProposedValue"/>
                             <val:MinMaxValidationRule ValidationStep="ConvertedProposedValue" Min="10" Max="120"/>
                         </Binding.ValidationRules>

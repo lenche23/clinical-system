@@ -61,6 +61,8 @@ namespace vezba.DoctorPages
             
             _doctorView = doctorView;
             this.medicalRecordPage = medicalRecordPage;
+
+            DpStartDate.SelectedDate = DateTime.Now.Date;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -92,10 +94,9 @@ namespace vezba.DoctorPages
 
         private Boolean ValidateEntries()
         {
-            if (DpStartDate.SelectedDate == null)
-                return false;
-            int r;
-            if (!int.TryParse(TbDuration.Text, out r) || int.Parse(TbDuration.Text) == 0)
+
+            TbDuration.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(TbDuration))
                 return false;
             return true;
         }
