@@ -78,7 +78,7 @@
             </Button>
         </Grid>
 
-        <Grid Grid.Row="1"  Background="#FFFFE5E5" Margin="125,50,115,75">
+        <Grid Grid.Row="1"  Background="#FFFFE5E5" Margin="120,60,120,65" HorizontalAlignment="Center" Width="510" Height="375" VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="69*"></RowDefinition>
                 <RowDefinition Height="211*"></RowDefinition>
@@ -109,7 +109,6 @@
             <TextBlock FontSize="20" Grid.Row="1" Margin="110,131,275,40">Tip opreme:</TextBlock>
             <TextBox Name="NazivOpreme" FontSize="20"  Margin="255,39,60,136" RenderTransformOrigin="0.491,0.484" Grid.Row="1" />
             <ComboBox Grid.Row="1" FontSize="16" Name="comboEquipmentType" Margin="255,131,90,44"/>
-            <Button Click="OkButtonClick" Margin="60,40,450,55" Grid.Row="2">Potvrdi</Button>
         </Grid>
     </Grid>
 </Page>

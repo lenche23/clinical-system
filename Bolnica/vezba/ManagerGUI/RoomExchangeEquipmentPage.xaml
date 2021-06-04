@@ -10,9 +10,7 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFFE5F0"/>
                 <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
-                <GradientStop Color="#FFFFF9EA" Offset="0.529"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -80,14 +78,39 @@
             </Button>
         </Grid>
         <Grid Row="1">
-            <Label Content="Broj prostorije u koju prenosimo:" Margin="44,54,520,389"/>
-        <TextBox Name="RoomNumberTextBox" Text="{Binding RoomNumber, Mode=OneWay}" Margin="244,54,64,410"/>
-
-        <Label Content="Količina prenete opreme:" Margin="86,116,511,350"/>
-        <TextBox Name="ItemQuantity" Text="{Binding RoomNumber, Mode=OneWay}" Margin="244,116,64,350"/>
-
-        <Button Click="OkButtonClick" Margin="146,277,405,190">Potvrdi</Button>
-        <Button Click="CancelButtonClick" Margin="415,277,132,190">Odustani</Button>
+            <Grid Background="#FFFFE5E5" Margin="120,35,120,50" HorizontalAlignment="Center" VerticalAlignment="Center" Height="384" Width="455">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="14*"></RowDefinition>
+                    <RowDefinition Height="39*"></RowDefinition>
+                    <RowDefinition Height="23*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,41,25,30" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Click="CancelButtonClick" Height="40" BorderBrush="Transparent" Margin="25,41,95,30" FontSize="18" Content="Odustani" Grid.Column="1" Background="#FFBBBBBB">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+                <TextBlock FontSize="24" VerticalAlignment="Center" TextAlignment="Center">Razmena dinamičke opreme</TextBlock>
+                <TextBlock FontSize="20" Grid.Row="1" Margin="224,27,19,126">Oprema:</TextBlock>
+                <TextBlock FontSize="20" Grid.Row="1" Margin="14,85,155,75" TextAlignment="Right">Broj prostorije u koju se prenosi:</TextBlock>
+                <TextBlock FontSize="20" Grid.Row="1" Margin="50,0,155,17" Height="37" VerticalAlignment="Bottom" TextAlignment="Right" Text="Količina opreme za prenos:"/>
+                <ComboBox Grid.Row="1" ItemsSource="{Binding roomList}" DisplayMemberPath="RoomNumber" Name="RoomToMerge" Margin="337,85,19,75"/>
+                <TextBox FontSize="20" Grid.Row="1" Name="ItemQuantity" Text="{Binding RoomNumber, Mode=OneWay}" Margin="337,143,19,17"/>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

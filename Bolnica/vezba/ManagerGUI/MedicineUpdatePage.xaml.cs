@@ -40,9 +40,9 @@ namespace vezba.ManagerGUI
 
             ingredientTemporaryList = medicine.ingridient;
 
-            nazivTB.Text = medicine.Name;
-            proizvodjacTB.Text = medicine.Manufacturer;
-            pakovanjeTB.Text = medicine.Packaging;
+            NameTextBox.Text = medicine.Name;
+            ManufacturerTextBox.Text = medicine.Manufacturer;
+            PackagingTextBox.Text = medicine.Packaging;
 
             if (medicine.Condition == MedicineCondition.capsule)
             {
@@ -79,9 +79,9 @@ namespace vezba.ManagerGUI
 
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
-            selected.Name = nazivTB.Text;
-            selected.Manufacturer = proizvodjacTB.Text;
-            selected.Packaging = pakovanjeTB.Text;
+            selected.Name = NameTextBox.Text;
+            selected.Manufacturer = ManufacturerTextBox.Text;
+            selected.Packaging = PackagingTextBox.Text;
 
             if (comboCondition.SelectedIndex == 1)
             {
@@ -131,7 +131,7 @@ namespace vezba.ManagerGUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var ingredientName = NoviSastojak.Text;
+            var ingredientName = NewIngredientTextBox.Text;
             var newIngredient = new Ingridient(ingredientName);
 
             ingredientTemporaryList.Add(newIngredient);

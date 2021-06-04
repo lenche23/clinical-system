@@ -10,9 +10,7 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFFE5F0"/>
                 <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
-                <GradientStop Color="#FFFFF9EA" Offset="0.529"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -80,17 +78,41 @@
             </Button>
         </Grid>
         <Grid Row="1">
-        <Label Content="Broj prostorije u koju prenosimo:" Margin="44,54,520,420"/>
-        <TextBox Name="BrojSobe" Text="{Binding RoomNumber, Mode=OneWay}" Margin="244,54,64,420"/>
-
-        <Label Content="Količina prenete opreme:" Margin="64,116,533,360"/>
-        <TextBox Name="Količina" Text="{Binding RoomNumber, Mode=OneWay}" Margin="244,116,64,360"/>
-
-        <Label Content="Datum transfera:" Margin="109,160,533,316"/>
-        <DatePicker Name ="Date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="253,160,0,0" Width="137" RenderTransformOrigin="0.766,0.75"/>
-
-        <Button Click="OkButtonClick" Margin="162,249,435,215">Potvrdi</Button>
-        <Button Click="CancelButtonClick" Margin="409,249,180,215">Odustani</Button>
+            <Grid Background="#FFFFE5E5" Margin="120,35,120,50" HorizontalAlignment="Center" VerticalAlignment="Center" Height="415" Width="505">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="76*"></RowDefinition>
+                    <RowDefinition Height="234*"></RowDefinition>
+                    <RowDefinition Height="105*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,33,25,32" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Click="CancelButtonClick" Height="40" BorderBrush="Transparent" Margin="26,33,94,32" FontSize="18" Content="Odustani" Grid.Column="1" Background="#FFBBBBBB">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+                <TextBlock Grid.Row="0" FontSize="24" VerticalAlignment="Center" TextAlignment="Center" Height="32" Margin="0,22">Razmena statičke opreme</TextBlock>
+                <TextBlock FontSize="20" Grid.Row="1" Margin="222,0,21,183">Oprema:</TextBlock>
+                <TextBlock FontSize="20" Grid.Row="1" Margin="10,61,202,135" TextAlignment="Right">Broj prostorije u koju se prenosi:</TextBlock>
+                <TextBlock FontSize="20" Grid.Row="1" Margin="14,0,202,77" Height="37" VerticalAlignment="Bottom" TextAlignment="Right" Text="Količina opreme za prenos:"/>
+                <TextBox FontSize="20" Grid.Row="1" Name="Količina" Text="{Binding RoomNumber, Mode=OneWay}" Margin="338,120,59,78"/>
+                <TextBlock FontSize="20" Grid.Row="1" Margin="14,0,202,20" Height="35" VerticalAlignment="Bottom" TextAlignment="Right" Text="Datum transfera:"/>
+                <ComboBox Grid.Row="1" ItemsSource="{Binding roomList}" DisplayMemberPath="RoomNumber" Name="RoomToMerge" Margin="338,61,59,136"/>
+                <DatePicker FontSize="20" Grid.Row="1" Name ="Date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="338,179,0,0" Width="146" RenderTransformOrigin="0.766,0.75" Height="37"/>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

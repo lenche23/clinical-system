@@ -6,12 +6,8 @@
       xmlns:local="clr-namespace:vezba.ManagerGUI"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
-      Title="RoomUpdatePage" Background="#FFFFF0F0">
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            </LinearGradientBrush>
-        </Grid.Background>
+      Title="RoomUpdatePage">
+    <Grid Background="#FFFFCDCD">
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition></RowDefinition>
@@ -76,87 +72,87 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <Grid Grid.Row="1" Margin="135,20,135,80" Background="#FFFFE1E1">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="67*">
-            </RowDefinition>
-            <RowDefinition Height="62*"></RowDefinition>
-            <RowDefinition Height="62*"></RowDefinition>
-            <RowDefinition Height="39*"></RowDefinition>
-            <RowDefinition Height="143*"></RowDefinition>
-            <RowDefinition Height="62*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid>
-            <TextBlock Name="RoomTextBlock" FontSize="28" Margin="60,10,75,11" TextAlignment="Center">Prostorija</TextBlock>
-            <Button Margin="425,10,10,15" Click="DeleteButtonClick">Kanta</Button>
-        </Grid>
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="1" Margin="135,20,135,40" Background="#FFFFE5E5" Height="440" VerticalAlignment="Center" HorizontalAlignment="Center" Width="480">
             <Grid.RowDefinitions>
-                <RowDefinition Height="22*"/>
-                <RowDefinition Height="9*"/>
+                <RowDefinition Height="68*">
+                </RowDefinition>
+                <RowDefinition Height="63*"></RowDefinition>
+                <RowDefinition Height="63*"></RowDefinition>
+                <RowDefinition Height="39*"></RowDefinition>
+                <RowDefinition Height="152*"></RowDefinition>
+                <RowDefinition Height="55*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Button Click="Dodaj_Button_Click" Margin="10,0,120,10" BorderThickness="2" Background="#FFD9ECC9" Grid.Column="1" Grid.RowSpan="2">Dodaj proizvod</Button>
-            <Button Click="Izmeni_Količinu_Button_Click" BorderThickness="2" Background="#FFD9ECC9" HorizontalAlignment="Left" Width="105">Izmeni količinu</Button>
-            <Button Click="Izbriši_Button_Click" Margin="135,0,10,10" BorderThickness="2" Background="#FFC5C5C5" Grid.Column="1" Grid.RowSpan="2">Izbriši</Button>
-            <Button Click="Razmena_Button_Click" Margin="125,0,10,0" BorderThickness="2" Background="#FFD9ECC9">Razmena</Button>
+            <Grid>
+                <TextBlock Name="RoomTextBlock" FontSize="28" Margin="60,10,75,11" TextAlignment="Center">Prostorija</TextBlock>
+                <Button Margin="425,10,10,15" Click="DeleteButtonClick">Kanta</Button>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="22*"/>
+                    <RowDefinition Height="9*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Click="Dodaj_Button_Click" Margin="10,0,120,10" BorderThickness="2" Background="#FFD9ECC9" Grid.Column="1" Grid.RowSpan="2">Dodaj proizvod</Button>
+                <Button Click="Izmeni_Količinu_Button_Click" BorderThickness="2" Background="#FFD9ECC9" HorizontalAlignment="Left" Width="105">Izmeni količinu</Button>
+                <Button Click="Izbriši_Button_Click" Margin="135,0,10,10" BorderThickness="2" Background="#FFC5C5C5" Grid.Column="1" Grid.RowSpan="2">Izbriši</Button>
+                <Button Click="Razmena_Button_Click" Margin="125,0,10,0" BorderThickness="2" Background="#FFD9ECC9">Razmena</Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="43*"/>
+                    <RowDefinition Height="19*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" ></ColumnDefinition>
+                    <ColumnDefinition Width="20*" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" FontSize="20" Margin="45,10,25,0" TextAlignment="Right">Sprat:</TextBlock>
+                <ComboBox Grid.Column="1" FontSize="20" Name="comboFloor" Margin="0,10,100,0"></ComboBox>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="41*"/>
+                    <RowDefinition Height="21*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="49*" ></ColumnDefinition>
+                    <ColumnDefinition Width="13*" ></ColumnDefinition>
+                    <ColumnDefinition Width="36*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" FontSize="20" Margin="50,3,25,10" TextAlignment="Right">Tip prostorije:</TextBlock>
+                <ComboBox Grid.Column="1" FontSize="20" Name="comboRoomType" Margin="0,0,35,10" Grid.ColumnSpan="2"></ComboBox>
+            </Grid>
+            <Grid Grid.Row="4" Margin="0,0,0,45" Grid.RowSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <ListView Margin="65,0,59,20" Name="RoomInventoryBinding" RenderTransformOrigin="0.5,0.5">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding EquipmentId}" />
+                            <GridViewColumn Header="Naziv proizvoda" Width="100" DisplayMemberBinding="{Binding EquipmentName}" />
+                            <GridViewColumn Header="ItemQuantity" Width="100" DisplayMemberBinding="{Binding Quantity}" />
+                            <GridViewColumn Header="Tip" Width="100" DisplayMemberBinding="{Binding EquipmentType}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="45*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" ></ColumnDefinition>
+                    <ColumnDefinition Width="20*" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button  FontSize="20" Click="Potvrda_Button_Click" Margin="70,0,20,7" Background="#FFB7C3A2" Grid.Row="1">Potvrdi</Button>
+                <Button FontSize="20" Click="Odustanak_Button_Click" Margin="20,0,70,7" Grid.Column="1" Grid.Row="1">Odustani</Button>
+            </Grid>
         </Grid>
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="43*"/>
-                <RowDefinition Height="19*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20*" ></ColumnDefinition>
-                <ColumnDefinition Width="20*" ></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" FontSize="20" Margin="45,10,25,0" TextAlignment="Right">Sprat:</TextBlock>
-            <ComboBox Grid.Column="1" FontSize="20" Name="comboFloor" Margin="0,10,100,0"></ComboBox>
-        </Grid>
-        <Grid Grid.Row="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="41*"/>
-                <RowDefinition Height="21*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="49*" ></ColumnDefinition>
-                <ColumnDefinition Width="13*" ></ColumnDefinition>
-                <ColumnDefinition Width="36*"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" FontSize="20" Margin="50,3,25,10" TextAlignment="Right">Tip prostorije:</TextBlock>
-            <ComboBox Grid.Column="1" FontSize="20" Name="comboRoomType" Margin="0,0,35,10" Grid.ColumnSpan="2"></ComboBox>
-        </Grid>
-        <Grid Grid.Row="4" Margin="0,0,0,45" Grid.RowSpan="2">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="0*"/>
-            </Grid.RowDefinitions>
-            <ListView Margin="65,0,59,0" Name="RoomInventoryBinding" RenderTransformOrigin="0.5,0.5">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding EquipmentId}" />
-                        <GridViewColumn Header="Naziv proizvoda" Width="100" DisplayMemberBinding="{Binding EquipmentName}" />
-                        <GridViewColumn Header="ItemQuantity" Width="100" DisplayMemberBinding="{Binding Quantity}" />
-                        <GridViewColumn Header="Tip" Width="100" DisplayMemberBinding="{Binding EquipmentType}" />
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </Grid>
-        <Grid Grid.Row="5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="17*"/>
-                <RowDefinition Height="45*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20*" ></ColumnDefinition>
-                <ColumnDefinition Width="20*" ></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Button  FontSize="20" Click="Potvrda_Button_Click" Margin="70,7,20,7" Background="#FFB7C3A2" Grid.Row="1">Potvrdi</Button>
-            <Button FontSize="20" Click="Odustanak_Button_Click" Margin="20,7,70,7" Grid.Column="1" Grid.Row="1">Odustani</Button>
-        </Grid>
-    </Grid>
     </Grid>
 </Page>

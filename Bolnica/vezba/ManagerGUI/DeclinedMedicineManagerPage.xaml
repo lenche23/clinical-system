@@ -11,9 +11,7 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFFE5F0"/>
                 <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
-                <GradientStop Color="#FFFFF9EA" Offset="0.529"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -81,24 +79,24 @@
             </Button>
         </Grid>
         <Grid Row="1">
-            <Label  Margin="275,30,250,407" FontSize="28">Odbijeni lekovi</Label>
-        <ListView Name="DeclinedMedicineBinding" Margin="155,98,145,135">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding DeclinedMedicineID}" />
-                    <GridViewColumn Header="Naziv leka" Width="150" DisplayMemberBinding="{Binding MedicineName}" />
-                    <GridViewColumn Header="Proizvođač" Width="250" DisplayMemberBinding="{Binding MedicineManufacturer}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Click="ViewDetailButton" Margin="308,385,300,70">Detaljnije</Button>
-
-
-        <Button Click ="ButtonBackClick" Margin="10,425,623,10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
-            <Button.Background>
-                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
-            </Button.Background>
-        </Button>
-    </Grid>
+            <Grid Margin="140,55,140,80" Background="#FFFFE5E5" Height="365" VerticalAlignment="Center" HorizontalAlignment="Center" Width="470">
+                <Label  Margin="135,39,120,256" FontSize="28" RenderTransformOrigin="0.512,1.207">Odbijeni lekovi</Label>
+                <ListView Name="DeclinedMedicineBinding" Margin="20,109,20,104">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding DeclinedMedicineID}" />
+                            <GridViewColumn Header="Naziv leka" Width="150" DisplayMemberBinding="{Binding MedicineName}" />
+                            <GridViewColumn Header="Proizvođač" Width="250" DisplayMemberBinding="{Binding MedicineManufacturer}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button Click="ViewDetailButton" Margin="173,285,170,10">Detaljnije</Button>
+            </Grid>
+            <Button Click ="ButtonBackClick" Margin="0,430,620,0" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

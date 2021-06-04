@@ -1,5 +1,6 @@
 ﻿using Model;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using Service;
@@ -15,6 +16,7 @@ namespace vezba.ManagerGUI
         private int itemQuantity;
         private DateTime infiniteTime = new DateTime(2999, 12, 31);
         private MainManagerWindow mainManagerWindow;
+        public List<Room> roomList { get; set; }
 
         public RoomExchangeEquipmentPage(MainManagerWindow mainManagerWindow, RoomInventory roomInventory, RoomUpdatePage windowUpdateRoom, Room room)
         {
@@ -23,16 +25,31 @@ namespace vezba.ManagerGUI
             this.windowUpdateRoom = windowUpdateRoom;
             this.roomInventory = roomInventory;
             this.room = room;
+
+            RoomService roomService = new RoomService();
+            roomList = roomService.GetAllRooms();
+            List<Room> temporaryList = new List<Room>();
+
+              foreach (Room r in roomList)
+            {
+                if (DateTime.Compare(room.StartDateTime, DateTime.Now) <= 0 && DateTime.Compare(room.EndDateTime, DateTime.Now) >= 0)
+                {
+                    temporaryList.Add(r);
+                }
+            }
+
+            RoomToMerge.ItemsSource = temporaryList;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            int roomNumber = int.Parse(RoomNumberTextBox.Text);
+            //int roomNumber = int.Parse(RoomNumberTextBox.Text);
+            Room roomEntry = (Room)RoomToMerge.SelectedItem;
             itemQuantity = int.Parse(ItemQuantity.Text);
             maximumQuantity = roomInventory.Quantity;
             RoomInventoryService roomInventoryService = new RoomInventoryService();
-            RoomService roomService = new RoomService();
-            Room roomEntry = roomService.GetOneRoom(roomNumber);
+            //RoomService roomService = new RoomService();
+            //Room roomEntry = roomService.GetOneRoom(roomNumber);
 
             if (Validate(roomEntry) == false)
                 return;
@@ -41,7 +58,7 @@ namespace vezba.ManagerGUI
             roomInventoryService.UpdateRoomInventory(this.roomInventory);
             windowUpdateRoom.RoomInventoryBinding.Items.Refresh();
 
-            if (!roomInventoryService.AddQuantityToDesiredRoom(roomNumber, roomInventory, itemQuantity))
+            if (!roomInventoryService.AddQuantityToDesiredRoom(roomEntry.RoomNumber, roomInventory, itemQuantity))
             {
                 var ri = new RoomInventory(DateTime.Now, infiniteTime, itemQuantity, 0, roomInventory.equipment, roomEntry);
                 roomInventoryService.SaveRoomInventory(ri);

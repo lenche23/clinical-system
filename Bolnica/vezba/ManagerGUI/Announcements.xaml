@@ -84,7 +84,7 @@
         <Grid Row="1" Background="#FFDCD2D2">
             <TextBlock VerticalAlignment="Center" FontFamily="HP Simplified Hans" FontSize="31" Height="40" Foreground="#FF4B3838" Margin="25,10,0,10">  Moja obaveštenja</TextBlock>
         </Grid>
-        <ListView Grid.Row="2" ItemContainerStyle="{StaticResource listViewDoubleClick}" ItemsSource="{Binding Ans}" x:Name="AnnouncementsList" HorizontalContentAlignment="Stretch" Margin="60,40,60,80">
+        <ListView Grid.Row="2" ItemContainerStyle="{StaticResource listViewDoubleClick}" ItemsSource="{Binding Ans}" x:Name="AnnouncementsList" HorizontalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" Height="375" Width="654">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="White"
@@ -96,7 +96,7 @@
                         <Grid Grid.Row="0" RowSpan="2">
                             <Border BorderThickness="2" BorderBrush="DarkGray" />
                         </Grid>
-                        <TextBlock Grid.Row="1" Grid.Column="0"
+                        <TextBlock TextWrapping="Wrap" Grid.Row="1" Grid.Column="0"
                                        DockPanel.Dock="Left"
                                        Text="{Binding Content}"
                                        Margin="30, 10"
@@ -104,7 +104,7 @@
                                        FontSize="10" 
                                        VerticalAlignment="Center">
                         </TextBlock>
-                        <TextBox VerticalAlignment="Center" Margin="3,3,3,3" FontSize="24" BorderThickness="0"  Foreground="LightCoral" Grid.Row="0" Text="{Binding Title}" SelectionBrush="#FFB2CFE6">
+                        <TextBox VerticalAlignment="Center" Margin="3,3,3,3" FontSize="24" BorderThickness="0"  Foreground="#FF834040" Grid.Row="0" Text="{Binding Title}" SelectionBrush="#FFB2CFE6">
                         </TextBox>
                     </Grid>
                 </DataTemplate>

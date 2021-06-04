@@ -6,12 +6,8 @@
       xmlns:local="clr-namespace:vezba.ManagerGUI"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
-      Title="RoomChangeEquipmentPage" Background="#FFFFF0F0">
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            </LinearGradientBrush>
-        </Grid.Background>
+      Title="RoomChangeEquipmentPage">
+    <Grid Background="#FFFFCDCD">
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition></RowDefinition>
@@ -76,25 +72,42 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <Grid Grid.Row="1" Margin="130,80,130,80" Background="#FFFFC1A4">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="17*"></RowDefinition>
-            <RowDefinition Height="20*"></RowDefinition>
-            <RowDefinition Height="20*"></RowDefinition>
-            <RowDefinition Height="25*"></RowDefinition>
-            <RowDefinition Height="25*"></RowDefinition>
-            <RowDefinition Height="25*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid>
-            <TextBlock FontSize="28"  Margin="110,15,110,-16" TextAlignment="Center">Izmeni količinu</TextBlock>
+        <Grid Grid.Row="1">
+            <Grid Background="#FFFFE5E5" Margin="120,35,120,50" HorizontalAlignment="Center" VerticalAlignment="Center" Height="415" Width="505">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="17*"></RowDefinition>
+                    <RowDefinition Height="45*"></RowDefinition>
+
+                    <RowDefinition Height="21*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Click="OdustaniIzmena_Button_Click" BorderBrush="Transparent" Margin="25,34,95,32" FontSize="18" Content="Odustani" Background="#FFBBBBBB" Grid.Column="1">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+                <Button BorderBrush="Transparent" Click="PotvrdiIzmenu_Button_Click" Margin="95,34,287,32" FontSize="18" Content="Potvrdi" Background="#FFAECDAB" Grid.Row="2">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <TextBlock FontSize="28"  Margin="118,10,102,10" TextAlignment="Center">Izmeni količinu</TextBlock>
+                <Label FontSize="20" Grid.Row="1" Name="NazivOpreme" Content="Naziv opreme:" Margin="118,0,47,183"/>
+                <Label FontSize="20" Name="TipOpreme" Content="Tip opreme:" Margin="139,115,47,70" Grid.Row="1" RenderTransformOrigin="0.5,0.5" />
+                <Label FontSize="20" Name ="Id" Content="ID:" Margin="218,55,152,132" Grid.Row="1"/>
+                <Label Content="Količina:" FontSize="20" Margin="173,180,212,10" Grid.Row="1"/>
+                <TextBox Name="Količina" FontSize="20" Text="{Binding Quantity, Mode=OneWay}" RenderTransformOrigin="0.491,0.484" Margin="273,180,127,10" Grid.Row="1" />
+            </Grid>
         </Grid>
-        <Label Grid.Row="1" Name="NazivOpreme" Content="Naziv opreme:" Margin="56,18,170,0"/>
-        <Label Name="TipOpreme" Content="Tip opreme:" Margin="56,25,270,65" Grid.Row="2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" />
-        <Label Name ="Id" Content="ID:" Margin="77,29,300,10" Grid.Row="3"/>
-        <Label Content="ItemQuantity:" Margin="45,25,350,10" Grid.Row="4"/>
-        <TextBox Name="Količina"  Text="{Binding Quantity, Mode=OneWay}" RenderTransformOrigin="0.491,0.484" Margin="144,25,155,20" Grid.Row="4" />
-        <Button Click="PotvrdiIzmenu_Button_Click" Margin="105,22,260,12" Grid.Row="5">Potvrdi</Button>
-        <Button Click="OdustaniIzmena_Button_Click" Margin="260,22,115,10" Grid.Row="5">Odustani</Button>
-    </Grid>
     </Grid>
 </Page>
