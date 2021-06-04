@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,7 +11,7 @@ namespace vezba.DoctorPages
     /// <summary>
     /// Interaction logic for EditMedicinePage.xaml
     /// </summary>
-    public partial class EditMedicinePage : Page
+    public partial class EditMedicinePage : Page, INotifyPropertyChanged
     {
         public Medicine Medicine { get; set; }
 
@@ -37,6 +38,69 @@ namespace vezba.DoctorPages
         }
 
         private List<Ingridient> _ingredients;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        private String _medicineName;
+        public String MedicineName
+        {
+            get
+            {
+                return _medicineName;
+            }
+            set
+            {
+                if (value != _medicineName)
+                {
+                    _medicineName = value;
+                    OnPropertyChanged("MedicineName");
+                }
+            }
+        }
+
+        private String _manufacturer;
+        public String Manufacturer
+        {
+            get
+            {
+                return _manufacturer;
+            }
+            set
+            {
+                if (value != _manufacturer)
+                {
+                    _manufacturer = value;
+                    OnPropertyChanged("Manufacturer");
+                }
+            }
+        }
+
+        private String _packaging;
+
+        public String Packaging
+        {
+            get
+            {
+                return _packaging;
+            }
+            set
+            {
+                if (value != _packaging)
+                {
+                    _packaging = value;
+                    OnPropertyChanged("Packaging");
+                }
+            }
+        }
+
         public List<Ingridient> Ingredients
         {
             get
@@ -79,10 +143,15 @@ namespace vezba.DoctorPages
 
             if (medicine.ReplacementMedicine != null)
                 ReplacementMedicineCB.SelectedValue = medicine.ReplacementMedicine.MedicineID;
+            MedicineName = Medicine.Name;
+            Manufacturer = Medicine.Manufacturer;
+            Packaging = Medicine.Packaging;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
+            if(!ValidateEntries())
+                return;
             EditMedicine();
             _medicineService.UpdateMedicine(Medicine);
             _medicinePageView.ApprovedMedicineListView.Items.Refresh();
@@ -92,9 +161,9 @@ namespace vezba.DoctorPages
 
         private void EditMedicine()
         {
-            var medicineName = NameTB.Text;
-            var manufacturer = ManufacturerTB.Text;
-            var packaging = PackagingTB.Text;
+            var medicineName = MedicineName;
+            var manufacturer = Manufacturer;
+            var packaging = Packaging;
             MedicineCondition condition;
             switch (ConditionCMB.SelectedIndex)
             {
@@ -125,6 +194,8 @@ namespace vezba.DoctorPages
 
         private void PlusButtonClick(object sender, RoutedEventArgs e)
         {
+            if(TbAllergen.Text == null || TbAllergen.Text.Length == 0)
+                return;
             var ingredientName = TbAllergen.Text;
             var ingredient = new Ingridient(ingredientName);
             Ingredients.Add(ingredient);
@@ -140,6 +211,21 @@ namespace vezba.DoctorPages
                 Ingredients.Remove(ingredient);
                 IngredientListBox.Items.Refresh();
             }
+        }
+
+        private Boolean ValidateEntries()
+        {
+            Boolean ret = true;
+            NameTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(NameTB))
+                ret = false;
+            ManufacturerTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(ManufacturerTB))
+                ret = false;
+            PackagingTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(PackagingTB))
+                ret = false;
+            return ret;
         }
     }
 }
