@@ -204,7 +204,7 @@
                                         <TextBlock Grid.Column="1" Text="{Binding Path=Medicine.Packaging}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
                                         <TextBlock Grid.Column="2" Text="{Binding Path=Medicine.Manufacturer}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
                                         <TextBlock Grid.Column="3" Text="{Binding Path=Medicine.ConditionSerbian}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center"/>
-                                        <TextBlock Grid.Column="4" Text="{Binding Path=Description}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                                        <TextBlock Grid.Column="4" Text="{Binding Path=Description}" Foreground="DarkBlue" FontSize="14" Margin="10" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis" MaxWidth="100"/>
                                     </Grid>
                                 </Border>
                             </DataTemplate>

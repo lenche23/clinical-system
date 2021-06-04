@@ -48,11 +48,7 @@
             <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Packaging, Mode=OneWay}"/>
             <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Condition, Mode=OneWay}"/>
             <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding ReplacementMedicine.Name, Mode=OneWay}"/>
-            <DataGrid Grid.Column="1" Grid.Row="6" x:Name="ingredientGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding Ingridient}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 400, 10">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Naziv" Binding="{Binding Name}"  Width="*"/>
-                </DataGrid.Columns>
-            </DataGrid>
+            <ItemsControl FontFamily="Verdana" Grid.Column="1" Grid.Row="6" x:Name="ingredientItemsControl" ItemsSource="{Binding Ingridient}" DisplayMemberPath="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"></ItemsControl>
         </Grid>
     </ScrollViewer>
 </Page>

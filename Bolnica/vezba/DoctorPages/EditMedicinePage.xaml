@@ -65,16 +65,12 @@
             <ComboBox Grid.Column="1" Grid.Row="5" Name="ReplacementMedicineCB" ItemsSource="{Binding Path=MedicineForReplacement}" DisplayMemberPath="Name" SelectedValuePath="MedicineID"></ComboBox>
             <DockPanel Grid.Column="1" Grid.Row="6" Margin="10, 10, 400, 10">
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Height="25" Width="25" Margin="0, 0, 10, 0" Click="PlusButtonClick">+</Button>
-                    <Button Height="25" Width="25" Click="MinusButtonClick">-</Button>
+                    <Button Height="25" Width="25" Margin="0, 0, 10, 0" Click="PlusButtonClick" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">+</Button>
+                    <Button Height="25" Width="25" Click="MinusButtonClick" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">-</Button>
                 </StackPanel>
                 <TextBox Margin="0, 0, 10, 0" Name="TbAllergen" />
             </DockPanel>
-            <DataGrid Grid.Column="1" Grid.Row="7" x:Name="ingredientGrid" SelectionMode="Single" ItemsSource="{Binding Medicine.Ingridient}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 400, 10">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Naziv" Binding="{Binding Name}"  Width="*"/>
-                </DataGrid.Columns>
-            </DataGrid>
+            <ListBox x:Name="IngredientListBox" Height="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="7" ItemsSource="{Binding Ingredients}" DisplayMemberPath="Name" Margin="10, 10, 400, 10" Background="White"/>
         </Grid>
     </ScrollViewer>
 </Page>

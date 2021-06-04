@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using Model;
@@ -13,15 +14,43 @@ namespace vezba.DoctorPages
     {
         public Medicine Medicine { get; set; }
 
-        public List<Medicine> MedicineForReplacement { get; set; }
-
         private readonly MedicineService _medicineService;
-
-        public List<Ingridient> Ingredients { get; set; }
 
         private readonly DoctorView _doctorView;
 
         private readonly MedicinePageView _medicinePageView;
+
+        private List<Medicine> _medicineForReplacement;
+        public List<Medicine> MedicineForReplacement
+        {
+            get
+            {
+                return _medicineForReplacement;
+            }
+            set
+            {
+                if (value != _medicineForReplacement)
+                {
+                    _medicineForReplacement = value;
+                }
+            }
+        }
+
+        private List<Ingridient> _ingredients;
+        public List<Ingridient> Ingredients
+        {
+            get
+            {
+                return _ingredients;
+            }
+            set
+            {
+                if (value != _ingredients)
+                {
+                    _ingredients = value;
+                }
+            }
+        }
 
         public EditMedicinePage(Medicine medicine, DoctorView doctorView, MedicinePageView medicinePageView)
         {
@@ -42,6 +71,7 @@ namespace vezba.DoctorPages
                     ConditionCMB.SelectedIndex = 2;
                     break;
             }
+
             Ingredients = new List<Ingridient>(medicine.Ingridient);
 
             _medicineService = new MedicineService();
@@ -98,19 +128,17 @@ namespace vezba.DoctorPages
             var ingredientName = TbAllergen.Text;
             var ingredient = new Ingridient(ingredientName);
             Ingredients.Add(ingredient);
-            ingredientGrid.ItemsSource = null;
-            ingredientGrid.ItemsSource = Ingredients;
+            IngredientListBox.Items.Refresh();
             TbAllergen.Clear();
         }
 
         private void MinusButtonClick(object sender, RoutedEventArgs e)
         {
-            if (ingredientGrid.SelectedItems.Count > 0)
+            if (IngredientListBox.SelectedItems.Count > 0)
             {
-                var ingredient = (Ingridient)ingredientGrid.SelectedItem;
+                var ingredient = (Ingridient)IngredientListBox.SelectedItem;
                 Ingredients.Remove(ingredient);
-                ingredientGrid.ItemsSource = null;
-                ingredientGrid.ItemsSource = Ingredients;
+                IngredientListBox.Items.Refresh();
             }
         }
     }
