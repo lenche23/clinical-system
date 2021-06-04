@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,7 +18,10 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             this.mainManagerWindow = mainManagerWindow;
             this.selected = selected;
-            BrojProstorije.Content = BrojProstorije.Content + " " + selected.RoomNumber;
+            List<string> type = new List<string> { "Soba za preglede", "Soba za odmor", "Operaciona sala", "Magacin" };
+            Combo1.ItemsSource = type;
+            Combo2.ItemsSource = type;
+            BrojProstorije.Text = BrojProstorije.Text + " " + selected.RoomNumber;
         }
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
@@ -28,54 +32,26 @@ namespace vezba.ManagerGUI
         {
             var format = "dd/MM/yyyy HH:mm";
             CultureInfo provider = CultureInfo.InvariantCulture;
-            var startTime = DateTime.ParseExact(PocetniDatum.Text, format, provider);
+            var startDate = DatePicker.SelectedDate;
+            var startTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, 0, 0, 0);
             var durationInDays = int.Parse(Trajanje.Text);
             var endTime = startTime.AddDays(durationInDays);
             var id = selected.renovation.Count + 1;
 
             RoomType type1 = RoomType.examinationRoom;
 
-            if (Convert.ToBoolean(Pregled1.IsChecked))
-            {
-                type1 = RoomType.examinationRoom;
-            }
-
-            else if (Convert.ToBoolean(Operacija1.IsChecked))
-            {
-                type1 = RoomType.operatingRoom;
-            }
-
-            else if (Convert.ToBoolean(Odmor1.IsChecked))
-            {
-                type1 = RoomType.recoveryRoom;
-            }
-
-            else if (Convert.ToBoolean(Magacin1.IsChecked))
-            {
-                type1 = RoomType.storageRoom;
-            }
+            if (Combo1.SelectedIndex == 0) type1 = RoomType.examinationRoom;
+            else if (Combo1.SelectedIndex == 1) type1 = RoomType.recoveryRoom;
+            else if (Combo1.SelectedIndex == 2) type1 = RoomType.operatingRoom;
+            else if (Combo1.SelectedIndex == 3) type1 = RoomType.storageRoom;
 
             RoomType type2 = RoomType.examinationRoom;
 
-            if (Convert.ToBoolean(Pregled2.IsChecked))
-            {
-                type2 = RoomType.examinationRoom;
-            }
+            if (Combo2.SelectedIndex == 0) type2 = RoomType.examinationRoom;
+            else if (Combo2.SelectedIndex == 1) type2 = RoomType.recoveryRoom;
+            else if (Combo2.SelectedIndex == 2) type2 = RoomType.operatingRoom;
+            else if (Combo2.SelectedIndex == 3) type2 = RoomType.storageRoom;
 
-            else if (Convert.ToBoolean(Operacija2.IsChecked))
-            {
-                type2 = RoomType.operatingRoom;
-            }
-
-            else if (Convert.ToBoolean(Odmor2.IsChecked))
-            {
-                type2 = RoomType.recoveryRoom;
-            }
-
-            else if (Convert.ToBoolean(Magacin2.IsChecked))
-            {
-                type2 = RoomType.storageRoom;
-            }
 
             Floor floor = selected.RoomFloor;
             RoomService roomService = new RoomService();

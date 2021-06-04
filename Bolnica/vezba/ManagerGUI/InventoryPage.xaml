@@ -86,8 +86,8 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <TextBlock FontSize="36"  Grid.Row="1" Margin="200,43,245,10" TextAlignment="Center" LineHeight="36" FontFamily="MV Boli" FontWeight="Bold" Foreground="#FFF56420">Inventar bolnice</TextBlock>
-        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" Grid.Row="2" Name="InventaryBinding" Margin="45,0" Background="#FFFFF6F6" FontSize="22" Foreground="#FF494949" FontFamily="Corbel" FontWeight="Bold" FontStyle="Italic">
+        <TextBlock FontSize="36"  Grid.Row="1" Margin="205,53,240,0" TextAlignment="Center" LineHeight="36" Foreground="#FFF56420">Inventar bolnice</TextBlock>
+        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" Grid.Row="2" Name="InventaryBinding" Margin="45,0" Background="#FFFFF6F6" FontSize="22" Foreground="#FF494949" FontFamily="Corbel">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width ="100" DisplayMemberBinding="{Binding Id}" />

@@ -1,5 +1,6 @@
 ﻿using Model;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using Service;
@@ -18,15 +19,17 @@ namespace vezba.ManagerGUI
             this.inventoryPage = inventoryPage;
             DataContext = equipment;
             this.mainManagerWindow = mainManagerWindow;
+            List<string> type = new List<string> { "Dinamička", "Statička"};
+            comboEquipmentType.ItemsSource = type;
+            if (equipment.Type == EquipmentType.dinamical)
+            {
+                comboEquipmentType.SelectedIndex = 0;
+            }
+            else
+            {
+                comboEquipmentType.SelectedIndex = 1;
+            }
 
-            if (equipment.Type == EquipmentType.statical)
-            {
-                Statička.IsChecked = true;
-            }
-            else if (equipment.Type == EquipmentType.dinamical)
-            {
-                Dinamička.IsChecked = true;
-            }
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -34,24 +37,18 @@ namespace vezba.ManagerGUI
             var name = NazivOpreme.Text;
             equipment.Name = name;
 
-            if (Convert.ToBoolean(Statička.IsChecked))
-            {
-                equipment.Type = EquipmentType.statical;
-            }
-
-            else if (Convert.ToBoolean(Dinamička.IsChecked))
+            if (comboEquipmentType.SelectedIndex==0)
             {
                 equipment.Type = EquipmentType.dinamical;
+            }
+            else
+            {
+                equipment.Type = EquipmentType.statical;
             }
 
             inventoryPage.InventaryBinding.Items.Refresh();
             EquipmentService equipmentService = new EquipmentService();
             equipmentService.UpdateEquipment(equipment);
-            NavigationService.GoBack();
-        }
-
-        private void Cancel_Change_Button_Click(object sender, RoutedEventArgs e)
-        {
             NavigationService.GoBack();
         }
 
@@ -73,6 +70,11 @@ namespace vezba.ManagerGUI
         private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

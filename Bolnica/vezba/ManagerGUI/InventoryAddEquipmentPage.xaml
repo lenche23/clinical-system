@@ -10,9 +10,7 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFFE5F0"/>
                 <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
-                <GradientStop Color="#FFFFF9EA" Offset="0.529"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -79,17 +77,39 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <Grid Margin="50,5,50,10" Grid.Row="1">
-        <Label Content="Dodavanje nove opreme "  FontSize="18" FontFamily="Myriad Pro Cond" Margin="220,35,199,373"/>
-        <Label Content="Naziv opreme:" Margin="20,105,535,344"/>
-        <Label Content="Tip opreme:" Margin="20,194,545,260" />
-        <TextBox Name="NazivOpreme" Margin="150,105,135,355" RenderTransformOrigin="0.491,0.484" />
-        <Button Click="OkButtonClick" Margin="125,269,365,174">Potvrdi</Button>
-        <Button Click="Cancel_Add_Button_Click" Margin="345,269,185,174">Odustani</Button>
 
-        <RadioButton Name ="Statička" GroupName="TipOpreme" Content="Statička" Margin="186,200,408,260"></RadioButton>
-        <RadioButton Name ="Dinamička" GroupName="TipOpreme" Content="Dinamička" Margin="300,201,238,235"></RadioButton>
-
-    </Grid>
+        <Grid Grid.Row="1"  Background="#FFFFE5E5" Margin="125,50,115,75">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="69*"></RowDefinition>
+                <RowDefinition Height="211*"></RowDefinition>
+                <RowDefinition Height="95*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,25,25,30" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Click="Cancel_Add_Button_Click" BorderBrush="Transparent"  FontSize="18" Content="Odustani" Grid.Column="1" Background="#FFBBBBBB" Margin="25,25,95,30">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+            <TextBlock Grid.Row="0" FontSize="30" VerticalAlignment="Center" TextAlignment="Center" Margin="0,15" Height="39" > Nova oprema:</TextBlock>
+            <TextBlock FontSize="20" Grid.Row="1" Margin="90,39,275,136">Naziv opreme:</TextBlock>
+            <TextBlock FontSize="20" Grid.Row="1" Margin="110,131,275,40">Tip opreme:</TextBlock>
+            <TextBox Name="NazivOpreme" FontSize="20"  Margin="255,39,60,136" RenderTransformOrigin="0.491,0.484" Grid.Row="1" />
+            <ComboBox Grid.Row="1" FontSize="16" Name="comboEquipmentType" Margin="255,131,90,44"/>
+            <Button Click="OkButtonClick" Margin="60,40,450,55" Grid.Row="2">Potvrdi</Button>
+        </Grid>
     </Grid>
 </Page>

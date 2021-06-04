@@ -17,33 +17,34 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             this.mainManagerWindow = mainManagerWindow;
             this.selected = selected;
-            BrojProstorije.Content = BrojProstorije.Content + " " + selected.RoomNumber;
+            BrojProstorije.Text = BrojProstorije.Text + " " + selected.RoomNumber;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             var format = "dd/MM/yyyy HH:mm";
             CultureInfo provider = CultureInfo.InvariantCulture;
-            var startTime = DateTime.ParseExact(PocetniDatum.Text, format, provider);
+            var startDate = DatePicker.SelectedDate;
+            var startDateTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, 0, 0, 0);
             var durationInDays = int.Parse(Trajanje.Text);
-            var endTime = startTime.AddDays(durationInDays);
+            var endTime = startDateTime.AddDays(durationInDays);
             var id = selected.renovation.Count + 1;
 
             AppointmentService appointmentService = new AppointmentService();
 
-            if (DateTime.Compare(startTime, DateTime.Now) < 0)
+            if (DateTime.Compare(startDateTime, DateTime.Now) < 0)
             {
                 MessageBox.Show("Izabrani datum je već prošao!");
                 return;
             }
 
-            if (appointmentService.Overlap(selected, startTime, endTime))
+            if (appointmentService.Overlap(selected, startDateTime, endTime))
             {
                 MessageBox.Show("Datum renovacije se poklapa sa već zakazanim pregledima");
                 return;
             }
 
-            var newRenovation = new Renovation(startTime, durationInDays, id);
+            var newRenovation = new Renovation(startDateTime, durationInDays, id);
             selected.AddRenovation(newRenovation);
             RoomService roomService = new RoomService();
             roomService.UpdateRoom(this.selected);

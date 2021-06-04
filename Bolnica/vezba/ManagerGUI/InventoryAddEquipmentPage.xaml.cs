@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,19 +15,20 @@ namespace vezba.ManagerGUI
         {
             InitializeComponent();
             this.mainManagerWindow = mainManagerWindow;
+            List<string> type = new List<string> { "Dinamička", "Statička" };
+            comboEquipmentType.ItemsSource = type;
         }
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             EquipmentType type = EquipmentType.statical;
 
-            if (Convert.ToBoolean(Statička.IsChecked))
+            if (comboEquipmentType.SelectedIndex == 0)
             {
-                type = EquipmentType.statical;
+               type = EquipmentType.dinamical;
             }
-
-            else if (Convert.ToBoolean(Dinamička.IsChecked))
+            else
             {
-                type = EquipmentType.dinamical;
+               type = EquipmentType.statical;
             }
             EquipmentService equipmentService = new EquipmentService();
             var newEquipment = new Equipment(0, NazivOpreme.Text, type);

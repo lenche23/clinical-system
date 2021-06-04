@@ -10,9 +10,7 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFFE5F0"/>
                 <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
-                <GradientStop Color="#FFFFF9EA" Offset="0.529"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -80,16 +78,47 @@
             </Button>
         </Grid>
         <Grid Row="1">
-            <Label Content="Zakazivanje renoviranja"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="283,20,240,435"/>
-        <Label Name="BrojProstorije" Content="Prostorija: " Margin="147,102,402,352" FontSize="14"></Label>
-        <Label Content="Početni datum:" Margin="127,153,498,300"/>
-        <Label Content="Predviđeno trajanje:" Margin="107,210,498,250" />
-        <TextBox Name="PocetniDatum" Margin="262,153,145,300" RenderTransformOrigin="0.491,0.484" />
-        <TextBox Name="Trajanje" RenderTransformOrigin="0.491,0.484" Margin="262,210,145,240" />
-        <Button Click="OkButtonClick" Margin="195,425,402,35">Potvrdi</Button>
-        <Button Click="CancelButtonClick" Margin="405,425,172,35">Odustani</Button>
-        <Label Content="Soba sa kojom se spaja:" Margin="95,286,510,170" />
-        <ComboBox ItemsSource="{Binding roomList}" DisplayMemberPath="RoomNumber" Name="RoomToMerge" Margin="262,280,325,170"/>
+            <Grid Background="#FFFFE5E5" Margin="130,50,130,70" HorizontalAlignment="Center" VerticalAlignment="Center" Height="385">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="71*"></RowDefinition>
+                    <RowDefinition Height="226*"></RowDefinition>
+                    <RowDefinition Height="88*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,20,25,28" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Click="CancelButtonClick" Height="40" BorderBrush="Transparent" Margin="25,20,95,28" FontSize="18" Content="Odustani" Grid.Column="1" Background="#FFBBBBBB">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+                <TextBlock Grid.Row="0" FontSize="24" Margin="95,10" TextAlignment="Center">Zakazivanje renovacije</TextBlock>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="124*"></ColumnDefinition>
+                        <ColumnDefinition Width="99*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontSize="20" Name="BrojProstorije" Margin="52,0,123,195" TextAlignment="Center" Grid.ColumnSpan="2"> Prostorija:</TextBlock>
+                    <TextBlock FontSize="20" Margin="49,124,13,67" TextAlignment="Right" Text="Predviđeno trajanje:"/>
+                    <TextBlock FontSize="20" Margin="84,66,13,122" TextAlignment="Right"> Početni datum:</TextBlock>
+                    <DatePicker Name="DatePicker" FontSize="20" Margin="21,66,36,126" Grid.Column="1"/>
+                    <TextBox Name="Trajanje" FontSize="20" Margin="21,125,64,67" Grid.Column="1"/>
+                    <TextBlock FontSize="20" Margin="18,182,15,7" TextAlignment="Right" Text="Soba sa kojom se spaja:"/>
+                    <ComboBox ItemsSource="{Binding roomList}" DisplayMemberPath="RoomNumber" Name="RoomToMerge" Margin="21,185,36,7" Grid.Column="1"/>
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

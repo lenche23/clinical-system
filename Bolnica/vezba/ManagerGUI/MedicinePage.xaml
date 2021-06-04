@@ -86,7 +86,7 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <TextBlock FontSize="36"  Grid.Row="1" Margin="255,70,255,10" TextAlignment="Center" LineHeight="36" FontFamily="Corbel" FontWeight="Bold" Foreground="#FF36633E" FrameworkElement.FlowDirection="RightToLeft">Lekovi</TextBlock>
+        <TextBlock FontSize="36"  Grid.Row="1" Margin="255,70,255,10" TextAlignment="Center" LineHeight="36" FontFamily="Corbel" Foreground="#FF36633E" FrameworkElement.FlowDirection="RightToLeft">Lekovi</TextBlock>
         <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" FontSize ="20" Grid.Row="2" Name="MedicineBinding" Margin="45,0">
             <ListView.View>
                 <GridView>

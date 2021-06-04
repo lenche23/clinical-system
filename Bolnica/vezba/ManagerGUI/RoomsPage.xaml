@@ -86,7 +86,7 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" BorderBrush="{x:Null}" FontSize="22"  Grid.Row="2" Margin="123,10,122,10" Name="lvDataBinding" Background="#FFFFF6F6" Foreground="#FF494949" FontFamily="Corbel" FontWeight="Bold" FontStyle="Italic">
+        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" BorderBrush="{x:Null}" FontSize="22"  Grid.Row="2" Margin="123,10,122,10" Name="lvDataBinding" Background="#FFFFF6F6" Foreground="#FF494949" FontFamily="Corbel">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Broj prostorije" Width="150" DisplayMemberBinding="{Binding RoomNumber}" />
@@ -95,7 +95,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock FontSize="36"  Grid.Row="1" Margin="255,30,255,10" TextAlignment="Center" LineHeight="36" FontFamily="MV Boli" FontWeight="Bold" Foreground="#FFB63054"> Prostorije</TextBlock>
+        <TextBlock FontSize="36"  Grid.Row="1" Margin="255,30,255,10" TextAlignment="Center" LineHeight="36" Foreground="#FFB63054"> Prostorije</TextBlock>
         <Button FontFamily="Corbel" BorderBrush="{x:Null}" Grid.Row="1" Margin="555,29,45,10" Background="#FFE26879" FontSize="18" Foreground="White" FontWeight="Bold" Click="New_Room_Button_Click">Nova prostorija
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">

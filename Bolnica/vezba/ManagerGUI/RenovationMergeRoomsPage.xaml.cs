@@ -23,7 +23,7 @@ namespace vezba.ManagerGUI
             RoomService roomService = new RoomService();
             roomList = roomService.GetAllRooms();
             RoomToMerge.ItemsSource = roomList;
-            BrojProstorije.Content = BrojProstorije.Content + " " + selected.RoomNumber;
+            BrojProstorije.Text = BrojProstorije.Text + " " + selected.RoomNumber;
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
@@ -35,7 +35,8 @@ namespace vezba.ManagerGUI
         {
             var format = "dd/MM/yyyy HH:mm";
             CultureInfo provider = CultureInfo.InvariantCulture;
-            var startTime = DateTime.ParseExact(PocetniDatum.Text, format, provider);
+            var startDate = DatePicker.SelectedDate;
+            var startTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, 0, 0, 0);
             var durationInDays = int.Parse(Trajanje.Text);
             var endTime = startTime.AddDays(durationInDays);
             var id = selected.renovation.Count + 1;

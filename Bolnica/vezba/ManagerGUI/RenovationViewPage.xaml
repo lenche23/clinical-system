@@ -10,9 +10,7 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFFE5F0"/>
                 <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
-                <GradientStop Color="#FFFFF9EA" Offset="0.529"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -80,14 +78,39 @@
             </Button>
         </Grid>
         <Grid Row="1">
-        <Label Content="Zakazivanje renoviranja"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="283,20,240,440"/>
-        <Label Name="BrojProstorije" Content="Prostorija: " Margin="147,102,450,352" FontSize="14"></Label>
-        <Label Content="Početni datum:" Margin="132,158,493,310"/>
-        <Label Content="Predviđeno trajanje:" Margin="112,220,493,240" />
-        <TextBox Name="PocetniDatum" Margin="262,153,145,310" RenderTransformOrigin="0.491,0.484" />
-        <TextBox Name="Trajanje" RenderTransformOrigin="0.491,0.484" Margin="262,210,145,240" />
-        <Button Click="OkButtonClick" Margin="192,405,415,55">Potvrdi</Button>
-        <Button Click="CancelButtonClick" Margin="372,405,240,55">Odustani</Button>
-    </Grid>
+            <Grid Background="#FFFFE5E5" Margin="130,50,130,70" HorizontalAlignment="Center" VerticalAlignment="Center" Height="385">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="14*"></RowDefinition>
+                    <RowDefinition Height="39*"></RowDefinition>
+                    <RowDefinition Height="23*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,41,25,30" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Click="CancelButtonClick" Height="40" BorderBrush="Transparent" Margin="25,41,95,30" FontSize="18" Content="Odustani" Grid.Column="1" Background="#FFBBBBBB">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+                <TextBlock FontSize="24" Margin="95,20,95,0" TextAlignment="Center">Zakazivanje renovacije</TextBlock>
+                <TextBlock FontSize="20" Name="BrojProstorije" Grid.Row="1" Margin="37,28,143,127" TextAlignment="Center"> Prostorija:</TextBlock>
+                <TextBlock FontSize="20" Grid.Row="1" Margin="52,150,248,10" TextAlignment="Right" Text="Predviđeno trajanje:"/>
+                <TextBlock FontSize="20" Grid.Row="1" Margin="87,88,248,67" TextAlignment="Right"> Početni datum:</TextBlock>
+                <DatePicker Name="DatePicker" FontSize="20" Grid.Row="1" Margin="272,88,53,67"/>
+                <TextBox Name="Trajanje" FontSize="20"  Grid.Row="1" Margin="272,150,95,10"></TextBox>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

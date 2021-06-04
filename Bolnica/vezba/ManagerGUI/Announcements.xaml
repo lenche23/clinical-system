@@ -82,40 +82,35 @@
             </Button>
         </Grid>
         <Grid Row="1" Background="#FFDCD2D2">
-            <TextBlock VerticalAlignment="Center" FontFamily="HP Simplified Hans" FontSize="29" Height="40" Foreground="#FF4B3838" Margin="25,10,0,10">  Moja obaveštenja</TextBlock>
+            <TextBlock VerticalAlignment="Center" FontFamily="HP Simplified Hans" FontSize="31" Height="40" Foreground="#FF4B3838" Margin="25,10,0,10">  Moja obaveštenja</TextBlock>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="335" Margin="35,65,0,0" VerticalAlignment="Top" Width="680" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <ListView ItemContainerStyle="{StaticResource listViewDoubleClick}" ItemsSource="{Binding Ans}" x:Name="AnnouncementsList" HorizontalContentAlignment="Stretch" Grid.ColumnSpan="2" Margin="0,0,0,10">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Background="White"
+        <ListView Grid.Row="2" ItemContainerStyle="{StaticResource listViewDoubleClick}" ItemsSource="{Binding Ans}" x:Name="AnnouncementsList" HorizontalContentAlignment="Stretch" Margin="60,40,60,80">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="White"
                               Margin="9">
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid Grid.Row="0" RowSpan="2">
-                                <Border BorderThickness="1" BorderBrush="Black" />
-                            </Grid>
-                            <TextBlock Grid.Row="1" Grid.Column="0"
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" RowSpan="2">
+                            <Border BorderThickness="2" BorderBrush="DarkGray" />
+                        </Grid>
+                        <TextBlock Grid.Row="1" Grid.Column="0"
                                        DockPanel.Dock="Left"
                                        Text="{Binding Content}"
                                        Margin="30, 10"
                                        Foreground="Black" 
-                                       FontSize="12" 
+                                       FontSize="10" 
                                        VerticalAlignment="Center">
-                            </TextBlock>
-                            <TextBox VerticalAlignment="Center" Margin="3,3,3,3" FontSize="20" BorderThickness="0"  Foreground="LightCoral" Grid.Row="0" Text="{Binding Title}" SelectionBrush="#FFB2CFE6">
-                            </TextBox>
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
+                        </TextBlock>
+                        <TextBox VerticalAlignment="Center" Margin="3,3,3,3" FontSize="24" BorderThickness="0"  Foreground="LightCoral" Grid.Row="0" Text="{Binding Title}" SelectionBrush="#FFB2CFE6">
+                        </TextBox>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
 
         <Button Click ="ButtonBackClick" Margin="10,425,615,20" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667" Grid.Row="1">
             <Button.Background>
