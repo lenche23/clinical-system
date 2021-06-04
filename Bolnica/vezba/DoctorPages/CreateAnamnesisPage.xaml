@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba"
+      xmlns:val="clr-namespace:vezba.DoctorValidation"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="CreateAnamnesisPage">
@@ -44,27 +45,48 @@
             <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right">Prostorija:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Top">Izveštaj:</TextBlock>
 
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="{ Binding ApointmentDescription, Mode=OneWay}"/>
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="{ Binding StartTime, StringFormat=dd/MM/yyyy HH:mm, Mode=OneWay}"/>
-            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding DurationInMunutes}"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{ Binding Appointment.ApointmentDescription, Mode=OneWay}"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{ Binding Appointment.StartTime, StringFormat=dd/MM/yyyy HH:mm, Mode=OneWay}"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Appointment.DurationInMunutes}"/>
             <TextBlock Grid.Column="1" Grid.Row="4" Name="PatientNameSurname">
                 <TextBlock.Text>
                     <MultiBinding StringFormat="{}{0} {1}">
-                        <Binding Path="Patient.Name" />
-                        <Binding Path="Patient.Surname" />
+                        <Binding Path="Appointment.Patient.Name" />
+                        <Binding Path="Appointment.Patient.Surname" />
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
             <TextBlock Grid.Column="1" Grid.Row="5" Name="DoctorNameSurname">
                 <TextBlock.Text>
                     <MultiBinding StringFormat="{}{0} {1}">
-                        <Binding Path="Doctor.Name" />
-                        <Binding Path="Doctor.Surname" />
+                        <Binding Path="Appointment.Doctor.Name" />
+                        <Binding Path="Appointment.Doctor.Surname" />
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding Room.RoomNumber}"/>
-            <TextBox Grid.Column="1" Grid.Row="7" Name="TbComment" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="200" Margin="10, 10, 400, 10" VerticalAlignment="Top"/>
+            <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding Appointment.Room.RoomNumber}"/>
+            <TextBox Grid.Column="1" Grid.Row="7" Name="TbComment" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="200" Margin="10, 10, 400, 10" VerticalAlignment="Top">
+                <TextBox.Text>
+                    <Binding Path="Description" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <val:NonNullValidationRule ValidationStep="RawProposedValue"></val:NonNullValidationRule>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red" Margin="5"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
         </Grid>
         </ScrollViewer>
 </Page>

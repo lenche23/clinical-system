@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using Model;
@@ -9,17 +10,47 @@ namespace vezba.DoctorPages
     /// <summary>
     /// Interaction logic for CreateAnamnesisPage.xaml
     /// </summary>
-    public partial class CreateAnamnesisPage : Page
+    public partial class CreateAnamnesisPage : Page, INotifyPropertyChanged
     {
         private readonly Patient _patient;
 
         private readonly DoctorView _doctorView;
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public Appointment Appointment { get; set; }
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        private String _description;
+        public String Description
+        {
+            get
+            {
+                return _description;
+            }
+            set
+            {
+                if (value != _description)
+                {
+                    _description = value;
+                    OnPropertyChanged("Description");
+                }
+            }
+        }
+
         public CreateAnamnesisPage(Appointment appointment, DoctorView doctorView)
         {
             InitializeComponent();
-            DataContext = appointment;
-            _patient = appointment.Patient;
+            DataContext = this;
+            Appointment = appointment;
+            _patient = Appointment.Patient;
             _doctorView = doctorView;
         }
 
@@ -52,7 +83,8 @@ namespace vezba.DoctorPages
 
         private Boolean ValidateEntries()
         {
-            if (TbComment.Text.Length == 0)
+            TbComment.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(TbComment))
                 return false;
             return true;
         }
