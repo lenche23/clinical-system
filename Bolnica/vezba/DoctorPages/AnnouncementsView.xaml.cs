@@ -26,17 +26,10 @@ namespace vezba.DoctorPages
             _doctorView = doctorView;
         }
 
-        private void View_Button_Click(object sender, RoutedEventArgs e)
+        private void ViewAnnouncementClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            if (announcementTable.SelectedCells.Count > 0)
-            {
-                var announcement = (Announcement)announcementTable.SelectedItem;
-                _doctorView.Main.Content = new ViewAnnouncementPage(announcement, _doctorView);
-            }
-            else
-            {
-                MessageBox.Show("Niste selektovali obavestenje!");
-            }
+            var announcement = (sender as Grid).DataContext as Announcement;
+            _doctorView.Main.Content = new ViewAnnouncementPage(announcement, _doctorView);
         }
     }
 }
