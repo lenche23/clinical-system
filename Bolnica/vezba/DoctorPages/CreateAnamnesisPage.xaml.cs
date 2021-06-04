@@ -25,6 +25,8 @@ namespace vezba.DoctorPages
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
+            if(!ValidateEntries())
+                return;
             var newAnamnesis = NewAnamnesis();
 
             var patientService = new PatientService();
@@ -46,6 +48,13 @@ namespace vezba.DoctorPages
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             _doctorView.Main.GoBack();
+        }
+
+        private Boolean ValidateEntries()
+        {
+            if (TbComment.Text.Length == 0)
+                return false;
+            return true;
         }
     }
 }

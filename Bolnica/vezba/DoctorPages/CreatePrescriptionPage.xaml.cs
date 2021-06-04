@@ -106,9 +106,9 @@ namespace vezba.DoctorPages
             if (DpStartDate.SelectedDate == null)
                 return false;
             int r;
-            if (!int.TryParse(TbDuration.Text, out r) || int.Parse(TbDuration.Text) < 1 || int.Parse(TbDuration.Text) > 366)
+            if (!int.TryParse(TbDuration.Text, out r) || int.Parse(TbDuration.Text) == 0)
                 return false;
-            if (!int.TryParse(TbNumber.Text, out r) || int.Parse(TbNumber.Text) < 1 || int.Parse(TbNumber.Text) > 20)
+            if (!int.TryParse(TbNumber.Text, out r) || int.Parse(TbNumber.Text) == 0)
                 return false;
             return true;
         }

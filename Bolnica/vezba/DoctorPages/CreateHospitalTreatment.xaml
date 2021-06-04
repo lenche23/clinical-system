@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba.DoctorPages"
+      xmlns:val="clr-namespace:vezba.DoctorValidation"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1300"
       Title="CreateHospitalTreatment">
@@ -47,7 +48,29 @@
             <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Broj dana:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top">Soba:</TextBlock>
             <DatePicker Grid.Column="1" Grid.Row="1" Margin="10, 10, 400, 10" Height="25" Name="DpStartDate"/>
-            <TextBox Grid.Column="1" Grid.Row="2" Name="TbDuration"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="2" Name="TbDuration">
+                <TextBox.Text>
+                    <Binding Path="Duration" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <val:StringToIntValidationRule ValidationStep="RawProposedValue"/>
+                            <val:NonZeroValidationRule ValidationStep="ConvertedProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red" Margin="5"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
             <ComboBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" Name="CmbRooms" ItemsSource="{Binding Path=Rooms}" DisplayMemberPath="RoomNumber"/>
         </Grid>
     </ScrollViewer>

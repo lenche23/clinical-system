@@ -59,7 +59,7 @@
                     <Binding Path="Duration" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
                             <val:StringToIntValidationRule ValidationStep="RawProposedValue"/>
-                            <val:MinMaxValidationRule ValidationStep="ConvertedProposedValue" Min="1" Max="21"/>
+                            <val:NonZeroValidationRule ValidationStep="ConvertedProposedValue"/>
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
