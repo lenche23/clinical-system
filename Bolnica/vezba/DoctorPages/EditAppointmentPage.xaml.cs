@@ -48,6 +48,23 @@ namespace vezba.DoctorPages
             }
         }
 
+        private String _description;
+        public String Description
+        {
+            get
+            {
+                return _description;
+            }
+            set
+            {
+                if (value != _description)
+                {
+                    _description = value;
+                    OnPropertyChanged("Description");
+                }
+            }
+        }
+
         private String _startTime;
 
         public String StartTime
@@ -94,9 +111,9 @@ namespace vezba.DoctorPages
             this.appointmentGrid = appointmentGrid;
 
             StartDatePicker.SelectedDate = appointment.StartTime.Date;
-            //TimeTB.Text = Appointment.StartTime.ToString("t");
             StartTime = Appointment.StartTime.ToString("t");
             Duration = Appointment.DurationInMunutes.ToString();
+            Description = Appointment.ApointmentDescription;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
@@ -130,7 +147,7 @@ namespace vezba.DoctorPages
             var minute = int.Parse(TimeTB.Text.Split(':')[1]);
             var startDateTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, hour, minute, 0);
             var durationInMinutes = int.Parse(DurationTB.Text);
-            var appointmentDescription = DescriptionTB.Text;
+            var appointmentDescription = Description;
 
             var patient = (Patient) cmbPatients.SelectedItem;
             var room = (Room) cmbRooms.SelectedItem;
@@ -148,17 +165,17 @@ namespace vezba.DoctorPages
 
         private Boolean ValidateEntries()
         {
-            if (StartDatePicker.SelectedDate == null)
-                return false;
-            int r;
-            var split = TimeTB.Text.Split(':');
-            if (split.Length != 2 || !int.TryParse(split[0], out r) || !int.TryParse(split[1], out r) || int.Parse(split[0]) < 0 || int.Parse(split[0]) > 23 || int.Parse(split[1]) < 0 || int.Parse(split[1]) > 59)
-                return false;
-            if (!int.TryParse(DurationTB.Text, out r) || int.Parse(DurationTB.Text) < 10 || int.Parse(DurationTB.Text) > 120)
-                return false;
-            if (DescriptionTB.Text.Length == 0)
-                return false;
-            return true;
+            Boolean ret = true;
+            TimeTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(TimeTB))
+                ret = false;
+            DurationTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(DurationTB))
+                ret = false;
+            DescriptionTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(DescriptionTB))
+                ret = false;
+            return ret;
         }
     }
 }

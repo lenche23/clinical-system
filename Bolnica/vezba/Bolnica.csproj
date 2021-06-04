@@ -144,6 +144,7 @@
     <Compile Include="DoctorPages\ViewReferralLetter.xaml.cs">
       <DependentUpon>ViewReferralLetter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorValidation\NonNullValidationRule.cs" />
     <Compile Include="DoctorValidation\StringToIntValidationRule.cs" />
     <Compile Include="DoctorValidation\TimeValidationRule.cs" />
     <Compile Include="DoctorView.xaml.cs">

@@ -66,6 +66,7 @@
                     <TextBox.Text>
                         <Binding Path="StartTime" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
+                                <val:NonNullValidationRule ValidationStep="RawProposedValue"></val:NonNullValidationRule>
                                 <val:TimeValidationRule ValidationStep="RawProposedValue"/>
                             </Binding.ValidationRules>
                         </Binding>
@@ -89,6 +90,7 @@
                 <TextBox.Text>
                     <Binding Path="Duration" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
+                            <val:NonNullValidationRule ValidationStep="RawProposedValue"></val:NonNullValidationRule>
                             <val:StringToIntValidationRule ValidationStep="RawProposedValue"/>
                             <val:MinMaxValidationRule ValidationStep="ConvertedProposedValue" Min="10" Max="120"/>
                         </Binding.ValidationRules>
@@ -108,7 +110,28 @@
                     </ControlTemplate>
                 </Validation.ErrorTemplate>
             </TextBox>
-            <TextBox Grid.Column="1" Grid.Row="4" Name="DescriptionTB" Text="{Binding Appointment.ApointmentDescription, Mode=OneWay}"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="4" Name="DescriptionTB">
+                <TextBox.Text>
+                    <Binding Path="Description" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <val:NonNullValidationRule ValidationStep="RawProposedValue"></val:NonNullValidationRule>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red" Margin="5"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
             <ComboBox Grid.Column="1" Grid.Row="5" Name="cmbPatients" ItemsSource="{Binding Patients}" SelectedValuePath="Jmbg">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
