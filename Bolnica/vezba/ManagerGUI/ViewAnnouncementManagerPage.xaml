@@ -10,9 +10,7 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFFFE5F0"/>
                 <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
-                <GradientStop Color="#FFFFF9EA" Offset="0.529"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
@@ -79,26 +77,46 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <Grid Grid.Row="1" Margin="50,35,55,35">
-            <TextBlock Name="Content" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Sadrzaj" VerticalAlignment="Top" Margin="25,70,0,0" Height="255" Width="590" FontSize="14"/>
-            <TextBlock Name="Title" HorizontalAlignment="Left" Margin="60,10,0,0" TextWrapping="Wrap" Text="Naslov" VerticalAlignment="Top" Width="505" Height="55" FontSize="18"/>
-            <Label Name="Posted" Content="Postavljeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="341,375,0,0" Width="280" Height="25"/>
-            <Label Name="Edited" Content="Izmenjeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="341,405,0,0" Width="274" Height="25"/>
-
-
-            <Button Click ="ButtonBackClick" Margin="10,498,545,-125" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleY="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-                <Button.Background>
-                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
-                </Button.Background>
-            </Button>
+        <Grid Grid.Row="1" Margin="50,30,55,42" HorizontalAlignment="Center" VerticalAlignment="Center" Height="428">
+            <Border CornerRadius="30" Background="#FFFFF2F2" Margin="0,14,0,103">
+            </Border>
+            <Grid Margin="40,90,40,138">
+                <Border CornerRadius="20"  Background="White"/>
+                <TextBlock x:Name="Content" TextWrapping="Wrap" Text="Sadrzaj" VerticalAlignment="Top" Height="180" FontSize="20" Background="White" Foreground="#FF4B4B4B" HorizontalAlignment="Left" Width="485" Margin="25,10,0,0"/>
+            </Grid>
+            <TextBlock Name="Title" HorizontalAlignment="Left" Margin="40,30,0,0" TextWrapping="Wrap" Text="Naslov" VerticalAlignment="Top" Width="535" Height="35" FontSize="28"/>
+            <Label Name="Posted" Content="Postavljeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="355,345,0,0" Width="260" Height="39" FontSize="18" />
+            <Label Name="Edited" Content="  Izmenjeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="353,389,0,0" Width="260" Height="39" FontSize="18" />
         </Grid>
+        <Button Click ="ButtonBackClick" Margin="20,410,630,20"  Grid.Row="1" Foreground="{x:Null}">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/Bolnica;component/ManagerImages/Arrow3.png" Stretch="UniformToFill"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/Arrow2.png" Stretch="UniformToFill"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+            </Button.Style>
+        </Button>
     </Grid>
 </Page>

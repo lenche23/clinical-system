@@ -22,9 +22,9 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
-            <RowDefinition Height="13*"></RowDefinition>
-            <RowDefinition Height="26*"></RowDefinition>
-            <RowDefinition Height="11*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="60*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid  Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -86,11 +86,11 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <TextBlock FontSize="36"  Grid.Row="1" Margin="255,70,255,10" TextAlignment="Center" LineHeight="36" FontFamily="Corbel" Foreground="#FF36633E" FrameworkElement.FlowDirection="RightToLeft">Lekovi</TextBlock>
-        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" FontSize ="20" Grid.Row="2" Name="MedicineBinding" Margin="45,0">
+        <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="36"  Grid.Row="1" Margin="0,24,0,20" LineHeight="36" Foreground="#FF37593D" Height="56">Lekovi</TextBlock>
+        <ListView ItemsSource="{Binding Projects}" BorderThickness="2" BorderBrush="DarkSeaGreen"  ItemContainerStyle="{StaticResource listViewDoubleClick}" FontSize ="20" Grid.Row="2" Name="MedicineBinding" Margin="70,0">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width="140" DisplayMemberBinding="{Binding MedicineID}" />
+                    <GridViewColumn Header="ID" Width="90" DisplayMemberBinding="{Binding MedicineID}" />
                     <GridViewColumn Header="Naziv leka" Width="140" DisplayMemberBinding="{Binding Name}" />
                     <GridViewColumn Header="Proizvođač" Width="235" DisplayMemberBinding="{Binding Manufacturer}" />
                     <GridViewColumn Header="Status" Width="140" DisplayMemberBinding="{Binding Status}" />
@@ -98,14 +98,21 @@
             </ListView.View>
         </ListView>
 
-        <Button Grid.Row="1" Click="Add_Medicine_Button_Click" FontFamily="Corbel" BorderBrush="{x:Null}"  Margin="550,55,45,25" Background="#FF909E77" FontSize="18" Foreground="White" FontWeight="Bold">Dodaj nov lek
+        <Button Grid.Row="3" Click="Add_Medicine_Button_Click" FontFamily="Corbel" BorderBrush="{x:Null}"  Margin="100,20,495,20" Background="#FF909E77" FontSize="18" Foreground="White" FontWeight="Bold">Dodaj nov lek
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="15"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Grid.Row="3" Click="Declined_Medicine_Button_Click" FontFamily="Corbel" BorderBrush="{x:Null}"  Margin="285,10,280,55" Background="#FF909E77" FontSize="18" Foreground="White" FontWeight="Bold">Odbijeni lekovi
+        <Button Grid.Row="3" Click="Declined_Medicine_Button_Click" FontFamily="Corbel" BorderBrush="{x:Null}"  Margin="460,20,105,20" Background="#FF909E77" FontSize="18" Foreground="White" FontWeight="Bold">Odbijeni lekovi
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Grid.Row="3" FontFamily="Corbel" BorderBrush="{x:Null}"  Margin="295,20,330,20" Background="#FF909E77" FontSize="18" Foreground="White" FontWeight="Bold" Content="Obriši" Click="DeleteMedicine">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="15"/>

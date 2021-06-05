@@ -103,7 +103,7 @@ namespace vezba.ManagerGUI
         }
         private void AddIngredientButtonClick(object sender, RoutedEventArgs e)
         {
-            var ingredientName = NoviSastojak.Text;
+            var ingredientName = NewIngredientTextBox.Text;
             var newIngredient = new Ingridient(ingredientName);
             ingredientTemporaryList.Add(newIngredient);
             IngredientList = new ObservableCollection<Ingridient>(ingredientTemporaryList);

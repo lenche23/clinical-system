@@ -30,34 +30,183 @@
             <Rectangle Grid.Column="2"  Fill="#FFFFF5EB" Margin="50,20,50,30"/>
 
             <Button Grid.Column="0" BorderBrush="{x:Null}" Margin="60,35,60,75" Click="ButtonRoomsClick">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/hospital.png"/>
-                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/hospital.png" Stretch="UniformToFill"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/hospitalBlue.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
             </Button>
             <Button Grid.Column="0" Grid.Row="1" BorderBrush="{x:Null}" Margin="60,25,60,85" Click="ButtonStaffClick">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/doctor.png"/>
-                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/doctor.png" Stretch="UniformToFill" />
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/doctor.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
             </Button>
             <Button Grid.Column="1" BorderBrush="{x:Null}" Margin="60,35,60,75" Click="ButtonInventoryClick">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/building.png"/>
-                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/building.png" Stretch="UniformToFill"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/buildingBlue.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
             </Button>
             <Button Grid.Column="1" Grid.Row="1" BorderBrush="{x:Null}" Margin="60,25,60,85" Click="ButtonSurveyClick">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/health-check.png"/>
-                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/health-check.png" Stretch="UniformToFill" />
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/health-check.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
             </Button>
-            <Button Grid.Column="2" BorderBrush="{x:Null}" Margin="60,35,60,75" Click="ButtonMedicineClick">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/medicine.png"/>
-                </Button.Background>
+            <Button Grid.Row="0" Grid.Column="2" BorderBrush="{x:Null}" Margin="60,35,60,75" Click="ButtonMedicineClick">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/medicine.png" Stretch="UniformToFill" />
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/medicineBlue.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
             </Button>
             <Button Grid.Column="2" Grid.Row="1" BorderBrush="{x:Null}" Margin="60,25,60,85" Click="ButtonSupplyClick">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/medical-kit.png"/>
-                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/medical-kit.png" Stretch="UniformToFill" />
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/medical-kit.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
             </Button>
 
             <TextBlock Grid.Column="0" Margin="50,172,50,40" FontSize="20" TextAlignment="Center" Foreground="#FF544993" FontWeight="Bold">Prostorije</TextBlock>
@@ -68,15 +217,65 @@
             <TextBlock Grid.Column="2" Grid.Row="1" Margin="50,162,50,50" FontSize="20" TextAlignment="Center" Foreground="#FF544993" FontWeight="Bold">Snabdevanje</TextBlock>
         </Grid>
         <Rectangle  Fill="#FFFFF5EB" Margin="260,5"/>
-        <Button BorderBrush="{x:Null}" Grid.Row="0" Margin="285,10,400,10" Click="ButtonAnnouncementsClick">
-            <Button.Background>
-                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/bell.png" Stretch="Uniform"/>
-            </Button.Background>
+        <Button BorderBrush="{x:Null}" Grid.Row="0" Margin="280,5,395,5" Click="ButtonAnnouncementsClick">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/Bolnica;component/ManagerImages/bell.png" Stretch="Uniform" />
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/bellBlue.png" Stretch="Uniform"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+            </Button.Style>
         </Button>
-        <Button BorderBrush="{x:Null}" Grid.Row="0" Margin="400,10,285,10">
-            <Button.Background>
-                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/account.png" Stretch="Uniform"/>
-            </Button.Background>
+        <Button BorderBrush="{x:Null}" Grid.Row="0" Margin="395,5,280,5">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/Bolnica;component/ManagerImages/account.png" Stretch="Uniform" />
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/account.png" Stretch="Uniform"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+            </Button.Style>
         </Button>
 
     </Grid>

@@ -139,15 +139,6 @@ namespace vezba.ManagerGUI
             IngredientsBinding.ItemsSource = IngredientList;
             IngredientsBinding.Items.Refresh();
         }
-
-        private void DeleteButtonClick(object sender, RoutedEventArgs e)
-        {
-            MedicineService medicineService = new MedicineService();
-            medicineService.DeleteMedicine(selected.MedicineID);
-            MedicinePage.MedicineList.Remove(selected);
-            mainManagerWindow.MainManagerView.NavigationService.GoBack();
-        }
-
         private void ButtonRoomsClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);

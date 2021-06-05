@@ -34,7 +34,7 @@
     "RoomType": 1,
     "RoomNumber": 3,
     "RoomFloor": 1,
-    "IsDeleted": false,
+    "IsDeleted": true,
     "StartDateTime": "2021-06-04T00:20:01.8447297+02:00",
     "EndDateTime": "2021-07-02T00:00:00",
     "Renovation": []

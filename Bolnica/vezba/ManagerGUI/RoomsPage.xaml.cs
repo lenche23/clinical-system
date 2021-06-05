@@ -94,5 +94,21 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (lvDataBinding.SelectedIndex > -1)
+            {
+                Room room = (Room) lvDataBinding.SelectedItem;
+                RoomService roomService = new RoomService();
+                roomService.DeleteRoom(room.RoomNumber);
+                rooms = roomService.GetAllRooms();
+                Rooms.Remove(room);
+                lvDataBinding.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+            }
+        }
     }
 }

@@ -2,44 +2,20 @@
   {
     "ingridient": [
       {
-        "Name": "SilicijumDioksid"
-      },
-      {
-        "Name": "Kroskarmeloza-natrijum"
-      },
-      {
-        "Name": "Skrob, kukuruzni"
-      },
-      {
-        "Name": "Povidon (K25)"
-      },
-      {
-        "Name": "Eritrozin (E127)"
+        "Name": "111"
       }
     ],
-    "Name": "Ibuprofen",
-    "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-    "Packaging": "30 x 400 mg",
+    "Name": "Nayiv22",
+    "Manufacturer": "1122",
+    "Packaging": "111",
     "MedicineID": 0,
-    "Status": 0,
-    "Condition": 2,
+    "Status": 1,
+    "Condition": 1,
     "IsDeleted": true,
     "ReplacementMedicine": null,
     "Ingridient": [
       {
-        "Name": "SilicijumDioksid"
-      },
-      {
-        "Name": "Kroskarmeloza-natrijum"
-      },
-      {
-        "Name": "Skrob, kukuruzni"
-      },
-      {
-        "Name": "Povidon (K25)"
-      },
-      {
-        "Name": "Eritrozin (E127)"
+        "Name": "111"
       }
     ]
   },

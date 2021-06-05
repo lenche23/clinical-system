@@ -22,9 +22,9 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
-            <RowDefinition Height="13*"></RowDefinition>
-            <RowDefinition Height="26*"></RowDefinition>
-            <RowDefinition Height="11*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="60*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -86,25 +86,25 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <TextBlock FontSize="36"  Grid.Row="1" Margin="205,53,240,0" TextAlignment="Center" LineHeight="36" Foreground="#FFF56420">Inventar bolnice</TextBlock>
-        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" Grid.Row="2" Name="InventaryBinding" Margin="45,0" Background="#FFFFF6F6" FontSize="22" Foreground="#FF494949" FontFamily="Corbel">
+        <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="36"  Grid.Row="1" Margin="0,24,0,20" LineHeight="36" Foreground="#FF534036" Height="56">Inventar bolnice</TextBlock>
+        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" BorderBrush="DarkSalmon" BorderThickness="2" FontSize="22" Margin="140,0"  Background="White" Foreground="#FF494949" FontFamily="Corbel" Grid.Row="2" Name="InventaryBinding">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width ="100" DisplayMemberBinding="{Binding Id}" />
-                    <GridViewColumn Header="Naziv proizvoda" Width="400" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Tip" Width="160" DisplayMemberBinding="{Binding Type}"/>
+                    <GridViewColumn Header="ID" Width ="65" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Naziv proizvoda" Width="230" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Tip" Width="140" DisplayMemberBinding="{Binding Type}"/>
                 </GridView>
             </ListView.View>
         </ListView>
 
-        <Button FontFamily="Corbel" BorderBrush="{x:Null}" Grid.Row="3" Margin="175,10,400,45" Background="#FFDA6D54" Click="Add_Equipment_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold">Dodaj opremu
+        <Button FontFamily="Corbel" BorderBrush="{x:Null}" Grid.Row="3" Margin="190,20,400,20" Background="#FFDA6D54" Click="Add_Equipment_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold">Dodaj opremu
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button FontFamily="Corbel" BorderBrush="{x:Null}" Grid.Row="3" Margin="390,10,190,45" Background="#FFDA6D54" Click="Remove_Equipment_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold">Ukloni opremu
+        <Button FontFamily="Corbel" BorderBrush="{x:Null}" Grid.Row="3" Margin="400,20,190,20" Background="#FFDA6D54" Click="Remove_Equipment_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold">Ukloni opremu
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -112,10 +112,9 @@
             </Button.Resources>
         </Button>
 
-        <CheckBox FontSize="18" Name ="CheckedBoxStatic" Margin="45,92,586,18" IsChecked ="True" Unchecked ="StaticCheckBox_Unchecked" Checked="StaticCheckBox_Checked" Grid.Row="1">Statička</CheckBox>
-        <CheckBox FontSize="18" Name ="CheckedBoxDinamic" Margin="45,65,586,39" IsChecked ="True" Unchecked ="DinamicCheckBox_Unchecked" Checked="DinamicCheckBox_Checked" Grid.Row="1">Dinamička</CheckBox>
-        <Label FontSize="18" Margin="510,23,15,39" Content="Pretraga opreme po nazivu" Grid.Row="1"/>
-        <TextBox FontSize="20" Margin="536,65,45,20" Name="txtFilter" TextChanged="txtFilter_TextChanged" Grid.Row="1" BorderThickness="1">
+        <CheckBox FontSize="18" Name ="CheckedBoxStatic" Margin="625,50,0,216" IsChecked ="True" Unchecked ="StaticCheckBox_Unchecked" Checked="StaticCheckBox_Checked" Grid.Row="2" Background="White" Foreground="#FF810000">Statička</CheckBox>
+        <CheckBox FontSize="18" Name ="CheckedBoxDinamic" Margin="625,11,0,250" IsChecked ="True" Unchecked ="DinamicCheckBox_Unchecked" Checked="DinamicCheckBox_Checked" Grid.Row="2" Foreground="#FF820000">Dinamička</CheckBox>
+        <TextBox FontSize="20" Margin="570,50,26,10" Name="txtFilter" TextChanged="txtFilter_TextChanged" Grid.Row="1" BorderThickness="1">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

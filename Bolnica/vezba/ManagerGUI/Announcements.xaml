@@ -84,7 +84,7 @@
         <Grid Row="1" Background="#FFDCD2D2">
             <TextBlock VerticalAlignment="Center" FontFamily="HP Simplified Hans" FontSize="31" Height="40" Foreground="#FF4B3838" Margin="25,10,0,10">  Moja obaveštenja</TextBlock>
         </Grid>
-        <ListView Grid.Row="2" ItemContainerStyle="{StaticResource listViewDoubleClick}" ItemsSource="{Binding Ans}" x:Name="AnnouncementsList" HorizontalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" Height="375" Width="654">
+        <ListView Grid.Row="2" ItemContainerStyle="{StaticResource listViewDoubleClick}" ItemsSource="{Binding Ans}" x:Name="AnnouncementsList" HorizontalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" Height="280" Width="620" Margin="48,32,48,115">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Background="White"
@@ -112,10 +112,35 @@
         </ListView>
 
 
-        <Button Click ="ButtonBackClick" Margin="10,425,615,20" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667" Grid.Row="1">
-            <Button.Background>
-                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
-            </Button.Background>
+        <Button Click ="ButtonBackClick" Margin="20,350,630,20"  Grid.Row="2" Foreground="{x:Null}">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/Bolnica;component/ManagerImages/Arrow3.png" Stretch="UniformToFill"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/Arrow2.png" Stretch="UniformToFill"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+            </Button.Style>
         </Button>
     </Grid>
 </Page>

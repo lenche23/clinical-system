@@ -134,14 +134,6 @@ namespace vezba.ManagerGUI
             }
         }
 
-        private void DeleteButtonClick(object sender, RoutedEventArgs e)
-        {
-            RoomService roomService = new RoomService();
-            roomService.DeleteRoom(selected.RoomNumber);
-            RoomsPage.Rooms.Remove(selected);
-            mainManagerWindow.MainManagerView.NavigationService.GoBack();
-        }
-
         private void Izbriši_Button_Click(object sender, RoutedEventArgs e)
         {
             if (RoomInventoryBinding.SelectedIndex > -1)

@@ -62,5 +62,22 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Ni jedan lek nije selektovan!");
             }
         }
+
+
+        private void DeleteMedicine(object sender, RoutedEventArgs e)
+        {
+            if (MedicineBinding.SelectedIndex > -1)
+            {
+                Medicine selected = (Medicine)MedicineBinding.SelectedItems[0];
+                MedicineService medicineService = new MedicineService();
+                medicineService.DeleteMedicine(selected.MedicineID);
+                MedicineList.Remove(selected);
+            }
+
+            else
+            {
+                MessageBox.Show("Ni jedan lek nije selektovan!");
+            }
+        }
     }
 }

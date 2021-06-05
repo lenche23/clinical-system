@@ -10,6 +10,7 @@ namespace vezba.ManagerGUI
         public ViewAnnouncementManagerPage(MainManagerWindow mainManagerWindow, Announcement a)
         {
             InitializeComponent();
+            this.mainManagerWindow = mainManagerWindow;
             Posted.Content += a.FormatedDatePosted;
             Edited.Content += a.FormatedDateEdited;
             if (Posted.Content.Equals(Edited.Content))

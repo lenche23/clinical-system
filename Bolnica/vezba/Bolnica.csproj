@@ -1265,6 +1265,31 @@
   <ItemGroup>
     <Resource Include="PatientImages\clock.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerGUI\Sideways_Arrow_Icon.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\Arrow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\Arrow2.png" />
+    <Resource Include="ManagerImages\Arrow3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\hospitalBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\buildingBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\bellBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\medicineBlue.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
