@@ -247,7 +247,7 @@
     "doctorId": "1708962324890"
   },
   {
-    "StartTime": "2021-07-07T08:00:00",
+    "StartTime": "2021-06-07T08:00:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opste prakse.",
     "AppointentId": 19,
@@ -260,27 +260,27 @@
     "doctorId": "1708962324890"
   },
   {
-    "StartTime": "2021-07-25T13:00:00",
+    "StartTime": "2021-06-07T13:00:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opste prakse.",
     "AppointentId": 20,
     "IsDeleted": false,
     "IsEmergency": false,
     "AppointmentDescription": "Pregled kod lekara opste prakse.",
-    "StartTimee": "2021-07-25T13:00:00",
+    "StartTimee": "2021-06-07T13:00:00",
     "patientId": "1008985563244",
     "roomId": 0,
     "doctorId": "1708962324890"
   },
   {
-    "StartTime": "2021-07-28T14:30:00",
+    "StartTime": "2021-06-07T14:30:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opste prakse.",
     "AppointentId": 21,
     "IsDeleted": false,
     "IsEmergency": false,
     "AppointmentDescription": "Pregled kod lekara opste prakse.",
-    "StartTimee": "2021-07-28T14:30:00",
+    "StartTimee": "2021-06-07T14:30:00",
     "patientId": "1008985563244",
     "roomId": 0,
     "doctorId": "1708962324890"

@@ -18,7 +18,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
- 
+
     <Grid>
         <Grid x:Name="Upper" Height="80" VerticalAlignment="Top" Background="#FF7BC1A1">
             <Grid.Effect>
