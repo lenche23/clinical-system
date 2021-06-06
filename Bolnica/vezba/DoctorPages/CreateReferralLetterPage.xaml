@@ -34,8 +34,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -46,16 +44,12 @@
                 <Button Padding="5" Margin="5" Width="100" Height ="30" Click="OkButtonClick" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Potvrdi</Button>
                 <Button HorizontalAlignment="Right" Padding="5" Margin="5" Grid.ColumnSpan="2" Width="100"  Height ="30" Click="CancelButtonClick" Style="{StaticResource ResourceKey = DoctorCancelButton}" FontWeight="Bold">Odustani</Button>
             </StackPanel>
-            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Pacijent:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Broj osiguranja:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right">Početak važenja uputa:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Trajanje uputa:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Top">Lekar:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Početak važenja uputa:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Trajanje uputa:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top">Lekar:</TextBlock>
 
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Patient.NameAndSurname, Mode=OneWay}"/>
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Patient.MedicalRecord.HealthInsuranceNumber, Mode=OneWay}"/>
-            <DatePicker Grid.Column="1" Grid.Row="3" Margin="10, 10, 400, 10" Name="DpStartDate" Height="25"/>
-            <TextBox Grid.Column="1" Grid.Row="4" Name="TbDuration">
+            <DatePicker Grid.Column="1" Grid.Row="1" Margin="10, 10, 400, 10" Name="DpStartDate" Height="25"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Name="TbDuration">
                 <TextBox.Text>
                     <Binding Path="Duration" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
@@ -79,7 +73,7 @@
                     </ControlTemplate>
                 </Validation.ErrorTemplate>
             </TextBox>
-            <ComboBox Grid.Column="1" Grid.Row="5" VerticalAlignment="Top" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" Name="cmbDoctors"></ComboBox>
+            <ComboBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" ItemsSource="{Binding Doctors}" DisplayMemberPath="NameAndSurname" Name="cmbDoctors"></ComboBox>
         </Grid>
     </ScrollViewer>
 </Page>
