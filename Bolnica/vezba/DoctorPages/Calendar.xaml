@@ -13,6 +13,8 @@
             <Style TargetType="{x:Type TextBlock}">
                 <Setter Property="FontFamily" Value="Verdana"/>
             </Style>
+            <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource DoctorComboBox}"></Style>
+            <Style TargetType="{x:Type ComboBoxItem}" BasedOn="{StaticResource DoctorComboBoxItem}"></Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
