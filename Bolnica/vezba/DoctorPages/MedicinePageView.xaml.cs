@@ -55,5 +55,13 @@ namespace vezba.DoctorPages
             var declinedMedicine = (sender as Grid).DataContext as DeclinedMedicine;
             _doctorView.Main.Content = new ViewDeclinedMedicine(declinedMedicine, _doctorView);
         }
+
+        private void CreateReportClick(object sender, RoutedEventArgs e)
+        {
+            if (DpStartDate.SelectedDate == null || DpEndDate.SelectedDate == null)
+                return;
+            var medicineReportPreview = new MedicineReportPreview(DpStartDate.SelectedDate.Value, DpEndDate.SelectedDate.Value, _doctorView);
+            medicineReportPreview.Show();
+        }
     }
 }

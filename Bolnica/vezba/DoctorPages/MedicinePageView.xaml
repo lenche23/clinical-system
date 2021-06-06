@@ -212,6 +212,43 @@
                     </ListView>
                 </Grid>
             </TabItem>
+            <TabItem Header="Izveštaj">
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Margin" Value="10"/>
+                                <Setter Property="Height" Value="25"/>
+                                <Setter Property="Padding" Value="3"></Setter>
+                                <Setter Property="FontFamily" Value="Verdana"/>
+                                <Setter Property="Foreground" Value="Black"></Setter>
+                            </Style>
+                            <Style TargetType="{x:Type DatePicker}">
+                                <Setter Property="Margin" Value="10, 10, 400, 10"/>
+                                <Setter Property="Height" Value="25"/>
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                            <Button HorizontalAlignment="Right" Padding="5" Margin="5" Width="120" Height ="30" Click="CreateReportClick" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">Kreiraj Izveštaj</Button>
+                        </StackPanel>
+                        <TextBlock Padding="0" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" Foreground="DarkBlue"> Izveštaj o potrošnji lekova u izabranom intervalu</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right"> Početak:</TextBlock>
+                        <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Top">Kraj:</TextBlock>
+                        <DatePicker x:Name="DpStartDate" Grid.Column="1" Grid.Row="2"></DatePicker>
+                        <DatePicker x:Name="DpEndDate" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top"></DatePicker>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
         </TabControl>
     </Grid>
 </Page>

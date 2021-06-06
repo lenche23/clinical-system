@@ -132,6 +132,9 @@
     <Compile Include="DoctorPages\ExtendHospitalTreatment.xaml.cs">
       <DependentUpon>ExtendHospitalTreatment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorPages\MedicineReportPreview.xaml.cs">
+      <DependentUpon>MedicineReportPreview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorPages\ViewAnamnesis.xaml.cs">
       <DependentUpon>ViewAnamnesis.xaml</DependentUpon>
     </Compile>
@@ -287,6 +290,7 @@
       <DependentUpon>MedicineRevisionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DeclinedMedicine.cs" />
+    <Compile Include="Model\MedicineCount.cs" />
     <Compile Include="PatientNotification.xaml.cs">
       <DependentUpon>PatientNotification.xaml</DependentUpon>
     </Compile>
@@ -651,6 +655,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DoctorPages\ExtendHospitalTreatment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\MedicineReportPreview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

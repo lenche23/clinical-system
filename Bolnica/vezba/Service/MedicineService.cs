@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Model;
+using Model;
 using vezba.Repository;
 
 namespace Service
@@ -122,6 +123,11 @@ namespace Service
             DeleteMedicine(medicineToDecline.MedicineID);
             SaveDeclinedMedicine(declinedMedicine);
             return declinedMedicine;
+        }
+
+        public Medicine getMedicineById(int medicineId) 
+        {
+            return MedicineRepository.GetOne(medicineId);        
         }
         // LekarKraj******************************************************************************
 
