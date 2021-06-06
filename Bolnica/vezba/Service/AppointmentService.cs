@@ -352,7 +352,7 @@ namespace Service
         public Boolean MoveableAppointment(DateTime initDate, DateTime pickedDate)
         {
             int diff = (pickedDate - initDate).Days;
-            if (diff > 2)
+            if (!(diff > 2))
                 return false;
 
             return true;

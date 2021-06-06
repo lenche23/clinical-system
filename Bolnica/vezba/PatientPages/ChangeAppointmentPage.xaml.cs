@@ -32,7 +32,21 @@ namespace vezba.PatientPages
             Appointments = new ObservableCollection<Appointment>(appointments);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /*private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (appointmentsTable.SelectedItems.Count > 0)
+            {
+                Appointment selectedAppointment = (Appointment)appointmentsTable.SelectedItem;
+                this.NavigationService.Navigate(new EditAppointmentPage(selectedAppointment));
+            }
+            else
+            {
+                PatientNotification noti = new PatientNotification("Niste selektovali pregled koji želite da promenite!");
+                noti.ShowDialog();
+            }
+        }*/
+
+        private void Select_Click(object sender, SelectionChangedEventArgs e)
         {
             if (appointmentsTable.SelectedItems.Count > 0)
             {

@@ -50,7 +50,7 @@
             </DataGrid.Columns>
         </DataGrid>
         -->
-        <ListBox x:Name="gradingTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="10,116,10,73" Background="Transparent">
+        <ListBox x:Name="gradingTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="10,116,10,73" Background="Transparent" SelectionChanged="GradeDoctor_Click">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50">
@@ -74,7 +74,7 @@
                 </DataTemplate> 
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="ButtonGradeDoctor" Content="Ocenite"  FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,532,271,10" Click="ButtonGradeDoctor_Click">
+        <!--<Button x:Name="ButtonGradeDoctor" Content="Ocenite"  FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,532,271,10" Click="ButtonGradeDoctor_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
@@ -86,7 +86,7 @@
                     <GradientStop Color="#FFBEBEBE" Offset="0.41"/>
                 </RadialGradientBrush>
             </Button.Background>
-        </Button>
+        </Button>-->
         <Label Margin="10,72,10,489" Content="Izaberite lekara kog želite da ocenite" FontSize="20"/>
     </Grid>
 </Page>

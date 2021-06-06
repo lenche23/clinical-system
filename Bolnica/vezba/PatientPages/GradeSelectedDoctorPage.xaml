@@ -17,7 +17,7 @@
         </Grid.Background>
 
         <Image Source="/Bolnica;component/PatientImages/speech-bubble.png" Width="45" Margin="26,10,359,543"/>
-        <Label Content="{Binding Path = Doctor}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,154,0" Height="57" Width="200"/>
+        <Label Content="{Binding Path = Doctor}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,10,0" Height="57" Width="344"/>
         <Label Content="Izaberite ocenu:" FontSize="20" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="grade" Height="50" Margin="10,123,220,427" Background="AntiqueWhite" FontSize="20" BorderBrush="Black">
             <ComboBoxItem Content="1. veoma loš" Background="AntiqueWhite"/>
