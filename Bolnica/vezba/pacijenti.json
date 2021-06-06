@@ -35,432 +35,6 @@
       ],
       "prescription": [
         {
-          "StartDate": "2021-05-10T00:00:00",
-          "DurationInDays": 7,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-05-30T00:00:00",
-          "DurationInDays": 7,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-05-30T00:00:00",
-          "DurationInDays": 5,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-05-31T00:00:00",
-          "DurationInDays": 7,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-05-31T00:00:00",
-          "DurationInDays": 3,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-05-31T00:00:00",
-          "DurationInDays": 3,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
           "StartDate": "2021-06-23T00:00:00",
           "DurationInDays": 7,
           "ReferencePeriod": 0,
@@ -527,6 +101,92 @@
               },
               {
                 "Name": "Eritrozin (E127)"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ],
+            "Name": "Aspirin",
+            "Manufacturer": "Bayer Bitterfeld GmbH ",
+            "Packaging": "30 x 100mg",
+            "MedicineID": 3,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Celuloza, mikrokristalna"
+              },
+              {
+                "Name": "Hipromeloza (E464)"
+              },
+              {
+                "Name": "Titan-dioksid (E171)"
+              },
+              {
+                "Name": "Makrogol 400"
+              }
+            ],
+            "Name": "Xyzal",
+            "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
+            "Packaging": "30 x 5 mg",
+            "MedicineID": 2,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Celuloza, mikrokristalna"
+              },
+              {
+                "Name": "Hipromeloza (E464)"
+              },
+              {
+                "Name": "Titan-dioksid (E171)"
+              },
+              {
+                "Name": "Makrogol 400"
               }
             ]
           }
@@ -706,432 +366,6 @@
       ],
       "Prescription": [
         {
-          "StartDate": "2021-05-10T00:00:00",
-          "DurationInDays": 7,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-05-30T00:00:00",
-          "DurationInDays": 7,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-05-30T00:00:00",
-          "DurationInDays": 5,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-05-31T00:00:00",
-          "DurationInDays": 7,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-05-31T00:00:00",
-          "DurationInDays": 3,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-05-31T00:00:00",
-          "DurationInDays": 3,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ],
-            "Name": "Ibuprofen",
-            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-            "Packaging": "30 x 400 mg",
-            "MedicineID": 0,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": {
-              "ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ],
-              "Name": "Oestrofact",
-              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-              "Packaging": "50 x 70 mg",
-              "MedicineID": 3,
-              "Status": 0,
-              "Condition": 1,
-              "IsDeleted": false,
-              "ReplacementMedicine": null,
-              "Ingridient": [
-                {
-                  "Name": "Trifolium pratense extractum siccum standardisatum"
-                }
-              ]
-            },
-            "Ingridient": [
-              {
-                "Name": "SilicijumDioksid"
-              },
-              {
-                "Name": "Kroskarmeloza-natrijum"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Povidon (K25)"
-              },
-              {
-                "Name": "Eritrozin (E127)"
-              }
-            ]
-          }
-        },
-        {
           "StartDate": "2021-06-23T00:00:00",
           "DurationInDays": 7,
           "ReferencePeriod": 0,
@@ -1198,6 +432,92 @@
               },
               {
                 "Name": "Eritrozin (E127)"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ],
+            "Name": "Aspirin",
+            "Manufacturer": "Bayer Bitterfeld GmbH ",
+            "Packaging": "30 x 100mg",
+            "MedicineID": 3,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Celuloza, mikrokristalna"
+              },
+              {
+                "Name": "Hipromeloza (E464)"
+              },
+              {
+                "Name": "Titan-dioksid (E171)"
+              },
+              {
+                "Name": "Makrogol 400"
+              }
+            ],
+            "Name": "Xyzal",
+            "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
+            "Packaging": "30 x 5 mg",
+            "MedicineID": 2,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Celuloza, mikrokristalna"
+              },
+              {
+                "Name": "Hipromeloza (E464)"
+              },
+              {
+                "Name": "Titan-dioksid (E171)"
+              },
+              {
+                "Name": "Makrogol 400"
               }
             ]
           }
@@ -1583,10 +903,168 @@
           "Name": "BI-278"
         }
       ],
-      "anamnesis": null,
-      "prescription": null,
-      "referralLetter": null,
-      "hospitalTreatment": null,
+      "anamnesis": [],
+      "prescription": [
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 7,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ],
+            "Name": "Aspirin",
+            "Manufacturer": "Bayer Bitterfeld GmbH ",
+            "Packaging": "30 x 100mg",
+            "MedicineID": 3,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ],
+            "Name": "Ibuprofen",
+            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+            "Packaging": "30 x 400 mg",
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            },
+            "Ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Celuloza, mikrokristalna"
+              },
+              {
+                "Name": "Hipromeloza (E464)"
+              },
+              {
+                "Name": "Titan-dioksid (E171)"
+              },
+              {
+                "Name": "Makrogol 400"
+              }
+            ],
+            "Name": "Xyzal",
+            "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
+            "Packaging": "30 x 5 mg",
+            "MedicineID": 2,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Celuloza, mikrokristalna"
+              },
+              {
+                "Name": "Hipromeloza (E464)"
+              },
+              {
+                "Name": "Titan-dioksid (E171)"
+              },
+              {
+                "Name": "Makrogol 400"
+              }
+            ]
+          }
+        }
+      ],
+      "referralLetter": [],
+      "hospitalTreatment": [],
       "HealthInsuranceNumber": "926435596413",
       "MedicalIdNumber": "65415896541",
       "Allergen": [
@@ -1598,7 +1076,165 @@
         }
       ],
       "Anamnesis": [],
-      "Prescription": [],
+      "Prescription": [
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 7,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ],
+            "Name": "Aspirin",
+            "Manufacturer": "Bayer Bitterfeld GmbH ",
+            "Packaging": "30 x 100mg",
+            "MedicineID": 3,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ],
+            "Name": "Ibuprofen",
+            "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+            "Packaging": "30 x 400 mg",
+            "MedicineID": 0,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": {
+              "ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ],
+              "Name": "Oestrofact",
+              "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+              "Packaging": "50 x 70 mg",
+              "MedicineID": 3,
+              "Status": 0,
+              "Condition": 1,
+              "IsDeleted": false,
+              "ReplacementMedicine": null,
+              "Ingridient": [
+                {
+                  "Name": "Trifolium pratense extractum siccum standardisatum"
+                }
+              ]
+            },
+            "Ingridient": [
+              {
+                "Name": "SilicijumDioksid"
+              },
+              {
+                "Name": "Kroskarmeloza-natrijum"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Povidon (K25)"
+              },
+              {
+                "Name": "Eritrozin (E127)"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Celuloza, mikrokristalna"
+              },
+              {
+                "Name": "Hipromeloza (E464)"
+              },
+              {
+                "Name": "Titan-dioksid (E171)"
+              },
+              {
+                "Name": "Makrogol 400"
+              }
+            ],
+            "Name": "Xyzal",
+            "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
+            "Packaging": "30 x 5 mg",
+            "MedicineID": 2,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Celuloza, mikrokristalna"
+              },
+              {
+                "Name": "Hipromeloza (E464)"
+              },
+              {
+                "Name": "Titan-dioksid (E171)"
+              },
+              {
+                "Name": "Makrogol 400"
+              }
+            ]
+          }
+        }
+      ],
       "ReferralLetter": [],
       "HospitalTreatment": []
     },

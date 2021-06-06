@@ -30,11 +30,12 @@ namespace vezba.Repository
            return allMedicine;
        }
        public Boolean Save(Medicine newMedicine)
-       { 
+       {
+            newMedicine.MedicineID = GenerateNextId();
            var storedMedicine = ReadFromFile();
            foreach (var medicine in storedMedicine)
            {
-               if (medicine.MedicineID == newMedicine.MedicineID)
+               if (!medicine.IsDeleted && medicine.MedicineID == newMedicine.MedicineID)
                {
                    return false;
                }

@@ -10,7 +10,7 @@
     <Grid>
         <ScrollViewer>
             <Grid>
-                <Button HorizontalAlignment="Right" Height="30" Width="50" Margin="10" Click="PrintButtonClick" VerticalAlignment="Top" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
+                <Button HorizontalAlignment="Right" Height="30" Width="70" Margin="10" Click="PrintButtonClick" VerticalAlignment="Top" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
                     <materialDesign:PackIcon Kind="Printer" Foreground="White"/>
                 </Button>
                 <Grid MinHeight="29.7cm" Width="21cm" x:Name="print">
@@ -113,7 +113,7 @@
                         <Rectangle Fill="Black" Height="1" Margin="5" Opacity="0.5"/>
 
                         <Grid Margin="0 20" HorizontalAlignment="Stretch">
-                            <TextBlock Text="Bolnica Zdravo" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="8" Margin="5" FontWeight="Light"/>
+                            <TextBlock Text="Bolnica Zdravo" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="10" Margin="5" FontWeight="Light"/>
                         </Grid>
                     </StackPanel>
                 </Grid>

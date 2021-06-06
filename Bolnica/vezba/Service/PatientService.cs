@@ -208,7 +208,7 @@ namespace Service
                         if (medicineCount.ContainsKey(medicineId))
                             medicineCount[medicineId] += 1;
                         else
-                            medicineCount[medicineId] = 0;
+                            medicineCount[medicineId] = 1;
                     }
                 }
             }

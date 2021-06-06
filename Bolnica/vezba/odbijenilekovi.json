@@ -40,7 +40,7 @@
       ]
     },
     "Description": "Neka poruka",
-    "IsDeleted": false,
+    "IsDeleted": true,
     "MedicineName": "Xyzal",
     "MedicineManufacturer": "Aesica Pharmaceuticals S.r.l."
   },
@@ -79,7 +79,7 @@
       ]
     },
     "Description": "Neka poruka",
-    "IsDeleted": false,
+    "IsDeleted": true,
     "MedicineName": "Aspirin",
     "MedicineManufacturer": "Bayer Bitterfeld GmbH "
   },
