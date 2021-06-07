@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="MedicalRecordPage">
@@ -116,7 +117,12 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 5, 25, 5">
-                            <Button Padding="5" Margin="5" Click="NewPrescriptionClick" Height="30" Width="120"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">+ Nova terapija</Button>
+                            <Button Padding="0" Margin="5" Click="NewPrescriptionClick" Height="30" Width="120" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Plus" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBlock Padding="1" Height="Auto" Margin="0" VerticalAlignment="Center">Nova terapija</TextBlock>
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
                         <Grid Grid.Row="1" Margin="30, 0">
                             <Grid.ColumnDefinitions>
@@ -230,7 +236,12 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 5, 25, 5">
-                            <Button Padding="5" Margin="5" Click="NewReferralLetterClick" Height="30" Width="100"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">+ Nov uput</Button>
+                            <Button Padding="0" Margin="5" Click="NewReferralLetterClick" Height="30" Width="120" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Plus" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBlock Padding="1" Height="Auto" Margin="0" VerticalAlignment="Center">Nov uput</TextBlock>
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
                         <Grid Grid.Row="1" Margin="30, 0">
                             <Grid.ColumnDefinitions>
@@ -287,7 +298,12 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5, 5, 25, 5">
-                            <Button Padding="5" Margin="5" Click="NewHospitalTreatmentClick" Height="30" Width="120"  Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">+ Novo lečenje</Button>
+                            <Button Padding="0" Margin="5" Click="NewHospitalTreatmentClick" Height="30" Width="120" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Plus" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBlock Padding="1" Height="Auto" Margin="0" VerticalAlignment="Center">Novo lečenje</TextBlock>
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
                         <Grid Grid.Row="1" Margin="30, 0">
                             <Grid.ColumnDefinitions>
