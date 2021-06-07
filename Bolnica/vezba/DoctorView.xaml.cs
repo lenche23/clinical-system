@@ -24,6 +24,7 @@ namespace vezba
             DoctorFileRepository ds = new DoctorFileRepository();
             DoctorUser = ds.GetOne("1708962324890");
             Main.Content = new Calendar(this);
+            TbUser.Text = DoctorUser.NameAndSurname;
         }
 
         private void CalendarClick(object sender, RoutedEventArgs e)
@@ -39,6 +40,23 @@ namespace vezba
         private void AnnouncementsClick(object sender, RoutedEventArgs e)
         {
             Main.Content = new AnnouncementsView(UserType.doctor, this);
+        }
+
+        private void ExpandClick(object sender, RoutedEventArgs e)
+        {
+            if(ExpandGrid.Visibility == System.Windows.Visibility.Collapsed)
+            {
+                ExpandGrid.Visibility = System.Windows.Visibility.Visible;
+            }
+            else
+                ExpandGrid.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
+        private void LogOutClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var s = new MainWindow();
+            s.Show();
+            Close();
         }
     }
 }
