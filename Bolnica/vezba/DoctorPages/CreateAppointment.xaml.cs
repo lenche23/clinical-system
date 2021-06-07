@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using Model;
@@ -18,6 +20,10 @@ namespace vezba.DoctorPages
         public List<Room> Rooms { get; set; }
         private DoctorView doctorView;
         private Calendar calendar;
+        private CancellationTokenSource _tokenSource = null;
+        String oldTime;
+        String oldDuration;
+        String oldDescription;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -176,6 +182,159 @@ namespace vezba.DoctorPages
             if (Validation.GetHasError(DescriptionTB))
                 ret = false;
             return ret;
+        }
+
+        internal async Task RunDemo(CancellationToken token)
+        {
+            while (true)
+            {
+                StartTime = "";
+                Duration = "";
+                Description = "";
+
+                StartDatePicker.Dispatcher.Invoke(() =>
+                {
+                    StartDatePicker.IsDropDownOpen = true;
+                });
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+                StartDatePicker.Dispatcher.Invoke(() =>
+                {
+                    StartDatePicker.IsDropDownOpen = false;
+                });
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+
+                String time = "8:00";
+                foreach (var item in time)
+                {
+
+                    TimeTB.Dispatcher.Invoke(() =>
+                    {
+                        TimeTB.Text += item;
+                    });
+                    if (token.IsCancellationRequested)
+                        token.ThrowIfCancellationRequested();
+                    await Task.Delay(100);
+                }
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+
+                String duration = "45";
+                foreach (var item in duration)
+                {
+
+                    DurationTB.Dispatcher.Invoke(() =>
+                    {
+                        DurationTB.Text += item;
+                    });
+                    if (token.IsCancellationRequested)
+                        token.ThrowIfCancellationRequested();
+                    await Task.Delay(100);
+                }
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+
+                String description = "Sistematski pregled";
+                foreach (var item in description)
+                {
+
+                    DescriptionTB.Dispatcher.Invoke(() =>
+                    {
+                        DescriptionTB.Text += item;
+                    });
+                    if (token.IsCancellationRequested)
+                        token.ThrowIfCancellationRequested();
+                    await Task.Delay(100);
+                }
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+
+                cmbPatients.Dispatcher.Invoke(() =>
+                {
+                    cmbPatients.IsDropDownOpen = true;
+                });
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+                cmbPatients.Dispatcher.Invoke(() =>
+                {
+                    cmbPatients.IsDropDownOpen = false;
+                });
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+
+                cmbRooms.Dispatcher.Invoke(() =>
+                {
+                    cmbRooms.IsDropDownOpen = true;
+                });
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+                cmbRooms.Dispatcher.Invoke(() =>
+                {
+                    cmbRooms.IsDropDownOpen = false;
+                });
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+
+                cmbDoctors.Dispatcher.Invoke(() =>
+                {
+                    cmbDoctors.IsDropDownOpen = true;
+                });
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+                cmbDoctors.Dispatcher.Invoke(() =>
+                {
+                    cmbDoctors.IsDropDownOpen = false;
+                });
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+            }
+        }
+
+        private async void RunDemoClick(object sender, RoutedEventArgs e)
+        {
+            TimeTB.IsReadOnly = true;
+            DurationTB.IsReadOnly = true;
+            DescriptionTB.IsReadOnly = true;
+            oldTime = TimeTB.Text;
+            oldDescription = DescriptionTB.Text;
+            oldDuration = DurationTB.Text;
+            _tokenSource = new CancellationTokenSource();
+            var token = _tokenSource.Token;
+            try
+            {
+                await RunDemo(token);
+            }
+            catch(OperationCanceledException)
+            {
+                
+            }
+            finally
+            {
+                _tokenSource.Dispose();
+            }
+            TimeTB.Text = oldTime;
+            DescriptionTB.Text = oldDescription;
+            DurationTB.Text = oldDuration;
+            TimeTB.IsReadOnly = false;
+            DurationTB.IsReadOnly = false;
+            DescriptionTB.IsReadOnly = false;
+        }
+
+        private void CancelDemoClick(object sender, RoutedEventArgs e)
+        {
+            _tokenSource.Cancel();
         }
     }
 }
