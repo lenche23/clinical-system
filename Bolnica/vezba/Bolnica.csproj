@@ -284,11 +284,23 @@
     <Compile Include="PatientPages\DoctorOrTimePage.xaml.cs">
       <DependentUpon>DoctorOrTimePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PatientPages\MyDoctor.xaml.cs">
+      <DependentUpon>MyDoctor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\NotificationRequest.xaml.cs">
+      <DependentUpon>NotificationRequest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PatientPages\OrderDoctorAppointment.xaml.cs">
       <DependentUpon>OrderDoctorAppointment.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientPages\OrderTimeAppointment.xaml.cs">
       <DependentUpon>OrderTimeAppointment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\Payment.xaml.cs">
+      <DependentUpon>Payment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\PayPage.xaml.cs">
+      <DependentUpon>PayPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientPages\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
@@ -924,6 +936,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PatientPages\MyDoctor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\NotificationRequest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientPages\NotificationsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -933,6 +953,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PatientPages\OrderTimeAppointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\Payment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\PayPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

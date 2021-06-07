@@ -36,7 +36,7 @@ namespace vezba.PatientPages
 
         private void BtnZahtev_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new NotificationRequest());
         }
 
         private void BtnOcenaLekara_Click(object sender, RoutedEventArgs e)
@@ -64,12 +64,12 @@ namespace vezba.PatientPages
 
         private void BtnMojLekar_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new MyDoctor());
         }
 
         private void BtnPlacanje_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Payment());
         }
 
         private void BtnIzvestaj_Click(object sender, RoutedEventArgs e)
