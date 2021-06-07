@@ -21,9 +21,6 @@ namespace vezba.DoctorPages
         private DoctorView doctorView;
         private Calendar calendar;
         private CancellationTokenSource _tokenSource = null;
-        String oldTime;
-        String oldDuration;
-        String oldDescription;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -192,6 +189,21 @@ namespace vezba.DoctorPages
                 Duration = "";
                 Description = "";
 
+                IsEmergencyCB.Dispatcher.Invoke(() =>
+                {
+                    IsEmergencyCB.IsChecked = true;
+                });
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+                IsEmergencyCB.Dispatcher.Invoke(() =>
+                {
+                    IsEmergencyCB.IsChecked = false;
+                });
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+
                 StartDatePicker.Dispatcher.Invoke(() =>
                 {
                     StartDatePicker.IsDropDownOpen = true;
@@ -304,12 +316,16 @@ namespace vezba.DoctorPages
 
         private async void RunDemoClick(object sender, RoutedEventArgs e)
         {
+            DemoButton.Visibility = System.Windows.Visibility.Collapsed;
+            StopDemoButton.Visibility = System.Windows.Visibility.Visible;
+            OkButton.IsEnabled = false;
             TimeTB.IsReadOnly = true;
             DurationTB.IsReadOnly = true;
             DescriptionTB.IsReadOnly = true;
-            oldTime = TimeTB.Text;
-            oldDescription = DescriptionTB.Text;
-            oldDuration = DurationTB.Text;
+            var oldTime = TimeTB.Text;
+            var oldDescription = DescriptionTB.Text;
+            var oldDuration = DurationTB.Text;
+            var oldChecked = IsEmergencyCB.IsChecked;
             _tokenSource = new CancellationTokenSource();
             var token = _tokenSource.Token;
             try
@@ -324,16 +340,24 @@ namespace vezba.DoctorPages
             {
                 _tokenSource.Dispose();
             }
+            IsEmergencyCB.IsChecked = oldChecked;
             TimeTB.Text = oldTime;
             DescriptionTB.Text = oldDescription;
             DurationTB.Text = oldDuration;
             TimeTB.IsReadOnly = false;
             DurationTB.IsReadOnly = false;
             DescriptionTB.IsReadOnly = false;
+            OkButton.IsEnabled = true;
+            StartDatePicker.IsDropDownOpen = false;
+            cmbDoctors.IsDropDownOpen = false;
+            cmbPatients.IsDropDownOpen = false;
+            cmbRooms.IsDropDownOpen = false;
         }
 
         private void CancelDemoClick(object sender, RoutedEventArgs e)
         {
+            StopDemoButton.Visibility = System.Windows.Visibility.Collapsed;
+            DemoButton.Visibility = System.Windows.Visibility.Visible;
             _tokenSource.Cancel();
         }
     }

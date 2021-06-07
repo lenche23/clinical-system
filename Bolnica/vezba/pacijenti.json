@@ -115,46 +115,6 @@
           "Medicine": {
             "ingridient": [
               {
-                "Name": "Acetilsalicilna kiselina"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Trietil-citrat"
-              }
-            ],
-            "Name": "Aspirin",
-            "Manufacturer": "Bayer Bitterfeld GmbH ",
-            "Packaging": "30 x 100mg",
-            "MedicineID": 3,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": null,
-            "Ingridient": [
-              {
-                "Name": "Acetilsalicilna kiselina"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Trietil-citrat"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-06-07T00:00:00+02:00",
-          "DurationInDays": 3,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
                 "Name": "Celuloza, mikrokristalna"
               },
               {
@@ -170,7 +130,7 @@
             "Name": "Xyzal",
             "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
             "Packaging": "30 x 5 mg",
-            "MedicineID": 2,
+            "MedicineID": 1,
             "Status": 0,
             "Condition": 0,
             "IsDeleted": false,
@@ -187,6 +147,46 @@
               },
               {
                 "Name": "Makrogol 400"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ],
+            "Name": "Aspirin",
+            "Manufacturer": "Bayer Bitterfeld GmbH ",
+            "Packaging": "30 x 100mg",
+            "MedicineID": 2,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
               }
             ]
           }
@@ -446,46 +446,6 @@
           "Medicine": {
             "ingridient": [
               {
-                "Name": "Acetilsalicilna kiselina"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Trietil-citrat"
-              }
-            ],
-            "Name": "Aspirin",
-            "Manufacturer": "Bayer Bitterfeld GmbH ",
-            "Packaging": "30 x 100mg",
-            "MedicineID": 3,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": null,
-            "Ingridient": [
-              {
-                "Name": "Acetilsalicilna kiselina"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Trietil-citrat"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-06-07T00:00:00+02:00",
-          "DurationInDays": 3,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
                 "Name": "Celuloza, mikrokristalna"
               },
               {
@@ -501,7 +461,7 @@
             "Name": "Xyzal",
             "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
             "Packaging": "30 x 5 mg",
-            "MedicineID": 2,
+            "MedicineID": 1,
             "Status": 0,
             "Condition": 0,
             "IsDeleted": false,
@@ -518,6 +478,46 @@
               },
               {
                 "Name": "Makrogol 400"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ],
+            "Name": "Aspirin",
+            "Manufacturer": "Bayer Bitterfeld GmbH ",
+            "Packaging": "30 x 100mg",
+            "MedicineID": 2,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
               }
             ]
           }
@@ -907,46 +907,6 @@
       "prescription": [
         {
           "StartDate": "2021-06-07T00:00:00+02:00",
-          "DurationInDays": 7,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "Acetilsalicilna kiselina"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Trietil-citrat"
-              }
-            ],
-            "Name": "Aspirin",
-            "Manufacturer": "Bayer Bitterfeld GmbH ",
-            "Packaging": "30 x 100mg",
-            "MedicineID": 3,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": null,
-            "Ingridient": [
-              {
-                "Name": "Acetilsalicilna kiselina"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Trietil-citrat"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-06-07T00:00:00+02:00",
           "DurationInDays": 3,
           "ReferencePeriod": 0,
           "Number": 3,
@@ -1041,7 +1001,7 @@
             "Name": "Xyzal",
             "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
             "Packaging": "30 x 5 mg",
-            "MedicineID": 2,
+            "MedicineID": 1,
             "Status": 0,
             "Condition": 0,
             "IsDeleted": false,
@@ -1058,6 +1018,46 @@
               },
               {
                 "Name": "Makrogol 400"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ],
+            "Name": "Aspirin",
+            "Manufacturer": "Bayer Bitterfeld GmbH ",
+            "Packaging": "30 x 100mg",
+            "MedicineID": 2,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
               }
             ]
           }
@@ -1079,46 +1079,6 @@
       "Prescription": [
         {
           "StartDate": "2021-06-07T00:00:00+02:00",
-          "DurationInDays": 7,
-          "ReferencePeriod": 0,
-          "Number": 3,
-          "Id": 0,
-          "isActive": true,
-          "Medicine": {
-            "ingridient": [
-              {
-                "Name": "Acetilsalicilna kiselina"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Trietil-citrat"
-              }
-            ],
-            "Name": "Aspirin",
-            "Manufacturer": "Bayer Bitterfeld GmbH ",
-            "Packaging": "30 x 100mg",
-            "MedicineID": 3,
-            "Status": 0,
-            "Condition": 0,
-            "IsDeleted": false,
-            "ReplacementMedicine": null,
-            "Ingridient": [
-              {
-                "Name": "Acetilsalicilna kiselina"
-              },
-              {
-                "Name": "Skrob, kukuruzni"
-              },
-              {
-                "Name": "Trietil-citrat"
-              }
-            ]
-          }
-        },
-        {
-          "StartDate": "2021-06-07T00:00:00+02:00",
           "DurationInDays": 3,
           "ReferencePeriod": 0,
           "Number": 3,
@@ -1213,7 +1173,7 @@
             "Name": "Xyzal",
             "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
             "Packaging": "30 x 5 mg",
-            "MedicineID": 2,
+            "MedicineID": 1,
             "Status": 0,
             "Condition": 0,
             "IsDeleted": false,
@@ -1230,6 +1190,46 @@
               },
               {
                 "Name": "Makrogol 400"
+              }
+            ]
+          }
+        },
+        {
+          "StartDate": "2021-06-07T00:00:00+02:00",
+          "DurationInDays": 3,
+          "ReferencePeriod": 0,
+          "Number": 3,
+          "Id": 0,
+          "isActive": true,
+          "Medicine": {
+            "ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
+              }
+            ],
+            "Name": "Aspirin",
+            "Manufacturer": "Bayer Bitterfeld GmbH ",
+            "Packaging": "30 x 100mg",
+            "MedicineID": 2,
+            "Status": 0,
+            "Condition": 0,
+            "IsDeleted": false,
+            "ReplacementMedicine": null,
+            "Ingridient": [
+              {
+                "Name": "Acetilsalicilna kiselina"
+              },
+              {
+                "Name": "Skrob, kukuruzni"
+              },
+              {
+                "Name": "Trietil-citrat"
               }
             ]
           }
