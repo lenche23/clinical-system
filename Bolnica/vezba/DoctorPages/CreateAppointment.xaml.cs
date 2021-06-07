@@ -21,6 +21,9 @@ namespace vezba.DoctorPages
         private DoctorView doctorView;
         private Calendar calendar;
         private CancellationTokenSource _tokenSource = null;
+        private String oldTime;
+        private String oldDuration;
+        private String oldDescription;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -153,10 +156,10 @@ namespace vezba.DoctorPages
             var startDateTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, hour, minute, 0);
             var durationInMinutes = int.Parse(Duration);
             var appointmentDescription = Description;
-            var patient = (Patient) cmbPatients.SelectedItem;
-            var room = (Room) cmbRooms.SelectedItem;
-            var doctor = (Doctor) cmbDoctors.SelectedItem;
-            var isEmergency = (Boolean) IsEmergencyCB.IsChecked;
+            var patient = (Patient)cmbPatients.SelectedItem;
+            var room = (Room)cmbRooms.SelectedItem;
+            var doctor = (Doctor)cmbDoctors.SelectedItem;
+            var isEmergency = (Boolean)IsEmergencyCB.IsChecked;
             var newAppointment = new Appointment(0, patient, doctor, room, startDateTime, durationInMinutes, appointmentDescription, isEmergency);
             return newAppointment;
         }
@@ -185,10 +188,6 @@ namespace vezba.DoctorPages
         {
             while (true)
             {
-                StartTime = "";
-                Duration = "";
-                Description = "";
-
                 IsEmergencyCB.Dispatcher.Invoke(() =>
                 {
                     IsEmergencyCB.IsChecked = true;
@@ -219,13 +218,41 @@ namespace vezba.DoctorPages
                     token.ThrowIfCancellationRequested();
                 await Task.Delay(500);
 
-                String time = "8:00";
+                while (TimeTB.Text.Length != 0)
+                {
+                    TimeTB.Dispatcher.Invoke(() =>
+                    {
+                        TimeTB.Text = TimeTB.Text.Remove(TimeTB.Text.Length - 1, 1);
+                    });
+                    if (token.IsCancellationRequested)
+                        token.ThrowIfCancellationRequested();
+                    await Task.Delay(100);
+                }
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+
+                String time = "08:00";
                 foreach (var item in time)
                 {
 
                     TimeTB.Dispatcher.Invoke(() =>
                     {
                         TimeTB.Text += item;
+                    });
+                    if (token.IsCancellationRequested)
+                        token.ThrowIfCancellationRequested();
+                    await Task.Delay(100);
+                }
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+
+                while (DurationTB.Text.Length != 0)
+                {
+                    DurationTB.Dispatcher.Invoke(() =>
+                    {
+                        DurationTB.Text = DurationTB.Text.Remove(DurationTB.Text.Length - 1, 1);
                     });
                     if (token.IsCancellationRequested)
                         token.ThrowIfCancellationRequested();
@@ -242,6 +269,20 @@ namespace vezba.DoctorPages
                     DurationTB.Dispatcher.Invoke(() =>
                     {
                         DurationTB.Text += item;
+                    });
+                    if (token.IsCancellationRequested)
+                        token.ThrowIfCancellationRequested();
+                    await Task.Delay(100);
+                }
+                if (token.IsCancellationRequested)
+                    token.ThrowIfCancellationRequested();
+                await Task.Delay(500);
+
+                while (DescriptionTB.Text.Length != 0)
+                {
+                    DescriptionTB.Dispatcher.Invoke(() =>
+                    {
+                        DescriptionTB.Text = DescriptionTB.Text.Remove(DescriptionTB.Text.Length - 1, 1);
                     });
                     if (token.IsCancellationRequested)
                         token.ThrowIfCancellationRequested();
@@ -311,6 +352,10 @@ namespace vezba.DoctorPages
                 if (token.IsCancellationRequested)
                     token.ThrowIfCancellationRequested();
                 await Task.Delay(500);
+
+                StartTime = oldTime;
+                Duration = oldDuration;
+                Description = oldDescription;
             }
         }
 
@@ -322,9 +367,9 @@ namespace vezba.DoctorPages
             TimeTB.IsReadOnly = true;
             DurationTB.IsReadOnly = true;
             DescriptionTB.IsReadOnly = true;
-            var oldTime = TimeTB.Text;
-            var oldDescription = DescriptionTB.Text;
-            var oldDuration = DurationTB.Text;
+            oldTime = TimeTB.Text;
+            oldDescription = DescriptionTB.Text;
+            oldDuration = DurationTB.Text;
             var oldChecked = IsEmergencyCB.IsChecked;
             _tokenSource = new CancellationTokenSource();
             var token = _tokenSource.Token;
@@ -332,9 +377,9 @@ namespace vezba.DoctorPages
             {
                 await RunDemo(token);
             }
-            catch(OperationCanceledException)
+            catch (OperationCanceledException)
             {
-                
+
             }
             finally
             {
