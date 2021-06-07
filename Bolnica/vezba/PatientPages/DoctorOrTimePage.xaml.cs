@@ -30,7 +30,7 @@ namespace vezba.PatientPages
 
         private void OrderTimeAppointment(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new OrderTimeAppointment());
+            this.NavigationService.Navigate(new OrderTimeAppointment(new OrderTimeAppointmentViewModel(this.NavigationService)));
         }
     }
 }

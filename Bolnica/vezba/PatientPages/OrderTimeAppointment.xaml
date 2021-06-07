@@ -20,9 +20,9 @@
 
         <Label Content="Datum:" HorizontalAlignment="Left" Margin="18,78,0,0" VerticalAlignment="Top" Width="90" FontSize="20"/>
         <Viewbox Margin="-32,115,52,161">
-            <Calendar x:Name="calendar" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Height="182" Width="202"/>
+            <Calendar SelectedDate="{Binding SelectedDate}" x:Name="calendar" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Height="182" Width="202"/>
         </Viewbox>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="195,72,0,0" VerticalAlignment="Top" Width="183" Height="43" Background="Transparent" FontSize="20">
+        <ComboBox Text="{Binding SelectedTime}" x:Name="comboBox" HorizontalAlignment="Left" Margin="195,72,0,0" VerticalAlignment="Top" Width="183" Height="43" Background="Transparent" FontSize="20">
             <ComboBox.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="AntiqueWhite" />
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="AntiqueWhite" />
@@ -54,8 +54,8 @@
             <ComboBoxItem Content="22:05"/>
         </ComboBox>
         <Label Content="Slobodni lekari za izabrano vreme:" HorizontalAlignment="Left" Margin="10,407,0,0" VerticalAlignment="Top" Width="395" FontSize="20"/>
-        <ListBox x:Name="doctorsTable" FontSize="20" ItemsSource="{Binding Doctors}" ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="Transparent" Margin="10,449,102,72"/>
-        <Button x:Name="OrderAppointment" Content="Zakaži" FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="18,533,263,9" Click="OrderAppointment_Click">
+        <ListBox x:Name="doctorsTable" FontSize="20" ItemsSource="{Binding Doctors}" SelectedItem="{Binding SelectedDoctor}" ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="Transparent" Margin="10,449,102,72"/>
+        <Button x:Name="OrderAppointment" Content="Zakaži" FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="18,533,263,9" Command="{Binding OrderAppointmentCommand}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
