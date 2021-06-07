@@ -52,6 +52,7 @@ namespace vezba.DoctorPages
             Appointment = appointment;
             _patient = Appointment.Patient;
             _doctorView = doctorView;
+            IsEmergencyTB.Text = (Appointment.IsEmergency) ? "Da" : "Ne";
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)

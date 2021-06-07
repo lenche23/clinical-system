@@ -27,6 +27,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -37,18 +38,20 @@
                 <Button Padding="5" Margin="5" Width="100" Height="30" Click="OkButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Potvrdi</Button>
                 <Button Padding="5" Margin="5" Width="100" Height="30" Click="CancelButtonClick" Style="{StaticResource ResourceKey=DoctorCancelButton}" FontWeight="Bold">Odustani</Button>
             </StackPanel>
-            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Pregled:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Vreme pregleda:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right">Trajanje pregleda:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Pacijent:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right">Doktor:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right">Prostorija:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Top">Izveštaj:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Hitna operacija:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Pregled:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right">Vreme pregleda:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Trajanje pregleda:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right">Pacijent:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right">Doktor:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right">Prostorija:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" VerticalAlignment="Top">Izveštaj:</TextBlock>
 
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="{ Binding Appointment.ApointmentDescription, Mode=OneWay}"/>
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="{ Binding Appointment.StartTime, StringFormat=dd/MM/yyyy HH:mm, Mode=OneWay}"/>
-            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Appointment.DurationInMunutes}"/>
-            <TextBlock Grid.Column="1" Grid.Row="4" Name="PatientNameSurname">
+            <TextBlock x:Name="IsEmergencyTB" Grid.Column="1" Grid.Row="1"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{ Binding Appointment.ApointmentDescription, Mode=OneWay}"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="{ Binding Appointment.StartTime, StringFormat=dd/MM/yyyy HH:mm, Mode=OneWay}"/>
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Appointment.DurationInMunutes}"/>
+            <TextBlock Grid.Column="1" Grid.Row="5" Name="PatientNameSurname">
                 <TextBlock.Text>
                     <MultiBinding StringFormat="{}{0} {1}">
                         <Binding Path="Appointment.Patient.Name" />
@@ -56,7 +59,7 @@
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="5" Name="DoctorNameSurname">
+            <TextBlock Grid.Column="1" Grid.Row="6" Name="DoctorNameSurname">
                 <TextBlock.Text>
                     <MultiBinding StringFormat="{}{0} {1}">
                         <Binding Path="Appointment.Doctor.Name" />
@@ -64,8 +67,8 @@
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding Appointment.Room.RoomNumber}"/>
-            <TextBox Grid.Column="1" Grid.Row="7" Name="TbComment" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="200" Margin="10, 10, 400, 10" VerticalAlignment="Top">
+            <TextBlock Grid.Column="1" Grid.Row="7" Text="{Binding Appointment.Room.RoomNumber}"/>
+            <TextBox Grid.Column="1" Grid.Row="8" Name="TbComment" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="200" Margin="10, 10, 400, 10" VerticalAlignment="Top">
                 <TextBox.Text>
                     <Binding Path="Description" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>

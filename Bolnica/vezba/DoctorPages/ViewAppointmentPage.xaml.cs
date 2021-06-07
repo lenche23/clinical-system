@@ -26,6 +26,7 @@ namespace vezba.DoctorPages
             _doctorView = doctorView;
             this.calendar = calendar;
             this.appointmentGrid = appointmentGrid;
+            IsEmergencyTB.Text = (Appointment.IsEmergency) ? "Da" : "Ne";
         }
 
         private void MedicalRecordClick(object sender, RoutedEventArgs e)
