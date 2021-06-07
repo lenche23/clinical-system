@@ -586,6 +586,7 @@
     <Compile Include="DoctorPages\ViewMedicinePage.xaml.cs">
       <DependentUpon>ViewMedicinePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\PatientViewModel\GradeHospitalViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel\OrderDoctorAppointmentViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel\OrderTimeAppointmentViewModel.cs" />
     <Compile Include="ViewMyAnnouncements.xaml.cs">

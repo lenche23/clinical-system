@@ -442,27 +442,27 @@
     "doctorId": "1541546542644"
   },
   {
-    "StartTime": "2021-06-07T18:00:00",
+    "StartTime": "2021-06-08T18:00:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "pregled ocnog kapka",
     "AppointentId": 34,
     "IsDeleted": false,
     "IsEmergency": false,
     "AppointmentDescription": "pregled ocnog kapka",
-    "StartTimee": "2021-06-07T18:00:00",
+    "StartTimee": "2021-06-08T18:00:00",
     "patientId": "1008985563244",
     "roomId": 5,
     "doctorId": "1541546542644"
   },
   {
-    "StartTime": "2021-06-07T14:00:00",
+    "StartTime": "2021-06-08T14:00:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Nikturija",
     "AppointentId": 35,
     "IsDeleted": false,
     "IsEmergency": false,
     "AppointmentDescription": "Nikturija",
-    "StartTimee": "2021-06-07T14:00:00",
+    "StartTimee": "2021-06-08T14:00:00",
     "patientId": "1008985563244",
     "roomId": 8,
     "doctorId": "0104998253658"
@@ -481,14 +481,14 @@
     "doctorId": "0104998253658"
   },
   {
-    "StartTime": "2021-06-07T18:15:00",
+    "StartTime": "2021-06-08T18:15:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "ultrazvuk",
     "AppointentId": 37,
     "IsDeleted": false,
     "IsEmergency": false,
     "AppointmentDescription": "ultrazvuk",
-    "StartTimee": "2021-06-07T18:15:00",
+    "StartTimee": "2021-06-08T18:15:00",
     "patientId": "1008985563244",
     "roomId": 4,
     "doctorId": "0104998253658"

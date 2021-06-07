@@ -48,7 +48,7 @@ namespace vezba.PatientPages
         {
             if (currentAppointments % 5 == 0)
             {
-                this.NavigationService.Navigate(new GradeHospitalPage());
+                this.NavigationService.Navigate(new GradeHospitalPage(new ViewModel.PatientViewModel.GradeHospitalViewModel(this.NavigationService)));
             }
             else
             {

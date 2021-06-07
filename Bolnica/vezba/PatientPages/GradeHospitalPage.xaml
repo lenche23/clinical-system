@@ -18,7 +18,7 @@
         <Image Source="/Bolnica;component/PatientImages/hospital (1).png" Width="45" Margin="26,10,359,543"/>
         <Label Content="Oceni bolnicu" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,154,0" Height="57" Width="200"/>
         <Label Content="Izaberite ocenu:" FontSize="20" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="grade" Height="50" Margin="10,128,220,422" Background="AntiqueWhite" FontSize="20" BorderBrush="Black">
+        <ComboBox Text="{Binding SelectedGrade}" x:Name="grade" Height="50" Margin="10,128,220,422" Background="AntiqueWhite" FontSize="20" BorderBrush="Black">
             <ComboBoxItem Content="1. veoma loša" Background="AntiqueWhite"/>
             <ComboBoxItem Content="2. loša" Background="AntiqueWhite"/>
             <ComboBoxItem Content="3. dobra" Background="AntiqueWhite"/>
@@ -26,8 +26,8 @@
             <ComboBoxItem Content="5. odlična" Background="AntiqueWhite"/>
         </ComboBox>
         <Label Content="Vaš komentar:" FontSize="20" HorizontalAlignment="Left" Margin="11,191,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="comment" Margin="10,233,9,100" Background="AntiqueWhite" BorderBrush="Black" Foreground="Black" FontSize="20"/>
-        <Button x:Name="ButtonConfirmGradeHospital" Content="Potvrdi" FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,532,271,10" Click="ButtonConfirmGradeHospital_Click">
+        <TextBox Text="{Binding CommentInput}" x:Name="comment" Margin="10,233,9,100" Background="AntiqueWhite" BorderBrush="Black" Foreground="Black" FontSize="20"/>
+        <Button x:Name="ButtonConfirmGradeHospital" Content="Potvrdi" FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,532,271,10" Command="{Binding GradeHospitalCommand}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
