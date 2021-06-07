@@ -15,7 +15,7 @@
                 <GradientStop Color="AntiqueWhite" Offset="0.483"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="ButtonOrderAppointment" Content="Moje aktivne terapije"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,101,10,405">
+        <Button x:Name="ButtonActiveTherapies" Content="Moje aktivne terapije"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,101,10,405" Click="ButtonActiveTherapies_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
@@ -28,7 +28,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="ButtonChangeAppointment" Content="Istorija mojih terapija"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,215,10,290">
+        <Button x:Name="ButtonHistoryPresciptions" Content="Moja istorija terapija"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,215,10,290" Click="ButtonHistoryPresciptions_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>

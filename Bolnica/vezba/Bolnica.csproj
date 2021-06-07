@@ -281,6 +281,9 @@
     <Compile Include="PatientNotification.xaml.cs">
       <DependentUpon>PatientNotification.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PatientPages\ActiveTherapies.xaml.cs">
+      <DependentUpon>ActiveTherapies.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PatientPages\AppointmentHistoryPage.xaml.cs">
       <DependentUpon>AppointmentHistoryPage.xaml</DependentUpon>
     </Compile>
@@ -313,6 +316,9 @@
     </Compile>
     <Compile Include="PatientPages\Statistics.xaml.cs">
       <DependentUpon>Statistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\TherapiesHistory.xaml.cs">
+      <DependentUpon>TherapiesHistory.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repository\DeclinedMedicineFileRepository.cs" />
     <Compile Include="Model\DoctorEvaluation.cs" />
@@ -897,6 +903,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PatientPages\ActiveTherapies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientPages\AppointmentHistoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -982,6 +992,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PatientPages\Statistics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\TherapiesHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

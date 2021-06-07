@@ -60,13 +60,35 @@ namespace Service
         public void AddHardcorePrescriptions()
         {
             var medicine1 = new Medicine("Vitamin C", "nesto", "nesto", 0, MedicineCondition.pill);
-            Prescription p1 = new Prescription(DateTime.Now, 21, Period.daily, 1, 0, true, medicine1);
             var medicine2 = new Medicine("Brufen", "nesto", "nesto", 0, MedicineCondition.pill);
-            Prescription p2 = new Prescription(DateTime.Now, 21, Period.daily, 2, 1, true, medicine2);
+            var medicine3 = new Medicine("Analgin", "nesto", "nesto", 0, MedicineCondition.pill);
+            var medicine4 = new Medicine("Kontrolok", "nesto", "nesto", 0, MedicineCondition.pill);
+            var medicine5 = new Medicine("Paracetamol", "nesto", "nesto", 0, MedicineCondition.pill);
+            var medicine6 = new Medicine("Probiotik", "nesto", "nesto", 0, MedicineCondition.pill);
+            var medicine7 = new Medicine("Bulardi", "nesto", "nesto", 0, MedicineCondition.pill);
+            var medicine8 = new Medicine("Zdravko herbiko", "nesto", "nesto", 0, MedicineCondition.pill);
+            var medicine9 = new Medicine("Uniselcer", "nesto", "nesto", 0, MedicineCondition.pill);
+
+            Prescription prescription1 = new Prescription(DateTime.Now, 15, Period.daily, 3, 0, true, medicine1);
+            Prescription prescription2 = new Prescription(DateTime.Now.AddDays(-20), 16, Period.daily, 2, 0, true, medicine2);
+            Prescription prescription3 = new Prescription(DateTime.Now.AddDays(-30), 17, Period.daily, 1, 0, true, medicine3);
+            Prescription prescription4 = new Prescription(DateTime.Now.AddDays(-13), 18, Period.daily, 2, 0, true, medicine4);
+            Prescription prescription5 = new Prescription(DateTime.Now.AddDays(-4), 19, Period.daily, 3, 0, true, medicine5);
+            Prescription prescription6 = new Prescription(DateTime.Now.AddDays(-8), 14, Period.daily, 2, 0, true, medicine6);
+            Prescription prescription7 = new Prescription(DateTime.Now.AddDays(-10), 13, Period.daily, 1, 0, true, medicine7);
+            Prescription prescription8 = new Prescription(DateTime.Now.AddDays(-9), 12, Period.daily, 2, 0, true, medicine8);
+            Prescription prescription9 = new Prescription(DateTime.Now.AddDays(-2), 11, Period.daily, 3, 0, true, medicine9);
             MedicalRecord medicalRecord = new MedicalRecord("12345", "12345");
             PatientView.Patient.MedicalRecord = medicalRecord;
-            PatientView.Patient.MedicalRecord.AddPrescription(p1);
-            PatientView.Patient.MedicalRecord.AddPrescription(p2);
+            PatientView.Patient.MedicalRecord.AddPrescription(prescription1);
+            PatientView.Patient.MedicalRecord.AddPrescription(prescription2);
+            PatientView.Patient.MedicalRecord.AddPrescription(prescription3);
+            PatientView.Patient.MedicalRecord.AddPrescription(prescription4);
+            PatientView.Patient.MedicalRecord.AddPrescription(prescription5);
+            PatientView.Patient.MedicalRecord.AddPrescription(prescription6);
+            PatientView.Patient.MedicalRecord.AddPrescription(prescription7);
+            PatientView.Patient.MedicalRecord.AddPrescription(prescription8);
+            PatientView.Patient.MedicalRecord.AddPrescription(prescription9);
         }
 
         public void MedicineNotification()
