@@ -50,7 +50,15 @@ namespace vezba.ManagerGUI
             this.selected = selected;
 
             RoomService roomService = new RoomService();
-            roomList = roomService.GetAllRooms();
+            var roomListTemporary = roomService.GetAllRooms();
+            roomList = new List<Room>();
+            foreach (Room room in roomListTemporary)
+            {
+                if(room != null)
+                if (room.RoomFloor == selected.RoomFloor && room.RoomNumber != selected.RoomNumber) {
+                    roomList.Add(room);
+                }
+            }
             RoomToMerge.ItemsSource = roomList;
             BrojProstorije.Text = BrojProstorije.Text + " " + selected.RoomNumber;
             DatePicker.SelectedDate = DateTime.Now;

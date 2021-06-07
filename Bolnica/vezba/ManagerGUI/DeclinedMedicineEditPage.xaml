@@ -4,9 +4,11 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba.ManagerGUI"
+      xmlns:val="clr-namespace:vezba.ManagerValidation"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="DeclinedMedicineEditPage">
+    
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -89,7 +91,7 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button BorderBrush="Transparent" Click="Edit_Button_Click" Margin="95,0,30,31" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
+                    <Button Name="OkButton" BorderBrush="Transparent" Click="Edit_Button_Click" Margin="95,0,30,31" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -106,25 +108,65 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <TextBlock Grid.Column="0" Grid.Row="0" Padding="2" FontSize="16" Margin="16,7,440,293" TextAlignment="Right"><Run Text="Naziv:"/></TextBlock>
-                    <TextBox FontSize="16" Margin="110,7,290,293" Grid.Row="0" x:Name="NameTextBox"/>
+                    <TextBox FontSize="16" Margin="110,7,290,293" Grid.Row="0" x:Name="NameTextBox" TextChanged="NameTextBox_TextChanged">
+                        <TextBox.Text>
+                            <Binding Path="NazivRobe" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <val:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                                    <TextBlock Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
                     <TextBlock Grid.Column="0" Padding="2" FontSize="16" Margin="0,51,440,251" TextAlignment="Right"><Run Text="Proizvođač:"/></TextBlock>
                     <TextBlock Grid.Column="0" Padding="2" FontSize="16" Margin="16,93,440,209" TextAlignment="Right"><Run Text="Pakovanje:"/></TextBlock>
                     <TextBlock Grid.Column="0" Padding="2" FontSize="16" Margin="255,93,184,209" TextAlignment="Right"><Run Text="Zamenski lek:"/></TextBlock>
-                    <TextBox  FontSize="16" Margin="110,49,250,251" x:Name="ManufacturerTextBox"/>
+                    <TextBox  FontSize="16" Margin="110,49,250,251" x:Name="ManufacturerTextBox" TextChanged="ManufacturerTextBox_TextChanged">
+                        <TextBox.Text>
+                            <Binding Path="NazivProizvodjaca" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <val:StringValidationRule ValidationStep="RawProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                                    <TextBlock Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
                     <TextBox FontSize="16" Margin="110,91,290,209" x:Name="PackagingTextBox"/>
-                    <ComboBox FontSize="16" ItemsSource="{Binding medicineList}" DisplayMemberPath="Name" x:Name="comboReplacementMedicine" Margin="367,93,25,209"/>
+                    <ComboBox FontSize="16" ItemsSource="{Binding selected.medicineList}" DisplayMemberPath="Name" x:Name="comboReplacementMedicine" Margin="367,93,25,209"/>
                     <TextBlock Grid.Column="0" Padding="2" FontSize="16" Margin="295,51,184,251" TextAlignment="Right" RenderTransformOrigin="0.464,-0.333">Oblik:</TextBlock>
                     <ComboBox FontSize="16" Name="comboCondition" Margin="367,49,25,251" RenderTransformOrigin="1.579,3.107"/>
-                    <ListView FontSize="16" Margin="144,173,145,10" Name="IngredientsBinding" RenderTransformOrigin="0.5,0.5">
+                    <ListView FontSize="16" Margin="85,168,85,10"  Name="IngredientsBinding" RenderTransformOrigin="0.5,0.5">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Sastojci" Width="250" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Sastojci" Width="350" DisplayMemberBinding="{Binding Name}" />
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <TextBox FontSize="16" Name="NewIngredientTextBox" Margin="144,139,220,162"/>
-                    <Button Margin="330,140,180,162" Click="AddIngredientButtonClick" FontSize="17" Content="+"/>
-                    <Button Margin="365,140,145,162" Click="RemoveIngredientButtonClick" FontSize="17" Content="-"/>
+                    <TextBox FontSize="16" Name="NewIngredientTextBox" Margin="139,134,225,167" TextChanged="NewIngredientTextBox_TextChanged"/>
+                    <Button Name="AddIngredientButton" Margin="330,135,180,167" Click="AddIngredientButtonClick" FontSize="17" Content="+"/>
+                    <Button  Margin="365,135,145,167" Click="RemoveIngredientButtonClick" FontSize="17" Content="-"/>
                 </Grid>
                 <TextBlock Grid.Row="0" FontSize="24"  TextAlignment="Center" Margin="130,10"><Run Text="Izmena odbijenog leka"/></TextBlock>
             </Grid>

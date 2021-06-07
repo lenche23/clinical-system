@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using Model;
@@ -7,18 +9,59 @@ using Service;
 
 namespace vezba.ManagerGUI
 {
-    public partial class MedicineUpdatePage : Page
+    public partial class MedicineUpdatePage : Page, INotifyPropertyChanged
     {
         private Medicine selected;
         private MedicinePage addMedicineWindow;
         private MainManagerWindow mainManagerWindow;
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
         public List<Ingridient> ingredientTemporaryList { get; set; }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private String nazivRobe;
+
+        public String NazivRobe
+        {
+            get { return nazivRobe; }
+            set
+            {
+                if (value != nazivRobe)
+                {
+                    nazivRobe = value;
+                    OnPropertyChanged("NazivRobe");
+                }
+            }
+        }
+
+        private String nazivProizvodjaca;
+
+        public String NazivProizvodjaca
+        {
+            get { return nazivProizvodjaca; }
+            set
+            {
+                if (value != nazivProizvodjaca)
+                {
+                    nazivProizvodjaca = value;
+                    OnPropertyChanged("NazivProizvodjaca");
+                }
+            }
+        }
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
         public MedicineUpdatePage(MainManagerWindow mainManagerWindow, Medicine medicine, MedicinePage addMedicineWindow)
         {
             InitializeComponent();
             selected = medicine;
-            this.DataContext = selected;
+            this.DataContext = this;
             this.addMedicineWindow = addMedicineWindow;
             this.mainManagerWindow = mainManagerWindow;
 
@@ -75,6 +118,9 @@ namespace vezba.ManagerGUI
             List<Ingridient> ingredientList = medicine.ingridient;
             IngredientList = new ObservableCollection<Ingridient>(ingredientList);
             IngredientsBinding.ItemsSource = IngredientList;
+
+            NazivRobe = selected.Name;
+            NazivProizvodjaca = selected.Manufacturer;
         }
 
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
@@ -123,10 +169,12 @@ namespace vezba.ManagerGUI
                 IngredientsBinding.Items.Refresh();
             }
 
-            else
+
+            if (NameTextBox.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
             {
-                MessageBox.Show("Ni jedan sastojak nije selektovan!");
+                OkButton.IsEnabled = false;
             }
+            else OkButton.IsEnabled = true;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -138,6 +186,13 @@ namespace vezba.ManagerGUI
             IngredientList = new ObservableCollection<Ingridient>(ingredientTemporaryList);
             IngredientsBinding.ItemsSource = IngredientList;
             IngredientsBinding.Items.Refresh();
+
+
+            if (NameTextBox.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
+            {
+                OkButton.IsEnabled = false;
+            }
+            else OkButton.IsEnabled = true;
         }
         private void ButtonRoomsClick(object sender, RoutedEventArgs e)
         {
@@ -157,6 +212,47 @@ namespace vezba.ManagerGUI
         private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void ManufacturerTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (NameTextBox.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
+            {
+                OkButton.IsEnabled = false;
+            }
+            else OkButton.IsEnabled = true;
+        }
+
+        private void NameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (NameTextBox.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
+            {
+                OkButton.IsEnabled = false;
+            }
+            else OkButton.IsEnabled = true;
+        }
+
+        private void NewIngredientTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (NameTextBox.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
+            {
+                OkButton.IsEnabled = false;
+            }
+            else OkButton.IsEnabled = true;
+
+            if (NewIngredientTextBox.Text == "") { AddIngredientButton.IsEnabled = false; }
+            else { AddIngredientButton.IsEnabled = true; }
+        }
+
+        private Boolean ValidateEntries()
+        {
+            NameTextBox.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(NameTextBox))
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

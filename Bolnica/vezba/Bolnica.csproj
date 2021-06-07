@@ -201,6 +201,9 @@
     <Compile Include="ManagerGUI\MedicineUpdatePage.xaml.cs">
       <DependentUpon>MedicineUpdatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerGUI\PDFPage.xaml.cs">
+      <DependentUpon>PDFPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerGUI\RenovationMergeRoomsPage.xaml.cs">
       <DependentUpon>RenovationMergeRoomsPage.xaml</DependentUpon>
     </Compile>
@@ -228,11 +231,17 @@
     <Compile Include="ManagerGUI\RoomExchangeStaticEquipmentPage.xaml.cs">
       <DependentUpon>RoomExchangeStaticEquipmentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerGUI\RoomOccupiedPage.xaml.cs">
+      <DependentUpon>RoomOccupiedPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerGUI\RoomsPage.xaml.cs">
       <DependentUpon>RoomsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerGUI\RoomUpdatePage.xaml.cs">
       <DependentUpon>RoomUpdatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerGUI\UserProfilePage.xaml.cs">
+      <DependentUpon>UserProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerGUI\ViewAnnouncementManagerPage.xaml.cs">
       <DependentUpon>ViewAnnouncementManagerPage.xaml</DependentUpon>
@@ -746,6 +755,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ManagerGUI\PDFPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerGUI\RenovationMergeRoomsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -782,11 +795,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ManagerGUI\RoomOccupiedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ManagerGUI\RoomsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerGUI\RoomUpdatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\UserProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1306,6 +1327,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ManagerImages\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ManagerImages\gobackarrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

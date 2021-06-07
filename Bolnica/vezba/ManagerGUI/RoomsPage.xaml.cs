@@ -110,5 +110,10 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
+
+        private void RoomOccupiedButtonClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomOccupiedPage(mainManagerWindow);
+        }
     }
 }

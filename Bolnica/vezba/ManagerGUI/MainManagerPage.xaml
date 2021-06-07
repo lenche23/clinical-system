@@ -247,7 +247,7 @@
 
             </Button.Style>
         </Button>
-        <Button BorderBrush="{x:Null}" Grid.Row="0" Width="60" Height="55" Margin="395,5,280,5">
+        <Button BorderBrush="{x:Null}" Grid.Row="0" Width="60" Height="55" Margin="395,5,280,5" Click="Button_Click">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background">

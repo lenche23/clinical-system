@@ -149,13 +149,64 @@
     "Manufacturer": "UnionMedic NoviSad",
     "Packaging": "30 x 30g",
     "MedicineID": 3,
-    "Status": 1,
+    "Status": 0,
     "Condition": 0,
     "IsDeleted": false,
     "ReplacementMedicine": null,
     "Ingridient": [
       {
         "Name": "Sastojak1"
+      }
+    ]
+  },
+  {
+    "ingridient": [],
+    "Name": "",
+    "Manufacturer": "Proizvodjac2",
+    "Packaging": "",
+    "MedicineID": 4,
+    "Status": 1,
+    "Condition": 0,
+    "IsDeleted": true,
+    "ReplacementMedicine": {
+      "ingridient": [
+        {
+          "Name": "Sastojak1"
+        }
+      ],
+      "Name": "Ibuprofen",
+      "Manufacturer": "UnionMedic NoviSad",
+      "Packaging": "30 x 30g",
+      "MedicineID": 3,
+      "Status": 0,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "Sastojak1"
+        }
+      ]
+    },
+    "Ingridient": []
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "d"
+      }
+    ],
+    "Name": "lll",
+    "Manufacturer": "lgg",
+    "Packaging": "",
+    "MedicineID": 5,
+    "Status": 1,
+    "Condition": 0,
+    "IsDeleted": true,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "d"
       }
     ]
   }

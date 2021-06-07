@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 
 namespace Model
@@ -22,6 +23,16 @@ namespace Model
             renovation = new System.Collections.Generic.List<Renovation>();
         }
 
+        [JsonIgnore]
+        public String NumberAndType
+        {
+            get
+            {
+                return RoomNumber + " " + TypeSerbian;
+            }
+        }
+
+        [JsonIgnore]
         public String FloorSerbian
         {
             get
@@ -38,6 +49,7 @@ namespace Model
             }
         }
 
+        [JsonIgnore]
         public String TypeSerbian
         {
             get
