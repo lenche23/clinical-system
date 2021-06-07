@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:vezba"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1200"
@@ -22,7 +23,11 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 5, 20, 5">
-            <Button Height="30" Width="120" Padding="5" Click="NewAppointmentClick" FontSize="14" FontWeight="Bold" Content="+ Nov termin" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
+            <Button Padding="0" Click="NewAppointmentClick" Height="30" Width="120" Style="{StaticResource ResourceKey = DoctorDefaultButton}" FontWeight="Bold">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Plus" Foreground="White" VerticalAlignment="Center"/>
+                    <TextBlock FontSize="14" Padding="1" Height="Auto" Margin="0" VerticalAlignment="Center">Nov termin</TextBlock>
+                </StackPanel>
             </Button>
         </StackPanel>
         <Grid Grid.Row="1">
