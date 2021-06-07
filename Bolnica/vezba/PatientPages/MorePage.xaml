@@ -22,7 +22,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\bell.png" Width="Auto" Margin="357,86,38,478"/>
+        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\bell.png" Width="Auto" Margin="357,88,38,476"/>
         <Button x:Name="BtnOcenaLekara" Content="Ocenite lekara............................................." HorizontalContentAlignment="Left" FontSize="20" Foreground="Black" BorderThickness="0" Padding="10" Margin="16,152,73,398" Click="BtnOcenaLekara_Click" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
