@@ -80,7 +80,7 @@
     "Name": "Xyzal",
     "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
     "Packaging": "30 x 5 mg",
-    "MedicineID": 2,
+    "MedicineID": 1,
     "Status": 0,
     "Condition": 0,
     "IsDeleted": false,
@@ -103,22 +103,19 @@
   {
     "ingridient": [
       {
-        "Name": "Celuloza, mikrokristalna"
+        "Name": "Acetilsalicilna kiselina"
       },
       {
-        "Name": "Hipromeloza (E464)"
+        "Name": "Skrob, kukuruzni"
       },
       {
-        "Name": "Titan-dioksid (E171)"
-      },
-      {
-        "Name": "Makrogol 400"
+        "Name": "Trietil-citrat"
       }
     ],
     "Name": "Aspirin",
     "Manufacturer": "Bayer Bitterfeld GmbH ",
     "Packaging": "30 x 100mg",
-    "MedicineID": 3,
+    "MedicineID": 2,
     "Status": 0,
     "Condition": 0,
     "IsDeleted": false,
@@ -132,6 +129,63 @@
       },
       {
         "Name": "Trietil-citrat"
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "asdasdasdasd"
+      }
+    ],
+    "Name": "asdasd",
+    "Manufacturer": "asdasda",
+    "Packaging": "asdasd",
+    "MedicineID": 3,
+    "Status": 1,
+    "Condition": 1,
+    "IsDeleted": true,
+    "ReplacementMedicine": {
+      "ingridient": [
+        {
+          "Name": "Celuloza, mikrokristalna"
+        },
+        {
+          "Name": "Hipromeloza (E464)"
+        },
+        {
+          "Name": "Titan-dioksid (E171)"
+        },
+        {
+          "Name": "Makrogol 400"
+        }
+      ],
+      "Name": "Xyzal",
+      "Manufacturer": "Aesica Pharmaceuticals S.r.l.",
+      "Packaging": "30 x 5 mg",
+      "MedicineID": 1,
+      "Status": 0,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "Celuloza, mikrokristalna"
+        },
+        {
+          "Name": "Hipromeloza (E464)"
+        },
+        {
+          "Name": "Titan-dioksid (E171)"
+        },
+        {
+          "Name": "Makrogol 400"
+        }
+      ]
+    },
+    "Ingridient": [
+      {
+        "Name": "asdasdasdasd"
       }
     ]
   }

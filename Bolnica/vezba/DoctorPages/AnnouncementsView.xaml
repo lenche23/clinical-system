@@ -30,7 +30,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="CornflowerBlue" BorderThickness="1" Margin="0, 2">
-                        <Grid Style="{StaticResource ResourceKey = GridHover}" MouseLeftButtonDown="ViewAnnouncementClick">
+                        <Grid Style="{StaticResource ResourceKey = GridHover}" MouseLeftButtonDown="ViewAnnouncementClick" MaxWidth="{Binding ActualWidth, ElementName=AnnouncementsListView}">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>
