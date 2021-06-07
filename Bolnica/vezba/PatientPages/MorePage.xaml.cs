@@ -59,7 +59,7 @@ namespace vezba.PatientPages
 
         private void BtnStatistika_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Statistics());
         }
 
         private void BtnMojLekar_Click(object sender, RoutedEventArgs e)

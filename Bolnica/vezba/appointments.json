@@ -247,7 +247,7 @@
     "doctorId": "1708962324890"
   },
   {
-    "StartTime": "2021-06-07T08:00:00",
+    "StartTime": "2021-07-07T08:00:00",
     "DurationInMunutes": 15,
     "ApointmentDescription": "Pregled kod lekara opste prakse.",
     "AppointentId": 19,
@@ -401,5 +401,96 @@
     "patientId": "1008985563244",
     "roomId": 0,
     "doctorId": "1708962324890"
+  },
+  {
+    "StartTime": "2021-06-07T15:30:00",
+    "DurationInMunutes": 60,
+    "ApointmentDescription": "blablabla",
+    "AppointentId": 31,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "blablabla",
+    "StartTimee": "2021-06-07T15:30:00",
+    "patientId": "1008985563244",
+    "roomId": 2,
+    "doctorId": "1541546542644"
+  },
+  {
+    "StartTime": "2021-06-07T16:30:00",
+    "DurationInMunutes": 45,
+    "ApointmentDescription": "",
+    "AppointentId": 32,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "",
+    "StartTimee": "2021-06-07T16:30:00",
+    "patientId": "1008985563244",
+    "roomId": 5,
+    "doctorId": "1541546542644"
+  },
+  {
+    "StartTime": "2021-06-07T17:15:00",
+    "DurationInMunutes": 45,
+    "ApointmentDescription": "",
+    "AppointentId": 33,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "",
+    "StartTimee": "2021-06-07T17:15:00",
+    "patientId": "1008985563244",
+    "roomId": 5,
+    "doctorId": "1541546542644"
+  },
+  {
+    "StartTime": "2021-06-07T18:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "",
+    "AppointentId": 34,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "",
+    "StartTimee": "2021-06-07T18:00:00",
+    "patientId": "1008985563244",
+    "roomId": 5,
+    "doctorId": "1541546542644"
+  },
+  {
+    "StartTime": "2021-06-07T14:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "",
+    "AppointentId": 35,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "",
+    "StartTimee": "2021-06-07T14:00:00",
+    "patientId": "1008985563244",
+    "roomId": 8,
+    "doctorId": "0104998253658"
+  },
+  {
+    "StartTime": "2021-06-07T15:00:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "",
+    "AppointentId": 36,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "",
+    "StartTimee": "2021-06-07T15:00:00",
+    "patientId": "1008985563244",
+    "roomId": 3,
+    "doctorId": "0104998253658"
+  },
+  {
+    "StartTime": "2021-06-07T18:15:00",
+    "DurationInMunutes": 15,
+    "ApointmentDescription": "",
+    "AppointentId": 37,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "",
+    "StartTimee": "2021-06-07T18:15:00",
+    "patientId": "1008985563244",
+    "roomId": 4,
+    "doctorId": "0104998253658"
   }
 ]

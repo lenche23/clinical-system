@@ -21,7 +21,7 @@
         <TextBlock Text="   Opšta bolnica 'ZDRAVO bolnica' je osnovna zdravstvena ustanova za stacionarno lečenje i pružanje specijalističkih medicinskih usluga građanima Srednjobanatskog okruga." TextWrapping="Wrap" FontSize="20" Margin="10,116,10,343" Foreground="#FF2E421A"/>
         <Image Source="/Bolnica;component/PatientImages/zdravobolnica.jpeg" Margin="10,326,10,10" Opacity="0.2"/>
     <Label Content="Vaši današnji pregledi:" Foreground="#FF2E421A" FontSize="25" Margin="10,273,10,279"/>
-        <ListBox x:Name="appointmentsTodayTable" ItemsSource="{Binding Appointments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="410" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="Transparent" Margin="10,326,10,10">
+        <ListBox x:Name="appointmentsTodayTable" ItemsSource="{Binding Appointments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="410" ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="Transparent" Margin="10,326,10,10">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="70">
