@@ -133,7 +133,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Naziv leka</TextBlock>
                             <TextBlock Grid.Column="1" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Početak terapije</TextBlock>
-                            <TextBlock Grid.Column="2" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Trajanje terapije</TextBlock>
+                            <TextBlock Grid.Column="2" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Broj dana</TextBlock>
                             <TextBlock Grid.Column="3" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Konzumiranje</TextBlock>
                         </Grid>
                             <ListView Grid.Row="2"
@@ -187,7 +187,7 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Vreme</TextBlock>
+                            <TextBlock Grid.Column="0" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Kreiran</TextBlock>
                             <TextBlock Grid.Column="1" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Lekar</TextBlock>
                             <TextBlock Grid.Column="2" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Komentar</TextBlock>
                         </Grid>
@@ -250,7 +250,7 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Početak važenja uputa</TextBlock>
-                            <TextBlock Grid.Column="1" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Trajanje uputa</TextBlock>
+                            <TextBlock Grid.Column="1" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Broj dana</TextBlock>
                             <TextBlock Grid.Column="2" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Lekar</TextBlock>
                         </Grid>
                         <ListView Grid.Row="2"
@@ -312,7 +312,7 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Početak lečenja</TextBlock>
-                            <TextBlock Grid.Column="1" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Trajanje lečenja</TextBlock>
+                            <TextBlock Grid.Column="1" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Broj dana</TextBlock>
                             <TextBlock Grid.Column="2" Margin="5" Foreground="CornflowerBlue" FontWeight="Bold" HorizontalAlignment="Center" FontSize="14">Soba</TextBlock>
                         </Grid>
                         <ListView Grid.Row="2"

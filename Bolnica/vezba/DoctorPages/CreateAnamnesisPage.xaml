@@ -41,7 +41,7 @@
             <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Hitna operacija:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Pregled:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right">Vreme pregleda:</TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Trajanje pregleda:</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right">Trajanje u minutima:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right">Pacijent:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right">Doktor:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right">Prostorija:</TextBlock>
