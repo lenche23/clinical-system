@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,29 +9,62 @@ using Service;
 
 namespace vezba.ManagerGUI
 {
-    public partial class RenovationViewPage : Page
+    public partial class RenovationViewPage : Page, INotifyPropertyChanged
     {
         private Room selected;
         private MainManagerWindow mainManagerWindow;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private int trajanjeRenovacije;
+        public int TrajanjeRenovacije
+        {
+            get
+            {
+                return trajanjeRenovacije;
+            }
+            set
+            {
+                if (value != trajanjeRenovacije)
+                {
+                    trajanjeRenovacije = value;
+                    OnPropertyChanged("TrajanjeRenovacije");
+                }
+            }
+        }
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+
         public RenovationViewPage(MainManagerWindow mainManagerWindow, Room selected)
         {
             InitializeComponent();
+            DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
             this.selected = selected;
             BrojProstorije.Text = BrojProstorije.Text + " " + selected.RoomNumber;
+            DatePicker.SelectedDate = DateTime.Now;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            var format = "dd/MM/yyyy HH:mm";
             CultureInfo provider = CultureInfo.InvariantCulture;
             var startDate = DatePicker.SelectedDate;
             var startDateTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, 0, 0, 0);
             var durationInDays = int.Parse(Trajanje.Text);
             var endTime = startDateTime.AddDays(durationInDays);
             var id = selected.renovation.Count + 1;
+            var number = selected.RoomNumber;
 
             AppointmentService appointmentService = new AppointmentService();
+
+            if(!ValidateEntries()) return;
 
             if (DateTime.Compare(startDateTime, DateTime.Now) < 0)
             {
@@ -38,7 +72,7 @@ namespace vezba.ManagerGUI
                 return;
             }
 
-            if (appointmentService.Overlap(selected, startDateTime, endTime))
+            if (appointmentService.Overlap(number, startDateTime, endTime))
             {
                 MessageBox.Show("Datum renovacije se poklapa sa već zakazanim pregledima");
                 return;
@@ -50,6 +84,16 @@ namespace vezba.ManagerGUI
             roomService.UpdateRoom(this.selected);
             RenovationsPage.RenovationList.Add(newRenovation);
             NavigationService.GoBack();
+        }
+
+        public Boolean ValidateEntries()
+        {
+            Trajanje.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(Trajanje))
+            {
+                return false;
+            }
+            return true;
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
@@ -75,6 +119,16 @@ namespace vezba.ManagerGUI
         private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void Trajanje_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Trajanje.Text == "")
+            {
+                OkButton.IsEnabled = false;
+            }
+
+            else OkButton.IsEnabled = true;
         }
     }
 }

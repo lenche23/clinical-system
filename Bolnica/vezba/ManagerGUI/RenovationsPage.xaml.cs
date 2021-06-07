@@ -21,6 +21,7 @@ namespace vezba.ManagerGUI
             List<Renovation> renovationList = selected.renovation;
             RenovationList = new ObservableCollection<Renovation>(renovationList);
             RenovationsBinding.ItemsSource = RenovationList;
+            RenovationTitle.Text = RenovationTitle.Text + " " + this.selected.RoomNumber;
         }
 
         private void Renovation_Button_Click(object sender, RoutedEventArgs e)

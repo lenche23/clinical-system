@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba.ManagerGUI"
+      xmlns:val="clr-namespace:vezba.ManagerValidation"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RoomExchangeStaticEquipmentPage" Background="#FFFFE1E1">
@@ -89,14 +90,14 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,33,25,32" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
+                    <Button Name ="OkButton" Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,33,25,32" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button Click="CancelButtonClick" Height="40" BorderBrush="Transparent" Margin="26,33,94,32" FontSize="18" Content="Odustani" Grid.Column="1" Background="#FFBBBBBB">
+                    <Button Name="CancelButton" Click="CancelButtonClick" Height="40" BorderBrush="Transparent" Margin="26,33,94,32" FontSize="18" Content="Odustani" Grid.Column="1" Background="#FFBBBBBB">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -108,9 +109,30 @@
                 <TextBlock FontSize="20" Grid.Row="1" Margin="222,0,21,183">Oprema:</TextBlock>
                 <TextBlock FontSize="20" Grid.Row="1" Margin="10,61,202,135" TextAlignment="Right">Broj prostorije u koju se prenosi:</TextBlock>
                 <TextBlock FontSize="20" Grid.Row="1" Margin="14,0,202,77" Height="37" VerticalAlignment="Bottom" TextAlignment="Right" Text="Količina opreme za prenos:"/>
-                <TextBox FontSize="20" Grid.Row="1" Name="Količina" Text="{Binding RoomNumber, Mode=OneWay}" Margin="338,120,59,78"/>
+                <TextBox FontSize="20" Grid.Row="1" Name="Količina" Margin="338,120,59,78" TextChanged="Količina_TextChanged">
+                    <TextBox.Text>
+                        <Binding Path="KolicinaRobe" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
+                                <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                                <TextBlock Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
                 <TextBlock FontSize="20" Grid.Row="1" Margin="14,0,202,20" Height="35" VerticalAlignment="Bottom" TextAlignment="Right" Text="Datum transfera:"/>
-                <ComboBox Grid.Row="1" ItemsSource="{Binding roomList}" DisplayMemberPath="RoomNumber" Name="RoomToMerge" Margin="338,61,59,136"/>
+                <ComboBox FontSize="20" Grid.Row="1" ItemsSource="{Binding roomList}" DisplayMemberPath="RoomNumber" Name="RoomToMerge" Margin="338,61,59,136" SelectionChanged="RoomToMerge_SelectionChanged"/>
                 <DatePicker FontSize="20" Grid.Row="1" Name ="Date" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="338,179,0,0" Width="146" RenderTransformOrigin="0.766,0.75" Height="37"/>
             </Grid>
         </Grid>

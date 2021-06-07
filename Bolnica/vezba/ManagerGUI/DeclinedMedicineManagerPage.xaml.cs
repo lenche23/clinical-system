@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Model;
 using Service;
 namespace vezba.ManagerGUI
@@ -58,6 +59,19 @@ namespace vezba.ManagerGUI
         private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (DeclinedMedicineBinding.SelectedIndex > -1)
+            {
+                DeclinedMedicine selected = (DeclinedMedicine)DeclinedMedicineBinding.SelectedItems[0];
+                mainManagerWindow.MainManagerView.Content = new DetailDeclinedMedicinePage(mainManagerWindow, selected, medicinePage);
+            }
+            else
+            {
+                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+            }
         }
     }
 }

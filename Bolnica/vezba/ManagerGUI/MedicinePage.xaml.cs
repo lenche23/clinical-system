@@ -16,7 +16,7 @@ namespace vezba.ManagerGUI
         public MedicinePage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
-            this.DataContext = this;
+            DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
             MedicineService medicineService = new MedicineService();
             medicineList = medicineService.GetAllMedicine();

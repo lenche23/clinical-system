@@ -138,5 +138,25 @@
         "Name": "Makrogol 400"
       }
     ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "Sastojak1"
+      }
+    ],
+    "Name": "Ibuprofen",
+    "Manufacturer": "UnionMedic NoviSad",
+    "Packaging": "30 x 30g",
+    "MedicineID": 3,
+    "Status": 1,
+    "Condition": 0,
+    "IsDeleted": false,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "Sastojak1"
+      }
+    ]
   }
 ]

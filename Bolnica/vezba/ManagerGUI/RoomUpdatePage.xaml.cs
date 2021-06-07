@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Input;
 using Service;
 
 namespace vezba.ManagerGUI
@@ -19,10 +20,10 @@ namespace vezba.ManagerGUI
         public RoomUpdatePage(Room selected, RoomsPage rp, MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
+            DataContext = this;
             this.selected = selected;
             this.rp = rp;
             this.mainManagerWindow = mainManagerWindow;
-            this.DataContext = selected;
 
             RoomInventoryService roomInventoryService = new RoomInventoryService();
 
@@ -102,7 +103,7 @@ namespace vezba.ManagerGUI
             mainManagerWindow.MainManagerView.Content = new RoomAddEquipmentPage(mainManagerWindow, selected);
         }
 
-        private void Izmeni_Količinu_Button_Click(object sender, RoutedEventArgs e)
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (RoomInventoryBinding.SelectedIndex > -1)
             {
@@ -114,6 +115,8 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Ni jedan proizvod nije selektovan!");
             }
         }
+
+
         private void Razmena_Button_Click(object sender, RoutedEventArgs e)
         {
             if (RoomInventoryBinding.SelectedIndex > -1)

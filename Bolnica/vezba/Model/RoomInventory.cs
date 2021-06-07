@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 
 namespace Model
 {
@@ -27,6 +28,7 @@ namespace Model
 
         public Room room;
 
+        [JsonIgnore]
         public String EquipmentName
         {
             get
@@ -37,6 +39,7 @@ namespace Model
                     return "";
             }
         }
+        [JsonIgnore]
         public String EquipmentId
         {
             get
@@ -48,14 +51,18 @@ namespace Model
             }
         }
 
-        public String EquipmentType
+        [JsonIgnore]
+        public String TypeEquipmentSerbian
         {
             get
             {
-                if (equipment != null)
-                    return ("" + equipment.Type);
-                else
-                    return "";
+                switch (equipment.Type)
+                {
+                    case EquipmentType.dinamical:
+                        return "Dinamièki";
+                    default:
+                        return "Statièki";
+                }
             }
         }
     }

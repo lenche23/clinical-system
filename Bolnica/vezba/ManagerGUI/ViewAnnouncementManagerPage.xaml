@@ -88,7 +88,7 @@
             <Label Name="Posted" Content="Postavljeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="355,345,0,0" Width="260" Height="39" FontSize="18" />
             <Label Name="Edited" Content="  Izmenjeno: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="353,389,0,0" Width="260" Height="39" FontSize="18" />
         </Grid>
-        <Button Click ="ButtonBackClick" Margin="20,410,630,20"  Grid.Row="1" Foreground="{x:Null}">
+        <Button Click ="ButtonBackClick" Margin="20,350,630,20" Width="100" Height="70"  Grid.Row="1" Foreground="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Bottom">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background">

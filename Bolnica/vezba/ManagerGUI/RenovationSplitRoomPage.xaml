@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba.ManagerGUI"
+      xmlns:val="clr-namespace:vezba.ManagerValidation"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RenovationSplitRoomPage">
@@ -89,17 +90,17 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button BorderBrush="Transparent" Click="OkButtonClick" Margin="95,10,30,31" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
+                    <Button BorderBrush="Transparent" Name="OkButton" Click="OkButtonClick" Margin="95,10,30,31" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="5"/>
+                                <Setter Property="CornerRadius" Value="10"/>
                             </Style>
                         </Button.Resources>
                     </Button>
                     <Button Click="CancelButtonClick" BorderBrush="Transparent" Margin="25,10,90,31" FontSize="18" Content="Odustani" Grid.Column="1" Background="#FFBBBBBB">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="5"/>
+                                <Setter Property="CornerRadius" Value="10"/>
                             </Style>
                         </Button.Resources>
                     </Button>
@@ -113,12 +114,33 @@
                     <TextBlock Grid.Column="0" FontSize="20" Margin="40,111,25,136" TextAlignment="Right" Text="Predviđeno trajanje:"/>
                     <TextBlock Grid.Column="0" FontSize="20" Margin="72,51,25,197" TextAlignment="Right"> Početni datum:</TextBlock>
                     <DatePicker  Grid.Column="1" Name="DatePicker" FontSize="20" Margin="22,51,35,196"/>
-                    <TextBox Grid.Column="1" Name="Trajanje" FontSize="20"  Margin="22,111,130,136"></TextBox>
+                    <TextBox Grid.Column="1" Name="Trajanje" FontSize="20"  Margin="22,111,130,136" TextChanged="Trajanje_TextChanged">
+                        <TextBox.Text>
+                            <Binding Path="TrajanjeRenovacije" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
+                                    <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                                    <TextBlock Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
 
                     <TextBlock Grid.Column="0" FontSize="20"  Margin="72,171,25,77" TextAlignment="Right"> Nova prostorija 1:</TextBlock>
                     <TextBlock Grid.Column="0" FontSize="20" Margin="72,231,25,17" TextAlignment="Right"> Nova prostorija 2:</TextBlock>
-                    <ComboBox  FontSize="16" Grid.Column="1" Name="Combo1"  Margin="22,171,85,77"/>
-                    <ComboBox  FontSize="16" Grid.Column="1" Name="Combo2"  Margin="22,231,85,17"></ComboBox>
+                    <ComboBox  FontSize="16" Grid.Column="1" Name="Combo1"  Margin="22,171,85,77" SelectionChanged="Combo1_SelectionChanged"/>
+                    <ComboBox  FontSize="16" Grid.Column="1" Name="Combo2"  Margin="22,231,85,17" SelectionChanged="Combo2_SelectionChanged"></ComboBox>
                 </Grid>
                 <TextBlock Grid.Row="0" FontSize="24"  TextAlignment="Center" Margin="140,20,140,10"><Run Text="Zakazivanje renovacije"/></TextBlock>
 

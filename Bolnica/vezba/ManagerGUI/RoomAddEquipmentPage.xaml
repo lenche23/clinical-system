@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba.ManagerGUI"
+      xmlns:val="clr-namespace:vezba.ManagerValidation"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RoomAddEquipmentPag">
@@ -95,7 +96,28 @@
                     <ColumnDefinition Width="20*" ></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock  Grid.Column="0" FontSize="20"  Margin="45,25,30,25" TextAlignment="Right">Količina:</TextBlock>
-                <TextBox Grid.Column="1" FontSize="20"  Margin="0,25,155,25" TextAlignment="Center" Name="Količina" />
+                <TextBox Grid.Column="1" FontSize="20"  Margin="0,25,155,25" TextAlignment="Center" Name="Količina" TextChanged="Količina_TextChanged">
+                    <TextBox.Text>
+                        <Binding  Path="KolicinaRobe" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
+                                <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                                <TextBlock Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
@@ -103,15 +125,27 @@
                     <ColumnDefinition Width="20*" ></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" FontSize="20" Margin="45,25,30,25" TextAlignment="Right">Oprema:</TextBlock>
-                <ComboBox ItemsSource="{Binding equipmentList}" DisplayMemberPath="Name" Name="comboEquipmentName" Margin="0,25,24,26" Grid.Column="1"/>
+                <ComboBox FontSize="20" ItemsSource="{Binding equipmentList}" DisplayMemberPath="Name" Name="comboEquipmentName" Margin="0,25,24,26" Grid.Column="1" SelectionChanged="comboEquipmentName_SelectionChanged"/>
             </Grid>
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20*" ></ColumnDefinition>
                     <ColumnDefinition Width="20*" ></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button  FontSize="20" Click="PotvrdiDodavanje_Button_Click" Margin="80,40,25,24" Background="#FFB7C3A2">Potvrdi</Button>
-                <Button Grid.Column="1" FontSize="20" Click="OdustaniDodavanje_Button_Click" Margin="25,40,80,24">Odustani</Button>
+                <Button Name="OkButton"  BorderThickness="0"  FontSize="18" Click="PotvrdiDodavanje_Button_Click" Margin="80,40,25,24" Background="#FFAECDAB">Potvrdi
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Grid.Column="1" BorderThickness="0"  FontSize="18" Click="OdustaniDodavanje_Button_Click" Margin="25,40,80,24" Background="#FFC5C5C5">Odustani
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </Grid>
         </Grid>
     </Grid>

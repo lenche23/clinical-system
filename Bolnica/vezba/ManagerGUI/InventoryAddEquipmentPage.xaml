@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba.ManagerGUI"
+      xmlns:val="clr-namespace:vezba.ManagerValidation"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="InventaryAddEquipment">
@@ -89,7 +90,7 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,25,25,30" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
+                <Button Name="OkButton" Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,25,25,30" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="5"/>
@@ -107,8 +108,28 @@
             <TextBlock Grid.Row="0" FontSize="30" VerticalAlignment="Center" TextAlignment="Center" Margin="0,15" Height="39" > Nova oprema:</TextBlock>
             <TextBlock FontSize="20" Grid.Row="1" Margin="90,39,275,136">Naziv opreme:</TextBlock>
             <TextBlock FontSize="20" Grid.Row="1" Margin="110,131,275,40">Tip opreme:</TextBlock>
-            <TextBox Name="NazivOpreme" FontSize="20"  Margin="255,39,60,136" RenderTransformOrigin="0.491,0.484" Grid.Row="1" />
-            <ComboBox Grid.Row="1" FontSize="16" Name="comboEquipmentType" Margin="255,131,90,44"/>
+            <TextBox Name="NazivOpreme" FontSize="20"  Margin="255,39,60,136" Grid.Row="1" TextChanged="NazivOpreme_TextChanged">
+                <TextBox.Text>
+                    <Binding Path="NazivRobe" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <val:StringValidationRule ValidationStep="RawProposedValue"/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                            <TextBlock Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <ComboBox Grid.Row="1" FontSize="16" Name="comboEquipmentType" Margin="255,131,90,44" SelectionChanged="comboEquipmentType_SelectionChanged"/>
         </Grid>
     </Grid>
 </Page>

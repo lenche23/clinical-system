@@ -104,15 +104,15 @@
                                        FontSize="10" 
                                        VerticalAlignment="Center">
                         </TextBlock>
-                        <TextBox VerticalAlignment="Center" Margin="3,3,3,3" FontSize="24" BorderThickness="0"  Foreground="#FF834040" Grid.Row="0" Text="{Binding Title}" SelectionBrush="#FFB2CFE6">
-                        </TextBox>
+                        <TextBlock VerticalAlignment="Center" Margin="3,3,3,3" FontSize="24"   Foreground="#FF834040" Grid.Row="0" Text="{Binding Title}">
+                        </TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
 
-        <Button Click ="ButtonBackClick" Margin="20,350,630,20"  Grid.Row="2" Foreground="{x:Null}">
+        <Button Click ="ButtonBackClick" Margin="20,350,630,20" Width="100" Height="70" Grid.Row="2" Foreground="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Bottom">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background">

@@ -14,16 +14,15 @@
       "IsDeleted": false,
       "StartDateTime": "2021-06-04T00:19:46.492888+02:00",
       "EndDateTime": "2999-12-31T00:00:00",
+      "FloorSerbian": "Prvi",
+      "TypeSerbian": "Soba za preglede",
       "Renovation": []
     },
     "StartTime": "2021-06-04T10:53:11.7256938+02:00",
     "EndTime": "2999-01-01T00:00:00",
     "Quantity": 7,
     "Id": 0,
-    "IsDeleted": false,
-    "EquipmentName": "Hanzaplast",
-    "EquipmentId": "0",
-    "EquipmentType": "dinamical"
+    "IsDeleted": true
   },
   {
     "equipment": {
@@ -40,15 +39,214 @@
       "IsDeleted": false,
       "StartDateTime": "2021-06-04T00:19:51.9003287+02:00",
       "EndDateTime": "2999-12-31T00:00:00",
+      "FloorSerbian": "Drugi",
+      "TypeSerbian": "Soba za odmor",
       "Renovation": []
     },
     "StartTime": "2021-06-04T11:09:55.0897484+02:00",
     "EndTime": "2999-12-31T00:00:00",
     "Quantity": 6,
     "Id": 1,
-    "IsDeleted": false,
-    "EquipmentName": "Hanzaplast",
-    "EquipmentId": "0",
-    "EquipmentType": "dinamical"
+    "IsDeleted": false
+  },
+  {
+    "equipment": {
+      "Id": 0,
+      "Name": "Hanzaplast",
+      "Type": 1,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 0,
+      "RoomNumber": 0,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "StartDateTime": "2021-06-04T00:19:46.492888+02:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "FloorSerbian": "Prvi",
+      "TypeSerbian": "Soba za preglede",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-06T22:28:14.4008544+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 6,
+    "Id": 2,
+    "IsDeleted": true
+  },
+  {
+    "equipment": {
+      "Id": 2,
+      "Name": "Krevet",
+      "Type": 0,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 0,
+      "RoomNumber": 0,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "StartDateTime": "2021-06-04T00:19:46.492888+02:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "FloorSerbian": "Prvi",
+      "TypeSerbian": "Soba za preglede",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-06T22:40:31.4000181+02:00",
+    "EndTime": "2021-06-06T22:54:40.4881397+02:00",
+    "Quantity": 2,
+    "Id": 3,
+    "IsDeleted": false
+  },
+  {
+    "equipment": {
+      "Id": 2,
+      "Name": "Krevet",
+      "Type": 0,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 0,
+      "RoomNumber": 0,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "StartDateTime": "2021-06-04T00:19:46.492888+02:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "FloorSerbian": "Prvi",
+      "TypeSerbian": "Soba za preglede",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-06T22:54:40.4881397+02:00",
+    "EndTime": "2999-12-31T00:00:00",
+    "Quantity": 1,
+    "Id": 4,
+    "IsDeleted": true
+  },
+  {
+    "equipment": {
+      "Id": 2,
+      "Name": "Krevet",
+      "Type": 0,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 0,
+      "RoomNumber": 4,
+      "RoomFloor": 1,
+      "IsDeleted": false,
+      "StartDateTime": "2021-07-02T00:00:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "FloorSerbian": "Drugi",
+      "TypeSerbian": "Soba za preglede",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-06T22:54:40.4881397+02:00",
+    "EndTime": "2999-12-31T00:00:00",
+    "Quantity": 1,
+    "Id": 5,
+    "IsDeleted": false
+  },
+  {
+    "equipment": {
+      "Id": 1,
+      "Name": "Stetoskop",
+      "Type": 1,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 0,
+      "RoomNumber": 0,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "StartDateTime": "2021-06-04T00:19:46.492888+02:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "FloorSerbian": "Prvi",
+      "TypeSerbian": "Soba za preglede",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-06T23:07:53.5928745+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 1,
+    "Id": 6,
+    "IsDeleted": false
+  },
+  {
+    "equipment": {
+      "Id": 1,
+      "Name": "Stetoskop",
+      "Type": 1,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 0,
+      "RoomNumber": 0,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "StartDateTime": "2021-06-04T00:19:46.492888+02:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "FloorSerbian": "Prvi",
+      "TypeSerbian": "Soba za preglede",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-06T23:43:04.4886116+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 33,
+    "Id": 7,
+    "IsDeleted": true
+  },
+  {
+    "equipment": {
+      "Id": 0,
+      "Name": "Hanzaplast",
+      "Type": 1,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 0,
+      "RoomNumber": 0,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "StartDateTime": "2021-06-04T00:19:46.492888+02:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "FloorSerbian": "Prvi",
+      "TypeSerbian": "Soba za preglede",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-07T00:39:34.6969235+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 1,
+    "Id": 8,
+    "IsDeleted": false
+  },
+  {
+    "equipment": {
+      "Id": 2,
+      "Name": "Krevet",
+      "Type": 0,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 0,
+      "RoomNumber": 0,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "StartDateTime": "2021-06-04T00:19:46.492888+02:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "FloorSerbian": "Prvi",
+      "TypeSerbian": "Soba za preglede",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-07T01:05:40.8808541+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 5,
+    "Id": 9,
+    "IsDeleted": true
   }
 ]

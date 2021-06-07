@@ -79,7 +79,7 @@
             </Button>
         </Grid>
         <Grid Row="1">
-            <Grid Background="#FFFFE5E5" Margin="130,50,130,70">
+            <Grid Background="#FFFFE5E5" Margin="130,45,130,75" HorizontalAlignment="Center" VerticalAlignment="Center" Height="380">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*"></RowDefinition>
                     <RowDefinition Height="21*"></RowDefinition>
@@ -106,12 +106,15 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button BorderBrush="{x:Null}" Background="#FFA05D5D" FontSize="13" Foreground="White" Click="Discard_Button_Click" Margin="10,25" Content="Otkaži" Grid.Column="1">
+                    <Button BorderBrush="{x:Null}" FontSize="13" Foreground="White" Click="Discard_Button_Click" Margin="20,25,25,25" Grid.Column="1">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
                             </Style>
                         </Button.Resources>
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Bolnica;component/ManagerImages/trash-big.png"/>
+                        </Button.Background>
                     </Button>
                     <Button BorderBrush="{x:Null}" Background="#FFA05D5D" FontSize="13" Foreground="White" Click="Renovation_Button_Click" Margin="20,25,10,25" Content="Zakaži">
                         <Button.Resources>
@@ -122,22 +125,54 @@
                     </Button>
                 </Grid>
 
-                <TextBlock FontSize="25" TextAlignment="Center" VerticalAlignment ="Center"  LineHeight="24" Height="32" Margin="0,24">Renovacija prostorije</TextBlock>
-                <ListView HorizontalAlignment="Center"  Name="RenovationsBinding" Grid.Row="1" Margin="60,0" Width="370" BorderBrush="{x:Null}" Foreground="Black" OpacityMask="#FFFFF3F3" >
+                <TextBlock x:Name="RenovationTitle" FontSize="25" TextAlignment="Center" VerticalAlignment ="Center"  LineHeight="24" Height="32" Margin="0,24" Text="Zakazane renovacije prostorije"/>
+                <ListView FontSize="16" HorizontalAlignment="Center"  Name="RenovationsBinding" Grid.Row="1" Margin="55,0" Width="380" Foreground="Black" OpacityMask="#FFFFF3F3" >
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding RenovationID}" />
-                            <GridViewColumn Header="Početak" Width="160" DisplayMemberBinding="{Binding StartTime, StringFormat=dd/MM/yyyy HH:mm}" />
-                            <GridViewColumn Header="Trajanje" Width="100" DisplayMemberBinding="{Binding DurationInDays}" />
+                            <GridViewColumn Header="ID" Width="80" DisplayMemberBinding="{Binding RenovationID}" />
+                            <GridViewColumn Header="Početak" Width="185" DisplayMemberBinding="{Binding StartTime, StringFormat=dd/MM/yyyy HH:mm}" />
+                            <GridViewColumn Header="Trajanje" Width="105" DisplayMemberBinding="{Binding DurationInDays}" />
                         </GridView>
                     </ListView.View>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Border BorderThickness="1" BorderBrush="DarkGray" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
                 </ListView>
-                <Button Click ="ButtonBackClick" Margin="-130,80,505,-69" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667" Grid.Row="2">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
-                    </Button.Background>
-                </Button>
             </Grid>
+            <Button Click ="ButtonBackClick"  BorderBrush="{x:Null}" Foreground="{x:Null}" Height="70" Width="100" VerticalAlignment="Bottom" Margin="20,410,630,20" HorizontalAlignment="Left">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/Arrow3.png" Stretch="UniformToFill"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/Arrow2.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
+            </Button>
         </Grid>
     </Grid>
 </Page>

@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba.ManagerGUI"
+      xmlns:val="clr-namespace:vezba.ManagerValidation"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RenovationViewPage">
@@ -89,7 +90,7 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,41,25,30" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
+                    <Button Name="OkButton" Height="40" BorderBrush="Transparent" Click="OkButtonClick" Margin="95,41,25,30" FontSize="18" Content="Potvrdi" Background="#FFAECDAB">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -109,7 +110,28 @@
                 <TextBlock FontSize="20" Grid.Row="1" Margin="52,150,248,10" TextAlignment="Right" Text="Predviđeno trajanje:"/>
                 <TextBlock FontSize="20" Grid.Row="1" Margin="87,88,248,67" TextAlignment="Right"> Početni datum:</TextBlock>
                 <DatePicker Name="DatePicker" FontSize="20" Grid.Row="1" Margin="272,88,53,67"/>
-                <TextBox Name="Trajanje" FontSize="20"  Grid.Row="1" Margin="272,150,95,10"></TextBox>
+                <TextBox Name="Trajanje" FontSize="20"  Grid.Row="1" Margin="272,150,95,10" TextChanged="Trajanje_TextChanged">
+                    <TextBox.Text>
+                        <Binding Path="TrajanjeRenovacije" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
+                                <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                                <TextBlock Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
             </Grid>
         </Grid>
     </Grid>

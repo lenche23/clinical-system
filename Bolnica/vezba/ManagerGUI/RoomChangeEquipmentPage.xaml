@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba.ManagerGUI"
+      xmlns:val="clr-namespace:vezba.ManagerValidation"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RoomChangeEquipmentPage">
@@ -93,7 +94,7 @@
                         </Button.Resources>
                     </Button>
                 </Grid>
-                <Button BorderBrush="Transparent" Click="PotvrdiIzmenu_Button_Click" Margin="95,34,287,32" FontSize="18" Content="Potvrdi" Background="#FFAECDAB" Grid.Row="2">
+                <Button Name="OkButton" BorderBrush="Transparent" Click="PotvrdiIzmenu_Button_Click" Margin="95,34,287,32" FontSize="18" Content="Izmeni" Background="#FFAECDAB" Grid.Row="2">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="5"/>
@@ -105,8 +106,29 @@
                 <Label FontSize="20" Grid.Row="1" Name="NazivOpreme" Content="Naziv opreme:" Margin="118,0,47,183"/>
                 <Label FontSize="20" Name="TipOpreme" Content="Tip opreme:" Margin="139,115,47,70" Grid.Row="1" RenderTransformOrigin="0.5,0.5" />
                 <Label FontSize="20" Name ="Id" Content="ID:" Margin="218,55,152,132" Grid.Row="1"/>
-                <Label Content="Količina:" FontSize="20" Margin="173,180,212,10" Grid.Row="1"/>
-                <TextBox Name="Količina" FontSize="20" Text="{Binding Quantity, Mode=OneWay}" RenderTransformOrigin="0.491,0.484" Margin="273,180,127,10" Grid.Row="1" />
+                <Label Content="Količina:" FontSize="20" Margin="173,180,232,10" Grid.Row="1"/>
+                <TextBox Name="Količina" FontSize="20"  Margin="273,180,127,10" Grid.Row="1" TextChanged="Količina_TextChanged">
+                     <TextBox.Text>
+                        <Binding  Path="KolicinaRobe" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
+                                <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                                <TextBlock Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
             </Grid>
         </Grid>
     </Grid>

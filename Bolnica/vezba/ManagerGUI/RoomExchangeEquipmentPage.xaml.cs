@@ -1,13 +1,14 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using Service;
 
 namespace vezba.ManagerGUI
 {
-    public partial class RoomExchangeEquipmentPage : Page
+    public partial class RoomExchangeEquipmentPage : Page, INotifyPropertyChanged
     {
         private RoomUpdatePage windowUpdateRoom;
         private Room room;
@@ -18,9 +19,38 @@ namespace vezba.ManagerGUI
         private MainManagerWindow mainManagerWindow;
         public List<Room> roomList { get; set; }
 
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private int kolicinaRobe;
+        public int KolicinaRobe
+        {
+            get
+            {
+                return kolicinaRobe;
+            }
+            set
+            {
+                if (value != kolicinaRobe)
+                {
+                    kolicinaRobe = value;
+                    OnPropertyChanged("KolicinaRobe");
+                }
+            }
+        }
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
         public RoomExchangeEquipmentPage(MainManagerWindow mainManagerWindow, RoomInventory roomInventory, RoomUpdatePage windowUpdateRoom, Room room)
         {
             InitializeComponent();
+            DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
             this.windowUpdateRoom = windowUpdateRoom;
             this.roomInventory = roomInventory;
@@ -38,21 +68,24 @@ namespace vezba.ManagerGUI
                 }
             }
 
+            if (RoomToMerge.SelectedIndex == -1 || ItemQuantity.Text == "")
+              {
+                  OkButton.IsEnabled = false;
+              }
+
+              else OkButton.IsEnabled = true;
+
             RoomToMerge.ItemsSource = temporaryList;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            //int roomNumber = int.Parse(RoomNumberTextBox.Text);
             Room roomEntry = (Room)RoomToMerge.SelectedItem;
             itemQuantity = int.Parse(ItemQuantity.Text);
             maximumQuantity = roomInventory.Quantity;
             RoomInventoryService roomInventoryService = new RoomInventoryService();
-            //RoomService roomService = new RoomService();
-            //Room roomEntry = roomService.GetOneRoom(roomNumber);
 
-            if (Validate(roomEntry) == false)
-                return;
+            if (!Validate(roomEntry)) return;
 
             roomInventory.Quantity -= itemQuantity;
             roomInventoryService.UpdateRoomInventory(this.roomInventory);
@@ -90,6 +123,12 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("ItemQuantity robe prekoračava maksimalnu postojeću u sobi");
                 return false;
             }
+
+            ItemQuantity.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(ItemQuantity))
+            {
+                return false;
+            }
             return true;
         }
 
@@ -112,6 +151,27 @@ namespace vezba.ManagerGUI
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
+
+        private void ItemQuantity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (RoomToMerge.SelectedIndex == -1 || ItemQuantity.Text == "")
+            {
+                OkButton.IsEnabled = false;
+            }
+
+            else OkButton.IsEnabled = true;
+        }
+
+        private void RoomToMerge_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (RoomToMerge.SelectedIndex == -1 || ItemQuantity.Text =="")
+            {
+                OkButton.IsEnabled = false;
+            }
+
+            else OkButton.IsEnabled = true;
+        }
+
     }
 }
 

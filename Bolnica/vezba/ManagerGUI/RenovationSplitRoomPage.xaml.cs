@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,19 +9,49 @@ using Service;
 
 namespace vezba.ManagerGUI
 {
-    public partial class RenovationSplitRoomPage : Page
+    public partial class RenovationSplitRoomPage : Page, INotifyPropertyChanged
     {
         private Room selected;
         private MainManagerWindow mainManagerWindow;
         private DateTime infiniteTime = new DateTime(2999, 12, 31);
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private int trajanjeRenovacije;
+        public int TrajanjeRenovacije
+        {
+            get
+            {
+                return trajanjeRenovacije;
+            }
+            set
+            {
+                if (value != trajanjeRenovacije)
+                {
+                    trajanjeRenovacije = value;
+                    OnPropertyChanged("TrajanjeRenovacije");
+                }
+            }
+        }
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
         public RenovationSplitRoomPage(MainManagerWindow mainManagerWindow, Room selected)
         {
             InitializeComponent();
+            DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
             this.selected = selected;
             List<string> type = new List<string> { "Soba za preglede", "Soba za odmor", "Operaciona sala", "Magacin" };
             Combo1.ItemsSource = type;
             Combo2.ItemsSource = type;
+            DatePicker.SelectedDate = DateTime.Now;
             BrojProstorije.Text = BrojProstorije.Text + " " + selected.RoomNumber;
         }
         private void CancelButtonClick(object sender, RoutedEventArgs e)
@@ -30,7 +61,9 @@ namespace vezba.ManagerGUI
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            var format = "dd/MM/yyyy HH:mm";
+            if (!ValidateEntries()) return;
+
+           
             CultureInfo provider = CultureInfo.InvariantCulture;
             var startDate = DatePicker.SelectedDate;
             var startTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, 0, 0, 0);
@@ -54,6 +87,7 @@ namespace vezba.ManagerGUI
 
 
             Floor floor = selected.RoomFloor;
+            int number = selected.RoomNumber;
             RoomService roomService = new RoomService();
             var newRoom1 = new Room(endTime, 0, floor, type1);
             var newRoom2 = new Room(endTime,0, floor, type2);
@@ -66,7 +100,7 @@ namespace vezba.ManagerGUI
                 return;
             }
 
-            if (appointmentService.Overlap(selected, startTime, endTime))
+            if (appointmentService.Overlap(number, startTime, endTime))
             {
                 MessageBox.Show("Datum renovacije se poklapa sa već zakazanim pregledima");
                 return;
@@ -100,6 +134,46 @@ namespace vezba.ManagerGUI
         private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void Trajanje_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Trajanje.Text == "" || Combo1.SelectedIndex==-1 || Combo2.SelectedIndex==-1)
+            {
+                OkButton.IsEnabled = false;
+            }
+
+            else OkButton.IsEnabled = true;
+        }
+
+        private void Combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Trajanje.Text == "" || Combo1.SelectedIndex == -1 || Combo2.SelectedIndex == -1)
+            {
+                OkButton.IsEnabled = false;
+            }
+
+            else OkButton.IsEnabled = true;
+        }
+
+        private void Combo2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Trajanje.Text == "" || Combo1.SelectedIndex == -1 || Combo2.SelectedIndex == -1)
+            {
+                OkButton.IsEnabled = false;
+            }
+
+            else OkButton.IsEnabled = true;
+        }
+
+        public Boolean ValidateEntries()
+        {
+            Trajanje.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(Trajanje))
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

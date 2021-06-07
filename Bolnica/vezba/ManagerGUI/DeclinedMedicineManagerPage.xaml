@@ -7,7 +7,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="DeclinedMedicineManagerPage">
-
+    <Page.Resources>
+        <Style TargetType="ListViewItem" x:Key="listViewDoubleClick">
+            <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -79,23 +83,47 @@
             </Button>
         </Grid>
         <Grid Row="1">
-            <Grid Margin="140,55,140,80" Background="#FFFFE5E5" Height="365" VerticalAlignment="Center" HorizontalAlignment="Center" Width="470">
-                <Label  Margin="135,39,120,256" FontSize="28" RenderTransformOrigin="0.512,1.207">Odbijeni lekovi</Label>
-                <ListView Name="DeclinedMedicineBinding" Margin="20,109,20,104">
+            <Grid Margin="130,45,130,75" Background="#FFFFE5E5" Height="345" VerticalAlignment="Center" HorizontalAlignment="Center" Width="470">
+                <TextBlock FontSize="25" TextAlignment="Center" Margin="0,25,0,277"> Odbijeni lekovi </TextBlock>
+                <ListView ItemContainerStyle="{StaticResource listViewDoubleClick}" FontSize="16" Name="DeclinedMedicineBinding" Margin="25,83,25,32">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding DeclinedMedicineID}" />
                             <GridViewColumn Header="Naziv leka" Width="150" DisplayMemberBinding="{Binding MedicineName}" />
-                            <GridViewColumn Header="Proizvođač" Width="250" DisplayMemberBinding="{Binding MedicineManufacturer}" />
+                            <GridViewColumn Header="Proizvođač" Width="210" DisplayMemberBinding="{Binding MedicineManufacturer}" />
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <Button Click="ViewDetailButton" Margin="173,285,170,10">Detaljnije</Button>
             </Grid>
-            <Button Click ="ButtonBackClick" Margin="0,430,620,0" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
-                </Button.Background>
+            <Button Click ="ButtonBackClick"  BorderBrush="{x:Null}" Foreground="{x:Null}" Height="70" Width="100" VerticalAlignment="Bottom" Margin="20,410,630,20" HorizontalAlignment="Left">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/Arrow3.png" Stretch="UniformToFill"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/Arrow2.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
             </Button>
         </Grid>
     </Grid>

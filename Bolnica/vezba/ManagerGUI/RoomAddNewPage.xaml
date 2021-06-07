@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba.ManagerGUI"
+      xmlns:val="clr-namespace:vezba.ManagerValidation"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="RoomAddNewPage">
@@ -95,7 +96,28 @@
                 <ColumnDefinition Width="20*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock  Grid.Column="0" FontSize="20"  Margin="45,25,30,25" TextAlignment="Right">Broj prostorije:</TextBlock>
-            <TextBox Grid.Column="1" FontSize="20"  Margin="0,25,155,25" TextAlignment="Center" Name="BrojSobeTB" />
+                <TextBox Grid.Column="1" FontSize="20"  Margin="0,25,155,25" TextAlignment="Center" Name="BrojSobeTB" TextChanged="BrojSobeTB_TextChanged">
+                    <TextBox.Text>
+                        <Binding Path="BrojSobe" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
+                                <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                                <TextBlock Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -103,7 +125,7 @@
                 <ColumnDefinition Width="20*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" FontSize="20" Margin="45,25,30,25" TextAlignment="Right">Sprat:</TextBlock>
-            <ComboBox Grid.Column="1" FontSize="20" Name="comboFloor" Margin="0,25,140,25"></ComboBox>
+            <ComboBox Grid.Column="1" FontSize="20" Name="comboFloor" Margin="0,25,140,25" SelectionChanged="comboFloor_SelectionChanged"></ComboBox>
         </Grid>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -111,15 +133,27 @@
                 <ColumnDefinition Width="20*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" FontSize="20" Margin="45,25,30,25" TextAlignment="Right">Tip prostorije:</TextBlock>
-            <ComboBox Grid.Column="1" FontSize="20" Name="comboRoomType" Margin="0,25,35,25"></ComboBox>
+            <ComboBox Grid.Column="1" FontSize="20" Name="comboRoomType" Margin="0,25,35,25" SelectionChanged="comboRoomType_SelectionChanged"></ComboBox>
         </Grid>
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20*" ></ColumnDefinition>
                 <ColumnDefinition Width="20*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button  FontSize="20" Click="Potvrdi_Button_Click" Margin="80,10,25,24" Background="#FFB7C3A2">Potvrdi</Button>
-            <Button FontSize="20" Click="Odustani_Button_Click" Margin="25,10,80,24" Grid.Column="1">Odustani</Button>
+                <Button BorderThickness="0"  FontSize="18" Name="OkButton" Click="Potvrdi_Button_Click" Margin="80,10,25,24" Background="#FFAECDAB">Potvrdi
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button BorderThickness="0" FontSize="20" Name ="CancelButton" Click="Odustani_Button_Click" Margin="25,10,80,24" Grid.Column="1" Background="#FFC7C7C7">Odustani
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
         </Grid>
     </Grid>
     </Grid>

@@ -1,13 +1,14 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using Service;
 
 namespace vezba.ManagerGUI
 {
-    public partial class RoomExchangeStaticEquipmentPage : Page
+    public partial class RoomExchangeStaticEquipmentPage : Page, INotifyPropertyChanged
     {
         private RoomInventory roomInventory;
         private Room room;
@@ -19,13 +20,42 @@ namespace vezba.ManagerGUI
         private MainManagerWindow mainManagerWindow;
 
         public List<Room> roomList { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private int kolicinaRobe;
+        public int KolicinaRobe
+        {
+            get
+            {
+                return kolicinaRobe;
+            }
+            set
+            {
+                if (value != kolicinaRobe)
+                {
+                    kolicinaRobe = value;
+                    OnPropertyChanged("KolicinaRobe");
+                }
+            }
+        }
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
 
         public RoomExchangeStaticEquipmentPage(MainManagerWindow mainManagerWindow, RoomInventory roomInventory, Room room)
         {
             InitializeComponent();
+            DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
             this.roomInventory = roomInventory;
             this.room = room;
+            Date.SelectedDate = DateTime.Now;
 
             RoomService roomService = new RoomService();
             roomList = roomService.GetAllRooms();
@@ -39,24 +69,24 @@ namespace vezba.ManagerGUI
                 }
             }
 
+            OkButton.IsEnabled = false;
             RoomToMerge.ItemsSource = temporaryList;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            //int roomNumber = int.Parse(BrojSobe.Text);
             Room roomEntry = (Room)RoomToMerge.SelectedItem;
             inputItemQuantity = int.Parse(Količina.Text);
             currentRoomItemQuantity = roomInventory.Quantity;
-            //pickedDate = Date.SelectedDate.Value.Date;
-            pickedDate = DateTime.Now.AddSeconds(5);
-
-            //RoomService roomService = new RoomService();
-            //Room roomEntry = roomService.GetOneRoom(roomNumber);
+            pickedDate = Date.SelectedDate.Value.Date;
+            if (pickedDate == null)
+            {
+                pickedDate = DateTime.Now;
+            }
+            //pickedDate = DateTime.Now.AddSeconds(5);
             RoomInventoryService roomInventoryService = new RoomInventoryService();
 
-            if (Validate(roomEntry) == false)
-                return;
+            if (!Validate(roomEntry)) return;
 
             roomInventory.EndTime = pickedDate;
             roomInventoryService.UpdateRoomInventory(this.roomInventory);
@@ -100,6 +130,12 @@ namespace vezba.ManagerGUI
                 MessageBox.Show("Izabrani datum je već prošao!");
                 return false;
             }
+
+            Količina.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(Količina))
+            {
+                return false;
+            }
             return true;
         }
 
@@ -121,6 +157,26 @@ namespace vezba.ManagerGUI
         private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void RoomToMerge_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (RoomToMerge.SelectedIndex == -1 || Količina.Text == "")
+            {
+                OkButton.IsEnabled = false;
+            }
+
+            else OkButton.IsEnabled = true;
+        }
+
+        private void Količina_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (RoomToMerge.SelectedIndex == -1 || Količina.Text == "")
+            {
+                OkButton.IsEnabled = false;
+            }
+
+            else OkButton.IsEnabled = true;
         }
     }
 }

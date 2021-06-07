@@ -7,6 +7,8 @@
     "IsDeleted": false,
     "StartDateTime": "2021-06-04T00:19:46.492888+02:00",
     "EndDateTime": "2999-12-31T00:00:00",
+    "FloorSerbian": "Prvi",
+    "TypeSerbian": "Soba za preglede",
     "Renovation": []
   },
   {
@@ -14,9 +16,11 @@
     "RoomType": 2,
     "RoomNumber": 1,
     "RoomFloor": 1,
-    "IsDeleted": false,
+    "IsDeleted": true,
     "StartDateTime": "2021-06-04T00:19:51.9003287+02:00",
     "EndDateTime": "2999-12-31T00:00:00",
+    "FloorSerbian": "Drugi",
+    "TypeSerbian": "Soba za odmor",
     "Renovation": []
   },
   {
@@ -24,9 +28,11 @@
     "RoomType": 3,
     "RoomNumber": 2,
     "RoomFloor": 2,
-    "IsDeleted": false,
+    "IsDeleted": true,
     "StartDateTime": "2021-06-04T00:19:57.3163921+02:00",
     "EndDateTime": "2999-12-31T00:00:00",
+    "FloorSerbian": "Treći",
+    "TypeSerbian": "Magacin",
     "Renovation": []
   },
   {
@@ -37,6 +43,8 @@
     "IsDeleted": true,
     "StartDateTime": "2021-06-04T00:20:01.8447297+02:00",
     "EndDateTime": "2021-07-02T00:00:00",
+    "FloorSerbian": "Drugi",
+    "TypeSerbian": "Operaciona sala",
     "Renovation": []
   },
   {
@@ -47,6 +55,8 @@
     "IsDeleted": false,
     "StartDateTime": "2021-07-02T00:00:00",
     "EndDateTime": "2999-12-31T00:00:00",
+    "FloorSerbian": "Drugi",
+    "TypeSerbian": "Soba za preglede",
     "Renovation": []
   },
   {
@@ -57,6 +67,8 @@
     "IsDeleted": false,
     "StartDateTime": "2021-07-02T00:00:00",
     "EndDateTime": "2999-12-31T00:00:00",
+    "FloorSerbian": "Drugi",
+    "TypeSerbian": "Soba za odmor",
     "Renovation": []
   }
 ]

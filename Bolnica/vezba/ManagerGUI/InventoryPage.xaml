@@ -87,34 +87,35 @@
             </Button>
         </Grid>
         <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="36"  Grid.Row="1" Margin="0,24,0,20" LineHeight="36" Foreground="#FF534036" Height="56">Inventar bolnice</TextBlock>
-        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" BorderBrush="DarkSalmon" BorderThickness="2" FontSize="22" Margin="140,0"  Background="White" Foreground="#FF494949" FontFamily="Corbel" Grid.Row="2" Name="InventaryBinding">
+        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" BorderBrush="DarkSalmon" BorderThickness="2" FontSize="22" Margin="140,0"  Background="White" Foreground="#FF494949" FontFamily="Corbel" Grid.Row="2" Name="InventaryBinding" HorizontalAlignment="Center" Width="440" VerticalAlignment="Center" Height="280">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width ="65" DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Naziv proizvoda" Width="230" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Tip" Width="140" DisplayMemberBinding="{Binding Type}"/>
+                    <GridViewColumn Header="Tip" Width="140" DisplayMemberBinding="{Binding TypeEquipmentSerbian}"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Grid Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Height="100" Width="750">
+            <Button FontFamily="Corbel" BorderBrush="{x:Null}" Grid.Row="3" Margin="190,20,400,20" Background="#FFDA6D54" Click="Add_Equipment_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold">Dodaj opremu
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button FontFamily="Corbel" BorderBrush="{x:Null}" Grid.Row="3" Margin="400,20,190,20" Background="#FFDA6D54" Click="Remove_Equipment_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold">Ukloni opremu
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
 
-        <Button FontFamily="Corbel" BorderBrush="{x:Null}" Grid.Row="3" Margin="190,20,400,20" Background="#FFDA6D54" Click="Add_Equipment_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold">Dodaj opremu
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="10"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button FontFamily="Corbel" BorderBrush="{x:Null}" Grid.Row="3" Margin="400,20,190,20" Background="#FFDA6D54" Click="Remove_Equipment_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold">Ukloni opremu
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="10"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-
-        <CheckBox FontSize="18" Name ="CheckedBoxStatic" Margin="625,50,0,216" IsChecked ="True" Unchecked ="StaticCheckBox_Unchecked" Checked="StaticCheckBox_Checked" Grid.Row="2" Background="White" Foreground="#FF810000">Statička</CheckBox>
-        <CheckBox FontSize="18" Name ="CheckedBoxDinamic" Margin="625,11,0,250" IsChecked ="True" Unchecked ="DinamicCheckBox_Unchecked" Checked="DinamicCheckBox_Checked" Grid.Row="2" Foreground="#FF820000">Dinamička</CheckBox>
-        <TextBox FontSize="20" Margin="570,50,26,10" Name="txtFilter" TextChanged="txtFilter_TextChanged" Grid.Row="1" BorderThickness="1">
+        <CheckBox FontSize="18" Name ="CheckedBoxStatic" Margin="600,70,0,180" IsChecked ="True" Unchecked ="StaticCheckBox_Unchecked" Checked="StaticCheckBox_Checked" Grid.Row="2" Background="White" Foreground="#FF810000" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="100">Statički</CheckBox>
+        <CheckBox FontSize="18" Name ="CheckedBoxDinamic" Margin="600,40,0,220" IsChecked ="True" Unchecked ="DinamicCheckBox_Unchecked" Checked="DinamicCheckBox_Checked" Grid.Row="2" Foreground="#FF820000" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="106">Dinamički</CheckBox>
+        <TextBox FontSize="20" Margin="550,0,30,10" Name="txtFilter" TextChanged="txtFilter_TextChanged" Grid.Row="1" BorderThickness="1" VerticalAlignment="Bottom" Height="35" HorizontalAlignment="Center" Width="150">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

@@ -19,7 +19,7 @@ namespace vezba.ManagerGUI
         public InventoryPage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
-            this.DataContext = this;
+            DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
             EquipmentService equipmentService = new EquipmentService();
             equipmentList = equipmentService.GetAllEquipment();

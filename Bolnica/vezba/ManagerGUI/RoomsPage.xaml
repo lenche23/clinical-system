@@ -86,12 +86,12 @@
                 </Button.Resources>
             </Button>
         </Grid>
-        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" BorderBrush="LightCoral" BorderThickness="2" FontSize="22"  Grid.Row="2" Margin="123,0,122,0" Name="lvDataBinding" FontFamily="Corbel">
+        <ListView ItemsSource="{Binding Projects}" ItemContainerStyle="{StaticResource listViewDoubleClick}" BorderBrush="LightCoral" BorderThickness="2" FontSize="22"  Grid.Row="2" Margin="104,0" Name="lvDataBinding" FontFamily="Corbel" HorizontalAlignment="Center" VerticalAlignment="Center" Height="280">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width="120" DisplayMemberBinding="{Binding RoomNumber}" />
-                    <GridViewColumn Header="Tip prostorije" Width="200" DisplayMemberBinding="{Binding RoomType}" />
-                    <GridViewColumn Header="Sprat" Width="150" DisplayMemberBinding="{Binding RoomFloor}" />
+                    <GridViewColumn Header="ID" Width="130" DisplayMemberBinding="{Binding RoomNumber}" />
+                    <GridViewColumn Header="Tip prostorije" Width="240" DisplayMemberBinding="{Binding TypeSerbian}" />
+                    <GridViewColumn Header="Sprat" Width="160" DisplayMemberBinding="{Binding FloorSerbian}" />
                 </GridView>
             </ListView.View>
         </ListView>

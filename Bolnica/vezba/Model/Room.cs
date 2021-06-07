@@ -13,17 +13,50 @@ namespace Model
 
         public Room(DateTime startDateTime, int roomNumber, Floor roomFloor, RoomType roomType)
         {
-            this.RoomType = roomType;
-            this.RoomNumber = roomNumber;
-            this.RoomFloor = roomFloor;
-            this.IsDeleted = false;
-            this.EndDateTime = new DateTime(2999, 12, 31);
-            this.StartDateTime = startDateTime;
-            this.renovation = new System.Collections.Generic.List<Renovation>();
+            RoomType = roomType;
+            RoomNumber = roomNumber;
+            RoomFloor = roomFloor;
+            IsDeleted = false;
+            EndDateTime = new DateTime(2999, 12, 31);
+            StartDateTime = startDateTime;
+            renovation = new System.Collections.Generic.List<Renovation>();
         }
 
-        
-         public System.Collections.Generic.List<Renovation> renovation;
+        public String FloorSerbian
+        {
+            get
+            {
+                switch (RoomFloor)
+                {
+                    case Floor.first:
+                        return "Prvi";
+                    case Floor.second:
+                        return "Drugi";
+                    default:
+                        return "Treæi";
+                }
+            }
+        }
+
+        public String TypeSerbian
+        {
+            get
+            {
+                switch (RoomType)
+                {
+                    case Model.RoomType.examinationRoom:
+                        return "Soba za preglede";
+                    case Model.RoomType.operatingRoom:
+                        return "Operaciona sala";
+                    case Model.RoomType.recoveryRoom:
+                        return "Soba za odmor";
+                    default:
+                        return "Magacin";
+                }
+            }
+        }
+
+        public System.Collections.Generic.List<Renovation> renovation;
       
           public System.Collections.Generic.List<Renovation> Renovation
           {

@@ -4,6 +4,7 @@
 // Purpose: Definition of Class Equipment
 
 using System;
+using Newtonsoft.Json;
 
 namespace Model
 {
@@ -22,5 +23,21 @@ namespace Model
         public EquipmentType Type { get; set; }
         public Boolean IsDeleted { get; set; }
 
-    }
+
+
+        [JsonIgnore]
+        public String TypeEquipmentSerbian
+        {
+            get
+            {
+                switch (Type)
+                {
+                    case EquipmentType.dinamical:
+                        return "Dinamièki";
+                    default:
+                        return "Statièki";
+                }
+            }
+        }
+   }
 }
