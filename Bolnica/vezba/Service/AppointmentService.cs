@@ -384,7 +384,7 @@ namespace Service
             if (GetOverlapingAppointments(newAppointment).Count == 0)
             {
                 EventsLogService.AddLog();
-                PatientNotification noti = new PatientNotification("Uspe�no ste zakazali pregled.");
+                PatientNotification noti = new PatientNotification("Uspesno ste zakazali pregled.");
                 noti.ShowDialog();
                 return AppointmentRepository.Save(newAppointment);
             }

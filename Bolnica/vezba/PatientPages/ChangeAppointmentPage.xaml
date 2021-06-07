@@ -15,14 +15,7 @@
                 <GradientStop Color="AntiqueWhite" Offset="0.483"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <!--<DataGrid x:Name="appointmentsTable" ItemsSource="{Binding Appointments}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="410" Height="440" Margin="10,87,0,0"  Background="Transparent">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Datum" Width="145" Binding="{Binding StartTime}" />
-                <DataGridTextColumn Header="Opis" Width="*" Binding="{Binding ApointmentDescription}" />
-                <DataGridTextColumn Header="Lekar" Width="*" Binding="{Binding Doctor}" />
-            </DataGrid.Columns>
-        </DataGrid>-->
-        <ListBox x:Name="appointmentsTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="10,72,10,65" Background="Transparent" SelectionChanged="Select_Click">
+        <ListBox x:Name="appointmentsTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="10,72,10,65" Background="Transparent" SelectionChanged="Select_Click">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50">

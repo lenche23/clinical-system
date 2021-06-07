@@ -112,6 +112,7 @@
     <Compile Include="Announcements.xaml.cs">
       <DependentUpon>Announcements.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="DoctorPages\AnnouncementsView.xaml.cs">
       <DependentUpon>AnnouncementsView.xaml</DependentUpon>
     </Compile>
@@ -585,6 +586,7 @@
     <Compile Include="DoctorPages\ViewMedicinePage.xaml.cs">
       <DependentUpon>ViewMedicinePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\PatientViewModel\OrderDoctorAppointmentViewModel.cs" />
     <Compile Include="ViewMyAnnouncements.xaml.cs">
       <DependentUpon>ViewMyAnnouncements.xaml</DependentUpon>
     </Compile>

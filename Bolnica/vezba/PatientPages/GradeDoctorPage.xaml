@@ -50,7 +50,7 @@
             </DataGrid.Columns>
         </DataGrid>
         -->
-        <ListBox x:Name="gradingTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="10,116,10,73" Background="Transparent" SelectionChanged="GradeDoctor_Click">
+        <ListBox x:Name="gradingTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="10,116,10,73" Background="Transparent" SelectionChanged="GradeDoctor_Click">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50">

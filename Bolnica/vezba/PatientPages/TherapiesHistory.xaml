@@ -17,7 +17,7 @@
         </Grid.Background>
         <Image Source="/Bolnica;component/PatientImages/capsules (1).png" Width="45" Margin="26,10,359,543"/>
         <Label Content="Moja istorija terapija" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,40,0" Height="57" Width="314"/>
-        <ListBox x:Name="appointmentsTodayTable" ItemsSource="{Binding Prescriptions, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="410" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="Transparent" Margin="10,83,10,10">
+        <ListBox x:Name="appointmentsTodayTable" ItemsSource="{Binding Prescriptions, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="410" ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="Transparent" Margin="10,83,10,10">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50">
