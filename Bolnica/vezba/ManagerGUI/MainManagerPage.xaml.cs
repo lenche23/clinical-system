@@ -47,7 +47,7 @@ namespace vezba.ManagerGUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content + new UserProfilePage(mainManagerWindow);
+            mainManagerWindow.MainManagerView.Content = new UserProfilePage(mainManagerWindow);
         }
     }
 }

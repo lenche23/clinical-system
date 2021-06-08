@@ -12,16 +12,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System;
 
 namespace vezba.ManagerGUI
 {
-    public partial class UserProfilePage : Page
+    public partial class TutorialPage : Page
     {
         private MainManagerWindow mainManagerWindow;
-        public UserProfilePage(MainManagerWindow mainManagerWindow)
+        public TutorialPage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
             this.mainManagerWindow = mainManagerWindow;
+            PreviousButton.IsEnabled = false;
+        }
+
+        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            Video.Play();
+        }
+
+        private void PauseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Video.Pause();
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+            Video.Stop();
         }
 
         private void ButtonMainClick(object sender, RoutedEventArgs e)
@@ -44,9 +61,9 @@ namespace vezba.ManagerGUI
             mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonBackClick(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new TutorialPage(mainManagerWindow);
+            mainManagerWindow.MainManagerView.Content = new UserProfilePage(mainManagerWindow);
         }
     }
 }
