@@ -26,6 +26,7 @@ namespace vezba.PatientPages
         {
             InitializeComponent();
             this.DataContext = this;
+            DoctorEvaluationService = new DoctorEvaluationService();
             Doctor = doctor;
         }
 
@@ -69,6 +70,12 @@ namespace vezba.PatientPages
             int id = DoctorEvaluationService.EvaluationGenerateNextId();
             DoctorEvaluation doctorEvaluation = new DoctorEvaluation(rating, comm, id, false, Doctor);
             return doctorEvaluation;
+        }
+
+        private void comment_GotFocus(object sender, RoutedEventArgs e)
+        {
+            VirtualKeyboard keyboard = new VirtualKeyboard(comment);
+            keyboard.Show();
         }
     }
 }

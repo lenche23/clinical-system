@@ -27,7 +27,7 @@
             <ComboBoxItem Content="5. odličan" Background="AntiqueWhite"/>
         </ComboBox>
         <Label Content="Vaš komentar:" FontSize="20" HorizontalAlignment="Left" Margin="11,196,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="comment" Margin="10,238,9,95" Background="AntiqueWhite" BorderBrush="Black" Foreground="Black" FontSize="20"/>
+        <TextBox x:Name="comment" Margin="10,238,9,95" Background="AntiqueWhite" BorderBrush="Black" Foreground="Black" FontSize="20" GotFocus="comment_GotFocus"/>
         <Button x:Name="ButtonConfirmGradeDoctor" Content="Potvrdi" FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,532,271,10" Click="ButtonConfirmGradeDoctor_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">

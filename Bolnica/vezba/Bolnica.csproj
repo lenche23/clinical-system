@@ -595,6 +595,9 @@
     <Compile Include="ViewPatient.xaml.cs">
       <DependentUpon>ViewPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VirtualKeyboard.xaml.cs">
+      <DependentUpon>VirtualKeyboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowAddRoomEquipment.xaml.cs">
       <DependentUpon>WindowAddRoomEquipment.xaml</DependentUpon>
     </Compile>
@@ -1182,6 +1185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VirtualKeyboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
