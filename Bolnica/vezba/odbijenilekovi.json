@@ -168,7 +168,7 @@
       ]
     },
     "Description": "Ne dobro",
-    "IsDeleted": false,
+    "IsDeleted": true,
     "MedicineName": "Lek1",
     "MedicineManufacturer": "Proizvodjac"
   },
