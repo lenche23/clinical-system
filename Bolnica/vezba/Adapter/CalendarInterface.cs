@@ -12,5 +12,7 @@ namespace vezba.Adapter
         void AddAppointment(Appointment appointment);
 
         void DeleteAppointment(Appointment appointment);
+
+        void UpdateAppointment(Appointment appointment);
     }
 }

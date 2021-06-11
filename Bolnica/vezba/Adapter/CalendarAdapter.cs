@@ -26,5 +26,11 @@ namespace vezba.Adapter
         {
             calendar.RemoveAppointment(appointment);
         }
+
+        public void UpdateAppointment(Appointment appointment)
+        {
+            calendar.RemoveAppointment(appointment);
+            calendar.AddAppointmentToCurrentView(appointment);
+        }
     }
 }

@@ -130,8 +130,7 @@ namespace vezba.DoctorPages
             var appointmentService = new AppointmentService();
             if (appointmentService.DoctorRescheduleAppointment(updatedAppointment))
             {
-                calendarInterface.DeleteAppointment(updatedAppointment);
-                calendarInterface.AddAppointment(updatedAppointment);
+                calendarInterface.UpdateAppointment(updatedAppointment);
 
                 _doctorView.Main.GoBack();
                 _doctorView.Main.GoBack();
