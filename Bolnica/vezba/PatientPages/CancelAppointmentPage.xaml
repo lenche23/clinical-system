@@ -31,7 +31,7 @@
         <Image Source="/Bolnica;component/PatientImages/cancel.png" Width="45" Margin="26,10,359,543"/>
         <Label Content="Otkaži pregled" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,138,0" Height="57" Width="216"/>
         <Label Margin="10,72,10,489" Content="Izaberite pregled koji zelite da otkažete" FontSize="20"/>
-        <ListBox x:Name="cancelTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="10,116,10,73" Background="Transparent">
+        <ListBox x:Name="cancelTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="10,116,10,73" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50">

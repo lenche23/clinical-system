@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vezba.ViewModel.PatientViewModel;
 
 namespace vezba.PatientPages
 {
@@ -24,12 +25,12 @@ namespace vezba.PatientPages
 
         private void OrderDoctorAppointment(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new OrderDoctorAppointment());
+            this.NavigationService.Navigate(new OrderDoctorAppointment(new OrderDoctorAppointmentViewModel(this.NavigationService)));
         }
 
         private void OrderTimeAppointment(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new OrderTimeAppointment());
+            this.NavigationService.Navigate(new OrderTimeAppointment(new OrderTimeAppointmentViewModel(this.NavigationService)));
         }
     }
 }

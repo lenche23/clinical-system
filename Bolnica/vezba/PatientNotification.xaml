@@ -24,6 +24,10 @@
                         <GradientStop Color="#FF8FC7A9" Offset="0.493"/>
                     </RadialGradientBrush>
                 </Grid.Background>
+                <StackPanel Margin="0,28,0,50">
+                    <TextBlock Foreground="#FF2E421A" Text="{Binding NotificationContent}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" TextAlignment="Center">
+                    </TextBlock>
+                </StackPanel>
                 <Button x:Name="BtnOk" Content="OK" Margin="72,101,72,10" Foreground="#FF2E421A" RenderTransformOrigin="0.5,0.5" Click="BtnOk_Click">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -37,7 +41,6 @@
                         </RadialGradientBrush>
                     </Button.Background>
                 </Button>
-                <Label Content="{Binding NotificationContent}"  HorizontalAlignment="Center" Margin="0,32,0,64" FontSize="15" Width="240" HorizontalContentAlignment="Center" Foreground="#FF2E421A"/>
             </Grid>
         </Border>
     </Border>

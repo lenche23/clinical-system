@@ -33,7 +33,7 @@ namespace vezba.PatientPages
             Appointments = new ObservableCollection<Appointment>(appointments);
         }
 
-        private void ButtonGradeDoctor_Click(object sender, RoutedEventArgs e)
+        /*private void ButtonGradeDoctor_Click(object sender, RoutedEventArgs e)
         {
             if (gradingTable.SelectedItems.Count > 0)
             {
@@ -46,6 +46,21 @@ namespace vezba.PatientPages
                 var s = new TableNote();
                 s.ShowDialog();
             }         
+        }*/
+
+        private void GradeDoctor_Click(object sender, SelectionChangedEventArgs e)
+        {
+            if (gradingTable.SelectedItems.Count > 0)
+            {
+                Appointment appointment = (Appointment)gradingTable.SelectedItem;
+                Doctor selectedDoctor = appointment.Doctor;
+                this.NavigationService.Navigate(new GradeSelectedDoctorPage(selectedDoctor));
+            }
+            else
+            {
+                var s = new TableNote();
+                s.ShowDialog();
+            }
         }
 
         /*private List<Appointment> AppointmentsToGradeDoctors()

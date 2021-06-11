@@ -15,9 +15,7 @@
                 <GradientStop Color="AntiqueWhite" Offset="0.483"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="/Bolnica;component/PatientImages/stethoscope (1).png" Width="Auto" Margin="22,36,343,505"/>
-        <Label Content="Pregledi" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Foreground="#FF2E421A" Margin="92,36,138,0" Height="59" Width="200"/>
-        <Button x:Name="ButtonOrderAppointment" Content="Zakaži pregled"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,134,10,372" Click="ButtonOrderAppointment_Click">
+        <Button x:Name="ButtonOrderAppointment" Content="Zakaži pregled"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,101,10,405" Click="ButtonOrderAppointment_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
@@ -30,7 +28,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="ButtonChangeAppointment" Content="Izmeni pregled"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,248,10,257" Click="ButtonChangeAppointment_Click">
+        <Button x:Name="ButtonChangeAppointment" Content="Izmeni pregled"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,215,10,290" Click="ButtonChangeAppointment_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
@@ -43,7 +41,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="ButtonCancelAppointment" Content="Otkaži pregled"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,361,10,144" Click="ButtonCancelAppointment_Click">
+        <Button x:Name="ButtonCancelAppointment" Content="Otkaži pregled"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,328,10,177" Click="ButtonCancelAppointment_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
@@ -56,7 +54,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="ButtonHistoryAppointment" Content="Istorija mojih pregleda"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,475,10,30" Click="ButtonHistoryAppointment_Click">
+        <Button x:Name="ButtonHistoryAppointment" Content="Istorija mojih pregleda"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,442,10,63" Click="ButtonHistoryAppointment_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
@@ -69,5 +67,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
+        <Image Source="/Bolnica;component/PatientImages/stethoscope (1).png" Width="45" Margin="26,10,359,543"/>
+        <Label Content="Pregledi" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,138,0" Height="57" Width="216"/>
     </Grid>
 </Page>

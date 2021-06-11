@@ -352,7 +352,7 @@ namespace Service
         public Boolean MoveableAppointment(DateTime initDate, DateTime pickedDate)
         {
             int diff = (pickedDate - initDate).Days;
-            if (diff > 2)
+            if (!(diff > 2))
                 return false;
 
             return true;
@@ -384,7 +384,7 @@ namespace Service
             if (GetOverlapingAppointments(newAppointment).Count == 0)
             {
                 EventsLogService.AddLog();
-                PatientNotification noti = new PatientNotification("Uspe�no ste zakazali pregled.");
+                PatientNotification noti = new PatientNotification("Uspesno ste zakazali pregled.");
                 noti.ShowDialog();
                 return AppointmentRepository.Save(newAppointment);
             }

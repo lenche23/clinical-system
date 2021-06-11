@@ -71,7 +71,7 @@ namespace vezba
                         Boolean b = fileRepository.Save(a);
                         if (b)
                         {
-                            PatientView.Apps.Add(a);
+                            //PatientView.Appointmentss.Add(a);
                         }
                         log = DateTime.Now;
                         foreach (EventsLog elog in list)

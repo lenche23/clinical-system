@@ -36,7 +36,7 @@ namespace vezba.PatientPages
 
         private void BtnZahtev_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new NotificationRequest());
         }
 
         private void BtnOcenaLekara_Click(object sender, RoutedEventArgs e)
@@ -48,7 +48,7 @@ namespace vezba.PatientPages
         {
             if (currentAppointments % 5 == 0)
             {
-                this.NavigationService.Navigate(new GradeHospitalPage());
+                this.NavigationService.Navigate(new GradeHospitalPage(new ViewModel.PatientViewModel.GradeHospitalViewModel(this.NavigationService)));
             }
             else
             {
@@ -59,22 +59,22 @@ namespace vezba.PatientPages
 
         private void BtnStatistika_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Statistics());
         }
 
         private void BtnMojLekar_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new MyDoctor());
         }
 
         private void BtnPlacanje_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Payment());
         }
 
         private void BtnIzvestaj_Click(object sender, RoutedEventArgs e)
         {
-
+            this.NavigationService.Navigate(new ReportPage());
         }
     }
 }

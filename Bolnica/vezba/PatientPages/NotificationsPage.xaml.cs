@@ -34,7 +34,7 @@ namespace vezba.PatientPages
             Announcements = new ObservableCollection<Announcement>(announcements);
         }
 
-        private void ButtonShowNotification_Click(object sender, RoutedEventArgs e)
+        /*private void ButtonShowNotification_Click(object sender, RoutedEventArgs e)
         {
             if (announcementsTable.SelectedItems.Count > 0)
             {
@@ -47,6 +47,20 @@ namespace vezba.PatientPages
                 noti.ShowDialog();
             }
 
+        }*/
+
+        private void ShowNotification_Click(object sender, SelectionChangedEventArgs e)
+        {
+            if (announcementsTable.SelectedItems.Count > 0)
+            {
+                Announcement announcement = (Announcement)announcementsTable.SelectedItem;
+                this.NavigationService.Navigate(new ShowNotificationPage(announcement));
+            }
+            else
+            {
+                PatientNotification noti = new PatientNotification("Niste selektovali obaveštenje!");
+                noti.ShowDialog();
+            }
         }
     }
 }

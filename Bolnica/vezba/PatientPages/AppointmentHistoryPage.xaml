@@ -17,7 +17,7 @@
         </Grid.Background>
         <Image Source="/Bolnica;component/PatientImages/clock.png" Width="45" Margin="26,10,359,543"/>
         <Label Content="Moja istorija pregleda" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,46,0" Height="57" Width="308"/>
-        <ListBox x:Name="cancelTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="10,79,10,19" Background="Transparent">
+        <ListBox x:Name="cancelTable" ItemsSource="{Binding Appointments, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="10,79,10,19" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Height="50">

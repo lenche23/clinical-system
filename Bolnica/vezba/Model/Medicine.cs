@@ -93,6 +93,12 @@ namespace Model
                 ingridient.Clear();
         }
 
+        override
+        public String ToString()
+        {
+            return Name;
+        }
+
     }
 
 }

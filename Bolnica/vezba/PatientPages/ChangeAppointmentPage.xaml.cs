@@ -32,7 +32,7 @@ namespace vezba.PatientPages
             Appointments = new ObservableCollection<Appointment>(appointments);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Select_Click(object sender, SelectionChangedEventArgs e)
         {
             if (appointmentsTable.SelectedItems.Count > 0)
             {

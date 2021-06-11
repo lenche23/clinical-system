@@ -15,9 +15,7 @@
                 <GradientStop Color="AntiqueWhite" Offset="0.483"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="/Bolnica;component/PatientImages/capsules (1).png" Width="Auto" Margin="22,36,343,505"/>
-        <Label Content="Terapije" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="35" Foreground="#FF2E421A" Margin="92,36,138,0" Height="59" Width="200"/>
-        <Button x:Name="ButtonOrderAppointment" Content="Moje aktivne terapije"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,134,10,372">
+        <Button x:Name="ButtonActiveTherapies" Content="Moje aktivne terapije"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,101,10,405" Click="ButtonActiveTherapies_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
@@ -30,7 +28,7 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="ButtonChangeAppointment" Content="Istorija mojih terapija"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,248,10,257">
+        <Button x:Name="ButtonHistoryPresciptions" Content="Moja istorija terapija"  FontSize="25" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,215,10,290" Click="ButtonHistoryPresciptions_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
@@ -43,6 +41,8 @@
                 </RadialGradientBrush>
             </Button.Background>
         </Button>
+        <Image Source="/Bolnica;component/PatientImages/capsules (1).png" Width="45" Margin="26,10,359,543"/>
+        <Label Content="Terapije" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,144,0" Height="57" Width="210"/>
 
     </Grid>
 </Page>

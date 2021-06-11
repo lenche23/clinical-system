@@ -21,5 +21,15 @@ namespace vezba.PatientPages
         {
             InitializeComponent();
         }
+
+        private void ButtonActiveTherapies_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new ActiveTherapies());
+        }
+
+        private void ButtonHistoryPresciptions_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new TherapiesHistory());
+        }
     }
 }

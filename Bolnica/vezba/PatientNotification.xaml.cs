@@ -22,6 +22,7 @@ namespace vezba
             InitializeComponent();
             this.DataContext = this;
             NotificationContent = content;
+            Topmost = true;
             Focus();
         }
 

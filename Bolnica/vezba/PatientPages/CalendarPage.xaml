@@ -38,7 +38,7 @@
                 <Grid x:Name="GridCursor" Width="135" Height="5" Background="#FF2E421A" HorizontalAlignment="Left" Margin="10 0" VerticalAlignment="Bottom"/>
             </Grid>
             <Grid x:Name="GridTable" Height="418" Width="410">
-                <ListBox x:Name="appointmentsTodayTable" ItemsSource="{Binding Appointments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="418" Width="410" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="Transparent">
+                <ListBox x:Name="appointmentsTodayTable" ItemsSource="{Binding Appointments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="418" Width="410" ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="Transparent">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Height="50">

@@ -14,24 +14,18 @@ namespace vezba
 {
     public partial class PatientView : Window
     {
-        //OVO OBRISATI
-        public static ObservableCollection<Appointment> Apps { get; set; }
         public static Patient Patient { get; set; }
         private PatientService Service { get; set; }
         public PatientView()
         {
             InitializeComponent();
             this.DataContext = this;
-            //OVO OBRISATI
-            AppointmentFileRepository fileRepository = new AppointmentFileRepository();
-            List<Appointment> apps = fileRepository.GetAll();
-            Apps = new ObservableCollection<Appointment>(apps);
-            //XXXXXXXXXXXX
 
             SetPatientLoggedIn();
             Service.AddHardcorePrescriptions();
             PatientMainPage.NavigationUIVisibility = NavigationUIVisibility.Hidden;
             StartThread();
+            PatientMainPage.Navigate(new StartPage());
         }
 
         private void SetPatientLoggedIn()
