@@ -576,6 +576,7 @@
     <Compile Include="SecretaryGUI\SecretaryViewPatient.xaml.cs">
       <DependentUpon>SecretaryViewPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\Validation\SecretaryValidationRules.cs" />
     <Compile Include="SecretaryView.xaml.cs">
       <DependentUpon>SecretaryView.xaml</DependentUpon>
     </Compile>
@@ -1502,6 +1503,23 @@
     <Resource Include="ManagerImages\accountBlue.png" />
     <Resource Include="ManagerImages\images.png" />
     <Resource Include="ManagerImages\tutorial.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SecretaryGUI\SecretaryImages\feedback %281%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\logo.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\notification %281%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\notification %282%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\notification %283%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\notification %284%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\notification.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\question %281%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\search %281%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\search%282%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\settings %281%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\settings %282%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\user %281%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\user %282%29.png" />
+    <Resource Include="SecretaryGUI\SecretaryImages\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
