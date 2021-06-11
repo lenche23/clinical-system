@@ -31,10 +31,12 @@ namespace vezba.DoctorPages
         private TextBlock saturdayBlock;
         private TextBlock sundayBlock;
         private AppointmentService appointmentService;
+        private Dictionary<int, Grid> appointmentGrids;
 
         public Calendar(DoctorView doctorView)
         {
             InitializeComponent();
+            appointmentGrids = new Dictionary<int, Grid>();
             appointmentService = new AppointmentService();
             this.doctorView = doctorView;
             DoctorService doctorService = new DoctorService();
@@ -231,6 +233,14 @@ namespace vezba.DoctorPages
         private void GenerateAppointmentsForWeekAndDoctor()
         {
             appointments = appointmentService.GenerateAppointmentsForWeekAndDoctor(startOfWeek, endOfWeek, selectedDoctor);
+            CreateSchedule();
+            appointmentGrids.Clear();
+            foreach (var appointment in appointments)
+            {
+                ShowAppointment(appointment);
+            }
+            timeDockPanel.Children.Add(dynamicGrid);
+            SetScrollViewerToFirstAppointment();
         }
 
         public void ShowAppointment(Appointment appointment)
@@ -253,10 +263,11 @@ namespace vezba.DoctorPages
             {
                 appointmentGrid.Background = Brushes.CornflowerBlue;
             };
+            appointmentGrids.Add(appointment.AppointentId, appointmentGrid);
             appointmentGrid.MouseLeftButtonDown += (sen, evg) =>
             {
                 appointment = appointmentService.GetAppointmentById(appointment.AppointentId);
-                doctorView.Main.Content = new ViewAppointmentPage(appointment, doctorView, this, appointmentGrid);
+                doctorView.Main.Content = new ViewAppointmentPage(appointment, doctorView, this);
             };
             Grid.SetRow(appointmentGrid, row);
             Grid.SetColumn(appointmentGrid, col);
@@ -308,8 +319,14 @@ namespace vezba.DoctorPages
             dynamicGrid.Children.Add(appointmentGrid);
         }
 
-        public void RemoveAppointment(Grid appointmentGrid)
+        /*public void RemoveAppointment(Grid appointmentGrid)
         {
+            dynamicGrid.Children.Remove(appointmentGrid);
+        }*/
+
+        public void RemoveAppointment(Appointment appointment)
+        {
+            var appointmentGrid = appointmentGrids[appointment.AppointentId];
             dynamicGrid.Children.Remove(appointmentGrid);
         }
 
@@ -325,13 +342,14 @@ namespace vezba.DoctorPages
             endOfWeek = endOfWeek.AddDays(-7);
             UpdateDateIndicators();
             GenerateAppointmentsForWeekAndDoctor();
-            CreateSchedule();
+            /*CreateSchedule();
+            appointmentGrids.Clear();
             foreach (var appointment in appointments)
             {
                 ShowAppointment(appointment);
             }
             timeDockPanel.Children.Add(dynamicGrid);
-            SetScrollViewerToFirstAppointment();
+            SetScrollViewerToFirstAppointment();*/
         }
 
         private void UpdateDateIndicators()
@@ -360,13 +378,14 @@ namespace vezba.DoctorPages
             endOfWeek = endOfWeek.AddDays(7);
             UpdateDateIndicators();
             GenerateAppointmentsForWeekAndDoctor();
-            CreateSchedule();
+            /*CreateSchedule();
+            appointmentGrids.Clear();
             foreach (var appointment in appointments)
             {
                 ShowAppointment(appointment);
             }
             timeDockPanel.Children.Add(dynamicGrid);
-            SetScrollViewerToFirstAppointment();
+            SetScrollViewerToFirstAppointment();*/
         }
 
         
@@ -375,13 +394,14 @@ namespace vezba.DoctorPages
             timeDockPanel.Children.Remove(dynamicGrid);
             selectedDoctor = (Doctor)DoctorsComboBox.SelectedItem;
             GenerateAppointmentsForWeekAndDoctor();
-            CreateSchedule();
+            /*CreateSchedule();
+            appointmentGrids.Clear();
             foreach (var appointment in appointments)
             {
                 ShowAppointment(appointment);
             }
             timeDockPanel.Children.Add(dynamicGrid);
-            SetScrollViewerToFirstAppointment();
+            SetScrollViewerToFirstAppointment();*/
         }
         
         public void AddAppointmentToCurrentView(Appointment appointment)
