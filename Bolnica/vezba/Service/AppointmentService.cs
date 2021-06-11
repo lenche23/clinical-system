@@ -579,9 +579,10 @@ namespace Service
 
         // Upravnik*******************************************************************************
 
-        public bool Overlap(int number, DateTime StartTime, DateTime EndTime)
+        public Boolean Overlap(int number, DateTime StartTime, DateTime EndTime)
         {
-            var overlap = false;
+            var has_appointment = false;
+            
             List<Appointment> appointments = GetAllAppointments();
 
             foreach (Appointment appointment in appointments)
@@ -594,13 +595,20 @@ namespace Service
                         if (DateTime.Compare(appointmentStart, StartTime) > 0 &&
                             DateTime.Compare(appointmentStart, EndTime) < 0)
                         {
-                            overlap = true;
+                            MessageBox.Show("Datum renovacije se poklapa sa već zakazanim pregledima");
+                            has_appointment = true;
                         }
+
+                        
+                        if (DateTime.Compare(appointmentStart, EndTime) > 0)
+                        {
+                            MessageBox.Show("Postoje termini u sobi koju nameravate podeliti zakazani nakon renoviranja");
+                            has_appointment = true;
+                        } 
                     }
                 }
             }
-
-            return overlap;
+        return has_appointment;
         }
 
         // UpravnikKraj***************************************************************************

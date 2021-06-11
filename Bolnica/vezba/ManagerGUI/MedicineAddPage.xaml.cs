@@ -75,7 +75,6 @@ namespace vezba.ManagerGUI
         }
         private void AddIngredientButtonClick(object sender, RoutedEventArgs e)
         {
-            if (!ValidateEntries()) return;
             var ingredientName = NewIngredientTextBox.Text;
             var newIngredient = new Ingridient(ingredientName);
             ingredientTemporaryList.Add(newIngredient);

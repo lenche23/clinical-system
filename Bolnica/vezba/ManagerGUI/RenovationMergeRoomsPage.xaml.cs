@@ -90,7 +90,6 @@ namespace vezba.ManagerGUI
 
             if (appointmentService.Overlap(number, startTime, endTime))
             {
-                MessageBox.Show("Datum renovacije se poklapa sa već zakazanim pregledima");
                 return;
             }
 

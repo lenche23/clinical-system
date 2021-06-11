@@ -59,15 +59,5 @@ namespace vezba.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] USA_tb {
-            get {
-                object obj = ResourceManager.GetObject("USA_tb", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
