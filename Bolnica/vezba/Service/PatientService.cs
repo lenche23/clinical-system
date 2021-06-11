@@ -167,6 +167,71 @@ namespace Service
             EditPatient(patient);
         }
 
+        public void RemovePrescriptionFromPatient(Patient patient, Prescription prescription)
+        {
+            patient.MedicalRecord.RemovePrescription(prescription);
+            EditPatient(patient);
+        }
+
+        public void RemoveReferralLetterFromPatient(Patient patient, ReferralLetter referralLetter)
+        {
+            patient.MedicalRecord.RemoveReferralLetter(referralLetter);
+            EditPatient(patient);
+        }
+
+        public void RemoveHospitalTreatmentFromPatient(Patient patient, HospitalTreatment hospitalTreatment)
+        {
+            patient.MedicalRecord.RemoveHospitalTreatment(hospitalTreatment);
+            EditPatient(patient);
+        }
+
+        public void RemoveAnamnesisFromPatient(Patient patient, Anamnesis anamnesis)
+        {
+            patient.MedicalRecord.RemoveAnamnesis(anamnesis);
+            EditPatient(patient);
+        }
+
+        public List<MedicineCount> GetMedicineCountForSelectedDate(DateTime startDate, DateTime endDate)
+        {
+            List<MedicineCount> medicineTotals = new List<MedicineCount>();
+            List<Patient> allPatients = GetAllPatients();
+            Dictionary<int, int> medicineCount = new Dictionary<int, int>();
+            foreach (var patient in allPatients)
+            {
+                var medicalRecord = patient.MedicalRecord;
+                var allPrescriptions = medicalRecord.Prescription;
+                foreach(var prescription in allPrescriptions)
+                {
+                    if (DateTime.Compare(prescription.StartDate.AddDays(prescription.DurationInDays), startDate) > 0 && DateTime.Compare(prescription.StartDate, endDate) < 0)
+                    {
+                        var medicineId = prescription.Medicine.MedicineID;
+                        if (medicineCount.ContainsKey(medicineId))
+                            medicineCount[medicineId] += 1;
+                        else
+                            medicineCount[medicineId] = 1;
+                    }
+                }
+            }
+            var medicineService = new MedicineService();
+            foreach (var temp in medicineCount) {
+                var medicineId = temp.Key;
+                var medicine = medicineService.getMedicineById(medicineId);
+                var count = temp.Value;
+                var medicineTotal = new MedicineCount(medicine, count);
+                medicineTotals.Add(medicineTotal);
+            }
+            return medicineTotals;
+        }
+
+        public int GetMedicineCountSum(List<MedicineCount> medicineCount)
+        {
+            int sum = 0;
+            foreach(var med in medicineCount)
+            {
+                sum += med.Count;
+            }
+            return sum;
+        }
         // LekarKraj******************************************************************************
 
         // Upravnik*******************************************************************************

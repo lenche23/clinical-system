@@ -132,6 +132,24 @@
     <Compile Include="DoctorPages\ExtendHospitalTreatment.xaml.cs">
       <DependentUpon>ExtendHospitalTreatment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorPages\MedicineReportPreview.xaml.cs">
+      <DependentUpon>MedicineReportPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorPages\ViewAnamnesis.xaml.cs">
+      <DependentUpon>ViewAnamnesis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorPages\ViewHospitalTreatment.xaml.cs">
+      <DependentUpon>ViewHospitalTreatment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorPages\ViewPrescription.xaml.cs">
+      <DependentUpon>ViewPrescription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorPages\ViewReferralLetter.xaml.cs">
+      <DependentUpon>ViewReferralLetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorValidation\NonNullValidationRule.cs" />
+    <Compile Include="DoctorValidation\StringToIntValidationRule.cs" />
+    <Compile Include="DoctorValidation\TimeValidationRule.cs" />
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
     </Compile>
@@ -272,6 +290,7 @@
       <DependentUpon>MedicineRevisionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DeclinedMedicine.cs" />
+    <Compile Include="Model\MedicineCount.cs" />
     <Compile Include="PatientNotification.xaml.cs">
       <DependentUpon>PatientNotification.xaml</DependentUpon>
     </Compile>
@@ -634,6 +653,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DoctorPages\ExtendHospitalTreatment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\MedicineReportPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\ViewAnamnesis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\ViewHospitalTreatment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\ViewPrescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\ViewReferralLetter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

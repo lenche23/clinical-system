@@ -26,6 +26,7 @@ namespace vezba.DoctorPages
             _doctorView = doctorView;
             this.calendar = calendar;
             this.appointmentGrid = appointmentGrid;
+            IsEmergencyTB.Text = (Appointment.IsEmergency) ? "Da" : "Ne";
         }
 
         private void MedicalRecordClick(object sender, RoutedEventArgs e)
@@ -45,16 +46,6 @@ namespace vezba.DoctorPages
             }
         }
 
-        private void NewPrescriptionClick(object sender, RoutedEventArgs e)
-        {
-            _doctorView.Main.Content = new CreatePrescriptionPage(Appointment.Patient, _doctorView);
-        }
-
-        private void NewReferralLetterClick(object sender, RoutedEventArgs e)
-        {
-            _doctorView.Main.Content = new CreateReferralLetterPage(Appointment.Patient, _doctorView);
-        }
-
         private void ReturnClick(object sender, RoutedEventArgs e)
         {
             _doctorView.Main.GoBack();
@@ -67,20 +58,20 @@ namespace vezba.DoctorPages
 
         private void DeleteClick(object sender, RoutedEventArgs e)
         {
-            var messageBoxResult = System.Windows.MessageBox.Show("Are you sure?", "DeleteMedicine Confirmation", System.Windows.MessageBoxButton.YesNo);
-            if (messageBoxResult == MessageBoxResult.Yes)
-            {
                 var appointmentService = new AppointmentService();
                 appointmentService.DeleteAppointment(Appointment.AppointentId);
                 calendar.RemoveAppointment(appointmentGrid);
                 calendar.SetScrollViewerToFirstAppointment();
                 _doctorView.Main.GoBack();
-            }
         }
 
-        private void NewHospitalTreatmentClick(object sender, RoutedEventArgs e)
+        private void AddPresetButton_Click(object sender, RoutedEventArgs e)
         {
-            _doctorView.Main.Content = new CreateHospitalTreatment(Appointment.Patient, _doctorView);
+            var addButton = sender as FrameworkElement;
+            if (addButton != null)
+            {
+                addButton.ContextMenu.IsOpen = true;
+            }
         }
     }
 }

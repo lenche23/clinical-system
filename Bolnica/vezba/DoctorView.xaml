@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:vezba"
         mc:Ignorable="d"
         Title="DoctorView" Height="700" Width="1200">
@@ -27,8 +28,32 @@
                 </StackPanel>
             </Button>
         </StackPanel>
+        <Border BorderBrush="CornflowerBlue" BorderThickness="0, 0, 0, 1" DockPanel.Dock="Top" Height="20">
+            <Grid Background="#FFE0E0E0">
+                <Grid HorizontalAlignment="Right" MinWidth="120" x:Name="UserGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Grid.Column="0" Kind="User" Foreground="CornflowerBlue" VerticalAlignment="Center"/>
+                    <TextBlock Margin="5,0, 0, 0" x:Name="TbUser" Padding="2" Grid.Column="1" HorizontalAlignment="Right" Foreground="CornflowerBlue">Some text</TextBlock>
+                    <Button Click="ExpandClick" Grid.Column="2" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
+                        <materialDesign:PackIcon Kind="ChevronDown" Foreground="White" VerticalAlignment="Center"/>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Border>
         <Grid>
-            <Frame x:Name="Main" NavigationUIVisibility="Hidden"></Frame>
+            <Grid Panel.ZIndex="2" Visibility="Collapsed" x:Name="ExpandGrid" Style="{StaticResource ResourceKey=GridHover}" Height="20" Width="{Binding ActualWidth, ElementName=UserGrid}" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <Border BorderBrush="CornflowerBlue" BorderThickness="1, 0, 1, 1">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Grid.Column="0" Kind="Logout" Foreground="CornflowerBlue" VerticalAlignment="Center"/>
+                        <TextBlock Padding="1" Margin="5,0, 0, 0" Foreground="CornflowerBlue" MouseLeftButtonDown="LogOutClick">Odjavi se</TextBlock>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <Frame Panel.ZIndex="1" x:Name="Main" NavigationUIVisibility="Hidden"></Frame>
         </Grid>
     </DockPanel>
 </Window>

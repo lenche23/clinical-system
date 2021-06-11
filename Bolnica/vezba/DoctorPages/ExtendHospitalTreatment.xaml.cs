@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,12 +21,41 @@ namespace vezba.DoctorPages
     /// <summary>
     /// Interaction logic for ExtendHospitalTreatment.xaml
     /// </summary>
-    public partial class ExtendHospitalTreatment : Page
+    public partial class ExtendHospitalTreatment : Page, INotifyPropertyChanged
     {
         public HospitalTreatment HospitalTreatment { get; set; }
         private readonly DoctorView _doctorView;
         private readonly Patient _patient;
         private readonly MedicalRecordPage _medicalRecordPage;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        private String _duration;
+        public String Duration
+        {
+            get
+            {
+                return _duration;
+            }
+            set
+            {
+                if (value != _duration)
+                {
+                    _duration = value;
+                    OnPropertyChanged("Duration");
+                }
+            }
+        }
+
+        public List<Room> Rooms { get; set; }
         public ExtendHospitalTreatment(Patient patient, HospitalTreatment hospitalTreatment, DoctorView doctorView, MedicalRecordPage medicalRecordPage)
         {
             InitializeComponent();
@@ -34,23 +64,37 @@ namespace vezba.DoctorPages
             _patient = patient;
             _medicalRecordPage = medicalRecordPage;
             DataContext = HospitalTreatment;
-            TbStartDate.Text = HospitalTreatment.StartDate.ToString("d");
-            TbDuration.Text = hospitalTreatment.DurationInDays.ToString();
-            TbRoom.Text = HospitalTreatment.Room.RoomNumber.ToString();
+            DpStartDate.SelectedDate = HospitalTreatment.StartDate;
+            Duration = HospitalTreatment.DurationInDays.ToString();
+            var roomService = new RoomService();
+            Rooms = roomService.GetAllRooms();
+            if (HospitalTreatment.Room != null)
+                CmbRooms.SelectedValue = HospitalTreatment.Room.RoomNumber;
+            DataContext = this;
         }
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
+            if (!ValidateEntries())
+                return;
             HospitalTreatment.DurationInDays = int.Parse(TbDuration.Text);
             PatientService patientService = new PatientService();
             patientService.EditPatient(_patient);
-            _medicalRecordPage.hospitalTreatmentGrid.Items.Refresh();
+            _medicalRecordPage.HospitalTreatmentListView.Items.Refresh();
             _doctorView.Main.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             _doctorView.Main.GoBack();
+        }
+
+        private Boolean ValidateEntries()
+        {
+            TbDuration.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(TbDuration))
+                return false;
+            return true;
         }
     }
 }

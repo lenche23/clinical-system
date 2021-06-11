@@ -14,15 +14,8 @@ namespace vezba.DoctorPages
         public ViewAnnouncementPage(Announcement announcement, DoctorView doctorView)
         {
             InitializeComponent();
-            Posted.Content += announcement.FormatedDatePosted;
-            Edited.Content += announcement.FormatedDateEdited;
-            if (Posted.Content.Equals(Edited.Content))
-            {
-                Edited.Visibility = System.Windows.Visibility.Collapsed;
-            }
-            Content.Text = announcement.Content;
-            Title.Text = announcement.Title;
             _doctorView = doctorView;
+            DataContext = announcement;
         }
 
         private void ReturnClick(object sender, RoutedEventArgs e)

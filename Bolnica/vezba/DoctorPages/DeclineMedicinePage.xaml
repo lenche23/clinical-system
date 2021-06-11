@@ -4,8 +4,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba"
+      xmlns:val="clr-namespace:vezba.DoctorValidation"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="700" d:DesignWidth="1200"
       Title="DeclineMedicinePage">
 
     <ScrollViewer>
@@ -34,7 +35,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
                 <Button Margin="5" Height="30" Width="100" Click="OkButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Potvrdi</Button>
-                <Button Margin="5" Height="30" Width="100" Click="CancelButtonClick" Style="{StaticResource ResourceKey=DoctorDefaultButton}" FontWeight="Bold">Odustani</Button>
+                <Button Margin="5" Height="30" Width="100" Click="CancelButtonClick" Style="{StaticResource ResourceKey=DoctorCancelButton}" FontWeight="Bold">Odustani</Button>
             </StackPanel>
             <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">Naziv Leka:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right">Proizvođač:</TextBlock>
@@ -44,17 +45,34 @@
             <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Top">Sastojci:</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Top">Komentar:</TextBlock>
 
-            <TextBlock Grid.Column="1" Grid.Row="1" Text="{ Binding Name, Mode=OneWay}"/>
-            <TextBlock Grid.Column="1" Grid.Row="2" Text="{ Binding Manufacturer, Mode=OneWay}"/>
-            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Packaging, Mode=OneWay}"/>
-            <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Condition, Mode=OneWay}"/>
-            <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding ReplacementMedicine.Name, Mode=OneWay}"/>
-            <DataGrid Grid.Column="1" Grid.Row="6" x:Name="ingredientGrid" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding Ingridient}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10, 10, 400, 10">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Naziv" Binding="{Binding Name}"  Width="*"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <TextBox Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Margin="10,10, 400, 10" VerticalAlignment="Top" Height="100" x:Name="DescriptionTB"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{ Binding Medicine.Name, Mode=OneWay}"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{ Binding Medicine.Manufacturer, Mode=OneWay}"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Medicine.Packaging, Mode=OneWay}"/>
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Medicine.Condition, Mode=OneWay}"/>
+            <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding Medicine.ReplacementMedicine.Name, Mode=OneWay}"/>
+            <ItemsControl FontFamily="Verdana" Grid.Column="1" Grid.Row="6" x:Name="ingredientItemsControl" ItemsSource="{Binding Medicine.Ingridient}" DisplayMemberPath="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"></ItemsControl>
+            <TextBox Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Margin="10,10, 400, 10" VerticalAlignment="Top" Height="100" x:Name="DescriptionTB">
+                <TextBox.Text>
+                    <Binding Path="Description" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <val:NonNullValidationRule ValidationStep="RawProposedValue"></val:NonNullValidationRule>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding [0].ErrorContent}" Foreground="Red" Margin="5"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
         </Grid>
     </ScrollViewer>
 </Page>

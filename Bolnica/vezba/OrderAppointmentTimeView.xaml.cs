@@ -50,7 +50,7 @@ namespace vezba
                 a.AppointentId = 0;
 
                 /*EventsLogFileRepository eventsLogFileRepository = new EventsLogFileRepository();
-                String patientJMBG = patient.Jmbg;
+                String patientJMBG = Patient.Jmbg;
                 List<DateTime> events = new List<DateTime>();*/
 
                 EventsLogFileRepository eventsLogFileRepository = new EventsLogFileRepository();
