@@ -32,7 +32,7 @@ namespace vezba.Repository
 
         public Boolean Save(Room room)
         {
-            room.RoomNumber = GenerateNextId();
+            //room.RoomNumber = GenerateNextId();
             List<Room> storedRooms = ReadFromFile();
             for (int i = 0; i < storedRooms.Count; i++)
             {

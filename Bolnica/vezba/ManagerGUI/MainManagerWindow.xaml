@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:vezba.ManagerGUI"
         mc:Ignorable="d"
         Height="660" Width="750">
-    <Grid>
+    <Grid Background="#FFF9EEEE" >
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <TextBlock FontSize="22" FontFamily="Yu Gothic UI Semibold" Foreground="#FFCD4100" Background="#FFFFDEB6" Margin="10"  TextAlignment="Center" Width="116" Height="34" LineHeight="22"><Run Text="Upravnik"/></TextBlock>
+            <TextBlock FontSize="22" FontFamily="Yu Gothic UI Semibold" Foreground="#FFBF1B1B" Background="#FFFFC0B6" Margin="10"  TextAlignment="Center" Width="116" Height="34" LineHeight="22"><Run Text="Upravnik"/></TextBlock>
         </StackPanel>
         <Frame x:Name ="MainManagerView" Margin="0,0,0,60" NavigationUIVisibility="Hidden"/>
     </Grid>

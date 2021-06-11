@@ -61,6 +61,17 @@ namespace Model
                 return StartTime.AddMinutes(DurationInMunutes);
             }
         }
+
+        [JsonIgnore]
+        public String BeginTime
+        {
+            get
+            {
+                return StartTime.ToString("dd.MM.yyyy hh:mm");
+            }
+        }
+
+
         [JsonIgnore]
         public String PatientName
         {

@@ -44,5 +44,10 @@ namespace vezba.ManagerGUI
         private void ButtonSurveyClick(object sender, RoutedEventArgs e)
         {
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new UserProfilePage(mainManagerWindow);
+        }
     }
 }

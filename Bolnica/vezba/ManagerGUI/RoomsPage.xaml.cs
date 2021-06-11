@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 using Service;
 
 namespace vezba.ManagerGUI
@@ -34,21 +36,7 @@ namespace vezba.ManagerGUI
 
         private void New_Room_Button_Click(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new RoomAddNewPage();
-        }
-
-        private void Edit_Room_Button_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (lvDataBinding.SelectedIndex > -1)
-            {
-                Room selected = (Room)lvDataBinding.SelectedItems[0];
-                mainManagerWindow.MainManagerView.Content = new RoomUpdatePage(selected, this, mainManagerWindow);
-            }
-            else
-            {
-                MessageBox.Show("Ni jedna prostorija nije selektovana!");
-            }
+            mainManagerWindow.MainManagerView.Content = new RoomAddNewPage(mainManagerWindow);
         }
 
         private void Delete_Room_Button_Click(object sender, RoutedEventArgs e)
@@ -62,20 +50,7 @@ namespace vezba.ManagerGUI
             }
             else
             {
-                MessageBox.Show("Ni jedna prostorija nije selektovana!");
-            }
-        }
-
-        private void View_Room_Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (lvDataBinding.SelectedIndex > -1)
-            {
-                Room selected = (Room)lvDataBinding.SelectedItem;
-                mainManagerWindow.MainManagerView.Content = new RoomViewPage(selected,this);
-            }
-            else
-            {
-                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+                //MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
 
@@ -88,7 +63,7 @@ namespace vezba.ManagerGUI
             }
             else
             {
-                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+                //MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
 
@@ -105,6 +80,40 @@ namespace vezba.ManagerGUI
         private void ButtonMedicineClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
+        }
+
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (lvDataBinding.SelectedIndex > -1)
+            {
+                Room selected = (Room)lvDataBinding.SelectedItems[0];
+                mainManagerWindow.MainManagerView.Content = new RoomUpdatePage(selected, this, mainManagerWindow);
+            }
+            else
+            {
+               // MessageBox.Show("Ni jedna prostorija nije selektovana!");
+            }
+        }
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (lvDataBinding.SelectedIndex > -1)
+            {
+                Room room = (Room) lvDataBinding.SelectedItem;
+                RoomService roomService = new RoomService();
+                roomService.DeleteRoom(room.RoomNumber);
+                rooms = roomService.GetAllRooms();
+                Rooms.Remove(room);
+                lvDataBinding.Items.Refresh();
+            }
+            else
+            {
+                //MessageBox.Show("Ni jedna prostorija nije selektovana!");
+            }
+        }
+
+        private void RoomOccupiedButtonClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomOccupiedPage(mainManagerWindow);
         }
     }
 }

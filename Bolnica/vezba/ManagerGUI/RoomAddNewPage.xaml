@@ -4,28 +4,157 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:vezba.ManagerGUI"
+      xmlns:val="clr-namespace:vezba.ManagerValidation"
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
-      Title="RoomAddNewPage" Background="#FFFFF0F0">
+      Title="RoomAddNewPage">
     <Grid>
-        <Grid.Resources>
-
-        </Grid.Resources>
-        <Label Content="Kreiranje nove prostorije"  FontSize="18" FontFamily="Myriad Pro Cond" Margin="165,25,18,198"/>
-        <Label Content="Broj prostorije" Margin="165,60,428,477"></Label>
-        <TextBox Name="BrojSobeTB" Margin="266,60,411,477"></TextBox>
-        <Label Content="Sprat:" Margin="168,135,491,374" />
-        <Label Content="Tip prostorije:" Margin="168,98,491,429"/>
-        <Button Click="Potvrdi_Button_Click" Margin="150,213,428,289">Potvrdi</Button>
-        <Button Click="Odustani_Button_Click" Margin="474,213,133,289">Odustani</Button>
-
-        <RadioButton Name ="Prvi" GroupName="Sprat" Content="Prvi" Margin="266,141,373,374"></RadioButton>
-        <RadioButton Name ="Drugi" GroupName="Sprat" Content="Drugi" Margin="328,141,273,364"></RadioButton>
-        <RadioButton Name ="Treci" GroupName="Sprat" Content="Treci" Margin="399,141,168,364"></RadioButton>
-
-        <RadioButton Name ="Pregled" GroupName="TipProstorije" Content="Pregled" Margin="257,104,411,428"></RadioButton>
-        <RadioButton Name ="Operacija" GroupName="TipProstorije" Content="Operacija" Margin="403,104,263,429"></RadioButton>
-        <RadioButton Name ="Odmor" GroupName="TipProstorije" Content="Odmor" Margin="332,104,333,428"></RadioButton>
-        <RadioButton Name ="Magacin" GroupName="TipProstorije" Content="Magacin" Margin="480,104,153,429"></RadioButton>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="23*" ></ColumnDefinition>
+                <ColumnDefinition Width="21*" ></ColumnDefinition>
+                <ColumnDefinition Width="28*" ></ColumnDefinition>
+                <ColumnDefinition Width="22*" ></ColumnDefinition>
+                <ColumnDefinition Width="18*" ></ColumnDefinition>
+                <ColumnDefinition Width="18*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="5,15" FontSize="20" Foreground="#FFB05555" Background="White" Click="ButtonMainClick" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Početna
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="1" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonRoomsClick">Prostorije
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="2" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonInventoryClick">Inventar
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="3" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Snabdevanje
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="4" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Zaposleni
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="5" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Ankete
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="6" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonMedicineClick">Lekovi
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid Row="1" Margin="130,25,130,60" Background="#FFFFE5E5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16*">
+            </RowDefinition>
+            <RowDefinition Height="17*"></RowDefinition>
+            <RowDefinition Height="17*"></RowDefinition>
+            <RowDefinition Height="17*"></RowDefinition>
+            <RowDefinition Height="15*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+            <TextBlock FontSize="28"  Margin="125,15,125,5" TextAlignment="Center">Nova prostorija</TextBlock>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock  Grid.Column="0" FontSize="20"  Margin="45,25,30,25" TextAlignment="Right">Broj prostorije:</TextBlock>
+                <TextBox Grid.Column="1" FontSize="20"  Margin="0,25,155,25" TextAlignment="Center" Name="BrojSobeTB" TextChanged="BrojSobeTB_TextChanged">
+                    <TextBox.Text>
+                        <Binding Path="BrojSobe" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
+                                <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <AdornedElementPlaceholder Grid.Column="0" Grid.Row="0" x:Name="textBox"/>
+                                <TextBlock Grid.Row="1" Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontSize="20" Margin="45,25,30,25" TextAlignment="Right">Sprat:</TextBlock>
+            <ComboBox Grid.Column="1" FontSize="20" Name="comboFloor" Margin="0,25,140,25" SelectionChanged="comboFloor_SelectionChanged"></ComboBox>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" FontSize="20" Margin="45,25,30,25" TextAlignment="Right">Tip prostorije:</TextBlock>
+            <ComboBox Grid.Column="1" FontSize="20" Name="comboRoomType" Margin="0,25,35,25" SelectionChanged="comboRoomType_SelectionChanged"></ComboBox>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+                <Button BorderThickness="0"  FontSize="18" Name="OkButton" Click="Potvrdi_Button_Click" Margin="80,10,25,24" Background="#FFAECDAB">Potvrdi
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button BorderThickness="0" FontSize="20" Name ="CancelButton" Click="Odustani_Button_Click" Margin="25,10,80,24" Grid.Column="1" Background="#FFC7C7C7">Odustani
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+        </Grid>
+    </Grid>
     </Grid>
 </Page>

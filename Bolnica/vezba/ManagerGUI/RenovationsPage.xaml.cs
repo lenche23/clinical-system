@@ -21,6 +21,7 @@ namespace vezba.ManagerGUI
             List<Renovation> renovationList = selected.renovation;
             RenovationList = new ObservableCollection<Renovation>(renovationList);
             RenovationsBinding.ItemsSource = RenovationList;
+            RenovationTitle.Text = RenovationTitle.Text + " " + this.selected.RoomNumber;
         }
 
         private void Renovation_Button_Click(object sender, RoutedEventArgs e)
@@ -52,6 +53,31 @@ namespace vezba.ManagerGUI
         private void SplitRoomButtonClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new RenovationSplitRoomPage(mainManagerWindow, selected);
+        }
+
+        private void ButtonBackClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void ButtonRoomsClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
+        }
+
+        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
+        }
+
+        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
+        }
+
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
     }
 }

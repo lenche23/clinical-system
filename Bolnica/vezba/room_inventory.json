@@ -1,0 +1,71 @@
+[
+  {
+    "equipment": {
+      "Id": 0,
+      "Name": "Hanzaplast",
+      "Type": 1,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 0,
+      "RoomNumber": 1,
+      "RoomFloor": 0,
+      "IsDeleted": false,
+      "StartDateTime": "2021-06-07T11:40:17.6181281+02:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-08T02:34:09.8450284+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 10,
+    "Id": 0,
+    "IsDeleted": false
+  },
+  {
+    "equipment": {
+      "Id": 2,
+      "Name": "Krevet",
+      "Type": 0,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 2,
+      "RoomNumber": 2,
+      "RoomFloor": 1,
+      "IsDeleted": false,
+      "StartDateTime": "2021-06-07T11:40:22.9701285+02:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-08T02:35:07.2438066+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 10,
+    "Id": 1,
+    "IsDeleted": false
+  },
+  {
+    "equipment": {
+      "Id": 2,
+      "Name": "Krevet",
+      "Type": 0,
+      "IsDeleted": false
+    },
+    "room": {
+      "renovation": [],
+      "RoomType": 2,
+      "RoomNumber": 1,
+      "RoomFloor": 1,
+      "IsDeleted": false,
+      "StartDateTime": "2021-06-07T11:40:17.6181281+02:00",
+      "EndDateTime": "2999-12-31T00:00:00",
+      "Renovation": []
+    },
+    "StartTime": "2021-06-08T02:55:26.9059441+02:00",
+    "EndTime": "2999-01-01T00:00:00",
+    "Quantity": 20,
+    "Id": 2,
+    "IsDeleted": false
+  }
+]

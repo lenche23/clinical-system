@@ -7,25 +7,124 @@
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="750"
       Title="DeclinedMedicineManagerPage">
-
+    <Page.Resources>
+        <Style TargetType="ListViewItem" x:Key="listViewDoubleClick">
+            <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
+        </Style>
+    </Page.Resources>
     <Grid>
-        <Label Margin="275,50,267,457" FontSize="28">Odbijeni lekovi</Label>
-        <ListView Name="DeclinedMedicineBinding" Margin="155,118,132,214">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding DeclinedMedicineID}" />
-                    <GridViewColumn Header="Naziv leka" Width="150" DisplayMemberBinding="{Binding MedicineName}" />
-                    <GridViewColumn Header="Proizvođač" Width="250" DisplayMemberBinding="{Binding MedicineManufacturer}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Click="ViewDetailButton" Margin="308,385,317,131">Detaljnije</Button>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFCDCD" Offset="0.995"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" ></ColumnDefinition>
+                <ColumnDefinition Width="23*" ></ColumnDefinition>
+                <ColumnDefinition Width="21*" ></ColumnDefinition>
+                <ColumnDefinition Width="28*" ></ColumnDefinition>
+                <ColumnDefinition Width="22*" ></ColumnDefinition>
+                <ColumnDefinition Width="18*" ></ColumnDefinition>
+                <ColumnDefinition Width="18*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="5,15" FontSize="20" Foreground="#FFB05555" Background="White" Click="ButtonMainClick" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Početna
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="1" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonRoomsClick">Prostorije
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="2" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonInventoryClick">Inventar
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="3" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Snabdevanje
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="4" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Zaposleni
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="5" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold">Ankete
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="6" Margin="5, 15" FontSize="20" Foreground="#FFB05555" Background="White" BorderBrush="{x:Null}" FontFamily="Myriad Pro Light" FontStyle="Italic" FontWeight="SemiBold" Click="ButtonMedicineClick">Lekovi
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid Row="1">
+            <Grid Margin="130,45,130,75" Background="#FFFFE5E5" Height="345" VerticalAlignment="Center" HorizontalAlignment="Center" Width="470">
+                <TextBlock FontSize="25" TextAlignment="Center" Margin="0,25,0,277"> Odbijeni lekovi </TextBlock>
+                <ListView ItemContainerStyle="{StaticResource listViewDoubleClick}" FontSize="16" Name="DeclinedMedicineBinding" Margin="25,83,25,32">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding DeclinedMedicineID}" />
+                            <GridViewColumn Header="Naziv leka" Width="150" DisplayMemberBinding="{Binding MedicineName}" />
+                            <GridViewColumn Header="Proizvođač" Width="210" DisplayMemberBinding="{Binding MedicineManufacturer}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+            <Button Click ="ButtonBackClick"  BorderBrush="{x:Null}" Foreground="{x:Null}" Height="70" Width="100" VerticalAlignment="Bottom" Margin="20,410,630,20" HorizontalAlignment="Left">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/Arrow3.png" Stretch="UniformToFill"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/Arrow2.png" Stretch="UniformToFill"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
 
-
-        <Button Click ="ButtonBackClick" Margin="10,425,623,10" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.538,-0.667">
-            <Button.Background>
-                <ImageBrush ImageSource="/Bolnica;component/ManagerImages/BackArrow.png" Stretch="Uniform"/>
-            </Button.Background>
-        </Button>
+                </Button.Style>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

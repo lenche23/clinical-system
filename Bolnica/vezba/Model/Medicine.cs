@@ -47,6 +47,23 @@ namespace Model
             }
         }
 
+        [JsonIgnore]
+        public String StatusSerbian
+        {
+            get
+            {
+                switch (Status)
+                {
+                    case MedicineStatus.awaiting:
+                        return "Na èekanju";
+                    case MedicineStatus.approved:
+                        return "Odobren";
+                    default:
+                        return "Odbijen";
+                }
+            }
+        }
+
         public System.Collections.Generic.List<Ingridient> ingridient;
 
         public System.Collections.Generic.List<Ingridient> Ingridient

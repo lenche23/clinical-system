@@ -2,44 +2,20 @@
   {
     "ingridient": [
       {
-        "Name": "SilicijumDioksid"
-      },
-      {
-        "Name": "Kroskarmeloza-natrijum"
-      },
-      {
-        "Name": "Skrob, kukuruzni"
-      },
-      {
-        "Name": "Povidon (K25)"
-      },
-      {
-        "Name": "Eritrozin (E127)"
+        "Name": "111"
       }
     ],
-    "Name": "Ibuprofen",
-    "Manufacturer": "Union-Medic D.O.O. Novi Sad",
-    "Packaging": "30 x 400 mg",
+    "Name": "Nayiv22",
+    "Manufacturer": "1122",
+    "Packaging": "111",
     "MedicineID": 0,
-    "Status": 0,
-    "Condition": 2,
-    "IsDeleted": false,
+    "Status": 1,
+    "Condition": 1,
+    "IsDeleted": true,
     "ReplacementMedicine": null,
     "Ingridient": [
       {
-        "Name": "SilicijumDioksid"
-      },
-      {
-        "Name": "Kroskarmeloza-natrijum"
-      },
-      {
-        "Name": "Skrob, kukuruzni"
-      },
-      {
-        "Name": "Povidon (K25)"
-      },
-      {
-        "Name": "Eritrozin (E127)"
+        "Name": "111"
       }
     ]
   },
@@ -287,6 +263,161 @@
       },
       {
         "Name": "Makrogol 400"
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "Sastojak1"
+      }
+    ],
+    "Name": "Ibuprofen",
+    "Manufacturer": "UnionMedic NoviSad",
+    "Packaging": "30 x 30g",
+    "MedicineID": 3,
+    "Status": 0,
+    "Condition": 0,
+    "IsDeleted": false,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "Sastojak1"
+      }
+    ]
+  },
+  {
+    "ingridient": [],
+    "Name": "",
+    "Manufacturer": "Proizvodjac2",
+    "Packaging": "",
+    "MedicineID": 4,
+    "Status": 1,
+    "Condition": 0,
+    "IsDeleted": true,
+    "ReplacementMedicine": {
+      "ingridient": [
+        {
+          "Name": "Sastojak1"
+        }
+      ],
+      "Name": "Ibuprofen",
+      "Manufacturer": "UnionMedic NoviSad",
+      "Packaging": "30 x 30g",
+      "MedicineID": 3,
+      "Status": 0,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "Sastojak1"
+        }
+      ]
+    },
+    "Ingridient": []
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "d"
+      }
+    ],
+    "Name": "lll",
+    "Manufacturer": "lgg",
+    "Packaging": "",
+    "MedicineID": 5,
+    "Status": 1,
+    "Condition": 0,
+    "IsDeleted": true,
+    "ReplacementMedicine": null,
+    "Ingridient": [
+      {
+        "Name": "d"
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "kms"
+      }
+    ],
+    "Name": "Antidepresiv",
+    "Manufacturer": "UnionMedic NS",
+    "Packaging": "Veliko (treba mi)",
+    "MedicineID": 6,
+    "Status": 1,
+    "Condition": 1,
+    "IsDeleted": true,
+    "ReplacementMedicine": {
+      "ingridient": [
+        {
+          "Name": "Sastojak1"
+        }
+      ],
+      "Name": "Ibuprofen",
+      "Manufacturer": "UnionMedic NoviSad",
+      "Packaging": "30 x 30g",
+      "MedicineID": 3,
+      "Status": 0,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "Sastojak1"
+        }
+      ]
+    },
+    "Ingridient": [
+      {
+        "Name": "kms"
+      }
+    ]
+  },
+  {
+    "ingridient": [
+      {
+        "Name": "Sastojak"
+      },
+      {
+        "Name": "Izmena"
+      }
+    ],
+    "Name": "Lek1",
+    "Manufacturer": "Proizvodjac",
+    "Packaging": "Pakovanje",
+    "MedicineID": 7,
+    "Status": 0,
+    "Condition": 1,
+    "IsDeleted": false,
+    "ReplacementMedicine": {
+      "ingridient": [
+        {
+          "Name": "Sastojak1"
+        }
+      ],
+      "Name": "Ibuprofen",
+      "Manufacturer": "UnionMedic NoviSad",
+      "Packaging": "30 x 30g",
+      "MedicineID": 3,
+      "Status": 0,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": null,
+      "Ingridient": [
+        {
+          "Name": "Sastojak1"
+        }
+      ]
+    },
+    "Ingridient": [
+      {
+        "Name": "Sastojak"
+      },
+      {
+        "Name": "Izmena"
       }
     ]
   }
