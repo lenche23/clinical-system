@@ -56,6 +56,7 @@ namespace vezba.Repository
                   roomInventory.room = inventory.room;
                   roomInventory.StartTime = inventory.StartTime;
                   roomInventory.EndTime = inventory.EndTime;
+                  roomInventory.NumberUnavailable = inventory.NumberUnavailable;
                   WriteToFile(storedRoomInventories);
                   return true;
               }

@@ -72,6 +72,14 @@ namespace vezba.DoctorPages
         {
             if (!ValidateEntries())
                 return;
+
+            var roomInventoryService = new RoomInventoryService();
+            if (!roomInventoryService.TreatPatient(DpStartDate.SelectedDate.Value, int.Parse(TbDuration.Text), (Room)CmbRooms.SelectedItem))
+            {
+                MessageBox.Show("Soba nema dovoljno slobodnih kreveta u navedenom periodu", "Soba nije u stanju da primi pacijenta");
+                return;
+            }
+
             var newHospitalTreatment = NewHospitalTreatment();
             var patientService = new PatientService();
             patientService.AddHospitalTreatmentToPatient(_patient, newHospitalTreatment);
