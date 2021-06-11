@@ -268,7 +268,7 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Background">
                                 <Setter.Value>
-                                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/account.png" Stretch="Uniform"/>
+                                    <ImageBrush ImageSource="/Bolnica;component/ManagerImages/accountBlue.png" Stretch="Uniform"/>
                                 </Setter.Value>
                             </Setter>
                         </Trigger>

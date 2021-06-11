@@ -57,7 +57,7 @@ namespace vezba.ManagerGUI
 
         private void ButtonBackClick(object sender, RoutedEventArgs e)
         {
-            mainManagerWindow.MainManagerView.Content = new RoomsPage(mainManagerWindow);
+            NavigationService.GoBack();
         }
 
         private void ButtonRoomsClick(object sender, RoutedEventArgs e)

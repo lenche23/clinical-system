@@ -96,29 +96,22 @@
             </ListView.View>
         </ListView>
         <TextBlock FontSize="36"  Grid.Row="1" Margin="10,26,0,25" TextAlignment="Center" LineHeight="36" Foreground="#FFB63054" HorizontalAlignment="Center" VerticalAlignment="Center" Height="49" Width="740"> Prostorije</TextBlock>
-        <Grid Grid.Row="3" Margin="65,8,55,16" HorizontalAlignment="Center" VerticalAlignment="Center" Height="76" Width="630">
-            <Button FontFamily="Corbel" BorderBrush="{x:Null}" Margin="10,10,470,10" Background="#FFE26879" FontSize="18" Foreground="White" FontWeight="Bold" Click="New_Room_Button_Click">Nova prostorija
+        <Grid Grid.Row="3" Margin="104,0,104,24" HorizontalAlignment="Center" VerticalAlignment="Center" Height="76" Width="542">
+            <Button FontFamily="Corbel" BorderBrush="{x:Null}" Margin="10,10,376,10" Background="#FFE26879" FontSize="18" Foreground="White" FontWeight="Bold" Click="New_Room_Button_Click">Nova prostorija
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button FontFamily="Corbel"  BorderBrush="{x:Null}" Margin="300,10,203,10" Background="#FFE26879" Click="Renovations_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold">Renovacije
+            <Button FontFamily="Corbel"  BorderBrush="{x:Null}" Margin="389,10,10,10" Background="#FFE26879" Click="RoomOccupiedButtonClick" FontSize="18" Foreground="White" FontWeight="Bold">Zauzetost
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="15"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button FontFamily="Corbel"  BorderBrush="{x:Null}" Margin="445,10,38,10" Background="#FFE26879" Click="RoomOccupiedButtonClick" FontSize="18" Foreground="White" FontWeight="Bold">Zauzetost
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="15"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button FontFamily="Corbel"  BorderBrush="{x:Null}" Margin="180,10,352,10" Background="#FFE26879" Click="Delete_Room_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold" Content="Izbriši">
+            <Button FontFamily="Corbel"  BorderBrush="{x:Null}" Margin="216,10,202,10" Background="#FFE26879" Click="Delete_Room_Button_Click" FontSize="18" Foreground="White" FontWeight="Bold" Content="Izbriši">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="15"/>

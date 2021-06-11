@@ -171,6 +171,11 @@ namespace vezba.ManagerGUI
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
+
+        private void Renovate_Button_Click(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RenovationsPage(mainManagerWindow, selected);
+        }
     }
 }
 

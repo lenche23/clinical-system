@@ -48,5 +48,15 @@ namespace vezba.ManagerGUI
         {
             mainManagerWindow.MainManagerView.Content = new TutorialPage(mainManagerWindow);
         }
+
+        private void ButtonLogOut_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonBackClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
     }
 }

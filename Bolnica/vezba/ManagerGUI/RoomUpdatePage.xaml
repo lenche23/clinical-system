@@ -106,7 +106,7 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <Button Click="Dodaj_Button_Click" Margin="475,20,35,140" BorderThickness="0" BorderBrush="{x:Null}">
+                <Button Click="Dodaj_Button_Click" Margin="475,0,35,160" BorderThickness="0" BorderBrush="{x:Null}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="25"/>
@@ -116,7 +116,7 @@
                         <ImageBrush ImageSource="/Bolnica;component/ManagerImages/plus.png" Stretch="UniformToFill"/>
                     </Button.Background>
                 </Button>
-                <Button BorderThickness="0" Click="Izbriši_Button_Click" Margin="475,80,35,85" RenderTransformOrigin="-0.333,1.784" BorderBrush="Black" Foreground="{x:Null}">
+                <Button BorderThickness="0" Click="Izbriši_Button_Click" Margin="475,60,35,105" RenderTransformOrigin="-0.333,1.784" BorderBrush="Black" Foreground="{x:Null}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="25"/>
@@ -126,7 +126,7 @@
                         <ImageBrush ImageSource="/Bolnica;component/ManagerImages/trash-big.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
-                <Button FontSize="16" Click="Razmena_Button_Click" Margin="475,135,35,35" BorderThickness="0" BorderBrush="{x:Null}">
+                <Button FontSize="16" Click="Razmena_Button_Click" Margin="475,115,35,55" BorderThickness="0" BorderBrush="{x:Null}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="25"/>
@@ -134,6 +134,16 @@
                     </Button.Resources>
                     <Button.Background>
                         <ImageBrush ImageSource="/Bolnica;component/ManagerImages/free-transfer-icon.png"/>
+                    </Button.Background>
+                </Button>
+                <Button FontSize="16" Click="Renovate_Button_Click" Margin="475,165,35,0" BorderThickness="0" BorderBrush="{x:Null}">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/renovation.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
             </Grid>

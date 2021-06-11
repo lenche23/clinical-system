@@ -87,36 +87,25 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="21*"></ColumnDefinition>
-                        <ColumnDefinition Width="18*"></ColumnDefinition>
-                        <ColumnDefinition Width="29*"></ColumnDefinition>
+                        <ColumnDefinition Width="37*"></ColumnDefinition>
+                        <ColumnDefinition Width="31*"></ColumnDefinition>
                         <ColumnDefinition Width="30*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button BorderBrush="{x:Null}" Background="#FFA05D5D" FontSize="13" Foreground="White" Click="SplitRoomButtonClick" Margin="10,25,20,25" Content="Deljenje prostorije" Grid.Column="3">
+                    <Button BorderBrush="{x:Null}" Background="#FFA05D5D" FontSize="13" Foreground="White" Click="SplitRoomButtonClick" Margin="10,25,20,25" Content="Deljenje prostorije" Grid.Column="2">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button BorderBrush="{x:Null}" Background="#FFA05D5D" FontSize="13" Foreground="White" Click="MergeRoomsButtonClick" Margin="10,25" Content="Spajanje prostorija" Grid.Column="2">
+                    <Button BorderBrush="{x:Null}" Background="#FFA05D5D" FontSize="13" Foreground="White" Click="MergeRoomsButtonClick" Margin="10,25" Content="Spajanje prostorija" Grid.Column="1">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <Button BorderBrush="{x:Null}" FontSize="13" Foreground="White" Click="Discard_Button_Click" Margin="20,25,25,25" Grid.Column="1">
-                        <Button.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="5"/>
-                            </Style>
-                        </Button.Resources>
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Bolnica;component/ManagerImages/trash-big.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button BorderBrush="{x:Null}" Background="#FFA05D5D" FontSize="13" Foreground="White" Click="Renovation_Button_Click" Margin="20,25,10,25" Content="Zakaži">
+                    <Button BorderBrush="{x:Null}" Background="#FFA05D5D" FontSize="13" Foreground="White" Click="Renovation_Button_Click" Margin="50,25,10,25" Content="Obično renoviranje">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -126,7 +115,7 @@
                 </Grid>
 
                 <TextBlock x:Name="RenovationTitle" FontSize="25" TextAlignment="Center" VerticalAlignment ="Center"  LineHeight="24" Height="32" Margin="0,24" Text="Zakazane renovacije prostorije"/>
-                <ListView FontSize="16" HorizontalAlignment="Center"  Name="RenovationsBinding" Grid.Row="1" Margin="55,0" Width="380" Foreground="Black" OpacityMask="#FFFFF3F3" >
+                <ListView FontSize="16"  Name="RenovationsBinding" Grid.Row="1" Margin="60,0" Foreground="Black" OpacityMask="#FFFFF3F3" >
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="ID" Width="80" DisplayMemberBinding="{Binding RenovationID}" />
@@ -142,6 +131,16 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <Button BorderBrush="{x:Null}" FontSize="13" Foreground="White" Click="Discard_Button_Click" Margin="435,0,10,170" Grid.Row="1">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Bolnica;component/ManagerImages/trash-big.png"/>
+                    </Button.Background>
+                </Button>
             </Grid>
             <Button Click ="ButtonBackClick"  BorderBrush="{x:Null}" Foreground="{x:Null}" Height="70" Width="100" VerticalAlignment="Bottom" Margin="20,410,630,20" HorizontalAlignment="Left">
                 <Button.Style>

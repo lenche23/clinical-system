@@ -109,25 +109,25 @@ namespace vezba.ManagerGUI
         {
             if (roomEntry == null)
             {
-                MessageBox.Show("Soba ne postoji");
+                //MessageBox.Show("Soba ne postoji");
                 return false;
             }
 
             if (roomEntry.RoomNumber == this.room.RoomNumber)
             {
-                MessageBox.Show("Soba ne može biti trenutno selektovana soba");
+                //MessageBox.Show("Soba ne može biti trenutno selektovana soba");
                 return false;
             }
 
             if (currentRoomItemQuantity < inputItemQuantity)
             {
-                MessageBox.Show("Uneta količina robe prekoračava maksimalnu postojeću u sobi");
+                //MessageBox.Show("Uneta količina robe prekoračava maksimalnu postojeću u sobi");
                 return false;
             }
 
             if (DateTime.Compare(pickedDate, DateTime.Now) < 0)
             {
-                MessageBox.Show("Izabrani datum je već prošao!");
+                //MessageBox.Show("Izabrani datum je već prošao!");
                 return false;
             }
 

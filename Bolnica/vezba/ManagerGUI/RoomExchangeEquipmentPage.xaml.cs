@@ -108,19 +108,19 @@ namespace vezba.ManagerGUI
         {
             if (roomEntry == null)
             {
-                MessageBox.Show("Soba ne postoji");
+                //MessageBox.Show("Soba ne postoji");
                 return false;
             }
 
             if (roomEntry.RoomNumber == this.room.RoomNumber)
             {
-                MessageBox.Show("Soba ne može biti trenutno selektovana soba");
+                //MessageBox.Show("Soba ne može biti trenutno selektovana soba");
                 return false;
             }
 
             if (maximumQuantity < itemQuantity)
             {
-                MessageBox.Show("ItemQuantity robe prekoračava maksimalnu postojeću u sobi");
+                //MessageBox.Show("ItemQuantity robe prekoračava maksimalnu postojeću u sobi");
                 return false;
             }
 

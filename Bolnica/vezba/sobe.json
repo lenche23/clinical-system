@@ -1,9 +1,9 @@
 [
   {
     "renovation": [],
-    "RoomType": 0,
+    "RoomType": 2,
     "RoomNumber": 1,
-    "RoomFloor": 0,
+    "RoomFloor": 1,
     "IsDeleted": false,
     "StartDateTime": "2021-06-07T11:40:17.6181281+02:00",
     "EndDateTime": "2999-12-31T00:00:00",
@@ -76,6 +76,16 @@
     "RoomFloor": 0,
     "IsDeleted": false,
     "StartDateTime": "2021-06-07T15:18:53.1810165+02:00",
+    "EndDateTime": "2999-12-31T00:00:00",
+    "Renovation": []
+  },
+  {
+    "renovation": [],
+    "RoomType": 2,
+    "RoomNumber": 9,
+    "RoomFloor": 0,
+    "IsDeleted": false,
+    "StartDateTime": "2021-06-08T04:00:05.3353299+02:00",
     "EndDateTime": "2999-12-31T00:00:00",
     "Renovation": []
   }

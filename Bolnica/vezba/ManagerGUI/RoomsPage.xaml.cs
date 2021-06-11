@@ -50,7 +50,7 @@ namespace vezba.ManagerGUI
             }
             else
             {
-                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+                //MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
 
@@ -63,7 +63,7 @@ namespace vezba.ManagerGUI
             }
             else
             {
-                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+                //MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
 
@@ -91,7 +91,7 @@ namespace vezba.ManagerGUI
             }
             else
             {
-                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+               // MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
@@ -107,7 +107,7 @@ namespace vezba.ManagerGUI
             }
             else
             {
-                MessageBox.Show("Ni jedna prostorija nije selektovana!");
+                //MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
 
