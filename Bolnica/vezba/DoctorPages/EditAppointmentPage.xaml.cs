@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
+using vezba.Adapter;
 
 namespace vezba.DoctorPages
 {
@@ -20,7 +21,7 @@ namespace vezba.DoctorPages
         public List<Patient> Patients { get; set; }
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
-        private Calendar calendar;
+        private CalendarInterface calendarInterface;
         private CancellationTokenSource _tokenSource = null;
         private String oldTime;
         private String oldDuration;
@@ -88,7 +89,7 @@ namespace vezba.DoctorPages
             }
         }
 
-        public EditAppointmentPage(Appointment appointment, DoctorView doctorView, Calendar calendar)
+        public EditAppointmentPage(Appointment appointment, DoctorView doctorView, CalendarInterface calendarInterface)
         {
             InitializeComponent();
 
@@ -112,7 +113,7 @@ namespace vezba.DoctorPages
             if (Appointment.Doctor != null && Appointment.Doctor.Jmbg != null)
                 cmbDoctors.SelectedValue = Appointment.Doctor.Jmbg;
 
-            this.calendar = calendar;
+            this.calendarInterface = calendarInterface;
 
             StartDatePicker.SelectedDate = appointment.StartTime.Date;
             StartTime = Appointment.StartTime.ToString("t");
@@ -129,9 +130,8 @@ namespace vezba.DoctorPages
             var appointmentService = new AppointmentService();
             if (appointmentService.DoctorRescheduleAppointment(updatedAppointment))
             {
-                //calendar.RemoveAppointment(appointmentGrid);
-                calendar.RemoveAppointment(updatedAppointment);
-                calendar.AddAppointmentToCurrentView(updatedAppointment);
+                calendarInterface.DeleteAppointment(updatedAppointment);
+                calendarInterface.AddAppointment(updatedAppointment);
 
                 _doctorView.Main.GoBack();
                 _doctorView.Main.GoBack();

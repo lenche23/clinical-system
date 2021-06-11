@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace vezba.Adapter
 {
-    interface CalendarInterface
+    public interface CalendarInterface
     {
         void AddAppointment(Appointment appointment);
 

@@ -12,6 +12,11 @@ namespace vezba.Adapter
     {
         private Calendar calendar;
 
+        public CalendarAdapter(Calendar calendar)
+        {
+            this.calendar = calendar;
+        }
+
         public void AddAppointment(Appointment appointment)
         {
             calendar.AddAppointmentToCurrentView(appointment);
