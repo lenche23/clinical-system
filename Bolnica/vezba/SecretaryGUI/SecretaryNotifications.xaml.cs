@@ -36,10 +36,16 @@ namespace vezba.SecretaryGUI
             {
                 Announcement a = (Announcement)announcementTable.SelectedItem;
                 SecretaryViewAnnouncement w = new SecretaryViewAnnouncement(a);
-                w.Show();
+                w.ShowDialog();
+                return;
             }
-            else
-                MessageBox.Show("Niste selektovali obavestenje!");
+            SecretaryMessage m = new SecretaryMessage("Niste selektovali obaveštenje.");
+            m.ShowDialog();
+        }
+        private void OnKeyDownDataGridHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+                this.ViewAnnouncementButton_Click(sender, e);
         }
     }
 }

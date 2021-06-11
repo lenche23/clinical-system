@@ -34,18 +34,28 @@ namespace vezba.SecretaryGUI
             if (b)
             {
                 SecretaryAppointments.Appointments.Add(EmergencyAppointment);
-                MessageBox.Show("Zakazan je hitan termin za " + EmergencyAppointment.StartTime.ToString("dd.MM.yyyy. HH:mm") + " kod lekara " + EmergencyAppointment.DoctorName);
+                String message = "Zakazan je hitan termin za " + EmergencyAppointment.StartTime.ToString("dd.MM.yyyy. HH:mm") + " kod lekara " + EmergencyAppointment.DoctorName;
+                SecretaryMessage m1 = new SecretaryMessage(message);
+                m1.ShowDialog();
 
                 this.Close();
             }
             else
-                MessageBox.Show("Neuspesno zakazivanje");
+            {
+                SecretaryMessage m1 = new SecretaryMessage("Neuspešno zakazivanje.");
+                m1.ShowDialog();
+            }
+            this.Close();
         }
-
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+        }
         private void ShowOverlapingAppointmentsButton_Click(object sender, RoutedEventArgs e)
         {
             SecretaryOverlapingAppointments w = new SecretaryOverlapingAppointments(EmergencyAppointment);
-            w.Show();
+            w.ShowDialog();
             this.Close();
         }
     }

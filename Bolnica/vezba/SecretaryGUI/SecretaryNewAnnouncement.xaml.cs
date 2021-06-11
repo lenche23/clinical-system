@@ -34,7 +34,7 @@ namespace vezba.SecretaryGUI
             VisibilityComboBox.Items.Add("Upravnik");
             VisibilityComboBox.Items.Add("Sekretari");
             VisibilityComboBox.Items.Add("Individualno");
-            VisibilityComboBox.SelectedIndex = -1;
+            VisibilityComboBox.SelectedIndex = 0;
 
             RecipientLabel.Visibility = System.Windows.Visibility.Collapsed;
             RecipientComboBox.Visibility = System.Windows.Visibility.Collapsed;
@@ -52,7 +52,7 @@ namespace vezba.SecretaryGUI
                 RecipientLabel.Visibility = System.Windows.Visibility.Collapsed;
                 RecipientComboBox.Visibility = System.Windows.Visibility.Collapsed;
             }
-                
+
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -79,21 +79,34 @@ namespace vezba.SecretaryGUI
                 vis = Model.Visibility.individual;
                 if (RecipientComboBox.SelectedItem == null)
                 {
-                    MessageBox.Show("Niste uneli primaoca!");
+                    SecretaryMessage m = new SecretaryMessage("Niste uneli primaoca.");
+                    m.ShowDialog();
                     return;
                 }
             }
-                
+            if (tit.Trim().Equals(""))
+            {
+                SecretaryMessage m = new SecretaryMessage("Naslov je obavezno polje.");
+                m.ShowDialog();
+                return;
+            }
             Announcement announcement = new Announcement(id, po, ed, tit, con, vis);
-            if(vis == Model.Visibility.individual)
+            if (vis == Model.Visibility.individual)
                 announcement.AddRecipient(recipient.Jmbg);
             AnnouncementService announcementService = new AnnouncementService();
             announcementService.SaveAnnouncement(announcement);
             SecretaryAnnouncements.Announcements.Add(announcement);
-
+            SecretaryMessage m1 = new SecretaryMessage("Obaveštenje je uspešno postavljeno.");
+            m1.ShowDialog();
             this.Close();
         }
-
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+            else if (e.Key == Key.Enter)
+                this.SaveButton_Click(sender, e);
+        }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

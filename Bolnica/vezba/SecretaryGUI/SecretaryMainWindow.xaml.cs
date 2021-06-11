@@ -19,53 +19,66 @@ namespace vezba.SecretaryGUI
     /// </summary>
     public partial class SecretaryMainWindow : Window
     {
+        public SolidColorBrush selectedTabColor;
+        public Button selectedButton;
         public SecretaryMainWindow()
         {
-            
+            //#655A71  (101, 90, 113)
             InitializeComponent();
+            var app = (App)Application.Current;
+            /*if (app.theme.Equals("dark"))
+            {
+                selectedTabColor = new SolidColorBrush(Color.FromRgb(101, 90, 113));
+            }
+            else
+            {
+                selectedTabColor = new SolidColorBrush(Color.FromRgb(206, 208, 253));
+            }*/
             WindowContent.Content = new SecretaryPatients();
-            SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
-            PatientsButton.Background = b;//Brushes.SlateBlue;
+            PatientsButton.Background = selectedTabColor;//Brushes.SlateBlue;
+            selectedButton = PatientsButton;
         }
 
         private void PatientsButton_Click(object sender, RoutedEventArgs e)
         {
             WindowContent.Content = new SecretaryPatients();
             ResetButtonColors();
-            SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
-            PatientsButton.Background = b;
+            PatientsButton.Background = selectedTabColor;
+            selectedButton = PatientsButton;
         }
 
         private void AppointmentsButton_Click(object sender, RoutedEventArgs e)
         {
             WindowContent.Content = new SecretaryAppointments();
-            ResetButtonColors(); 
-            SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
-            AppointmentsButton.Background = b;
+            ResetButtonColors();
+            AppointmentsButton.Background = selectedTabColor;
+            selectedButton = AppointmentsButton;
         }
 
         private void DoctorsButton_Click(object sender, RoutedEventArgs e)
         {
             WindowContent.Content = new SecretaryDoctors();
             ResetButtonColors();
-            SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
-            DoctorsButton.Background = b;
+            DoctorsButton.Background = selectedTabColor;
+
+            selectedButton = DoctorsButton;
         }
 
         private void RoomsButton_Click(object sender, RoutedEventArgs e)
         {
-            //WindowContent.Content = new SecretaryRooms();
+            WindowContent.Content = new SecretaryRooms();
             ResetButtonColors();
-            SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
-            RoomsButton.Background = b;
+            RoomsButton.Background = selectedTabColor;
+
+            selectedButton = RoomsButton;
         }
 
         private void AnnouncementsButton_Click(object sender, RoutedEventArgs e)
         {
             WindowContent.Content = new SecretaryAnnouncements();
             ResetButtonColors();
-            SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
-            AnnouncementsButton.Background = b;
+            AnnouncementsButton.Background = selectedTabColor;
+            selectedButton = AnnouncementsButton;
         }
 
         private void ResetButtonColors()
@@ -75,7 +88,7 @@ namespace vezba.SecretaryGUI
             DoctorsButton.Background = Brushes.Transparent;
             RoomsButton.Background = Brushes.Transparent;
             AnnouncementsButton.Background = Brushes.Transparent;
-            //PriceListButton.Background = Brushes.Transparent;
+            SettingsButton.Background = Brushes.Transparent;
             NotificationButton.Background = Brushes.Transparent;
         }
 
@@ -83,8 +96,40 @@ namespace vezba.SecretaryGUI
         {
             WindowContent.Content = new SecretaryNotifications();
             ResetButtonColors();
-            SolidColorBrush b = new SolidColorBrush(Color.FromRgb(206, 208, 253));
-            NotificationButton.Background = b;
+            NotificationButton.Background = selectedTabColor;
+
+            selectedButton = NotificationButton;
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            SecretaryPersonalisation w = new SecretaryPersonalisation(this);
+            w.ShowDialog();
+        }
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            SecretaryHelp w = new SecretaryHelp();
+            w.ShowDialog();
+        }
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+                this.PatientsButton_Click(sender, e);
+            else if (e.Key == Key.F2)
+                this.AppointmentsButton_Click(sender, e);
+            else if (e.Key == Key.F3)
+                this.DoctorsButton_Click(sender, e);
+            else if (e.Key == Key.F4)
+                this.RoomsButton_Click(sender, e);
+            else if (e.Key == Key.F5)
+                this.AnnouncementsButton_Click(sender, e);
+            else if (e.Key == Key.F6)
+                this.NotificationButton_Click(sender, e);
+            else if (e.Key == Key.F7)
+                this.SettingsButton_Click(sender, e);
+            else if (e.Key == Key.F8)
+                this.HelpButton_Click(sender, e);
+
         }
     }
 }

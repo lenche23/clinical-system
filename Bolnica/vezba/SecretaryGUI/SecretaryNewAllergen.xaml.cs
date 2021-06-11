@@ -29,6 +29,12 @@ namespace vezba.SecretaryGUI
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (Name.Text.Trim().Equals(""))
+            {
+                SecretaryMessage m = new SecretaryMessage("Niste uneli ime alergena!");
+                m.ShowDialog();
+                return;
+            }
             Ingridient ingridient = new Ingridient(Name.Text);
             if (Mode == 0)
             {
@@ -40,6 +46,13 @@ namespace vezba.SecretaryGUI
             }
             this.Close();
             return;
+        }
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+            else if (e.Key == Key.Enter)
+                this.SaveButton_Click(sender, e);
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)

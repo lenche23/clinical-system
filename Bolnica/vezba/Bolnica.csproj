@@ -513,8 +513,17 @@
     <Compile Include="SecretaryGUI\SecretaryAnnouncements.xaml.cs">
       <DependentUpon>SecretaryAnnouncements.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\SecretaryAppointmentFilter.xaml.cs">
+      <DependentUpon>SecretaryAppointmentFilter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecretaryGUI\SecretaryAppointments.xaml.cs">
       <DependentUpon>SecretaryAppointments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryCreateReport.xaml.cs">
+      <DependentUpon>SecretaryCreateReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryDeleteConfirmation.xaml.cs">
+      <DependentUpon>SecretaryDeleteConfirmation.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryDoctors.xaml.cs">
       <DependentUpon>SecretaryDoctors.xaml</DependentUpon>
@@ -528,8 +537,14 @@
     <Compile Include="SecretaryGUI\SecretaryEditPatient.xaml.cs">
       <DependentUpon>SecretaryEditPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\SecretaryHelp.xaml.cs">
+      <DependentUpon>SecretaryHelp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecretaryGUI\SecretaryMainWindow.xaml.cs">
       <DependentUpon>SecretaryMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryMessage.xaml.cs">
+      <DependentUpon>SecretaryMessage.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryNearestAvailableEmergencyAppointment.xaml.cs">
       <DependentUpon>SecretaryNearestAvailableEmergencyAppointment.xaml</DependentUpon>
@@ -561,8 +576,20 @@
     <Compile Include="SecretaryGUI\SecretaryOverlapingAppointments.xaml.cs">
       <DependentUpon>SecretaryOverlapingAppointments.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\SecretaryPatientAppointments.xaml.cs">
+      <DependentUpon>SecretaryPatientAppointments.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SecretaryGUI\SecretaryPatients.xaml.cs">
       <DependentUpon>SecretaryPatients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryPersonalisation.xaml.cs">
+      <DependentUpon>SecretaryPersonalisation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryReportI2.xaml.cs">
+      <DependentUpon>SecretaryReportI2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryRooms.xaml.cs">
+      <DependentUpon>SecretaryRooms.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryViewAnnouncement.xaml.cs">
       <DependentUpon>SecretaryViewAnnouncement.xaml</DependentUpon>
@@ -575,6 +602,9 @@
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryViewPatient.xaml.cs">
       <DependentUpon>SecretaryViewPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryViewRoomxaml.xaml.cs">
+      <DependentUpon>SecretaryViewRoomxaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryGUI\Validation\SecretaryValidationRules.cs" />
     <Compile Include="SecretaryView.xaml.cs">
@@ -1117,7 +1147,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SecretaryGUI\SecretaryAppointmentFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SecretaryGUI\SecretaryAppointments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryCreateReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryDeleteConfirmation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1137,7 +1179,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SecretaryGUI\SecretaryHelp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SecretaryGUI\SecretaryMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryMessage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1181,7 +1231,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SecretaryGUI\SecretaryPatientAppointments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SecretaryGUI\SecretaryPatients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryPersonalisation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryReportI2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryRooms.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1201,6 +1267,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SecretaryGUI\SecretaryViewRoomxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SecretaryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1214,6 +1284,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TableNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Dark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Light.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

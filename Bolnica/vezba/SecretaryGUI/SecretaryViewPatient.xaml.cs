@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 
 namespace vezba.SecretaryGUI
 {
-    
+
     public partial class SecretaryViewPatient : Window
     {
         public ObservableCollection<Ingridient> Allergens { get; set; }
@@ -29,10 +29,10 @@ namespace vezba.SecretaryGUI
             Allergens = new ObservableCollection<Ingridient>();
             this.DataContext = this;
 
-            if(Patient.IsBlocked == false)
+            if (Patient.IsBlocked == false)
                 UnblockButton.Visibility = System.Windows.Visibility.Collapsed;
 
-            
+
             NameSurname.Content = Patient.Name + " " + Patient.Surname;
             if (Patient.IsGuest)
                 NameSurname.Content += " (gost)";
@@ -47,16 +47,16 @@ namespace vezba.SecretaryGUI
                 Sex.Content = "Ženski";
             PhoneNumber.Content = Patient.PhoneNumber;
             IdNumber.Content = Patient.IdCard;
-            Adress.Content =  Patient.Adress;
-            Email.Content =  Patient.Email;
-            EmergencyContact.Content =  Patient.EmergencyContact;
+            Adress.Content = Patient.Adress;
+            Email.Content = Patient.Email;
+            EmergencyContact.Content = Patient.EmergencyContact;
             if (Patient.MedicalRecord != null)
             {
                 HealthEnsuranceNumber.Content = Patient.MedicalRecord.HealthInsuranceNumber;
                 MedicalIdNumber.Content = Patient.MedicalRecord.MedicalIdNumber;
                 if (Patient.MedicalRecord.Allergen != null)
                 {
-                    foreach(Ingridient allergen in Patient.MedicalRecord.Allergen)
+                    foreach (Ingridient allergen in Patient.MedicalRecord.Allergen)
                     {
                         Allergens.Add(allergen);
                     }
@@ -90,7 +90,15 @@ namespace vezba.SecretaryGUI
             if (Patient.IsGuest)
                 NameSurname.Content += " (gost)";
         }
+
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+            else if (e.Key == Key.Enter)
+                this.Close();
+        }
     }
 
-    
+
 }

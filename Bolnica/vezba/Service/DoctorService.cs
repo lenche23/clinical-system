@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using vezba.Repository;
+using vezba.SecretaryGUI;
 
 namespace Service
 {
@@ -23,6 +24,25 @@ namespace Service
         public List<Doctor> GetAllDoctors()
         {
             return DoctorRepository.GetAll();
+        }
+        public List<Doctor> GetSearchResultDoctors(String search)
+        {
+            List<Doctor> allDoctors = GetAllDoctors();//AppointmentRepository.GetAll();
+            List<Doctor> doctors = new List<Doctor>();
+            Boolean flag = false;
+            foreach (Doctor d in allDoctors)
+            {
+                flag = false;
+                if (d.NameAndSurname.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (d.SpecialityName.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (d.Jmbg.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (flag == true)
+                    doctors.Add(d);
+            }
+            return doctors;
         }
 
         public List<Doctor> GetDoctorsWithSpeciality(Speciality speciality)
@@ -110,7 +130,8 @@ namespace Service
             {
                 if (!(vd.EndDate < newVacationDays.StartDate || newVacationDays.EndDate < vd.StartDate))
                 {
-                    MessageBox.Show("Dolazi do preklapanja godisnjih odmora!");
+                    SecretaryMessage m1 = new SecretaryMessage("Dolazi do preklapanja godisnjih odmora!");
+                    m1.ShowDialog();
                     return true;
                 }
             }

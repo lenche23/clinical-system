@@ -32,7 +32,7 @@ namespace vezba.SecretaryGUI
         private void NewPatientButton_Click(object sender, RoutedEventArgs e)
         {
             SecretaryNewPatient w = new SecretaryNewPatient();
-            w.Show();
+            w.ShowDialog();
         }
 
         private void ViewPatientButton_Click(object sender, RoutedEventArgs e)
@@ -41,12 +41,11 @@ namespace vezba.SecretaryGUI
             {
                 Patient selectedPatient = (Patient)patientsTable.SelectedItem;
                 SecretaryViewPatient w = new SecretaryViewPatient(selectedPatient);
-                w.Show();
+                w.ShowDialog();
+                return;
             }
-            else
-            {
-                MessageBox.Show("Niste selektovali pacijenta!");
-            }
+            SecretaryMessage m2 = new SecretaryMessage("Niste selektovali pacijenta.");
+            m2.ShowDialog();
         }
 
         private void EditPatientButton_Click(object sender, RoutedEventArgs e)
@@ -55,12 +54,11 @@ namespace vezba.SecretaryGUI
             {
                 Patient selectedPatient = (Patient)patientsTable.SelectedItem;
                 SecretaryEditPatient w = new SecretaryEditPatient(selectedPatient);
-                w.Show();
+                w.ShowDialog();
+                return;
             }
-            else
-            {
-                MessageBox.Show("Niste selektovali pacijenta!");
-            }
+            SecretaryMessage m2 = new SecretaryMessage("Niste selektovali pacijenta.");
+            m2.ShowDialog();
         }
 
         private void DeletePatientButton_Click(object sender, RoutedEventArgs e)
@@ -68,14 +66,90 @@ namespace vezba.SecretaryGUI
             if (patientsTable.SelectedCells.Count > 0)
             {
                 Patient selectedPatient = (Patient)patientsTable.SelectedItem;
+                SecretaryDeleteConfirmation dc = new SecretaryDeleteConfirmation(selectedPatient);
+                Boolean ic = false;
+                dc.ShowDialog();
+                ic = dc.isConfirmed;
+                if (!ic)
+                    return;
                 PatientService ps = new PatientService();
                 ps.DeletePatient(selectedPatient.Jmbg);
                 Patients.Remove(selectedPatient);
+                SecretaryMessage m1 = new SecretaryMessage("Pacijent je obrisan.");
+                m1.ShowDialog();
+                return;
+
+            }
+            SecretaryMessage m2 = new SecretaryMessage("Niste selektovali pacijenta.");
+            m2.ShowDialog();
+        }
+
+        private void AllAppointments_Click(object sender, RoutedEventArgs e)
+        {
+            if (patientsTable.SelectedCells.Count > 0)
+            {
+                Patient selectedPatient = (Patient)patientsTable.SelectedItem;
+                SecretaryPatientAppointments w = new SecretaryPatientAppointments(selectedPatient);
+                w.ShowDialog();
+                return;
+            }
+            SecretaryMessage m2 = new SecretaryMessage("Niste selektovali pacijenta.");
+            m2.ShowDialog();
+        }
+
+        private void NewAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            if (patientsTable.SelectedCells.Count > 0)
+            {
+                Patient selectedPatient = (Patient)patientsTable.SelectedItem;
+                SecretaryNewAppointment w = new SecretaryNewAppointment(2, selectedPatient);
+
+                w.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Niste selektovali pacijenta!");
+                SecretaryNewAppointment w = new SecretaryNewAppointment(2);
+                w.ShowDialog();
             }
+        }
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                Patients.Clear();
+                PatientService patientService = new PatientService();
+                List<Patient> patients = new List<Patient>();
+                String search = SearchBox.Text;
+                if (search.Trim().Equals(""))
+                {
+                    foreach (Patient p in patientService.GetAllPatients())
+                    {
+                        Patients.Add(p);
+                    }
+                    return;
+                }
+                patients = patientService.GetSearchResultPatients(search);
+                foreach (Patient p in patients)
+                {
+                    Patients.Add(p);
+                }
+            }
+        }
+
+        private void OnKeyDownDataGridHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+                this.ViewPatientButton_Click(sender, e);
+            else if (e.Key == Key.N)
+                this.NewPatientButton_Click(sender, e);
+            else if (e.Key == Key.E)
+                this.EditPatientButton_Click(sender, e);
+            else if (e.Key == Key.D)
+                this.DeletePatientButton_Click(sender, e);
+            else if (e.Key == Key.A)
+                this.AllAppointments_Click(sender, e);
+            else if (e.Key == Key.T)
+                this.NewAppointment_Click(sender, e);
         }
     }
 }

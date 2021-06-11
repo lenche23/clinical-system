@@ -41,7 +41,7 @@ namespace vezba.SecretaryGUI
             Surname.Text = selectedPatient.Surname;
             Jmbg.Text = selectedPatient.Jmbg;
             Jmbg.IsReadOnly = true;
-            DateOfBirth.SelectedDate = selectedPatient.DateOfBirth;
+            DateOfBirth.Text = (selectedPatient.DateOfBirth).ToString("dd.MM.yyyy.");
             if (selectedPatient.Sex == Model.Sex.male)
             {
                 Sex.SelectedIndex = 0;
@@ -59,10 +59,10 @@ namespace vezba.SecretaryGUI
             {
                 HealthEnsuranceNumber.Text = selectedPatient.MedicalRecord.HealthInsuranceNumber;
                 MedicalIdNumber.Text = selectedPatient.MedicalRecord.MedicalIdNumber;
-                
+
                 if (selectedPatient.MedicalRecord.Allergen != null && selectedPatient.MedicalRecord.Allergen.Count != 0)
                 {
-                    foreach(Ingridient allergen in selectedPatient.MedicalRecord.Allergen)
+                    foreach (Ingridient allergen in selectedPatient.MedicalRecord.Allergen)
                     {
                         Allergens.Add(allergen);
                     }
@@ -84,12 +84,17 @@ namespace vezba.SecretaryGUI
             if (allergensTable.SelectedCells.Count > 0)
             {
                 Ingridient a = (Ingridient)allergensTable.SelectedItem;
+                SecretaryDeleteConfirmation dc = new SecretaryDeleteConfirmation(a);
+                Boolean ic = false;
+                dc.ShowDialog();
+                ic = dc.isConfirmed;
+                if (!ic)
+                    return;
                 Allergens.Remove(a);
+                return;
             }
-            else
-            {
-                MessageBox.Show("Niste selektovali alergen!");
-            }
+            SecretaryMessage m1 = new SecretaryMessage("Niste selektovali alergen.");
+            m1.ShowDialog();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -97,12 +102,14 @@ namespace vezba.SecretaryGUI
             Boolean isGuest = Convert.ToBoolean(IsGuest.IsChecked);
             if (isGuest == false && (((Name.Text).Trim().Equals("")) || ((Surname.Text).Trim().Equals("")) || ((Jmbg.Text).Trim().Equals("")) || ((PhoneNumber.Text).Trim().Equals("")) || ((Adress.Text).Trim().Equals("")) || ((Email.Text).Trim().Equals("")) || ((Username.Text).Trim().Equals("")) || ((Password.Text).Trim().Equals("")) || ((IdNumber.Text).Trim().Equals(""))))
             {
-                MessageBox.Show("Nalog nije gostujuci! Morate popuniti sva polja!");
+                SecretaryMessage m = new SecretaryMessage("Nalog nije gostujuci. Morate popuniti sva polja.");
+                m.ShowDialog();
                 return;
             }
             else if (isGuest == true && ((Jmbg.Text).Trim().Equals("")))
             {
-                MessageBox.Show("JMBG pacijenta nije unet!");
+                SecretaryMessage m2 = new SecretaryMessage("JMBG pacijenta je obavezno uneti.");
+                m2.ShowDialog();
                 return;
             }
 
@@ -120,9 +127,14 @@ namespace vezba.SecretaryGUI
             DateTime selectedDate = new DateTime(1900, 1, 1);
             try
             {
-                selectedDate = DateOfBirth.SelectedDate.Value.Date;
+                selectedDate = DateTime.ParseExact(DateOfBirth.Text, "dd.MM.yyyy.", null);
             }
-            catch { }
+            catch
+            {
+                SecretaryMessage m = new SecretaryMessage("Uneli ste nepostojeći datum.");
+                m.ShowDialog();
+                return;
+            }
 
             Sex sex = Model.Sex.male;
             if (Sex.SelectedIndex == 1)
@@ -141,6 +153,8 @@ namespace vezba.SecretaryGUI
             Patient editedPatient = new Patient(isGuest, name, surname, jmbg, selectedDate, sex, phoneNumber, adress, email, idNum, emContact, medRecord, username, password);
             PatientService ps = new PatientService();
             ps.EditPatient(editedPatient);
+            SecretaryMessage m1 = new SecretaryMessage("Pacijent je uspešno izmenjen.");
+            m1.ShowDialog();
 
             var previousPatient = SecretaryPatients.Patients.FirstOrDefault(p => p.Jmbg.Equals(jmbg));
             if (previousPatient != null)
@@ -151,7 +165,21 @@ namespace vezba.SecretaryGUI
             this.Close();
             return;
         }
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+            else if (e.Key == Key.Enter)
+                this.SaveButton_Click(sender, e);
 
+        }
+        private void OnKeyDownDataGridHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.A)
+                this.NewAlergenButton_Click(sender, e);
+            else if (e.Key == Key.D)
+                this.DeleteAllergenButton_Click(sender, e);
+        }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -159,3 +187,4 @@ namespace vezba.SecretaryGUI
         }
     }
 }
+

@@ -26,6 +26,24 @@ namespace Service
             return PatientRepository.GetAll();
         }
 
+        public List<Patient> GetSearchResultPatients(String search)
+        {
+            List<Patient> allPatients = GetAllPatients();//AppointmentRepository.GetAll();
+            List<Patient> patients = new List<Patient>();
+            Boolean flag = false;
+            foreach (Patient p in allPatients)
+            {
+                flag = false;
+                if (p.NameAndSurname.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (p.Jmbg.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (flag == true)
+                    patients.Add(p);
+            }
+            return patients;
+        }
+
         public Boolean SavePatient(Patient newPatient)
         {
             return PatientRepository.Save(newPatient);
