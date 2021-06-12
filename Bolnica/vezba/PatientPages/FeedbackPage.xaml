@@ -21,7 +21,7 @@
         <Label Content="Ocena:" FontSize="20" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="RatingComboBox" Margin="101,190,10,373" Background="AntiqueWhite" FontSize="20"/>
         <Label Content="Utisci:" FontSize="20" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top" Width="71"/>
-        <TextBox x:Name="UserExperience" Height="278" Width="auto" FontSize="20" VerticalAlignment="Top" Background="Transparent" Margin="101,249,10,0" />
+        <TextBox x:Name="UserExperience" Height="278" Width="auto" FontSize="20" VerticalAlignment="Top" Background="Transparent" Margin="101,249,10,0" GotFocus="UserExperience_GotFocus"/>
         <Button x:Name="SaveButton" Content="Potvrdi" FontSize="15" Foreground="#FF2E421A" BorderThickness="0" Padding="10" Margin="10,532,271,10" Click="SaveButton_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">

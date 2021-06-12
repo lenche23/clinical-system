@@ -16,7 +16,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Label Content="Beleška" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,46,0" Height="57" Width="308"/>
-        <TextBox x:Name="beleska" Margin="10,72,10,200" Background="Transparent" BorderBrush="Black" Foreground="Black" FontSize="20" AcceptsReturn="True"/>
+        <TextBox x:Name="beleska" Margin="10,72,10,200" Background="Transparent" BorderBrush="Black" Foreground="Black" FontSize="20" AcceptsReturn="True" GotFocus="beleska_GotFocus"/>
         <Label Content="Početak primanja obaveštenja o ovoj belešci:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,158" FontSize="14"/>
         <Label Content="Kraj primanja obaveštenja o ovoj belešci:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,123" FontSize="14"/>
         <Label Content="Vreme primanja obaveštenja o ovoj belešci:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,88" FontSize="14"/>

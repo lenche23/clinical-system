@@ -53,5 +53,11 @@ namespace vezba.PatientPages
             PatientNotification noti = new PatientNotification("Feedback je uspešno poslat.");
             noti.ShowDialog();
         }
+
+        private void UserExperience_GotFocus(object sender, RoutedEventArgs e)
+        {
+            VirtualKeyboard keyboard = new VirtualKeyboard(UserExperience);
+            keyboard.Show();
+        }
     }
 }

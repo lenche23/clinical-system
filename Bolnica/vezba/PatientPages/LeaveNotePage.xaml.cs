@@ -40,5 +40,11 @@ namespace vezba.PatientPages
             noti.ShowDialog();
             this.NavigationService.Navigate(new AppointmentHistoryPage());
         }
+
+        private void beleska_GotFocus(object sender, RoutedEventArgs e)
+        {
+            VirtualKeyboard keyboard = new VirtualKeyboard(beleska);
+            keyboard.Show();
+        }
     }
 }
