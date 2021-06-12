@@ -52,7 +52,7 @@ namespace vezba
                 a.AppointentId = 0;
 
                 EventsLogFileRepository eventsLogFileRepository = new EventsLogFileRepository();
-                List<EventsLog> list = eventsLogFileRepository.ReadFromFile();
+                List<EventsLog> list = eventsLogFileRepository.GetAll();
                 String patientJMBG = patient.Jmbg;
                 List<DateTime> events = new List<DateTime>();
                 DateTime log = DateTime.Now;

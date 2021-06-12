@@ -312,6 +312,8 @@
             "RoomNumber": 2,
             "RoomFloor": 1,
             "IsDeleted": false,
+            "StartDateTime": "0001-01-01T00:00:00",
+            "EndDateTime": "2999-12-31T00:00:00",
             "Renovation": [
               {
                 "StartTime": "2021-10-10T10:00:00",
@@ -631,6 +633,8 @@
             "RoomNumber": 2,
             "RoomFloor": 1,
             "IsDeleted": false,
+            "StartDateTime": "0001-01-01T00:00:00",
+            "EndDateTime": "2999-12-31T00:00:00",
             "Renovation": [
               {
                 "StartTime": "2021-10-10T10:00:00",
@@ -660,7 +664,7 @@
   },
   {
     "appointment": null,
-    "IsBlocked": true,
+    "IsBlocked": false,
     "IsGuest": false,
     "EmergencyContact": "0638756221",
     "MedicalRecord": {

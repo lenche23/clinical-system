@@ -22,14 +22,10 @@ namespace Service
         // SekretarKraj***************************************************************************
 
         // Pacijent*******************************************************************************
-        public List<EventsLog> LoadEvents()
-        {
-           return EventsLogRepository.ReadFromFile();
-        }
 
         public void AddLog()
         {
-            List<EventsLog> list = LoadEvents();
+            List<EventsLog> list = GetAllLogs();
             String patientJMBG = PatientView.Patient.Jmbg;
             DateTime log = DateTime.Now;
             foreach (EventsLog elog in list)
@@ -44,7 +40,7 @@ namespace Service
 
         public List<EventsLog> GetAllLogs()
         {
-            return EventsLogRepository.ReadFromFile();
+            return EventsLogRepository.GetAll();
         }
 
         public Boolean EditLog(EventsLog log)

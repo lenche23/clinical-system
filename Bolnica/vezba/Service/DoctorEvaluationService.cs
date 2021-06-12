@@ -21,16 +21,11 @@ namespace Service
         // SekretarKraj***************************************************************************
 
         // Pacijent*******************************************************************************
+
         public Boolean SaveEvaluation(DoctorEvaluation newEvaluation)
         {
             return DoctorEvaluationRepository.Save(newEvaluation);
         }
-
-        public int EvaluationGenerateNextId()
-        {
-            return DoctorEvaluationRepository.GenerateNextId();
-        }
-
 
         // PacijentKraj***************************************************************************
 

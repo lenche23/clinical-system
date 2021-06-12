@@ -67,8 +67,7 @@ namespace vezba.PatientPages
                     break;
             }
             String comm = comment.Text;
-            int id = DoctorEvaluationService.EvaluationGenerateNextId();
-            DoctorEvaluation doctorEvaluation = new DoctorEvaluation(rating, comm, id, false, Doctor);
+            DoctorEvaluation doctorEvaluation = new DoctorEvaluation(rating, comm, 0, false, Doctor);
             return doctorEvaluation;
         }
 

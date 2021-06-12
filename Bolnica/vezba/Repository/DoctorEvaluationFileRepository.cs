@@ -117,7 +117,7 @@ namespace vezba.Repository
             }
         }
 
-        public int GenerateNextId()
+        private int GenerateNextId()
         {
             List<DoctorEvaluation> evaluations = ReadFromFile();
             return evaluations.Count;

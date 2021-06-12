@@ -65,8 +65,7 @@ namespace vezba.ViewModel.PatientViewModel
                     rating = 1;
                     break;
             }
-            int id = HospitalEvaluationService.EvaluationGenerateNextId();
-            HospitalEvaluation hospitalEvaluation = new HospitalEvaluation(rating, CommentInput, id, false);
+            HospitalEvaluation hospitalEvaluation = new HospitalEvaluation(rating, CommentInput, 0, false);
             return hospitalEvaluation;
         }
     }

@@ -71,7 +71,7 @@ namespace vezba.Repository
             throw new NotImplementedException();
         }
 
-        public List<EventsLog> ReadFromFile()
+        private List<EventsLog> ReadFromFile()
         {
             try
             {
