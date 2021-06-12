@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
+using vezba.Repository;
 
 namespace vezba.DoctorPages
 {
@@ -138,7 +139,7 @@ namespace vezba.DoctorPages
 
             Ingredients = new List<Ingridient>(medicine.Ingridient);
 
-            _medicineService = new MedicineService();
+            _medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             MedicineForReplacement = _medicineService.GetPossibleReplacements(Medicine);
 
             if (medicine.ReplacementMedicine != null)

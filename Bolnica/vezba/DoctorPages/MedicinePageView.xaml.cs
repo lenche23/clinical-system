@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
+using vezba.Repository;
 
 namespace vezba.DoctorPages
 {
@@ -24,7 +25,7 @@ namespace vezba.DoctorPages
         {
             InitializeComponent();
 
-            var medicineService = new MedicineService();
+            var medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             var medicineToApprove = medicineService.GetAwaiting();
             MedicineToApprove = new ObservableCollection<Medicine>(medicineToApprove);
 

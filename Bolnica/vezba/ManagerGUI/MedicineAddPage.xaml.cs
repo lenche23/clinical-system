@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {
@@ -62,7 +63,7 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
-            MedicineService medicineService = new MedicineService();
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             medicineList = medicineService.GetApproved();
             comboReplacementMedicine.ItemsSource = medicineList;
             List<string> condition = new List<string> { "Kapsula", "Pilula", "Sirup" };
@@ -117,7 +118,7 @@ namespace vezba.ManagerGUI
             else if (comboCondition.SelectedIndex == 2) Condition = MedicineCondition.syrup;
             
             Medicine replacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
-            MedicineService medicineService = new MedicineService();
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             newMedicine = new Medicine(Name, Manufacturer, Packaging, 0, Condition) { ReplacementMedicine = replacementMedicine };
             MedicinePage.MedicineList.Add(newMedicine);
             newMedicine.ingridient = ingredientTemporaryList;

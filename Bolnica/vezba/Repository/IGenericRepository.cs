@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace vezba.Repository
 {
-    interface IGenericRepository<T, M> where T:class
+    public interface IGenericRepository<T, M> where T:class
     {
         List<T> GetAll();
         T GetOne(M id);

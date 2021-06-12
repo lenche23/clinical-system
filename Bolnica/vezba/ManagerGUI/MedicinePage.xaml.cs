@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Service;
+using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {
@@ -18,7 +19,7 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
-            MedicineService medicineService = new MedicineService();
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             medicineList = medicineService.GetAllMedicine();
             MedicineList = new ObservableCollection<Medicine>(medicineList);
             MedicineBinding.ItemsSource = MedicineList;
@@ -69,7 +70,7 @@ namespace vezba.ManagerGUI
             if (MedicineBinding.SelectedIndex > -1)
             {
                 Medicine selected = (Medicine)MedicineBinding.SelectedItems[0];
-                MedicineService medicineService = new MedicineService();
+                MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
                 medicineService.DeleteMedicine(selected.MedicineID);
                 MedicineList.Remove(selected);
             }

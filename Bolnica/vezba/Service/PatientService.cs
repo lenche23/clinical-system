@@ -234,7 +234,7 @@ namespace Service
                     }
                 }
             }
-            var medicineService = new MedicineService();
+            var medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             foreach (var temp in medicineCount) {
                 var medicineId = temp.Key;
                 var medicine = medicineService.getMedicineById(medicineId);

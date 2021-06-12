@@ -5,6 +5,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Model;
 using Service;
+using vezba.Repository;
+
 namespace vezba.ManagerGUI
 {
     public partial class DeclinedMedicineManagerPage : Page
@@ -18,7 +20,7 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             this.mainManagerWindow = mainManagerWindow;
             this.medicinePage = medicinePage;
-            MedicineService medicineService = new MedicineService();
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             declinedMedicineList = medicineService.GetAllDeclinedMedicine();
             DeclinedMedicineList = new ObservableCollection<DeclinedMedicine>(declinedMedicineList);
             DeclinedMedicineBinding.ItemsSource = DeclinedMedicineList;

@@ -56,7 +56,7 @@ namespace vezba.Repository
                     medicine.Name = editedMedicine.Name;
                     medicine.Packaging = editedMedicine.Packaging;
                     medicine.Status = editedMedicine.Status;
-                    medicine.ingridient = editedMedicine.ingridient;
+                    medicine.ingridient = new List<Ingridient>(editedMedicine.ingridient);
                     medicine.Condition = editedMedicine.Condition;
                     medicine.ReplacementMedicine = editedMedicine.ReplacementMedicine;
                     WriteToFile(storedMedicine);

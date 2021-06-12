@@ -32,6 +32,7 @@ namespace vezba.Repository
 
         public Boolean Save(DeclinedMedicine newDeclinedMedicine)
         {
+            newDeclinedMedicine.DeclinedMedicineID = GenerateNextId();
             var storedDeclinedMedicine = ReadFromFile();
             foreach (var declinedMedicine in storedDeclinedMedicine)
             {

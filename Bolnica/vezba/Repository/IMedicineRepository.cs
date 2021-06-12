@@ -7,7 +7,7 @@ using Model;
 
 namespace vezba.Repository
 {
-    interface IMedicineRepository:IGenericRepository<Medicine, int>
+    public interface IMedicineRepository:IGenericRepository<Medicine, int>
     {
         List<Medicine> GetAwaiting();
         List<Medicine> GetApproved();

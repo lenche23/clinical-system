@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using Model;
 using Service;
+using vezba.Repository;
 
 namespace vezba.DoctorPages
 {
@@ -28,7 +29,7 @@ namespace vezba.DoctorPages
 
         private void ApproveClick(object sender, RoutedEventArgs e)
         {
-            var medicineService = new MedicineService();
+            var medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             medicineService.ApproveMedicine(Medicine);
             UpdateMedicineView();
             _doctorView.Main.GoBack();

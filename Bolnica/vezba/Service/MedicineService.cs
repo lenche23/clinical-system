@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using Model;
 using Model;
 using vezba.Repository;
+using vezba.Service;
 
 namespace Service
 {
     public class MedicineService
     {
 
-        public MedicineFileRepository MedicineRepository { get; }
-        public DeclinedMedicineFileRepository DeclinedMedicineRepository { get; }
+        public IMedicineRepository MedicineRepository { get; }
+        public IDeclinedMedicineRepository DeclinedMedicineRepository { get; }
 
-        public MedicineService()
+        public MedicineService(IMedicineRepository medicineRepository, IDeclinedMedicineRepository declinedMedicineRepository)
         {
-            MedicineRepository = new MedicineFileRepository();
-            DeclinedMedicineRepository = new DeclinedMedicineFileRepository();
+            MedicineRepository = medicineRepository;
+            DeclinedMedicineRepository = declinedMedicineRepository;
         }
 
 
@@ -73,31 +74,9 @@ namespace Service
 
         public List<Medicine> GenerateValidMedicineForPatient(MedicalRecord medicalRecord)
         {
-            List<Medicine>validMedicine = new List<Medicine>();
-            foreach (var medicine in MedicineRepository.GetApproved())
-            {
-                if (!AllergenMatchFound(medicine, medicalRecord))
-                    validMedicine.Add(medicine);
-            }
-
-            return validMedicine;
-        }
-
-        private bool AllergenMatchFound(Medicine medicine, MedicalRecord medicalRecord)
-        {
-            var allergenMatchFound = false;
-            foreach (var ingredient in medicine.ingridient)
-            {
-                foreach (var allergen in medicalRecord.Allergen)
-                {
-                    if (ingredient.Name.Equals(allergen.Name))
-                    {
-                        allergenMatchFound = true;
-                    }
-                }
-            }
-
-            return allergenMatchFound;
+            var allApprovedMedicine = GetApproved();
+            var validMedicineGenerator = new ValidMedicineGenerator(allApprovedMedicine, medicalRecord);
+            return validMedicineGenerator.GenerateValidMedicineForPatient();
         }
 
         public void ApproveMedicine(Medicine medicineToApprove)
@@ -113,7 +92,6 @@ namespace Service
 
         public Boolean SaveDeclinedMedicine(DeclinedMedicine declinedMedicine)
         {
-            declinedMedicine.DeclinedMedicineID = DeclinedMedicineRepository.GenerateNextId();
             return DeclinedMedicineRepository.Save(declinedMedicine);
         }
 
