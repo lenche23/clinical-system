@@ -92,9 +92,9 @@ namespace vezba.SecretaryGUI
             AppointmentService appointmentService = new AppointmentService();
             Appointment newAppointment;
             if (Patient != null)
-                newAppointment = new Appointment(0, Patient, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
+                newAppointment = new Appointment(0, Patient, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text, null);
             else
-                newAppointment = new Appointment(0, (Patient)PatientCB.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
+                newAppointment = new Appointment(0, (Patient)PatientCB.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text, null);
 
             Boolean isSuccess = appointmentService.ScheduleAppointment(newAppointment);
             if (isSuccess)
