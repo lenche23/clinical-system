@@ -7,7 +7,7 @@ using Model;
 
 namespace vezba.Repository
 {
-    interface IDeclinedMedicineRepository:IGenericRepository<DeclinedMedicine, int>
+    public interface IDeclinedMedicineRepository:IGenericRepository<DeclinedMedicine, int>
     {
     }
 }

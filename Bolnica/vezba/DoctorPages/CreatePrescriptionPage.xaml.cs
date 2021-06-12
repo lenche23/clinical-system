@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
+using vezba.Repository;
 
 namespace vezba.DoctorPages
 {
@@ -69,7 +70,7 @@ namespace vezba.DoctorPages
             _patient = patient;
             _doctorView = doctorView;
             DataContext = this;
-            var medicineService = new MedicineService();
+            var medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             ValidMedicine = medicineService.GenerateValidMedicineForPatient(_patient.MedicalRecord);
             _medicalRecordPage = medicalRecordPage;
             DpStartDate.SelectedDate = DateTime.Now.Date;

@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
+using vezba.Repository;
 
 namespace vezba.DoctorPages
 {
@@ -58,7 +59,7 @@ namespace vezba.DoctorPages
         {
             if(!ValidateEntries())
                 return;
-            var medicineService = new MedicineService();
+            var medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
 
             var description = DescriptionTB.Text;
             var declinedMedicine = medicineService.DeclineMedicine(Medicine, description);

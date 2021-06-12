@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
+using vezba.Adapter;
 using Calendar = vezba.DoctorPages.Calendar;
 
 namespace vezba.DoctorPages
@@ -15,17 +16,15 @@ namespace vezba.DoctorPages
 
         private Appointment Appointment { get; set; }
         private readonly DoctorView _doctorView;
-        private Calendar calendar;
-        private Grid appointmentGrid;
+        private CalendarInterface calendarInterface;
 
-        public ViewAppointmentPage(Appointment appointment, DoctorView doctorView, Calendar calendar, Grid appointmentGrid)
+        public ViewAppointmentPage(Appointment appointment, DoctorView doctorView, CalendarInterface calendarInterface)
         {
             InitializeComponent();
             DataContext = appointment;
             Appointment = appointment;
             _doctorView = doctorView;
-            this.calendar = calendar;
-            this.appointmentGrid = appointmentGrid;
+            this.calendarInterface = calendarInterface;
             IsEmergencyTB.Text = (Appointment.IsEmergency) ? "Da" : "Ne";
         }
 
@@ -53,15 +52,14 @@ namespace vezba.DoctorPages
 
         private void EditClick(object sender, RoutedEventArgs e)
         {
-            _doctorView.Main.Content = new EditAppointmentPage(Appointment, _doctorView, calendar, appointmentGrid);
+            _doctorView.Main.Content = new EditAppointmentPage(Appointment, _doctorView, calendarInterface);
         }
 
         private void DeleteClick(object sender, RoutedEventArgs e)
         {
                 var appointmentService = new AppointmentService();
                 appointmentService.DeleteAppointment(Appointment.AppointentId);
-                calendar.RemoveAppointment(appointmentGrid);
-                calendar.SetScrollViewerToFirstAppointment();
+                calendarInterface.DeleteAppointment(Appointment);
                 _doctorView.Main.GoBack();
         }
 

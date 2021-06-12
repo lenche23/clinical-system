@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
+using vezba.Repository;
 
 namespace vezba.ManagerGUI
 {
@@ -63,7 +64,7 @@ namespace vezba.ManagerGUI
             this.medicinePage = medicinePage;
             this.declinedMedicine = declinedMedicine;
             this.mainManagerWindow = mainManagerWindow;
-            MedicineService medicineService = new MedicineService();
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             List<Medicine> replacementMedicineList = medicineService.GetApproved();
             comboReplacementMedicine.ItemsSource = replacementMedicineList;
 
@@ -120,7 +121,7 @@ namespace vezba.ManagerGUI
             }
 
             declinedMedicine.Medicine.ReplacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
-            MedicineService medicineService = new MedicineService();
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             medicineService.DeleteDeclinedMedicine(declinedMedicine.DeclinedMedicineID);
             medicineService.SaveMedicine(declinedMedicine.Medicine);
             medicinePage.MedicineBinding.Items.Refresh(); 

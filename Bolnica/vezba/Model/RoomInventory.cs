@@ -6,7 +6,7 @@ namespace Model
    public class RoomInventory
    {
 
-        public RoomInventory(DateTime startTime, DateTime endTime, int quantity, int id, Equipment equipment, Room room)
+        public RoomInventory(DateTime startTime, DateTime endTime, int quantity, int id, Equipment equipment, Room room, int numberUnavailable=0)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;
@@ -15,7 +15,7 @@ namespace Model
             this.Quantity = quantity;
             this.IsDeleted = false;
             this.Id = id;
-
+            NumberUnavailable = numberUnavailable;
         }
 
         public DateTime StartTime { get; set; }
@@ -27,6 +27,8 @@ namespace Model
         public Equipment equipment;
 
         public Room room;
+
+        public int NumberUnavailable { get; set; }
 
         [JsonIgnore]
         public String EquipmentName

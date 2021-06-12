@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Model;
 using Service;
+using vezba.Adapter;
 
 namespace vezba.DoctorPages
 {
@@ -19,7 +20,7 @@ namespace vezba.DoctorPages
         public List<Doctor> Doctors { get; set; }
         public List<Room> Rooms { get; set; }
         private DoctorView doctorView;
-        private Calendar calendar;
+        private CalendarInterface calendarInterface;
         private CancellationTokenSource _tokenSource = null;
         private String oldTime;
         private String oldDuration;
@@ -87,7 +88,7 @@ namespace vezba.DoctorPages
             }
         }
 
-        public CreateAppointment(DoctorView doctorView, Calendar calendar, Doctor doctor)
+        public CreateAppointment(DoctorView doctorView, CalendarInterface calendarInterface, Doctor doctor)
         {
             InitializeComponent();
 
@@ -104,13 +105,13 @@ namespace vezba.DoctorPages
             cmbPatients.SelectedIndex = 0;
             cmbRooms.SelectedIndex = 0;
             this.doctorView = doctorView;
-            this.calendar = calendar;
+            this.calendarInterface = calendarInterface;
             if (doctor != null && doctor.Jmbg != null)
                 cmbDoctors.SelectedValue = doctor.Jmbg;
             StartDatePicker.SelectedDate = DateTime.Now.Date;
         }
 
-        public CreateAppointment(DoctorView doctorView, Calendar calendar, DateTime generatedStartTime, Doctor doctor)
+        public CreateAppointment(DoctorView doctorView, CalendarInterface calendarInterface, DateTime generatedStartTime, Doctor doctor)
         {
             InitializeComponent();
 
@@ -127,7 +128,7 @@ namespace vezba.DoctorPages
             cmbPatients.SelectedIndex = 0;
             cmbRooms.SelectedIndex = 0;
             this.doctorView = doctorView;
-            this.calendar = calendar;
+            this.calendarInterface = calendarInterface;
             StartDatePicker.SelectedDate = generatedStartTime.Date;
             StartTime = generatedStartTime.ToString("t");
             if (doctor != null && doctor.Jmbg != null)
@@ -144,7 +145,7 @@ namespace vezba.DoctorPages
             var appointmentService = new AppointmentService();
             if (appointmentService.ScheduleAppointment(newAppointment))
             {
-                calendar.AddAppointmentToCurrentView(newAppointment);
+                calendarInterface.AddAppointment(newAppointment);
                 doctorView.Main.GoBack();
             }
         }
