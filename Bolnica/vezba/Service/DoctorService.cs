@@ -25,9 +25,11 @@ namespace Service
         {
             return DoctorRepository.GetAll();
         }
+        //PREBACENO U TEMPLATE
+        /*
         public List<Doctor> GetSearchResultDoctors(String search)
         {
-            List<Doctor> allDoctors = GetAllDoctors();//AppointmentRepository.GetAll();
+            List<Doctor> allDoctors = GetAllDoctors();//DoctorRepository.GetAll();
             List<Doctor> doctors = new List<Doctor>();
             Boolean flag = false;
             foreach (Doctor d in allDoctors)
@@ -43,7 +45,7 @@ namespace Service
                     doctors.Add(d);
             }
             return doctors;
-        }
+        }*/
 
         public List<Doctor> GetDoctorsWithSpeciality(Speciality speciality)
         {

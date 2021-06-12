@@ -26,7 +26,7 @@ namespace Service
             return PatientRepository.GetAll();
         }
 
-        public List<Patient> GetSearchResultPatients(String search)
+        /*public List<Patient> GetSearchResultPatients(String search)
         {
             List<Patient> allPatients = GetAllPatients();//AppointmentRepository.GetAll();
             List<Patient> patients = new List<Patient>();
@@ -42,7 +42,7 @@ namespace Service
                     patients.Add(p);
             }
             return patients;
-        }
+        }*/
 
         public Boolean SavePatient(Patient newPatient)
         {

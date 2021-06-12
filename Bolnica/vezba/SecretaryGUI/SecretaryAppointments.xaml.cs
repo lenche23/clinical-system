@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vezba.Template;
 
 namespace vezba.SecretaryGUI
 {
@@ -126,8 +127,8 @@ namespace vezba.SecretaryGUI
                 Appointments.Clear();
                 AppointmentService appointmentService = new AppointmentService();
                 List<Appointment> appointments = new List<Appointment>();
-                String search = SearchBox.Text;
-                if (search.Trim().Equals(""))
+                String input = SearchBox.Text;
+                if (input.Trim().Equals(""))
                 {
                     foreach (Appointment a in appointmentService.GetAllAppointments())
                     {
@@ -135,7 +136,8 @@ namespace vezba.SecretaryGUI
                     }
                     return;
                 }
-                appointments = appointmentService.GetSearchResultAppointments(search);
+                appointments = DoSearch<Appointment>.GetSearchResult(new SearchAppointments(), input);
+                //appointments = appointmentService.GetSearchResultAppointments(search);
                 foreach (Appointment a in appointments)
                 {
                     Appointments.Add(a);

@@ -39,6 +39,8 @@ namespace Service
             return RoomRepository.GetOne(roomId);
         }
 
+        //PREBACENO U TEMPLATE
+        /*
         public List<Room> GetSearchResultRooms(String search)
         {
             List<Room> allRooms = GetAllRooms();
@@ -57,6 +59,6 @@ namespace Service
                     rooms.Add(r);
             }
             return rooms;
-        }
+        }*/
     }
 }

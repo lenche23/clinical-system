@@ -108,7 +108,7 @@ namespace Service
             return appointments;
         }
 
-        public List<Appointment> GetSearchResultAppointments(String search)
+        /*public List<Appointment> GetSearchResultAppointments(String search)
         {
             List<Appointment> allAppointments = GetAllAppointments();//AppointmentRepository.GetAll();
             List<Appointment> appointments = new List<Appointment>();
@@ -128,7 +128,7 @@ namespace Service
                     appointments.Add(a);
             }
             return appointments;
-        }
+        }*/
 
         public Boolean ScheduleAppointment(Appointment newAppointment)
         {
