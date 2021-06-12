@@ -180,7 +180,7 @@ namespace vezba.DoctorPages
             if(appointments.Count == 0)
                 return;
             var earliestTime = appointmentService.GetEarliestTime(appointments);
-            var scrollOffset = (earliestTime.Hours + earliestTime.Minutes / 60) * dynamicGrid.Height / 24;
+            var scrollOffset = (earliestTime.Hours + (double)earliestTime.Minutes / 60) * dynamicGrid.Height / 24;
             scrollViewer.ScrollToVerticalOffset(scrollOffset);
         }
 
