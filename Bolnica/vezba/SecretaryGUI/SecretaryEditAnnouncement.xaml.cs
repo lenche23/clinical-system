@@ -75,6 +75,8 @@ namespace vezba.SecretaryGUI
 
             AnnouncementService announcementService = new AnnouncementService();
             announcementService.EditAnnouncement(editedAnnouncement);
+            SecretaryMessage m1 = new SecretaryMessage("Obaveštenje je uspešno izmenjeno.");
+            m1.ShowDialog();
 
             var previousAnnouncement = SecretaryAnnouncements.Announcements.FirstOrDefault(a => a.Id == id);
             if (previousAnnouncement != null)
@@ -82,7 +84,13 @@ namespace vezba.SecretaryGUI
 
             this.Close();
         }
-
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+            else if (e.Key == Key.Enter)
+                this.SaveButton_Click(sender, e);
+        }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -14,13 +14,16 @@ namespace Service
 {
     public class AppointmentService
     {
-        public AppointmentFileRepository AppointmentRepository { get; }
+        private IAppointmentRepository AppointmentRepository { get; }
         private Appointment ChangingAppointment { get; set; }
         private EventsLogService EventsLogService { get; set; }
 
         public AppointmentService()
         {
             AppointmentRepository = new AppointmentFileRepository();
+
+
+
             EventsLogService = new EventsLogService();
             ChangingAppointment = new Appointment();
         }
@@ -46,6 +49,87 @@ namespace Service
             return AppointmentRepository.Update(editedAppointment);
         }
 
+        public List<Appointment> GetAppointmentsForPatient(string jmbg)
+        {
+            List<Appointment> patientAppointents = new List<Appointment>();
+            List<Appointment> allAppointments = AppointmentRepository.GetAll();
+            foreach (Appointment a in allAppointments)
+            {
+                if (a.Patient.Jmbg == jmbg)
+                    patientAppointents.Add(a);
+            }
+            return patientAppointents;
+        }
+
+        public List<Appointment> GetAppointmentsWithAllConditions(DateTime? from, DateTime? to, Patient patient, Doctor doctor, Room room)
+        {
+            List<Appointment> allAppointments = GetAllAppointments();//AppointmentRepository.GetAll();
+            List<Appointment> appointments = new List<Appointment>();
+            Boolean flag = true;
+            foreach (Appointment a in allAppointments)
+            {
+                flag = true;
+                if (from != null && a.StartTime < from)
+                    flag = false;
+                if (to != null && a.StartTime > to)
+                    flag = false;
+                if (patient != null && patient.Jmbg != a.Patient.Jmbg)
+                    flag = false;
+                if (doctor != null && doctor.Jmbg != a.Doctor.Jmbg)
+                    flag = false;
+                if (room != null && room.RoomNumber != a.Room.RoomNumber)
+                    flag = false;
+                if (flag == true)
+                    appointments.Add(a);
+            }
+            return appointments;
+        }
+        public List<Appointment> GetAppointmentsWithAnyCondition(DateTime? from, DateTime? to, Patient patient, Doctor doctor, Room room)
+        {
+            List<Appointment> allAppointments = GetAllAppointments();//AppointmentRepository.GetAll();
+            List<Appointment> appointments = new List<Appointment>();
+            Boolean flag = false;
+            foreach (Appointment a in allAppointments)
+            {
+                flag = false;
+                if (from != null && (a.StartTime > from || a.StartTime == from))
+                    flag = true;
+                if (to != null && a.StartTime <= to)
+                    flag = true;
+                if (patient != null && patient.Jmbg == a.Patient.Jmbg)
+                    flag = true;
+                if (doctor != null && doctor.Jmbg == a.Doctor.Jmbg)
+                    flag = true;
+                if (room != null && room.RoomNumber == a.Room.RoomNumber)
+                    flag = true;
+                if (flag == true)
+                    appointments.Add(a);
+            }
+            return appointments;
+        }
+
+        public List<Appointment> GetSearchResultAppointments(String search)
+        {
+            List<Appointment> allAppointments = GetAllAppointments();//AppointmentRepository.GetAll();
+            List<Appointment> appointments = new List<Appointment>();
+            Boolean flag = false;
+            foreach (Appointment a in allAppointments)
+            {
+                flag = false;
+                if (a.DoctorName.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (a.PatientName.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (a.RoomName.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (a.DurationInMunutes.ToString().Contains(search))
+                    flag = true;
+                if (flag == true)
+                    appointments.Add(a);
+            }
+            return appointments;
+        }
+
         public Boolean ScheduleAppointment(Appointment newAppointment)
         {
             if (GetOverlapingAppointments(newAppointment).Count == 0)
@@ -54,9 +138,12 @@ namespace Service
             }
             else
             {
-                MessageBox.Show(
-                    "Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " +
-                    FindNextFreeAppointmentStartTime(newAppointment).ToString("dd.MM.yyyy. HH:mm"));
+                /* MessageBox.Show(
+                     "Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " +
+                     FindNextFreeAppointmentStartTime(newAppointment).ToString("dd.MM.yyyy. HH:mm"));*/
+                String message = "Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(newAppointment).ToString("dd.MM.yyyy. HH:mm");
+                SecretaryMessage m = new SecretaryMessage(message);
+                m.ShowDialog();
                 return false;
             }
         }
@@ -67,9 +154,9 @@ namespace Service
                 return AppointmentRepository.Update(editedAppointment);
             else
             {
-                MessageBox.Show(
-                    "Termin je zauzet! Izaberite drugo vreme.\nPrvi sledeci dostupan termin za unete kriterijume je " +
-                    FindNextFreeAppointmentStartTime(editedAppointment).ToString("dd.MM.yyyy. HH:mm"));
+                String message = "Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(editedAppointment).ToString("dd.MM.yyyy. HH:mm");
+                SecretaryMessage m = new SecretaryMessage(message);
+                m.ShowDialog();
                 return false;
             }
         }
@@ -239,11 +326,8 @@ namespace Service
             for (int i = 0; i < scheduledAppointments.Count; i++)
             {
                 if (this.EmergencyAppointmentsOverlap(appointment, scheduledAppointments[i]))
-                {
                     overlapingAppointments.Add(scheduledAppointments[i]);
-                }
             }
-
             return overlapingAppointments;
         }
 
@@ -329,20 +413,14 @@ namespace Service
         public void RescheduleAppointmentForRescheduling(AppointmentForReschedulingDTO appointmentForRescheduling)
         {
             List<Appointment> scheduledAppointments = GetAllAppointments();
-            Appointment rescheduledAppointment =
-                scheduledAppointments.FirstOrDefault(a =>
-                    a.AppointentId.Equals(appointmentForRescheduling.AppointmentId));
+            Appointment rescheduledAppointment = scheduledAppointments.FirstOrDefault(a => a.AppointentId.Equals(appointmentForRescheduling.AppointmentId));
             if (rescheduledAppointment != null)
             {
                 rescheduledAppointment.StartTime = appointmentForRescheduling.SuggestedTime;
                 EditAppointment(rescheduledAppointment);
-                Appointment previousAppointment =
-                    vezba.SecretaryGUI.SecretaryAppointments.Appointments.FirstOrDefault(a =>
-                        a.AppointentId.Equals(rescheduledAppointment.AppointentId));
+                Appointment previousAppointment = vezba.SecretaryGUI.SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(rescheduledAppointment.AppointentId));
                 if (previousAppointment != null)
-                    vezba.SecretaryGUI.SecretaryAppointments.Appointments[
-                            vezba.SecretaryGUI.SecretaryAppointments.Appointments.IndexOf(previousAppointment)] =
-                        rescheduledAppointment;
+                    vezba.SecretaryGUI.SecretaryAppointments.Appointments[vezba.SecretaryGUI.SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = rescheduledAppointment;
             }
         }
 

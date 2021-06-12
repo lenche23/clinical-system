@@ -66,17 +66,26 @@ namespace vezba.SecretaryGUI
             if (isSuccess)
             {
                 SecretaryAppointments.Appointments.Add(emergencyAppointment);
-                MessageBox.Show("Zakazan je hitan termin za " + emergencyAppointment.StartTime.ToString("dd.MM.yyyy. HH:mm") + " kod lekara " + emergencyAppointment.DoctorName);
+                SecretaryMessage m1 = new SecretaryMessage("Zakazan je hitan termin za " + emergencyAppointment.StartTime.ToString("dd.MM.yyyy. HH:mm") + " kod lekara " + emergencyAppointment.DoctorName);
+                m1.ShowDialog();
                 this.Close();
+
             }
             else
             {
                 SecretaryNearestAvailableEmergencyAppointment w = new SecretaryNearestAvailableEmergencyAppointment(emergencyAppointment);
-                w.Show();
+                w.ShowDialog();
             }
-			
+
             return;
-            
+
+        }
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+            else if (e.Key == Key.Enter)
+                this.SaveButton_Click(sender, e);
         }
 
     }

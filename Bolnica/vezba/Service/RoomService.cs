@@ -7,7 +7,7 @@ namespace Service
 {
    public class RoomService
     {
-        public RoomFileRepository RoomRepository { get; }
+        private IRoomRepository RoomRepository { get; }
 
         public RoomService()
         {
@@ -37,6 +37,26 @@ namespace Service
         public Room GetOneRoom(int roomId)
         {
             return RoomRepository.GetOne(roomId);
+        }
+
+        public List<Room> GetSearchResultRooms(String search)
+        {
+            List<Room> allRooms = GetAllRooms();
+            List<Room> rooms = new List<Room>();
+            Boolean flag = false;
+            foreach (Room r in allRooms)
+            {
+                flag = false;
+                if (r.RoomNumber.ToString().ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (r.RoomFloorName.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (r.RoomTypeName.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (flag == true)
+                    rooms.Add(r);
+            }
+            return rooms;
         }
     }
 }

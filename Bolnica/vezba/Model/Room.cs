@@ -44,7 +44,7 @@ namespace Model
                     case Floor.second:
                         return "Drugi";
                     default:
-                        return "Tre�i";
+                        return "Treæi";
                 }
             }
         }
@@ -65,6 +65,34 @@ namespace Model
                     default:
                         return "Magacin";
                 }
+            }
+        }
+
+        public string RoomFloorName
+        {
+            get
+            {
+                if (RoomFloor == Floor.first)
+                    return "Prvi";
+                else if (RoomFloor == Floor.second)
+                    return "Drugi";
+                else
+                    return "Treći";
+            }
+        }
+
+        public string RoomTypeName
+        {
+            get
+            {
+                if (RoomType == RoomType.examinationRoom)
+                    return "Ordinacija za preglede";
+                else if (RoomType == RoomType.operatingRoom)
+                    return "Operaciona sala";
+                else if (RoomType == RoomType.recoveryRoom)
+                    return "Soba za oporavak";
+                else
+                    return "Skladiste;";
             }
         }
 

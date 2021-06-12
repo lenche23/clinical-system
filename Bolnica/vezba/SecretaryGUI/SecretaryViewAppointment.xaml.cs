@@ -37,5 +37,12 @@ namespace vezba.SecretaryGUI
             this.Close();
             return;
         }
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+            else if (e.Key == Key.Enter)
+                this.Close();
+        }
     }
 }

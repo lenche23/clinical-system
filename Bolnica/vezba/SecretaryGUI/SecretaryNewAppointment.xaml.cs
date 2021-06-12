@@ -2,6 +2,7 @@
 using Service;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,15 +17,48 @@ using System.Windows.Shapes;
 
 namespace vezba.SecretaryGUI
 {
-    public partial class SecretaryNewAppointment : Window
+    public partial class SecretaryNewAppointment : Window, INotifyPropertyChanged
     {
-        public SecretaryNewAppointment()
+        public event PropertyChangedEventHandler PropertyChanged;
+        public virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        private string dateInput;
+        public string DateInput
+        {
+            get { return dateInput; }
+            set
+            {
+                if (value != dateInput)
+                {
+                    dateInput = value;
+                    OnPropertyChanged("DateInput");
+                }
+            }
+        }
+        private Patient Patient { get; }
+        private int mode;
+        public SecretaryNewAppointment(int mode, Patient patient = null)
         {
             InitializeComponent();
             this.DataContext = this;
+            Patient = patient;
+            this.mode = mode;
             PatientService ps = new PatientService();
             List<Patient> patients = ps.GetAllPatients();
-            Patient.ItemsSource = patients;
+            PatientCB.ItemsSource = patients;
+            if (patient != null)
+            {
+                PatientCB.Visibility = System.Windows.Visibility.Collapsed;
+                PatientLabel.Content = patient.NameAndSurname;
+            }
+            else
+                PatientLabel.Visibility = System.Windows.Visibility.Collapsed;
             DoctorService ds = new DoctorService();
             List<Doctor> doctors = ds.GetAllDoctors();
             Doctor.ItemsSource = doctors;
@@ -38,7 +72,13 @@ namespace vezba.SecretaryGUI
             List<string> minutes = new List<string> { "00", "15", "30", "45" };
             Minutes.ItemsSource = minutes;
         }
-
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+            else if (e.Key == Key.Enter)
+                this.SaveButton_Click(sender, e);
+        }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -50,27 +90,39 @@ namespace vezba.SecretaryGUI
             if (ValidateEntries() == false)
                 return;
             AppointmentService appointmentService = new AppointmentService();
-            Appointment newAppointment = new Appointment(0, (Patient)Patient.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
+            Appointment newAppointment;
+            if (Patient != null)
+                newAppointment = new Appointment(0, Patient, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
+            else
+                newAppointment = new Appointment(0, (Patient)PatientCB.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
+
             Boolean isSuccess = appointmentService.ScheduleAppointment(newAppointment);
             if (isSuccess)
             {
-                SecretaryAppointments.Appointments.Add(newAppointment);
+                if (mode == 1)
+                    SecretaryPatientAppointments.Appointments.Add(newAppointment);
+                if (mode == 0)
+                    SecretaryAppointments.Appointments.Add(newAppointment);
+                SecretaryMessage m1 = new SecretaryMessage("Termin je uspešno zakazan.");
+                m1.ShowDialog();
                 this.Close();
             }
-                
+
         }
 
         //HCI deo
         private Boolean ValidateEntries()
         {
-            if (Patient.SelectedItem == null)
+            if (PatientCB.SelectedItem == null && Patient == null)
             {
-                MessageBox.Show("Niste uneli pacijenta!");
+                SecretaryMessage m1 = new SecretaryMessage("Niste uneli pacijenta.");
+                m1.ShowDialog();
                 return false;
             }
             if (Doctor.SelectedItem == null)
             {
-                MessageBox.Show("Niste uneli lekara!");
+                SecretaryMessage m1 = new SecretaryMessage("Niste uneli lekara.");
+                m1.ShowDialog();
                 return false;
             }
             if (Room.SelectedItem == null)
@@ -80,17 +132,20 @@ namespace vezba.SecretaryGUI
             }
             if (Hours.SelectedItem == null || Minutes.SelectedItem == null)
             {
-                MessageBox.Show("Niste izabrali vreme!");
+                SecretaryMessage m1 = new SecretaryMessage("Niste izabrali vreme.");
+                m1.ShowDialog();
                 return false;
             }
             if (DateTime.Compare(GetTime(), DateTime.Now) < 0)
             {
-                MessageBox.Show("Izabrani datum je vec prosao!");
+                SecretaryMessage m1 = new SecretaryMessage("Izabrani datum je već prošao.");
+                m1.ShowDialog();
                 return false;
             }
             if (Duration.SelectedItem == null)
             {
-                MessageBox.Show("Niste izabrali trajanje termina!");
+                SecretaryMessage m1 = new SecretaryMessage("Niste izabrali trajanje termina.");
+                m1.ShowDialog();
                 return false;
             }
             return true;
@@ -101,12 +156,11 @@ namespace vezba.SecretaryGUI
             DateTime selectedDate = new DateTime(1900, 1, 1);
             try
             {
-                selectedDate = Date.SelectedDate.Value.Date;
+                selectedDate = DateTime.ParseExact(Date.Text, "dd.MM.yyyy.", null);
             }
             catch
             {
-                MessageBox.Show("Niste izabrali datum!");
-                return selectedDate;
+
             }
             string hours = (string)Hours.SelectedItem;
             string minutes = (string)Minutes.SelectedItem;

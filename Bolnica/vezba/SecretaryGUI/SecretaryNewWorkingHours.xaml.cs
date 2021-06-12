@@ -33,15 +33,18 @@ namespace vezba.SecretaryGUI
             To.Content = beginingDate.AddDays(7).ToString("dd.MM.yyyy.");
             List<string> shifts = new List<string> { "Prva: 07:00 - 14:00", "Druga: 14:00 - 21:00" };
             Shift.ItemsSource = shifts;
+            Shift.SelectedIndex = 0;
 
             WorkingHours = new WorkingHours(beginingDate, Model.Shift.firstShift);
         }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             DoctorService doctorService = new DoctorService();
             if (Shift.SelectedIndex == 1)
                 WorkingHours.Shift = Model.Shift.secondShift;
             doctorService.AddWorkingHoursToDoctor(Doctor.Jmbg, WorkingHours);
+            SecretaryMessage m1 = new SecretaryMessage("Uspešno definisano radno vreme za period od " + From.Content + " do " + To.Content);
+            m1.ShowDialog();
             SecretaryViewDoctor.WorkingHours.Add(WorkingHours);
             this.Close();
         }
@@ -50,7 +53,14 @@ namespace vezba.SecretaryGUI
         {
             this.Close();
         }
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+            else if (e.Key == Key.Enter)
+                this.SaveButton_Click(sender, e);
+        }
 
-        
+
     }
 }

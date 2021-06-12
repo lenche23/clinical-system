@@ -1,17 +1,20 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using vezba.Factory;
 using vezba.Repository;
 
 namespace Service
 {
    public class AnnouncementService
    {
-        public AnnouncementFileRepository AnnouncementRepository { get; }
+        private IAnnouncementRepository AnnouncementRepository { get; }
 
         public AnnouncementService()
         {
-            AnnouncementRepository = new AnnouncementFileRepository();
+            IRepositoryFactory repositoryFactory = (new ApplicationDataSource()).CreateRepositoryFactory();
+            AnnouncementRepository = repositoryFactory.CreateAnnouncementRepository();
+            //AnnouncementRepository = new AnnouncementFileRepository();
         }
         // Sekretar*******************************************************************************
 

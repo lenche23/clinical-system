@@ -23,7 +23,7 @@ namespace vezba.SecretaryGUI
         public ObservableCollection<AppointmentForReschedulingDTO> Appointments { get; set; }
         public SecretaryOverlapingAppointments(Appointment emergencyAppointment)
         {
-            InitializeComponent(); 
+            InitializeComponent();
             this.DataContext = this;
             Appointments = new ObservableCollection<AppointmentForReschedulingDTO>();
 
@@ -52,12 +52,26 @@ namespace vezba.SecretaryGUI
                 AppointmentForReschedulingDTO selectedAppointmentForRescheduling = (AppointmentForReschedulingDTO)overlapingAppointmentsTable.SelectedItem;
                 AppointmentService appointmentService = new AppointmentService();
                 appointmentService.RescheduleAppointmentForRescheduling(selectedAppointmentForRescheduling);
+
+                SecretaryMessage m1 = new SecretaryMessage("Uspešno ste odložili termin.");
+                m1.ShowDialog();
                 Appointments.Remove(selectedAppointmentForRescheduling);
+                return;
             }
-            else
-                MessageBox.Show("Niste selektovali termin!");
+            SecretaryMessage m2 = new SecretaryMessage("Niste selektovali termin.");
+            m2.ShowDialog();
+        }
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+        }
+        private void OnKeyDownDataGridHandler(object sender, KeyEventArgs e)
+        {
+
+            if (e.Key == Key.E)
+                this.RescheduleButton_Click(sender, e);
         }
 
-        
     }
 }

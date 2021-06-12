@@ -2,6 +2,7 @@
 using Service;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,37 @@ using System.Windows.Shapes;
 
 namespace vezba.SecretaryGUI
 {
-    public partial class SecretaryEditAppointment : Window
+    public partial class SecretaryEditAppointment : Window, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public virtual void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        private string dateInput;
+        public string DateInput
+        {
+            get { return dateInput; }
+            set
+            {
+                if (value != dateInput)
+                {
+                    dateInput = value;
+                    OnPropertyChanged("DateInput");
+                }
+            }
+        }
+
         private Appointment appointment;
-        public SecretaryEditAppointment(Appointment a)
+        private int mode;
+        public SecretaryEditAppointment(Appointment a, int mode = 0)
         {
             InitializeComponent();
+            this.mode = mode;
             appointment = a;
             Patient.Content = appointment.PatientName;
             Doctor.Content = appointment.DoctorName;
@@ -37,7 +63,7 @@ namespace vezba.SecretaryGUI
             Minutes.ItemsSource = minutes;
             string m = appointment.StartTime.ToString("mm");
             Minutes.SelectedItem = m;
-            Date.SelectedDate = appointment.StartTime;
+            Date.Text = appointment.StartTime.ToString("dd.MM.yyyy.");
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -52,24 +78,35 @@ namespace vezba.SecretaryGUI
             this.appointment.StartTime = startTime;
             if (ValidateTime() == false)
             {
-                MessageBox.Show("Izabrani datum je vec prosao!");
-                return;
+                SecretaryMessage m1 = new SecretaryMessage("Izabrani datum je već prošao.");
+                m1.ShowDialog();
             }
 
-            
+
             Appointment newAppointment = new Appointment(appointment.AppointentId, appointment.Patient, appointment.Doctor, appointment.Room, startTime, appointment.DurationInMunutes, appointment.ApointmentDescription);
-            
+
             AppointmentService appointmentService = new AppointmentService();
             Boolean success = appointmentService.RescheduleAppointment(newAppointment);
             if (success)
             {
-                var previousAppointment = SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(this.appointment.AppointentId));
-                if (previousAppointment != null)
-                    SecretaryAppointments.Appointments[SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = newAppointment;
+                if (mode == 0)
+                {
+                    var previousAppointment = SecretaryAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(this.appointment.AppointentId));
+                    if (previousAppointment != null)
+                        SecretaryAppointments.Appointments[SecretaryAppointments.Appointments.IndexOf(previousAppointment)] = newAppointment;
+                }
+                else
+                {
+                    var previousAppointment = SecretaryPatientAppointments.Appointments.FirstOrDefault(a => a.AppointentId.Equals(this.appointment.AppointentId));
+                    if (previousAppointment != null)
+                        SecretaryPatientAppointments.Appointments[SecretaryPatientAppointments.Appointments.IndexOf(previousAppointment)] = newAppointment;
+                }
 
+                SecretaryMessage m1 = new SecretaryMessage("Termin je uspešno zakazan.");
+                m1.ShowDialog();
                 this.Close();
             }
-            
+
         }
 
 
@@ -85,13 +122,19 @@ namespace vezba.SecretaryGUI
         private DateTime GetTime()
         {
             DateTime selectedDate = new DateTime(1900, 1, 1);
-            try
+            /*try
             {
                 selectedDate = Date.SelectedDate.Value.Date;
             }
+            */
+            try
+            {
+                selectedDate = DateTime.ParseExact(Date.Text, "dd.MM.yyyy.", null);
+            }
             catch
             {
-                MessageBox.Show("Niste izabrali datum!");
+                SecretaryMessage m1 = new SecretaryMessage("Niste izabrali datum.");
+                m1.ShowDialog();
                 return selectedDate;
             }
             string hours = (string)Hours.SelectedItem;
@@ -101,6 +144,14 @@ namespace vezba.SecretaryGUI
             DateTime.TryParseExact(selectedTime, "HH:mm", null, System.Globalization.DateTimeStyles.None, out time);
             DateTime startTime = selectedDate.Date.Add(time.TimeOfDay);
             return startTime;
+        }
+        private void WindowKeyListener(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+                this.Close();
+
+            else if (e.Key == Key.Enter)
+                this.SaveButton_Click(sender, e);
         }
     }
 }

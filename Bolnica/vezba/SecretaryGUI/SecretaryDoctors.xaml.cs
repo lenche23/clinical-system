@@ -31,15 +31,47 @@ namespace vezba.SecretaryGUI
 
         private void ViewDoctorButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
             if (doctorsTable.SelectedCells.Count > 0)
             {
                 Doctor selectedDoctor = (Doctor)doctorsTable.SelectedItem;
                 SecretaryViewDoctor w = new SecretaryViewDoctor(selectedDoctor);
-                w.Show();
+                w.ShowDialog();
+                return;
             }
-            else
-                MessageBox.Show("Niste selektovali lekara!");
+            SecretaryMessage m1 = new SecretaryMessage("Niste selektovali lekara.");
+            m1.ShowDialog();
+        }
+
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                Doctors.Clear();
+                DoctorService doctorService = new DoctorService();
+                List<Doctor> doctors = new List<Doctor>();
+                String search = SearchBox.Text;
+                if (search.Trim().Equals(""))
+                {
+                    foreach (Doctor a in doctorService.GetAllDoctors())
+                    {
+                        Doctors.Add(a);
+                    }
+                    return;
+                }
+                doctors = doctorService.GetSearchResultDoctors(search);
+                foreach (Doctor a in doctors)
+                {
+                    Doctors.Add(a);
+                }
+
+            }
+        }
+        private void OnKeyDownDataGridHandler(object sender, KeyEventArgs e)
+        {
+
+            if (e.Key == Key.Space)
+                this.ViewDoctorButton_Click(sender, e);
         }
     }
 }

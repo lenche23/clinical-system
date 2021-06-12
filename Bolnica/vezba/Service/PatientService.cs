@@ -9,7 +9,7 @@ namespace Service
 {
    public class PatientService
     {
-        public PatientFileRepository PatientRepository { get; }
+        private IPatientRepository PatientRepository { get; }
 
         public PatientService()
         {
@@ -24,6 +24,24 @@ namespace Service
         public List<Patient> GetAllPatients()
         {
             return PatientRepository.GetAll();
+        }
+
+        public List<Patient> GetSearchResultPatients(String search)
+        {
+            List<Patient> allPatients = GetAllPatients();//AppointmentRepository.GetAll();
+            List<Patient> patients = new List<Patient>();
+            Boolean flag = false;
+            foreach (Patient p in allPatients)
+            {
+                flag = false;
+                if (p.NameAndSurname.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (p.Jmbg.ToLower().Contains(search.ToLower()))
+                    flag = true;
+                if (flag == true)
+                    patients.Add(p);
+            }
+            return patients;
         }
 
         public Boolean SavePatient(Patient newPatient)
