@@ -9,7 +9,7 @@ namespace Service
     public class MedicineService
     {
 
-        public MedicineFileRepository MedicineRepository { get; }
+        private IMedicineRepository MedicineRepository { get; }
         public DeclinedMedicineFileRepository DeclinedMedicineRepository { get; }
 
         public MedicineService()

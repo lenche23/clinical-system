@@ -7,7 +7,7 @@ namespace Service
 {
    public class RoomService
     {
-        public RoomFileRepository RoomRepository { get; }
+        private IRoomRepository RoomRepository { get; }
 
         public RoomService()
         {

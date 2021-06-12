@@ -14,13 +14,16 @@ namespace Service
 {
     public class AppointmentService
     {
-        public AppointmentFileRepository AppointmentRepository { get; }
+        private IAppointmentRepository AppointmentRepository { get; }
         private Appointment ChangingAppointment { get; set; }
         private EventsLogService EventsLogService { get; set; }
 
         public AppointmentService()
         {
             AppointmentRepository = new AppointmentFileRepository();
+
+
+
             EventsLogService = new EventsLogService();
             ChangingAppointment = new Appointment();
         }

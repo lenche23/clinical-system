@@ -7,7 +7,7 @@ namespace Service
 {
    public class EquipmentService
    {
-        public EquipmentFileRepository EquipmentRepository { get; }
+        private IEquipmentRepository EquipmentRepository { get; }
 
         public EquipmentService()
         {

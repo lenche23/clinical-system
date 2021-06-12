@@ -10,7 +10,7 @@ namespace vezba.Service
 {
     class UserFeedbackService
     {
-        public UserFeedbackFileRepository UserFeedbackRepository { get; set; }
+        private IUserFeedbackRepository UserFeedbackRepository { get; set; }
         public UserFeedbackService()
         {
             UserFeedbackRepository = new UserFeedbackFileRepository();

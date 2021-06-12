@@ -197,6 +197,9 @@
     <Compile Include="EditPatient.xaml.cs">
       <DependentUpon>EditPatient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Factory\ApplicationDataSource.cs" />
+    <Compile Include="Factory\FileRepositoryFactory.cs" />
+    <Compile Include="Factory\IRepositoryFactory.cs" />
     <Compile Include="Inventary.xaml.cs">
       <DependentUpon>Inventary.xaml</DependentUpon>
     </Compile>

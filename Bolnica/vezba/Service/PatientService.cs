@@ -9,7 +9,7 @@ namespace Service
 {
    public class PatientService
     {
-        public PatientFileRepository PatientRepository { get; }
+        private IPatientRepository PatientRepository { get; }
 
         public PatientService()
         {

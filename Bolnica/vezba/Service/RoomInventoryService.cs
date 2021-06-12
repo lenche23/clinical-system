@@ -8,7 +8,7 @@ namespace Service
     public class RoomInventoryService
     {
 
-        public RoomInventoryFileRepository RoomInventoryRepository { get; }
+        private IRoomInventoryRepository RoomInventoryRepository { get; }
 
         public RoomInventoryService()
         {
