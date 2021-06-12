@@ -325,6 +325,7 @@
     </Compile>
     <Compile Include="Model\DeclinedMedicine.cs" />
     <Compile Include="Model\MedicineCount.cs" />
+    <Compile Include="Model\UserFeedback.cs" />
     <Compile Include="PatientNotification.xaml.cs">
       <DependentUpon>PatientNotification.xaml</DependentUpon>
     </Compile>
@@ -413,6 +414,7 @@
     <Compile Include="Repository\IEquipmentRepository.cs" />
     <Compile Include="Repository\IRoomInventoryRepository.cs" />
     <Compile Include="Repository\IRoomRepository.cs" />
+    <Compile Include="Repository\IUserFeedbackRepository.cs" />
     <Compile Include="Repository\MedicineFileRepository.cs" />
     <Compile Include="Model\Menager.cs" />
     <Compile Include="Model\Patient.cs" />
@@ -504,6 +506,7 @@
     <Compile Include="PatientView.xaml.cs">
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Repository\UserFeedbackFileRepository.cs" />
     <Compile Include="ScheduleEmergencyAppointment.xaml.cs">
       <DependentUpon>ScheduleEmergencyAppointment.xaml</DependentUpon>
     </Compile>
@@ -536,6 +539,9 @@
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryEditPatient.xaml.cs">
       <DependentUpon>SecretaryEditPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecretaryGUI\SecretaryFeedback.xaml.cs">
+      <DependentUpon>SecretaryFeedback.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryGUI\SecretaryHelp.xaml.cs">
       <DependentUpon>SecretaryHelp.xaml</DependentUpon>
@@ -622,6 +628,7 @@
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomInventoryService.cs" />
     <Compile Include="Service\RoomService.cs" />
+    <Compile Include="Service\UserFeedbackService.cs" />
     <Compile Include="SuccessfulGradeDoctor.xaml.cs">
       <DependentUpon>SuccessfulGradeDoctor.xaml</DependentUpon>
     </Compile>
@@ -1176,6 +1183,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SecretaryGUI\SecretaryEditPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecretaryGUI\SecretaryFeedback.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

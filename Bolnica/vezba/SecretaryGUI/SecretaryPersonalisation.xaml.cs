@@ -31,12 +31,12 @@ namespace vezba.SecretaryGUI
             Theme.ItemsSource = themes;
 
             var app = (App)Application.Current;
-            /*if (app.theme == "dark")
+            if (app.theme == "dark")
             {
                 Theme.SelectedIndex = 1;
             }
             else
-                Theme.SelectedIndex = 0;*/
+                Theme.SelectedIndex = 0;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -47,7 +47,7 @@ namespace vezba.SecretaryGUI
         private void Theme_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var app = (App)Application.Current;
-            /*
+            
             if (Theme.SelectedIndex == 0)
             {
                 app.ChangeTheme(new Uri("Themes/Light.xaml", UriKind.Relative), "light");
@@ -59,7 +59,7 @@ namespace vezba.SecretaryGUI
                 app.ChangeTheme(new Uri("Themes/Dark.xaml", UriKind.Relative), "dark");
                 parent.selectedTabColor = new SolidColorBrush(Color.FromRgb(101, 90, 113));
                 parent.selectedButton.Background = parent.selectedTabColor;
-            }*/
+            }
 
         }
         private void WindowKeyListener(object sender, KeyEventArgs e)

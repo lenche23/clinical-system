@@ -26,14 +26,14 @@ namespace vezba.SecretaryGUI
             //#655A71  (101, 90, 113)
             InitializeComponent();
             var app = (App)Application.Current;
-            /*if (app.theme.Equals("dark"))
+            if (app.theme.Equals("dark"))
             {
                 selectedTabColor = new SolidColorBrush(Color.FromRgb(101, 90, 113));
             }
             else
             {
                 selectedTabColor = new SolidColorBrush(Color.FromRgb(206, 208, 253));
-            }*/
+            }
             WindowContent.Content = new SecretaryPatients();
             PatientsButton.Background = selectedTabColor;//Brushes.SlateBlue;
             selectedButton = PatientsButton;
@@ -111,6 +111,11 @@ namespace vezba.SecretaryGUI
             SecretaryHelp w = new SecretaryHelp();
             w.ShowDialog();
         }
+        private void FeedbackButton_Click(object sender, RoutedEventArgs e)
+        {
+            SecretaryFeedback w = new SecretaryFeedback();
+            w.ShowDialog();
+        }
         private void WindowKeyListener(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.F1)
@@ -129,6 +134,8 @@ namespace vezba.SecretaryGUI
                 this.SettingsButton_Click(sender, e);
             else if (e.Key == Key.F8)
                 this.HelpButton_Click(sender, e);
+            else if (e.Key == Key.F9)
+                this.FeedbackButton_Click(sender, e);
 
         }
     }
