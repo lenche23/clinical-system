@@ -11,7 +11,7 @@ namespace Service
     {
 
         private IMedicineRepository MedicineRepository { get; }
-        public DeclinedMedicineFileRepository DeclinedMedicineRepository { get; }
+        private IDeclinedMedicineRepository DeclinedMedicineRepository { get; }
 
         public MedicineService(IMedicineRepository medicineRepository, IDeclinedMedicineRepository declinedMedicineRepository)
         {
