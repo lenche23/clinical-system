@@ -34,6 +34,7 @@
                     <StackPanel Width="150" Background="#B2FAEBD7">
                         <Button x:Name="ButtonMore" Content="Više" Click="ButtonMore_Click"/>
                         <Button x:Name="ButtonProfile" Content="Moj profil" Click="ButtonProfile_Click"/>
+                        <Button x:Name="ButtonFeedback" Content="Feedback o aplikaciji" Click="ButtonFeedback_Click"/>
                         <Separator/>
                         <Button x:Name="ButtonPopUpLogout" Content="Odjava" Click="ButtonPopUpLogout_Click"/>
                     </StackPanel>

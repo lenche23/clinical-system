@@ -87,5 +87,10 @@ namespace vezba
         {
             PatientMainPage.Navigate(new MorePage());
         }
+
+        private void ButtonFeedback_Click(object sender, RoutedEventArgs e)
+        {
+            PatientMainPage.Navigate(new FeedbackPage());
+        }
     }
 }
