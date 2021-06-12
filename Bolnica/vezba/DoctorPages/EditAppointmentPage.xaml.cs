@@ -160,7 +160,7 @@ namespace vezba.DoctorPages
             var doctor = (Doctor) cmbDoctors.SelectedItem;
             var isEmergency = (Boolean) IsEmergencyCB.IsChecked;
             var updatedAppointment = new Appointment(appointmentId, patient, doctor, room, startDateTime, durationInMinutes,
-                appointmentDescription, isEmergency);
+                appointmentDescription, null, isEmergency);
             return updatedAppointment;
         }
 

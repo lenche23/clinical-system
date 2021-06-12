@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using vezba.Repository;
 using System.ComponentModel;
+using Model;
 
 namespace Model
 {
@@ -23,8 +24,9 @@ namespace Model
         [JsonIgnore]
         public Patient Patient { get; set; }
         public Boolean IsEmergency { get; set; }
+        public Note Note { get; set; }
 
-        public Appointment(int id, Patient patient, Doctor doctor, Room room, DateTime startTime, int duration, string apDesc, Boolean IsEmergency = false)
+        public Appointment(int id, Patient patient, Doctor doctor, Room room, DateTime startTime, int duration, string apDesc, Note note, Boolean IsEmergency = false)
         {
             AppointentId = id;
             Patient = patient;
@@ -34,6 +36,7 @@ namespace Model
             DurationInMunutes = duration;
             ApointmentDescription = apDesc;
             IsDeleted = false;
+            Note = note;
             this.IsEmergency = IsEmergency;
         }
 

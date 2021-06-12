@@ -56,8 +56,7 @@ namespace vezba.SecretaryGUI
                 return;
             }
 
-            
-            Appointment newAppointment = new Appointment(appointment.AppointentId, appointment.Patient, appointment.Doctor, appointment.Room, startTime, appointment.DurationInMunutes, appointment.ApointmentDescription);
+            Appointment newAppointment = new Appointment(appointment.AppointentId, appointment.Patient, appointment.Doctor, appointment.Room, startTime, appointment.DurationInMunutes, appointment.ApointmentDescription, null);
             
             AppointmentService appointmentService = new AppointmentService();
             Boolean success = appointmentService.RescheduleAppointment(newAppointment);

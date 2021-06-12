@@ -201,7 +201,7 @@ namespace Service
             {
                 Appointment emergencyAppointment = new Appointment(0, modelAppointment.Patient, d,
                     modelAppointment.Room, DateTime.Now, modelAppointment.DurationInMunutes,
-                    modelAppointment.ApointmentDescription, true);
+                    modelAppointment.ApointmentDescription, null, true);
 
                 emergencyAppointment.StartTime = FindNextFreeAppointmentStartTime(emergencyAppointment);
                 appointments.Add(emergencyAppointment);
@@ -408,13 +408,8 @@ namespace Service
         {
             int diff = (selectedDate - DateTime.Now.Date).Days;
             if (diff <= 0)
-            {
                 return false;
-            }
-            else
-            {
-                return true;
-            }
+            return true;
         }
 
         public List<Appointment> GetPatientFutureAppointments()

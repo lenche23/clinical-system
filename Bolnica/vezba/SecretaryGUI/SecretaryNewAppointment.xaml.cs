@@ -50,7 +50,7 @@ namespace vezba.SecretaryGUI
             if (ValidateEntries() == false)
                 return;
             AppointmentService appointmentService = new AppointmentService();
-            Appointment newAppointment = new Appointment(0, (Patient)Patient.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text);
+            Appointment newAppointment = new Appointment(0, (Patient)Patient.SelectedItem, (Doctor)Doctor.SelectedItem, (Room)Room.SelectedItem, GetTime(), (int)Duration.SelectedItem, Description.Text, null);
             Boolean isSuccess = appointmentService.ScheduleAppointment(newAppointment);
             if (isSuccess)
             {

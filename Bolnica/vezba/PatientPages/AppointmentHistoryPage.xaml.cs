@@ -30,5 +30,11 @@ namespace vezba.PatientPages
             List<Appointment> appointments = AppointmentService.GetPatientPastAppointments();
             Appointments = new ObservableCollection<Appointment>(appointments);
         }
+
+        private void LeaveNote_Click(object sender, RoutedEventArgs e)
+        {
+            Appointment appointment = (Appointment)historyTable.SelectedItem;
+            this.NavigationService.Navigate(new AppointmentDetails(appointment));
+        }
     }
 }
