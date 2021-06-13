@@ -219,5 +219,18 @@
     "patientId": "0902994143189",
     "roomId": 2,
     "doctorId": "1708962324890"
+  },
+  {
+    "StartTime": "2021-07-02T09:00:00",
+    "DurationInMunutes": 60,
+    "ApointmentDescription": "Nešto",
+    "AppointentId": 17,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "Nešto",
+    "StartTimee": "2021-07-02T09:00:00",
+    "patientId": "1706971459311",
+    "roomId": 1,
+    "doctorId": "1708962324890"
   }
 ]

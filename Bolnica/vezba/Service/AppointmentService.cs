@@ -676,19 +676,37 @@ namespace Service
                             MessageBox.Show("Datum renovacije se poklapa sa već zakazanim pregledima");
                             has_appointment = true;
                         }
-
-                        
-                        if (DateTime.Compare(appointmentStart, EndTime) > 0)
-                        {
-                            MessageBox.Show("Postoje termini u sobi koju nameravate podeliti zakazani nakon renoviranja");
-                            has_appointment = true;
-                        } 
                     }
                 }
             }
         return has_appointment;
         }
 
+
+        public Boolean HasFutureAppointments(int number, DateTime StartTime, DateTime EndTime)
+        {
+            var has_appointment = false;
+
+            List<Appointment> appointments = GetAllAppointments();
+
+            foreach (Appointment appointment in appointments)
+            {
+                if (appointment.Room != null)
+                {
+                    if (appointment.Room.RoomNumber == number)
+                    {
+                        DateTime appointmentStart = appointment.StartTime;
+
+                        if (DateTime.Compare(appointmentStart, EndTime) > 0)
+                        {
+                            MessageBox.Show("Postoje termini u sobi koju nameravate podeliti zakazani nakon renoviranja");
+                            has_appointment = true;
+                        }
+                    }
+                }
+            }
+            return has_appointment;
+        }
         // UpravnikKraj***************************************************************************
     }
 }

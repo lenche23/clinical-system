@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using Service;
+using vezba.Service;
 
 namespace vezba.ManagerGUI
 {
@@ -75,24 +76,21 @@ namespace vezba.ManagerGUI
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
+            ReadInformation();
             Room roomEntry = (Room)RoomToMerge.SelectedItem;
-            inputItemQuantity = int.Parse(Količina.Text);
-            currentRoomItemQuantity = roomInventory.Quantity;
-            pickedDate = Date.SelectedDate.Value.Date;
-            if (pickedDate == null)
-            {
-                pickedDate = DateTime.Now;
-            }
-            //pickedDate = DateTime.Now.AddSeconds(5);
-            RoomInventoryService roomInventoryService = new RoomInventoryService();
-
             if (!Validate(roomEntry)) return;
 
+            RoomInventoryService roomInventoryService = new RoomInventoryService();
+
+            //pickedDate = DateTime.Now.AddSeconds(5);
             roomInventory.EndTime = pickedDate;
             roomInventoryService.UpdateRoomInventory(this.roomInventory);
 
             currentRoomItemQuantity = roomInventory.Quantity - inputItemQuantity;
-            desiredRoomItemQuantity = roomInventoryService.NewDesiredRoomItemQuantity(roomInventory, roomEntry.RoomNumber, inputItemQuantity, pickedDate);
+
+            StaticEquipmentStrategy strategy = new StaticEquipmentStrategy();
+            desiredRoomItemQuantity = roomInventoryService.ChangeEquipmentQuantity(strategy, roomInventory, roomEntry.RoomNumber, inputItemQuantity, pickedDate);
+
             var ri1 = new RoomInventory(pickedDate, infiniteTime, currentRoomItemQuantity, 0, roomInventory.equipment, room);
             roomInventoryService.SaveRoomInventory(ri1);
             var ri2 = new RoomInventory(pickedDate, infiniteTime, desiredRoomItemQuantity, 0, roomInventory.equipment, roomEntry);
@@ -103,6 +101,14 @@ namespace vezba.ManagerGUI
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void ReadInformation()
+        {
+            inputItemQuantity = int.Parse(Količina.Text);
+            currentRoomItemQuantity = roomInventory.Quantity;
+            pickedDate = Date.SelectedDate.Value.Date;
+            if (pickedDate == null) { pickedDate = DateTime.Now; }
         }
 
         public Boolean Validate(Room roomEntry)
