@@ -14,10 +14,17 @@
     "IsDeleted": false
   },
   {
-    "Id": 2,
+    "Id": 0,
     "TimeWritten": "2021-06-12T03:47:42.7772042+02:00",
     "Rating": 1,
     "Content": "Cini se da sam u manjini, ali meni se ovo nista ne svidja!",
+    "IsDeleted": false
+  },
+  {
+    "Id": 3,
+    "TimeWritten": "2021-06-13T13:50:09.2041662+02:00",
+    "Rating": 4,
+    "Content": "Utisak nedelje",
     "IsDeleted": false
   }
 ]

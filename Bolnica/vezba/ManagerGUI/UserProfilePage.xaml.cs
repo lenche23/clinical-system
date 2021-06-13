@@ -58,5 +58,10 @@ namespace vezba.ManagerGUI
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
+
+        private void FeedbackButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new ManagerFeedback(mainManagerWindow);
+        }
     }
 }

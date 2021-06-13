@@ -244,6 +244,9 @@
     <Compile Include="ManagerGUI\MainManagerWindow.xaml.cs">
       <DependentUpon>MainManagerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerGUI\ManagerFeedback.xaml.cs">
+      <DependentUpon>ManagerFeedback.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ManagerGUI\MedicineAddPage.xaml.cs">
       <DependentUpon>MedicineAddPage.xaml</DependentUpon>
     </Compile>
@@ -904,6 +907,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerGUI\MainManagerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\ManagerFeedback.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

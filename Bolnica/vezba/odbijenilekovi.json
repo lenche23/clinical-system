@@ -232,8 +232,147 @@
       ]
     },
     "Description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    "IsDeleted": false,
+    "IsDeleted": true,
     "MedicineName": "asdasd",
     "MedicineManufacturer": "asdasda"
+  },
+  {
+    "DeclinedMedicineID": 4,
+    "Medicine": {
+      "ingridient": [
+        {
+          "Name": "Sastojak"
+        }
+      ],
+      "Name": "Lek za odbiti",
+      "Manufacturer": "Neki proizvođač",
+      "Packaging": "Neko pakovanje",
+      "MedicineID": 4,
+      "Status": 1,
+      "Condition": 1,
+      "IsDeleted": false,
+      "ReplacementMedicine": {
+        "ingridient": [
+          {
+            "Name": "SilicijumDioksid"
+          },
+          {
+            "Name": "Kroskarmeloza-natrijum"
+          },
+          {
+            "Name": "Skrob, kukuruzni"
+          },
+          {
+            "Name": "Povidon (K25)"
+          },
+          {
+            "Name": "Eritrozin (E127)"
+          }
+        ],
+        "Name": "Ibuprofen",
+        "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+        "Packaging": "30 x 400 mg",
+        "MedicineID": 0,
+        "Status": 0,
+        "Condition": 0,
+        "IsDeleted": false,
+        "ReplacementMedicine": {
+          "ingridient": [
+            {
+              "Name": "Trifolium pratense extractum siccum standardisatum"
+            }
+          ],
+          "Name": "Oestrofact",
+          "Manufacturer": "Union-Medic D.O.O. Novi Sad",
+          "Packaging": "50 x 70 mg",
+          "MedicineID": 3,
+          "Status": 0,
+          "Condition": 1,
+          "IsDeleted": false,
+          "ReplacementMedicine": null,
+          "Ingridient": [
+            {
+              "Name": "Trifolium pratense extractum siccum standardisatum"
+            }
+          ]
+        },
+        "Ingridient": [
+          {
+            "Name": "SilicijumDioksid"
+          },
+          {
+            "Name": "Kroskarmeloza-natrijum"
+          },
+          {
+            "Name": "Skrob, kukuruzni"
+          },
+          {
+            "Name": "Povidon (K25)"
+          },
+          {
+            "Name": "Eritrozin (E127)"
+          }
+        ]
+      },
+      "Ingridient": [
+        {
+          "Name": "Sastojak"
+        }
+      ]
+    },
+    "Description": "Ma bezveze",
+    "IsDeleted": true,
+    "MedicineName": "Lek za odbiti",
+    "MedicineManufacturer": "Neki proizvođač"
+  },
+  {
+    "DeclinedMedicineID": 5,
+    "Medicine": {
+      "ingridient": [],
+      "Name": "Lek promenjen",
+      "Manufacturer": "Normalan proizvodjac",
+      "Packaging": "Veliko pakovanje",
+      "MedicineID": 11,
+      "Status": 1,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": {
+        "ingridient": [
+          {
+            "Name": "Acetilsalicilna kiselina"
+          },
+          {
+            "Name": "Skrob, kukuruzni"
+          },
+          {
+            "Name": "Trietil-citrat"
+          }
+        ],
+        "Name": "Aspirin",
+        "Manufacturer": "Bayer Bitterfeld GmbH ",
+        "Packaging": "30 x 100mg",
+        "MedicineID": 2,
+        "Status": 0,
+        "Condition": 0,
+        "IsDeleted": false,
+        "ReplacementMedicine": null,
+        "Ingridient": [
+          {
+            "Name": "Acetilsalicilna kiselina"
+          },
+          {
+            "Name": "Skrob, kukuruzni"
+          },
+          {
+            "Name": "Trietil-citrat"
+          }
+        ]
+      },
+      "Ingridient": []
+    },
+    "Description": "Loš lek",
+    "IsDeleted": true,
+    "MedicineName": "Lek promenjen",
+    "MedicineManufacturer": "Normalan proizvodjac"
   }
 ]
