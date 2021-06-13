@@ -37,13 +37,12 @@ namespace Service
                 if (inventory.Quantity <= 0 || inventory.NumberUnavailable >= inventory.Quantity)
                     return false;
             }
-            OccupyBed(startDate, numberOfDays, room, bedsInSelectedPeriod);
+            OccupyBed(startDate, endDate, room, bedsInSelectedPeriod);
             return true;
         }
 
-        public void OccupyBed(DateTime startDate, int numberOfDays, Room room, List<RoomInventory> inventories)
+        public void OccupyBed(DateTime startDate, DateTime endDate, Room room, List<RoomInventory> inventories)
         {
-            var endDate = startDate.AddDays(numberOfDays);
             foreach (var inventory in inventories)
             {
                 if (DateTime.Compare(startDate, inventory.StartTime) > 0 && DateTime.Compare(endDate, inventory.EndTime) < 0)
@@ -90,6 +89,53 @@ namespace Service
                 {
                     inventory.NumberUnavailable++;
                     UpdateRoomInventory(inventory);
+                }
+            }
+        }
+
+        public void CancelPatientTreatment(DateTime startDate, int numberOfDays, Room room)
+        {
+            var roomInventories = RoomInventoryRepository.GetAll();
+
+            var endDate = startDate.AddDays(numberOfDays);
+
+            foreach (var inventory in roomInventories)
+            {
+                if (inventory.room.RoomNumber == room.RoomNumber && inventory.equipment.Name == "Krevet" && DateTime.Compare(startDate, inventory.StartTime) <= 0 && DateTime.Compare(endDate, inventory.EndTime) >= 0)
+                {
+                    inventory.NumberUnavailable--;
+                    UpdateRoomInventory(inventory);
+                }
+            }
+            MergeSameStatesInRoom(room, "Krevet");
+        }
+
+        public void MergeSameStatesInRoom(Room room, String equipmentName)
+        {
+            var roomInventories = RoomInventoryRepository.GetAll();
+            var inventoriesForMerge = new List<RoomInventory>();
+            foreach (var inventory in roomInventories)
+            {
+                if (inventory.room.RoomNumber == room.RoomNumber && inventory.equipment.Name == equipmentName)
+                {
+                    inventoriesForMerge.Add(inventory);
+                }
+            }
+
+            var current = inventoriesForMerge[0];
+            foreach (var inventory in inventoriesForMerge)
+            {
+                if (inventory.Id == current.Id)
+                    continue;
+                if(inventory.Quantity == current.Quantity && inventory.NumberUnavailable == current.NumberUnavailable)
+                {
+                    current.EndTime = inventory.EndTime;
+                    DeleteRoomInventory(inventory.Id);
+                    UpdateRoomInventory(current);
+                }
+                else
+                {
+                    current = inventory;
                 }
             }
         }
