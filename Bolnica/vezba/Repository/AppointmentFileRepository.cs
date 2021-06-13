@@ -60,6 +60,7 @@ namespace vezba.Repository
                     appointment.Room = editedAppointment.Room;
                     appointment.Doctor = editedAppointment.Doctor;
                     appointment.IsEmergency = editedAppointment.IsEmergency;
+                    appointment.Note = editedAppointment.Note;
                     WriteToFile(storedAppointments);
                     return true;
                 }

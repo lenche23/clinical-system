@@ -54,7 +54,7 @@ namespace vezba
 
             AppointmentFileRepository aps = new AppointmentFileRepository();
 
-            Appointment appointment = new Appointment(0, patient, doctor, room, startTime, duration, apDesc);
+            Appointment appointment = new Appointment(0, patient, doctor, room, startTime, duration, apDesc, null);
 
             if (GetOverlapingAppoinments(appointment).Count == 0)
             {

@@ -10,5 +10,11 @@ namespace vezba.PatientPages
             InitializeComponent();
             this.DataContext = viewModel;
         }
+
+        private void comment_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        {
+            VirtualKeyboard keyboard = new VirtualKeyboard(comment);
+            keyboard.Show();
+        }
     }
 }

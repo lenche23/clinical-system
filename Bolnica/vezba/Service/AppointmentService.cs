@@ -288,7 +288,7 @@ namespace Service
             {
                 Appointment emergencyAppointment = new Appointment(0, modelAppointment.Patient, d,
                     modelAppointment.Room, DateTime.Now, modelAppointment.DurationInMunutes,
-                    modelAppointment.ApointmentDescription, true);
+                    modelAppointment.ApointmentDescription, null, true);
 
                 emergencyAppointment.StartTime = FindNextFreeAppointmentStartTime(emergencyAppointment);
                 appointments.Add(emergencyAppointment);
@@ -486,13 +486,8 @@ namespace Service
         {
             int diff = (selectedDate - DateTime.Now.Date).Days;
             if (diff <= 0)
-            {
                 return false;
-            }
-            else
-            {
-                return true;
-            }
+            return true;
         }
 
         public List<Appointment> GetPatientFutureAppointments()
@@ -580,6 +575,47 @@ namespace Service
                     appointments.Add(appointment);
                 }
             }
+        }
+
+
+        public void NoteNotification()
+        {
+            while (true)
+            {
+                foreach (Appointment a in GetPatientPastAppointments())
+                {
+                    GenerateNotification(a);
+                }          
+            }
+        }
+
+        private List<DateTime> AddTimeToSpan(Appointment appointment)
+        {
+            DateTime it = new DateTime();
+            it = appointment.Note.StartDate;
+            DateTime start = appointment.Note.StartDate;
+            DateTime end = appointment.Note.EndDate;
+            String time = appointment.Note.Time.ToString("HH:mm");
+            List<DateTime> notifications = new List<DateTime>();
+
+            while(it.Date <= end)
+            {
+                notifications.Add(DateTime.ParseExact(it.Date.ToString("dd/MM/yy") + " " + time, "dd/MM/yy hh:mm", CultureInfo.InvariantCulture));
+            }
+            it = it.AddDays(1);
+
+            return notifications;
+        }
+
+        public List<DateTime> GenerateNotification(Appointment appointment)
+        {
+            List<DateTime> notifications = AddTimeToSpan(appointment);
+            foreach (DateTime dt in notifications)
+            {              
+                PatientNotification noti = new PatientNotification(appointment.Note.NoteContent);
+                noti.Show();
+            }
+            return notifications;
         }
 
         // PacijentKraj***************************************************************************

@@ -58,7 +58,7 @@ namespace vezba.SecretaryGUI
             int duration = (int)Duration.SelectedItem;
             string description = Description.Text;
 
-            Appointment modelAppointment = new Appointment(0, patient, null, room, DateTime.Now, duration, description, true);
+            Appointment modelAppointment = new Appointment(0, patient, null, room, DateTime.Now, duration, description, null, true);
             AppointmentService appointmentService = new AppointmentService();
 
             Appointment emergencyAppointment = appointmentService.FindEarliestEmergencyAppointment(modelAppointment, speciality);

@@ -337,11 +337,15 @@
     <Compile Include="Model\DeclinedMedicine.cs" />
     <Compile Include="Model\MedicineCount.cs" />
     <Compile Include="Model\UserFeedback.cs" />
+    <Compile Include="Model\Note.cs" />
     <Compile Include="PatientNotification.xaml.cs">
       <DependentUpon>PatientNotification.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientPages\ActiveTherapies.xaml.cs">
       <DependentUpon>ActiveTherapies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\AppointmentDetails.xaml.cs">
+      <DependentUpon>AppointmentDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientPages\AppointmentHistoryPage.xaml.cs">
       <DependentUpon>AppointmentHistoryPage.xaml</DependentUpon>
@@ -351,6 +355,12 @@
     </Compile>
     <Compile Include="PatientPages\DoctorOrTimePage.xaml.cs">
       <DependentUpon>DoctorOrTimePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\FeedbackPage.xaml.cs">
+      <DependentUpon>FeedbackPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPages\LeaveNotePage.xaml.cs">
+      <DependentUpon>LeaveNotePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PatientPages\MyDoctor.xaml.cs">
       <DependentUpon>MyDoctor.xaml</DependentUpon>
@@ -1064,6 +1074,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PatientPages\AppointmentDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientPages\AppointmentHistoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1092,6 +1106,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PatientPages\FeedbackPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PatientPages\GradeDoctorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1101,6 +1119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PatientPages\GradeSelectedDoctorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientPages\LeaveNotePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1639,6 +1661,10 @@
     <Resource Include="SecretaryGUI\SecretaryImages\user %281%29.png" />
     <Resource Include="SecretaryGUI\SecretaryImages\user %282%29.png" />
     <Resource Include="SecretaryGUI\SecretaryImages\user.png" />
+    <Resource Include="PatientImages\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PatientImages\positive-vote.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

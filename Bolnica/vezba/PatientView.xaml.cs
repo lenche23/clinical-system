@@ -15,29 +15,34 @@ namespace vezba
     public partial class PatientView : Window
     {
         public static Patient Patient { get; set; }
-        private PatientService Service { get; set; }
+        private PatientService PatientService { get; set; }
+        private AppointmentService AppointmentService { get; set; }
+
         public PatientView()
         {
             InitializeComponent();
             this.DataContext = this;
 
+            AppointmentService = new AppointmentService();
             SetPatientLoggedIn();
-            Service.AddHardcorePrescriptions();
+            PatientService.AddHardcorePrescriptions();
             PatientMainPage.NavigationUIVisibility = NavigationUIVisibility.Hidden;
-            StartThread();
+            StartThreads();
             PatientMainPage.Navigate(new StartPage());
         }
 
         private void SetPatientLoggedIn()
         {
-            Service = new PatientService();
-            Patient = Service.LoadPatient();
+            PatientService = new PatientService();
+            Patient = PatientService.LoadPatient();
         }
 
-        private void StartThread()
+        private void StartThreads()
         {
-            Thread therapyNotifications = new Thread(Service.MedicineNotification);
+            Thread therapyNotifications = new Thread(PatientService.MedicineNotification);
             therapyNotifications.Start();
+            Thread noteNotifications = new Thread(AppointmentService.NoteNotification);
+            noteNotifications.Start();
         }
 
         private void ButtonProfile_Click(object sender, RoutedEventArgs e)
@@ -81,6 +86,11 @@ namespace vezba
         private void ButtonMore_Click(object sender, RoutedEventArgs e)
         {
             PatientMainPage.Navigate(new MorePage());
+        }
+
+        private void ButtonFeedback_Click(object sender, RoutedEventArgs e)
+        {
+            PatientMainPage.Navigate(new FeedbackPage());
         }
     }
 }
