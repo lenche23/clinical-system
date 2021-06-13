@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using vezba.SecretaryGUI.SecretaryViewModel;
 
 namespace vezba.SecretaryGUI
 {
@@ -23,21 +24,10 @@ namespace vezba.SecretaryGUI
         public SecretaryViewAnnouncement(Announcement a)
         {
             InitializeComponent();
-            PostedDate.Content = a.FormatedDatePosted;
-            EditedDate.Content = "(izmenjeno " + a.FormatedDateEdited + ")";
-            if (a.FormatedDatePosted.Equals(a.FormatedDateEdited))
-            {
-                EditedDate.Visibility = System.Windows.Visibility.Collapsed;
-            }
-            Title.Text = a.Title;
-            Content.Text = a.Content;
+            DataContext = new ViewAnnouncementVM(a, this);
+            
         }
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            return;
-        }
         private void WindowKeyListener(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)

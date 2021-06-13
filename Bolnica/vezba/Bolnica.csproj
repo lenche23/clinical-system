@@ -631,6 +631,8 @@
     <Compile Include="SecretaryGUI\SecretaryViewDoctor.xaml.cs">
       <DependentUpon>SecretaryViewDoctor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecretaryGUI\SecretaryViewModel\ViewAnnouncementVM.cs" />
+    <Compile Include="SecretaryGUI\SecretaryViewModel\ViewAppointmentVM.cs" />
     <Compile Include="SecretaryGUI\SecretaryViewPatient.xaml.cs">
       <DependentUpon>SecretaryViewPatient.xaml</DependentUpon>
     </Compile>

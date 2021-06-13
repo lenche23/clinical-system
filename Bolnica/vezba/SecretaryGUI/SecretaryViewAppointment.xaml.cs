@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using vezba.SecretaryGUI.SecretaryViewModel;
 
 namespace vezba.SecretaryGUI
 {
@@ -23,20 +24,9 @@ namespace vezba.SecretaryGUI
         public SecretaryViewAppointment(Appointment appointment)
         {
             InitializeComponent();
-            Patient.Content = appointment.PatientName;
-            Doctor.Content = appointment.DoctorName;
-            Room.Content = appointment.RoomName;
-            Date.Content = appointment.StartTime.ToString("dd.MM.yyyy.");
-            Time.Content = appointment.StartTime.ToString("HH:mm");
-            Duration.Content = appointment.DurationInMunutes;
-            Description.Text = appointment.ApointmentDescription;
+            DataContext = new ViewAppointmentVM(appointment, this);
         }
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            return;
-        }
         private void WindowKeyListener(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
