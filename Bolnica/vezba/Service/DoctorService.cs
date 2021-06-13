@@ -101,7 +101,7 @@ namespace Service
             foreach (WorkingHours workingHours in doctor.WorkingSchedule)
             {
                 if (workingHours.BeginningDate <= nextStartDate && workingHours.EndDate > nextStartDate)
-                    nextStartDate = workingHours.EndDate;
+                    nextStartDate = workingHours.EndDate.AddDays(1);
             }
             return nextStartDate;
         }
@@ -140,9 +140,15 @@ namespace Service
             return false;
         }
 
-        public void RemoveWorkingHoursFromDoctor(string jmbg, WorkingHours selectedWorkingHours)
+        public Boolean RemoveWorkingHoursFromDoctor(string jmbg, WorkingHours selectedWorkingHours)
         {
             Doctor doctor = DoctorRepository.GetOne(jmbg);
+            List<Appointment> scheduledAppointments = GetDoctorAppointmentsInWorkingHoursPeriod(jmbg, selectedWorkingHours);
+            if (scheduledAppointments.Count > 0)
+            {
+                printUnavailableWorkingHoursRemovalMessage(scheduledAppointments);
+                return false;
+            }
             foreach (WorkingHours wh in doctor.WorkingSchedule)
             {
                 if (wh.BeginningDate.ToString("dd.MM.yyyy.") == selectedWorkingHours.BeginningDate.ToString("dd.MM.yyyy."))
@@ -152,7 +158,38 @@ namespace Service
                 }
             }
             EditDoctor(doctor);
+            return true;
         }
+
+        private void printUnavailableWorkingHoursRemovalMessage(List<Appointment> appointments)
+        {
+            String text = "Ne možete da uklonite radno vreme. Lekar ima zakazano " + appointments.Count + " termina za dati period:";
+            foreach(Appointment a in appointments)
+            {
+                text += "\n\t";
+                text += a.StartTime.ToString("dd.MM.yyyy. HH:mm");
+            }
+            text += "\nKada otkažete ili odložite ove termine moći ćete da uklonite radno vreme.";
+            SecretaryMessage m = new SecretaryMessage(text);
+            m.ShowDialog();
+        }
+
+        private List<Appointment> GetDoctorAppointmentsInWorkingHoursPeriod(string jmbg, WorkingHours workingHours)
+        {
+            AppointmentService aps = new AppointmentService();
+            List<Appointment> scheduledAppointments = aps.GetAllAppointments();
+            List<Appointment> appointments = new List<Appointment>();
+            foreach(Appointment a in scheduledAppointments)
+            {
+                if (a.Doctor.Jmbg.Equals(jmbg) && (a.StartTime.Date>=workingHours.BeginningDate.Date && a.EndTime.Date <= workingHours.EndDate))
+                {
+                    appointments.Add(a);
+                }
+            }
+            return appointments;
+
+        }
+
         public void RemoveVacationDaysFromDoctor(string jmbg, VacationDays selectedVacationDays)
         {
             Doctor doctor = DoctorRepository.GetOne(jmbg);
