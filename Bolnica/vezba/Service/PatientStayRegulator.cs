@@ -54,7 +54,7 @@ namespace vezba.Service
             return DateTime.Compare(firstDate, secondDate) < 0;
         }
 
-        public void OccupyBed(DateTime startDate, DateTime endDate, List<RoomInventory> inventories)
+        private void OccupyBed(DateTime startDate, DateTime endDate, List<RoomInventory> inventories)
         {
             foreach (var inventory in inventories)
             {
@@ -123,7 +123,7 @@ namespace vezba.Service
             MergeSameStatesInRoom(room, "Krevet");
         }
 
-        public void MergeSameStatesInRoom(Room room, String equipmentName)
+        private void MergeSameStatesInRoom(Room room, String equipmentName)
         {
             var inventoriesForMerge = GetInventoriesForMerge(room, equipmentName);
 
@@ -143,7 +143,7 @@ namespace vezba.Service
             }
         }
 
-        public List<RoomInventory> GetInventoriesForMerge(Room room, String equipmentName)
+        private List<RoomInventory> GetInventoriesForMerge(Room room, String equipmentName)
         {
             var roomInventories = RoomInventoryRepository.GetAll();
             var inventoriesForMerge = new List<RoomInventory>();
