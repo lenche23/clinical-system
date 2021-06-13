@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Service;
 using vezba.Service;
+using vezba.Strategy;
 
 namespace vezba.ManagerGUI
 {
@@ -19,23 +20,22 @@ namespace vezba.ManagerGUI
         private int currentRoomItemQuantity;
         private int desiredRoomItemQuantity;
         private MainManagerWindow mainManagerWindow;
-
         public List<Room> roomList { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private int kolicinaRobe;
-        public int KolicinaRobe
+        private int equipmentQuantity;
+        public int EquipmentQuantity
         {
             get
             {
-                return kolicinaRobe;
+                return equipmentQuantity;
             }
             set
             {
-                if (value != kolicinaRobe)
+                if (value != equipmentQuantity)
                 {
-                    kolicinaRobe = value;
-                    OnPropertyChanged("KolicinaRobe");
+                    equipmentQuantity = value;
+                    OnPropertyChanged("EquipmentQuantity");
                 }
             }
         }
@@ -47,7 +47,6 @@ namespace vezba.ManagerGUI
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
-
 
         public RoomExchangeStaticEquipmentPage(MainManagerWindow mainManagerWindow, RoomInventory roomInventory, Room room)
         {
@@ -69,7 +68,6 @@ namespace vezba.ManagerGUI
                     temporaryList.Add(r);
                 }
             }
-
             OkButton.IsEnabled = false;
             RoomToMerge.ItemsSource = temporaryList;
         }
@@ -95,6 +93,7 @@ namespace vezba.ManagerGUI
 
             NavigationService.GoBack();
         }
+
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();

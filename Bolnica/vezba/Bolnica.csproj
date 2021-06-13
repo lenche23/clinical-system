@@ -646,13 +646,11 @@
     <Compile Include="Service\AnnouncementService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\DeclinedMedicineService.cs" />
-    <Compile Include="Service\DinamicEquipmentStrategy.cs" />
     <Compile Include="Service\DoctorEvaluationService.cs" />
     <Compile Include="Service\DoctorService.cs" />
     <Compile Include="Service\EquipmentService.cs" />
     <Compile Include="Service\EventsLogService.cs" />
     <Compile Include="Service\HospitalEvaluationService.cs" />
-    <Compile Include="Service\IStrategy.cs" />
     <Compile Include="Service\MedicineService.cs" />
     <Compile Include="Service\MedicineTransferService.cs" />
     <Compile Include="Service\PatientService.cs" />
@@ -661,7 +659,9 @@
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\UserFeedbackService.cs" />
     <Compile Include="Service\ValidMedicineGenerator.cs" />
-    <Compile Include="Service\StaticEquipmentStrategy.cs" />
+    <Compile Include="Strategy\DinamicEquipmentStrategy.cs" />
+    <Compile Include="Strategy\IStrategy.cs" />
+    <Compile Include="Strategy\StaticEquipmentStrategy.cs" />
     <Compile Include="SuccessfulGradeDoctor.xaml.cs">
       <DependentUpon>SuccessfulGradeDoctor.xaml</DependentUpon>
     </Compile>

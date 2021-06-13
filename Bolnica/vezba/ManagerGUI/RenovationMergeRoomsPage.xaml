@@ -114,7 +114,7 @@
                     <TextBlock FontSize="20" Margin="49,124,13,67" TextAlignment="Right" Text="Predviđeno trajanje:"/>
                     <TextBlock FontSize="20" Margin="84,66,13,122" TextAlignment="Right"> Početni datum:</TextBlock>
                     <DatePicker Name="DatePicker" FontSize="20" Margin="21,66,36,126" Grid.Column="1"/>
-                    <TextBox Name="Trajanje" FontSize="20" Margin="21,125,64,67" Grid.Column="1" TextChanged="Trajanje_TextChanged"/>
+                    <TextBox Name="DurationTB" FontSize="20" Margin="21,125,64,67" Grid.Column="1" TextChanged="Trajanje_TextChanged"/>
                     <TextBlock FontSize="20" Margin="18,182,15,7" TextAlignment="Right" Text="Soba sa kojom se spaja:"/>
                     <ComboBox FontSize="20" ItemsSource="{Binding roomList}" DisplayMemberPath="RoomNumber" Name="RoomToMerge" Margin="21,185,36,7" Grid.Column="1" SelectionChanged="RoomToMerge_SelectionChanged"/>
                 </Grid>

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Model;
 using vezba.Repository;
-using vezba.Service;
+using vezba.Strategy;
 
 namespace Service
 {

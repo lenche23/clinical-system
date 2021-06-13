@@ -11,24 +11,24 @@ namespace vezba.ManagerGUI
     public partial class RoomChangeEquipmentPage : Page, INotifyPropertyChanged
     {
         private RoomInventory selected;
-        private RoomUpdatePage wur;
+        private RoomUpdatePage roomUpdatePage;
         private MainManagerWindow mainManagerWindow;
-        private int kolicinaRobe;
+        private int equipmentQuantity;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public int KolicinaRobe
+        public int EquipmentQuantity
         {
             get
             {
-                return kolicinaRobe;
+                return equipmentQuantity;
             }
             set
             {
-                if (value != kolicinaRobe)
+                if (value != equipmentQuantity)
                 {
-                    kolicinaRobe = value;
-                    OnPropertyChanged("KolicinaRobe");
+                    equipmentQuantity = value;
+                    OnPropertyChanged("EquipmentQuantity");
                 }
             }
         }
@@ -41,38 +41,40 @@ namespace vezba.ManagerGUI
             }
         }
 
-        public RoomChangeEquipmentPage(MainManagerWindow mainManagerWindow, RoomInventory selected, RoomUpdatePage wur)
+        public RoomChangeEquipmentPage(MainManagerWindow mainManagerWindow, RoomInventory selected, RoomUpdatePage roomUpdatePage)
         {
             InitializeComponent();
             DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
             this.selected = selected;
-            this.wur = wur;
-            NazivOpreme.Content = NazivOpreme.Content + "    " + selected.equipment.Name;
+            this.roomUpdatePage = roomUpdatePage;
+
+            EquipmentNameLabel.Content = EquipmentNameLabel.Content + "    " + selected.equipment.Name;
             Id.Content = Id.Content + "    " + selected.equipment.Id;
 
             if (selected.equipment.Type == EquipmentType.dinamical)
             {
-                TipOpreme.Content = TipOpreme.Content + "    Dinamička";
+                EquipmentTypeLabel.Content = EquipmentTypeLabel.Content + "    Dinamička";
             }
             else if (selected.equipment.Type == EquipmentType.statical)
             {
-                TipOpreme.Content = TipOpreme.Content + "    Statička";
+                EquipmentTypeLabel.Content = EquipmentTypeLabel.Content + "    Statička";
             }
 
-            KolicinaRobe = selected.Quantity;
+            EquipmentQuantity = selected.Quantity;
         }
 
-        private void PotvrdiIzmenu_Button_Click(object sender, RoutedEventArgs e)
+        private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            if(!ValidateEntries()) return;
-            selected.Quantity = int.Parse(Količina.Text);
+            selected.Quantity = int.Parse(Quantity.Text);
+            if (!ValidateEntries()) return;
+
             RoomInventoryService roomInventoryService = new RoomInventoryService();
-            roomInventoryService.UpdateRoomInventory(this.selected);
-            wur.RoomInventoryBinding.Items.Refresh();
+            roomInventoryService.UpdateRoomInventory(selected);
+            roomUpdatePage.RoomInventoryBinding.Items.Refresh();
             NavigationService.GoBack();
         }
-        private void OdustaniIzmena_Button_Click(object sender, RoutedEventArgs e)
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
@@ -97,9 +99,9 @@ namespace vezba.ManagerGUI
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
 
-        private void Količina_TextChanged(object sender, TextChangedEventArgs e)
+        private void QuantityTextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Količina.Text == "")
+            if (Quantity.Text == "")
             {
                 OkButton.IsEnabled = false;
             }
@@ -107,11 +109,10 @@ namespace vezba.ManagerGUI
             else OkButton.IsEnabled = true;
         }
 
-
         private Boolean ValidateEntries()
         {
-            Količina.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            if (Validation.GetHasError(Količina))
+            Quantity.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(Quantity))
             {
                 return false;
             }

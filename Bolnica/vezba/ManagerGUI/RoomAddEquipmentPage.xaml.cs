@@ -12,24 +12,21 @@ namespace vezba.ManagerGUI
     {
         private Room selected;
         private MainManagerWindow mainManagerWindow;
-
-
-        private int kolicinaRobe;
-
+        private int equipmentQuantity;
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public int KolicinaRobe
+        public int EquipmentQuantity
         {
             get
             {
-                return kolicinaRobe;
+                return equipmentQuantity;
             }
             set
             {
-                if (value != kolicinaRobe)
+                if (value != equipmentQuantity)
                 {
-                    kolicinaRobe = value;
-                    OnPropertyChanged("KolicinaRobe");
+                    equipmentQuantity = value;
+                    OnPropertyChanged("EquipmentQuantity");
                 }
             }
         }
@@ -51,19 +48,20 @@ namespace vezba.ManagerGUI
             List<Equipment> equipmentList = equipmentService.GetAllEquipment();
             comboEquipmentName.ItemsSource = equipmentList;
         }
-        private void PotvrdiDodavanje_Button_Click(object sender, RoutedEventArgs e)
+        private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             if(!ValidateEntries()) return;
             Equipment comboEquipment = (Equipment)comboEquipmentName.SelectedItem;
-            var Quantity = int.Parse(Količina.Text);
+            var Quantity = int.Parse(QuantityTB.Text);
             var endTime = new DateTime(2999, 1, 1, 0, 0, 0);
+
             RoomInventoryService roomInventoryService = new RoomInventoryService();
-            RoomInventory newRoomInventory = new RoomInventory(DateTime.Now, endTime, Quantity, 0, comboEquipment, this.selected);
+            RoomInventory newRoomInventory = new RoomInventory(DateTime.Now, endTime, Quantity, 0, comboEquipment, selected);
             roomInventoryService.SaveRoomInventory(newRoomInventory);
             RoomUpdatePage.RoomInventoryList.Add(newRoomInventory);
             NavigationService.GoBack();
         }
-        private void OdustaniDodavanje_Button_Click(object sender, RoutedEventArgs e)
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
@@ -87,9 +85,9 @@ namespace vezba.ManagerGUI
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
 
-        private void Količina_TextChanged(object sender, TextChangedEventArgs e)
+        private void QuantityTextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Količina.Text == "" || comboEquipmentName.SelectedIndex == -1)
+            if (QuantityTB.Text == "" || comboEquipmentName.SelectedIndex == -1)
             {
                 OkButton.IsEnabled = false;
             }
@@ -99,7 +97,7 @@ namespace vezba.ManagerGUI
 
         private void comboEquipmentName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Količina.Text == "" || comboEquipmentName.SelectedIndex==-1)
+            if (QuantityTB.Text == "" || comboEquipmentName.SelectedIndex==-1)
             {
                 OkButton.IsEnabled = false;
             }
@@ -109,8 +107,8 @@ namespace vezba.ManagerGUI
 
         private Boolean ValidateEntries()
         {
-            Količina.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            if (Validation.GetHasError(Količina))
+            QuantityTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(QuantityTB))
             {
                 return false;
             }

@@ -15,11 +15,11 @@ namespace vezba.ManagerGUI
             this.mainManagerWindow = mainManagerWindow;
             this.medicinePage = medicinePage;
             this.declinedMedicine = declinedMedicine;
-            Proizvodjac.Text = Proizvodjac.Text + " " + declinedMedicine.MedicineManufacturer;
-            Naziv.Text = Naziv.Text + " " + declinedMedicine.MedicineName;
-            Oblik.Text = Oblik.Text + " " + declinedMedicine.Medicine.Condition;
-            Pakovanje.Text = Pakovanje.Text + " " + declinedMedicine.Medicine.Packaging;
-            if (declinedMedicine.Medicine.ReplacementMedicine != null) Zamenski.Text = Zamenski.Text + " " + declinedMedicine.Medicine.ReplacementMedicine.Name;
+            Manufacturer.Text = Manufacturer.Text + " " + declinedMedicine.MedicineManufacturer;
+            Name.Text = Name.Text + " " + declinedMedicine.MedicineName;
+            Shape.Text = Shape.Text + " " + declinedMedicine.Medicine.Condition;
+            Packaging.Text = Packaging.Text + " " + declinedMedicine.Medicine.Packaging;
+            if (declinedMedicine.Medicine.ReplacementMedicine != null) Replacement.Text = Replacement.Text + " " + declinedMedicine.Medicine.ReplacementMedicine.Name;
             listViewAlergens.ItemsSource = declinedMedicine.Medicine.ingridient;
             Komentar.Text = Komentar.Text + " " + declinedMedicine.Description;
         }

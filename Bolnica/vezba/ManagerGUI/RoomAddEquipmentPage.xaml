@@ -96,9 +96,9 @@
                     <ColumnDefinition Width="20*" ></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock  Grid.Column="0" FontSize="20"  Margin="45,25,30,25" TextAlignment="Right">Količina:</TextBlock>
-                <TextBox Grid.Column="1" FontSize="20"  Margin="0,25,155,25" TextAlignment="Center" Name="Količina" TextChanged="Količina_TextChanged">
+                <TextBox Grid.Column="1" FontSize="20"  Margin="0,25,155,25" TextAlignment="Center" Name="QuantityTB" TextChanged="QuantityTextChanged">
                     <TextBox.Text>
-                        <Binding  Path="KolicinaRobe" UpdateSourceTrigger="PropertyChanged">
+                        <Binding  Path="EquipmentQuantity" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
                                 <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
                                 <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>
@@ -132,14 +132,14 @@
                     <ColumnDefinition Width="20*" ></ColumnDefinition>
                     <ColumnDefinition Width="20*" ></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Name="OkButton"  BorderThickness="0"  FontSize="18" Click="PotvrdiDodavanje_Button_Click" Margin="80,40,25,24" Background="#FFAECDAB">Potvrdi
+                <Button Name="OkButton"  BorderThickness="0"  FontSize="18" Click="OkButtonClick" Margin="80,40,25,24" Background="#FFAECDAB">Potvrdi
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Grid.Column="1" BorderThickness="0"  FontSize="18" Click="OdustaniDodavanje_Button_Click" Margin="25,40,80,24" Background="#FFC5C5C5">Odustani
+                <Button Grid.Column="1" BorderThickness="0"  FontSize="18" Click="CancelButtonClick" Margin="25,40,80,24" Background="#FFC5C5C5">Odustani
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>

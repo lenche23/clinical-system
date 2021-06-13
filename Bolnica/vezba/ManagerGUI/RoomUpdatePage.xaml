@@ -106,7 +106,7 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <Button Click="Dodaj_Button_Click" Margin="475,0,35,160" BorderThickness="0" BorderBrush="{x:Null}">
+                <Button Click="AddEquipmentButtonClick" Margin="475,0,35,160" BorderThickness="0" BorderBrush="{x:Null}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="25"/>
@@ -116,7 +116,7 @@
                         <ImageBrush ImageSource="/Bolnica;component/ManagerImages/plus.png" Stretch="UniformToFill"/>
                     </Button.Background>
                 </Button>
-                <Button BorderThickness="0" Click="Izbriši_Button_Click" Margin="475,60,35,105" RenderTransformOrigin="-0.333,1.784" BorderBrush="Black" Foreground="{x:Null}">
+                <Button BorderThickness="0" Click="RemoveEquipmentButtonClick" Margin="475,60,35,105" RenderTransformOrigin="-0.333,1.784" BorderBrush="Black" Foreground="{x:Null}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="25"/>
@@ -126,7 +126,7 @@
                         <ImageBrush ImageSource="/Bolnica;component/ManagerImages/trash-big.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
-                <Button FontSize="16" Click="Razmena_Button_Click" Margin="475,115,35,55" BorderThickness="0" BorderBrush="{x:Null}">
+                <Button FontSize="16" Click="EquipmentExchangeButtonClick" Margin="475,115,35,55" BorderThickness="0" BorderBrush="{x:Null}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="25"/>
@@ -136,7 +136,7 @@
                         <ImageBrush ImageSource="/Bolnica;component/ManagerImages/free-transfer-icon.png"/>
                     </Button.Background>
                 </Button>
-                <Button FontSize="16" Click="Renovate_Button_Click" Margin="475,165,35,0" BorderThickness="0" BorderBrush="{x:Null}">
+                <Button FontSize="16" Click="RenovateButtonClick" Margin="475,165,35,0" BorderThickness="0" BorderBrush="{x:Null}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="25"/>
@@ -187,14 +187,14 @@
                     <ColumnDefinition Width="20*" ></ColumnDefinition>
                     <ColumnDefinition Width="20*" ></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button BorderThickness="0"  FontSize="18" Click="Potvrda_Button_Click" Margin="115,0,30,30" Background="#FFAECDAB" Grid.RowSpan="2">Izmeni
+                <Button BorderThickness="0"  FontSize="18" Click="OkButtonClick" Margin="115,0,30,30" Background="#FFAECDAB" Grid.RowSpan="2">Izmeni
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button FontSize="18" BorderThickness="0"  Click="Odustanak_Button_Click" Margin="30,0,115,30" Grid.Column="1" Grid.RowSpan="2" Background="#FFC3C3C3">Odustani
+                <Button FontSize="18" BorderThickness="0"  Click="CancelButtonClick" Margin="30,0,115,30" Grid.Column="1" Grid.RowSpan="2" Background="#FFC3C3C3">Odustani
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>

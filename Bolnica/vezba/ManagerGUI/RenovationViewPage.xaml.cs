@@ -13,22 +13,20 @@ namespace vezba.ManagerGUI
     {
         private Room selected;
         private MainManagerWindow mainManagerWindow;
-
         public event PropertyChangedEventHandler PropertyChanged;
-
-        private int trajanjeRenovacije;
-        public int TrajanjeRenovacije
+        private int renovationDuration;
+        public int RenovationDuration
         {
             get
             {
-                return trajanjeRenovacije;
+                return renovationDuration;
             }
             set
             {
-                if (value != trajanjeRenovacije)
+                if (value != renovationDuration)
                 {
-                    trajanjeRenovacije = value;
-                    OnPropertyChanged("TrajanjeRenovacije");
+                    renovationDuration = value;
+                    OnPropertyChanged("RenovationDuration");
                 }
             }
         }
@@ -40,7 +38,6 @@ namespace vezba.ManagerGUI
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
-
 
         public RenovationViewPage(MainManagerWindow mainManagerWindow, Room selected)
         {
@@ -57,7 +54,7 @@ namespace vezba.ManagerGUI
             CultureInfo provider = CultureInfo.InvariantCulture;
             var startDate = DatePicker.SelectedDate;
             var startDateTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, 0, 0, 0);
-            var durationInDays = int.Parse(Trajanje.Text);
+            var durationInDays = int.Parse(DurationTB.Text);
             var endTime = startDateTime.AddDays(durationInDays);
             var id = selected.renovation.Count + 1;
             var number = selected.RoomNumber;
@@ -87,8 +84,8 @@ namespace vezba.ManagerGUI
 
         public Boolean ValidateEntries()
         {
-            Trajanje.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            if (Validation.GetHasError(Trajanje))
+            DurationTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(DurationTB))
             {
                 return false;
             }
@@ -122,7 +119,7 @@ namespace vezba.ManagerGUI
 
         private void Trajanje_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Trajanje.Text == "")
+            if (DurationTB.Text == "")
             {
                 OkButton.IsEnabled = false;
             }

@@ -112,7 +112,7 @@
                 <ComboBox FontSize="20" Grid.Row="1" ItemsSource="{Binding roomList}" DisplayMemberPath="RoomNumber" Name="RoomToMerge" Margin="337,85,19,75" SelectionChanged="RoomToMerge_SelectionChanged"/>
                 <TextBox FontSize="20" Grid.Row="1" Name="ItemQuantity" Margin="337,143,19,17" TextChanged="ItemQuantity_TextChanged">
                     <TextBox.Text>
-                        <Binding Path="KolicinaRobe" UpdateSourceTrigger="PropertyChanged">
+                        <Binding Path="EquipmentQuantity" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
                                 <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
                                 <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>

@@ -49,7 +49,7 @@ namespace vezba.ManagerGUI
             }
             else
             {
-                //MessageBox.Show("Ni jedan artikal nije selektovan!");
+                MessageBox.Show("Ni jedan artikal nije selektovan!");
             }
         }
 

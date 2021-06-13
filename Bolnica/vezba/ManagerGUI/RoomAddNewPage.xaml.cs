@@ -14,19 +14,19 @@ namespace vezba.ManagerGUI
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private int brojSobe;
-        public int BrojSobe
+        private int roomNumber;
+        public int RoomNumber
         {
             get
             {
-                return brojSobe;
+                return roomNumber;
             }
             set
             {
-                if (value != brojSobe)
+                if (value != roomNumber)
                 {
-                    brojSobe = value;
-                    OnPropertyChanged("BrojSobe");
+                    roomNumber = value;
+                    OnPropertyChanged("RoomNumber");
                 }
             }
         }
@@ -49,7 +49,7 @@ namespace vezba.ManagerGUI
             List<string> type = new List<string> {"Soba za preglede", "Soba za odmor", "Operaciona sala", "Magacin" };
             comboRoomType.ItemsSource = type;
 
-            if (comboRoomType.SelectedIndex == -1 || comboFloor.SelectedIndex == -1 || BrojSobeTB.Text=="")
+            if (comboRoomType.SelectedIndex == -1 || comboFloor.SelectedIndex == -1 || RoomNumberTB.Text=="")
             {
                 OkButton.IsEnabled = false;
             }
@@ -57,15 +57,12 @@ namespace vezba.ManagerGUI
             else OkButton.IsEnabled = true;
         }
 
-        private void Potvrdi_Button_Click(object sender, RoutedEventArgs e)
+        private void OkButtonClick(object sender, RoutedEventArgs e)
         {
             Floor floor = Floor.first;
             RoomType type = RoomType.examinationRoom;
 
-            if (!ValidateEntries())
-            {
-                return;
-            }
+            if (!ValidateEntries()) return;
 
             if (comboFloor.SelectedIndex == 0) floor = Floor.first;
             else if (comboFloor.SelectedIndex == 1) floor = Floor.second;
@@ -77,14 +74,14 @@ namespace vezba.ManagerGUI
             else if (comboRoomType.SelectedIndex == 3) type = RoomType.storageRoom;
 
             RoomService roomService = new RoomService();
-            var BrojSobe = int.Parse(BrojSobeTB.Text);
-            var newRoom = new Room(DateTime.Now, BrojSobe, floor, type);
+            var newRoomNumber = int.Parse(RoomNumberTB.Text);
+            var newRoom = new Room(DateTime.Now, newRoomNumber, floor, type);
             roomService.SaveRoom(newRoom);
             RoomsPage.Rooms.Add(newRoom);
             NavigationService.GoBack();
         }
 
-        private void Odustani_Button_Click(object sender, RoutedEventArgs e)
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
@@ -111,7 +108,7 @@ namespace vezba.ManagerGUI
 
         private void comboFloor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (comboRoomType.SelectedIndex == -1 || comboFloor.SelectedIndex == -1 || BrojSobeTB.Text == "")
+            if (comboRoomType.SelectedIndex == -1 || comboFloor.SelectedIndex == -1 || RoomNumberTB.Text == "")
             {
                 OkButton.IsEnabled = false;
             }
@@ -121,7 +118,7 @@ namespace vezba.ManagerGUI
 
         private void comboRoomType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (comboRoomType.SelectedIndex == -1 || comboFloor.SelectedIndex == -1 || BrojSobeTB.Text == "")
+            if (comboRoomType.SelectedIndex == -1 || comboFloor.SelectedIndex == -1 || RoomNumberTB.Text == "")
             {
                 OkButton.IsEnabled = false;
             }
@@ -131,7 +128,7 @@ namespace vezba.ManagerGUI
 
         private void BrojSobeTB_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (comboRoomType.SelectedIndex == -1 || comboFloor.SelectedIndex == -1 || BrojSobeTB.Text == "")
+            if (comboRoomType.SelectedIndex == -1 || comboFloor.SelectedIndex == -1 || RoomNumberTB.Text == "")
             {
                 OkButton.IsEnabled = false;
             }
@@ -141,8 +138,8 @@ namespace vezba.ManagerGUI
 
         private Boolean ValidateEntries()
         {
-            BrojSobeTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            if (Validation.GetHasError(BrojSobeTB))
+            RoomNumberTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(RoomNumberTB))
             {
                 return false;
             } 

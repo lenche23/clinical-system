@@ -114,9 +114,9 @@
                     <TextBlock Grid.Column="0" FontSize="20" Margin="40,111,25,136" TextAlignment="Right" Text="Predviđeno trajanje:"/>
                     <TextBlock Grid.Column="0" FontSize="20" Margin="72,51,25,197" TextAlignment="Right"> Početni datum:</TextBlock>
                     <DatePicker  Grid.Column="1" Name="DatePicker" FontSize="20" Margin="22,51,35,196"/>
-                    <TextBox Grid.Column="1" Name="Trajanje" FontSize="20"  Margin="22,111,130,136" TextChanged="Trajanje_TextChanged">
+                    <TextBox Grid.Column="1" Name="DurationTB" FontSize="20"  Margin="22,111,130,136" TextChanged="Trajanje_TextChanged">
                         <TextBox.Text>
-                            <Binding Path="TrajanjeRenovacije" UpdateSourceTrigger="PropertyChanged">
+                            <Binding Path="RenovationDuration" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
                                     <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>

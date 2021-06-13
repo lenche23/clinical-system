@@ -105,11 +105,11 @@
             </Grid>
             <TextBlock FontSize="24" VerticalAlignment="Center" TextAlignment="Center" Height="38" Margin="0,8,0,4"> Odbijeni lek</TextBlock>
             <Grid Grid.Row="1">
-                <TextBlock Height="55" FontSize="16" TextWrapping="Wrap" Name="Naziv" FontWeight="SemiBold" Margin="20,12,310,240" >Naziv:</TextBlock>
-                <TextBlock Height="55" FontSize="16" TextWrapping="Wrap" Name="Proizvodjac" FontWeight="SemiBold" Margin="20,68,310,184" >Proizvođač:</TextBlock>
-                <TextBlock Height="55" FontSize="16"  Name="Pakovanje" FontWeight="SemiBold" Margin="20,123,310,129">Pakovanje:</TextBlock>
-                <TextBlock Height="55" FontSize="16"  Name="Oblik"  FontWeight="SemiBold" Margin="20,178,310,74">Oblik:</TextBlock>
-                <TextBlock Height="55" FontSize="16"  TextWrapping="Wrap" Name="Zamenski" FontWeight="SemiBold" Margin="20,233,310,19">Zamenski lek:</TextBlock>
+                <TextBlock Height="55" FontSize="16" TextWrapping="Wrap" Name="Name" FontWeight="SemiBold" Margin="20,12,310,240" >Naziv:</TextBlock>
+                <TextBlock Height="55" FontSize="16" TextWrapping="Wrap" Name="Manufacturer" FontWeight="SemiBold" Margin="20,68,310,184" >Proizvođač:</TextBlock>
+                <TextBlock Height="55" FontSize="16"  Name="Packaging" FontWeight="SemiBold" Margin="20,123,310,129">Pakovanje:</TextBlock>
+                <TextBlock Height="55" FontSize="16"  Name="Shape"  FontWeight="SemiBold" Margin="20,178,310,74">Oblik:</TextBlock>
+                <TextBlock Height="55" FontSize="16"  TextWrapping="Wrap" Name="Replacement" FontWeight="SemiBold" Margin="20,233,310,19">Zamenski lek:</TextBlock>
 
 
                 <TextBlock FontSize="16" Margin="285,10,0,270" HorizontalAlignment="Left" Width="240"><Run FontWeight="SemiBold" Text="Alergeni:"/></TextBlock>

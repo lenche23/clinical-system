@@ -39,6 +39,23 @@ namespace Service
             return RoomRepository.GetOne(roomId);
         }
 
+        public List<Room> FindAllExistingRooms()
+        {
+            List<Room> rooms = GetAllRooms();
+            List<Room> returnedRooms = new List<Room>();
+
+            foreach (Room room in rooms)
+            {
+                if (DateTime.Compare(room.StartDateTime, DateTime.Now) <= 0 && DateTime.Compare(room.EndDateTime, DateTime.Now) >= 0)
+                {
+                    returnedRooms.Add(room);
+                }
+            }
+           
+            return returnedRooms;
+        }
+        
+
         //PREBACENO U TEMPLATE
         /*
         public List<Room> GetSearchResultRooms(String search)
