@@ -108,9 +108,10 @@ namespace vezba.ManagerGUI
 
             if (!ValidateEntries()) return;
 
-            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository());
+            DeclinedMedicineService declinedMedicineService = new DeclinedMedicineService(new DeclinedMedicineFileRepository());
 
-            medicineService.DeleteDeclinedMedicine(declinedMedicine.DeclinedMedicineID);
+            declinedMedicineService.DeleteDeclinedMedicine(declinedMedicine.DeclinedMedicineID);
 
             Medicine editedMedicine = new Medicine(declinedMedicineName, declinedMedicineManufacturer, declinedMedicinePackaging, declinedMedicine.DeclinedMedicineID, declinedMedicineCondition);
             editedMedicine.ReplacementMedicine = declinedMedicineReplacement;

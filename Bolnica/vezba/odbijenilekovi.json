@@ -374,5 +374,140 @@
     "IsDeleted": true,
     "MedicineName": "Lek promenjen",
     "MedicineManufacturer": "Normalan proizvodjac"
+  },
+  {
+    "DeclinedMedicineID": 6,
+    "Medicine": {
+      "ingridient": [
+        {
+          "Name": "Sastojak"
+        },
+        {
+          "Name": "Sastojak2"
+        }
+      ],
+      "Name": "Lek za odbiti1",
+      "Manufacturer": "Neki proizvođač1",
+      "Packaging": "Neko pakovanje1",
+      "MedicineID": 12,
+      "Status": 1,
+      "Condition": 2,
+      "IsDeleted": false,
+      "ReplacementMedicine": {
+        "ingridient": [
+          {
+            "Name": "Sastojak"
+          },
+          {
+            "Name": "Izmena"
+          }
+        ],
+        "Name": "Lek1",
+        "Manufacturer": "Proizvodjac",
+        "Packaging": "Pakovanje",
+        "MedicineID": 7,
+        "Status": 0,
+        "Condition": 1,
+        "IsDeleted": false,
+        "ReplacementMedicine": {
+          "ingridient": [
+            {
+              "Name": "Sastojak1"
+            }
+          ],
+          "Name": "Ibuprofen",
+          "Manufacturer": "UnionMedic NoviSad",
+          "Packaging": "30 x 30g",
+          "MedicineID": 3,
+          "Status": 0,
+          "Condition": 0,
+          "IsDeleted": false,
+          "ReplacementMedicine": null,
+          "Ingridient": [
+            {
+              "Name": "Sastojak1"
+            }
+          ]
+        },
+        "Ingridient": [
+          {
+            "Name": "Sastojak"
+          },
+          {
+            "Name": "Izmena"
+          }
+        ]
+      },
+      "Ingridient": [
+        {
+          "Name": "Sastojak"
+        },
+        {
+          "Name": "Sastojak2"
+        }
+      ]
+    },
+    "Description": "Neki komentar",
+    "IsDeleted": true,
+    "MedicineName": "Lek za odbiti1",
+    "MedicineManufacturer": "Neki proizvođač1"
+  },
+  {
+    "DeclinedMedicineID": 7,
+    "Medicine": {
+      "ingridient": [
+        {
+          "Name": "Loš sastojak"
+        }
+      ],
+      "Name": "Lek promenjen1",
+      "Manufacturer": "Normalan proizvodjac1",
+      "Packaging": "Veliko pakovanje1",
+      "MedicineID": 13,
+      "Status": 1,
+      "Condition": 0,
+      "IsDeleted": false,
+      "ReplacementMedicine": {
+        "ingridient": [
+          {
+            "Name": "Acetilsalicilna kiselina"
+          },
+          {
+            "Name": "Skrob, kukuruzni"
+          },
+          {
+            "Name": "Trietil-citrat"
+          }
+        ],
+        "Name": "Aspirin",
+        "Manufacturer": "Bayer Bitterfeld GmbH ",
+        "Packaging": "30 x 100mg",
+        "MedicineID": 2,
+        "Status": 0,
+        "Condition": 0,
+        "IsDeleted": false,
+        "ReplacementMedicine": null,
+        "Ingridient": [
+          {
+            "Name": "Acetilsalicilna kiselina"
+          },
+          {
+            "Name": "Skrob, kukuruzni"
+          },
+          {
+            "Name": "Trietil-citrat"
+          }
+        ]
+      },
+      "Ingridient": [
+        {
+          "Name": "Loš sastojak"
+        }
+      ]
+    },
+    "Description": "Neki komentar1",
+    "IsDeleted": true,
+    "MedicineName": "Lek promenjen1",
+    "MedicineManufacturer": "Normalan proizvodjac1"
   }
 ]
