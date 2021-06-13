@@ -118,12 +118,11 @@ namespace vezba.SecretaryGUI
             {
                 appointments = appointmentService.GetAppointmentsWithAnyCondition(from, to, p, d, r);
             }
-            SecretaryGUI.SecretaryAppointments.Appointments.Clear();
+            DoctorPages.AppointmentGrid.Appointments.Clear();
             foreach (Appointment a in appointments)
             {
-                SecretaryGUI.SecretaryAppointments.Appointments.Add(a);
+                DoctorPages.AppointmentGrid.Appointments.Add(a);
             }
-            //SecretaryGUI.SecretaryAppointments.Appointments = new System.Collections.ObjectModel.ObservableCollection<Appointment>(appointments);
             this.Close();
 
         }

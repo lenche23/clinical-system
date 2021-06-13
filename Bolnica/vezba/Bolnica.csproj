@@ -108,6 +108,7 @@
     </ApplicationDefinition>
     <Compile Include="Adapter\CalendarAdapter.cs" />
     <Compile Include="Adapter\CalendarInterface.cs" />
+    <Compile Include="Adapter\GridAdapter.cs" />
     <Compile Include="AddMedicineWindow.xaml.cs">
       <DependentUpon>AddMedicineWindow.xaml</DependentUpon>
     </Compile>
@@ -120,6 +121,9 @@
     </Compile>
     <Compile Include="AppointmentHistory.xaml.cs">
       <DependentUpon>AppointmentHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorPages\AppointmentGrid.xaml.cs">
+      <DependentUpon>AppointmentGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorPages\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
@@ -744,6 +748,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AppointmentHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\AppointmentGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

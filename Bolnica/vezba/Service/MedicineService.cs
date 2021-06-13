@@ -70,13 +70,6 @@ namespace Service
             return MedicineRepository.Delete(medicineID);
         }
 
-        public List<Medicine> GenerateValidMedicineForPatient(MedicalRecord medicalRecord)
-        {
-            var allApprovedMedicine = GetApproved();
-            var validMedicineGenerator = new ValidMedicineGenerator(allApprovedMedicine, medicalRecord);
-            return validMedicineGenerator.GenerateValidMedicineForPatient();
-        }
-
         public void ApproveMedicine(Medicine medicineToApprove)
         {
             medicineToApprove.Status = MedicineStatus.approved;
