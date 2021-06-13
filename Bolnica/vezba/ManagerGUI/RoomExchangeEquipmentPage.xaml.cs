@@ -91,9 +91,7 @@ namespace vezba.ManagerGUI
             roomInventory.Quantity -= itemQuantity;
             roomInventoryService.UpdateRoomInventory(this.roomInventory);
 
-            DinamicEquipmentStrategy strategy = new DinamicEquipmentStrategy();
-
-            desiredRoomItemQuantity = roomInventoryService.ChangeEquipmentQuantity(strategy, roomInventory, roomEntry.RoomNumber, itemQuantity, DateTime.Now);
+            desiredRoomItemQuantity = roomInventoryService.ChangeEquipmentQuantity(new DinamicEquipmentStrategy(), roomInventory, roomEntry.RoomNumber, itemQuantity, DateTime.Now);
 
             if (desiredRoomItemQuantity != -1)
             {

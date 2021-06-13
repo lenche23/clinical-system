@@ -11,7 +11,6 @@ namespace vezba.Service
     class DinamicEquipmentStrategy : IStrategy
     {
         public RoomInventoryFileRepository RoomInventoryRepository { get; }
-
         public DinamicEquipmentStrategy()
         {
             RoomInventoryRepository = new RoomInventoryFileRepository();
@@ -31,10 +30,7 @@ namespace vezba.Service
                 }
             }
 
-            if (!itemFound)
-            {
-                desiredRoomItemQuantity = inputItemQuantity;
-            }
+            if (!itemFound) desiredRoomItemQuantity = inputItemQuantity;
 
             return desiredRoomItemQuantity;
         }
