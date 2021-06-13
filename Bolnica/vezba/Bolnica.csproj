@@ -647,6 +647,12 @@
     <Compile Include="TableNote.xaml.cs">
       <DependentUpon>TableNote.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Template\DoSearch.cs" />
+    <Compile Include="Template\Search.cs" />
+    <Compile Include="Template\SearchAppointments.cs" />
+    <Compile Include="Template\SearchDoctors.cs" />
+    <Compile Include="Template\SearchPatients.cs" />
+    <Compile Include="Template\SearchRooms.cs" />
     <Compile Include="ViewAnnouncement.xaml.cs">
       <DependentUpon>ViewAnnouncement.xaml</DependentUpon>
     </Compile>

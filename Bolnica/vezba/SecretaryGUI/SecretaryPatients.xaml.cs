@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vezba.Template;
 
 namespace vezba.SecretaryGUI
 {
@@ -119,8 +120,8 @@ namespace vezba.SecretaryGUI
                 Patients.Clear();
                 PatientService patientService = new PatientService();
                 List<Patient> patients = new List<Patient>();
-                String search = SearchBox.Text;
-                if (search.Trim().Equals(""))
+                String input = SearchBox.Text;
+                if (input.Trim().Equals(""))
                 {
                     foreach (Patient p in patientService.GetAllPatients())
                     {
@@ -128,7 +129,8 @@ namespace vezba.SecretaryGUI
                     }
                     return;
                 }
-                patients = patientService.GetSearchResultPatients(search);
+                patients = DoSearch<Patient>.GetSearchResult(new SearchPatients(), input);
+                //patients = patientService.GetSearchResultPatients(search);
                 foreach (Patient p in patients)
                 {
                     Patients.Add(p);

@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using vezba.Template;
 
 namespace vezba.SecretaryGUI
 {
@@ -52,8 +53,8 @@ namespace vezba.SecretaryGUI
                 Rooms.Clear();
                 RoomService roomService = new RoomService();
                 List<Room> rooms = new List<Room>();
-                String search = SearchBox.Text;
-                if (search.Trim().Equals(""))
+                String input = SearchBox.Text;
+                if (input.Trim().Equals(""))
                 {
                     foreach (Room r in roomService.GetAllRooms())
                     {
@@ -61,7 +62,8 @@ namespace vezba.SecretaryGUI
                     }
                     return;
                 }
-                rooms = roomService.GetSearchResultRooms(search);
+                rooms = DoSearch<Room>.GetSearchResult(new SearchRooms(), input);
+                //rooms = roomService.GetSearchResultRooms(search);
                 foreach (Room r in rooms)
                 {
                     Rooms.Add(r);

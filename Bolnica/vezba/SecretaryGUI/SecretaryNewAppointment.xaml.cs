@@ -89,6 +89,14 @@ namespace vezba.SecretaryGUI
         {
             if (ValidateEntries() == false)
                 return;
+            DoctorService doctorService = new DoctorService();
+            string docUnavailable = doctorService.GenerateDoctorIsUnavailableMessage(((Doctor)Doctor.SelectedItem).Jmbg, GetTime());
+            if (docUnavailable != null)
+            {
+                SecretaryMessage m1 = new SecretaryMessage(docUnavailable);
+                m1.ShowDialog();
+                return;
+            }
             AppointmentService appointmentService = new AppointmentService();
             Appointment newAppointment;
             if (Patient != null)

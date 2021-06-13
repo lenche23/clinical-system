@@ -74,8 +74,9 @@ namespace vezba.SecretaryGUI
                 if (!ic)
                     return;
                 DoctorService doctorService = new DoctorService();
-                doctorService.RemoveWorkingHoursFromDoctor(Doctor.Jmbg, selectedWorkingHours);
-                WorkingHours.Remove(selectedWorkingHours);
+                Boolean isSuccess = doctorService.RemoveWorkingHoursFromDoctor(Doctor.Jmbg, selectedWorkingHours);
+                if(isSuccess)
+                    WorkingHours.Remove(selectedWorkingHours);
             }
             else
                 MessageBox.Show("Niste selektovali radno vreme!");

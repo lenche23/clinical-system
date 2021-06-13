@@ -16,7 +16,7 @@ namespace Model
         public WorkingHours(DateTime beginningDate, Shift shift)
         {
             BeginningDate = beginningDate;
-            EndDate = beginningDate.AddDays(7);
+            EndDate = beginningDate.AddDays(6);
             Shift = shift;
         }
 

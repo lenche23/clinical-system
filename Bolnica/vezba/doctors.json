@@ -6,50 +6,58 @@
     "WorkingSchedule": [
       {
         "BeginningDate": "2021-05-17T00:00:00",
-        "EndDate": "2021-05-24T00:00:00",
+        "EndDate": "2021-05-23T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "17.05.2021.",
-        "FormatedEndDate": "24.05.2021.",
+        "FormatedEndDate": "23.05.2021.",
         "FormatedShift": "14:00 - 21:00"
       },
       {
         "BeginningDate": "2021-05-24T00:00:00",
-        "EndDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-05-30T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "24.05.2021.",
-        "FormatedEndDate": "31.05.2021.",
+        "FormatedEndDate": "30.05.2021.",
         "FormatedShift": "14:00 - 21:00"
       },
       {
         "BeginningDate": "2021-05-31T00:00:00",
-        "EndDate": "2021-06-07T00:00:00",
+        "EndDate": "2021-06-06T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "31.05.2021.",
-        "FormatedEndDate": "07.06.2021.",
+        "FormatedEndDate": "06.06.2021.",
         "FormatedShift": "07:00 - 14:00"
       },
       {
         "BeginningDate": "2021-06-07T00:00:00",
-        "EndDate": "2021-06-14T00:00:00",
+        "EndDate": "2021-06-13T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "07.06.2021.",
-        "FormatedEndDate": "14.06.2021.",
+        "FormatedEndDate": "13.06.2021.",
         "FormatedShift": "14:00 - 21:00"
       },
       {
-        "BeginningDate": "2021-06-21T00:00:00",
-        "EndDate": "2021-06-28T00:00:00",
-        "Shift": 1,
-        "FormatedBeginnigDate": "21.06.2021.",
-        "FormatedEndDate": "28.06.2021.",
-        "FormatedShift": "14:00 - 21:00"
+        "BeginningDate": "2021-06-13T14:01:18.9037993+02:00",
+        "EndDate": "2021-06-19T14:01:18.9037993+02:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "13.06.2021.",
+        "FormatedEndDate": "19.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
       },
       {
-        "BeginningDate": "2021-06-28T00:00:00",
-        "EndDate": "2021-07-05T00:00:00",
+        "BeginningDate": "2021-06-20T13:58:30.6460738+02:00",
+        "EndDate": "2021-06-26T13:58:30.6460738+02:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "20.06.2021.",
+        "FormatedEndDate": "26.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-27T13:58:30.6460738+02:00",
+        "EndDate": "2021-07-03T13:58:30.6460738+02:00",
         "Shift": 1,
-        "FormatedBeginnigDate": "28.06.2021.",
-        "FormatedEndDate": "05.07.2021.",
+        "FormatedBeginnigDate": "27.06.2021.",
+        "FormatedEndDate": "03.07.2021.",
         "FormatedShift": "14:00 - 21:00"
       }
     ],
@@ -86,19 +94,43 @@
     "WorkingSchedule": [
       {
         "BeginningDate": "2021-05-24T00:00:00",
-        "EndDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-05-30T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "24.05.2021.",
-        "FormatedEndDate": "31.05.2021.",
+        "FormatedEndDate": "30.05.2021.",
         "FormatedShift": "07:00 - 14:00"
       },
       {
         "BeginningDate": "2021-05-31T00:00:00",
-        "EndDate": "2021-06-07T00:00:00",
+        "EndDate": "2021-06-06T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "31.05.2021.",
-        "FormatedEndDate": "07.06.2021.",
+        "FormatedEndDate": "06.06.2021.",
         "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-13T13:01:08.0301357+02:00",
+        "EndDate": "2021-06-19T13:01:08.0301357+02:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "13.06.2021.",
+        "FormatedEndDate": "19.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-20T13:01:08.0301357+02:00",
+        "EndDate": "2021-06-26T13:01:08.0301357+02:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "20.06.2021.",
+        "FormatedEndDate": "26.06.2021.",
+        "FormatedShift": "14:00 - 21:00"
+      },
+      {
+        "BeginningDate": "2021-06-27T13:01:08.0301357+02:00",
+        "EndDate": "2021-07-03T13:01:08.0301357+02:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "27.06.2021.",
+        "FormatedEndDate": "03.07.2021.",
+        "FormatedShift": "14:00 - 21:00"
       }
     ],
     "AvailableDaysOff": 20,
@@ -140,19 +172,35 @@
     "WorkingSchedule": [
       {
         "BeginningDate": "2021-05-24T00:00:00",
-        "EndDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-05-30T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "24.05.2021.",
-        "FormatedEndDate": "31.05.2021.",
+        "FormatedEndDate": "30.05.2021.",
         "FormatedShift": "07:00 - 14:00"
       },
       {
         "BeginningDate": "2021-05-31T00:00:00",
-        "EndDate": "2021-06-07T00:00:00",
+        "EndDate": "2021-06-06T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "31.05.2021.",
-        "FormatedEndDate": "07.06.2021.",
+        "FormatedEndDate": "06.06.2021.",
         "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-13T15:16:59.4786476+02:00",
+        "EndDate": "2021-06-19T15:16:59.4786476+02:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "13.06.2021.",
+        "FormatedEndDate": "19.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-20T15:16:59.4786476+02:00",
+        "EndDate": "2021-06-26T15:16:59.4786476+02:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "20.06.2021.",
+        "FormatedEndDate": "26.06.2021.",
+        "FormatedShift": "14:00 - 21:00"
       }
     ],
     "AvailableDaysOff": 20,
@@ -181,26 +229,42 @@
     "WorkingSchedule": [
       {
         "BeginningDate": "2021-05-24T00:00:00",
-        "EndDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-05-30T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "24.05.2021.",
-        "FormatedEndDate": "31.05.2021.",
+        "FormatedEndDate": "30.05.2021.",
         "FormatedShift": "14:00 - 21:00"
       },
       {
         "BeginningDate": "2021-05-31T00:00:00",
-        "EndDate": "2021-06-07T00:00:00",
+        "EndDate": "2021-06-06T00:00:00",
         "Shift": 1,
         "FormatedBeginnigDate": "31.05.2021.",
-        "FormatedEndDate": "07.06.2021.",
+        "FormatedEndDate": "06.06.2021.",
         "FormatedShift": "14:00 - 21:00"
       },
       {
         "BeginningDate": "2021-06-07T00:00:00",
-        "EndDate": "2021-06-14T00:00:00",
+        "EndDate": "2021-06-13T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "07.06.2021.",
-        "FormatedEndDate": "14.06.2021.",
+        "FormatedEndDate": "13.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-13T15:17:14.032646+02:00",
+        "EndDate": "2021-06-19T15:17:14.032646+02:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "13.06.2021.",
+        "FormatedEndDate": "19.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-20T15:17:14.032646+02:00",
+        "EndDate": "2021-06-26T15:17:14.032646+02:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "20.06.2021.",
+        "FormatedEndDate": "26.06.2021.",
         "FormatedShift": "07:00 - 14:00"
       }
     ],
@@ -243,20 +307,27 @@
     "WorkingSchedule": [
       {
         "BeginningDate": "2021-05-24T00:00:00",
-        "EndDate": "2021-05-31T00:00:00",
+        "EndDate": "2021-05-30T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "24.05.2021.",
-        "FormatedEndDate": "31.05.2021.",
+        "FormatedEndDate": "30.05.2021.",
         "FormatedShift": "07:00 - 14:00"
       },
       {
         "BeginningDate": "2021-05-31T00:00:00",
-        "EndDate": "2021-06-07T00:00:00",
+        "EndDate": "2021-06-06T00:00:00",
         "Shift": 0,
         "FormatedBeginnigDate": "31.05.2021.",
-
-        "FormatedEndDate": "07.06.2021.",
+        "FormatedEndDate": "06.06.2021.",
         "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-13T15:17:23.3506829+02:00",
+        "EndDate": "2021-06-19T15:17:23.3506829+02:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "13.06.2021.",
+        "FormatedEndDate": "19.06.2021.",
+        "FormatedShift": "14:00 - 21:00"
       }
     ],
     "AvailableDaysOff": 20,
