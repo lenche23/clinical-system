@@ -157,6 +157,9 @@
     <Compile Include="DetailDeclinedMedicineWindow.xaml.cs">
       <DependentUpon>DetailDeclinedMedicineWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorPages\DoctorFeedback.xaml.cs">
+      <DependentUpon>DoctorFeedback.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorPages\ExtendHospitalTreatment.xaml.cs">
       <DependentUpon>ExtendHospitalTreatment.xaml</DependentUpon>
     </Compile>
@@ -632,6 +635,7 @@
     <Compile Include="Service\HospitalEvaluationService.cs" />
     <Compile Include="Service\IStrategy.cs" />
     <Compile Include="Service\MedicineService.cs" />
+    <Compile Include="Service\MedicineTransferService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomInventoryService.cs" />
     <Compile Include="Service\RoomService.cs" />
@@ -768,6 +772,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DetailDeclinedMedicineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoctorPages\DoctorFeedback.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

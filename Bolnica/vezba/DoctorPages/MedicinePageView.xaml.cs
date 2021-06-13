@@ -25,14 +25,15 @@ namespace vezba.DoctorPages
         {
             InitializeComponent();
 
-            var medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+            var medicineService = new MedicineService(new MedicineFileRepository());
             var medicineToApprove = medicineService.GetAwaiting();
             MedicineToApprove = new ObservableCollection<Medicine>(medicineToApprove);
 
             var approvedMedicine = medicineService.GetApproved();
             ApprovedMedicine = new ObservableCollection<Medicine>(approvedMedicine);
 
-            var declinedMedicine = medicineService.GetDeclined();
+            var declinedMedicineService = new DeclinedMedicineService(new DeclinedMedicineFileRepository());
+            var declinedMedicine = declinedMedicineService.GetAllDeclinedMedicine();
             DeclinedMedicine = new ObservableCollection<DeclinedMedicine>(declinedMedicine);
 
             DataContext = this;

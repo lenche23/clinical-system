@@ -64,7 +64,7 @@ namespace vezba.ManagerGUI
             this.medicinePage = medicinePage;
             this.declinedMedicine = declinedMedicine;
             this.mainManagerWindow = mainManagerWindow;
-            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository());
             List<Medicine> replacementMedicineList = medicineService.GetApproved();
             comboReplacementMedicine.ItemsSource = replacementMedicineList;
 
@@ -121,8 +121,9 @@ namespace vezba.ManagerGUI
             }
 
             declinedMedicine.Medicine.ReplacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
-            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
-            medicineService.DeleteDeclinedMedicine(declinedMedicine.DeclinedMedicineID);
+            var declinedMedicineService = new DeclinedMedicineService(new DeclinedMedicineFileRepository());
+            declinedMedicineService.DeleteDeclinedMedicine(declinedMedicine.DeclinedMedicineID);
+            var medicineService = new MedicineService(new MedicineFileRepository());
             medicineService.SaveMedicine(declinedMedicine.Medicine);
             medicinePage.MedicineBinding.Items.Refresh(); 
             mainManagerWindow.MainManagerView.Content = new DeclinedMedicineManagerPage(mainManagerWindow, medicinePage);

@@ -7,35 +7,27 @@ namespace Service
 {
    public class DeclinedMedicineService
    {
-        // Sekretar*******************************************************************************
+        private IDeclinedMedicineRepository DeclinedMedicineRepository { get; }
 
+        public DeclinedMedicineService(IDeclinedMedicineRepository declinedMedicineRepository)
+        {
+            DeclinedMedicineRepository = declinedMedicineRepository;
+        }
 
+        public List<DeclinedMedicine> GetAllDeclinedMedicine()
+        {
+            return DeclinedMedicineRepository.GetAll();
+        }
 
+        public Boolean SaveDeclinedMedicine(DeclinedMedicine declinedMedicine)
+        {
+            return DeclinedMedicineRepository.Save(declinedMedicine);
+        }
 
+        public Boolean DeleteDeclinedMedicine(int medicineId)
+        {
+            return DeclinedMedicineRepository.Delete(medicineId);
+        }
 
-        // SekretarKraj***************************************************************************
-
-        // Pacijent*******************************************************************************
-
-
-
-
-
-        // PacijentKraj***************************************************************************
-
-        // Lekar**********************************************************************************
-
-
-
-
-        // LekarKraj******************************************************************************
-
-        // Upravnik*******************************************************************************
-
-
-
-
-
-        // UpravnikKraj***************************************************************************
     }
 }

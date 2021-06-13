@@ -58,5 +58,11 @@ namespace vezba
             s.Show();
             Close();
         }
+
+        private void FeedbackClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            Main.Content = new DoctorFeedback(this);
+            ExpandGrid.Visibility = System.Windows.Visibility.Collapsed;
+        }
     }
 }

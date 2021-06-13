@@ -252,7 +252,7 @@ namespace Service
                     }
                 }
             }
-            var medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+            var medicineService = new MedicineService(new MedicineFileRepository());
             foreach (var temp in medicineCount) {
                 var medicineId = temp.Key;
                 var medicine = medicineService.getMedicineById(medicineId);

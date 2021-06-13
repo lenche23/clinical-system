@@ -45,11 +45,21 @@
             </Grid>
         </Border>
         <Grid>
-            <Grid Panel.ZIndex="2" Visibility="Collapsed" x:Name="ExpandGrid" Style="{StaticResource ResourceKey=GridHover}" Height="20" Width="{Binding ActualWidth, ElementName=UserGrid}" HorizontalAlignment="Right" VerticalAlignment="Top">
-                <Border BorderBrush="CornflowerBlue" BorderThickness="1, 0, 1, 1">
-                    <StackPanel Orientation="Horizontal">
+            <Grid Panel.ZIndex="2" Visibility="Collapsed" x:Name="ExpandGrid" Width="{Binding ActualWidth, ElementName=UserGrid}" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Border BorderBrush="CornflowerBlue" BorderThickness="1, 0, 1, 1" Grid.Row="0">
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=StackPanelHover}">
                         <materialDesign:PackIcon Grid.Column="0" Kind="Logout" Foreground="CornflowerBlue" VerticalAlignment="Center"/>
                         <TextBlock Padding="1" Margin="5,0, 0, 0" Foreground="CornflowerBlue" MouseLeftButtonDown="LogOutClick">Odjavi se</TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border BorderBrush="CornflowerBlue" BorderThickness="1, 0, 1, 1" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Style="{StaticResource ResourceKey=StackPanelHover}">
+                        <materialDesign:PackIcon Grid.Column="0" Kind="Comment" Foreground="CornflowerBlue" VerticalAlignment="Center"/>
+                        <TextBlock Padding="1" Margin="5,0, 0, 0" Foreground="CornflowerBlue" MouseLeftButtonDown="FeedbackClick">Feedback</TextBlock>
                     </StackPanel>
                 </Border>
             </Grid>

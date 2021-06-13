@@ -19,7 +19,7 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
-            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository());
             medicineList = medicineService.GetAllMedicine();
             MedicineList = new ObservableCollection<Medicine>(medicineList);
             MedicineBinding.ItemsSource = MedicineList;
@@ -70,7 +70,7 @@ namespace vezba.ManagerGUI
             if (MedicineBinding.SelectedIndex > -1)
             {
                 Medicine selected = (Medicine)MedicineBinding.SelectedItems[0];
-                MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+                MedicineService medicineService = new MedicineService(new MedicineFileRepository());
                 medicineService.DeleteMedicine(selected.MedicineID);
                 MedicineList.Remove(selected);
             }

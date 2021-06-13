@@ -296,34 +296,7 @@
           }
         }
       ],
-      "hospitalTreatment": [
-        {
-          "StartDate": "2021-05-30T00:00:00",
-          "DurationInDays": 10,
-          "Room": {
-            "renovation": [
-              {
-                "StartTime": "2021-10-10T10:00:00",
-                "DurationInDays": 4,
-                "RenovationID": 1
-              }
-            ],
-            "RoomType": 2,
-            "RoomNumber": 2,
-            "RoomFloor": 1,
-            "IsDeleted": false,
-            "StartDateTime": "0001-01-01T00:00:00",
-            "EndDateTime": "2999-12-31T00:00:00",
-            "Renovation": [
-              {
-                "StartTime": "2021-10-10T10:00:00",
-                "DurationInDays": 4,
-                "RenovationID": 1
-              }
-            ]
-          }
-        }
-      ],
+      "hospitalTreatment": [],
       "HealthInsuranceNumber": "65415616541",
       "MedicalIdNumber": "4564156465",
       "Allergen": [
@@ -617,34 +590,7 @@
           }
         }
       ],
-      "HospitalTreatment": [
-        {
-          "StartDate": "2021-05-30T00:00:00",
-          "DurationInDays": 10,
-          "Room": {
-            "renovation": [
-              {
-                "StartTime": "2021-10-10T10:00:00",
-                "DurationInDays": 4,
-                "RenovationID": 1
-              }
-            ],
-            "RoomType": 2,
-            "RoomNumber": 2,
-            "RoomFloor": 1,
-            "IsDeleted": false,
-            "StartDateTime": "0001-01-01T00:00:00",
-            "EndDateTime": "2999-12-31T00:00:00",
-            "Renovation": [
-              {
-                "StartTime": "2021-10-10T10:00:00",
-                "DurationInDays": 4,
-                "RenovationID": 1
-              }
-            ]
-          }
-        }
-      ]
+      "HospitalTreatment": []
     },
     "NameAndSurname": "Milena Jovanovic",
     "Appointment": [],
