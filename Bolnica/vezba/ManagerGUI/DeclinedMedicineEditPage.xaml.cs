@@ -15,37 +15,39 @@ namespace vezba.ManagerGUI
         private MainManagerWindow mainManagerWindow;
         private DeclinedMedicine declinedMedicine;
         private MedicinePage medicinePage;
+        private String declinedMedicineName;
+        private String declinedMedicineManufacturer;
+        private String declinedMedicinePackaging;
+        private MedicineCondition declinedMedicineCondition;
+        private Medicine declinedMedicineReplacement;
         public static ObservableCollection<Ingridient> IngredientList { get; set; }
         public List<Ingridient> ingredientTemporaryList { get; set; }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private String nazivRobe;
-
-        public String NazivRobe
+        private String equipmentName;
+        public String EquipmentName
         {
-            get { return nazivRobe; }
+            get { return equipmentName; }
             set
             {
-                if (value != nazivRobe)
+                if (value != equipmentName)
                 {
-                    nazivRobe = value;
-                    OnPropertyChanged("NazivRobe");
+                    equipmentName = value;
+                    OnPropertyChanged("EquipmentName");
                 }
             }
         }
 
-        private String nazivProizvodjaca;
-
-        public String NazivProizvodjaca
+        private String manufacturerName;
+        public String ManufacturerName
         {
-            get { return nazivProizvodjaca; }
+            get { return manufacturerName; }
             set
             {
-                if (value != nazivProizvodjaca)
+                if (value != manufacturerName)
                 {
-                    nazivProizvodjaca = value;
-                    OnPropertyChanged("NazivProizvodjaca");
+                    manufacturerName = value;
+                    OnPropertyChanged("ManufacturerName");
                 }
             }
         }
@@ -64,6 +66,7 @@ namespace vezba.ManagerGUI
             this.medicinePage = medicinePage;
             this.declinedMedicine = declinedMedicine;
             this.mainManagerWindow = mainManagerWindow;
+
             MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
             List<Medicine> replacementMedicineList = medicineService.GetApproved();
             comboReplacementMedicine.ItemsSource = replacementMedicineList;
@@ -79,6 +82,7 @@ namespace vezba.ManagerGUI
             if (declinedMedicine.Medicine.Condition == MedicineCondition.capsule) comboCondition.SelectedIndex = 0;
             else if (declinedMedicine.Medicine.Condition == MedicineCondition.pill) comboCondition.SelectedIndex = 1;
             else if (declinedMedicine.Medicine.Condition == MedicineCondition.syrup) comboCondition.SelectedIndex = 2;
+
             if (declinedMedicine.Medicine.ReplacementMedicine == null) { }
             else
             {
@@ -90,44 +94,46 @@ namespace vezba.ManagerGUI
                     }
                 }
             }
-            List<Ingridient> ingredientList = declinedMedicine.Medicine.ingridient;
+
+            List<Ingridient> ingredientList = ingredientTemporaryList;
             IngredientList = new ObservableCollection<Ingridient>(ingredientList);
             IngredientsBinding.ItemsSource = IngredientList;
 
-            NazivRobe = declinedMedicine.MedicineName;
-            NazivProizvodjaca = declinedMedicine.MedicineManufacturer;
+            EquipmentName = declinedMedicine.MedicineName;
+            ManufacturerName = declinedMedicine.MedicineManufacturer;
         }
 
         private void Edit_Button_Click(object sender, RoutedEventArgs e)
         {
+            ReadInformation();
+
             if (!ValidateEntries()) return;
-            declinedMedicine.Medicine.Name = NameTextBox.Text;
-            declinedMedicine.Medicine.Manufacturer = ManufacturerTextBox.Text;
-            declinedMedicine.Medicine.Packaging = PackagingTextBox.Text;
 
-            if (comboCondition.SelectedIndex == 1)
-            {
-                declinedMedicine.Medicine.Condition = MedicineCondition.pill;
-            }
-
-            else if (comboCondition.SelectedIndex == 0)
-            {
-                declinedMedicine.Medicine.Condition = MedicineCondition.capsule;
-            }
-
-            else if (comboCondition.SelectedIndex == 2)
-            {
-                declinedMedicine.Medicine.Condition = MedicineCondition.syrup;
-            }
-
-            declinedMedicine.Medicine.ReplacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
             MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+
             medicineService.DeleteDeclinedMedicine(declinedMedicine.DeclinedMedicineID);
-            medicineService.SaveMedicine(declinedMedicine.Medicine);
+
+            Medicine editedMedicine = new Medicine(declinedMedicineName, declinedMedicineManufacturer, declinedMedicinePackaging, declinedMedicine.DeclinedMedicineID, declinedMedicineCondition);
+            editedMedicine.ReplacementMedicine = declinedMedicineReplacement;
+            editedMedicine.ingridient = ingredientTemporaryList;
+
+            medicineService.SaveMedicine(editedMedicine);
             medicinePage.MedicineBinding.Items.Refresh(); 
             mainManagerWindow.MainManagerView.Content = new DeclinedMedicineManagerPage(mainManagerWindow, medicinePage);
         }
 
+        private void ReadInformation()
+        {
+            declinedMedicineName = NameTextBox.Text;
+            declinedMedicineManufacturer = ManufacturerTextBox.Text;
+            declinedMedicinePackaging = PackagingTextBox.Text;
+            declinedMedicineCondition = MedicineCondition.pill;
+            declinedMedicineReplacement = (Medicine)comboReplacementMedicine.SelectedItem;
+
+            if (comboCondition.SelectedIndex == 1) declinedMedicineCondition = MedicineCondition.pill;
+            else if (comboCondition.SelectedIndex == 0) declinedMedicineCondition = MedicineCondition.capsule;
+            else if (comboCondition.SelectedIndex == 2) declinedMedicineCondition = MedicineCondition.syrup;
+        }
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();

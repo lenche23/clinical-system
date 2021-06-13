@@ -101,17 +101,24 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <Button Margin="0,0,25,150" Grid.Row="1" FontSize="16" Click="Button_Click" BorderBrush="{x:Null}" HorizontalAlignment="Right" Width="75" Background="#FFFFC602" FontWeight="Bold" VerticalAlignment="Bottom" Height="75">Tutorial
+        <Button Margin="0,0,25,205" Grid.Row="1" FontSize="16" Click="Button_Click" BorderBrush="{x:Null}" HorizontalAlignment="Right" Width="85" Background="#FFB6B6B6" FontWeight="Bold" VerticalAlignment="Bottom" Height="75">Tutorial
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="55"/>
+                    <Setter Property="CornerRadius" Value="15"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Margin="0,0,25,250" Grid.Row="1" FontSize="16" Click="ButtonLogOut_Click" BorderBrush="{x:Null}" HorizontalAlignment="Right" Width="75" Background="#FFFF7E7E" FontWeight="Bold" VerticalAlignment="Bottom" Height="75">Logout
+        <Button Margin="0,0,25,105" Grid.Row="1" FontSize="16" Click="FeedbackButton_Click" BorderBrush="{x:Null}" HorizontalAlignment="Right" Width="85" Background="#FFB6B6B6" FontWeight="Bold" VerticalAlignment="Bottom" Height="75">Feedback
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="55"/>
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Margin="0,0,25,305" Grid.Row="1" FontSize="16" Click="ButtonLogOut_Click" BorderBrush="{x:Null}" HorizontalAlignment="Right" Width="85" Background="#FFFF7E7E" FontWeight="Bold" VerticalAlignment="Bottom" Height="75">Logout
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="15"/>
                 </Style>
             </Button.Resources>
         </Button>
