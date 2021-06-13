@@ -233,16 +233,31 @@ namespace Service
 
         public List<MedicineCount> GetMedicineCountForSelectedDate(DateTime startDate, DateTime endDate)
         {
+            Dictionary<int, int> medicineCount = CreateMedicineCountDictionary(startDate, endDate);
+
+            var medicineService = new MedicineService(new MedicineFileRepository());
             List<MedicineCount> medicineTotals = new List<MedicineCount>();
+            foreach (var temp in medicineCount) {
+                var medicineId = temp.Key;
+                var medicine = medicineService.getMedicineById(medicineId);
+                var count = temp.Value;
+                var medicineTotal = new MedicineCount(medicine, count);
+                medicineTotals.Add(medicineTotal);
+            }
+            return medicineTotals;
+        }
+
+        private Dictionary<int, int> CreateMedicineCountDictionary(DateTime startDate, DateTime endDate)
+        {
             List<Patient> allPatients = GetAllPatients();
             Dictionary<int, int> medicineCount = new Dictionary<int, int>();
             foreach (var patient in allPatients)
             {
                 var medicalRecord = patient.MedicalRecord;
                 var allPrescriptions = medicalRecord.Prescription;
-                foreach(var prescription in allPrescriptions)
+                foreach (var prescription in allPrescriptions)
                 {
-                    if (DateTime.Compare(prescription.StartDate.AddDays(prescription.DurationInDays), startDate) > 0 && DateTime.Compare(prescription.StartDate, endDate) < 0)
+                    if (IsPrescriptionInTimeInterval(prescription, startDate, endDate))
                     {
                         var medicineId = prescription.Medicine.MedicineID;
                         if (medicineCount.ContainsKey(medicineId))
@@ -252,15 +267,14 @@ namespace Service
                     }
                 }
             }
-            var medicineService = new MedicineService(new MedicineFileRepository());
-            foreach (var temp in medicineCount) {
-                var medicineId = temp.Key;
-                var medicine = medicineService.getMedicineById(medicineId);
-                var count = temp.Value;
-                var medicineTotal = new MedicineCount(medicine, count);
-                medicineTotals.Add(medicineTotal);
-            }
-            return medicineTotals;
+            return medicineCount;
+        }
+
+        private Boolean IsPrescriptionInTimeInterval(Prescription prescription, DateTime startDate, DateTime endDate)
+        {
+            var prescriptionStartDate = prescription.StartDate;
+            var prescriptionEndDate = prescriptionStartDate.AddDays(prescription.DurationInDays);
+            return DateTime.Compare(prescriptionEndDate, startDate) > 0 && DateTime.Compare(prescriptionStartDate, endDate) < 0;
         }
 
         public int GetMedicineCountSum(List<MedicineCount> medicineCount)

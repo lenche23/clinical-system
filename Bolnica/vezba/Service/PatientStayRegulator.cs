@@ -20,18 +20,9 @@ namespace vezba.Service
 
         public Boolean TreatPatient(DateTime startDate, int numberOfDays, Room room)
         {
-            var roomInventories = RoomInventoryRepository.GetAll();
-
             var endDate = startDate.AddDays(numberOfDays);
 
-            var bedsInSelectedPeriod = new List<RoomInventory>();
-            foreach (var inventory in roomInventories)
-            {
-                if (inventory.room.RoomNumber == room.RoomNumber && inventory.equipment.Name == "Krevet" && DateTime.Compare(startDate, inventory.EndTime) < 0 && DateTime.Compare(endDate, inventory.StartTime) > 0)
-                {
-                    bedsInSelectedPeriod.Add(inventory);
-                }
-            }
+            var bedsInSelectedPeriod = GetBedsInRoomInSelectedPeriod(room, startDate, endDate);
             if (bedsInSelectedPeriod.Count == 0)
                 return false;
             foreach (var inventory in bedsInSelectedPeriod)
@@ -39,15 +30,35 @@ namespace vezba.Service
                 if (inventory.Quantity <= 0 || inventory.NumberUnavailable >= inventory.Quantity)
                     return false;
             }
-            OccupyBed(startDate, endDate, room, bedsInSelectedPeriod);
+            OccupyBed(startDate, endDate, bedsInSelectedPeriod);
             return true;
         }
 
-        public void OccupyBed(DateTime startDate, DateTime endDate, Room room, List<RoomInventory> inventories)
+        private List<RoomInventory> GetBedsInRoomInSelectedPeriod(Room room, DateTime startDate, DateTime endDate)
+        {
+            var roomInventories = RoomInventoryRepository.GetAll();
+
+            var bedsInSelectedPeriod = new List<RoomInventory>();
+            foreach (var inventory in roomInventories)
+            {
+                if (inventory.room.RoomNumber == room.RoomNumber && inventory.equipment.Name == "Krevet" && IsBefore(startDate, inventory.EndTime) && IsBefore(inventory.StartTime, endDate))
+                {
+                    bedsInSelectedPeriod.Add(inventory);
+                }
+            }
+            return bedsInSelectedPeriod;
+        }
+
+        private Boolean IsBefore(DateTime firstDate, DateTime secondDate)
+        {
+            return DateTime.Compare(firstDate, secondDate) < 0;
+        }
+
+        private void OccupyBed(DateTime startDate, DateTime endDate, List<RoomInventory> inventories)
         {
             foreach (var inventory in inventories)
             {
-                if (DateTime.Compare(startDate, inventory.StartTime) > 0 && DateTime.Compare(endDate, inventory.EndTime) < 0)
+                if (IsBefore(inventory.StartTime, startDate) &&  IsBefore(endDate, inventory.EndTime))
                 {
                     RoomInventoryRepository.Delete(inventory.Id);
 
@@ -63,7 +74,7 @@ namespace vezba.Service
                     afterTreatment.NumberUnavailable = inventory.NumberUnavailable;
                     RoomInventoryRepository.Save(afterTreatment);
                 }
-                else if (DateTime.Compare(startDate, inventory.StartTime) > 0)
+                else if (IsBefore(inventory.StartTime, startDate))
                 {
                     RoomInventoryRepository.Delete(inventory.Id);
 
@@ -75,7 +86,7 @@ namespace vezba.Service
                     duringTreatment.NumberUnavailable = inventory.NumberUnavailable + 1;
                     RoomInventoryRepository.Save(duringTreatment);
                 }
-                else if (DateTime.Compare(endDate, inventory.EndTime) < 0)
+                else if (IsBefore(endDate, inventory.EndTime))
                 {
                     RoomInventoryRepository.Delete(inventory.Id);
 
@@ -103,7 +114,7 @@ namespace vezba.Service
 
             foreach (var inventory in roomInventories)
             {
-                if (inventory.room.RoomNumber == room.RoomNumber && inventory.equipment.Name == "Krevet" && DateTime.Compare(startDate, inventory.StartTime) <= 0 && DateTime.Compare(endDate, inventory.EndTime) >= 0)
+                if (inventory.room.RoomNumber == room.RoomNumber && inventory.equipment.Name == "Krevet" && !IsBefore(inventory.StartTime, startDate) && !IsBefore(endDate, inventory.EndTime))
                 {
                     inventory.NumberUnavailable--;
                     RoomInventoryRepository.Update(inventory);
@@ -112,23 +123,13 @@ namespace vezba.Service
             MergeSameStatesInRoom(room, "Krevet");
         }
 
-        public void MergeSameStatesInRoom(Room room, String equipmentName)
+        private void MergeSameStatesInRoom(Room room, String equipmentName)
         {
-            var roomInventories = RoomInventoryRepository.GetAll();
-            var inventoriesForMerge = new List<RoomInventory>();
-            foreach (var inventory in roomInventories)
-            {
-                if (inventory.room.RoomNumber == room.RoomNumber && inventory.equipment.Name == equipmentName)
-                {
-                    inventoriesForMerge.Add(inventory);
-                }
-            }
+            var inventoriesForMerge = GetInventoriesForMerge(room, equipmentName);
 
             var current = inventoriesForMerge[0];
-            foreach (var inventory in inventoriesForMerge)
+            foreach (var inventory in inventoriesForMerge.Skip(1))
             {
-                if (inventory.Id == current.Id)
-                    continue;
                 if (inventory.Quantity == current.Quantity && inventory.NumberUnavailable == current.NumberUnavailable)
                 {
                     current.EndTime = inventory.EndTime;
@@ -140,6 +141,20 @@ namespace vezba.Service
                     current = inventory;
                 }
             }
+        }
+
+        private List<RoomInventory> GetInventoriesForMerge(Room room, String equipmentName)
+        {
+            var roomInventories = RoomInventoryRepository.GetAll();
+            var inventoriesForMerge = new List<RoomInventory>();
+            foreach (var inventory in roomInventories)
+            {
+                if (inventory.room.RoomNumber == room.RoomNumber && inventory.equipment.Name == equipmentName)
+                {
+                    inventoriesForMerge.Add(inventory);
+                }
+            }
+            return inventoriesForMerge;
         }
     }
 }
