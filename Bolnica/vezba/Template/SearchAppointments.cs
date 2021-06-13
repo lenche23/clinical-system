@@ -19,16 +19,15 @@ namespace vezba.Template
 
         protected override bool ItemContainsInput(Appointment appointment, string input)
         {
-            Boolean flag = false;
             if (appointment.DoctorName.ToLower().Contains(input.ToLower()))
-                flag = true;
+                return true;
             if (appointment.PatientName.ToLower().Contains(input.ToLower()))
-                flag = true;
+                return true;
             if (appointment.RoomName.ToLower().Contains(input.ToLower()))
-                flag = true;
+                return true;
             if (appointment.DurationInMunutes.ToString().Contains(input))
-                flag = true;
-            return flag;
+                return true;
+            return false;
         }
     }
 }

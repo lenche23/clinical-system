@@ -19,14 +19,13 @@ namespace vezba.Template
 
         protected override bool ItemContainsInput(Room room, string input)
         {
-            Boolean flag = false;
             if (room.RoomNumber.ToString().ToLower().Contains(input.ToLower()))
-                flag = true;
+                return true;
             if (room.RoomFloorName.ToLower().Contains(input.ToLower()))
-                flag = true;
+                return true;
             if (room.RoomTypeName.ToLower().Contains(input.ToLower()))
-                flag = true;
-            return flag;
+                return true;
+            return false;
         }
     }
 }

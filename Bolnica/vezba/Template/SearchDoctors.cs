@@ -19,14 +19,13 @@ namespace vezba.Template
 
         protected override bool ItemContainsInput(Doctor doctor, string input)
         {
-            Boolean flag = false;
             if (doctor.NameAndSurname.ToLower().Contains(input.ToLower()))
-                flag = true;
+                return true;
             if (doctor.SpecialityName.ToLower().Contains(input.ToLower()))
-                flag = true;
+                return true;
             if (doctor.Jmbg.ToLower().Contains(input.ToLower()))
-                flag = true;
-            return flag;
+                return true;
+            return false;
         }
     }
 }
