@@ -14,8 +14,12 @@ namespace vezba.ManagerGUI
         private MainManagerWindow mainManagerWindow;
         public List<Room> roomList { get; set; }
         private Room selected;
-
-
+        private DateTime startTime;
+        private DateTime endTime;
+        private int durationInDays;
+        private int renovationId;
+        private int roomNumber;
+        private Floor floor;
         public event PropertyChangedEventHandler PropertyChanged;
 
         private int trajanjeRenovacije;
@@ -71,14 +75,9 @@ namespace vezba.ManagerGUI
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            if(!ValidateEntries()) return;
-            CultureInfo provider = CultureInfo.InvariantCulture;
-            var startDate = DatePicker.SelectedDate;
-            var startTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, 0, 0, 0);
-            var durationInDays = int.Parse(Trajanje.Text);
-            var endTime = startTime.AddDays(durationInDays);
-            var id = selected.renovation.Count + 1;
-            int number = selected.RoomNumber;
+            readInformation();
+
+            if (!ValidateEntries()) return;
 
             AppointmentService appointmentService = new AppointmentService();
 
@@ -88,13 +87,13 @@ namespace vezba.ManagerGUI
                 return;
             }
 
-            if (appointmentService.Overlap(number, startTime, endTime))
+            if (appointmentService.Overlap(roomNumber, startTime, endTime) || appointmentService.HasFutureAppointments(roomNumber, startTime, endTime))
             {
                 return;
             }
 
             Room roomToMerge = (Room)RoomToMerge.SelectedItem;
-            var newRenovation = new Renovation(startTime, durationInDays, id);
+            var newRenovation = new Renovation(startTime, durationInDays, renovationId);
             roomToMerge.AddRenovation(newRenovation);
             selected.AddRenovation(newRenovation);
             roomToMerge.EndDateTime = endTime;
@@ -104,6 +103,18 @@ namespace vezba.ManagerGUI
             RenovationsPage.RenovationList.Add(newRenovation);
 
             NavigationService.GoBack();
+        }
+
+        private void readInformation()
+        {
+            CultureInfo provider = CultureInfo.InvariantCulture;
+            var startDate = DatePicker.SelectedDate;
+            startTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, 0, 0, 0);
+            durationInDays = int.Parse(Trajanje.Text);
+            endTime = startTime.AddDays(durationInDays);
+            renovationId = selected.renovation.Count + 1;
+            roomNumber = selected.RoomNumber;
+            floor = selected.RoomFloor;
         }
 
         private void ButtonRoomsClick(object sender, RoutedEventArgs e)
@@ -125,15 +136,6 @@ namespace vezba.ManagerGUI
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
         }
-        public Boolean ValidateEntries()
-        {
-            Trajanje.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            if (Validation.GetHasError(Trajanje))
-            {
-                return false;
-            }
-            return true;
-        }
 
         private void Trajanje_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -153,6 +155,16 @@ namespace vezba.ManagerGUI
             }
 
             else OkButton.IsEnabled = true;
+        }
+
+        public Boolean ValidateEntries()
+        {
+            Trajanje.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(Trajanje))
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

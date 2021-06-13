@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using Service;
+using vezba.Service;
 
 namespace vezba.ManagerGUI
 {
@@ -15,6 +16,7 @@ namespace vezba.ManagerGUI
         private RoomInventory roomInventory;
         private int maximumQuantity;
         private int itemQuantity;
+        private int desiredRoomItemQuantity;
         private DateTime infiniteTime = new DateTime(2999, 12, 31);
         private MainManagerWindow mainManagerWindow;
         public List<Room> roomList { get; set; }
@@ -80,28 +82,38 @@ namespace vezba.ManagerGUI
 
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
+            ReadInformation();
             Room roomEntry = (Room)RoomToMerge.SelectedItem;
-            itemQuantity = int.Parse(ItemQuantity.Text);
-            maximumQuantity = roomInventory.Quantity;
-            RoomInventoryService roomInventoryService = new RoomInventoryService();
-
             if (!Validate(roomEntry)) return;
+
+            RoomInventoryService roomInventoryService = new RoomInventoryService();
 
             roomInventory.Quantity -= itemQuantity;
             roomInventoryService.UpdateRoomInventory(this.roomInventory);
-            windowUpdateRoom.RoomInventoryBinding.Items.Refresh();
 
-            if (!roomInventoryService.AddQuantityToDesiredRoom(roomEntry.RoomNumber, roomInventory, itemQuantity))
+            DinamicEquipmentStrategy strategy = new DinamicEquipmentStrategy();
+
+            desiredRoomItemQuantity = roomInventoryService.ChangeEquipmentQuantity(strategy, roomInventory, roomEntry.RoomNumber, itemQuantity, DateTime.Now);
+
+            if (desiredRoomItemQuantity != -1)
             {
-                var ri = new RoomInventory(DateTime.Now, infiniteTime, itemQuantity, 0, roomInventory.equipment, roomEntry);
+                var ri = new RoomInventory(DateTime.Now, infiniteTime, desiredRoomItemQuantity, 0, roomInventory.equipment, roomEntry);
                 roomInventoryService.SaveRoomInventory(ri);
             }
+
+            windowUpdateRoom.RoomInventoryBinding.Items.Refresh();
             NavigationService.GoBack();
         }
 
         private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void ReadInformation()
+        {
+            itemQuantity = int.Parse(ItemQuantity.Text);
+            maximumQuantity = roomInventory.Quantity;
         }
 
         public Boolean Validate(Room roomEntry)
