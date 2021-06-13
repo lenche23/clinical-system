@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using vezba.Adapter;
 using vezba.SecretaryGUI;
+using vezba.Template;
 
 namespace vezba.DoctorPages
 {
@@ -75,7 +76,7 @@ namespace vezba.DoctorPages
                     }
                     return;
                 }
-                appointments = appointmentService.GetSearchResultAppointments(search);
+                appointments = (new SearchAppointments()).SearchTemplate(search);
                 foreach (Appointment a in appointments)
                 {
                     Appointments.Add(a);
