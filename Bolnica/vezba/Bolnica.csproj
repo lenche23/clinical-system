@@ -633,6 +633,7 @@
     <Compile Include="Service\EventsLogService.cs" />
     <Compile Include="Service\HospitalEvaluationService.cs" />
     <Compile Include="Service\MedicineService.cs" />
+    <Compile Include="Service\MedicineTransferService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomInventoryService.cs" />
     <Compile Include="Service\RoomService.cs" />

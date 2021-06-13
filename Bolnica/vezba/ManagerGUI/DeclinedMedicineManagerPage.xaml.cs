@@ -20,8 +20,8 @@ namespace vezba.ManagerGUI
             InitializeComponent();
             this.mainManagerWindow = mainManagerWindow;
             this.medicinePage = medicinePage;
-            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
-            declinedMedicineList = medicineService.GetAllDeclinedMedicine();
+            var declinedMedicineService = new DeclinedMedicineService(new DeclinedMedicineFileRepository());
+            declinedMedicineList = declinedMedicineService.GetAllDeclinedMedicine();
             DeclinedMedicineList = new ObservableCollection<DeclinedMedicine>(declinedMedicineList);
             DeclinedMedicineBinding.ItemsSource = DeclinedMedicineList;
         }
