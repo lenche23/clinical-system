@@ -66,7 +66,7 @@ namespace vezba.ManagerGUI
             this.addMedicineWindow = addMedicineWindow;
             this.mainManagerWindow = mainManagerWindow;
 
-            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository());
             List<Medicine> medicineList = medicineService.GetAllMedicine();
             List<Medicine> temporary = new List<Medicine>();
 
@@ -147,7 +147,7 @@ namespace vezba.ManagerGUI
 
             selected.ReplacementMedicine = (Medicine)comboReplacementMedicine.SelectedItem;
 
-            MedicineService medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+            MedicineService medicineService = new MedicineService(new MedicineFileRepository());
             medicineService.UpdateMedicine(selected);
             addMedicineWindow.MedicineBinding.Items.Refresh();
 

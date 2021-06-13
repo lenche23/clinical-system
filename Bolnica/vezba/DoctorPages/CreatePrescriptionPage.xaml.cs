@@ -70,7 +70,7 @@ namespace vezba.DoctorPages
             _patient = patient;
             _doctorView = doctorView;
             DataContext = this;
-            var medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+            var medicineService = new MedicineService(new MedicineFileRepository());
             ValidMedicine = medicineService.GenerateValidMedicineForPatient(_patient.MedicalRecord);
             _medicalRecordPage = medicalRecordPage;
             DpStartDate.SelectedDate = DateTime.Now.Date;

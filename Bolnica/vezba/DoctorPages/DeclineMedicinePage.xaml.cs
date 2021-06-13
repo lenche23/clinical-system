@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using Model;
 using Service;
 using vezba.Repository;
+using vezba.Service;
 
 namespace vezba.DoctorPages
 {
@@ -59,10 +60,10 @@ namespace vezba.DoctorPages
         {
             if(!ValidateEntries())
                 return;
-            var medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+            var medicineTransferService = new MedicineTransferService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
 
             var description = DescriptionTB.Text;
-            var declinedMedicine = medicineService.DeclineMedicine(Medicine, description);
+            var declinedMedicine = medicineTransferService.DeclineMedicine(Medicine, description);
 
             UpdateMedicineView(declinedMedicine);
             _doctorView.Main.GoBack();

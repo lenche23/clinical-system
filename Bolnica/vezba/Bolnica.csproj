@@ -157,6 +157,9 @@
     <Compile Include="DetailDeclinedMedicineWindow.xaml.cs">
       <DependentUpon>DetailDeclinedMedicineWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorPages\DoctorFeedback.xaml.cs">
+      <DependentUpon>DoctorFeedback.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DoctorPages\ExtendHospitalTreatment.xaml.cs">
       <DependentUpon>ExtendHospitalTreatment.xaml</DependentUpon>
     </Compile>
@@ -240,6 +243,9 @@
     </Compile>
     <Compile Include="ManagerGUI\MainManagerWindow.xaml.cs">
       <DependentUpon>MainManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerGUI\ManagerFeedback.xaml.cs">
+      <DependentUpon>ManagerFeedback.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManagerGUI\MedicineAddPage.xaml.cs">
       <DependentUpon>MedicineAddPage.xaml</DependentUpon>
@@ -632,6 +638,7 @@
     <Compile Include="Service\HospitalEvaluationService.cs" />
     <Compile Include="Service\IStrategy.cs" />
     <Compile Include="Service\MedicineService.cs" />
+    <Compile Include="Service\MedicineTransferService.cs" />
     <Compile Include="Service\PatientService.cs" />
     <Compile Include="Service\RoomInventoryService.cs" />
     <Compile Include="Service\RoomService.cs" />
@@ -777,6 +784,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DoctorPages\DoctorFeedback.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DoctorPages\ExtendHospitalTreatment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -902,6 +913,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ManagerGUI\MainManagerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerGUI\ManagerFeedback.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

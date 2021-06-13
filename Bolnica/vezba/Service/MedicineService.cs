@@ -11,12 +11,10 @@ namespace Service
     {
 
         private IMedicineRepository MedicineRepository { get; }
-        private IDeclinedMedicineRepository DeclinedMedicineRepository { get; }
 
-        public MedicineService(IMedicineRepository medicineRepository, IDeclinedMedicineRepository declinedMedicineRepository)
+        public MedicineService(IMedicineRepository medicineRepository)
         {
             MedicineRepository = medicineRepository;
-            DeclinedMedicineRepository = declinedMedicineRepository;
         }
 
 
@@ -85,24 +83,6 @@ namespace Service
             UpdateMedicine(medicineToApprove);
         }
 
-        public List<DeclinedMedicine> GetDeclined()
-        {
-            return DeclinedMedicineRepository.GetAll();
-        }
-
-        public Boolean SaveDeclinedMedicine(DeclinedMedicine declinedMedicine)
-        {
-            return DeclinedMedicineRepository.Save(declinedMedicine);
-        }
-
-        public DeclinedMedicine DeclineMedicine(Medicine medicineToDecline, String description)
-        {
-            var declinedMedicine = new DeclinedMedicine(0, medicineToDecline, description);
-            DeleteMedicine(medicineToDecline.MedicineID);
-            SaveDeclinedMedicine(declinedMedicine);
-            return declinedMedicine;
-        }
-
         public Medicine getMedicineById(int medicineId)
         {
             return MedicineRepository.GetOne(medicineId);
@@ -118,16 +98,6 @@ namespace Service
         public Boolean SaveMedicine(Medicine newMedicine)
         {
             return MedicineRepository.Save(newMedicine);
-        }
-
-        public List<DeclinedMedicine> GetAllDeclinedMedicine()
-        {
-            return DeclinedMedicineRepository.GetAll();
-        }
-
-        public Boolean DeleteDeclinedMedicine(int medicineId)
-        {
-            return DeclinedMedicineRepository.Delete(medicineId);
         }
 
         // UpravnikKraj***************************************************************************

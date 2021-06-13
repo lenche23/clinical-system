@@ -12,7 +12,6 @@ namespace vezba.ManagerGUI
 {
     public partial class Announcements : Page
     {
-
         public static ObservableCollection<Announcement> Ans { get; set; }
         private MainManagerWindow mainManagerWindow;
         public Announcements(MainManagerWindow mainManagerWindow, UserType ut)
@@ -55,8 +54,8 @@ namespace vezba.ManagerGUI
         {
             if (AnnouncementsList.SelectedIndex > -1)
             {
-                Announcement a = (Announcement)AnnouncementsList.SelectedItems[0];
-                mainManagerWindow.MainManagerView.Content = new ViewAnnouncementManagerPage(mainManagerWindow, a);
+                Announcement announcement = (Announcement)AnnouncementsList.SelectedItems[0];
+                mainManagerWindow.MainManagerView.Content = new ViewAnnouncementManagerPage(mainManagerWindow, announcement);
             }
             else
             {

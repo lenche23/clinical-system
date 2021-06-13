@@ -139,7 +139,7 @@ namespace vezba.DoctorPages
 
             Ingredients = new List<Ingridient>(medicine.Ingridient);
 
-            _medicineService = new MedicineService(new MedicineFileRepository(), new DeclinedMedicineFileRepository());
+            _medicineService = new MedicineService(new MedicineFileRepository());
             MedicineForReplacement = _medicineService.GetPossibleReplacements(Medicine);
 
             if (medicine.ReplacementMedicine != null)
