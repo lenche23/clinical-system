@@ -2,6 +2,7 @@ using Model;
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using vezba.Factory;
 using vezba.Repository;
 using vezba.SecretaryGUI;
 
@@ -13,7 +14,9 @@ namespace Service
 
         public DoctorService()
         {
-            DoctorRepository = new DoctorFileRepository();
+            //DoctorRepository = new DoctorFileRepository();
+            IRepositoryFactory repositoryFactory = (new ApplicationDataSource()).CreateRepositoryFactory();
+            DoctorRepository = repositoryFactory.CreateDoctorRepository();
         }
         // Sekretar*******************************************************************************
         public Doctor GetDoctorByJmbg(string jmbg)

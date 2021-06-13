@@ -185,6 +185,22 @@
         "FormatedBeginnigDate": "31.05.2021.",
         "FormatedEndDate": "06.06.2021.",
         "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-13T15:16:59.4786476+02:00",
+        "EndDate": "2021-06-19T15:16:59.4786476+02:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "13.06.2021.",
+        "FormatedEndDate": "19.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-20T15:16:59.4786476+02:00",
+        "EndDate": "2021-06-26T15:16:59.4786476+02:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "20.06.2021.",
+        "FormatedEndDate": "26.06.2021.",
+        "FormatedShift": "14:00 - 21:00"
       }
     ],
     "AvailableDaysOff": 20,
@@ -233,6 +249,22 @@
         "Shift": 0,
         "FormatedBeginnigDate": "07.06.2021.",
         "FormatedEndDate": "13.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-13T15:17:14.032646+02:00",
+        "EndDate": "2021-06-19T15:17:14.032646+02:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "13.06.2021.",
+        "FormatedEndDate": "19.06.2021.",
+        "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-20T15:17:14.032646+02:00",
+        "EndDate": "2021-06-26T15:17:14.032646+02:00",
+        "Shift": 0,
+        "FormatedBeginnigDate": "20.06.2021.",
+        "FormatedEndDate": "26.06.2021.",
         "FormatedShift": "07:00 - 14:00"
       }
     ],
@@ -288,6 +320,14 @@
         "FormatedBeginnigDate": "31.05.2021.",
         "FormatedEndDate": "06.06.2021.",
         "FormatedShift": "07:00 - 14:00"
+      },
+      {
+        "BeginningDate": "2021-06-13T15:17:23.3506829+02:00",
+        "EndDate": "2021-06-19T15:17:23.3506829+02:00",
+        "Shift": 1,
+        "FormatedBeginnigDate": "13.06.2021.",
+        "FormatedEndDate": "19.06.2021.",
+        "FormatedShift": "14:00 - 21:00"
       }
     ],
     "AvailableDaysOff": 20,
