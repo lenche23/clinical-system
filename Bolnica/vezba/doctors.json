@@ -53,11 +53,11 @@
         "FormatedShift": "07:00 - 14:00"
       },
       {
-        "BeginningDate": "2021-06-28T00:00:00",
-        "EndDate": "2021-07-04T00:00:00",
+        "BeginningDate": "2021-06-27T13:58:30.6460738+02:00",
+        "EndDate": "2021-07-03T13:58:30.6460738+02:00",
         "Shift": 1,
-        "FormatedBeginnigDate": "28.06.2021.",
-        "FormatedEndDate": "04.07.2021.",
+        "FormatedBeginnigDate": "27.06.2021.",
+        "FormatedEndDate": "03.07.2021.",
         "FormatedShift": "14:00 - 21:00"
       }
     ],

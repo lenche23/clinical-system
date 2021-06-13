@@ -258,5 +258,31 @@
     "patientId": "1706971459311",
     "roomId": 4,
     "doctorId": "1541546542644"
+  },
+  {
+    "StartTime": "2021-06-14T08:00:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "",
+    "AppointentId": 20,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "",
+    "StartTimee": "2021-06-14T08:00:00",
+    "patientId": "1706971459311",
+    "roomId": 3,
+    "doctorId": "0104998253658"
+  },
+  {
+    "StartTime": "2021-06-28T14:30:00",
+    "DurationInMunutes": 30,
+    "ApointmentDescription": "",
+    "AppointentId": 21,
+    "IsDeleted": false,
+    "IsEmergency": false,
+    "AppointmentDescription": "",
+    "StartTimee": "2021-06-28T14:30:00",
+    "patientId": "1706971459311",
+    "roomId": 3,
+    "doctorId": "1541546542644"
   }
 ]

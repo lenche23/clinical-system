@@ -204,6 +204,42 @@ namespace Service
             EditDoctor(doctor);
         }
 
+        public string GenerateDoctorIsUnavailableMessage(string jmbg, DateTime time)
+        {
+            if (IsDoctorOnVacation(jmbg, time))
+                return "Lekar je na godisnjem odmoru u izabranom datumu. Izaberite drugi datum.";
+            if (!IsDoctorWorking(jmbg, time))
+                return "Izabrano vreme je van radnog vremena lekara. ";
+            return null;
+        }
+
+        public Boolean IsDoctorOnVacation(string jmbg, DateTime time)
+        {
+            Doctor doctor = DoctorRepository.GetOne(jmbg);
+            foreach (VacationDays vd in doctor.VacationDays)
+            {
+                if (vd.StartDate.Date <= time.Date && vd.EndDate.Date>=time.Date)
+                    return true;
+            }
+            return false;
+        }
+        public Boolean IsDoctorWorking(string jmbg, DateTime time)
+        {
+            Doctor doctor = DoctorRepository.GetOne(jmbg);
+            foreach (WorkingHours wh in doctor.WorkingSchedule)
+            {
+                if (wh.BeginningDate.Date <= time.Date && wh.EndDate.Date >= time.Date)
+                {
+                    if (wh.Shift == Shift.firstShift && time.Hour > 14)
+                        return false;
+                    else if ((wh.Shift == Shift.secondShift) && time.Hour < 14)
+                        return false;
+                    else 
+                        return true;
+                }
+            }
+            return true;
+        }
 
         // SekretarKraj***************************************************************************
 
