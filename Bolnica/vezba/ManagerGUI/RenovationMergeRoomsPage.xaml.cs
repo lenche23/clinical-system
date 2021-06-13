@@ -22,19 +22,19 @@ namespace vezba.ManagerGUI
         private Floor floor;
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private int trajanjeRenovacije;
-        public int TrajanjeRenovacije
+        private int renovationDuration;
+        public int RenovationDuration
         {
             get
             {
-                return trajanjeRenovacije;
+                return renovationDuration;
             }
             set
             {
-                if (value != trajanjeRenovacije)
+                if (value != renovationDuration)
                 {
-                    trajanjeRenovacije = value;
-                    OnPropertyChanged("TrajanjeRenovacije");
+                    renovationDuration = value;
+                    OnPropertyChanged("RenovationDuration");
                 }
             }
         }
@@ -110,7 +110,7 @@ namespace vezba.ManagerGUI
             CultureInfo provider = CultureInfo.InvariantCulture;
             var startDate = DatePicker.SelectedDate;
             startTime = new DateTime(startDate.Value.Year, startDate.Value.Month, startDate.Value.Day, 0, 0, 0);
-            durationInDays = int.Parse(Trajanje.Text);
+            durationInDays = int.Parse(DurationTB.Text);
             endTime = startTime.AddDays(durationInDays);
             renovationId = selected.renovation.Count + 1;
             roomNumber = selected.RoomNumber;
@@ -139,7 +139,7 @@ namespace vezba.ManagerGUI
 
         private void Trajanje_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Trajanje.Text == "" || RoomToMerge.SelectedIndex == -1)
+            if (DurationTB.Text == "" || RoomToMerge.SelectedIndex == -1)
             {
                 OkButton.IsEnabled = false;
             }
@@ -149,7 +149,7 @@ namespace vezba.ManagerGUI
 
         private void RoomToMerge_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Trajanje.Text == "" ||  RoomToMerge.SelectedIndex == -1)
+            if (DurationTB.Text == "" ||  RoomToMerge.SelectedIndex == -1)
             {
                 OkButton.IsEnabled = false;
             }
@@ -159,8 +159,8 @@ namespace vezba.ManagerGUI
 
         public Boolean ValidateEntries()
         {
-            Trajanje.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            if (Validation.GetHasError(Trajanje))
+            DurationTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(DurationTB))
             {
                 return false;
             }

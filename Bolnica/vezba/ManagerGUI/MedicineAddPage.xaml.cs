@@ -20,32 +20,32 @@ namespace vezba.ManagerGUI
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private String nazivRobe;
+        private String medicineName;
 
-        public String NazivRobe
+        public String MedicineName
         {
-            get { return nazivRobe; }
+            get { return medicineName; }
             set
             {
-                if (value != nazivRobe)
+                if (value != medicineName)
                 {
-                    nazivRobe = value;
-                    OnPropertyChanged("NazivRobe");
+                    medicineName = value;
+                    OnPropertyChanged("MedicineName");
                 }
             }
         }
 
-        private String nazivProizvodjaca;
+        private String manufacturerName;
 
-        public String NazivProizvodjaca
+        public String ManufacturerName
         {
-            get { return nazivProizvodjaca; }
+            get { return manufacturerName; }
             set
             {
-                if (value != nazivProizvodjaca)
+                if (value != manufacturerName)
                 {
-                    nazivProizvodjaca = value;
-                    OnPropertyChanged("NazivProizvodjaca");
+                    manufacturerName = value;
+                    OnPropertyChanged("ManufacturerName");
                 }
             }
         }
@@ -83,7 +83,7 @@ namespace vezba.ManagerGUI
             IngredientsBinding.ItemsSource = IngredientList;
             IngredientsBinding.Items.Refresh();
 
-            if (comboCondition.SelectedIndex == -1 || MedicineName.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
+            if (comboCondition.SelectedIndex == -1 || MedicineNameTB.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
             {
                 OkButton.IsEnabled = false;
             }
@@ -100,7 +100,7 @@ namespace vezba.ManagerGUI
                 IngredientsBinding.Items.Refresh();
             }
 
-            if (comboCondition.SelectedIndex == -1 || MedicineName.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
+            if (comboCondition.SelectedIndex == -1 || MedicineNameTB.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
             {
                 OkButton.IsEnabled = false;
             }
@@ -108,7 +108,7 @@ namespace vezba.ManagerGUI
         }
         private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            var Name = MedicineName.Text;
+            var Name = MedicineNameTB.Text;
             var Manufacturer = ManufacturerTextBox.Text;
             var Packaging = PackagingTextBox.Text;
             var Condition = MedicineCondition.pill;
@@ -151,7 +151,7 @@ namespace vezba.ManagerGUI
 
         private void comboCondition_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (comboCondition.SelectedIndex == -1 || MedicineName.Text == "" || ManufacturerTextBox.Text =="" || ingredientTemporaryList.Count==0)
+            if (comboCondition.SelectedIndex == -1 || MedicineNameTB.Text == "" || ManufacturerTextBox.Text =="" || ingredientTemporaryList.Count==0)
             {
                 OkButton.IsEnabled = false;
             }
@@ -160,7 +160,7 @@ namespace vezba.ManagerGUI
 
         private void MedicineName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (comboCondition.SelectedIndex == -1 || MedicineName.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
+            if (comboCondition.SelectedIndex == -1 || MedicineNameTB.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
             {
                 OkButton.IsEnabled = false;
             }
@@ -169,7 +169,7 @@ namespace vezba.ManagerGUI
 
         private void ManufacturerTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (comboCondition.SelectedIndex == -1 || MedicineName.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
+            if (comboCondition.SelectedIndex == -1 || MedicineNameTB.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
             {
                 OkButton.IsEnabled = false;
             }
@@ -181,7 +181,7 @@ namespace vezba.ManagerGUI
             if (NewIngredientTextBox.Text == "") { AddIngredientButton.IsEnabled = false; }
             else { AddIngredientButton.IsEnabled = true; }
 
-            if (comboCondition.SelectedIndex == -1 || MedicineName.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
+            if (comboCondition.SelectedIndex == -1 || MedicineNameTB.Text == "" || ManufacturerTextBox.Text == "" || ingredientTemporaryList.Count == 0)
             {
                 OkButton.IsEnabled = false;
             }
@@ -190,8 +190,8 @@ namespace vezba.ManagerGUI
 
         private Boolean ValidateEntries()
         {
-            MedicineName.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            if (Validation.GetHasError(MedicineName))
+            MedicineNameTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(MedicineNameTB))
             {
                 return false;
             }

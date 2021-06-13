@@ -60,7 +60,7 @@ namespace vezba.ManagerGUI
 
             else
             {
-                //MessageBox.Show("Ni jedan lek nije selektovan!");
+                MessageBox.Show("Ni jedan lek nije selektovan!");
             }
         }
 
@@ -77,7 +77,7 @@ namespace vezba.ManagerGUI
 
             else
             {
-                //MessageBox.Show("Ni jedan lek nije selektovan!");
+                MessageBox.Show("Ni jedan lek nije selektovan!");
             }
         }
     }

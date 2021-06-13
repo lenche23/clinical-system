@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using Service;
 
@@ -18,19 +17,11 @@ namespace vezba.ManagerGUI
         public RoomsPage(MainManagerWindow mainManagerWindow)
         {
             InitializeComponent();
-            this.DataContext = this;
+            DataContext = this;
             this.mainManagerWindow = mainManagerWindow;
-            RoomService roomService = new RoomService();
-            rooms = roomService.GetAllRooms();
-            Rooms = new ObservableCollection<Room>();
-
-            foreach (Room room in rooms)
-            {
-                if (DateTime.Compare(room.StartDateTime, DateTime.Now) <= 0 && DateTime.Compare(room.EndDateTime, DateTime.Now) >= 0)
-                {
-                    Rooms.Add(room);
-                }
-            }
+            RoomService roomService = new RoomService();           
+            rooms = roomService.FindAllExistingRooms();
+            Rooms = new ObservableCollection<Room>(rooms);
             lvDataBinding.ItemsSource = Rooms;
         }
 
@@ -50,7 +41,7 @@ namespace vezba.ManagerGUI
             }
             else
             {
-                //MessageBox.Show("Ni jedna prostorija nije selektovana!");
+                MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
 
@@ -63,23 +54,8 @@ namespace vezba.ManagerGUI
             }
             else
             {
-                //MessageBox.Show("Ni jedna prostorija nije selektovana!");
+                MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
-        }
-
-        private void ButtonMainClick(object sender, RoutedEventArgs e)
-        {
-            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
-        }
-
-        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
-        {
-            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
-        }
-
-        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
-        {
-            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
         }
 
         private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -91,7 +67,7 @@ namespace vezba.ManagerGUI
             }
             else
             {
-               // MessageBox.Show("Ni jedna prostorija nije selektovana!");
+                MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
         private void DeleteButtonClick(object sender, RoutedEventArgs e)
@@ -107,13 +83,27 @@ namespace vezba.ManagerGUI
             }
             else
             {
-                //MessageBox.Show("Ni jedna prostorija nije selektovana!");
+                MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
         }
 
         private void RoomOccupiedButtonClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new RoomOccupiedPage(mainManagerWindow);
+        }
+        private void ButtonMainClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
+        }
+
+        private void ButtonInventoryClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new InventoryPage(mainManagerWindow);
+        }
+
+        private void ButtonMedicineClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new MedicinePage(mainManagerWindow);
         }
     }
 }

@@ -19,7 +19,6 @@ namespace vezba.ManagerGUI
             }
             Content.Text = a.Content;
             Title.Text = a.Title;
-
         }
 
         private void ButtonBackClick(object sender, System.Windows.RoutedEventArgs e)

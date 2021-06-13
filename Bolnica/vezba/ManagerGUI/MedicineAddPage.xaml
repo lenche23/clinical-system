@@ -107,7 +107,7 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <TextBlock Grid.Column="0" Grid.Row="0" Padding="2" FontSize="16" Margin="16,7,440,293" TextAlignment="Right"><Run Text="Naziv:"/></TextBlock>
-                    <TextBox x:Name="MedicineName" FontSize="16" Margin="110,7,290,293" Grid.Row="0" TextChanged="MedicineName_TextChanged">
+                    <TextBox x:Name="MedicineNameTB" FontSize="16" Margin="110,7,290,293" Grid.Row="0" TextChanged="MedicineName_TextChanged">
                         <TextBox.Text>
                             <Binding Path="NazivRobe" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>

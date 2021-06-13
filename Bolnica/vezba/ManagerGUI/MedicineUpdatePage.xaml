@@ -109,7 +109,7 @@
                     <TextBlock Grid.Column="0" Grid.Row="0" Padding="2" FontSize="16" Margin="16,7,440,293" TextAlignment="Right"><Run Text="Naziv:"/></TextBlock>
                     <TextBox FontSize="16" Margin="110,7,290,293" Grid.Row="0" x:Name="NameTextBox" TextChanged="NameTextBox_TextChanged">
                         <TextBox.Text>
-                            <Binding Path="NazivRobe" UpdateSourceTrigger="PropertyChanged">
+                            <Binding Path="MedicineName" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <val:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>
@@ -133,7 +133,7 @@
                     <TextBlock Grid.Column="0" Padding="2" FontSize="16" Margin="255,93,184,209" TextAlignment="Right"><Run Text="Zamenski lek:"/></TextBlock>
                     <TextBox  FontSize="16" Margin="110,49,250,251" x:Name="ManufacturerTextBox" TextChanged="ManufacturerTextBox_TextChanged">
                         <TextBox.Text>
-                            <Binding Path="NazivProizvodjaca" UpdateSourceTrigger="PropertyChanged">
+                            <Binding Path="ManufacturerName" UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
                                     <val:StringValidationRule ValidationStep="RawProposedValue"/>
                                 </Binding.ValidationRules>

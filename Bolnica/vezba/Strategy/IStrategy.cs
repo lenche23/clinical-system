@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vezba.Service
+namespace vezba.Strategy
 {
     public interface IStrategy
     {

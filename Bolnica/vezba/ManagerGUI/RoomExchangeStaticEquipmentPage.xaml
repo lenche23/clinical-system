@@ -111,7 +111,7 @@
                 <TextBlock FontSize="20" Grid.Row="1" Margin="14,0,202,77" Height="37" VerticalAlignment="Bottom" TextAlignment="Right" Text="Količina opreme za prenos:"/>
                 <TextBox FontSize="20" Grid.Row="1" Name="Količina" Margin="338,120,59,78" TextChanged="Količina_TextChanged">
                     <TextBox.Text>
-                        <Binding Path="KolicinaRobe" UpdateSourceTrigger="PropertyChanged">
+                        <Binding Path="EquipmentQuantity" UpdateSourceTrigger="PropertyChanged">
                             <Binding.ValidationRules>
                                 <val:StringToIntegerValidationRule ValidationStep="RawProposedValue"/>
                                 <val:MinValidationRule ValidationStep="ConvertedProposedValue"/>

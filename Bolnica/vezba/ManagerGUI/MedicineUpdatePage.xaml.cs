@@ -21,32 +21,32 @@ namespace vezba.ManagerGUI
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private String nazivRobe;
+        private String medicineName;
 
-        public String NazivRobe
+        public String MedicineName
         {
-            get { return nazivRobe; }
+            get { return medicineName; }
             set
             {
-                if (value != nazivRobe)
+                if (value != medicineName)
                 {
-                    nazivRobe = value;
-                    OnPropertyChanged("NazivRobe");
+                    medicineName = value;
+                    OnPropertyChanged("MedicineName");
                 }
             }
         }
 
-        private String nazivProizvodjaca;
+        private String manufacturerName;
 
-        public String NazivProizvodjaca
+        public String ManufacturerName
         {
-            get { return nazivProizvodjaca; }
+            get { return manufacturerName; }
             set
             {
-                if (value != nazivProizvodjaca)
+                if (value != manufacturerName)
                 {
-                    nazivProizvodjaca = value;
-                    OnPropertyChanged("NazivProizvodjaca");
+                    manufacturerName = value;
+                    OnPropertyChanged("ManufacturerName");
                 }
             }
         }
@@ -120,8 +120,8 @@ namespace vezba.ManagerGUI
             IngredientList = new ObservableCollection<Ingridient>(ingredientList);
             IngredientsBinding.ItemsSource = IngredientList;
 
-            NazivRobe = selected.Name;
-            NazivProizvodjaca = selected.Manufacturer;
+            MedicineName = selected.Name;
+            ManufacturerName = selected.Manufacturer;
         }
 
         private void Edit_Button_Click(object sender, RoutedEventArgs e)

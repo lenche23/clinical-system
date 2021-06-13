@@ -107,9 +107,9 @@
             <TextBlock Grid.Row="0" FontSize="30" VerticalAlignment="Center" TextAlignment="Center" Margin="0,15" Height="39" > Izmena podataka o artiklu:</TextBlock>
             <TextBlock FontSize="20" Grid.Row="1" Margin="90,39,275,136">Naziv opreme:</TextBlock>
             <TextBlock FontSize="20" Grid.Row="1" Margin="110,131,275,40">Tip opreme:</TextBlock>
-            <TextBox Name="NazivOpreme" FontSize="20" Margin="255,39,60,136" Grid.Row="1" TextChanged="NazivOpreme_TextChanged">
+            <TextBox Name="EquipmentNameTB" FontSize="20" Margin="255,39,60,136" Grid.Row="1" TextChanged="NazivOpreme_TextChanged">
                 <TextBox.Text>
-                    <Binding Path="NazivRobe" UpdateSourceTrigger="PropertyChanged">
+                    <Binding Path="EquipmentName" UpdateSourceTrigger="PropertyChanged">
                         <Binding.ValidationRules>
                             <val:StringValidationRule ValidationStep="RawProposedValue"/>
                         </Binding.ValidationRules>

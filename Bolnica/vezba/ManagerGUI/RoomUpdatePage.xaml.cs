@@ -73,11 +73,8 @@ namespace vezba.ManagerGUI
             RoomInventoryBinding.Items.Refresh();
         }
 
-        private void Potvrda_Button_Click(object sender, RoutedEventArgs e)
+        private void OkButtonClick(object sender, RoutedEventArgs e)
         {
-            //var roomNumber = int.Parse(BrojSobe.Text);
-            //selected.RoomNumber = roomNumber;
-
             if (comboFloor.SelectedIndex == 0) selected.RoomFloor = Floor.first;
             else if (comboFloor.SelectedIndex == 1) selected.RoomFloor = Floor.second;
             else if (comboFloor.SelectedIndex == 2) selected.RoomFloor = Floor.third;
@@ -93,12 +90,12 @@ namespace vezba.ManagerGUI
             NavigationService.GoBack();
         }
 
-        private void Odustanak_Button_Click(object sender, RoutedEventArgs e)
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
 
-        private void Dodaj_Button_Click(object sender, RoutedEventArgs e)
+        private void AddEquipmentButtonClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new RoomAddEquipmentPage(mainManagerWindow, selected);
         }
@@ -117,7 +114,7 @@ namespace vezba.ManagerGUI
         }
 
 
-        private void Razmena_Button_Click(object sender, RoutedEventArgs e)
+        private void EquipmentExchangeButtonClick(object sender, RoutedEventArgs e)
         {
             if (RoomInventoryBinding.SelectedIndex > -1)
             {
@@ -137,7 +134,7 @@ namespace vezba.ManagerGUI
             }
         }
 
-        private void Izbriši_Button_Click(object sender, RoutedEventArgs e)
+        private void RemoveEquipmentButtonClick(object sender, RoutedEventArgs e)
         {
             if (RoomInventoryBinding.SelectedIndex > -1)
             {
@@ -150,6 +147,11 @@ namespace vezba.ManagerGUI
             {
                 MessageBox.Show("Ni jedna prostorija nije selektovana!");
             }
+        }
+
+        private void RenovateButtonClick(object sender, RoutedEventArgs e)
+        {
+            mainManagerWindow.MainManagerView.Content = new RenovationsPage(mainManagerWindow, selected);
         }
 
         private void ButtonRoomsClick(object sender, RoutedEventArgs e)
@@ -170,11 +172,6 @@ namespace vezba.ManagerGUI
         private void ButtonMainClick(object sender, RoutedEventArgs e)
         {
             mainManagerWindow.MainManagerView.Content = new MainManagerPage(mainManagerWindow);
-        }
-
-        private void Renovate_Button_Click(object sender, RoutedEventArgs e)
-        {
-            mainManagerWindow.MainManagerView.Content = new RenovationsPage(mainManagerWindow, selected);
         }
     }
 }

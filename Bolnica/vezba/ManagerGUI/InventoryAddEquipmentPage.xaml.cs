@@ -16,17 +16,17 @@ namespace vezba.ManagerGUI
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private String nazivRobe;
+        private String equipmentName;
 
-        public String NazivRobe
+        public String EquipmentName
         {
-            get { return nazivRobe; }
+            get { return equipmentName; }
             set
             {
-                if (value != nazivRobe)
+                if (value != equipmentName)
                 {
-                    nazivRobe = value;
-                    OnPropertyChanged("NazivRobe");
+                    equipmentName = value;
+                    OnPropertyChanged("EquipmentName");
                 }
             }
         }
@@ -66,7 +66,7 @@ namespace vezba.ManagerGUI
             }
 
             EquipmentService equipmentService = new EquipmentService();
-            var newEquipment = new Equipment(0, NazivOpreme.Text, type);
+            var newEquipment = new Equipment(0, EquipmentNameTB.Text, type);
             equipmentService.SaveEquipment(newEquipment);
             InventoryPage.EquipmentList.Add(newEquipment);
             NavigationService.GoBack();
@@ -99,7 +99,7 @@ namespace vezba.ManagerGUI
 
         private void comboEquipmentType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (comboEquipmentType.SelectedIndex == -1 || NazivOpreme.Text == "")
+            if (comboEquipmentType.SelectedIndex == -1 || EquipmentNameTB.Text == "")
             {
                 OkButton.IsEnabled = false;
             }
@@ -109,7 +109,7 @@ namespace vezba.ManagerGUI
 
         private void NazivOpreme_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (comboEquipmentType.SelectedIndex == -1 || NazivOpreme.Text == "")
+            if (comboEquipmentType.SelectedIndex == -1 || EquipmentNameTB.Text == "")
             {
                 OkButton.IsEnabled = false;
             }
@@ -120,8 +120,8 @@ namespace vezba.ManagerGUI
 
         private Boolean ValidateEntries()
         {
-            NazivOpreme.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            if (Validation.GetHasError(NazivOpreme))
+            EquipmentNameTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            if (Validation.GetHasError(EquipmentNameTB))
             {
                 return false;
             }

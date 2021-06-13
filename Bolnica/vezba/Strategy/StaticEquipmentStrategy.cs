@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using vezba.Repository;
 
-namespace vezba.Service
+namespace vezba.Strategy
 {
     class StaticEquipmentStrategy : IStrategy
     {

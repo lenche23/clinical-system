@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Service;
 using vezba.Service;
+using vezba.Strategy;
 
 namespace vezba.ManagerGUI
 {
@@ -24,19 +25,19 @@ namespace vezba.ManagerGUI
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private int kolicinaRobe;
-        public int KolicinaRobe
+        private int equipmentQuantity;
+        public int EquipmentQuantity
         {
             get
             {
-                return kolicinaRobe;
+                return equipmentQuantity;
             }
             set
             {
-                if (value != kolicinaRobe)
+                if (value != equipmentQuantity)
                 {
-                    kolicinaRobe = value;
-                    OnPropertyChanged("KolicinaRobe");
+                    equipmentQuantity = value;
+                    OnPropertyChanged("EquipmentQuantity");
                 }
             }
         }
@@ -89,7 +90,7 @@ namespace vezba.ManagerGUI
             RoomInventoryService roomInventoryService = new RoomInventoryService();
 
             roomInventory.Quantity -= itemQuantity;
-            roomInventoryService.UpdateRoomInventory(this.roomInventory);
+            roomInventoryService.UpdateRoomInventory(roomInventory);
 
             desiredRoomItemQuantity = roomInventoryService.ChangeEquipmentQuantity(new DinamicEquipmentStrategy(), roomInventory, roomEntry.RoomNumber, itemQuantity, DateTime.Now);
 
@@ -103,42 +104,29 @@ namespace vezba.ManagerGUI
             NavigationService.GoBack();
         }
 
-        private void CancelButtonClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
-        }
-
         private void ReadInformation()
         {
             itemQuantity = int.Parse(ItemQuantity.Text);
             maximumQuantity = roomInventory.Quantity;
         }
 
+        private void CancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
         public Boolean Validate(Room roomEntry)
         {
-            if (roomEntry == null)
-            {
-                //MessageBox.Show("Soba ne postoji");
-                return false;
-            }
+            if (roomEntry == null) return false;
 
-            if (roomEntry.RoomNumber == this.room.RoomNumber)
-            {
-                //MessageBox.Show("Soba ne može biti trenutno selektovana soba");
-                return false;
-            }
+            if (roomEntry.RoomNumber == room.RoomNumber) return false;
 
-            if (maximumQuantity < itemQuantity)
-            {
-                //MessageBox.Show("ItemQuantity robe prekoračava maksimalnu postojeću u sobi");
-                return false;
-            }
+            if (maximumQuantity < itemQuantity) return false;
 
             ItemQuantity.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            if (Validation.GetHasError(ItemQuantity))
-            {
-                return false;
-            }
+
+            if (Validation.GetHasError(ItemQuantity)) return false;
+
             return true;
         }
 
