@@ -82,14 +82,11 @@ namespace vezba.ManagerGUI
 
             RoomInventoryService roomInventoryService = new RoomInventoryService();
 
-            //pickedDate = DateTime.Now.AddSeconds(5);
             roomInventory.EndTime = pickedDate;
             roomInventoryService.UpdateRoomInventory(this.roomInventory);
 
             currentRoomItemQuantity = roomInventory.Quantity - inputItemQuantity;
-
-            StaticEquipmentStrategy strategy = new StaticEquipmentStrategy();
-            desiredRoomItemQuantity = roomInventoryService.ChangeEquipmentQuantity(strategy, roomInventory, roomEntry.RoomNumber, inputItemQuantity, pickedDate);
+            desiredRoomItemQuantity = roomInventoryService.ChangeEquipmentQuantity(new StaticEquipmentStrategy(), roomInventory, roomEntry.RoomNumber, inputItemQuantity, pickedDate);
 
             var ri1 = new RoomInventory(pickedDate, infiniteTime, currentRoomItemQuantity, 0, roomInventory.equipment, room);
             roomInventoryService.SaveRoomInventory(ri1);

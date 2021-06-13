@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Model;
 using Service;
+using vezba.Service;
 
 namespace vezba.DoctorPages
 {
@@ -73,8 +74,8 @@ namespace vezba.DoctorPages
             if (!ValidateEntries())
                 return;
 
-            var roomInventoryService = new RoomInventoryService();
-            if (!roomInventoryService.TreatPatient(DpStartDate.SelectedDate.Value, int.Parse(TbDuration.Text), (Room)CmbRooms.SelectedItem))
+            var patientStayRegulator = new PatientStayRegulator();
+            if (!patientStayRegulator.TreatPatient(DpStartDate.SelectedDate.Value, int.Parse(TbDuration.Text), (Room)CmbRooms.SelectedItem))
             {
                 MessageBox.Show("Soba nema dovoljno slobodnih kreveta u navedenom periodu", "Soba nije u stanju da primi pacijenta");
                 return;

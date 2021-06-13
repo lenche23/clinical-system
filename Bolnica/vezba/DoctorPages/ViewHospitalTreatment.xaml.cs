@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Model;
 using Service;
+using vezba.Service;
 
 namespace vezba.DoctorPages
 {
@@ -45,8 +46,8 @@ namespace vezba.DoctorPages
         {
             var patientService = new PatientService();
             patientService.RemoveHospitalTreatmentFromPatient(_patient, _hospitalTreatment);
-            var roomInventoryService = new RoomInventoryService();
-            roomInventoryService.CancelPatientTreatment(_hospitalTreatment.StartDate, _hospitalTreatment.DurationInDays, _hospitalTreatment.Room);
+            var patientStayRegulator = new PatientStayRegulator();
+            patientStayRegulator.CancelPatientTreatment(_hospitalTreatment.StartDate, _hospitalTreatment.DurationInDays, _hospitalTreatment.Room);
             _medicalRecordPage.HospitalTreatmentListView.Items.Refresh();
             _doctorView.Main.GoBack();
         }

@@ -650,6 +650,7 @@
     <Compile Include="Service\MedicineService.cs" />
     <Compile Include="Service\MedicineTransferService.cs" />
     <Compile Include="Service\PatientService.cs" />
+    <Compile Include="Service\PatientStayRegulator.cs" />
     <Compile Include="Service\RoomInventoryService.cs" />
     <Compile Include="Service\RoomService.cs" />
     <Compile Include="Service\UserFeedbackService.cs" />

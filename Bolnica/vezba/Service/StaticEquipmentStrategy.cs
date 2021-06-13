@@ -5,14 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using vezba.Repository;
-using vezba.Repository;
 
 namespace vezba.Service
 {
     class StaticEquipmentStrategy : IStrategy
     {
         public RoomInventoryFileRepository RoomInventoryRepository { get; }
-
         public StaticEquipmentStrategy()
         {
             RoomInventoryRepository = new RoomInventoryFileRepository();
@@ -34,11 +32,7 @@ namespace vezba.Service
                 }
             }
 
-            if (!itemFound)
-            {
-                desiredRoomItemQuantity = inputItemQuantity;
-            }
-
+            if (!itemFound) desiredRoomItemQuantity = inputItemQuantity;
             return desiredRoomItemQuantity;
         }
     }
