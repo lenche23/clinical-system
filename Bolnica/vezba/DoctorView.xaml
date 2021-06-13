@@ -27,6 +27,12 @@
                     <TextBlock FontFamily="verdana" FontSize="10">Obaveštenja</TextBlock>
                 </StackPanel>
             </Button>
+            <Button Click="AppointmentGridClick" Height="70" Style="{StaticResource ResourceKey=DoctorDefaultButton}">
+                <StackPanel Orientation="Vertical">
+                    <materialDesign:PackIcon Height="30" Width="30" HorizontalAlignment="Center" Grid.Column="0" Kind="Grid" Foreground="White" VerticalAlignment="Center"/>
+                    <TextBlock FontFamily="verdana" FontSize="10">DataGrid</TextBlock>
+                </StackPanel>
+            </Button>
         </StackPanel>
         <Border BorderBrush="CornflowerBlue" BorderThickness="0, 0, 0, 1" DockPanel.Dock="Top" Height="20">
             <Grid Background="#FFE0E0E0">

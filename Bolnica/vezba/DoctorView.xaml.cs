@@ -64,5 +64,10 @@ namespace vezba
             Main.Content = new DoctorFeedback(this);
             ExpandGrid.Visibility = System.Windows.Visibility.Collapsed;
         }
+
+        private void AppointmentGridClick(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AppointmentGrid(this);
+        }
     }
 }
