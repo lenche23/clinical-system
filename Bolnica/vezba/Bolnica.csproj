@@ -109,18 +109,9 @@
     <Compile Include="Adapter\CalendarAdapter.cs" />
     <Compile Include="Adapter\CalendarInterface.cs" />
     <Compile Include="Adapter\GridAdapter.cs" />
-    <Compile Include="AddMedicineWindow.xaml.cs">
-      <DependentUpon>AddMedicineWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Announcements.xaml.cs">
-      <DependentUpon>Announcements.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="DoctorPages\AnnouncementsView.xaml.cs">
       <DependentUpon>AnnouncementsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AppointmentHistory.xaml.cs">
-      <DependentUpon>AppointmentHistory.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorPages\AppointmentGrid.xaml.cs">
       <DependentUpon>AppointmentGrid.xaml</DependentUpon>
@@ -128,17 +119,8 @@
     <Compile Include="DoctorPages\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CancelAppointmentView.xaml.cs">
-      <DependentUpon>CancelAppointmentView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ChooseAnouncementType.xaml.cs">
-      <DependentUpon>ChooseAnouncementType.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DoctorPages\CreateAnamnesisPage.xaml.cs">
       <DependentUpon>CreateAnamnesisPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ChangeAppointmentView.xaml.cs">
-      <DependentUpon>ChangeAppointmentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorPages\CreateAppointment.xaml.cs">
       <DependentUpon>CreateAppointment.xaml</DependentUpon>
@@ -152,14 +134,8 @@
     <Compile Include="DoctorPages\CreateReferralLetterPage.xaml.cs">
       <DependentUpon>CreateReferralLetterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DeclinedMedicineWindow.xaml.cs">
-      <DependentUpon>DeclinedMedicineWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DoctorPages\DeclineMedicinePage.xaml.cs">
       <DependentUpon>DeclineMedicinePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DetailDeclinedMedicineWindow.xaml.cs">
-      <DependentUpon>DetailDeclinedMedicineWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorPages\DoctorFeedback.xaml.cs">
       <DependentUpon>DoctorFeedback.xaml</DependentUpon>
@@ -188,39 +164,15 @@
     <Compile Include="DoctorView.xaml.cs">
       <DependentUpon>DoctorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditAnnouncement.xaml.cs">
-      <DependentUpon>EditAnnouncement.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="EditAppointment.xaml.cs">
-      <DependentUpon>EditAppointment.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DoctorPages\EditAppointmentPage.xaml.cs">
       <DependentUpon>EditAppointmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorPages\EditMedicinePage.xaml.cs">
       <DependentUpon>EditMedicinePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditMedicineWindow.xaml.cs">
-      <DependentUpon>EditMedicineWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="EditPatient.xaml.cs">
-      <DependentUpon>EditPatient.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Factory\ApplicationDataSource.cs" />
     <Compile Include="Factory\FileRepositoryFactory.cs" />
     <Compile Include="Factory\IRepositoryFactory.cs" />
-    <Compile Include="Inventary.xaml.cs">
-      <DependentUpon>Inventary.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="InventaryAddEquipment.xaml.cs">
-      <DependentUpon>InventaryAddEquipment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="InventaryChangeEquipment.xaml.cs">
-      <DependentUpon>InventaryChangeEquipment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="InventaryViewEquipment.xaml.cs">
-      <DependentUpon>InventaryViewEquipment.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ManagerGUI\Announcements.xaml.cs">
       <DependentUpon>Announcements.xaml</DependentUpon>
     </Compile>
@@ -311,23 +263,14 @@
     <Compile Include="ManagerGUI\ViewAnnouncementManagerPage.xaml.cs">
       <DependentUpon>ViewAnnouncementManagerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ManagerMainView.xaml.cs">
-      <DependentUpon>ManagerMainView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="GradePopup.xaml.cs">
       <DependentUpon>GradePopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="LogoutPopup.xaml.cs">
       <DependentUpon>LogoutPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EmergencyAppointment.xaml.cs">
-      <DependentUpon>EmergencyAppointment.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ManagerValidation\StringToIntegerValidationRule.cs" />
     <Compile Include="ManagerValidation\StringValidationRule.cs" />
-    <Compile Include="ManagerView.xaml.cs">
-      <DependentUpon>ManagerView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DoctorPages\MedicalRecordPage.xaml.cs">
       <DependentUpon>MedicalRecordPage.xaml</DependentUpon>
     </Compile>
@@ -462,36 +405,6 @@
     <Compile Include="Model\VacationDays.cs" />
     <Compile Include="Model\Visibility.cs" />
     <Compile Include="Model\WorkingHours.cs" />
-    <Compile Include="NewAnnouncement.xaml.cs">
-      <DependentUpon>NewAnnouncement.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NewAppointment.xaml.cs">
-      <DependentUpon>NewAppointment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NewMedicine.xaml.cs">
-      <DependentUpon>NewMedicine.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NewIndividualAnouncement.xaml.cs">
-      <DependentUpon>NewIndividualAnouncement.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NewPatient.xaml.cs">
-      <DependentUpon>NewPatient.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="OrderAppointmentPopup.xaml.cs">
-      <DependentUpon>OrderAppointmentPopup.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="OrderAppointmentTimeView.xaml.cs">
-      <DependentUpon>OrderAppointmentTimeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="OrderAppointmentView.xaml.cs">
-      <DependentUpon>OrderAppointmentView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="OverlapingAppointments.xaml.cs">
-      <DependentUpon>OverlapingAppointments.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PatientEditAppointment.xaml.cs">
-      <DependentUpon>PatientEditAppointment.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PatientPages\AppointmentsPage.xaml.cs">
       <DependentUpon>AppointmentsPage.xaml</DependentUpon>
     </Compile>
@@ -532,12 +445,6 @@
       <DependentUpon>PatientView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repository\UserFeedbackFileRepository.cs" />
-    <Compile Include="ScheduleEmergencyAppointment.xaml.cs">
-      <DependentUpon>ScheduleEmergencyAppointment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SecretaryAppointments.xaml.cs">
-      <DependentUpon>SecretaryAppointments.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SecretaryGUI\SecretaryAnnouncements.xaml.cs">
       <DependentUpon>SecretaryAnnouncements.xaml</DependentUpon>
     </Compile>
@@ -640,9 +547,6 @@
       <DependentUpon>SecretaryViewRoomxaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="SecretaryGUI\Validation\SecretaryValidationRules.cs" />
-    <Compile Include="SecretaryView.xaml.cs">
-      <DependentUpon>SecretaryView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Service\AnnouncementService.cs" />
     <Compile Include="Service\AppointmentService.cs" />
     <Compile Include="Service\DeclinedMedicineService.cs" />
@@ -677,14 +581,8 @@
     <Compile Include="Template\SearchDoctors.cs" />
     <Compile Include="Template\SearchPatients.cs" />
     <Compile Include="Template\SearchRooms.cs" />
-    <Compile Include="ViewAnnouncement.xaml.cs">
-      <DependentUpon>ViewAnnouncement.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DoctorPages\ViewAnnouncementPage.xaml.cs">
       <DependentUpon>ViewAnnouncementPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewAppointment.xaml.cs">
-      <DependentUpon>ViewAppointment.xaml</DependentUpon>
     </Compile>
     <Compile Include="DoctorPages\ViewAppointmentPage.xaml.cs">
       <DependentUpon>ViewAppointmentPage.xaml</DependentUpon>
@@ -698,58 +596,10 @@
     <Compile Include="ViewModel\PatientViewModel\GradeHospitalViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel\OrderDoctorAppointmentViewModel.cs" />
     <Compile Include="ViewModel\PatientViewModel\OrderTimeAppointmentViewModel.cs" />
-    <Compile Include="ViewMyAnnouncements.xaml.cs">
-      <DependentUpon>ViewMyAnnouncements.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewPatient.xaml.cs">
-      <DependentUpon>ViewPatient.xaml</DependentUpon>
-    </Compile>
     <Compile Include="VirtualKeyboard.xaml.cs">
       <DependentUpon>VirtualKeyboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowAddRoomEquipment.xaml.cs">
-      <DependentUpon>WindowAddRoomEquipment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowChangeItemQuantity.xaml.cs">
-      <DependentUpon>WindowChangeItemQuantity.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowExchangeEquipment.xaml.cs">
-      <DependentUpon>WindowExchangeEquipment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowExchangeStaticEquipment.xaml.cs">
-      <DependentUpon>WindowExchangeStaticEquipment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowMedicineDetail.xaml.cs">
-      <DependentUpon>WindowMedicineDetail.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowNewRoom.xaml.cs">
-      <DependentUpon>WindowNewRoom.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowRenovation.xaml.cs">
-      <DependentUpon>WindowRenovation.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowRenovations.xaml.cs">
-      <DependentUpon>WindowRenovations.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowUpdateRoom.xaml.cs">
-      <DependentUpon>WindowUpdateRoom.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowViewRoom.xaml.cs">
-      <DependentUpon>WindowViewRoom.xaml</DependentUpon>
-    </Compile>
-    <Page Include="AddMedicineWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Announcements.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DoctorPages\AnnouncementsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AppointmentHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -761,19 +611,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CancelAppointmentView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ChooseAnouncementType.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DoctorPages\CreateAnamnesisPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ChangeAppointmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -793,15 +631,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DeclinedMedicineWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DoctorPages\DeclineMedicinePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DetailDeclinedMedicineWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -837,14 +667,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditAnnouncement.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EditAppointment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DoctorPages\EditAppointmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -853,39 +675,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditMedicineWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EditPatient.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Inventary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="InventaryAddEquipment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="InventaryChangeEquipment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="InventaryViewEquipment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="GradePopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LogoutPopup.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EmergencyAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1021,14 +815,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ManagerMainView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManagerView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DoctorPages\MedicalRecordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1038,46 +824,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DoctorPages\MedicineRevisionPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NewAnnouncement.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NewAppointment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NewMedicine.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NewIndividualAnouncement.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NewPatient.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="OrderAppointmentPopup.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="OrderAppointmentTimeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="OrderAppointmentView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="OverlapingAppointments.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PatientEditAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1202,14 +948,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PatientView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ScheduleEmergencyAppointment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SecretaryAppointments.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1345,10 +1083,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SecretaryView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="SuccessfulGradeDoctor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1369,15 +1103,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewAnnouncement.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DoctorPages\ViewAnnouncementPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1393,55 +1119,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewMyAnnouncements.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewPatient.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="VirtualKeyboard.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowAddRoomEquipment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowChangeItemQuantity.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowExchangeEquipment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowExchangeStaticEquipment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowMedicineDetail.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowNewRoom.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowRenovation.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowRenovations.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowUpdateRoom.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WindowViewRoom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
