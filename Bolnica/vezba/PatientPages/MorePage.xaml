@@ -22,7 +22,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\bell.png" Width="Auto" Margin="357,88,38,476"/>
+        <Image Source="/Bolnica;component/PatientImages/bell.png" Width="Auto" Margin="357,88,38,476"/>
         <Button x:Name="BtnOcenaLekara" Content="Ocenite lekara............................................." HorizontalContentAlignment="Left" FontSize="20" Foreground="Black" BorderThickness="0" Padding="10" Margin="16,152,73,398" Click="BtnOcenaLekara_Click" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -30,7 +30,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\star.png" Width="35" Margin="357,152,38,414"/>
+        <Image Source="/Bolnica;component/PatientImages/star.png" Width="35" Margin="357,152,38,414"/>
         <Button x:Name="BtnOcenaBolnice" Content="Ocenite bolnicu.........................................." HorizontalContentAlignment="Left" FontSize="20" Foreground="Black" BorderThickness="0" Padding="10" Margin="16,216,73,334" Click="BtnOcenaBolnice_Click" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -38,7 +38,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\hospital.png" Height="35" Width="35" Margin="357,216,38,349"/>
+        <Image Source="/Bolnica;component/PatientImages/hospital.png" Height="35" Width="35" Margin="357,216,38,349"/>
         <Button x:Name="BtnStatistika" Content="Statistika........................................................" HorizontalContentAlignment="Left" FontSize="20" Foreground="Black" BorderThickness="0" Padding="10" Margin="16,282,73,268" Click="BtnStatistika_Click" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -46,7 +46,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\growth (1).png" Width="35" Height="35" Margin="357,282,38,284"/>
+        <Image Source="/Bolnica;component/PatientImages/growth (1).png" Width="35" Height="35" Margin="357,282,38,284"/>
         <Button x:Name="BtnMojLekar" Content="Moj lekar......................................................." HorizontalContentAlignment="Left"  FontSize="20" Foreground="Black" BorderThickness="0" Padding="10" Margin="16,346,73,204" Click="BtnMojLekar_Click" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -54,7 +54,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\doctor.png" Width="35" Height="35" Margin="357,346,38,219"/>
+        <Image Source="/Bolnica;component/PatientImages/doctor.png" Width="35" Height="35" Margin="357,346,38,219"/>
         <Button x:Name="BtnPlacanje" Content="Plaćanje.........................................................." HorizontalContentAlignment="Left" FontSize="20" Foreground="Black" BorderThickness="0" Padding="10" Margin="15,412,73,138" Click="BtnPlacanje_Click" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -62,7 +62,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\credit-card (1).png" Width="35" Height="35" Margin="357,412,38,154"/>
+        <Image Source="/Bolnica;component/PatientImages/credit-card (1).png" Width="35" Height="35" Margin="357,412,38,154"/>
         <Button x:Name="BtnIzvestaj" Content="Izveštaj o mojim terapijama.................." HorizontalContentAlignment="Left" FontSize="20" Foreground="Black" BorderThickness="0" Padding="10" Margin="16,476,73,74" Click="BtnIzvestaj_Click" Background="{x:Null}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -70,7 +70,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image Source="D:\fax\treca\sims\projekat\UseCaseDiagram\clinical-system\Bolnica\vezba\PatientImages\medical-report.png" Width="35" Height="35" Margin="362,476,33,89"/>
+        <Image Source="/Bolnica;component/PatientImages/medical-report.png" Width="35" Height="35" Margin="362,476,33,89"/>
         <Image Source="/Bolnica;component/PatientImages/technical-support.png" Width="45" Margin="26,10,359,543"/>
         <Label Content="Više" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="#FF2E421A" Margin="76,10,138,0" Height="57" Width="216"/>
     </Grid>

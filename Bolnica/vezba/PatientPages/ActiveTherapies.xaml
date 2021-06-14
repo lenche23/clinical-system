@@ -36,7 +36,7 @@
                             <TextBlock Grid.Column="2" Text="{Binding Medicine, Mode=TwoWay, StringFormat=\{0: \}, UpdateSourceTrigger=PropertyChanged}"  FontStyle="Italic" Foreground="Black" FontSize="15"/>
                         </Grid>
                         <TextBlock Grid.Row="1" Text="{Binding Number, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" TextWrapping="Wrap" Width="380" Foreground="black"/>
-                        <TextBlock Grid.Column="2" Grid.Row="1" Text="   put/a na dan" Foreground="Black" FontSize="14"/>
+                        <TextBlock Grid.Column="2" Grid.Row="1" Text="      put/a na dan" Foreground="Black" FontSize="14"/>
                         <Separator Grid.Row="2"/>
                     </Grid>
                 </DataTemplate>
