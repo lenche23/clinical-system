@@ -77,7 +77,6 @@ namespace vezba.ManagerGUI
         {
             readInformation();
 
-            if (!ValidateEntries()) return;
 
             AppointmentService appointmentService = new AppointmentService();
 
@@ -157,14 +156,5 @@ namespace vezba.ManagerGUI
             else OkButton.IsEnabled = true;
         }
 
-        public Boolean ValidateEntries()
-        {
-            DurationTB.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            if (Validation.GetHasError(DurationTB))
-            {
-                return false;
-            }
-            return true;
-        }
     }
 }
