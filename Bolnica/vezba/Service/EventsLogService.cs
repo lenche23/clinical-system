@@ -8,20 +8,11 @@ namespace Service
 {
    public class EventsLogService
    {
-        public EventsLogFileRepository EventsLogRepository { get; set; }
+        private IEventsLogRepository EventsLogRepository { get; set; }
         public EventsLogService()
         {
             EventsLogRepository = new EventsLogFileRepository();
         }
-        // Sekretar*******************************************************************************
-
-
-
-
-
-        // SekretarKraj***************************************************************************
-
-        // Pacijent*******************************************************************************
 
         public void AddLog()
         {
@@ -47,23 +38,5 @@ namespace Service
         {
             return EventsLogRepository.Update(log);
         }
-        
-            // PacijentKraj***************************************************************************
-
-            // Lekar**********************************************************************************
-
-
-
-
-
-            // LekarKraj******************************************************************************
-
-            // Upravnik*******************************************************************************
-
-
-
-
-
-            // UpravnikKraj***************************************************************************
-        }
+   }
 }

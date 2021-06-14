@@ -108,27 +108,6 @@ namespace Service
             return appointments;
         }
 
-        /*public List<Appointment> GetSearchResultAppointments(String search)
-        {
-            List<Appointment> allAppointments = GetAllAppointments();//AppointmentRepository.GetAll();
-            List<Appointment> appointments = new List<Appointment>();
-            Boolean flag = false;
-            foreach (Appointment a in allAppointments)
-            {
-                flag = false;
-                if (a.DoctorName.ToLower().Contains(search.ToLower()))
-                    flag = true;
-                if (a.PatientName.ToLower().Contains(search.ToLower()))
-                    flag = true;
-                if (a.RoomName.ToLower().Contains(search.ToLower()))
-                    flag = true;
-                if (a.DurationInMunutes.ToString().Contains(search))
-                    flag = true;
-                if (flag == true)
-                    appointments.Add(a);
-            }
-            return appointments;
-        }*/
 
         public Boolean ScheduleAppointment(Appointment newAppointment)
         {
@@ -138,9 +117,6 @@ namespace Service
             }
             else
             {
-                /* MessageBox.Show(
-                     "Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " +
-                     FindNextFreeAppointmentStartTime(newAppointment).ToString("dd.MM.yyyy. HH:mm"));*/
                 String message = "Termin je zauzet! Izaberite drugo vreme.\n Prvi sledeci dostupan termin za unete kriterijume je " + FindNextFreeAppointmentStartTime(newAppointment).ToString("dd.MM.yyyy. HH:mm");
                 SecretaryMessage m = new SecretaryMessage(message);
                 m.ShowDialog();
@@ -188,11 +164,9 @@ namespace Service
                 AppointmentsSharePatient(appointment1, appointment2) ||
                 AppointmentsShareRoom(appointment1, appointment2))
             {
-                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <=
-                    0) //drugi zavrsava pre pocetka prvog
+                if (DateTime.Compare(appointment2.EndTime, appointment1.StartTime) <= 0) //drugi zavrsava pre pocetka prvog
                     return false;
-                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <=
-                         0) //prvi zavrsava pre pocetka drugog
+                else if (DateTime.Compare(appointment1.EndTime, appointment2.StartTime) <= 0) //prvi zavrsava pre pocetka drugog
                     return false;
                 else
                     return true;

@@ -19,7 +19,7 @@ namespace Service
             RepositoryFactory = (ApplicationDataSource.GetInstance()).GetRepositoryFactory();
             DoctorRepository = RepositoryFactory.CreateDoctorRepository();
         }
-        // Sekretar*******************************************************************************
+
         public Doctor GetDoctorByJmbg(string jmbg)
         {
             return DoctorRepository.GetOne(jmbg);
@@ -29,27 +29,6 @@ namespace Service
         {
             return DoctorRepository.GetAll();
         }
-        //PREBACENO U TEMPLATE
-        /*
-        public List<Doctor> GetSearchResultDoctors(String search)
-        {
-            List<Doctor> allDoctors = GetAllDoctors();//DoctorRepository.GetAll();
-            List<Doctor> doctors = new List<Doctor>();
-            Boolean flag = false;
-            foreach (Doctor d in allDoctors)
-            {
-                flag = false;
-                if (d.NameAndSurname.ToLower().Contains(search.ToLower()))
-                    flag = true;
-                if (d.SpecialityName.ToLower().Contains(search.ToLower()))
-                    flag = true;
-                if (d.Jmbg.ToLower().Contains(search.ToLower()))
-                    flag = true;
-                if (flag == true)
-                    doctors.Add(d);
-            }
-            return doctors;
-        }*/
 
         public List<Doctor> GetDoctorsWithSpeciality(Speciality speciality)
         {
@@ -244,34 +223,9 @@ namespace Service
             }
             return true;
         }
-
-        // SekretarKraj***************************************************************************
-
-        // Pacijent*******************************************************************************
         public Doctor LoadDoctor()
         {
             return DoctorRepository.GetOne("1708962324890");
         }
-
-
-
-
-        // PacijentKraj***************************************************************************
-
-        // Lekar**********************************************************************************
-
-
-
-
-
-        // LekarKraj******************************************************************************
-
-        // Upravnik*******************************************************************************
-
-
-
-
-
-        // UpravnikKraj***************************************************************************
     }
 }

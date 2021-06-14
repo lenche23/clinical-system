@@ -6,42 +6,17 @@ namespace Service
 {
    public class HospitalEvaluationService
    {
-        private HospitalEvaluationFileRepository HospitalEvaluationRepository { get; set; }
+        private IHospitalEvaluationRepository HospitalEvaluationRepository { get; set; }
         public HospitalEvaluationService()
         {
             HospitalEvaluationRepository = new HospitalEvaluationFileRepository();
         }
-        // Sekretar*******************************************************************************
-
-
-
-
-
-        // SekretarKraj***************************************************************************
-
-        // Pacijent*******************************************************************************
 
         public Boolean SaveEvaluation(HospitalEvaluation newEvaluation)
         {
             return HospitalEvaluationRepository.Save(newEvaluation);
         }
 
-        // PacijentKraj***************************************************************************
-
-        // Lekar**********************************************************************************
-
-
-
-
-
-        // LekarKraj******************************************************************************
-
-        // Upravnik*******************************************************************************
-
-
-
-
-
-        // UpravnikKraj***************************************************************************
-        }
+        
+    }
 }

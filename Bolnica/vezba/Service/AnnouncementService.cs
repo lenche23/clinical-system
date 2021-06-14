@@ -17,9 +17,9 @@ namespace Service
             AnnouncementRepository = RepositoryFactory.CreateAnnouncementRepository();
             //IRepositoryFactory repositoryFactory = (new ApplicationDataSource()).CreateRepositoryFactory();
             //AnnouncementRepository = repositoryFactory.CreateAnnouncementRepository();
+
             //AnnouncementRepository = new AnnouncementFileRepository();
         }
-        // Sekretar*******************************************************************************
 
         public List<Announcement> GetAllAnnouncements()
         {
@@ -50,27 +50,5 @@ namespace Service
         {
             return AnnouncementRepository.GetIndividualAnnouncements(userId);
         }
-        // SekretarKraj***************************************************************************
-
-        // Pacijent*******************************************************************************
-
-
-
-
-
-        // PacijentKraj***************************************************************************
-
-        // Lekar**********************************************************************************
-
-
-
-
-
-        // LekarKraj******************************************************************************
-
-        // Upravnik*******************************************************************************
-
-
-        // UpravnikKraj***************************************************************************
     }
 }
