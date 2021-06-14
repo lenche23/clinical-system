@@ -9,7 +9,21 @@ namespace vezba.Factory
 {
     class ApplicationDataSource
     {
-        public IRepositoryFactory CreateRepositoryFactory()
+        private ApplicationDataSource()
+        {
+            repositoryFactory = CreateRepositoryFactory();
+        }
+        private static ApplicationDataSource dataSourceInstance;
+        public static IRepositoryFactory repositoryFactory { get; set; }
+        public static ApplicationDataSource GetInstance()
+        {
+            if (dataSourceInstance == null)
+                dataSourceInstance = new ApplicationDataSource();
+            return dataSourceInstance;
+            
+
+        }
+        private IRepositoryFactory CreateRepositoryFactory()
         {
             if (Properties.Settings.Default.DataSource == "file")
             {
@@ -20,7 +34,10 @@ namespace vezba.Factory
                 MessageBox.Show("Niste izabrali izvor podataka. Prebaceno na rad sa fajlovima");
                 return new FileRepositoryFactory();
             }
-            
+        }
+        public IRepositoryFactory GetRepositoryFactory()
+        {
+            return repositoryFactory;
         }
     }
 }

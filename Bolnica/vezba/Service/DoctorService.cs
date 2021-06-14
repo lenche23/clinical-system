@@ -10,13 +10,14 @@ namespace Service
 {
    public class DoctorService
     {
-        private IDoctorRepository DoctorRepository { get; set; }
+        private IDoctorRepository DoctorRepository { get; }
+
+        private IRepositoryFactory RepositoryFactory { get; }
 
         public DoctorService()
         {
-            //DoctorRepository = new DoctorFileRepository();
-            IRepositoryFactory repositoryFactory = (new ApplicationDataSource()).CreateRepositoryFactory();
-            DoctorRepository = repositoryFactory.CreateDoctorRepository();
+            RepositoryFactory = (ApplicationDataSource.GetInstance()).GetRepositoryFactory();
+            DoctorRepository = RepositoryFactory.CreateDoctorRepository();
         }
         // Sekretar*******************************************************************************
         public Doctor GetDoctorByJmbg(string jmbg)

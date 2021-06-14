@@ -9,11 +9,14 @@ namespace Service
    public class AnnouncementService
    {
         private IAnnouncementRepository AnnouncementRepository { get; }
+        private IRepositoryFactory RepositoryFactory { get; }
 
         public AnnouncementService()
         {
-            IRepositoryFactory repositoryFactory = (new ApplicationDataSource()).CreateRepositoryFactory();
-            AnnouncementRepository = repositoryFactory.CreateAnnouncementRepository();
+            RepositoryFactory = (ApplicationDataSource.GetInstance()).GetRepositoryFactory();
+            AnnouncementRepository = RepositoryFactory.CreateAnnouncementRepository();
+            //IRepositoryFactory repositoryFactory = (new ApplicationDataSource()).CreateRepositoryFactory();
+            //AnnouncementRepository = repositoryFactory.CreateAnnouncementRepository();
             //AnnouncementRepository = new AnnouncementFileRepository();
         }
         // Sekretar*******************************************************************************
